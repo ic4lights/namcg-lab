@@ -11,14 +11,14 @@ Run these commands from the repository root with Python 3.12 installed. Install 
 python -m pip install -r requirements.txt
 ```
 
-Then run the scripts that produce the Appendix D and Appendix F results:
+Then run the scripts that produce the Appendix D and Appendix I results:
 
 ```bash
 python appD-sparc-rar.py
 python appI-gaia-dr3-msmm.py
 ```
 
-Appendix D reads the SPARC rotation-curve files from `sparc/rotmod` and writes its summary to `sparc_namcg_vs_summary.csv`. Appendix F reads `gaia_dr3_wide_binaries.csv` and prints the Monte Carlo deprojection and model-comparison results. Keep the input data in the repository's expected locations when running the scripts.
+Appendix D reads the SPARC rotation-curve files from `sparc/rotmod` and writes its summary to `sparc_namcg_vs_summary.csv`. Appendix I reads `gaia_dr3_wide_binaries.csv` and prints the Monte Carlo deprojection and model-comparison results. Keep the input data in the repository's expected locations when running the scripts.
 
 ## Licensing
 * **Source Code:** Licensed under the [Apache 2.0 License](LICENSE).

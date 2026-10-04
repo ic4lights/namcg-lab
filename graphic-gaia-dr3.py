@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate a Gaia DR3 results graphic using the Appendix F analysis."""
+"""Generate a Gaia DR3 results graphic using the Appendix I analysis."""
 
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ def load_pipeline():
 	pipeline_path = Path(__file__).with_name("appI-gaia-dr3-msmm.py")
 	spec = importlib.util.spec_from_file_location("appf_gaia_dr3", pipeline_path)
 	if spec is None or spec.loader is None:
-		raise RuntimeError(f"Unable to load Appendix F pipeline: {pipeline_path}")
+		raise RuntimeError(f"Unable to load Appendix I pipeline: {pipeline_path}")
 	pipeline = importlib.util.module_from_spec(spec)
 	spec.loader.exec_module(pipeline)
 	return pipeline
@@ -284,7 +284,7 @@ def generate_graphic(samples: pd.DataFrame, input_systems: int, results, bins, o
 
 
 def main():
-	parser = argparse.ArgumentParser(description="Generate the Appendix F Gaia DR3 results graphic")
+	parser = argparse.ArgumentParser(description="Generate the Appendix I Gaia DR3 results graphic")
 	parser.add_argument("--data", default="gaia_dr3_wide_binaries.csv", help="Processed Gaia wide-binary CSV")
 	parser.add_argument("--out", default="graphic-gaia-dr3.png", help="Output image filename")
 	args = parser.parse_args()
