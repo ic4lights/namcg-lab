@@ -22,7 +22,7 @@ G_SCALE_SI = 1.20e-10
 
 
 def load_pipeline():
-	pipeline_path = Path(__file__).with_name("appI-gaia-dr3.py")
+	pipeline_path = Path(__file__).with_name("appI-gaia-dr3-msmm.py")
 	spec = importlib.util.spec_from_file_location("appf_gaia_dr3", pipeline_path)
 	if spec is None or spec.loader is None:
 		raise RuntimeError(f"Unable to load Appendix F pipeline: {pipeline_path}")
