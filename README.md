@@ -1,5 +1,5 @@
 # namcg-lab
-Official repository for Non-Abelian Matrix-Condensate Geometrogenesis (NAMCG). Includes the complete monograph PDF, Python code for Chapter 15, Appendices D &amp; F, and visualization scripts for metric emergence and Gaia DR3 deprojections.
+Official repository for Non-Abelian Matrix-Condensate Geometrogenesis (NAMCG). Includes the complete monograph PDF, Python code for Chapter 15, Appendices D &amp; I, and visualization scripts for metric emergence and Gaia DR3 deprojections.
 
 > **Read the monograph:** [Review the included NAMCG monograph](namcg-book7.pdf).
 
