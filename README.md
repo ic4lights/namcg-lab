@@ -3,7 +3,7 @@ Official repository for Non-Abelian Matrix-Condensate Geometrogenesis (NAMCG). I
 
 > **Read the monograph:** [Review the included NAMCG monograph](namcg-book7.pdf).
 
-## Reproducing Appendix D and F
+## Reproducing Appendix D and I
 
 Run these commands from the repository root with Python 3.12 installed. Install the project dependencies first in a virtual environment:
 
