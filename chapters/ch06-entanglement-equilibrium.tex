@@ -290,10 +290,27 @@ radius,
   \label{eq:I-falloff}
   I(A:B)
   \;\sim\;
-  \frac{c\,\ell_A^2\ell_B^2}{d^{2}}
-  \qquad\text{(conformal matter, leading order)},
+  c_{p_*}
+  \left(\frac{\ell_A\ell_B}{d^2}\right)^{p_*}
+  \qquad
+  (d\gg \ell_A,\ell_B).
 \end{equation}
-up to a theory-dependent constant \(c\). The static \(U_{\mathrm{ent}}\)
+Here \(p_*\) is the smallest sum of scaling dimensions of operators
+whose product has vacuum quantum numbers, and \(c_{p_*}\) is a
+dimensionless, theory- and shape-dependent coefficient. For the
+exchange of a pair of operators of dimension \(\Delta_*\),
+\(p_*=2\Delta_*\); other channels can set a different leading power.
+Cardy~\cite{Cardy2013MI} derives this scaling for the R\'enyi mutual
+information of compact regions in the ground state of a
+flat-space conformal field theory, and gives the von Neumann limit
+explicitly for spherical regions in the free-scalar case in
+\(2+1\) and \(3+1\) dimensions, where for \(3+1\) dimensions
+\(p_*=2\), i.e.\ a tail proportional to \(\ell_A^2\ell_B^2/d^4\).
+Applying~\eqref{eq:I-falloff} to the von Neumann mutual information
+of other theories assumes that the \(n\to1\) continuation holds, and
+applying it to NAMCG cores, which need not be vacuum balls of a
+conformal theory, is a further assumption. Neither \(p_*\) nor
+\(c_{p_*}\) is computed here for NAMCG. The static \(U_{\mathrm{ent}}\)
 defines a conservative interaction. Its separation dependence alone
 does not determine a velocity-dependent dissipative force or a
 retarded response. The Newtonian laboratory of Chapter~15 adopts

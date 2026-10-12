@@ -74,20 +74,31 @@ value of \(g_\dagger\).
 \section{Why the first NAMCG-shaped interpolator failed}
 \label{sec:appE-failed}
 
-Chapter~6 supplied a conformal large-separation tail
+Chapter~6 records the large-separation scaling
 \begin{equation}
   \label{eq:appE-I}
-  I(A:B)\;\sim\;c\,\frac{\ell_A^2\ell_B^2}{d^{2\Delta}}
+  I(A:B)
+  \;\sim\;
+  c_{p_*}
+  \left(\frac{\ell_A\ell_B}{d^2}\right)^{p_*},
+  \qquad d\gg\ell_A,\ell_B,
 \end{equation}
-with \(\Delta\) of order one~\cite{Cardy2013MI}. A linear-response
-force \(\partial I/\partial d\), converted carelessly to a local
-boost and written as a function of \(g_{\mathrm{N}}\), produced
-the working family
+with \(p_*\) and \(c_{p_*}\) defined as in
+Eq.~\eqref{eq:I-falloff}: \(p_*\) is the smallest sum of scaling
+dimensions of operators whose product has vacuum quantum numbers.
+Cardy~\cite{Cardy2013MI} obtains this form for the R\'enyi mutual
+information of compact regions in a conformal vacuum, with the von
+Neumann limit shown explicitly for free-scalar spheres; its use for
+NAMCG cores is an assumption. The first NAMCG-shaped interpolator
+nevertheless converted a gradient of this static tail into a local
+boost, producing the working family
 \begin{equation}
   \label{eq:appE-exp}
   \nu_{\mathrm{exp}}
   =\frac{1}{1-\alpha\exp(-g_{\mathrm{N}}/g_s)}.
 \end{equation}
+That conversion is not derived: a static separation gradient is not
+a retarded response or a local acceleration interpolator.
 On the same 175 SPARC files that family lost to simple MOND by a
 wide AIC gap. The transition was too sharp in \(g_{\mathrm{N}}\)
 and needed a second amplitude \(\alpha\) that disks do not want.
