@@ -1,0 +1,361 @@
+\chapter[Ultraviolet completion]{Ultraviolet Operators, Ghosts, and a Cubic Completion}
+\label{ch:ultraviolet}
+
+\paragraph{Learning outcomes.}
+After this chapter the reader should be able to:
+\begin{enumerate}
+  \item read the \(a_2\) density as a list of four-derivative
+        operators and assign each a role (correction versus
+        propagator);
+  \item state Ostrogradsky's theorem in the form used for
+        gravitational effective field theory;
+  \item explain why quadratic gravity of Stelle type is not an
+        acceptable infrared limit of NAMCG;
+  \item write the Einsteinian cubic invariant and the property that
+        makes it safer than a generic \(R^3\) term;
+  \item enter Chapter~10 knowing that the ultraviolet problem of
+        the metric effective action is under a named control,
+        not solved in the sense of a non-perturbative continuum
+        limit.
+\end{enumerate}
+
+Chapter~8 produced
+\begin{equation}
+  \label{eq:W-again-9}
+  W[g]
+  =\int\mathrm{d}^4x\,\sqrt{-g}
+   \Bigl(
+     -\rho_\Lambda
+     +\frac{R}{16\pi\Geff}
+     +\alpha\,a_2[g]
+     +\cdots
+   \Bigr).
+\end{equation}
+The first two terms are the cosmological debt and the Einstein--Hilbert
+term. This chapter treats the third.
+
+\section{What \(a_2\) contains}
+\label{sec:ch9-a2}
+
+On a Laplace-type bundle the second Seeley--DeWitt coefficient is a
+linear combination of
+\begin{equation}
+  \label{eq:a2-ops}
+  R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma},
+  \quad
+  R_{\mu\nu}R^{\mu\nu},
+  \quad
+  R^2,
+  \quad
+  E^2,
+  \quad
+  RE,
+  \quad
+  D^2 R,\quad
+  D^2 E,
+\end{equation}
+together with bundle-curvature terms \(F_{\mu\nu}F^{\mu\nu}\). After
+the endomorphism \(E\) is evaluated on the condensate and total
+derivatives are discarded, the metric operators that remain in four
+dimensions may be written
+\begin{equation}
+  \label{eq:W4}
+  W_4[g]
+  =\int\mathrm{d}^4x\,\sqrt{-g}
+   \bigl(
+     c_W C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma}
+     +c_R R^2
+     +c_{\mathrm{GB}}\,E_{\mathrm{GB}}
+   \bigr),
+\end{equation}
+where \(C_{\mu\nu\rho\sigma}\) is the Weyl tensor and
+\begin{equation}
+  \label{eq:GB}
+  E_{\mathrm{GB}}
+  =R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+   -4R_{\mu\nu}R^{\mu\nu}
+   +R^2
+\end{equation}
+is the Gauss--Bonnet density, topological in four dimensions at the
+level of the bulk equations of motion.
+
+The coefficients \(c_W,c_R,c_{\mathrm{GB}}\) are logarithms of
+\(\LUV/\mu\) times fibre traces, as in~\eqref{eq:W-expand}. Their
+precise rationals are scheme-dependent in the same sense as \(A,B,C\)
+in~\eqref{eq:Geff-structure}. What is not scheme-dependent is the
+existence of the Weyl-squared and \(R^2\) operators at this order.
+
+\section{Ostrogradsky's theorem, used as a veto}
+\label{sec:ch9-ostro}
+
+\begin{theorem}[Ostrogradsky, gravitational form]
+  \label{thm:ostro}
+  Let a field theory possess a Lagrangian that depends on second
+  (or higher) time derivatives of a dynamical variable, not
+  removable by adding a total derivative or by imposing a
+  degeneracy condition that reduces the order. Then the Hamiltonian
+  of that variable is unbounded below. In a quadratic gravitational
+  action about Minkowski spacetime, the unbounded direction is a
+  ghost pole in the propagator of \(h_{\mu\nu}\).
+\end{theorem}
+
+The theorem is the reason one may not promote~\eqref{eq:W4} to a
+fundamental action for a propagating metric and call the result a
+completion of NAMCG.
+
+\paragraph{Stelle quadratic gravity.}
+The action
+\begin{equation}
+  \label{eq:stelle}
+  S_{\mathrm{Stelle}}
+  =\int\mathrm{d}^4x\,\sqrt{-g}
+   \Bigl(
+     \frac{R}{16\pi G}
+     -\frac{\alpha}{2}C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma}
+     +\frac{\beta}{2}R^2
+   \Bigr)
+\end{equation}
+propagates, in addition to the massless graviton, a massive spin-2
+ghost and a massive scalar. The ghost mass is of order
+\(1/\sqrt{\alpha G}\). If \(\alpha\) is a one-loop logarithm, that
+mass is near \(\LUV\), which is the Planck scale of
+Section~\ref{sec:ch8-size}. A Planck-scale ghost is an ultraviolet
+sickness of the metric effective theory. It is not an infrared
+sickness provided those poles are never treated as asymptotic
+states of the condensate.
+
+\paragraph{Effective-field-theory reading.}
+The same operators are harmless if they are used only as vertices
+in a derivative expansion of matrix elements with external momenta
+\(p\ll\LUV\), and never as additional poles. That is the reading
+adopted here:
+
+\begin{assumption}[Four-derivative terms are EFT vertices]
+  \label{ass:EFT-a2}
+  The operators in~\eqref{eq:W4} correct graviton scattering and
+  static potentials at order \((p/\LUV)^2\). They are not to be
+  diagonalized into extra propagating modes of \(h_{\mu\nu}\).
+\end{assumption}
+
+Assumption~\ref{ass:EFT-a2} is available only because the metric is
+composite. The microscopic path integral is over \(\Phi\), not over
+an independent \(g_{\mu\nu}\) with action~\eqref{eq:stelle}. The
+poles of Stelle gravity are an artefact of treating \(W[g]\) as a
+fundamental metric action beyond its radius of convergence.
+
+\section{What ultraviolet stability does mean}
+\label{sec:ch9-stability}
+
+Presentation~A is a matrix model. Its ultraviolet definition is the
+regularized trace over \(\mathcal{H}\) with cutoff~\eqref{eq:LUV-def}.
+Questions that make sense at that level are:
+
+\begin{itemize}
+  \item boundedness of \(S_{\mathrm{matrix}}\) from below on Hermitian
+        \(\hat X^\mu\);
+  \item existence of the condensed saddle
+        \(\langle\Phi^I{}_A\rangle=v\Lambda^A{}_I\);
+  \item absence of tachyons in the blocks that Theorem~\ref{thm:mT}
+        and Assumption~\ref{ass:gap-psi} did not already constrain.
+\end{itemize}
+
+Questions that do \emph{not} make sense until a continuum limit in
+\(\LUV\) is constructed are:
+
+\begin{itemize}
+  \item renormalizability of \(W[g]\) as a fundamental quantum field
+        theory of \(g_{\mu\nu}\);
+  \item asymptotic safety of that metric theory;
+  \item unitarity of S-matrix elements among Stelle poles.
+\end{itemize}
+
+NAMCG, as written in this book, claims the first list and refuses
+the second. The metric effective action is an infrared object with
+a cutoff. Ultraviolet stability means stability of the matrix
+saddle, not renormalizability of quadratic gravity.
+
+A sufficient condition for the matrix action~\eqref{eq:Smatrix} to
+be bounded below on Hermitian matrices is that the quartic
+commutator term dominates with the sign written there,
+\begin{equation}
+  \label{eq:YM-bounded}
+  -\mathrm{Tr}\bigl([\hat X^\mu,\hat X^\nu][\hat X_\mu,\hat X_\nu]\bigr)
+  \ge 0
+\end{equation}
+in the Euclideanized internal-time convention of IKKT-type models,
+together with a potential \(V\) that is bounded below, as
+\eqref{eq:V} is. Lorentzian signature complicates the bound because
+\(\hat X^0\) enters with the opposite sign in some reductions. That
+complication is inherited from the matrix-model literature and is
+not solved here. It is recorded in Chapter~17.
+
+\section{Cubic operators and Einsteinian cubic gravity}
+\label{sec:ch9-ECG}
+
+Singularities of the Einstein equation are not cured by the
+four-derivative vertices of Assumption~\ref{ass:EFT-a2}. Those
+vertices are small when curvature is small, and they are
+untrustworthy when curvature reaches \(\LUV^2\). A different
+higher-curvature object is needed if compact-object cores are to
+be regularized inside the derivative expansion.
+
+Einsteinian cubic gravity (ECG) is the four-dimensional cubic
+curvature invariant whose linearized spectrum about a maximally
+symmetric background coincides with that of Einstein gravity: no
+extra spin-2 ghost, no extra scalar at that order. A convenient
+writing is
+\begin{equation}
+  \label{eq:ECG}
+  \mathcal{P}
+  =12 R_{\mu}{}^{\rho}{}_{\nu}{}^{\sigma}
+       R_{\rho}{}^{\tau}{}_{\sigma}{}^{\eta}
+       R_{\tau}{}^{\mu}{}_{\eta}{}^{\nu}
+   +\cdots,
+\end{equation}
+the omitted terms being the unique combination of
+\(R^3\), \(RR_{\mu\nu}R^{\mu\nu}\), and
+\(R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}R\) that implements the
+spectral condition. The action used later in the book is
+\begin{equation}
+  \label{eq:S-ECG}
+  S_{\mathrm{ECG}}[g]
+  =\int\mathrm{d}^4x\,\sqrt{-g}
+   \Bigl(
+     \frac{R-2\Lambda_{\mathrm{eff}}}{16\pi\Geff}
+     +\beta_{\mathrm{ECG}}\,\mathcal{P}
+   \Bigr).
+\end{equation}
+
+Two properties matter.
+
+\begin{enumerate}
+  \item On static, spherically symmetric metrics the cubic term
+        modifies the lapse function algebraically rather than by
+        adding new propagating poles about that background. The
+        regular-core profile
+        \begin{equation}
+          \label{eq:fr-ECG}
+          f(r)
+          =1-\frac{2M r^2}{r^3+r_0^3}
+           +\frac{\Lambda_{\mathrm{eff}}}{3}r^2
+        \end{equation}
+        used in Chapter~13 is an approximate solution in that
+        sector, with \(r_0^3\propto\beta_{\mathrm{ECG}}M\).
+  \item The spectral condition is a statement about linearization
+        on maximally symmetric backgrounds. It is not a proof that
+        every time-dependent perturbation of~\eqref{eq:fr-ECG} is
+        ghost-free. The book uses ECG as a controlled model of
+        core regularity, not as a claim of non-perturbative
+        unitarity.
+\end{enumerate}
+
+\begin{assumption}[Cubic completion]
+  \label{ass:ECG}
+  Through the curvature scales relevant to compact-object cores,
+  the metric effective action may be truncated at
+  \eqref{eq:S-ECG}, with \(\beta_{\mathrm{ECG}}\) set by the
+  matching of \(a_2\) and by the matrix scale \(r_0\sim\LUV^{-1}\)
+  up to an order-one factor.
+\end{assumption}
+
+Assumption~\ref{ass:ECG} is stronger than Assumption~\ref{ass:EFT-a2}.
+It promotes one cubic combination from a vertex to a term that is
+solved non-perturbatively in the static spherical sector. The
+promotion is justified only in that sector, and only as a model.
+
+\section{Torsion and higher connections}
+\label{sec:ch9-torsion}
+
+The composite frame of Definition~\ref{def:vierbein} need not have
+vanishing torsion. A torsion tensor
+\begin{equation}
+  \label{eq:torsion}
+  T^A{}_{\mu\nu}
+  =\partial_\mu e^A_\nu-\partial_\nu e^A_\mu
+   +\omega_\mu{}^A{}_B e^B_\nu
+   -\omega_\nu{}^A{}_B e^B_\mu
+\end{equation}
+is an additional infrared field if \(\omega\) is independent of
+\(e\). In NAMCG the connection is not independent: it is the
+connection that eats the Goldstone \(\omega_{AB}\) of Chapter~5.
+After that eating, torsion is either zero or massive of order
+\(v\). Massive torsion is an ultraviolet correction of the same
+type as the \(a_2\) vertices. It is not retained as a propagating
+infrared field.
+
+\section{A checklist before Lorentz locking}
+\label{sec:ch9-check}
+
+The metric effective theory, as it now stands, is:
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Ingredient & Status \\
+\midrule
+massless TT tensor & Thm.~\ref{thm:mT} \\
+prefactor \(\Geff\) & Thm.~\ref{thm:Geff} \\
+quartic vacuum energy & isolated, not tamed \\
+\(C^2\) and \(R^2\) & EFT vertices, Assp.~\ref{ass:EFT-a2} \\
+cubic core regularity & ECG model, Assp.~\ref{ass:ECG} \\
+torsion & massive or zero after eating \\
+local Lorentz invariance as a gauge symmetry
+  of \(\Phi\) & not yet constructed \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The missing gauge symmetry is the last geometric ingredient. Without
+it the identification of \(\omega_{AB}\) as a Goldstone, used since
+Chapter~5, is incomplete.
+
+\section{Exercises}
+\label{sec:ch9-exercises}
+
+\begin{enumerate}
+  \item \textbf{Gauss--Bonnet.}
+    Show that \(E_{\mathrm{GB}}\) in four dimensions is a total
+    derivative plus a topological density. Why, then, can
+    \(c_{\mathrm{GB}}\) still matter on manifolds with boundary?
+  \item \textbf{Stelle poles.}
+    Linearize~\eqref{eq:stelle} about Minkowski spacetime in
+    harmonic gauge. Locate the massive spin-2 pole and determine
+    the sign of its residue relative to the massless graviton.
+  \item \textbf{EFT versus poles.}
+    A tree-level graviton-graviton amplitude receives a correction
+    \(\sim c_W s^2/\LUV^2\) from~\eqref{eq:W4}. At what
+    centre-of-mass energy does this correction become unreliable
+    as an EFT vertex, and why is that energy the same scale at
+    which Stelle poles would have appeared?
+  \item \textbf{Bounded matrix action.}
+    For two Hermitian matrices \(X,Y\) show that
+    \(-\mathrm{Tr}([X,Y]^2)\ge 0\). Identify the step that fails,
+    or requires a Euclidean rotation, when one matrix is
+    \(X^0\) with Lorentzian signature.
+  \item \textbf{Spherical reduction.}
+    Take \(ds^2=-f(r)dt^2+f(r)^{-1}dr^2+r^2 d\Omega^2\) and list
+    which curvature scalars in a generic \(R^3\) combination
+    survive. The point of ECG is that the combination
+    \(\mathcal{P}\) reduces to an algebraic equation for \(f\),
+    not a fourth-order ODE. Verify that claim for at least the
+    leading \(1/r\) terms, or cite the reduction and state what
+    you used.
+  \item \textbf{Torsion mass.}
+    Give a dimensional estimate of the torsion mass if the only
+    scale available is \(v\). Compare it with \(m_\psi\) from
+    Assumption~\ref{ass:gap-psi}.
+\end{enumerate}
+
+\section{Bridge to Chapter~10}
+\label{sec:ch9-bridge}
+
+The infrared metric theory is Einstein gravity plus controlled
+higher-curvature corrections and an untamed \(\rho_\Lambda\). What
+it still lacks is an explicit demonstration that local
+\(\mathrm{SO}(3,1)\) is a gauge symmetry of the condensate and that
+the six Goldstones \(\omega_{AB}\) are eaten by the connection,
+leaving no extra massless scalars. Chapter~10 constructs that
+locking. After it, the counting table of Section~\ref{sec:ch5-count}
+is complete through the line ``eat \(\omega_{AB}\),'' and the
+composite vierbein is a genuine frame rather than a named
+expectation value.

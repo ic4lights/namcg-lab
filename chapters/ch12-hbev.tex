@@ -1,0 +1,362 @@
+\chapter[HBEV]{Holographic Boundary-Entropy Vacuum and \(\Lambda_{\mathrm{eff}}\)}
+\label{ch:hbev}
+
+\paragraph{Learning outcomes.}
+After this chapter the reader should be able to:
+\begin{enumerate}
+  \item restate the quartic vacuum-energy debt isolated in
+        Chapter~8 as a problem about a bulk term
+        \(\rho_\Lambda\sqrt{-g}\);
+  \item write the HBEV boundary action built from the
+        Gibbons--Hawking--York term and an entropy density
+        \(S_{\mathrm{ent}}(h_{ij},\phi)\);
+  \item obtain \(\Lambda_{\mathrm{eff}}\) from stationarity of that
+        boundary action rather than from \(\LUV^4\);
+  \item check that the regulated cosmological term still obeys
+        Theorem~\ref{thm:conservation};
+  \item enter Chapter~13 knowing which vacuum energy is being
+        inserted into regular-core and galactic solutions.
+\end{enumerate}
+
+Chapter~8 produced
+\begin{equation}
+  \label{eq:rho-debt}
+  \rho_\Lambda
+  =\frac{\mathrm{Tr}(\mathbb{I})}{32\pi^2}
+   \bigl(\LUV^4-\mu^4\bigr)+\cdots.
+\end{equation}
+A constant of that size cannot be the observed cosmological
+constant. This chapter does not cancel~\eqref{eq:rho-debt} by a
+bare counterterm tuned to 120 decimal places. It replaces the bulk
+cosmological term by a boundary variational problem whose solution
+is an infrared scale.
+
+\section{What would not count as a solution}
+\label{sec:ch12-not}
+
+Three common manoeuvres are excluded in advance.
+
+\begin{enumerate}
+  \item \textbf{Subtraction by hand.}
+        Adding \(-\rho_\Lambda\int\sqrt{-g}\) to the action and
+        declaring the sum zero is a renormalization condition at
+        one scale. It does not explain the residual scale.
+  \item \textbf{Setting \(\LUV\) to meV.}
+        Equation~\eqref{eq:Geff-size} then destroys Newton's
+        constant. The cutoff cannot serve both masters.
+  \item \textbf{A spacetime-dependent \(\rho_\Lambda(x)\) with no
+        current.}
+        Section~\ref{sec:ch11-vacuum} forbids this unless extra
+        stress is supplied. Regulation that breaks
+        Theorem~\ref{thm:conservation} is not available.
+\end{enumerate}
+
+Any construction that survives must therefore (i)~replace the bulk
+quartic by an infrared datum, (ii)~leave \(\Geff\) as computed in
+Theorem~\ref{thm:Geff}, and (iii)~produce a conserved
+\(\Lambda_{\mathrm{eff}}g_{\mu\nu}\) or a conserved completion of
+it.
+
+\section{Boundary geometry}
+\label{sec:ch12-boundary}
+
+Let \(M\) be a region of the emergent spacetime with boundary
+\(\partial M\), outward normal \(n^\mu\), induced metric
+\begin{equation}
+  \label{eq:induced}
+  h_{ij}=g_{\mu\nu}e^\mu_i e^\nu_j,
+\end{equation}
+and extrinsic curvature
+\begin{equation}
+  \label{eq:K}
+  K_{ij}=\nabla_{(\mu}n_{\nu)}e^\mu_i e^\nu_j,
+  \qquad
+  K=h^{ij}K_{ij}.
+\end{equation}
+The Gibbons--Hawking--York term already introduced
+in~\eqref{eq:GHY} is
+\begin{equation}
+  \label{eq:GHY-again}
+  S_{\mathrm{GHY}}
+  =\frac{1}{8\pi\Geff}
+   \int_{\partial M}\mathrm{d}^3x\,\sqrt{|h|}\,K.
+\end{equation}
+On a timelike boundary \(K\) measures the expansion of the outward
+normal; on a spacelike boundary it measures the expansion of a
+unit-normal congruence. HBEV uses a timelike conformal boundary, or
+a large-radius timelike tube that will be sent to infinity after
+variation, according to the problem.
+
+The boundary may also carry condensate data. Write \(\phi\) for the
+pull-back of the polar radial mode \(\sigma\) and of any unlocked
+scalars that survive Assumption~\ref{ass:locked-block}. The pair
+\((h_{ij},\phi)\) is the boundary field content.
+
+\section{The HBEV action}
+\label{sec:ch12-action}
+
+\begin{definition}[HBEV boundary action]
+  \label{def:HBEV}
+  The holographic boundary-entropy vacuum functional is
+  \begin{equation}
+    \label{eq:SHBEV}
+    S_{\mathrm{HBEV}}[h,\phi]
+    =\int_{\partial M}\mathrm{d}^3x\,\sqrt{|h|}
+     \Bigl(
+       \frac{K}{8\pi\Geff}
+       -T_{\mathrm{bdy}}
+       -S_{\mathrm{ent}}(h_{ij},\phi)
+     \Bigr),
+  \end{equation}
+  where \(T_{\mathrm{bdy}}\) is a boundary tension (a
+  counterterm density built from \(h_{ij}\) only) and
+  \(S_{\mathrm{ent}}(h_{ij},\phi)\) is an entanglement-entropy
+  density of the condensate restricted to \(\partial M\).
+\end{definition}
+
+The first term is GHY. The second term is the standard counterterm
+that renders the on-shell action finite on AdS-like or
+asymptotically flat tubes; in the present setting it is fixed by
+demanding that \(S_{\mathrm{HBEV}}\) vanish on the reference
+condensate \(\bar e^A_\mu=\delta^A_\mu\), \(\phi=0\). The third term
+is the new ingredient. It is not the diamond entropy \(S_D\) of
+Chapter~6. It is a local density on \(\partial M\) whose integral
+tracks the entanglement of bulk condensate degrees of freedom that
+end on the boundary.
+
+\begin{assumption}[Existence of a local entropy density]
+  \label{ass:Sent-density}
+  In the condensed phase there exists a diffeomorphism-scalar
+  density \(S_{\mathrm{ent}}(h_{ij},\phi)\), of mass dimension
+  three, obtained from the replica construction of
+  Section~\ref{sec:ch6-replica} applied to a thin tubular
+  neighbourhood of \(\partial M\) and then localized. Its leading
+  terms are
+  \begin{equation}
+    \label{eq:Sent-exp}
+    S_{\mathrm{ent}}
+    =\alpha_0\LUV^3
+     +\alpha_1\LUV R^{(h)}
+     +\alpha_2\,\phi^2\LUV
+     +\cdots,
+  \end{equation}
+  with dimensionless coefficients \(\alpha_i\) of order the fibre
+  trace.
+\end{assumption}
+
+The \(\alpha_0\LUV^3\) piece is the boundary analogue of
+\(\rho_\Lambda\). It will be cancelled against \(T_{\mathrm{bdy}}\)
+and against the leading GHY contribution on the reference
+background. What is not cancelled is required to be an infrared
+quantity.
+
+\section{Stationarity and the induced cosmological term}
+\label{sec:ch12-stationarity}
+
+Vary \(S_{\mathrm{EH}}+S_{\mathrm{HBEV}}\) with respect to the
+boundary metric \(h_{ij}\), holding the bulk fields on shell. The
+bulk Einstein tensor produces the usual Brown--York stress. The
+boundary variation produces
+\begin{equation}
+  \label{eq:BY}
+  \pi^{ij}
+  =\frac{1}{8\pi\Geff}
+   \bigl(K^{ij}-Kh^{ij}\bigr)
+   -T_{\mathrm{bdy}}^{ij}
+   -\frac{2}{\sqrt{|h|}}
+    \frac{\delta S_{\mathrm{ent}}}{\delta h_{ij}}.
+\end{equation}
+HBEV imposes entanglement equilibrium at the boundary in the same
+logical role that Assumption~\ref{ass:EE} played in the bulk
+diamonds:
+
+\begin{assumption}[Boundary entanglement equilibrium]
+  \label{ass:bdy-EE}
+  The physical vacuum is a stationary point of \(S_{\mathrm{HBEV}}\)
+  at fixed boundary volume element, in the sense that the
+  trace-adjusted boundary stress vanishes,
+  \begin{equation}
+    \label{eq:bdy-EE}
+    h_{ij}\pi^{ij}=0.
+  \end{equation}
+\end{assumption}
+
+On an asymptotically simple tube of radius \(r_B\), with
+\(K=2/r_B+O(r_B^{-3})\) in asymptotically flat space and
+\(K=3/\ell_{\mathrm{AdS}}+O(r_B^{-2})\) in AdS, equation
+\eqref{eq:bdy-EE} reduces to a single condition on the integration
+constant in the bulk Einstein equation with a cosmological term.
+That constant is \(\Lambda_{\mathrm{eff}}\).
+
+\begin{theorem}[Induced cosmological constant]
+  \label{thm:Leff}
+  Under Assumptions~\ref{ass:Sent-density} and~\ref{ass:bdy-EE},
+  and with \(T_{\mathrm{bdy}}\) chosen to cancel the reference
+  \(\alpha_0\LUV^3\) piece, the bulk field equation compatible
+  with boundary stationarity is
+  \begin{equation}
+    \label{eq:EFE-Leff}
+    G_{\mu\nu}+\Lambda_{\mathrm{eff}}g_{\mu\nu}
+    =8\pi\Geff\,T_{\mu\nu}^{\mathrm{total}},
+  \end{equation}
+  where
+  \begin{equation}
+    \label{eq:Leff}
+    \frac{\Lambda_{\mathrm{eff}}}{8\pi\Geff}
+    =\bigl\langle
+       S_{\mathrm{ent}}^{\mathrm{(IR)}}
+     \bigr\rangle_{\partial M}
+    -T_{\mathrm{bdy}}^{\mathrm{(IR)}}
+  \end{equation}
+  is determined by the infrared part of the boundary entropy
+  density after the \(\LUV^3\) subtraction. In particular
+  \(\Lambda_{\mathrm{eff}}\) does not scale as \(\LUV^2\).
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+  On-shell variation of \(S_{\mathrm{EH}}+S_{\mathrm{GHY}}\) with
+  respect to a constant bulk cosmological term is proportional to
+  the spacetime volume, which by Stokes is a boundary integral of
+  the normal. That boundary integral is matched to
+  \(h_{ij}\pi^{ij}\) after the GHY contribution is included.
+  Imposing~\eqref{eq:bdy-EE} fixes the constant. The ultraviolet
+  pieces of \(S_{\mathrm{ent}}\) are cancelled by the choice of
+  \(T_{\mathrm{bdy}}\) on the reference background, which is a
+  finite renormalization of a three-dimensional density, not a
+  fine-tuning of a four-dimensional quartic against itself. The
+  remainder is infrared by construction of the subtraction, and
+  is constant on the vacuum because Assumption~\ref{ass:bdy-EE}
+  is imposed uniformly on the asymptotic tube.
+\end{proof}
+
+\begin{remark}[What the theorem does not claim]
+  Equation~\eqref{eq:Leff} does not compute the observed value
+  \(10^{-122}\) in Planck units. It changes the \emph{origin} of
+  the scale: from \(\LUV^4\) to an infrared boundary entropy.
+  Predicting the numerical value requires an evaluation of
+  \(S_{\mathrm{ent}}^{\mathrm{(IR)}}\) on the actual cosmological
+  boundary, which this book does not perform. Chapter~17 lists
+  that evaluation as open.
+\end{remark}
+
+\section{Conservation}
+\label{sec:ch12-cons}
+
+A constant \(\Lambda_{\mathrm{eff}}\) produced by
+Theorem~\ref{thm:Leff} satisfies
+\begin{equation}
+  \label{eq:Leff-cons}
+  \nabla^\mu(\Lambda_{\mathrm{eff}}g_{\mu\nu})=0
+\end{equation}
+automatically. The design constraint of
+Section~\ref{sec:ch11-vacuum} is therefore met in the vacuum.
+
+If the boundary data \(\phi\) are dynamical, \(S_{\mathrm{ent}}\)
+can depend on time and \(\Lambda_{\mathrm{eff}}\) can drift. In
+that case Theorem~\ref{thm:conservation} requires a compensating
+current. The compensation is the boundary analogue of
+Exercise~5 in Chapter~11: the variation of \(S_{\mathrm{HBEV}}\)
+with respect to \(\phi\) supplies a boundary flux that, by the
+on-shell identity for the radial mode, matches
+\(\partial_\mu\Lambda_{\mathrm{eff}}\). The book uses a constant
+\(\Lambda_{\mathrm{eff}}\) in all later exact solutions and treats
+a rolling case as a cosmological refinement, not as the default.
+
+\section{Relation to the diamond entropy of Chapter~6}
+\label{sec:ch12-diamonds}
+
+The two entanglement functionals in the book now have distinct
+jobs.
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Functional & Support & Job \\
+\midrule
+\(S_D\) & small bulk diamonds & kill \(m_T\) \\
+\(S_{\mathrm{HBEV}}\) & asymptotic boundary & set \(\Lambda_{\mathrm{eff}}\) \\
+\(I(A:B)\) & two compact cores & extra conservative and
+                                  irreversible stress \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+They are not interchangeable. Using \(S_D\) to subtract
+\(\rho_\Lambda\) would confuse a local first-law identity with a
+global vacuum-energy problem. Using \(S_{\mathrm{HBEV}}\) to kill
+\(m_T\) would confuse a boundary condition with a bulk Ward
+identity. The architecture is intentional.
+
+\section{Working value used later}
+\label{sec:ch12-working}
+
+Later exact solutions write
+\begin{equation}
+  \label{eq:fr-with-L}
+  f(r)
+  =1-\frac{2M r^2}{r^3+r_0^3}
+   +\frac{\Lambda_{\mathrm{eff}}}{3}r^2
+\end{equation}
+with \(\Lambda_{\mathrm{eff}}\) a constant of either sign. The
+positive sign is de Sitter-like and is the default cosmological
+reading. A negative sign is kept as a mathematical option for
+matching interiors. No Solar-System observable in Chapters~13--15
+depends on the numerical size of \(\Lambda_{\mathrm{eff}}\) at
+laboratory precision; the term is retained so that the core
+regularity condition \(f(r)\to 1+\Lambda_{\mathrm{eff}}r^2/3\) as
+\(r\to 0\) remains consistent with the vacuum equation.
+
+\section{Exercises}
+\label{sec:ch12-exercises}
+
+\begin{enumerate}
+  \item \textbf{GHY variation.}
+    Vary~\eqref{eq:GHY-again} with respect to \(h_{ij}\) and
+    recover the \(K^{ij}-Kh^{ij}\) piece of~\eqref{eq:BY}.
+  \item \textbf{Reference subtraction.}
+    On Minkowski space in a large sphere of radius \(r_B\),
+    compute \(K\) and \(\sqrt{h}\). What \(T_{\mathrm{bdy}}\)
+    cancels \(S_{\mathrm{HBEV}}\) at \(\phi=0\),
+    \(S_{\mathrm{ent}}=\alpha_0\LUV^3\)?
+  \item \textbf{Why not \(\LUV^4\).}
+    Contrast a four-dimensional counterterm
+    \(\int_M\sqrt{-g}\,\LUV^4\) with a three-dimensional
+    counterterm \(\int_{\partial M}\sqrt{h}\,\LUV^3\). Which
+    tuning is a cancellation of two bulk quartics, and which is
+    a renormalization of a boundary density?
+  \item \textbf{Trace condition.}
+    Reduce~\eqref{eq:bdy-EE} on a spherically symmetric tube
+    \(r=r_B\) in Schwarzschild--de Sitter and show that it
+    constrains \(\Lambda_{\mathrm{eff}}\) rather than \(M\).
+  \item \textbf{Rolling \(\Lambda\).}
+    Let \(S_{\mathrm{ent}}\) depend on a homogeneous boundary
+    scalar \(\phi(t)\). Write the extra flux needed to keep
+    Theorem~\ref{thm:conservation}. Compare with a slowly
+    rolling quintessence potential.
+  \item \textbf{Two functionals.}
+    In one paragraph, explain what goes wrong if one attempts to
+    set \(\Lambda_{\mathrm{eff}}\) from \(\delta S_D=0\) on a
+    single small diamond.
+\end{enumerate}
+
+\section{Bridge to Chapter~13}
+\label{sec:ch12-bridge}
+
+The infrared Einstein equation is now
+\begin{equation}
+  \label{eq:EFE-ready}
+  G_{\mu\nu}+\Lambda_{\mathrm{eff}}g_{\mu\nu}
+  =8\pi\Geff\,T_{\mu\nu}^{\mathrm{total}},
+\end{equation}
+with \(\Geff\) from Theorem~\ref{thm:Geff},
+\(\Lambda_{\mathrm{eff}}\) from Theorem~\ref{thm:Leff},
+\(m_T=0\) from Theorem~\ref{thm:mT}, and conservation from
+Theorem~\ref{thm:conservation}. What remains of the geometric
+programme is the high-curvature interior, where the Einstein
+truncation fails and Assumption~\ref{ass:ECG} is used. Chapter~13
+solves the static spherical sector of Einsteinian cubic gravity
+coupled to~\eqref{eq:EFE-ready}, obtains the regular core
+\eqref{eq:fr-with-L}, and only then turns to galactic
+backreaction as a consequence of \(\Tent_{\mu\nu}\) in the weak-
+field limit---not as a substitute for the derivation just
+completed.

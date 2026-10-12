@@ -1,0 +1,217 @@
+\chapter{Verlet Laboratory and Energy Identity}
+\label{app:integrator}
+
+This appendix records the integrator and the energy identity used
+in Chapter~15. It introduces no new physical hypothesis. The force
+law is Assumption~\ref{ass:drag}. The legality criterion is
+Proposition~\ref{prop:allowed-drag}. The source file is
+\texttt{code/namcg\_inspiral.py}.
+
+\section{Reduced equation}
+\label{sec:appC-ode}
+
+In the reduced-mass frame the laboratory system is
+\begin{equation}
+  \label{eq:appC-ode}
+  \ddot{\mathbf{r}}
+  =\mathbf{a}_{\mathrm{N}}(\mathbf{r})
+   +\mathbf{a}_{\mathrm{d}}(\mathbf{r},\mathbf{v}),
+\end{equation}
+with
+\begin{equation}
+  \label{eq:appC-acc}
+  \mathbf{a}_{\mathrm{N}}
+  =-\frac{G_{\mathrm{toy}}M}{d^{3}}\mathbf{r},
+  \qquad
+  \mathbf{a}_{\mathrm{d}}
+  =-\frac{\eta}{d^{4}}\mathbf{v},
+  \qquad
+  d=|\mathbf{r}|.
+\end{equation}
+The conservative force is Newtonian. The drag is
+\eqref{eq:Fdiss} with \(\mu\) cancelled. Toy parameters are
+\eqref{eq:toy-params}.
+
+\section{One step}
+\label{sec:appC-step}
+
+Let \(\Delta t>0\). Given \((\mathbf{r}_n,\mathbf{v}_n)\),
+\begin{equation}
+  \label{eq:appC-verlet}
+  \begin{aligned}
+    \mathbf{v}_{1/2}
+    &=\mathbf{v}_n
+      +\tfrac12\Delta t
+       \bigl(
+         \mathbf{a}_{\mathrm{N}}(\mathbf{r}_n)
+         +\mathbf{a}_{\mathrm{d}}(\mathbf{r}_n,\mathbf{v}_n)
+       \bigr),\\
+    \mathbf{r}_{n+1}
+    &=\mathbf{r}_n+\Delta t\,\mathbf{v}_{1/2},\\
+    \mathbf{v}_{n+1}
+    &=\mathbf{v}_{1/2}
+      +\tfrac12\Delta t
+       \bigl(
+         \mathbf{a}_{\mathrm{N}}(\mathbf{r}_{n+1})
+         +\mathbf{a}_{\mathrm{d}}(\mathbf{r}_{n+1},\mathbf{v}_{1/2})
+       \bigr).
+  \end{aligned}
+\end{equation}
+When \(\eta=0\) this is velocity Verlet for a position-dependent
+force and is second-order accurate and symplectic on the
+conservative phase space. When \(\eta\neq 0\) the last drag
+evaluation uses \(\mathbf{v}_{1/2}\) rather than
+\(\mathbf{v}_{n+1}\), so the dissipative piece is explicit and
+the scheme is no longer symplectic. The local error in the drag
+kick remains \(O(\Delta t^{2})\).
+
+An implicit alternative replaces
+\(\mathbf{a}_{\mathrm{d}}(\mathbf{r}_{n+1},\mathbf{v}_{1/2})\)
+by \(\mathbf{a}_{\mathrm{d}}(\mathbf{r}_{n+1},\mathbf{v}_{n+1})\)
+and solves a linear equation for \(\mathbf{v}_{n+1}\). The
+published script does not do that. The difference is visible only
+if one drives \(\Delta t\) up to the orbital period.
+
+\section{Mechanical energy, work, and balance}
+\label{sec:appC-energy}
+
+Define
+\begin{equation}
+  \label{eq:appC-E}
+  E_{\mathrm{mech}}
+  =\frac12\mu v^{2}-\frac{G_{\mathrm{toy}}M\mu}{d}
+\end{equation}
+and the accumulated work
+\begin{equation}
+  \label{eq:appC-W}
+  W_{\mathrm{diss}}(t_{n+1})
+  =W_{\mathrm{diss}}(t_n)
+   +\mathbf{F}_{\mathrm{diss}}(\mathbf{r}_n,\mathbf{v}_n)
+    \cdot\mathbf{v}_n\,\Delta t,
+\end{equation}
+with \(\mathbf{F}_{\mathrm{diss}}=\mu\mathbf{a}_{\mathrm{d}}\) and
+\(W_{\mathrm{diss}}(0)=0\). Along exact solutions of
+\eqref{eq:appC-ode},
+\begin{equation}
+  \label{eq:appC-identity}
+  \frac{\mathrm{d}E_{\mathrm{mech}}}{\mathrm{d}t}
+  =\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v},
+\end{equation}
+because the Newtonian force is minus the gradient of
+\(U_{\mathrm{N}}=-\Geff\)-less toy potential
+\(-G_{\mathrm{toy}}M\mu/d\). Therefore
+\begin{equation}
+  \label{eq:appC-bal}
+  \mathcal{E}(t)
+  \equiv
+  E_{\mathrm{mech}}(t)-W_{\mathrm{diss}}(t)
+\end{equation}
+is constant on exact solutions. On discrete solutions it is
+constant up to the quadrature error in~\eqref{eq:appC-W} and the
+Verlet error in~\eqref{eq:appC-verlet}. A systematic drift that
+does not shrink with \(\Delta t\) means the implementation does
+not obey~\eqref{eq:appC-identity} and is illegal in the sense of
+Section~\ref{sec:ch14-legal}.
+
+A trapezoidal quadrature,
+\begin{equation}
+  \label{eq:appC-trap}
+  \Delta W
+  =\frac12
+   \Bigl(
+     \mathbf{F}_{\mathrm{diss},n}\cdot\mathbf{v}_n
+     +\mathbf{F}_{\mathrm{diss},n+1}\cdot\mathbf{v}_{n+1}
+   \Bigr)\Delta t,
+\end{equation}
+reduces that drift by one order in \(\Delta t\). The published
+script uses the left-endpoint rule~\eqref{eq:appC-W} because it
+is enough to make \(\mathcal{E}\) look flat on the scale of
+Figure~\ref{fig:lab}.
+
+\section{Angular momentum}
+\label{sec:appC-L}
+
+The Newtonian force is central and exerts no torque. The drag is
+antiparallel to \(\mathbf{v}\), so
+\begin{equation}
+  \label{eq:appC-torque}
+  \frac{\mathrm{d}\mathbf{L}}{\mathrm{d}t}
+  =\mathbf{r}\times\mathbf{F}_{\mathrm{diss}}
+  =-\eta\mu\frac{\mathbf{r}\times\mathbf{v}}{d^{4}}.
+\end{equation}
+Angular momentum is therefore not conserved when \(\eta\neq 0\).
+That is required: an inspiral that conserved \(|\mathbf{L}|\) at
+fixed mass would be incompatible with a shrinking circular orbit.
+The identity~\eqref{eq:appC-torque} is a useful code check
+(Exercise~4 of Chapter~15).
+
+\section{Initial data and units}
+\label{sec:appC-ic}
+
+The published run uses
+\begin{equation}
+  \label{eq:appC-ic}
+  \mathbf{r}(0)=(1,0),\qquad
+  \mathbf{v}(0)=(0,\sqrt{G_{\mathrm{toy}}M}),
+\end{equation}
+with \(G_{\mathrm{toy}}=36\), \(\eta=0.006\), \(\Delta t=10^{-3}\),
+and \(1.2\times 10^{4}\) steps. These are code units. They are
+chosen so that decay is visible, not so that \(\eta\) matches a
+tidal-disruption estimate from Problem~I of Chapter~17.
+
+Restoring dimensions, \(\eta\) in~\eqref{eq:appC-acc} has dimension
+\(\mathrm{length}^{3}/\mathrm{time}\). A mutual-information tail
+\eqref{eq:I-tail} can supply that combination from
+\(\ell_A^{2}\ell_B^{2}/t_*\) times a kinematic factor. The
+appendix does not evaluate the factor.
+
+\section{How to run the script}
+\label{sec:appC-run}
+
+From the project root, after \texttt{figs/} exists:
+\begin{verbatim}
+python code/namcg_inspiral.py
+\end{verbatim}
+The script writes
+\texttt{figs/namcg\_gr\_simulation\_corrected.pdf}. Point
+Figure~\ref{fig:lab} at that PDF for the print interior. A
+legacy PNG from an earlier notebook may be kept for draft
+viewing.
+
+If \texttt{matplotlib} is unavailable, the integrator still runs
+and can write \texttt{traj}, \texttt{E\_mech}, and
+\texttt{W\_diss} to text; the figure is then optional.
+
+\section{What this appendix will not do}
+\label{sec:appC-not}
+
+It will not introduce gravitational waves, horizons, or a
+relativistic two-body Hamiltonian. It will not treat
+\(G_{\mathrm{toy}}\) as \(G_{\mathrm{N}}\). It will not fit
+\(\eta\) to data. Those refusals are the content of
+Sections~\ref{sec:ch15-misread} and~\ref{sec:ch16-public}.
+
+\section{Exercises}
+\label{sec:appC-exercises}
+
+\begin{enumerate}
+  \item \textbf{Conservative order.}
+    With \(\eta=0\), measure the secular drift of
+    \(E_{\mathrm{mech}}\) over \(10^{4}\) steps at three values
+    of \(\Delta t\). Confirm second-order scaling.
+  \item \textbf{Quadrature.}
+    Replace~\eqref{eq:appC-W} by~\eqref{eq:appC-trap} and compare
+    the drift of \(\mathcal{E}\).
+  \item \textbf{Implicit drag.}
+    Solve the linear equation for \(\mathbf{v}_{n+1}\) when the
+    last drag evaluation uses \(\mathbf{v}_{n+1}\). Does
+    \(\mathcal{E}\) improve enough to justify the extra algebra?
+  \item \textbf{Torque check.}
+    Integrate~\eqref{eq:appC-torque} in lockstep with the
+    trajectory and compare with \(\mathbf{L}_{n+1}-\mathbf{L}_n\).
+  \item \textbf{Illegal control.}
+    Set \(\mathbf{a}_{\mathrm{d}}=-\gamma\mathbf{v}\) with
+    constant \(\gamma\) and watch \(W_{\mathrm{diss}}\) as
+    \(d\) decreases. This is Exercise~3 of Chapter~15, recorded
+    here so the appendix can be used alone as a lab sheet.
+\end{enumerate}

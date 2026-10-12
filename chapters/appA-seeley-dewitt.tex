@@ -1,0 +1,228 @@
+\chapter{Seeley--DeWitt Coefficients at Working Thickness}
+\label{app:seeley-dewitt}
+
+This appendix records the heat-kernel formulae used in Chapter~8.
+It introduces no new physical hypothesis. Conventions follow
+Section~\ref{sec:ch2-heatkernel}: Euclidean section first,
+Lorentzian continuation afterwards, signature of the main text
+restored only when an Einstein--Hilbert term is isolated.
+
+\section{Laplace-type operators}
+\label{sec:appA-laplace}
+
+Let \(V\to M\) be a vector bundle over a smooth four-manifold with
+Riemannian metric \(g_{\mu\nu}\). A second-order differential
+operator on sections of \(V\) is of Laplace type if it can be
+written
+\begin{equation}
+  \label{eq:appA-O}
+  \mathcal{O}
+  =-g^{\mu\nu}D_\mu D_\nu+E,
+\end{equation}
+where \(D_\mu=\nabla_\mu+\mathcal{A}_\mu\) is a connection on \(V\)
+(including the Levi-Civita connection on tensor factors) and \(E\)
+is a bundle endomorphism. The curvature of \(D\) is
+\begin{equation}
+  \label{eq:appA-F}
+  \mathcal{F}_{\mu\nu}
+  =[D_\mu,D_\nu].
+\end{equation}
+On the locked condensate block of Chapter~5, \(V\) is the bundle of
+tensors \(\delta\Phi_{\mu\nu}\) together with whatever ghosts are
+included in a given computation.
+
+The heat operator \(e^{-s\mathcal{O}}\) is defined for \(s>0\) by
+the usual functional calculus after \(\mathcal{O}\) has been made
+positive by a Wick rotation. Its integral kernel
+\(K(s;x,y)\) satisfies
+\begin{equation}
+  \label{eq:appA-heat}
+  \partial_s K+\mathcal{O}_x K=0,
+  \qquad
+  K(0;x,y)=\delta(x,y).
+\end{equation}
+
+\section{Small-time expansion}
+\label{sec:appA-expand}
+
+On the diagonal in four dimensions,
+\begin{equation}
+  \label{eq:appA-SDW}
+  \mathrm{tr}_V K(s;x,x)
+  \sim
+  \frac{1}{(4\pi s)^{2}}
+  \sum_{k=0}^{\infty}
+  s^k a_k(x),
+  \qquad
+  s\to 0^+.
+\end{equation}
+Each \(a_k\) is a local scalar density of mass dimension \(2k\),
+built from \(R_{\mu\nu\rho\sigma}\), \(\mathcal{F}_{\mu\nu}\),
+\(E\), and their covariant derivatives. The first three
+coefficients, up to total derivatives that do not enter the bulk
+effective action, are
+\begin{equation}
+  \label{eq:appA-a0}
+  a_0=\mathrm{tr}_V\mathbb{I},
+\end{equation}
+\begin{equation}
+  \label{eq:appA-a1}
+  a_1
+  =\mathrm{tr}_V
+   \Bigl(
+     \tfrac16 R-E
+   \Bigr),
+\end{equation}
+\begin{equation}
+  \label{eq:appA-a2}
+  \begin{aligned}
+    a_2
+    =\mathrm{tr}_V
+     \Biggl(
+       &\frac{1}{180}
+        \bigl(
+          R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+          -R_{\mu\nu}R^{\mu\nu}
+          +\tfrac72 R^2
+        \bigr)
+        +\frac12 E^2
+        -\frac16 RE\\
+       &+\frac{1}{12}\mathcal{F}_{\mu\nu}\mathcal{F}^{\mu\nu}
+        +\frac{1}{30}D^2 R
+        -\frac16 D^2 E
+     \Biggr).
+  \end{aligned}
+\end{equation}
+Different references redistribute the \(D^2 R\) and \(D^2 E\) terms
+by integration by parts. For the bulk action of Chapter~8 those
+terms are discarded.
+
+The numerical coefficients in~\eqref{eq:appA-a2} are the standard
+DeWitt values for a Laplace-type operator. They are not the
+working rationals \(A,B,C\) of~\eqref{eq:Geff-structure}. Those
+rationals mix~\eqref{eq:appA-a1} and~\eqref{eq:appA-a2} with fibre
+traces, ghost signs, and a radial-mode threshold; they are the
+subject of Problem~F in Chapter~17.
+
+\section{Proper-time integrals}
+\label{sec:appA-integrals}
+
+The one-loop effective action on the Euclidean section is
+\begin{equation}
+  \label{eq:appA-W}
+  W_E
+  =-\frac12\int_{s_{\min}}^{s_{\max}}
+    \frac{\mathrm{d}s}{s}
+    \int\mathrm{d}^4x\,\sqrt{g}\,
+    \mathrm{tr}_V K(s;x,x),
+\end{equation}
+with \(s_{\min}=\LUV^{-2}\) and \(s_{\max}=\mu^{-2}\). Inserting
+\eqref{eq:appA-SDW} and integrating term by term gives
+\begin{equation}
+  \label{eq:appA-Wexp}
+  \begin{aligned}
+    W_E
+    &\supset
+    \int\mathrm{d}^4x\,\sqrt{g}\,
+    \Biggl[
+      -\frac{a_0}{32\pi^2}(\LUV^4-\mu^4)
+      -\frac{a_1}{16\pi^2}(\LUV^2-\mu^2)\\
+      &\qquad\qquad
+      -\frac{a_2}{32\pi^2}\ln\Bigl(\frac{\LUV^2}{\mu^2}\Bigr)
+    \Biggr],
+  \end{aligned}
+\end{equation}
+which is~\eqref{eq:W-expand}. The continuation to the Lorentzian
+section of the main text replaces \(\sqrt{g}\) by \(\sqrt{-g}\) and
+sends the Euclidean Ricci scalar to minus the Lorentzian Ricci
+scalar in the conventions of~\eqref{eq:riemann}. After that
+continuation, the coefficient of \(\int\sqrt{-g}\,R\) is the
+Einstein--Hilbert prefactor.
+
+\section{Worked example: a non-minimal scalar}
+\label{sec:appA-scalar}
+
+For a single real scalar with
+\begin{equation}
+  \label{eq:appA-scalar}
+  \mathcal{O}=-\nabla^2+\xi R+m^2,
+\end{equation}
+one has \(E=\xi R+m^2\), \(\mathcal{F}_{\mu\nu}=0\), and
+\(\mathrm{tr}_V\mathbb{I}=1\). Then
+\begin{equation}
+  \label{eq:appA-scalar-a1}
+  a_1=\bigl(\tfrac16-\xi\bigr)R-m^2.
+\end{equation}
+The curvature piece of \(a_1\) cancels at \(\xi=1/6\). That
+cancellation is why a conformally coupled scalar does not
+renormalize Newton's constant through \(a_1\). The NAMCG radial
+mode is not assumed to sit at \(\xi=1/6\); Exercise~3 of
+Chapter~8 is the corresponding warning.
+
+The \(a_0\) piece remains \(\LUV^4/32\pi^2\) per real scalar and
+is the scalar contribution to \(\rho_\Lambda\).
+
+\section{Fibre traces on the locked block}
+\label{sec:appA-fibre}
+
+If \(V\) is the space of symmetric traceless tensors on a
+four-manifold, \(\mathrm{tr}_V\mathbb{I}=9\). If the algebraic
+split of Chapter~5 is retained before gauge fixing, the sixteen
+components of \(\delta\Phi_{\mu\nu}\) give
+\(\mathrm{tr}_V\mathbb{I}=16\). Ghosts for diffeomorphisms
+contribute with the opposite sign and with their own Laplace-type
+operators; local-Lorentz ghosts do likewise after
+Theorem~\ref{thm:locking}.
+
+The symbol \(\mathrm{Tr}(\mathbb{I})\) in Theorem~\ref{thm:Geff}
+is the net fibre trace after whatever ghosts the working
+calculation includes. The notes use a normalization in which that
+net trace is absorbed into the first term of~\eqref{eq:Geff-thm}.
+A recomputation that keeps the traces explicit is Problem~F.
+
+\section{What this appendix will not do}
+\label{sec:appA-not}
+
+It will not list \(a_3\) and \(a_4\). Those coefficients generate
+six- and eight-derivative operators that the book treats as
+suppressed by further powers of \(\LUV^{-1}\).
+
+It will not prove the coefficients~\eqref{eq:appA-a0}--\eqref{eq:appA-a2}.
+Standard derivations (coincidence limits of the Synge world
+function, or the recursive DeWitt transport equations) are in the
+references collected in \texttt{bib/namcg.bib}. The book uses the
+coefficients; it does not redo the recursion.
+
+It will not evaluate \(a_2\) on the Einsteinian cubic background
+of Chapter~13. That evaluation is part of Problem~J if it is
+needed, not part of the working thickness of Chapter~8.
+
+\section{Exercises}
+\label{sec:appA-exercises}
+
+\begin{enumerate}
+  \item \textbf{Dimensions.}
+    Assign mass dimensions to \(s\), \(a_0\), \(a_1\), \(a_2\),
+    and \(\mathrm{tr}_V K(s;x,x)\). Confirm that each term in
+    \eqref{eq:appA-Wexp} has dimension four.
+  \item \textbf{Conformal scalar.}
+    Set \(\xi=1/6\) and \(m=0\) in~\eqref{eq:appA-scalar-a1}.
+    What remains of \(a_1\)? What remains of the \(\LUV^2 R\)
+    term in \(W_E\)?
+  \item \textbf{Gauss--Bonnet combination.}
+    Rewrite the curvature part of~\eqref{eq:appA-a2} in the
+    basis \(\{C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma},R^2,
+    E_{\mathrm{GB}}\}\). Which combination multiplies a
+    topological density in four dimensions?
+  \item \textbf{Ghost sign.}
+    A diffeomorphism ghost in the background-field gauge is a
+    complex vector with a Laplace-type operator. What factor
+    multiplies its contribution to \(a_0\) relative to a real
+    scalar, and why is the sign opposite to a physical field?
+  \item \textbf{From \(a_1\) to \(A\).}
+    Starting from~\eqref{eq:appA-a1} and~\eqref{eq:appA-Wexp},
+    reconstruct the structural first term of
+    \eqref{eq:Geff-structure}. Where does a factor of order one
+    enter when passing from \(\tfrac16\mathrm{tr}_V\mathbb{I}\)
+    to the working value of \(A\) used in the notes?
+\end{enumerate}

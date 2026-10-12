@@ -1,0 +1,92 @@
+\chapter{Einstein Gravity Plus a Conserved Extra Tensor}
+\label{app:field-eq}
+
+This appendix writes the infrared field equation of
+Theorems~\ref{thm:mT}--\ref{thm:conservation} next to
+Einstein's equation. It introduces no new hypothesis.
+
+\section{Einstein}
+\begin{equation}
+  \label{eq:appF-Ein}
+  G_{\mu\nu}+\Lambda g_{\mu\nu}
+  =8\pi G\,T_{\mu\nu}^{\mathrm{matter}}.
+\end{equation}
+Bianchi identities force
+\(\nabla^\mu T_{\mu\nu}^{\mathrm{matter}}=0\) on shell.
+
+\section{NAMCG infrared equation}
+After the composite metric, \(m_T=0\), the heat-kernel map,
+Lorentz locking, and conservation are granted,
+\begin{equation}
+  \label{eq:appF-NAMCG}
+  G_{\mu\nu}+\Lambda_{\mathrm{eff}}g_{\mu\nu}
+  =8\pi\Geff
+  \bigl(
+    T_{\mu\nu}^{\mathrm{matter}}
+   +T_{\mu\nu}^{\mathrm{tensor}}
+   +T_{\mu\nu}^{\mathrm{ent}}
+  \bigr).
+\end{equation}
+\(G_{\mu\nu}\) is the Einstein tensor of the composite metric
+\(g_{\mu\nu}=\eta_{AB}e^A{}_\mu e^B{}_\nu\).
+\(\Geff\) and \(\Lambda_{\mathrm{eff}}\) are the coefficients
+of Theorems~\ref{thm:Geff} and~\ref{thm:Leff}.
+The extra source is
+\begin{equation}
+  \label{eq:appF-Tent}
+  T_{\mu\nu}^{\mathrm{ent}}
+  =-\frac{2}{\sqrt{-g}}
+   \frac{\delta U_{\mathrm{ent}}[I(A:B)]}{\delta g^{\mu\nu}}
+  =T_{\mu\nu}^{\mathrm{ent,rev}}
+   +T_{\mu\nu}^{\mathrm{ent,irrev}}.
+\end{equation}
+Chapter~11 requires
+\begin{equation}
+  \label{eq:appF-cons}
+  \nabla^\mu
+  \bigl(
+    T_{\mu\nu}^{\mathrm{matter}}
+   +T_{\mu\nu}^{\mathrm{tensor}}
+   +T_{\mu\nu}^{\mathrm{ent}}
+  \bigr)
+  =0.
+\end{equation}
+In the infrared, \(T_{\mu\nu}^{\mathrm{tensor}}\) is absorbed
+into the Einstein tensor of \(g_{\mu\nu}\). What can appear
+as extra gravity in static disks is
+\(T_{\mu\nu}^{\mathrm{ent,rev}}\).
+
+\section{Weak field}
+Newtonian gauge, static source:
+\begin{equation}
+  \label{eq:appF-Poisson}
+  \nabla^2\Phi
+  =4\pi\Geff
+   \bigl(\rho_{\mathrm{b}}+\rho_{\mathrm{ent}}\bigr),
+  \qquad
+  \rho_{\mathrm{ent}}
+  =T_{00}^{\mathrm{ent,rev}}.
+\end{equation}
+Assumption~\ref{ass:track} slaved \(\rho_{\mathrm{ent}}\) to
+\(\rho_{\mathrm{b}}\). The interpolator \(\nu_{\sqrt{}}\) of
+Appendix~\ref{app:empirical} is a coefficient choice for that
+assumption, not a consequence of~\eqref{eq:appF-NAMCG}.
+
+\section{What this does and does not change}
+High acceleration:
+\(T_{\mu\nu}^{\mathrm{ent,rev}}\to 0\), so~\eqref{eq:appF-NAMCG}
+returns to~\eqref{eq:appF-Ein} with
+\((\Geff,\Lambda_{\mathrm{eff}})\) in place of \((G,\Lambda)\).
+Low acceleration: \(\rho_{\mathrm{ent}}\) may dominate
+\(\rho_{\mathrm{b}}\) without a particle halo, if and only if
+Assumption~\ref{ass:track} holds.
+Clusters, the CMB, and colliding systems test that assumption,
+not \(G_{\mu\nu}\).
+Gravitational waves test \(m_T=0\), not~\eqref{eq:appF-Tent}.
+The irreversible drag of Chapter~14 is a different tensor
+structure and is not a static extra potential.
+
+\section{One-line summary}
+Einstein equates curvature to ordinary stress. NAMCG equates
+the same curvature to ordinary stress plus a divergenceless
+entanglement stress of baryonic regions.

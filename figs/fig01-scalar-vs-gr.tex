@@ -1,0 +1,46 @@
+\begin{tikzpicture}[x=1.05cm,y=1.05cm,>=Stealth,font=\small]
+  % ---- left panel: acoustic analog ----
+  \begin{scope}[shift={(0,0)}]
+    \draw[thick] (0,0) rectangle (5.2,4.6);
+    \node[font=\bfseries] at (2.6,4.25) {scalar condensate};
+    % background flow
+    \foreach \y in {0.55,1.15,1.75,2.35} {
+      \draw[-{Stealth[length=1.6mm]},gray] (0.35,\y) -- (2.15,\y);
+    }
+    \node[gray,font=\scriptsize] at (1.25,2.75) {flow $\mathbf{v}$};
+    % source
+    \fill (1.25,1.45) circle (0.07);
+    % acoustic cones (tilted by flow)
+    \draw[thick] (1.25,1.45) -- (2.35,2.25);
+    \draw[thick] (1.25,1.45) -- (2.35,0.65);
+    \draw[thick] (1.25,1.45) -- (2.55,1.45);
+    \node[font=\scriptsize,align=center] at (3.7,2.55) {acoustic\\cone};
+    \node[font=\scriptsize,align=left] at (3.55,1.15) {one scalar\\mode $\theta$};
+    \node[font=\scriptsize] at (2.6,0.28) {analog metric $g_{\mathrm{ac}}$};
+  \end{scope}
+
+  % ---- arrow ----
+  \draw[-{Stealth[length=2.4mm]},very thick] (5.45,2.3) -- (6.15,2.3);
+
+  % ---- right panel: GR / NAMCG target ----
+  \begin{scope}[shift={(6.4,0)}]
+    \draw[thick] (0,0) rectangle (5.2,4.6);
+    \node[font=\bfseries] at (2.6,4.25) {emergent Lorentzian $g_{\mu\nu}$};
+    % light cone
+    \draw[thick] (2.6,0.7) -- (1.15,3.55);
+    \draw[thick] (2.6,0.7) -- (4.05,3.55);
+    \draw[thick] (2.6,0.7) -- (2.6,3.7);
+    \fill (2.6,0.7) circle (0.06);
+    \node[font=\scriptsize] at (2.6,0.42) {$p$};
+    % two TT marks
+    \node[font=\scriptsize,align=center] at (1.05,3.95) {$+$};
+    \node[font=\scriptsize,align=center] at (4.15,3.95) {$\times$};
+    \draw[thick] (0.7,3.15) -- (1.4,3.15);
+    \draw[thick] (1.05,2.8) -- (1.05,3.5);
+    \draw[thick] (3.75,3.35) -- (4.35,2.75);
+    \draw[thick] (3.75,2.75) -- (4.35,3.35);
+    \node[font=\scriptsize,align=center] at (2.6,2.15)
+      {two TT modes\\helicities $\pm 2$};
+    \node[font=\scriptsize] at (2.6,0.18) {massless spin-2};
+  \end{scope}
+\end{tikzpicture}

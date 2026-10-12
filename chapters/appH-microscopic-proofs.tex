@@ -1,0 +1,301 @@
+\chapter{Status of the Open Problems}
+\label{app:status}
+
+This appendix records the precise status of Problems A--J as of the present text.
+It collects standard supporting calculations that are already rigorous, states
+the exact missing step for each problem, and does not convert any open problem
+into a lemma. The research agenda of Chapter~\ref{ch:agenda} remains the
+authoritative list; this appendix is a working ledger.
+
+\section{Problem A: matrix-to-modular map}
+\label{sec:status-A}
+
+The Weyl--Wigner expansion
+\begin{equation}
+  [\hat{X}_\mu,\hat{\Phi}]
+  =i\Theta_{\mu\nu}D^\nu\Phi
+  +\frac{1}{24}\Theta_{\mu\alpha}\Theta_{\beta\gamma}D^\alpha D^\beta D^\gamma\Phi
+  +\mathcal{O}(\Theta^3)
+\end{equation}
+is a standard result of the Moyal product (see the infrared dictionary
+discussion in Section~\ref{sec:ch3-relate}). This expansion relates the matrix commutator to a continuum
+derivative, but it does not provide the required map from
+\((\hat X,\Phi)\) to the causal-diamond modular Hamiltonian \(H_D\)
+or the mutual-information functional \(U_{\mathrm{ent}}[I(A:B)]\)
+before the composite metric is defined.
+
+\paragraph{Missing step.}
+An error-controlled map from the matrix order parameter (or from
+\([\hat{X},\Phi]\)) into the modular Hamiltonian \(H_D\) of a causal diamond,
+or into the mutual-information functional \(U_{\mathrm{ent}}[I(A:B)]\),
+that holds before the composite metric is defined. Until that map is a lemma,
+Chapter~8 computes a heat kernel in a theory whose relation to Chapter~3 is
+still Assumption~\ref{ass:dictionary}.
+
+\section{Problem B: replica Ward identity}
+\label{sec:status-B}
+
+For a differentiable family of normalized reduced states on a fixed
+diamond algebra, the first variation of the entropy obeys the standard
+first-law identity
+\[
+\delta S_D
+=
+\operatorname{Tr}(\delta\rho_D H_D^{(0)})
+=
+\delta\langle H_D^{(0)}\rangle,
+\qquad
+H_D^{(0)}=-\ln\rho_D^{(0)},
+\]
+where the modular Hamiltonian is held fixed at the reference state.
+Under the usual path-integral assumptions, the replica construction
+expresses this variation as a response of the microscopic action
+insertion on the branched cover. These identities do not imply
+\(\delta S_D=0\).
+
+\paragraph{Missing step.}
+Derive from the microscopic dynamics the entanglement-stationarity
+condition \(\delta S_D=0\) for the allowed fixed-volume variations,
+and establish the area contribution and its relation to the
+\emph{emergent} metric without presupposing that metric or the
+fluctuation split of Chapter~5. For variations of the auxiliary
+scaffold, the replica insertion computes a response to
+\(g^{(0)}_{\mu\nu}\); relating it to the emergent metric still
+requires a specified map between them. Problem~B therefore remains
+open, although the fixed-algebra first-law identity is established.
+
+\section{Problem C: conformal mode and Cassini}
+\label{sec:status-C}
+
+The radial singlet has the tree-level mass
+\[
+m_\sigma^2=\lambda v^2.
+\]
+This does not by itself determine the mass or matter coupling of a
+scalar mode of the composite metric. In particular, the official
+Repair~I vierbein is intended to be built from the Lorentz-valued
+polar factor \(\Lambda\), evaluated at \(\sigma=0\), rather than from
+the radial field.
+
+\paragraph{Obstruction to the stated Repair I frame.}
+Suppose \(\Lambda(x)\in\mathrm{SO}(3,1)\) and expand about the locked
+configuration,
+\[
+\Lambda=\mathbb I+\Omega+O(\Omega^2),
+\qquad
+\Omega_{\mu\nu}=-\Omega_{\nu\mu}.
+\]
+Then \(\partial_\mu\Omega_{\alpha\beta}\) transforms in
+\(V\otimes\mathfrak{so}(3,1)\), where \(V=(\tfrac12,\tfrac12)\)
+is the Lorentz vector representation. After complexification,
+\[
+\bigl(V\otimes\mathfrak{so}(3,1)\bigr)_{\mathbb C}
+=
+\left(\tfrac32,\tfrac12\right)
+\oplus\left(\tfrac12,\tfrac12\right)
+\oplus\left(\tfrac12,\tfrac32\right)
+\oplus\left(\tfrac12,\tfrac12\right).
+\]
+A vierbein fluctuation transforms in \(V\otimes V\), whose
+complexified decomposition is
+\[
+(V\otimes V)_{\mathbb C}
+=
+(0,0)\oplus(1,0)\oplus(0,1)\oplus(1,1).
+\]
+These representations have no common irreducible summand. Hence
+there is no nonzero Lorentz-equivariant linear map from
+\(\partial_\mu\Omega_{\alpha\beta}\) to a vierbein fluctuation using
+only the locked Lorentz-invariant tensors. Consistently, the displayed
+formula
+\[
+e^A{}_\mu=\left\langle\partial_\mu\Lambda^A{}_I\right\rangle
+\]
+leaves \(I\) uncontracted and does not, as written, define a vierbein.
+
+A simple proposed contraction with a fixed nonzero internal vector
+\(n^I\) does not repair non-degeneracy. If
+\[
+e^A{}_\mu=\partial_\mu\Lambda^A{}_I\,n^I,
+\]
+then Lorentz orthogonality gives
+\[
+(\Lambda n)_A e^A{}_\mu
+=
+(\Lambda n)_A\partial_\mu(\Lambda n)^A
+=
+\frac12\partial_\mu\bigl((\Lambda n)^2\bigr)
+=0.
+\]
+Every column of \(e^A{}_\mu\) therefore lies in the
+three-dimensional subspace orthogonal to \(\Lambda n\), so
+\(\operatorname{rank}(e)\leq 3\). This contraction cannot produce a
+non-degenerate four-dimensional frame.
+
+\paragraph{Status.}
+Under the stated Repair~I ingredients, the linearized composite
+vierbein required for the later metric-scalar analysis is not
+constructed. This is an obstruction to that frame prescription, not
+a proof that a completed theory has or lacks a physical scalar pole.
+Repair~II, an independent coframe, or additional symmetry-breaking
+background tensors would change the construction and require a
+separate analysis. The radial mass \(m_\sigma^2=\lambda v^2\) remains
+established, but it is not a metric-scalar mass. The scalar spectrum
+and matter coupling relevant to Cassini are therefore still
+undetermined.
+
+\section{Problem D: local Lorentz}
+\label{sec:status-D}
+
+The counting of generators under the locked vacuum is given in
+Chapter~10. The zero-torsion condition that maps the internal connection
+onto the spin connection is imposed, not derived.
+
+\paragraph{Missing step.}
+Either a derivation of \(\mathrm{SO}(3,1)\) from the matrix algebra alone,
+or an explicit statement that Presentation~A is not ontologically prior.
+The present text does the latter.
+
+\section{Problem E: signature}
+\label{sec:status-E}
+
+Euclidean positivity of the matrix action and the formal Wick rotation of
+one coordinate are recorded. They do not select Lorentzian signature without
+an additional hypothesis.
+
+\paragraph{Status.}
+Remains Assumption~\ref{ass:lorentzian}.
+
+\section{Problem F: coefficients \(A,B,C\)}
+\label{sec:status-F}
+
+The structural map
+\begin{equation}
+  \frac{1}{G_{\mathrm{eff}}}
+  =A\,\mathrm{Tr}(\mathbb{I})\Lambda_{\mathrm{UV}}^2
+  +B v^2\ln(\Lambda_{\mathrm{UV}}/\mu)
+  +C\mu^2
+\end{equation}
+is Theorem~\ref{thm:Geff}. The numerical values of \(A,B,C\) are not
+scheme-fixed.
+
+\paragraph{Missing step.}
+Recomputation of the Seeley--DeWitt coefficient \(a_1\) (and the relevant
+part of \(a_2\)) on the locked \(4\times 4\) block, including diffeomorphism
+and local-Lorentz ghosts. Fibre-trace tables that assign
+\(N_{\mathrm{eff}}=+2\) without this computation do not close the problem.
+
+\section{Problem G: HBEV}
+\label{sec:status-G}
+
+The boundary functional of Chapter~12 regulates \(\Lambda_{\mathrm{eff}}\)
+once an infrared entropy density is supplied. The working value
+\(\Lambda_{\mathrm{eff}}=3/L_{\mathrm{IR}}^2\) is a choice consistent with
+that functional, not a derived necessity.
+
+\paragraph{Status.}
+Closed as a consistent regulation mechanism under the stated boundary
+entropy; not closed as a derivation of the entropy density from the matrix
+theory.
+
+\section{Problem H: interpolating function}
+\label{sec:status-H}
+
+Appendix~\ref{app:empirical} shows that the function
+\begin{equation}
+  \nu_{\sqrt{}}(g_{\mathrm{N}})
+  =\frac{1}{1-\exp\bigl(-\sqrt{g_{\mathrm{N}}/g_s}\bigr)}
+\end{equation}
+with \(g_s=g_\dagger\) is compatible with the SPARC sample at the coefficient
+level (approximately \(0.2\%\) behind the best one-parameter MOND fit).
+This is not a derivation.
+
+\paragraph{Missing step.}
+Extraction of the leading modular eigenvalue \(\lambda_0(g_{\mathrm{N}},\kappa_{\mathrm{IR}})\)
+from the spectrum of \(H_D\) on a weak-field diamond. Success requires
+\(\lambda_0\propto\sqrt{g_{\mathrm{N}}/\kappa_{\mathrm{IR}}}\) with bosonic
+occupation and \(g_s=\kappa_{\mathrm{IR}}\) fixed by the infrared surface
+gravity, not by a fit. A linear eigenvalue would reproduce the retired
+exponential and kill the target. Refitting parameters to rotmod files does
+not solve the problem.
+
+\section{Problem I: drag exponent}
+\label{sec:status-I}
+
+The fall-off \(I(A:B)\propto d^{-4}\) and the linear-response integral that
+produces \(\mathbf{a}_{\mathrm{irrev}}\propto-\mathbf{v}/d^4\) are the
+phenomenological inputs already used in Chapter~14. They are consistent
+with the conservation identity of Theorem~\ref{thm:conservation} once the
+stress is divergenceless, but they are not derived from the modular data.
+
+\paragraph{Status.}
+Coefficient, not load-bearing. A derivation from \(I(A:B)\) would be
+desirable; its absence does not kill the framework.
+
+\section{Problem J: spherical ECG solutions}
+\label{sec:status-J}
+
+For the standard four-dimensional Einsteinian cubic invariant,
+with \(\Lambda_{\mathrm{eff}}=0\), the static spherical vacuum
+equation has first integral
+\[
+\mathcal F[f](r)=4M,
+\qquad
+\mathcal F[f]=2r(1-f)-3\alpha\,\mathcal B[f],
+\]
+where \(\alpha\) is the reduced ECG coupling and
+\[
+\mathcal B[f]
+=
+\frac43(f')^3
+-\frac8r\,ff''
+ \left(\frac{rf'}2+1-f\right)
++\frac4r(f')^2
+-\frac8{r^2}ff'(f-1).
+\]
+For the rational profile with \(a=r_0^3\),
+\[
+f_{\mathrm{rat}}(r)
+=
+1-\frac{2Mr^2}{r^3+a}
+=
+1-\frac{2M}{r}+\frac{2Ma}{r^4}+O(r^{-7}),
+\]
+substitution gives
+\[
+\mathcal F[f_{\mathrm{rat}}]
+=
+4M-\frac{4Ma}{r^3}+O(r^{-5}).
+\]
+The \(r^{-3}\) term cannot be cancelled by the cubic contribution,
+which begins at \(r^{-5}\). Hence this profile is not an exact
+vacuum solution when \(Mr_0\ne0\).
+
+Moreover, a smooth regular center has
+\(f(r)=1+O(r^2)\), which implies \(\mathcal B[f]\to0\) and
+\(\mathcal F(0)=0\). Asymptotic flatness with ADM mass \(M\) gives
+\(\mathcal F(\infty)=4M\). Since \(\mathcal F\) is constant, these
+boundary conditions require \(M=0\). Thus the specified vacuum
+equation has no smooth, regular-center, asymptotically flat solution
+of nonzero mass.
+
+\paragraph{Status.}
+The exactness question posed for the rational profile is resolved
+negatively within the specified standard ECG vacuum theory; the
+regular, massive, asymptotically flat vacuum alternative is also
+excluded by the first-integral no-go. A regular massive core must
+instead have a source, different boundary conditions, or modified
+field equations. The manuscript does not specify the entanglement
+stress needed to calculate a sourced core, nor derive the ECG
+invariant and coupling from the matrix action. Those are separate
+microscopic questions and remain open; they are not unresolved
+vacuum-solution questions for the specified ECG equation.
+
+\section{What this appendix does not do}
+\label{sec:status-not}
+
+It does not produce an unsuppressed laboratory coupling between a
+controllable external field and \(T_{\mu\nu}^{\mathrm{ent}}\) or
+\(G_{\mathrm{eff}}\). The observational window therefore remains empty.
+It does not alter the chain of Chapter~\ref{ch:falsifiers} or the agenda of
+Chapter~\ref{ch:agenda}.

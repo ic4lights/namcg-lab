@@ -1,0 +1,378 @@
+\chapter[What Geometrogenesis Must Derive]{What Geometrogenesis Must Derive}
+\label{ch:geometrogenesis}
+
+\paragraph{Learning outcomes.}
+After this chapter the reader should be able to:
+\begin{enumerate}
+  \item state the geometrogenesis problem as a derivation task,
+        not a metaphor;
+  \item explain why analog-gravity metrics are not general relativity;
+  \item identify the representation content that a microscopic order
+        parameter must carry if massless spin-2 modes are to exist;
+  \item list the consistency conditions treated as non-negotiable in
+        this book: diffeomorphism invariance,
+        \(\nabla^\mu T_{\mu\nu}^{\mathrm{total}}=0\), a bounded
+        infrared Hamiltonian, and an explicit map from microscopic
+        couplings to \(\Geff\);
+  \item see why Chapter~\ref{ch:preliminaries} is required before any
+        later proof can be stated.
+\end{enumerate}
+
+\section{What this book is trying to derive}
+\label{sec:ch1-goal}
+
+General relativity is an infrared theory of a dynamical Lorentzian
+metric \(g_{\mu\nu}\) whose vacuum excitations are two massless,
+transverse-traceless spin-2 polarizations, and whose coupling to matter
+is fixed by local energy-momentum conservation and the equivalence
+principle. In standard presentations the metric is primitive. One writes
+an Einstein--Hilbert action
+\begin{equation}
+  \label{eq:EH}
+  S_{\mathrm{EH}}[g]
+  =\frac{1}{16\pi G}\int\mathrm{d}^4x\,\sqrt{-g}\,R
+\end{equation}
+and proceeds.
+
+Geometrogenesis asks a more primitive question:
+
+\begin{quote}
+Can \(g_{\mu\nu}\), the Einstein--Hilbert dynamics, and the two graviton
+polarizations be obtained as the long-wavelength collective description
+of a microscopic quantum system that does not contain a metric as a
+fundamental field?
+\end{quote}
+
+That question is the subject of this book. The framework developed here
+is Non-Abelian Matrix-Condensate Geometrogenesis (NAMCG). The
+microscopic object is not a single complex scalar. It is a
+matrix-valued order parameter \(\Phi^I{}_A(x)\) carrying an internal
+gauge index \(I\) and an emergent tangent-space index
+\(A\in\{0,1,2,3\}\). The metric is a composite,
+\begin{equation}
+  \label{eq:composite-metric}
+  e^A_\mu(x)\equiv\langle\partial_\mu\Phi^{IA}(x)\rangle,\qquad
+  g_{\mu\nu}(x)=\eta_{AB}\,e^A_\mu(x)\,e^B_\nu(x).
+\end{equation}
+
+The later chapters argue that entanglement equilibrium on causal
+diamonds forces the infrared mass of the symmetric trace-free shear
+mode to vanish, that a heat-kernel expansion supplies an explicit
+formula for \(\Geff\), and that the entanglement backreaction stress
+tensor remains covariantly conserved.
+
+Those are theorems \emph{inside the framework}. This first chapter does
+not prove them. It makes precise what would count as a proof, and why
+the obvious scalar shortcuts fail.
+
+\section{Analog gravity, and the ceiling it cannot break}
+\label{sec:ch1-analog}
+
+A large and useful literature constructs effective metrics for
+perturbations on condensed-matter backgrounds. The standard example is
+a weakly interacting Bose gas with order parameter
+\(\Psi=\sqrt{\rho}\,e^{i\theta}\). Phase fluctuations \(\theta\) obey,
+after linearization, a wave equation
+\begin{equation}
+  \label{eq:acoustic-wave}
+  \frac{1}{\sqrt{-g_{\mathrm{ac}}}}
+  \partial_\mu\Bigl(
+    \sqrt{-g_{\mathrm{ac}}}\,
+    g_{\mathrm{ac}}^{\mu\nu}\partial_\nu\theta
+  \Bigr)=0
+\end{equation}
+in an acoustic metric \(g_{\mathrm{ac}}^{\mu\nu}\) built from the
+background density and flow. Horizons, ergoregions, and Hawking-like
+spectra can be engineered in the laboratory.
+
+This is analog gravity. It is not geometrogenesis of general
+relativity, for four structural reasons.
+
+\paragraph{Only one scalar mode.}
+The Goldstone field of a single complex scalar is a scalar. The
+acoustic metric is a rewriting of that scalar wave equation. It does
+not create two independent tensor polarizations.
+
+\paragraph{Screening.}
+Gross--Pitaevskii interactions introduce a healing length \(\xi\). The
+static potential felt by a localized source is of Yukawa or
+modified-Bessel type, not a \(1/r\) Newtonian potential with radiative
+\(1/r\) tails.
+
+\paragraph{Wrong infrared gravity.}
+A relativistic scalar condensate coupled to an auxiliary metric
+generically yields Nordstr\"om gravity (conformal, with no bending of
+light in the pure-scalar sector) or scalar--tensor gravity. The Einstein
+tensor is not selected as the unique linearized kinetic operator for a
+massless spin-2 field.
+
+\paragraph{Dissipation inserted by hand.}
+Binary inspiral in general relativity follows from quadrupole radiation
+in a theory with massless spin-2 waves. Replacing that derivation by a
+Peters formula or a drag term in Newton's equation may fit a curve. It
+does not derive the curve from the microscopic action.
+
+NAMCG is written to climb over that ceiling, not to decorate it.
+
+\begin{figure}[ht]
+  \centering
+  \input{figs/fig01-scalar-vs-gr.tex}
+  \caption{A scalar order parameter supplies an acoustic metric.
+    It does not supply the two massless spin-2 polarizations of
+    general relativity.}
+  \label{fig:scalar-vs-gr}
+\end{figure}
+
+\section{Representation theory in one paragraph}
+\label{sec:ch1-reps}
+
+Local Lorentz invariance acts on tangent-space indices. A graviton is a
+symmetric, traceless, divergenceless tensor \(h_{\mu\nu}\) with two
+on-shell degrees of freedom in four dimensions. A single scalar
+\(\phi\) can produce a conformal mode proportional to
+\(g_{\mu\nu}\delta\phi\), and perhaps a vector current if a global
+symmetry is gauged, but it cannot produce an irreducible shear tensor
+as an independent propagating excitation of the order parameter itself.
+
+That is the representation-theoretic reason the microscopic field is
+promoted to \(\Phi^I{}_A\). The tangent index \(A\) is not cosmetic. It
+is the handle on which local \(\mathrm{SO}(3,1)\) will later act.
+Chapter~5 decomposes
+\begin{equation}
+  \label{eq:lorentz-split}
+  \delta\Phi^I{}_A
+  =\frac14\eta_{\mu\nu}\delta g^{\mu\nu}\,I
+  +A_\mu\gamma^\mu
+  +T_{\mu\nu}
+\end{equation}
+into conformal, vector, and symmetric trace-free pieces. Chapter~7 is
+the argument that \(T_{\mu\nu}\) becomes massless.
+
+If that argument fails, NAMCG collapses back to analog gravity. The
+book is organized so the reader can see exactly where it would fail.
+
+\section{What must be delivered before one may say ``this is GR''}
+\label{sec:ch1-checklist}
+
+A derivation of infrared general relativity from a microscopic model is
+not complete unless all of the following are obtained, not assumed.
+
+\begin{enumerate}
+  \item \textbf{Composite metric.}
+    \(g_{\mu\nu}\) is defined from microscopic expectation values. It
+    is not put into the fundamental action as an independent Einstein
+    metric.
+  \item \textbf{Local Lorentz frames.}
+    The vacuum must lock internal indices to tangent indices so that
+    \(e^A_\mu\) transforms as a vierbein and no physical Goldstone
+    scalars remain. That is Chapter~10.
+  \item \textbf{Two massless TT modes.}
+    The infrared kinetic operator of \(T_{\mu\nu}\) must be the
+    Lichnerowicz / Einstein operator, with \(m_T^2=0\). That is
+    Chapters~6--7.
+  \item \textbf{Coefficient map.}
+    The prefactor of \(R\) must be a computed function of microscopic
+    parameters \((v,\LUV,g_c,N)\). That is Chapter~8:
+    \begin{equation}
+      \label{eq:geff-preview}
+      \frac{1}{16\pi\Geff}
+      =\frac{\mathrm{Tr}(I)\,\LUV^2}{16\pi^2}
+      +\frac{v^2}{12}\ln\Bigl(\frac{\LUV^2}{\mu^2}\Bigr).
+    \end{equation}
+  \item \textbf{Bianchi consistency.}
+    Whatever extra stress is attributed to entanglement or condensate
+    backreaction must satisfy
+    \begin{equation}
+      \label{eq:conservation-preview}
+      \nabla^\mu\bigl(
+        T^{\mathrm{matter}}_{\mu\nu}
+        +T^{\mathrm{tensor}}_{\mu\nu}
+        +\Tent_{\mu\nu}
+      \bigr)=0.
+    \end{equation}
+    That is Chapter~11. Without it, one has a non-conservative force,
+    not geometry.
+  \item \textbf{Ultraviolet control.}
+    Higher-derivative terms generated by integrating out the condensate
+    cannot leave propagating Ostrogradsky ghosts in the infrared. That
+    is Chapter~9.
+  \item \textbf{Vacuum energy.}
+    The same heat-kernel expansion produces a term
+    \(c_0\LUV^4\). A framework that claims to recover Einstein's
+    equation must say why this is not a Planck-scale cosmological
+    constant. That is Chapter~12.
+  \item \textbf{Phenomenology as corollary.}
+    Rotation curves, regular cores, inspiral drag, and tidal disruption
+    are allowed only after items 1--7. They are not evidence that
+    items 1--7 have been proved.
+\end{enumerate}
+
+This checklist is the spine of Parts~II--IV. Parts~V--VI apply it.
+
+\section{The NAMCG derivation in one view}
+\label{sec:ch1-spine}
+
+The logical order used from Chapter~3 onward is
+\begin{equation}
+  \label{eq:spine}
+  \begin{aligned}
+    \Phi^I{}_A
+    &\;\longrightarrow\;
+    \langle\Phi\rangle=v\,\delta^I{}_A
+    \;\longrightarrow\;
+    e^A_\mu=\langle\partial_\mu\Phi^{IA}\rangle \\
+    &\;\longrightarrow\;
+    g_{\mu\nu}=\eta_{AB}e^A_\mu e^B_\nu
+    \;\longrightarrow\;
+    \delta\Phi=\text{conformal}+\text{vector}+T_{\mu\nu} \\
+    &\;\longrightarrow\;
+    \delta S_D=0
+    \;\longrightarrow\;
+    m_T\to 0
+    \;\longrightarrow\;
+    S_{\mathrm{EH}}[g]+S_{\mathrm{NAMCG}}^{\mathrm{(backreaction)}}.
+  \end{aligned}
+\end{equation}
+
+\begin{figure}[ht]
+  \centering
+  \input{figs/fig02-derivation-spine.tex}
+  \caption{The NAMCG derivation spine used in this book. A single
+    scalar phase cannot lock internal indices to local Lorentz frames.}
+  \label{fig:spine}
+\end{figure}
+
+Two comments are essential already.
+
+First, the entanglement step is doing real work. In a generic
+spontaneously broken matrix model, \(T_{\mu\nu}\) may be massive. The
+central physical claim of the book is that Jacobson's stationarity
+condition on dyadic causal diamonds,
+\begin{equation}
+  \label{eq:deltaS-preview}
+  \delta S_D=\delta\langle H_D\rangle=0,
+\end{equation}
+is not an extra thermodynamic slogan. It is a Ward identity of the
+microscopic theory, and that identity forbids \(m_T^2\neq 0\) in the
+infrared.
+
+Second, conservation of the entropic drag is not optional. The inspiral
+integrator of Chapter~15,
+\begin{equation}
+  \label{eq:drag-preview}
+  \mathbf{F}_{\mathrm{diss}}=-\eta\,\frac{\mu}{d^4}\,\mathbf{v},
+\end{equation}
+is a reduced Newtonian laboratory. It is legitimate only because
+Chapter~11 has already argued that the corresponding covariant object
+\(\Tent_{\mu\nu}\) is divergenceless on shell. If the reader treats the
+Python drag as the theory, the book has failed.
+
+\section{How the later phenomenology sits on the spine}
+\label{sec:ch1-pheno}
+
+Once the infrared Einstein sector exists, NAMCG adds three controlled
+deformations, each with a named chapter.
+
+\paragraph{Holographic Boundary-Entropy Vacuum (HBEV).}
+A boundary functional involving \(K/8\pi G\) and an entropy density
+\(S_{\mathrm{ent}}(h_{ij},\phi)\) is used to regulate
+\(\Lambda_{\mathrm{eff}}\). This is how the book addresses the
+\(c_0\LUV^4\) term rather than ignoring it.
+
+\paragraph{Einsteinian cubic gravity.}
+A ghost-controlled cubic curvature invariant modifies the core of
+compact objects,
+\begin{equation}
+  \label{eq:fr-preview}
+  f(r)=1-\frac{2Mr^2}{r^3+r_0^3}+\frac{\Lambda_{\mathrm{eff}}}{3}r^2,
+\end{equation}
+so that \(f(r)\to 1+\Lambda_{\mathrm{eff}}r^2/3\) as \(r\to 0\).
+
+\paragraph{Vacuum backreaction in galaxies and compact binaries.}
+The same conserved extra tensor sources a modification of Poisson's
+equation and an irreversible but covariantly conserved drag.
+
+None of these is a substitute for Chapters~3--11. They are tests of
+whether the extra tensors have the right long-distance falloff and the
+right conservation law.
+
+\section{How to read this book}
+\label{sec:ch1-howto}
+
+Chapters~2--5 are definitional. Read them with a pen. If a symbol is
+used later with two meanings, the fault is in those chapters and should
+be caught there.
+
+Chapters~6--11 are the proof core. Each theorem is written with
+hypotheses first. If a hypothesis is an assumption of the framework
+rather than a lemma, it is labeled as such.
+
+Chapters~12--15 are applications. Numerical sections flag reduced
+models in the first paragraph.
+
+Chapter~16 restates the whole derivation as a single chain. Chapter~17
+lists what would falsify the framework. Read Chapter~17 before deciding
+that the theory is closed.
+
+\paragraph{Prerequisites.}
+\paragraph{What you need.}
+Special relativity, the Euler--Lagrange equation, and the Einstein
+equation as a field equation for a metric. Linear algebra at the
+level of commutators and traces. Quantum field theory is helpful
+but is introduced at the point of use. Entanglement entropy is
+built in Chapter~6 and Appendix~B. If a later proof needs more
+than that, the extra tool is installed in Chapter~2 or in an
+appendix, not presupposed as coursework.
+
+\section{Exercises}
+\label{sec:ch1-exercises}
+
+\begin{enumerate}
+  \item \textbf{Acoustic metric.}
+    Starting from the continuity and Bernoulli equations of an
+    irrotational barotropic fluid, derive \(g_{\mathrm{ac}}^{\mu\nu}\)
+    and show that linearized phonons see that metric. Where does a
+    healing length appear if the fluid is a Gross--Pitaevskii
+    condensate?
+  \item \textbf{Mode count.}
+    In \(3+1\) dimensions, how many on-shell degrees of freedom does a
+    massive symmetric tensor have? A massless one with gauge invariance
+    \(\delta h_{\mu\nu}=\partial_\mu\xi_\nu+\partial_\nu\xi_\mu\)?
+    Why does that counting matter for Section~\ref{sec:ch1-reps}?
+  \item \textbf{Scalar-tensor ceiling.}
+    Consider
+    \(S=\int\sqrt{-g}\bigl(\phi R-(\partial\phi)^2-V(\phi)\bigr)\).
+    Linearize about Minkowski spacetime and a constant \(\phi_0\).
+    Show that the propagating excitations are a massless spin-2 field
+    mixed with a scalar. What extra condition would be needed to freeze
+    the scalar?
+  \item \textbf{Conservation as a constraint.}
+    Suppose a two-body equation
+    \(\mu\ddot{\mathbf{r}}=-\nabla U+\mathbf{a}_{\mathrm{irrev}}\) is
+    written in Minkowski space. What property must
+    \(\mathbf{a}_{\mathrm{irrev}}\) have if there is to exist a stress
+    tensor \(\Tent_{\mu\nu}\) with
+    \(\partial^\mu(T^{\mathrm{matter}}_{\mu\nu}+\Tent_{\mu\nu})=0\)?
+    A full curved-space answer is Chapter~11; a Newtonian answer is
+    enough here.
+  \item \textbf{Checklist audit.}
+    Take any analog-gravity paper you know and score it against the
+    eight items of Section~\ref{sec:ch1-checklist}. This exercise is
+    the standard the book applies to itself.
+\end{enumerate}
+
+\section{Bridge to Chapter~2}
+\label{sec:ch1-bridge}
+
+Every later proof is a sentence in a language that has not yet been
+fixed: manifolds and vierbeine, Einstein--Hilbert variation and Bianchi
+identities, heat kernels, causal diamonds, and modular Hamiltonians.
+Chapter~1 stated the derivation problem. Chapter~2 installs the
+language at the exact thickness later chapters consume---no more,
+because a reader who must first finish a complete treatise on general
+relativity will never reach the matrix condensate.
+
+The first object Chapter~2 defines is the one this chapter kept using
+without ceremony: a Lorentzian manifold with a non-degenerate metric of
+signature \((-,+,+,+)\), and the difference between a primitive metric
+and a composite vierbein bilinear.

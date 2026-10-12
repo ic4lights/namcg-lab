@@ -1,0 +1,416 @@
+\chapter[Vierbein emergence]{Condensation, Vierbein Emergence, and the Seiberg--Witten Map}
+\label{ch:vierbein-emergence}
+
+\paragraph{Learning outcomes.}
+After this chapter the reader should be able to:
+\begin{enumerate}
+  \item explain why a strictly constant vacuum
+        \(\langle\Phi^I{}_A\rangle=v\delta^I{}_A\) cannot, by itself,
+        produce a non-degenerate vierbein from
+        \(\langle\partial_\mu\Phi\rangle\);
+  \item write the polar decomposition
+        \(\Phi=(v+\sigma)\Lambda\) and construct an emergent frame
+        from the condensate gradient of \(\Lambda\);
+  \item reconstruct \(g_{\mu\nu}=\eta_{AB}e^A_\mu e^B_\nu\) and state
+        the non-degeneracy condition;
+  \item use the leading Seiberg--Witten map to relate
+        \(\Theta^{\mu\nu}\) to a correction of the emergent metric;
+  \item enter Chapter~5 with a definite background about which to
+        expand \(\delta\Phi\).
+\end{enumerate}
+
+Chapter~3 introduced the field and a preferred vacuum. This chapter
+turns that vacuum into geometry. No Einstein equation is derived
+here. The only output is a composite metric, plus the dictionary that
+connects it to the non-commutative parameter \(\Theta^{\mu\nu}\).
+
+\section{The constant-vacuum obstruction}
+\label{sec:ch4-obstruction}
+
+The representative vacuum of Assumption~\ref{ass:frame-lock} is
+\begin{equation}
+  \label{eq:const-vev}
+  \langle\Phi^I{}_A\rangle=v\,\delta^I{}_A.
+\end{equation}
+If this expectation value is independent of \(x\), then
+\begin{equation}
+  \label{eq:vanishing-frame}
+  \langle\partial_\mu\Phi^{IA}\rangle=0.
+\end{equation}
+The definition advertised in the source notes,
+\begin{equation}
+  \label{eq:naive-vierbein}
+  e^A_\mu(x)\equiv\langle\partial_\mu\Phi^{IA}(x)\rangle,
+\end{equation}
+then yields the zero tensor. A zero tensor is not a frame.
+
+This is not a notational quibble. A textbook that passes from
+\eqref{eq:const-vev} to a non-degenerate \(g_{\mu\nu}\) without an
+intermediate step is asserting an identity that is false. There are
+two honest repairs. NAMCG uses both, in different places; they must
+be kept distinct.
+
+\paragraph{Repair I: the polar field carries the frame.}
+Write the field in polar form, as in the ultraviolet note,
+\begin{equation}
+  \label{eq:polar}
+  \Phi^{IA}(x)=\bigl(v+\sigma(x)\bigr)\,\Lambda^A{}_I(x),
+\end{equation}
+where \(\sigma\) is a radial singlet and \(\Lambda(x)\) takes values
+in the broken coset that rotates internal indices into tangent
+indices. Even if \(v\) is constant, \(\partial_\mu\Phi\) need not
+vanish:
+\begin{equation}
+  \label{eq:polar-deriv}
+  \partial_\mu\Phi^{IA}
+  =(\partial_\mu\sigma)\,\Lambda^A{}_I
+   +(v+\sigma)\,\partial_\mu\Lambda^A{}_I.
+\end{equation}
+A vacuum with \(\langle\sigma\rangle=0\) and a slowly varying
+\(\langle\Lambda\rangle\) produces a candidate frame from
+\(\langle\partial_\mu\Lambda\rangle\).
+
+\paragraph{Repair II: identify the vacuum itself with a frame.}
+Promote the representative vacuum to a spacetime-dependent but
+still ``pure Higgs'' configuration
+\begin{equation}
+  \label{eq:higgs-frame}
+  \langle\Phi^I{}_A(x)\rangle=v\,e^I{}_A(x),
+\end{equation}
+and treat \(e^I{}_A\) as the fundamental condensate profile. In this
+repair, equation~\eqref{eq:naive-vierbein} is abandoned as a
+definition. The vierbein \emph{is} the normalized vacuum,
+\begin{equation}
+  \label{eq:vev-is-frame}
+  e^A_\mu(x)
+  \equiv
+  \frac1v\,\langle\Phi^{A}{}_\mu(x)\rangle,
+\end{equation}
+after the internal and tangent bases have been identified.
+
+Repair~II is simpler and is the standard Higgs-gravity pattern.
+Repair~I is what the notes write when they insist on
+\eqref{eq:naive-vierbein}. This chapter adopts Repair~I as the
+official definition, because that is the formula used in the later
+fluctuation analysis, and records Repair~II as an equivalent leading-
+order gauge choice.
+
+\begin{definition}[Official emergent vierbein]
+  \label{def:vierbein}
+  In a polar configuration~\eqref{eq:polar} with
+  \(\langle\sigma\rangle=0\),
+  \begin{equation}
+    \label{eq:official-vierbein}
+    e^A_\mu(x)
+    \equiv
+    \frac1v\,\bigl\langle
+      \partial_\mu\Phi^{IA}(x)
+    \bigr\rangle
+    \Big|_{\sigma=0}
+    =\bigl\langle
+      \partial_\mu\Lambda^{A}{}_I(x)
+    \bigr\rangle.
+  \end{equation}
+  The factor \(1/v\) restores a dimensionless frame when \(\Phi\) has
+  the engineering dimension of \(v\). If a given formula in the notes
+  omits \(1/v\), it is using units \(v=1\).
+\end{definition}
+
+\begin{remark}[When the two repairs agree]
+  Choose local coordinates and a gauge in which
+  \(\Lambda^A{}_I=\delta^A{}_I+v^{-1}\omega^A{}_{I\mu}x^\mu+\cdots\).
+  Then \(\partial_\mu\Lambda\) is constant to first order and
+  Repair~I reproduces Repair~II at that order. The distinction
+  reappears at quadratic order in fluctuations, which is Chapter~5.
+\end{remark}
+
+\section{The composite metric}
+\label{sec:ch4-metric}
+
+\begin{definition}[Composite metric]
+  \label{def:composite-metric}
+  Given a vierbein~\eqref{eq:official-vierbein},
+  \begin{equation}
+    \label{eq:g-from-e}
+    g_{\mu\nu}(x)
+    \equiv
+    \eta_{AB}\,e^A_\mu(x)\,e^B_\nu(x).
+  \end{equation}
+\end{definition}
+
+Non-degeneracy is not automatic.
+
+\begin{assumption}[Non-degenerate condensate frame]
+  \label{ass:nondeg}
+  On the region of spacetime under consideration, \(e^A_\mu\) has
+  non-vanishing determinant. Equivalently, the four covectors
+  \(e^A{}_\mu\mathrm{d}x^\mu\) are linearly independent.
+\end{assumption}
+
+If Assumption~\ref{ass:nondeg} fails, \(g_{\mu\nu}\) is degenerate and
+there is no Lorentzian geometry to discuss. Vanishing of
+\(\det e\) is a physical possibility---a condensate defect, a
+region where the frame-locking vacuum has not formed---not a gauge
+artifact. This book restricts attention to the condensed phase in
+which Assumption~\ref{ass:nondeg} holds.
+
+The inverse metric and inverse frame are defined in the usual way
+once non-degeneracy is granted,
+\begin{equation}
+  \label{eq:inverses}
+  g^{\mu\nu}e^A_\mu e^B_\nu=\eta^{AB},\qquad
+  e^\mu_A e^A_\nu=\delta^\mu_\nu.
+\end{equation}
+Local Lorentz transformations act on the frame index,
+\begin{equation}
+  \label{eq:llts}
+  e^A_\mu\;\longmapsto\;\Lambda^A{}_B e^B_\mu,
+\end{equation}
+and leave \(g_{\mu\nu}\) invariant. Diffeomorphisms act on the
+coordinate index. These two redundancies are the reason a composite
+metric can have the same geometric content as a primitive metric,
+provided the Goldstone counting of Chapter~10 works.
+
+\section{What kind of object \(e^A_\mu\) is}
+\label{sec:ch4-status}
+
+At this stage \(e^A_\mu\) is a condensate profile, not a solution of
+Einstein's equation. It is closer to a magnetization than to a
+gravitational field. Three consequences follow.
+
+\begin{enumerate}
+  \item There is no a priori reason for \(e^A_\mu\) to satisfy the
+        torsion-free condition~\eqref{eq:spin-connection}. If torsion
+        is to vanish, that is a dynamical statement about the
+        connection that eats the Goldstones, not a definition.
+  \item There is no a priori reason for small disturbances of
+        \(g_{\mu\nu}\) to propagate as massless spin-2 waves. That is
+        Chapter~7.
+  \item The auxiliary scaffold \(g^{(0)}_{\mu\nu}\) of
+        Presentation~B is still present in the microscopic action.
+        It must not be confused with~\eqref{eq:g-from-e}. Heat-kernel
+        calculations in Chapter~8 are performed on a background that
+        is eventually identified with the emergent metric; making
+        that identification precise is part of the coefficient map.
+\end{enumerate}
+
+\section{Seiberg--Witten map and the \(\Theta\) correction}
+\label{sec:ch4-SW}
+
+Presentation~A still has a non-commutative parameter
+\(\Theta^{\mu\nu}\). After a commutative manifold has been introduced,
+the open-string / non-commutative-gauge-theory dictionary of Seiberg
+and Witten relates an ordinary metric \(g_{\mu\nu}\) and a two-form
+background to an open-string effective metric. The source notes write
+the leading relation
+\begin{equation}
+  \label{eq:SW}
+  G_{\mu\nu}(x)
+  =\bigl((g+\Theta)^{-1}\bigr)_{\mu\nu}
+   +\mathcal{G}_{\mu\nu}\bigl(\langle\hat X\rangle\bigr).
+\end{equation}
+
+Two clarifications are required before~\eqref{eq:SW} is used.
+
+\paragraph{Matrix versus form.}
+As written, \(g+\Theta\) adds a symmetric tensor to an antisymmetric
+tensor. The honest object is the mixed tensor
+\begin{equation}
+  \label{eq:g-plus-Theta}
+  (g+\Theta)_{\mu}{}^{\nu}
+  =g_{\mu\rho}\eta^{\rho\nu}+\Theta_{\mu}{}^{\nu},
+\end{equation}
+or, equivalently, the linear map \(g+\Theta:T^*M\to TM\) after one
+index of \(\Theta\) is raised with the auxiliary metric. The inverse
+in~\eqref{eq:SW} is the inverse of that map. In components, for
+constant \(\Theta\) on a flat auxiliary background,
+\begin{equation}
+  \label{eq:SW-flat}
+  \bigl((g+\Theta)^{-1}\bigr)_{\mu\nu}
+  =g_{\mu\nu}
+   -g_{\mu\alpha}\Theta^{\alpha\beta}g_{\beta\nu}
+   +O(\Theta^2).
+\end{equation}
+The first correction is symmetric if one takes the symmetric part,
+which is the part that can enter a metric. The antisymmetric remainder
+is a two-form background, not a correction to \(g_{\mu\nu}\).
+
+\paragraph{The extra term \(\mathcal{G}_{\mu\nu}\).}
+The piece \(\mathcal{G}_{\mu\nu}(\langle\hat X\rangle)\) in
+\eqref{eq:SW} is the backreaction of the matrix condensate on the
+emergent geometry, beyond the kinematic \(\Theta\) correction. At
+this stage of the book it is a name, not a formula. Chapters~8
+and~11 compute pieces of it: the Einstein--Hilbert term from the
+heat kernel, and the entropic stress tensor from mutual information.
+Until those calculations exist, \(\mathcal{G}_{\mu\nu}\) must not be
+assigned a phenomenology.
+
+\begin{definition}[Working infrared metric]
+  \label{def:working-metric}
+  Unless a higher-order \(\Theta\) correction is being tracked
+  explicitly, ``the emergent metric'' means~\eqref{eq:g-from-e}.
+  Equation~\eqref{eq:SW} is the next-order kinematic correction
+  plus a placeholder for dynamical backreaction.
+\end{definition}
+
+\section{A linearised frame around Minkowski spacetime}
+\label{sec:ch4-minkowski}
+
+The fluctuation chapters need a background. Choose coordinates and a
+local Lorentz gauge so that the condensed frame is the trivial frame
+plus a small disturbance,
+\begin{equation}
+  \label{eq:linear-frame}
+  e^A_\mu=\delta^A_\mu+\tfrac12 h^A{}_\mu+\omega^A{}_\mu,
+\end{equation}
+where \(h_{\mu\nu}\equiv\eta_{AB}\delta^A_\mu h^B{}_\nu\) is symmetric
+and \(\omega_{\mu\nu}\) is antisymmetric. Then
+\begin{equation}
+  \label{eq:linear-metric}
+  g_{\mu\nu}
+  =\eta_{\mu\nu}+h_{\mu\nu}+O(h^2,\omega^2,h\omega).
+\end{equation}
+The antisymmetric piece \(\omega\) is a local Lorentz Goldstone. If
+Chapter~10 operates as advertised, \(\omega\) is eaten and does not
+propagate. The symmetric piece \(h_{\mu\nu}\) is the candidate
+graviton, still un-decomposed and possibly massive. Chapter~5 splits
+it; Chapter~7 asks whether its mass vanishes.
+
+This expansion assumes that a Minkowski condensate exists: a vacuum
+in which \(e^A_\mu=\delta^A_\mu\) globally, or in a region large
+compared with the scale of later experiments. Existence of that
+vacuum is part of Assumption~\ref{ass:nondeg}, not a new principle.
+
+\section{Signature and the role of \(\eta_{AB}\)}
+\label{sec:ch4-signature}
+
+Equation~\eqref{eq:g-from-e} borrows its signature from \(\eta_{AB}\).
+Nothing in the potential~\eqref{eq:V} selected
+\((-,+,+,+)\) rather than \((+,+,+,+)\). A Euclidean condensate is a
+priori as natural as a Lorentzian one.
+
+\begin{assumption}[Lorentzian condensate]
+  \label{ass:lorentzian}
+  The locked vacuum is Lorentzian:
+  \(\eta_{AB}=\mathrm{diag}(-1,+1,+1,+1)\). Dynamical emergence of
+  this signature from a Euclidean matrix model is not proved in the
+  source notes and is not pretended here. Chapter~10 shows how local
+  \(\mathrm{SO}(3,1)\) can arise \emph{given} this \(\eta_{AB}\).
+\end{assumption}
+
+A reader looking for a derivation of Lorentzian signature from
+nothing will not find it in this book. What the book does derive,
+contingent on Assumption~\ref{ass:lorentzian}, is the dynamics of
+the resulting Lorentzian metric.
+
+\section{Worked example: a weak, static frame perturbation}
+\label{sec:ch4-example}
+
+Take Repair~I with
+\begin{equation}
+  \label{eq:example-Lambda}
+  \Lambda^A{}_I(x)
+  =\delta^A{}_I
+   +\frac12\delta^A{}_\alpha
+      \delta^\beta{}_I
+      \partial_\beta\zeta^\alpha(x),
+\end{equation}
+and \(\zeta^\alpha\) small. Then
+\begin{equation}
+  \label{eq:example-e}
+  e^A_\mu
+  =\delta^A_\mu
+   +\frac12\partial_\mu\partial_\beta\zeta^\alpha\,
+     \delta^A{}_\alpha\delta^\beta{}_{\cdot},
+\end{equation}
+which is a pure-gauge linearized frame if \(\zeta\) is a
+diffeomorphism parameter. The associated metric perturbation is
+\begin{equation}
+  \label{eq:example-h}
+  h_{\mu\nu}
+  =\partial_\mu\zeta_\nu+\partial_\nu\zeta_\mu
+\end{equation}
+to first order. This configuration is geometry in name only: it is a
+coordinate artifact. A physical graviton must be a disturbance that
+cannot be written as~\eqref{eq:example-h}. Isolating that disturbance
+is the point of the irreducible decomposition in Chapter~5.
+
+The example is still useful. It shows that Definition~\ref{def:vierbein}
+does produce a metric perturbation of the correct tensor type, and
+that diffeomorphism redundancy is already visible at the level of
+\(\Lambda(x)\).
+
+\section{What this chapter has not done}
+\label{sec:ch4-not-done}
+
+The following statements are \emph{not} theorems of Chapter~4.
+
+\begin{itemize}
+  \item \(g_{\mu\nu}\) obeys Einstein's equation.
+  \item \(h_{\mu\nu}\) contains two massless TT polarizations.
+  \item \(\Geff\) has the value~\eqref{eq:Geff-again}.
+  \item Torsion vanishes.
+  \item The signature is dynamical.
+  \item \(\mathcal{G}_{\mu\nu}\) has been computed.
+\end{itemize}
+
+What has been done is narrower and indispensable: a non-degenerate
+composite metric has been defined from the condensate, the
+constant-vacuum obstruction has been removed by the polar field
+\(\Lambda(x)\), and the linearized Minkowski background used in every
+later proof has been fixed.
+
+\section{Exercises}
+\label{sec:ch4-exercises}
+
+\begin{enumerate}
+  \item \textbf{Zero frame.}
+    Prove that a strictly constant \(\langle\Phi\rangle\) yields
+    \(\langle\partial_\mu\Phi\rangle=0\). This is the obstruction of
+    Section~\ref{sec:ch4-obstruction} as a two-line exercise.
+  \item \textbf{Polar derivative.}
+    Derive~\eqref{eq:polar-deriv} from~\eqref{eq:polar}. Under what
+    condition on \(\Lambda\) is \(e^A_\mu\) proportional to a
+    Maurer--Cartan form \(\Lambda^{-1}\partial_\mu\Lambda\)?
+  \item \textbf{Non-degeneracy.}
+    Let \(e^A_\mu=\mathrm{diag}(1,1,1,\varepsilon)\). Compute
+    \(g_{\mu\nu}\) and \(\det g\). What fails as
+    \(\varepsilon\to 0\)? Interpret the limit as a condensate defect.
+  \item \textbf{Symmetric part of the \(\Theta\) correction.}
+    From~\eqref{eq:SW-flat}, extract the symmetric \(O(\Theta)\)
+    correction to \(g_{\mu\nu}\) and the antisymmetric remainder.
+    Which object can enter geodesic motion at this order?
+  \item \textbf{Linearized metric.}
+    Starting from~\eqref{eq:linear-frame}, derive
+    \eqref{eq:linear-metric} and show that \(\omega_{AB}\) drops out
+    of \(g_{\mu\nu}\) at first order. Where does \(\omega\) re-enter
+    at second order?
+  \item \textbf{Pure gauge.}
+    Show that~\eqref{eq:example-h} is the linearized diffeomorphism
+    action on \(\eta_{\mu\nu}\). Write one explicit \(h_{\mu\nu}\)
+    that cannot be written in this form. (Any TT wave will do.)
+  \item \textbf{Auxiliary versus emergent.}
+    In Presentation~B the microscopic action uses \(g^{(0)}\). In
+    this chapter the geometry is \(g\). Write one sentence stating
+    when it is legitimate to replace \(g^{(0)}\) by \(g\) inside a
+    heat kernel, and what error term that replacement drops. The
+    full answer is Chapter~8; the sentence is due now.
+\end{enumerate}
+
+\section{Bridge to Chapter~5}
+\label{sec:ch4-bridge}
+
+The background is a condensed frame, taken Minkowski for the
+linearized theory,
+\begin{equation}
+  \label{eq:bg-next}
+  \bar e^A_\mu=\delta^A_\mu,
+  \qquad
+  \bar g_{\mu\nu}=\eta_{\mu\nu}.
+\end{equation}
+The next object is the fluctuation \(\delta\Phi^I{}_A\) about the
+polar vacuum~\eqref{eq:polar}. Chapter~5 decomposes that fluctuation
+under local Lorentz transformations into a conformal piece, a vector
+piece, and a symmetric trace-free tensor \(T_{\mu\nu}\). Only after
+that decomposition is it meaningful to ask which piece might be a
+graviton.

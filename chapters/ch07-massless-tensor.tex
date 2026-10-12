@@ -1,0 +1,433 @@
+\chapter[The tensor mass gap]{Vanishing of the Tensor Mass Gap}
+\label{ch:massless-tensor}
+
+\paragraph{Learning outcomes.}
+After this chapter the reader should be able to:
+\begin{enumerate}
+  \item write the Fierz--Pauli quadratic action for \(T_{\mu\nu}\)
+        and the linearized Einstein operator that remains when
+        \(m_T=0\);
+  \item substitute a compactly supported tensor variation into the
+        entanglement Ward identity and see where \(m_T^2\) appears;
+  \item state Theorem~\ref{thm:mT} with its hypotheses, and say which
+        hypotheses are still assumptions of the framework;
+  \item count the two remaining TT polarizations;
+  \item list what must still be done for the conformal and vector
+        blocks before the infrared theory is pure GR.
+\end{enumerate}
+
+The candidate graviton now has a name, a quadratic action, and a
+Ward identity. This chapter puts the last of those into the second
+and reads off \(m_T=0\).
+
+\section{Strategy}
+\label{sec:ch7-strategy}
+
+On a Minkowski condensate the tensor block is a linear field
+\(T_{\mu\nu}\) with the algebraic symmetries~\eqref{eq:STF}. Its
+quadratic action has the generic structure~\eqref{eq:ST-generic}.
+The entanglement Ward identity, Proposition~\ref{prop:ward}, must
+hold for every allowed variation supported on that block.
+
+The geometric side of the identity, \(\delta A\), depends on
+\(T_{\mu\nu}\) only through the linearized metric
+\begin{equation}
+  \label{eq:h-is-T}
+  h_{\mu\nu}=T_{\mu\nu}+\tfrac14\eta_{\mu\nu}\psi,
+\end{equation}
+and, in a gauge where the conformal piece is held fixed by the
+fixed-volume constraint of Assumption~\ref{ass:EE}, through
+\(T_{\mu\nu}\) alone. The modular side,
+\(\delta\langle T_{\mu\nu}^{\mathrm{op}}\rangle\), is the metric
+stress of the quadratic tensor action. If that action contains a
+mass term, the modular side contains a piece proportional to
+\(m_T^2 T_{\mu\nu}\). The geometric side does not. Compatibility for
+arbitrary compactly supported \(T_{\mu\nu}\) forces \(m_T^2=0\).
+
+That is the argument. The rest of the chapter writes it so that each
+step can be rejected independently.
+
+\section{Fierz--Pauli action for the tensor block}
+\label{sec:ch7-FP}
+
+The unique two-derivative quadratic action for a massive symmetric
+tensor that is ghost-free about Minkowski spacetime is the
+Fierz--Pauli action. After the algebraic trace has been projected
+out, so that \(T^\mu{}_\mu=0\) identically, it reduces to
+\begin{equation}
+  \label{eq:FP}
+  \begin{aligned}
+    S_{\mathrm{FP}}[T]
+    =\int\mathrm{d}^4x
+     \Bigl(
+       &\tfrac12\partial_\rho T_{\mu\nu}\partial^\rho T^{\mu\nu}
+        -\partial^\rho T_{\rho\mu}\partial_\sigma T^{\sigma\mu}\\
+       &-\tfrac12 m_T^2 T_{\mu\nu}T^{\mu\nu}
+     \Bigr).
+  \end{aligned}
+\end{equation}
+The derivative structure is required. A generic mass term
+\(m^2(T_{\mu\nu}T^{\mu\nu}-\alpha T^2)\) with \(\alpha\neq 1\)
+(before the trace projection) propagates a ghost. With the trace
+already zero the remaining danger is a wrong-sign kinetic term,
+which~\eqref{eq:FP} does not have.
+
+The Euler--Lagrange equation of~\eqref{eq:FP} is
+\begin{equation}
+  \label{eq:FP-eom}
+  \mathcal{E}_{\mu\nu}[T]-m_T^2 T_{\mu\nu}=0,
+\end{equation}
+where
+\begin{equation}
+  \label{eq:einstein-op}
+  \begin{aligned}
+    \mathcal{E}_{\mu\nu}[T]
+    &\equiv
+    \square T_{\mu\nu}
+    -\partial_\mu\partial^\rho T_{\rho\nu}
+    -\partial_\nu\partial^\rho T_{\rho\mu}\\
+    &\qquad
+    +\eta_{\mu\nu}\partial^\rho\partial^\sigma T_{\rho\sigma}
+  \end{aligned}
+\end{equation}
+is the linearized Einstein operator on a traceless tensor about
+Minkowski spacetime. (The linearized Einstein tensor on a general
+\(h_{\mu\nu}\) contains additional trace pieces; they are absent
+here because \(T^\mu{}_\mu=0\).)
+
+When \(m_T=0\), \eqref{eq:FP} is invariant under
+\begin{equation}
+  \label{eq:FP-gauge}
+  \delta_\xi T_{\mu\nu}
+  =\partial_\mu\xi_\nu+\partial_\nu\xi_\mu
+   -\tfrac12\eta_{\mu\nu}\partial\cdot\xi
+\end{equation}
+with \(\partial\cdot\xi\) arranged so that the trace remains zero.
+When \(m_T\neq 0\), that invariance is absent and the on-shell count
+is five degrees of freedom.
+
+\section{Modular stress of the tensor block}
+\label{sec:ch7-stress}
+
+The operator \(T_{\mu\nu}^{\mathrm{op}}\) in
+Proposition~\ref{prop:ward} is defined by the same rule
+as~\eqref{eq:T-def}, applied to \(S_{\mathrm{FP}}\) treated as a
+matter action on the background metric that defines the diamond.
+To first order about Minkowski spacetime,
+\begin{equation}
+  \label{eq:Top-FP}
+  \delta\langle T_{\mu\nu}^{\mathrm{op}}\rangle
+  =\mathcal{E}_{\mu\nu}[T]-m_T^2 T_{\mu\nu}
+   +\partial^\rho\Sigma_{\rho\mu\nu},
+\end{equation}
+where \(\Sigma_{\rho\mu\nu}\) is a total-derivative superpotential
+coming from the fact that the canonical and metric stress tensors
+differ by an improvement. On a diamond the superpotential
+contributes only at the edge \(\mathcal{B}\). That edge contribution
+is absorbed into the area term of the first law, which is already
+present in~\eqref{eq:ward}. What remains in the bulk integral is
+the improved stress
+\begin{equation}
+  \label{eq:Top-improved}
+  \delta\langle T_{\mu\nu}^{\mathrm{op}}\rangle_{\mathrm{bulk}}
+  =\mathcal{E}_{\mu\nu}[T]-m_T^2 T_{\mu\nu}.
+\end{equation}
+
+\section{Area variation induced by \(T_{\mu\nu}\)}
+\label{sec:ch7-area}
+
+The edge \(\mathcal{B}\) of a small diamond of radius \(\ell\) is a
+2-sphere of area \(4\pi\ell^2\) in the Minkowski background. A
+metric perturbation \(h_{\mu\nu}=T_{\mu\nu}\) changes that area by
+\begin{equation}
+  \label{eq:deltaA}
+  \delta A
+  =\int_{\mathcal{B}}
+   \mathrm{d}A\,
+   \tfrac12\sigma^{\mu\nu}T_{\mu\nu}
+   +O(\ell^3\|T\|,\ell\|T\|^2),
+\end{equation}
+where \(\sigma^{\mu\nu}\) is the induced metric on \(\mathcal{B}\).
+Jacobson's geometric identity converts the same variation, after
+integration against the conformal Killing vector and use of the
+fixed-volume constraint, into
+\begin{equation}
+  \label{eq:deltaA-G}
+  \frac{\kappa}{8\pi\Geff}\,\delta A
+  =
+  -\int_{\Sigma\cap D}
+   \mathrm{d}\Sigma^\mu\,\xi^\nu
+   \,\mathcal{E}_{\mu\nu}[T]
+   +O(\ell^3).
+\end{equation}
+The right-hand side contains the Einstein operator and does
+\emph{not} contain \(m_T\). The area of an emergent 2-surface knows
+about the metric perturbation. It does not know about a potential
+term in the fluctuation action.
+
+Equation~\eqref{eq:deltaA-G} is imported from the geometry of small
+diamonds, not re-derived here. Its hypotheses are: Riemann normal
+coordinates to the order kept in~\eqref{eq:RNC}, fixed volume, and
+the identification of the area prefactor with \(\Geff\). The last of
+these is still a name; Chapter~8 computes the name.
+
+\section{Substitution into the Ward identity}
+\label{sec:ch7-substitution}
+
+Insert~\eqref{eq:Top-improved} and~\eqref{eq:deltaA-G} into
+\eqref{eq:ward}. The Einstein-operator terms cancel, and what
+remains is
+\begin{equation}
+  \label{eq:mass-identity}
+  \int_{\Sigma\cap D}
+  \mathrm{d}\Sigma^\mu\,\xi^\nu
+  \bigl(-m_T^2 T_{\mu\nu}\bigr)
+  +O(\ell^3)
+  =0.
+\end{equation}
+The conformal Killing vector \(\xi^\nu\) of a small diamond is
+timelike in the interior and vanishes on the edge. Its leading
+expression in Riemann normal coordinates is
+\begin{equation}
+  \label{eq:xi-RNC}
+  \xi^\mu
+  =\frac{\kappa}{2\ell}
+   \bigl((\ell^2-t^2-r^2)\partial_t^\mu+2t\,x^\mu\bigr)
+   +O(R_{\alpha\beta\gamma\delta}\ell^3).
+\end{equation}
+
+\begin{lemma}[Arbitrary tensor sources]
+  \label{lem:arbitrary}
+  Compactly supported, smooth, traceless, symmetric variations
+  \(T_{\mu\nu}\) are allowed in the sense of
+  Definition~\ref{def:allowed}. In particular they may be chosen
+  independently in each small diamond, up to the fixed-volume
+  constraint already used.
+\end{lemma}
+
+\begin{proof}
+  The tensor block was split off algebraically in Chapter~5. Gauge
+  fixing of diffeomorphisms and local Lorentz transformations
+  removes \(\psi\)-mixing and \(\omega\)-mixing at this order but
+  does not constrain the nine components of \(T_{\mu\nu}\) beyond
+  smoothness and compact support. Fixed volume constrains the
+  trace sector, which has already been projected out.
+\end{proof}
+
+\begin{lemma}[Integral identity implies point identity]
+  \label{lem:point}
+  If~\eqref{eq:mass-identity} holds for every small diamond and
+  every allowed \(T_{\mu\nu}\), then
+  \begin{equation}
+    \label{eq:point}
+    m_T^2 T_{\mu\nu}(x)=0
+  \end{equation}
+  at every event \(x\) in the condensed phase.
+\end{lemma}
+
+\begin{proof}
+  Suppose \(m_T^2 T_{\mu\nu}\) is not identically zero. Then there
+  is an event \(x_0\) and a pair of indices at which the tensor
+  is nonzero. Choose a diamond centered at \(x_0\) with \(\ell\)
+  small enough that \(T_{\mu\nu}\) does not change sign in the
+  relevant component on \(\Sigma\cap D\), and choose the time
+  orientation so that \(\xi^\nu\) has a nonvanishing contraction
+  with that component. The integrand of~\eqref{eq:mass-identity} is
+  then of definite sign on a set of positive measure, and the
+  \(O(\ell^3)\) remainder cannot cancel it as \(\ell\to 0\).
+\end{proof}
+
+\section{The vanishing theorem}
+\label{sec:ch7-theorem}
+
+\begin{theorem}[Vanishing of the tensor mass gap]
+  \label{thm:mT}
+  Assume:
+  \begin{enumerate}
+    \item the microscopic setup of Chapter~3, including
+          Assumptions~\ref{ass:aux-metric}--\ref{ass:dictionary};
+    \item the condensed frame of Chapter~4, including
+          Assumptions~\ref{ass:nondeg} and~\ref{ass:lorentzian};
+    \item the algebraic split of Chapter~5 and
+          Assumption~\ref{ass:locked-block};
+    \item entanglement equilibrium, Assumption~\ref{ass:EE}, in the
+          form of Proposition~\ref{prop:ward};
+    \item the Fierz--Pauli quadratic action~\eqref{eq:FP} as the
+          two-derivative tensor block;
+    \item the geometric identity~\eqref{eq:deltaA-G} for small
+          diamonds.
+  \end{enumerate}
+  Then \(m_T^2=0\) throughout the condensed phase. The quadratic
+  tensor action reduces to the linearized Einstein--Hilbert action
+  on traceless perturbations,
+  \begin{equation}
+    \label{eq:EH-lin}
+    S_{\mathrm{EH}}^{(2)}[T]
+    =\int\mathrm{d}^4x\,
+     \tfrac12 T^{\mu\nu}\mathcal{E}_{\mu\nu}[T],
+  \end{equation}
+  and is invariant under~\eqref{eq:FP-gauge}.
+\end{theorem}
+
+\begin{proof}
+  Lemma~\ref{lem:point} gives \(m_T^2 T_{\mu\nu}=0\) at every event.
+  The tensor block is not the zero field: linearized gravitational
+  waves, if they exist, are particular solutions for \(T_{\mu\nu}\).
+  Hence \(m_T^2=0\). Substituting into~\eqref{eq:FP} produces
+  \eqref{eq:EH-lin} after an integration by parts, boundary terms
+  being discarded for compactly supported variations. Gauge
+  invariance~\eqref{eq:FP-gauge} is the standard invariance of the
+  linearized Einstein operator on a traceless tensor.
+\end{proof}
+
+\begin{remark}[What the theorem does not hide]
+  Hypothesis~4 is the physical input of NAMCG. Hypothesis~5 excludes
+  non-Fierz--Pauli two-derivative structures and higher-derivative
+  quadratic terms; the latter return in Chapter~9. Hypothesis~6
+  borrows a geometric identity used in Jacobson's argument. The
+  theorem is therefore a compatibility statement: a Fierz--Pauli
+  tensor block cannot sit in an entanglement-stationary condensate
+  unless it is massless. It is not a derivation of
+  Assumption~\ref{ass:EE} from the path integral.
+\end{remark}
+
+\section{Two transverse-traceless polarizations}
+\label{sec:ch7-TT}
+
+With \(m_T=0\), the equation \(\mathcal{E}_{\mu\nu}[T]=0\) plus the
+gauge invariance~\eqref{eq:FP-gauge} is linearized vacuum GR in the
+traceless sector. Choose the de Donder gauge
+\begin{equation}
+  \label{eq:dedonder}
+  \partial^\mu T_{\mu\nu}=0.
+\end{equation}
+Residual gauge transformations with \(\square\xi^\mu=0\) remain.
+They remove four more components. Together with the four conditions
+\eqref{eq:dedonder} and the four conditions implicit in taking the
+trace to vanish and staying in the symmetric sector after gauge
+fixing, one is left with two independent components. In a plane-
+wave basis they are the helicities \(\pm 2\),
+\begin{equation}
+  \label{eq:TT-wave}
+  T_{\mu\nu}(x)
+  =\mathrm{Re}\bigl(
+     \epsilon_{\mu\nu}^{\pm 2}\,
+     e^{ik\cdot x}
+   \bigr),
+  \qquad
+  k^2=0,
+  \quad
+  k^\mu\epsilon_{\mu\nu}=0,
+  \quad
+  \epsilon^\mu{}_\mu=0.
+\end{equation}
+
+This is the infrared graviton advertised in Chapter~1. It has been
+obtained as a fluctuation of the condensate, not as a fundamental
+metric field, contingent on Theorem~\ref{thm:mT}.
+
+\section{The van Dam--Veltman--Zakharov warning}
+\label{sec:ch7-vDVZ}
+
+A massive spin-2 field with \(m_T\) small but nonzero does not
+approach the massless theory smoothly in four dimensions. The
+discontinuity is visible in the linearized deflection of light and
+in the tensor-to-scalar ratio of a static source. Therefore it is
+not enough to argue that \(m_T\) is ``small compared with
+\(\LUV\).'' Entanglement equilibrium is being asked to set
+\(m_T\) identically to zero in the infrared, not to suppress it by
+a loop factor.
+
+If a later calculation produced \(m_T\sim v\,e^{-\LUV/v}\) or any
+other parametrically small but nonzero value, the theory would fail
+Solar-System tests unless an additional Vainshtein mechanism were
+demonstrated. No such mechanism is claimed here. Theorem~\ref{thm:mT}
+is an identity-zero statement.
+
+\section{Conformal and vector blocks}
+\label{sec:ch7-other}
+
+Theorem~\ref{thm:mT} is silent about \(\psi\) and \(A_\mu\).
+
+\paragraph{Vector block.}
+The connection \(A_\mu\) is an ordinary gauge field once
+\(\omega_{\mu\nu}\) has been eaten. Its mass is a Higgs mass of
+order \(gv\), or zero if an unbroken subgroup remains. Neither
+case produces a second graviton. Chapter~10 completes the eating.
+
+\paragraph{Conformal block.}
+The scalar \(\psi\) is more dangerous. If it remains massless it
+is a Brans--Dicke field, and the infrared theory is scalar--tensor
+gravity. Entanglement equilibrium at fixed volume was designed to
+remove a conformal breathing from the comparison diamond; it does
+not, by itself, gap \(\psi\) as a propagating excitation.
+
+\begin{assumption}[Gapped conformal mode]
+  \label{ass:gap-psi}
+  The radial Higgs \(\sigma\) of the polar decomposition, and the
+  conformal metric mode \(\psi\) mixed with it, acquire a mass
+  \(m_\psi\sim\sqrt{\lambda}\,v\) from the potential~\eqref{eq:V}
+  and decouple from the infrared tensor sector.
+\end{assumption}
+
+Assumption~\ref{ass:gap-psi} is the scalar-tensor ceiling of
+Chapter~1, reappeared as a named hypothesis. If it fails, NAMCG
+predicts a light scalar and is constrained by Cassini-type bounds
+on \(\omega_{\mathrm{BD}}\). Chapter~17 records this as a
+falsifier, not as a detail.
+
+\section{Exercises}
+\label{sec:ch7-exercises}
+
+\begin{enumerate}
+  \item \textbf{Fierz--Pauli ghost.}
+    Restore a trace piece \(T^\mu{}_\mu=\psi\) and replace the mass
+    term by \(m^2(T_{\mu\nu}T^{\mu\nu}-\alpha\psi^2)\). Show that
+    \(\alpha\neq 1\) produces a sixth, ghostlike excitation.
+    This is why~\eqref{eq:FP} is not an arbitrary massive action.
+  \item \textbf{Gauge invariance at \(m_T=0\).}
+    Verify that~\eqref{eq:FP-gauge} leaves~\eqref{eq:EH-lin}
+    invariant. Show the mass term in~\eqref{eq:FP} is not
+    invariant.
+  \item \textbf{Einstein operator on a TT wave.}
+    Insert~\eqref{eq:TT-wave} into~\eqref{eq:einstein-op} and
+    recover \(k^2=0\).
+  \item \textbf{Sign in the Ward identity.}
+    Track the sign from~\eqref{eq:Top-improved} through
+    \eqref{eq:deltaA-G} to~\eqref{eq:mass-identity}. A sign error
+    here would force \(m_T^2=0\) by the same logic but would
+    mismatch the Einstein equation in Chapter~11. Fix the sign
+    against Jacobson's first law for ordinary matter.
+  \item \textbf{Why compact support.}
+    Suppose \(T_{\mu\nu}\) is a plane wave, not compactly supported.
+    Where does the proof of Lemma~\ref{lem:point} fail, and how
+    does one repair it by using wave packets?
+  \item \textbf{vDVZ.}
+    Look up the linearized deflection angle for Fierz--Pauli
+    gravity with mass \(m_T\) and take \(m_T\to 0\). Compare with
+    the GR deflection. What numerical factor appears?
+  \item \textbf{Conformal leftover.}
+    Linearize a Brans--Dicke action about Minkowski spacetime and
+    identify the kinetic mixing of \(\psi\) with \(T_{\mu\nu}\).
+    What bound on \(m_\psi\) follows from requiring the mixing to
+    be negligible inside the Solar System?
+\end{enumerate}
+
+\section{Bridge to Chapter~8}
+\label{sec:ch8-bridge-from-7}
+
+The infrared tensor sector is now linearized general relativity,
+contingent on Theorem~\ref{thm:mT} and Assumption~\ref{ass:gap-psi}.
+The prefactor of that action is still a symbol, \(\Geff\). Chapter~8
+computes it. The one-loop effective action of the condensate
+fluctuations on the emergent background is expanded with the
+Seeley--DeWitt coefficients of Section~\ref{sec:ch2-heatkernel}. The
+coefficient of \(R\) is
+\begin{equation}
+  \label{eq:Geff-next}
+  \frac{1}{16\pi\Geff}
+  =\frac{\mathrm{Tr}(\mathbb{I})\,\LUV^2}{16\pi^2}
+   +\frac{v^2}{12}\ln\Bigl(\frac{\LUV^2}{\mu^2}\Bigr).
+\end{equation}
+The same expansion produces a quartic term \(c_0\LUV^4\), which
+Chapter~8 will isolate and Chapter~12 will be required to tame.

@@ -1,0 +1,290 @@
+\chapter{A Provisional Bridge from Mutual Information to the RAR}
+\label{app:rar-bridge}
+
+This appendix states the strongest logical contact between NAMCG
+and the SPARC radial acceleration relation that the book can
+currently defend. It does not solve Problem~H. It does not
+derive \(g_\dagger\) from \(\Phi^I{}_A\). It replaces an
+unspecified \(\mu_{\mathrm{ent}}\) with a single modular
+conjecture whose failure would leave Appendix~\ref{app:empirical}
+as a coefficient ranking and nothing more.
+
+\section{What the two sides already share}
+\label{sec:appE-share}
+
+NAMCG, after Theorems~\ref{thm:mT}--\ref{thm:conservation}, is
+Einstein gravity plus a conserved extra tensor obtained by
+varying an entanglement functional of baryonic regions. In a
+static disk that statement has three immediate consequences,
+none of which uses SPARC.
+
+\begin{enumerate}
+  \item The extra acceleration is slaved to the baryonic
+        Newtonian field. It cannot be an independent halo
+        function of \(r\) (Assumption~\ref{ass:track}).
+  \item At Solar-System and inner-disk accelerations the extra
+        piece must vanish, or Cassini bounds fail:
+        \(\nu\to 1\) as \(g_{\mathrm{N}}\to\infty\).
+  \item The only scalar available to mark the transition is an
+        acceleration built from the same modular data that
+        defined the diamonds of Chapter~6 and the infrared
+        boundary of Chapter~12.
+\end{enumerate}
+
+A fourth consequence is needed once the subsystem is not isolated.
+The entanglement functional is a functional of the baryonic
+configuration, not of an excised disk. A slowly varying external
+Newtonian field \(\mathbf{g}_{\mathrm{ext}}\) therefore enters the
+argument of the boost (Assumption~\ref{ass:efe}). In the
+external-field-dominated limit \(g_{\mathrm{N}}\ll g_{\mathrm{ext}}\),
+\begin{equation}
+  \label{eq:appE-efe}
+  \gamma
+  \equiv\frac{g_{\mathrm{int}}}{g_{\mathrm{N}}}
+  \to\nu_{\sqrt{}}(g_{\mathrm{ext}}),
+\end{equation}
+not \(\nu_{\sqrt{}}(g_{\mathrm{N}})\).
+At the Sun, \(v_{\odot}^{2}/R_{0}\approx 2.2\times 10^{-10}\,\mathrm{m\,s^{-2}}
+\approx 1.8\,g_{\dagger}\), so \(\nu_{\sqrt{}}(g_{\mathrm{gal}})\approx 1.1\).
+An isolated evaluation of~\eqref{eq:appE-RAR} at
+\(g_{\mathrm{N}}=10^{-11}\,\mathrm{m\,s^{-2}}\) wants \(\gamma\approx 4\)
+and is illegal for a solar-neighborhood binary.
+
+The RAR is an empirical map of exactly that type
+\cite{McGaugh2016,Lelli2017RAR}:
+\begin{equation}
+  \label{eq:appE-RAR}
+  g_{\mathrm{obs}}
+  =\nu_{\mathrm{RAR}}(x)\,g_{\mathrm{N}},
+  \qquad
+  x=\frac{g_{\mathrm{N}}}{g_\dagger},
+  \qquad
+  \nu_{\mathrm{RAR}}(x)
+  =\frac{1}{1-e^{-\sqrt{x}}},
+\end{equation}
+with \(g_\dagger=(1.20\pm 0.02)\times 10^{-10}\,\mathrm{m\,s^{-2}}\)
+and residuals that do not track radius or Hubble type. Appendix~\ref{app:empirical}
+showed that~\eqref{eq:appE-RAR}, frozen at \(g_\dagger\), is the
+disk law NAMCG is presently allowed to wear.
+
+The shared content is therefore the \emph{logical type} of the
+law, not the algebra of the interpolator and not the numerical
+value of \(g_\dagger\).
+
+\section{Why the first NAMCG-shaped interpolator failed}
+\label{sec:appE-failed}
+
+Chapter~6 supplied a conformal large-separation tail
+\begin{equation}
+  \label{eq:appE-I}
+  I(A:B)\;\sim\;c\,\frac{\ell_A^2\ell_B^2}{d^{2\Delta}}
+\end{equation}
+with \(\Delta\) of order one~\cite{Cardy2013MI}. A linear-response
+force \(\partial I/\partial d\), converted carelessly to a local
+boost and written as a function of \(g_{\mathrm{N}}\), produced
+the working family
+\begin{equation}
+  \label{eq:appE-exp}
+  \nu_{\mathrm{exp}}
+  =\frac{1}{1-\alpha\exp(-g_{\mathrm{N}}/g_s)}.
+\end{equation}
+On the same 175 SPARC files that family lost to simple MOND by a
+wide AIC gap. The transition was too sharp in \(g_{\mathrm{N}}\)
+and needed a second amplitude \(\alpha\) that disks do not want.
+
+The failure is useful. It shows that ``mutual information
+implies a boost'' is not enough. The \emph{argument of the
+exponential} matters. SPARC selects \(\sqrt{g_{\mathrm{N}}}\)
+in that argument, not \(g_{\mathrm{N}}\).
+
+\section{An algebraic identity, not a derivation}
+\label{sec:appE-BE}
+
+Write \(y=\sqrt{x}=\sqrt{g_{\mathrm{N}}/g_\dagger}\). Then
+\begin{equation}
+  \label{eq:appE-BE}
+  \nu_{\mathrm{RAR}}(x)
+  =1+\frac{1}{e^{y}-1}
+  =1+n_{\mathrm{BE}}(y),
+\end{equation}
+where \(n_{\mathrm{BE}}\) is the Bose--Einstein occupation of a
+single mode with dimensionless energy \(y\). This is an identity.
+It does not, by itself, mean that galactic baryons are a Bose
+gas. It does mean that any microscopic argument that produces a
+thermal factor \(e^{-\sqrt{g_{\mathrm{N}}/g_s}}\) in a
+screen occupation, rather than \(e^{-g_{\mathrm{N}}/g_s}\),
+lands on the published interpolator automatically.
+
+The linear-exponential~\eqref{eq:appE-exp} is the Boltzmann
+factor of a scale set by \(g_{\mathrm{N}}\) itself. The RAR is
+the Bose factor of a scale set by \(\sqrt{g_{\mathrm{N}}}\).
+That is the whole algebraic distinction.
+
+\section{A modular conjecture}
+\label{sec:appE-conj}
+
+Chapter~6 already assigns a diamond an Unruh temperature
+\(T_{\mathrm{Unruh}}=\kappa/2\pi\) and a modular Hamiltonian
+\(H_D\). Chapter~12 already assigns the cosmology an infrared
+boundary scale through \(\Lambda_{\mathrm{eff}}\). Milgrom's
+coincidence~\cite{Milgrom1983},
+\begin{equation}
+  \label{eq:appE-coinc}
+  2\pi g_\dagger
+  \;\sim\;
+  cH_0
+  \;\sim\;
+  c^2\sqrt{\Lambda/3},
+\end{equation}
+says that the SPARC scale sits, to a factor of order \(2\pi\),
+on the same infrared accelerations NAMCG already possesses as
+diamond and boundary data.
+
+\begin{assumption}[Square-root modular response]
+  \label{ass:sqrt-mod}
+  For a slowly varying disk of condensed parcels, the
+  leading reversible variation of \(U_{\mathrm{ent}}\) with
+  respect to a local Newtonian acceleration is thermal in
+  the variable
+  \begin{equation}
+    \label{eq:appE-y}
+    y
+    =\sqrt{\frac{g_{\mathrm{N}}}{g_s}},
+    \qquad
+    g_s
+    \sim
+    \frac{\kappa_{\mathrm{IR}}}{2\pi},
+  \end{equation}
+  where \(\kappa_{\mathrm{IR}}\) is the surface gravity of the
+  infrared boundary used in Chapter~12, not a new galactic
+  parameter. The occupation that weights the extra stress is
+  \(n_{\mathrm{BE}}(y)\). Then
+  \(\nu=1+n_{\mathrm{BE}}(y)\) is~\eqref{eq:appE-RAR}, and
+  \(g_s\) is identified with \(g_\dagger\) rather than fitted
+  to SPARC.
+\end{assumption}
+
+Assumption~\ref{ass:sqrt-mod} is the missing sentence of
+Problem~H. It is not implied by Theorem~\ref{thm:mT}. It is
+not implied by the conformal tail~\eqref{eq:appE-I}. It is
+the simplest contact that turns the book's modular objects
+into the interpolator SPARC already selected.
+
+Why a square root rather than a linear Unruh factor
+\(T\propto g_{\mathrm{N}}\) is not derived here. A linear
+factor reproduces~\eqref{eq:appE-exp} and has already failed.
+A justification would have to come from the spectrum of
+\(H_D\) on a diamond whose size is set by the local
+baryonic curvature radius, or from a two-horizon sharing
+between the local diamond and the HBEV boundary. That
+calculation is the content of Problem~H, restated.
+
+\section{What this bridge excludes}
+\label{sec:appE-exclude}
+
+Verlinde's 2016 emergent-gravity formula for finite disks
+depends explicitly on radius as well as on \(g_{\mathrm{N}}\).
+Lelli, McGaugh and Schombert found that those residuals
+correlate with radius and that acceptable fits require
+stellar mass-to-light ratios in tension with population
+synthesis~\cite{Lelli2017Verlinde}. NAMCG cannot take that
+route. Assumption~\ref{ass:track} plus the RAR residuals
+already require a map of \(g_{\mathrm{N}}\) only.
+
+A cosmological running \(g_s(z)\propto H(z)\) is likewise
+not licensed by this appendix. Equation~\eqref{eq:appE-coinc}
+is a present-day coincidence used to name \(g_s\). Promoting
+it to \(g_s(z)\) is extra physics and would have to survive
+high-redshift rotation curves before it is written as a
+NAMCG result.
+
+Isolated application of~\eqref{eq:appE-RAR} to wide binaries is
+likewise not licensed. Assumption~\ref{ass:efe} saturates the boost at
+\(\nu_{\sqrt{}}(g_{\mathrm{ext}})\). A Gaia sample consistent with
+Newton constrains the isolated reading, not Theorem~7.3.
+A reported \(\gamma\approx 1.4\) that survives quality cuts is not
+explained by \(\nu_{\sqrt{}}(g_{\mathrm{gal}})\approx 1.1\); that
+residual, if real, is still open.
+
+\section{How the bridge would be confirmed or killed}
+\label{sec:appE-test}
+
+\paragraph{Confirmation.}
+The published diamond first law recovers Einstein gravity
+at first order in the metric, hence \(\nu\to 1\).
+An interpolator requires the modular spectrum of \(K_D\)
+in the two-scale geometry of Chapters~6 and~12
+(local diamond plus infrared surface gravity
+\(\kappa_{\mathrm{IR}}\)).
+Problem~H is solved if the leading eigenvalue for a
+weak-field source is
+\(\lambda_0\propto\sqrt{g_{\mathrm{N}}/\kappa_{\mathrm{IR}}}\)
+and the occupation is bosonic. Then
+\(g_s=\kappa_{\mathrm{IR}}\) is not a SPARC fit, and
+Appendix~\ref{app:empirical} becomes a consistency check.
+A linear eigenvalue
+\(\lambda_0\propto g_{\mathrm{N}}/\kappa_{\mathrm{IR}}\)
+would reproduce the retired
+\(\nu_{\mathrm{exp}}\) and kill
+Assumption~\ref{ass:sqrt-mod}.
+
+The same computation must grow an external-field argument
+before wide binaries are a prediction. Until it does,
+Assumption~\ref{ass:efe} is a coefficient in the same sense as
+Assumption~\ref{ass:track}: it is the QUMOND external-field limit written
+with \(\nu_{\sqrt{}}\), not a lemma from \(I(A:B)\).
+
+The explicit modular Hamiltonian of de~Sitter diamonds
+\cite{Frob2023dS} is the operator to use for the
+eigenvalue test~\eqref{eq:lambda0}.
+The Euclidean Schwarzschild--de~Sitter action is minus
+the sum of the two horizon entropies, not a geometric
+mean of surface gravities; that instanton does not
+by itself produce \(\sqrt{g_{\mathrm{N}}/\kappa_{\mathrm{IR}}}\).
+The numerical coincidence
+\(cH_0/2\pi\sim g_\dagger\) may be recorded after
+\(\lambda_0\) is computed, not used to fix \(g_s\).
+
+\paragraph{Failure.}
+The same computation produces~\eqref{eq:appE-exp}, a
+radius-dependent kernel, or a light \(\psi\). Then disks
+may still follow the RAR, but not as a NAMCG prediction.
+Assumption~\ref{ass:track} remains a coefficient; Problem~H
+remains open; Appendix~\ref{app:empirical} is unchanged.
+
+\section{One paragraph for Chapter~13}
+\label{sec:appE-ch13}
+
+The working disk law is~\eqref{eq:appE-RAR}.
+The reason NAMCG is allowed to use it on an isolated disk is
+Assumption~\ref{ass:track}.
+The reason a subsystem embedded in the Galaxy must not use the
+isolated evaluation is Assumption~\ref{ass:efe}.
+The reason the book might eventually own either sentence is
+Assumption~E.1.
+Until the last is a lemma, the first two are borrowed, and the
+galactic sector is the RAR with the external-field effect.
+
+\section{Exercises}
+\label{sec:appE-ex}
+
+\begin{enumerate}
+  \item Prove~\eqref{eq:appE-BE} in three lines.
+  \item Expand \(\nu_{\mathrm{RAR}}\) and \(\nu_{\mathrm{exp}}\)
+        for \(x\ll 1\) and \(x\gg 1\). Where do they first
+        differ by order one?
+  \item Using \(H_0=70\,\mathrm{km\,s^{-1}\,Mpc^{-1}}\), compute
+        \(cH_0\) and \(cH_0/2\pi\) in \(\mathrm{m\,s^{-2}}\).
+        Compare with \(g_\dagger\). This is a coincidence
+        check, not a derivation.
+  \item Why does an explicit \(r\) in \(\nu\), as in Verlinde's
+        finite-disk formula, threaten the residual structure
+        reported by~\cite{Lelli2017RAR}?
+  \item \textbf{External field.}
+    Take \(g_{\mathrm{ext}}=2.2\times 10^{-10}\,\mathrm{m\,s^{-2}}\)
+    and \(g_{\mathrm{N}}=10^{-11}\,\mathrm{m\,s^{-2}}\).
+    Compute \(\nu_{\sqrt{}}(g_{\mathrm{N}})\) and
+    \(\nu_{\sqrt{}}(g_{\mathrm{ext}})\).
+    Which one is the legal boost under Assumption~\ref{ass:efe}, and which
+    published wide-binary claim does each contact?
+\end{enumerate}

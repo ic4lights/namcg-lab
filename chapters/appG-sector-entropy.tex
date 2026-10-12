@@ -1,0 +1,55 @@
+\chapter{Heat-Kernel Area Term on a Causal Diamond}
+\label{app:matrix_entropy}
+
+This appendix records the standard heat-kernel contribution to the
+entanglement entropy of a causal diamond. It does not derive the
+equilibrium condition \(\delta S_D=\delta\langle H_D\rangle\) and does
+not recover the Einstein equation from the matrix sector alone.
+
+\section{Replica formula and cone expansion}
+\label{sec:replica-cone}
+
+The von Neumann entropy of the reduced state on a diamond \(D\) is
+obtained from the replica trick,
+\begin{equation}
+  S_D=\bigl(1-n\partial_n\bigr)\ln Z(n)\Big|_{n=1},
+\end{equation}
+where \(Z(n)\) is the partition function on the \(n\)-sheeted cover
+branched along the entangling surface \(\Sigma\). For a Laplace-type
+fluctuation operator the heat-kernel expansion on the cone produces
+the area term
+\begin{equation}
+  S_D=\frac{\operatorname{Area}(\Sigma)}{4G_{\mathrm{eff}}}+S_{\mathrm{pot}},
+\end{equation}
+with the prefactor identified from the Seeley--DeWitt coefficient
+that multiplies the deficit. This is the standard result used in
+Chapter~6 and Appendix~B. The numerical value of \(G_{\mathrm{eff}}\)
+remains the structural heat-kernel map of Theorem~\ref{thm:Geff};
+the coefficients \(A,B,C\) are not fixed here (Problem~F).
+
+\section{What is not derived}
+\label{sec:not-derived}
+
+\begin{itemize}
+  \item The equilibrium condition
+        \(\delta S_D=\delta\langle H_D\rangle\) under fixed volume.
+        It is the hypothesis of Chapters~6--7 that forces \(m_T=0\).
+        It is not obtained as a path-integral Ward identity from the
+        replica variation alone.
+  \item An evaluation of the fluctuation operator of the locked
+        NAMCG condensate (including diffeomorphism and local-Lorentz
+        ghosts) that would determine the precise endomorphism
+        contribution to the area coefficient.
+  \item Recovery of the infrared equation. Once the area law and the
+        equilibrium condition are both assumed, the Einstein equation
+        with a matrix source follows by the usual Jacobson argument;
+        that assumption is not removed.
+\end{itemize}
+
+\section{Status}
+\label{sec:status}
+
+The area term in \(S_D\) is the standard heat-kernel result. The
+appendix adds no new derivation of the Ward identity, no scheme-fixed
+coefficient, and no alteration to the open-problem ledger of
+Appendix~\ref{app:status}.

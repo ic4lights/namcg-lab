@@ -1,0 +1,373 @@
+\chapter[Conservation]{Covariant Conservation of the Total Stress Tensor}
+\label{ch:conservation}
+
+\paragraph{Learning outcomes.}
+After this chapter the reader should be able to:
+\begin{enumerate}
+  \item define \(T_{\mu\nu}^{\mathrm{total}}\) as the sum of matter,
+        tensor-block, and entropic contributions;
+  \item obtain \(\Tent_{\mu\nu}\) by metric variation of
+        \(U_{\mathrm{ent}}\);
+  \item prove that diffeomorphism invariance forces
+        \(\nabla^\mu T_{\mu\nu}^{\mathrm{total}}=0\) on shell;
+  \item reduce that identity to a Newtonian force balance and see
+        which drags are allowed;
+  \item enter Chapter~12 knowing that vacuum energy is a
+        conservation problem as well as a cosmological-constant
+        problem.
+\end{enumerate}
+
+Chapter~10 made \(\nabla_\mu\) the Levi-Civita connection of the
+composite metric. This chapter asks what that connection is allowed
+to act on.
+
+\section{The split}
+\label{sec:ch11-split}
+
+The infrared field equation contemplated from here on is
+\begin{equation}
+  \label{eq:EFE-total}
+  G_{\mu\nu}+\Lambda_{\mathrm{eff}}g_{\mu\nu}
+  =8\pi\Geff\,T_{\mu\nu}^{\mathrm{total}},
+\end{equation}
+with
+\begin{equation}
+  \label{eq:T-total-def}
+  T_{\mu\nu}^{\mathrm{total}}
+  =T_{\mu\nu}^{\mathrm{matter}}
+  +T_{\mu\nu}^{\mathrm{tensor}}
+  +\Tent_{\mu\nu}.
+\end{equation}
+
+\paragraph{Matter.}
+\(T_{\mu\nu}^{\mathrm{matter}}\) is the metric variation
+\eqref{eq:T-def} of every action for fields that are not the
+condensate itself: ordinary fluids, electromagnetism, baryons. On
+shell it satisfies \(\nabla^\mu T_{\mu\nu}^{\mathrm{matter}}=0\)
+\emph{only} if those fields do not exchange energy with the
+condensate. In NAMCG they may. The separate conservation of matter
+is therefore not assumed.
+
+\paragraph{Tensor block.}
+\(T_{\mu\nu}^{\mathrm{tensor}}\) is the metric stress of the
+quadratic action~\eqref{eq:EH-lin}. After Theorem~\ref{thm:mT} it
+is the linearized gravitational-wave stress, of the Isaacson type
+when averaged over wavelengths short compared with the background
+curvature. It is kept in~\eqref{eq:T-total-def} for bookkeeping and
+is negligible in the static Newtonian laboratories of
+Chapters~14--15.
+
+\paragraph{Entropic piece.}
+\(\Tent_{\mu\nu}\) is defined by the same variational rule applied
+to the mutual-information potential of Definition~\ref{def:Uent},
+promoted to a functional of the metric:
+\begin{equation}
+  \label{eq:Tent-var}
+  \Tent_{\mu\nu}
+  =-\frac{2}{\sqrt{-g}}
+    \frac{\delta S_{\mathrm{ent}}[g]}{\delta g^{\mu\nu}},
+  \qquad
+  S_{\mathrm{ent}}[g]
+  =-\int\mathrm{d}t\,U_{\mathrm{ent}}[g].
+\end{equation}
+The promotion \(U_{\mathrm{ent}}\to S_{\mathrm{ent}}[g]\) uses the
+fact that every entropy \(S(A)\) in~\eqref{eq:Uent-def} is computed
+from a reduced state on a region whose causal structure depends on
+\(g_{\mu\nu}\). Varying the metric varies the regions and varies
+the modular Hamiltonians.
+
+\section{Noether's second theorem, applied once}
+\label{sec:ch11-noether}
+
+Let \(S_{\mathrm{IR}}[g,\Psi]\) be the infrared action whose
+Euler--Lagrange equation for \(g_{\mu\nu}\) is~\eqref{eq:EFE-total}:
+Einstein--Hilbert plus \(\Lambda_{\mathrm{eff}}\), plus matter, plus
+\(S_{\mathrm{ent}}\), plus the tensor-block action. Diffeomorphism
+invariance states that for every compactly supported vector field
+\(\xi^\mu\),
+\begin{equation}
+  \label{eq:diff-inv}
+  \delta_\xi S_{\mathrm{IR}}=0
+\end{equation}
+identically, off shell as a statement about the integrand up to a
+boundary term. Noether's second theorem then supplies
+\begin{equation}
+  \label{eq:noether-2}
+  \nabla_\mu
+  \Bigl(
+    \frac{1}{8\pi\Geff}
+    \bigl(G^{\mu\nu}+\Lambda_{\mathrm{eff}}g^{\mu\nu}\bigr)
+    -T^{\mu\nu}_{\mathrm{total}}
+  \Bigr)
+  =0
+\end{equation}
+as an identity, once the matter and condensate fields \(\Psi\) are
+on shell. The contracted Bianchi identity
+\(\nabla_\mu G^{\mu\nu}=0\) and metric compatibility
+\(\nabla_\mu g^{\mu\nu}=0\) reduce~\eqref{eq:noether-2} to the
+on-shell conservation law
+\begin{equation}
+  \label{eq:cons-law}
+  \nabla_\mu T^{\mu\nu}_{\mathrm{total}}=0.
+\end{equation}
+
+\begin{theorem}[Conservation of the total stress]
+  \label{thm:conservation}
+  Assume:
+  \begin{enumerate}
+    \item the infrared action \(S_{\mathrm{IR}}\) is a scalar under
+          diffeomorphisms of the composite metric, including the
+          entropic functional \(S_{\mathrm{ent}}[g]\);
+    \item the Einstein equation is~\eqref{eq:EFE-total};
+    \item matter fields and condensate fluctuations are on shell
+          with respect to \(S_{\mathrm{IR}}\).
+  \end{enumerate}
+  Then
+  \begin{equation}
+    \label{eq:cons-thm}
+    \nabla^\mu
+    \bigl(
+      T_{\mu\nu}^{\mathrm{matter}}
+      +T_{\mu\nu}^{\mathrm{tensor}}
+      +\Tent_{\mu\nu}
+    \bigr)
+    =0.
+  \end{equation}
+  Separate conservation of any one summand is not implied.
+\end{theorem}
+
+The Einstein-plus-extra-tensor form of the infrared equation
+is collected in Appendix~\ref{app:field-eq}.
+
+\begin{proof}
+  Diffeomorphism invariance of \(S_{\mathrm{IR}}\) is
+  Assumption~1. Noether's second theorem yields~\eqref{eq:noether-2}.
+  Bianchi and~\eqref{eq:EFE-total} yield~\eqref{eq:cons-thm}. The
+  last sentence is the observation that Noether's theorem constrains
+  only the sum that couples to \(g_{\mu\nu}\).
+\end{proof}
+
+\begin{remark}[The real hypothesis]
+  Everything in the proof is standard except Assumption~1 applied
+  to \(S_{\mathrm{ent}}\). Mutual information~\eqref{eq:MI} is a
+  scalar for each fixed partition of a spatial slice. Promoting it
+  to a diffeomorphism scalar on a dynamical spacetime requires that
+  the assignment
+  \((g,A,B)\mapsto I(A:B)\) commute with Lie dragging of the
+  regions. That is true if \(A\) and \(B\) are defined
+  geometrically (causal domains, outermost trapped surfaces,
+  constant-mean-curvature balls of specified volume) and fails if
+  they are defined by coordinate inequalities such as
+  \(r\le R\) in a preferred chart. The book uses geometric
+  regions.
+\end{remark}
+
+\section{Structure of the entropic stress}
+\label{sec:ch11-Tent}
+\label{sec:ch11-Tent}
+
+A first variation of \(S_{\mathrm{ent}}\) on a static background
+produces a conservative extra potential. A first variation on a
+time-dependent background produces, in addition, a piece odd under
+velocities. The split
+\begin{equation}
+  \label{eq:Tent-split}
+  T_{\mu\nu}^{\mathrm{ent}}
+  =T_{\mu\nu}^{\mathrm{ent,rev}}
+   +T_{\mu\nu}^{\mathrm{ent,irrev}}
+\end{equation}
+is the covariant version of ``energy from mutual information'' plus
+``drag from changing mutual information.''
+
+On two worldlines \(\gamma_A,\gamma_B\) in a nearly Minkowski
+region one has, at leading post-Newtonian order,
+\begin{equation}
+  \label{eq:U-PN}
+  U_{\mathrm{ent}}
+  =-\lambda I\bigl(\ell_A,\ell_B,d(\gamma_A,\gamma_B)\bigr),
+\end{equation}
+and the four-force on body \(A\) is
+\begin{equation}
+  \label{eq:four-force}
+  f^\mu_A
+  =-\frac{D}{D\tau_A}
+    \Bigl(
+      \frac{\partial L_{\mathrm{ent}}}{\partial \dot x_{A\mu}}
+    \Bigr)
+    +\frac{\partial L_{\mathrm{ent}}}{\partial x_{A\mu}},
+\end{equation}
+with \(L_{\mathrm{ent}}=-U_{\mathrm{ent}}\) along the worldlines.
+The term built from \(\partial I/\partial d\) at vanishing velocity
+is reversible and conservative. The term built from
+\(\partial I/\partial\dot d\) or from the time derivative of
+\(\ell_A,\ell_B\) is irreversible in the thermodynamic sense of
+Chapter~6: it tracks a change of entanglement across the motion,
+not a stored potential.
+
+The Newtonian reduction of the irreversible piece, for a reduced
+mass \(\mu\) and a separation \(d\), is of the form
+\begin{equation}
+  \label{eq:airrev}
+  \mathbf{a}_{\mathrm{irrev}}
+  =-\eta(d,\ell_A,\ell_B)\,
+    \frac{\mathbf{v}}{d^{n}},
+\end{equation}
+with a positive coefficient \(\eta\) if mutual information decreases
+under adiabatic separation of two thermal cores. The source notes
+use \(n=4\) as a working exponent compatible with a second
+derivative of a \(1/d^2\) mutual-information tail
+\eqref{eq:I-falloff}. Chapter~15 adopts
+\begin{equation}
+  \label{eq:airrev-lab}
+  \mathbf{F}_{\mathrm{diss}}
+  =-\eta\,\frac{\mu}{d^4}\,\mathbf{v}
+\end{equation}
+as a laboratory, not as a derived multipole formula.
+
+\begin{proposition}[Allowed Newtonian drags]
+  \label{prop:allowed-drag}
+  A two-body equation
+  \begin{equation}
+    \label{eq:newton-drag}
+    \mu\ddot{\mathbf{r}}
+    =-\nabla U_{\mathrm{N}}-\nabla U_{\mathrm{ent}}^{\mathrm{(rev)}}
+     +\mathbf{F}_{\mathrm{diss}}
+  \end{equation}
+  is the reduction of a covariantly conserved \(\Tent_{\mu\nu}\)
+  only if there exists an energy-balance identity
+  \begin{equation}
+    \label{eq:energy-balance}
+    \frac{\mathrm{d}}{\mathrm{d}t}
+    \bigl(E_{\mathrm{mech}}+E_{\mathrm{ent}}\bigr)
+    =\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}
+     +O(c^{-2})
+  \end{equation}
+  with \(E_{\mathrm{ent}}\) built from \(I(A:B)\), and only if the
+  equal-and-opposite force on the second body holds up to radiation
+  reaction of Isaacson type. A drag that dissipates mechanical
+  energy into nowhere, with no \(E_{\mathrm{ent}}\) and no
+  gravitational radiation, is not allowed.
+\end{proposition}
+
+The laboratory~\eqref{eq:airrev-lab} satisfies
+Proposition~\ref{prop:allowed-drag} if and only if the integrator
+tracks an entanglement energy whose decrease equals
+\(-\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}\). Chapter~15 will do
+that bookkeeping explicitly.
+
+\section{Exchange with matter}
+\label{sec:ch11-exchange}
+
+Equation~\eqref{eq:cons-thm} permits
+\begin{equation}
+  \label{eq:exchange}
+  \nabla^\mu T_{\mu\nu}^{\mathrm{matter}}
+  =-\nabla^\mu\Tent_{\mu\nu}
+   -\nabla^\mu T_{\mu\nu}^{\mathrm{tensor}}.
+\end{equation}
+Matter may heat or cool because entanglement of the condensate
+cores is changing. In a tidal disruption event the geometric
+reading is: as the disrupted star is sheared, the mutual information
+between debris parcels and the compact core changes, and the
+work done by \(\mathbf{F}_{\mathrm{diss}}\) is accounted in
+\(E_{\mathrm{ent}}\), not lost.
+
+This is still not a model of microphysical dissipation in a fluid
+with a viscosity measured in the laboratory. It is a channel
+required by conservation once \(U_{\mathrm{ent}}\) is admitted as
+part of the action.
+
+\section{Vacuum energy as a conservation constraint}
+\label{sec:ch11-vacuum}
+
+A term \(\rho_\Lambda g_{\mu\nu}\) with constant \(\rho_\Lambda\) is
+conserved by itself:
+\begin{equation}
+  \label{eq:Lambda-cons}
+  \nabla^\mu(\rho_\Lambda g_{\mu\nu})=0.
+\end{equation}
+A term whose prefactor varies, \(\rho_\Lambda(x)g_{\mu\nu}\), is
+not conserved unless
+\begin{equation}
+  \label{eq:Lambda-var}
+  \partial_\mu\rho_\Lambda=0
+\end{equation}
+or additional current terms are supplied. The heat-kernel
+density~\eqref{eq:W-Lambda} is a constant in the approximation that
+\(\LUV\) and \(\mathrm{Tr}(\mathbb{I})\) are constant. If Chapter~12
+regulates \(\rho_\Lambda\) by a boundary functional that depends on
+the metric induced on \(\partial M\), the regulated object
+\(\Lambda_{\mathrm{eff}}[g]\) must still obey~\eqref{eq:cons-thm}.
+That requirement is a design constraint on HBEV, not an optional
+aesthetic.
+
+\section{What this chapter has not done}
+\label{sec:ch11-not}
+
+Theorem~\ref{thm:conservation} does not compute \(\eta\), does not
+fix \(n=4\), does not evaluate \(I(A:B)\) for Kerr exteriors, and
+does not replace quadrupole radiation. Gravitational waves remain
+the dissipative channel of the tensor block. Entropic drag is an
+additional channel, allowed only because it sits inside a conserved
+total tensor.
+
+The theorem also does not justify writing an arbitrary function
+\(\mathbf{a}_{\mathrm{irrev}}(\mathbf{r},\mathbf{v})\) and calling it
+NAMCG. Phenomenological chapters that introduce a drag must exhibit
+the \(E_{\mathrm{ent}}\) of Proposition~\ref{prop:allowed-drag} or
+must state that they are studying a reduced laboratory.
+
+\section{Exercises}
+\label{sec:ch11-exercises}
+
+\begin{enumerate}
+  \item \textbf{Bianchi reminder.}
+    From \(\nabla^\mu G_{\mu\nu}=0\) and~\eqref{eq:EFE-total},
+    obtain~\eqref{eq:cons-thm} in three lines.
+  \item \textbf{Two-body check.}
+    For a potential \(U(d)\) depending only on separation, show
+    that the Newtonian forces are equal and opposite. Which
+    symmetry of \(I(A:B)\) is the relativistic ancestor of that
+    statement?
+  \item \textbf{Energy bookkeeping.}
+    Take~\eqref{eq:airrev-lab} with constant \(\eta\) and compute
+    \(\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}\). Propose an
+    \(E_{\mathrm{ent}}(d,\dot d)\) whose time derivative matches
+    that power. Is your \(E_{\mathrm{ent}}\) unique?
+  \item \textbf{Illegal drag.}
+    Consider \(\mathbf{F}=-\gamma\mathbf{v}\) with constant
+    \(\gamma\), independent of \(d\). Why does this fail
+    Proposition~\ref{prop:allowed-drag} for two bodies that can
+    be separated to infinity at finite cost in \(I(A:B)\)?
+  \item \textbf{Variable vacuum energy.}
+    Let \(\rho_\Lambda=\rho_\Lambda(\phi)\) for a scalar
+    \(\phi\). Construct the additional stress that restores
+    conservation. Compare with a potential \(V(\phi)\) in
+    ordinary scalar-field cosmology.
+  \item \textbf{Isaacson average.}
+    Write the Isaacson stress of a high-frequency TT wave and
+    confirm that its divergence vanishes after a short-wavelength
+    average. That is the tensor-block contribution to
+    \eqref{eq:cons-thm} in a radiative spacetime.
+  \item \textbf{Coordinate regions.}
+    Give an explicit example of two coordinate-defined regions
+    whose mutual information is \emph{not} a diffeomorphism
+    scalar. This is the counterexample that forces the remark
+    after Theorem~\ref{thm:conservation}.
+\end{enumerate}
+
+\section{Bridge to Chapter~12}
+\label{sec:ch11-bridge}
+
+Conservation is now in force for whatever vacuum energy Chapter~8
+left untamed. A constant \(\rho_\Lambda\) is conserved and
+disastrous. A regulated \(\Lambda_{\mathrm{eff}}\) must remain
+conserved after the regulation. Chapter~12 introduces the
+Holographic Boundary-Entropy Vacuum: a boundary functional built
+from \(K/8\pi\Geff\) and an entropy density
+\(S_{\mathrm{ent}}(h_{ij},\phi)\) whose stationarity sets
+\(\Lambda_{\mathrm{eff}}\) by an infrared entanglement datum
+rather than by \(\LUV^4\). The design constraint just stated---that
+the resulting \(\Lambda_{\mathrm{eff}}g_{\mu\nu}\) still sit
+inside Theorem~\ref{thm:conservation}---is the first test that
+construction must pass.

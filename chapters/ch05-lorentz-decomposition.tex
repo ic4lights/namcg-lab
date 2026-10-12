@@ -1,0 +1,397 @@
+\chapter[Lorentz decomposition]{Irreducible Lorentz Decomposition of Fluctuations}
+\label{ch:lorentz-decomposition}
+
+\paragraph{Learning outcomes.}
+After this chapter the reader should be able to:
+\begin{enumerate}
+  \item convert a fluctuation \(\delta\Phi^I{}_A\) to a spacetime
+        tensor using the background frame;
+  \item split that tensor into trace, antisymmetric, and symmetric
+        trace-free pieces, and count components;
+  \item match the split to the schematic formula used in the source
+        notes,
+        \(\delta\Phi^I{}_A=\tfrac14\eta_{\mu\nu}\delta g^{\mu\nu}I
+        +A_\mu\gamma^\mu+T_{\mu\nu}\);
+  \item distinguish algebraic irreducibility from the later
+        dynamical conditions \(\nabla^\mu T_{\mu\nu}=0\) and
+        \(m_T^2=0\);
+  \item enter Chapter~6 knowing which piece is the candidate graviton.
+\end{enumerate}
+
+Chapter~4 produced a condensed background frame
+\(\bar e^A_\mu=\delta^A_\mu\) and a composite Minkowski metric.
+This chapter is linear algebra on the tangent space. No entanglement
+condition is used. No mass gap is shown to vanish. The only task is
+to name the pieces of \(\delta\Phi\).
+
+\section{Fluctuations about the polar vacuum}
+\label{sec:ch5-fluct}
+
+Start from the polar field of Definition~\ref{def:vierbein},
+\begin{equation}
+  \label{eq:polar-again}
+  \Phi^{IA}(x)=\bigl(v+\sigma(x)\bigr)\,\Lambda^A{}_I(x),
+\end{equation}
+and expand about the Minkowski condensate
+\begin{equation}
+  \label{eq:polar-bg}
+  \langle\sigma\rangle=0,
+  \qquad
+  \langle\Lambda^A{}_I\rangle=\delta^A{}_I,
+  \qquad
+  \bar e^A_\mu=\delta^A_\mu.
+\end{equation}
+Write
+\begin{equation}
+  \label{eq:delta-Phi}
+  \Phi^{IA}
+  =v\,\delta^{IA}
+   +\delta\Phi^{IA},
+\end{equation}
+with \(\delta\Phi\) first order in \(\sigma\) and in the deviation of
+\(\Lambda\) from the identity. For the rest of the linearized theory
+it is convenient to lower the internal index with the background
+identification \(I\leftrightarrow A\) and convert the remaining tangent
+index to a coordinate index with \(\bar e\):
+\begin{equation}
+  \label{eq:convert}
+  \delta\Phi_{\mu\nu}
+  \equiv
+  \bar e^A{}_\mu\,\delta\Phi_{IA}\,
+  \bar e^I{}_\nu.
+\end{equation}
+When \(N=4\) and the vacuum of Assumption~\ref{ass:frame-lock} locks
+every internal direction to a tangent direction, \(\delta\Phi_{\mu\nu}\)
+is a genuine \(4\times 4\) spacetime tensor. If \(N>4\),
+\eqref{eq:convert} captures only the locked \(4\times 4\) block. The
+orthogonal internal block is a collection of extra Higgs fields. They
+are assumed heavy and integrated out; they are not candidate gravitons.
+
+\begin{assumption}[Locked block dominates the infrared]
+  \label{ass:locked-block}
+  Fluctuations in internal directions orthogonal to the four locked
+  axes have masses of order \(v\) or \(\LUV\) and may be discarded
+  from the infrared Lorentz decomposition.
+\end{assumption}
+
+\section{Algebraic split under the Lorentz group}
+\label{sec:ch5-algebra}
+
+At a fixed event, \(\delta\Phi_{\mu\nu}\) is an element of
+\(\mathbb{R}^4\otimes\mathbb{R}^4\). The Lorentz group
+\(\mathrm{SO}(3,1)\) acts on each factor. The tensor product
+decomposes into irreducible pieces
+\begin{equation}
+  \label{eq:tensor-product}
+  \mathbf{4}\otimes\mathbf{4}
+  =\mathbf{1}\oplus\mathbf{6}\oplus\mathbf{9},
+\end{equation}
+namely a scalar, an antisymmetric tensor, and a symmetric traceless
+tensor. Explicitly,
+\begin{equation}
+  \label{eq:algebraic-split}
+  \delta\Phi_{\mu\nu}
+  =\frac14\eta_{\mu\nu}\psi
+   +F_{\mu\nu}
+   +T_{\mu\nu},
+\end{equation}
+where
+\begin{equation}
+  \label{eq:pieces-def}
+  \begin{aligned}
+    \psi
+    &=\eta^{\alpha\beta}\delta\Phi_{\alpha\beta},\\
+    F_{\mu\nu}
+    &=\frac12\bigl(\delta\Phi_{\mu\nu}-\delta\Phi_{\nu\mu}\bigr),\\
+    T_{\mu\nu}
+    &=\frac12\bigl(\delta\Phi_{\mu\nu}+\delta\Phi_{\nu\mu}\bigr)
+      -\frac14\eta_{\mu\nu}\psi.
+  \end{aligned}
+\end{equation}
+By construction
+\begin{equation}
+  \label{eq:STF}
+  T_{\mu\nu}=T_{\nu\mu},
+  \qquad
+  \eta^{\mu\nu}T_{\mu\nu}=0,
+  \qquad
+  F_{\mu\nu}=-F_{\nu\mu}.
+\end{equation}
+
+Component count in four dimensions:
+\begin{center}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Piece & Symbol & Components \\
+\midrule
+trace scalar & \(\psi\) & 1 \\
+antisymmetric tensor & \(F_{\mu\nu}\) & 6 \\
+symmetric traceless tensor & \(T_{\mu\nu}\) & 9 \\
+total & \(\delta\Phi_{\mu\nu}\) & 16 \\
+\bottomrule
+\end{tabular}
+\end{center}
+This is algebra. It uses no field equation and no gauge condition.
+
+\section{Translation into the notation of the source notes}
+\label{sec:ch5-dictionary}
+
+The microscopic notes write
+\begin{equation}
+  \label{eq:notes-split}
+  \delta\Phi^I{}_A
+  =\frac14\eta_{\mu\nu}\delta g^{\mu\nu}\,I
+   +A_\mu\gamma^\mu
+   +T_{\mu\nu}.
+\end{equation}
+Equation~\eqref{eq:notes-split} is~\eqref{eq:algebraic-split} after
+three identifications.
+
+\paragraph{Trace piece.}
+On the linearized background of Section~\ref{sec:ch4-minkowski},
+\begin{equation}
+  \label{eq:psi-h}
+  \psi=\eta^{\mu\nu}h_{\mu\nu}+O(\omega)
+  =\delta g^{\mu}{}_{\mu}.
+\end{equation}
+The first term of~\eqref{eq:notes-split} is therefore the conformal
+(trace) mode of the composite metric. The identity matrix \(I\) in
+the notes is the locked vacuum \(\delta^I{}_A\), converted to
+\(\eta_{\mu\nu}\) by~\eqref{eq:convert}.
+
+\paragraph{Antisymmetric / vector piece.}
+An antisymmetric tensor \(F_{\mu\nu}\) in four dimensions is
+equivalent, via the Clifford algebra generated by matrices
+\(\gamma^\mu\) obeying
+\begin{equation}
+  \label{eq:clifford}
+  \{\gamma^\mu,\gamma^\nu\}=2\eta^{\mu\nu},
+\end{equation}
+to a vector-plus-axial combination. The notes keep only the vector
+current \(A_\mu\gamma^\mu\), which is the part that couples to the
+internal gauge field of~\eqref{eq:Dmu-Phi}. The remaining three
+(axial / magnetic) components of \(F_{\mu\nu}\) are local Lorentz
+parameters. They belong with the Goldstone \(\omega_{AB}\) of
+\eqref{eq:linear-frame}, not with a new propagating vector.
+
+This book uses the following official translation:
+\begin{equation}
+  \label{eq:F-split}
+  F_{\mu\nu}
+  =\nabla_\mu A_\nu-\nabla_\nu A_\mu
+   +\omega_{\mu\nu},
+\end{equation}
+with \(A_\mu\) the internal gauge current and \(\omega_{\mu\nu}\) the
+local Lorentz Goldstone. Chapter~10 eats \(\omega\). The Maxwell-like
+field strength of \(A_\mu\) is a standard gauge excitation and is not
+a graviton.
+
+\paragraph{Symmetric traceless piece.}
+The tensor \(T_{\mu\nu}\) in~\eqref{eq:notes-split} is identical to
+the \(T_{\mu\nu}\) of~\eqref{eq:pieces-def}. It is the only algebraic
+piece with the index symmetries of a graviton.
+
+\section{What \(T_{\mu\nu}\) is not yet}
+\label{sec:ch5-not-yet}
+
+The source notes also write
+\begin{equation}
+  \label{eq:notes-extra}
+  T^\mu{}_\mu=0,
+  \qquad
+  \nabla^\mu T_{\mu\nu}=0.
+\end{equation}
+The first of these is~\eqref{eq:STF} and has already been imposed.
+The second is not algebraic. It is four differential conditions.
+
+Those four conditions are the linearized statement that \(T_{\mu\nu}\)
+is taken in de Donder / Lorentz-like gauge, or, on shell, that a
+massive spin-2 field has five rather than nine components. They are
+not free to impose until one knows the kinetic operator of \(T_{\mu\nu}\).
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Statement & Type & Status in this chapter \\
+\midrule
+\(T_{\mu\nu}=T_{\nu\mu}\) & algebraic & imposed \\
+\(T^\mu{}_\mu=0\) & algebraic & imposed \\
+\(\nabla^\mu T_{\mu\nu}=0\) & gauge or on-shell & \emph{not} imposed \\
+\(m_T^2=0\) & dynamical & Chapter~7 \\
+\(\square T_{\mu\nu}=0\) with two TT modes & dynamical & Chapter~7 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A massive symmetric traceless tensor in four dimensions has five
+on-shell degrees of freedom (the Fierz--Pauli count). A massless one
+with the gauge invariance
+\begin{equation}
+  \label{eq:tt-gauge}
+  \delta_\xi T_{\mu\nu}
+  =\nabla_\mu\xi_\nu+\nabla_\nu\xi_\mu
+   -\tfrac12\eta_{\mu\nu}\nabla\cdot\xi
+\end{equation}
+has two. The difference is the entire physical question of
+Chapters~6 and~7. It cannot be settled by rearranging indices.
+
+\section{Kinetic terms before any entanglement condition}
+\label{sec:ch5-kinetic}
+
+Inserting~\eqref{eq:algebraic-split} into the quadratic expansion of
+\(S_{\mathrm{micro}}\) produces, schematically,
+\begin{equation}
+  \label{eq:S2-split}
+  S^{(2)}
+  =S^{(2)}_\psi[\psi]
+   +S^{(2)}_A[A]
+   +S^{(2)}_\omega[\omega]
+   +S^{(2)}_T[T]
+   +S^{(2)}_{\mathrm{mix}}.
+\end{equation}
+On a Minkowski condensate the mixing terms that survive after gauge
+fixing are of the form \(\psi\,\partial\partial T\) and
+\(A\,\partial T\). They are the usual linearized scalar--tensor and
+vector--tensor mixings. Two structural facts will be used later.
+
+\begin{enumerate}
+  \item The tensor block has the generic form
+  \begin{equation}
+    \label{eq:ST-generic}
+    S^{(2)}_T
+    =\int\mathrm{d}^4x
+     \Bigl(
+       \tfrac12\nabla_\rho T_{\mu\nu}\nabla^\rho T^{\mu\nu}
+       -\tfrac12 m_T^2 T_{\mu\nu}T^{\mu\nu}
+       +\cdots
+     \Bigr),
+  \end{equation}
+  where the ellipsis contains the additional derivative structures
+  required by Fierz--Pauli if a mass term is present (the
+  \(T^\mu{}_\mu\) piece has already been projected out). The mass
+  \(m_T^2\) is a function of \(v\), \(\lambda\), and the condensate
+  alignment. Nothing in Chapter~3 forces it to vanish.
+  \item The conformal block \(S^{(2)}_\psi\) is the scalar-tensor
+        sector. If \(\psi\) remains light, the infrared theory is not
+        pure general relativity even if \(m_T=0\). Killing or gapping
+        \(\psi\) is a separate requirement, recorded as such in
+        Chapter~7 and again in Chapter~17.
+\end{enumerate}
+
+Equation~\eqref{eq:ST-generic} is the action whose mass term
+Chapter~7 must kill. Writing it here prevents that later argument
+from looking as if \(T_{\mu\nu}\) arrived already massless.
+
+\section{Diffeomorphism action on the pieces}
+\label{sec:ch5-diffs}
+
+An infinitesimal diffeomorphism generated by \(\xi^\mu\) acts on the
+composite metric as
+\begin{equation}
+  \label{eq:lie-g}
+  \delta_\xi g_{\mu\nu}
+  =\nabla_\mu\xi_\nu+\nabla_\nu\xi_\mu.
+\end{equation}
+On the linearized Minkowski background this is
+\(\delta_\xi h_{\mu\nu}=\partial_\mu\xi_\nu+\partial_\nu\xi_\mu\).
+Passing through~\eqref{eq:algebraic-split},
+\begin{equation}
+  \label{eq:lie-pieces}
+  \begin{aligned}
+    \delta_\xi\psi
+    &=2\partial\cdot\xi,\\
+    \delta_\xi F_{\mu\nu}
+    &=0
+     \quad\text{(to first order, after the symmetric projection)},\\
+    \delta_\xi T_{\mu\nu}
+    &=\partial_\mu\xi_\nu+\partial_\nu\xi_\mu
+      -\tfrac12\eta_{\mu\nu}\partial\cdot\xi.
+  \end{aligned}
+\end{equation}
+The last line is the gauge transformation that a massless spin-2
+field must possess. If \(m_T^2\neq 0\), \eqref{eq:lie-pieces} is not
+a symmetry of~\eqref{eq:ST-generic}, and the Ward identity that
+Chapter~6 will write on a causal diamond is obstructed. That
+obstruction is the lever used to force \(m_T\to 0\).
+
+\section{Worked count: from sixteen components to two polarizations}
+\label{sec:ch5-count}
+
+The following table is the map the rest of the book will follow. Only
+the first two columns are established in this chapter.
+
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Stage & What is removed & Remaining & Where \\
+\midrule
+algebraic split & --- & 16 & this chapter \\
+eat \(\omega_{AB}\) & 6 Lorentz Goldstones & 10 & Ch.~10 \\
+gap or constrain \(\psi\) & 1 conformal scalar & 9 & Ch.~7, 17 \\
+gap \(A_\mu\) or eat it & 4 vector & 5 & Ch.~10 \\
+impose \(\nabla^\mu T_{\mu\nu}=0\) & 4 constraints & 5 & on-shell FP \\
+send \(m_T\to 0\) and gauge & 3 more & 2 TT & Ch.~6--7 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The last line is the target advertised in Chapter~1. It is not a
+result of the decomposition.
+
+\section{Exercises}
+\label{sec:ch5-exercises}
+
+\begin{enumerate}
+  \item \textbf{Projectors.}
+    Write the three projectors on \(\mathbb{R}^4\otimes\mathbb{R}^4\)
+    that extract \(\psi\), \(F_{\mu\nu}\), and \(T_{\mu\nu}\) from
+    \(\delta\Phi_{\mu\nu}\). Verify they are complementary and
+    idempotent.
+  \item \textbf{Component count.}
+    Confirm the \(1+6+9=16\) split by writing every independent
+    component of a general real \(4\times 4\) matrix in an explicit
+    basis.
+  \item \textbf{Fierz--Pauli count.}
+    A massive spin-2 field in \(d=4\) has how many on-shell degrees
+    of freedom? Derive the number from \(\mathrm{SO}(3)\) little-group
+    representations. Where does the number five sit in the table of
+    Section~\ref{sec:ch5-count}?
+  \item \textbf{Massless count.}
+    Repeat for a massless spin-2 field with gauge invariance
+    \eqref{eq:tt-gauge}. Recover two helicities.
+  \item \textbf{Trace versus conformal mode.}
+    From~\eqref{eq:linear-metric} and~\eqref{eq:psi-h}, show that
+    \(\psi\) is the linearized conformal factor of \(g_{\mu\nu}\)
+    plus a term involving \(\omega\). In what gauge does the extra
+    term drop?
+  \item \textbf{Diffeomorphism on \(T_{\mu\nu}\).}
+    Derive the third line of~\eqref{eq:lie-pieces} from
+    \eqref{eq:lie-g} and~\eqref{eq:pieces-def}.
+  \item \textbf{\(N>4\).}
+    Suppose \(N=8\). How many extra internal scalars appear outside
+    the locked \(4\times 4\) block? Why are they not gravitons?
+  \item \textbf{Danger of imposing \(\nabla^\mu T_{\mu\nu}=0\) early.}
+    Take~\eqref{eq:ST-generic} with \(m_T\neq 0\) and impose
+    \(\partial^\mu T_{\mu\nu}=0\) off shell as a constraint. Show
+    that the constraint is consistent with the massive equation of
+    motion, but that the massless limit \(m_T\to 0\) must be taken
+    \emph{before} residual gauge transformations are used to reach
+    two polarizations. This is why Chapter~7 cannot be skipped.
+\end{enumerate}
+
+\section{Bridge to Chapter~6}
+\label{sec:ch5-bridge}
+
+The candidate graviton has a name, \(T_{\mu\nu}\), nine algebraic
+components, and a generic mass \(m_T\). The conformal and vector
+pieces have also been named, and will be gapped or eaten rather than
+identified with gravitational waves.
+
+Nothing in the microscopic potential~\eqref{eq:V} sets \(m_T=0\).
+The mechanism proposed by NAMCG is not a further tuning of
+\(\lambda\). It is the entanglement-stationarity condition
+\(\delta S_D=0\) on causal diamonds, imposed on the same fluctuations
+just decomposed. Chapter~6 defines that condition from the modular
+Hamiltonian of the matrix condensate and shows how it acts as a Ward
+identity. Chapter~7 applies the identity to \(T_{\mu\nu}\) and
+obtains \(m_T\to 0\).

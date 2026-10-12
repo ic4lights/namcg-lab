@@ -1,0 +1,456 @@
+\chapter[The microscopic action]{Matrix Coordinates and the Microscopic Action}
+\label{ch:matrix-action}
+
+\paragraph{Learning outcomes.}
+After this chapter the reader should be able to:
+\begin{enumerate}
+  \item write the non-commutative coordinate algebra
+        \([\hat X^\mu,\hat X^\nu]=i\Theta^{\mu\nu}\) and state how
+        \(\Theta^{\mu\nu}\) supplies an ultraviolet cutoff;
+  \item write both microscopic actions used in the NAMCG notes---the
+        pregeometric matrix action and the covariant condensate-field
+        action---and say what each is for;
+  \item explain why the order parameter must carry an internal index
+        \(I\) and a tangent index \(A\);
+  \item expand the Mexican-hat matrix potential about its vacuum and
+        identify the radial and Goldstone directions;
+  \item enter Chapter~4 knowing which object will condense into a
+        vierbein.
+\end{enumerate}
+
+Chapter~2 supplied geometry as language. This chapter supplies the
+field. After this point the metric is not an independent ingredient.
+It is something the field must produce.
+
+\section{The scalar failure, restated as a field-content problem}
+\label{sec:ch3-scalar-failure}
+
+A single complex scalar \(\phi\) transforming as a singlet under every
+tangent-space representation can condense. It can eat one Goldstone
+phase into a gauge field. It cannot furnish a local Lorentz frame.
+The infrared excitations of such a condensate are, at best,
+\begin{itemize}
+  \item a radial Higgs scalar,
+  \item a massive or massless vector, if a gauge field is present,
+  \item phonons that admit an acoustic metric rewrite.
+\end{itemize}
+There is no symmetric trace-free tensor \(T_{\mu\nu}\) hiding in
+\(\phi\). Seeking that tensor in a more elaborate potential for the
+same \(\phi\) is a representation-theoretic error, not a calculational
+one.
+
+NAMCG therefore promotes the order parameter to a rectangular (or
+square, after a choice of basis) matrix field
+\begin{equation}
+  \label{eq:Phi-field}
+  \Phi^I{}_A(x),
+\end{equation}
+where \(I=1,\ldots,N\) labels an internal gauge representation and
+\(A=0,1,2,3\) labels an emergent tangent space. The field is a
+linear map from the tangent space of an auxiliary frame into the
+internal space, or the reverse, according to index placement. The
+placement used in this book is: \(I\) up, \(A\) down on \(\Phi\),
+unless a formula from the source notes is being quoted verbatim.
+
+The rest of the chapter writes an action for \(\Phi\) and for a
+closely related pregeometric object, the matrix coordinates
+\(\hat X^\mu\).
+
+\section{Two presentations, and why both appear}
+\label{sec:ch3-two-presentations}
+
+The original notes use two microscopic languages. They are not
+identical, and treating them as interchangeable by slogan would
+produce a confused book.
+
+\paragraph{Presentation A: pregeometric matrix coordinates.}
+There is, at the outset, no manifold. The dynamical objects are
+Hermitian operators \(\hat X^\mu\) acting on a Hilbert space
+\(\mathcal{H}\). Spacetime points, if they appear at all, appear as
+eigenvalue data of a complete commuting subset of these operators, or
+as a derived continuum after condensation.
+
+\paragraph{Presentation B: condensate field on an auxiliary background.}
+There is an auxiliary manifold with a non-dynamical metric
+\(g^{(0)}_{\mu\nu}\). The dynamical object is the field
+\(\Phi^I{}_A(x)\). The physical metric \(g_{\mu\nu}\) is not
+\(g^{(0)}_{\mu\nu}\). The auxiliary metric is a scaffold for writing
+derivatives and heat kernels. Chapter~8 uses this scaffold.
+
+This book treats Presentation~A as the ontological starting point and
+Presentation~B as the background-field language appropriate after a
+condensate has selected a notion of local coordinates. Chapter~4 is
+the bridge. Until that bridge is built, the two actions below are
+written separately and not added together.
+
+\begin{assumption}[Auxiliary background is non-dynamical]
+  \label{ass:aux-metric}
+  Whenever Presentation~B is in use, \(g^{(0)}_{\mu\nu}\) is a fixed
+  scaffold, usually taken flat,
+  \(g^{(0)}_{\mu\nu}=\eta_{\mu\nu}\). It is not varied in the
+  Einstein--Hilbert sense. Varying the \emph{emergent} metric
+  \(g_{\mu\nu}\) defined in Chapter~4 is a different operation.
+\end{assumption}
+
+\section{Presentation A: matrix coordinates and ultraviolet cutoff}
+\label{sec:ch3-matrices}
+
+\begin{definition}[Matrix coordinates]
+  \label{def:matrix-coords}
+  Let \(\mathcal{H}\) be a separable Hilbert space and let
+  \(\hat X^\mu\), \(\mu=0,1,2,3\), be Hermitian operators on
+  \(\mathcal{H}\). The fundamental kinematic relation of Presentation~A
+  is
+  \begin{equation}
+    \label{eq:NC}
+    [\hat X^\mu,\hat X^\nu]=i\Theta^{\mu\nu},
+  \end{equation}
+  where \(\Theta^{\mu\nu}=-\Theta^{\nu\mu}\) is an antisymmetric
+  tensor with dimensions of length squared. If \(\Theta^{\mu\nu}\) is
+  a multiple of the identity on \(\mathcal{H}\), it is a
+  \(c\)-number background. In the fully dynamical theory it may
+  itself be an operator; the notes treat the leading infrared
+  analysis with a \(c\)-number \(\Theta^{\mu\nu}\).
+\end{definition}
+
+The scale
+\begin{equation}
+  \label{eq:LUV-def}
+  \LUV\sim\Theta^{-1/2},
+  \qquad
+  \Theta
+  \equiv
+  \sqrt{\tfrac12\Theta_{\mu\nu}\Theta^{\mu\nu}},
+\end{equation}
+is the ultraviolet cutoff of the theory. Two operators that fail to
+commute cannot be simultaneously diagonalized, so the notion of a
+sharply localized event \((x^0,x^1,x^2,x^3)\) is meaningless below
+\(\LUV^{-1}\). This is the NAMCG replacement for a hard lattice.
+
+\begin{remark}[What \(\Theta^{\mu\nu}\) is not]
+  Equation~\eqref{eq:NC} is not yet a solution of the cosmological-
+  constant problem, not yet a black-hole core, and not yet a graviton.
+  It is a kinematic regulator. Claims that begin ``because spacetime
+  is non-commutative\ldots'' and end at galactic rotation curves are
+  skipping the work of Chapters~4--14.
+\end{remark}
+
+A Yang--Mills-type matrix action for these coordinates, including a
+cubic structure-constant coupling to a background condensate tensor
+\(C_{\mu\nu\lambda}\), is
+\begin{equation}
+  \label{eq:Smatrix}
+  \begin{aligned}
+    S_{\mathrm{matrix}}
+    &=-\frac{1}{4g_{\mathrm{YM}}^2}
+      \mathrm{Tr}\bigl(
+        [\hat X^\mu,\hat X^\nu][\hat X_\mu,\hat X_\nu]
+      \bigr)
+      +\frac{1}{3!}
+      \mathrm{Tr}\bigl(
+        C_{\mu\nu\lambda}[\hat X^\mu,\hat X^\nu]\hat X^\lambda
+      \bigr)\\
+    &\qquad
+      +S_{\mathrm{matter}}(\Psi,\hat X^\mu).
+  \end{aligned}
+\end{equation}
+The first term is the IKKT / reduced-Yang--Mills kinetic term. On a
+background satisfying~\eqref{eq:NC} it is proportional to
+\(\mathrm{Tr}(\Theta_{\mu\nu}\Theta^{\mu\nu})\) plus fluctuation
+pieces. The cubic term selects a preferred vacuum condensation
+structure; its detailed index symmetries are constrained by the
+requirement that the vacuum preserve a Lorentzian interpretation
+after Chapter~4.
+
+Matter fields \(\Psi\) in \(S_{\mathrm{matter}}\) are functions of the
+matrices \(\hat X^\mu\) in the sense of the Weyl map associated with
+\(\Theta^{\mu\nu}\). This book does not need the full star-product
+calculus until phenomenology with explicit localized sources appears
+in Chapter~14. The existence of such a map is enough for now.
+
+\section{Presentation B: the covariant condensate action}
+\label{sec:ch3-Phi-action}
+
+Once local coordinates \(x^\mu\) have been introduced as labels on an
+auxiliary manifold, the dynamical variable is the matrix field
+\(\Phi^I{}_A(x)\). Let \(A_\mu\) be a connection on the internal
+bundle, with covariant derivative
+\begin{equation}
+  \label{eq:Dmu-Phi}
+  D_\mu\Phi=\partial_\mu\Phi-iA_\mu\Phi
+\end{equation}
+acting on the \(I\) index. The microscopic action used for the
+heat-kernel analysis is
+\begin{equation}
+  \label{eq:Smicro}
+  S_{\mathrm{micro}}[\Phi,A]
+  =\int\mathrm{d}^4x\,\sqrt{-g^{(0)}}\,
+   \mathrm{Tr}\Bigl(
+     g^{(0)\mu\nu}(D_\mu\Phi)^\dagger D_\nu\Phi
+     -V(\Phi^\dagger\Phi)
+   \Bigr).
+\end{equation}
+The trace is over internal indices. Tangent indices on \(\Phi\) are
+contracted through the potential and through the identification of
+\(A\) with a frame index after condensation; they are not traced
+in the same sum.
+
+The potential that triggers condensation is the matrix Mexican hat
+\begin{equation}
+  \label{eq:V}
+  V(\Phi^\dagger\Phi)
+  =\frac{\lambda}{4}
+   \mathrm{Tr}\bigl(\Phi^\dagger\Phi-v^2\mathbb{I}\bigr)^2.
+\end{equation}
+Its minima lie on the manifold
+\begin{equation}
+  \label{eq:vacuum-manifold}
+  \Phi^\dagger\Phi=v^2\mathbb{I}
+\end{equation}
+in the internal space, up to unitary rotations. A representative
+vacuum used throughout the book is
+\begin{equation}
+  \label{eq:VEV}
+  \langle\Phi^I{}_A\rangle=v\,\delta^I{}_A,
+\end{equation}
+which is available when the internal dimension is at least four and a
+basis has been chosen that identifies four internal directions with
+the tangent directions. If \(N>4\), the remaining internal directions
+must either decouple or be locked by additional Yukawa-like couplings.
+The source notes assume that a vacuum of the form~\eqref{eq:VEV}
+exists. This book records that as an assumption.
+
+\begin{assumption}[Existence of a frame-locking vacuum]
+  \label{ass:frame-lock}
+  There exists a stable vacuum~\eqref{eq:VEV} (or a locally equivalent
+  vacuum) in which four internal directions are identified with the
+  four tangent directions. Goldstone modes associated with the broken
+  generators are available to be eaten by a connection, as in
+  Chapter~10.
+\end{assumption}
+
+\section{Index structure and the intended infrared spectrum}
+\label{sec:ch3-indices}
+
+Under an internal gauge transformation \(\Omega(x)\) and a local
+Lorentz transformation \(\Lambda(x)\), the field is required to
+transform as
+\begin{equation}
+  \label{eq:Phi-transform}
+  \Phi^I{}_A(x)
+  \;\longmapsto\;
+  \Omega^I{}_J(x)\,\Phi^J{}_B(x)\,\Lambda^B{}_A(x).
+\end{equation}
+Equation~\eqref{eq:Phi-transform} is the transformation law that
+makes \(\Phi\) capable of locking the two groups to a diagonal
+subgroup. It is a choice of field content. It is not derived from
+Presentation~A alone; it is the additional structure that Presentation~B
+puts in by hand so that a vierbein can exist.
+
+Fluctuations about~\eqref{eq:VEV} will be decomposed in Chapter~5
+into
+\begin{equation}
+  \label{eq:split-preview}
+  \delta\Phi^I{}_A
+  =\frac14\eta_{\mu\nu}\delta g^{\mu\nu}\,I
+   +A_\mu\gamma^\mu
+   +T_{\mu\nu}.
+\end{equation}
+The only fact needed here is that the last piece exists because
+\(\Phi\) has two indices that can be symmetrized and made traceless
+after the vacuum has identified \(I\) with \(A\). A scalar has no
+such piece.
+
+\section{Equations of motion from Presentation B}
+\label{sec:ch3-eom}
+
+Varying~\eqref{eq:Smicro} with respect to \(\Phi^\dagger\) gives
+\begin{equation}
+  \label{eq:Phi-eom}
+  D_\mu\bigl(\sqrt{-g^{(0)}}\,g^{(0)\mu\nu}D_\nu\Phi\bigr)
+  +\sqrt{-g^{(0)}}\,
+   \frac{\lambda}{2}\Phi
+   \bigl(\Phi^\dagger\Phi-v^2\mathbb{I}\bigr)
+  =0.
+\end{equation}
+Varying with respect to \(A_\mu\) produces a matrix current
+conservation law
+\begin{equation}
+  \label{eq:gauge-eom}
+  D_\mu
+  \bigl(
+    \Phi(D^\mu\Phi)^\dagger-(D^\mu\Phi)\Phi^\dagger
+  \bigr)
+  =0,
+\end{equation}
+up to the conventional factor of \(i\) in the current definition.
+These equations determine the condensate profile on the auxiliary
+background. They do not yet determine the Einstein tensor of the
+emergent metric. That requires integrating out fluctuations, which is
+Chapter~8, after the emergent metric has been defined in Chapter~4
+and the tensor mode identified in Chapter~5.
+
+\section{Relating the two presentations}
+\label{sec:ch3-relate}
+
+A complete derivation from~\eqref{eq:Smatrix} to~\eqref{eq:Smicro}
+would construct, from the spectra of \(\hat X^\mu\), a commutative
+manifold, a Weyl map, and a slowly varying matrix-valued field on that
+manifold whose covariant derivative reproduces the commutator
+\([\hat X^\mu,\hat\Phi]\). That derivation is not supplied in full in
+the source notes. The working relation used in this book is the
+following.
+
+\begin{assumption}[Infrared dictionary]
+  \label{ass:dictionary}
+  In a condensate phase in which the matrices \(\hat X^\mu\) are,
+  to leading order, commutative coordinates \(x^\mu\mathbb{I}\) plus
+  fluctuations, there exists a slowly varying field
+  \(\Phi^I{}_A(x)\) such that
+  \begin{equation}
+    \label{eq:dictionary}
+    [\hat X_\mu,\Phi]
+    \;\longleftrightarrow\;
+    i\Theta_{\mu\nu}D^\nu\Phi
+    \qquad\text{plus higher-derivative corrections in \(\Theta\).}
+  \end{equation}
+  Under this dictionary the quadratic commutator term
+  in~\eqref{eq:Smatrix} generates the kinetic term
+  in~\eqref{eq:Smicro}, and \(\LUV\) remains the cutoff of the
+  derivative expansion.
+\end{assumption}
+
+Assumption~\ref{ass:dictionary} is the most important unproved bridge
+in the microscopic setup. Chapter~17 lists a sharper derivation of
+this dictionary as an open problem. Every later heat-kernel formula
+is a calculation \emph{within} Presentation~B, contingent on the
+dictionary.
+
+\section{Energy scales and coupling constants}
+\label{sec:ch3-scales}
+
+The dimensionful quantities introduced so far are
+\begin{equation}
+  \label{eq:scales}
+  \LUV,\qquad v,\qquad \lambda,\qquad g_{\mathrm{YM}},
+\end{equation}
+together with the auxiliary-background curvature scale, which is set
+to zero when \(g^{(0)}=\eta\). Their intended roles are:
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Quantity & Role \\
+\midrule
+\(\LUV\) & kinematic cutoff from \(\Theta^{\mu\nu}\) \\
+\(v\) & condensate scale; enters \(\Geff\) logarithmically \\
+\(\lambda\) & controls the radial Higgs mass \(m_\sigma\sim\sqrt{\lambda}\,v\) \\
+\(g_{\mathrm{YM}}\) & internal gauge coupling; enters the connection
+                     that eats Goldstones \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Chapter~8 will produce
+\begin{equation}
+  \label{eq:Geff-again}
+  \frac{1}{16\pi\Geff}
+  =\frac{\mathrm{Tr}(\mathbb{I})\,\LUV^2}{16\pi^2}
+   +\frac{v^2}{12}\ln\Bigl(\frac{\LUV^2}{\mu^2}\Bigr).
+\end{equation}
+Two immediate inequalities follow from insisting that the infrared
+Newton coupling be finite and that the radial mode be integrable:
+\begin{equation}
+  \label{eq:scale-ineq}
+  m_\sigma\ll\LUV,
+  \qquad
+  v\lesssim\LUV.
+\end{equation}
+If \(v\sim\LUV\) the logarithm is order one and the first term
+in~\eqref{eq:Geff-again} dominates unless the internal trace
+\(\mathrm{Tr}(\mathbb{I})\) is arranged to cancel against
+counterterms. The book does not hide that arrangement. It is part of
+the coefficient-matching problem, not a detail.
+
+\section{What has been assumed, collected}
+\label{sec:ch3-assumptions}
+
+The microscopic theory, as used from here on, rests on:
+
+\begin{enumerate}
+  \item the coordinate algebra~\eqref{eq:NC} with cutoff~\eqref{eq:LUV-def};
+  \item the matrix action~\eqref{eq:Smatrix} at the pregeometric level;
+  \item the condensate action~\eqref{eq:Smicro}--\eqref{eq:V} after
+        coordinates exist;
+  \item Assumption~\ref{ass:aux-metric}, that \(g^{(0)}\) is a scaffold;
+  \item Assumption~\ref{ass:frame-lock}, that a vacuum
+        \(\langle\Phi^I{}_A\rangle=v\delta^I{}_A\) exists;
+  \item Assumption~\ref{ass:dictionary}, the infrared commutator
+        dictionary.
+\end{enumerate}
+
+Everything in Chapters~4--11 is a calculation from this list, or an
+additional assumption announced as such. The list is long enough that
+the theory is not ``derived from nothing.'' It is derived from a
+definite microscopic ansatz. That is still a stronger starting point
+than inserting \(g_{\mu\nu}\) by hand, provided the later chapters
+do the work advertised in Chapter~1.
+
+\section{Exercises}
+\label{sec:ch3-exercises}
+
+\begin{enumerate}
+  \item \textbf{Dimensions.}
+    Assign mass dimensions to \(\hat X^\mu\), \(\Theta^{\mu\nu}\),
+    \(\Phi\), \(v\), \(\lambda\), and \(g_{\mathrm{YM}}\) in four
+    dimensions, with \(\hbar=c=1\). Confirm~\eqref{eq:LUV-def}.
+  \item \textbf{Vacuum of the potential.}
+    Show that~\eqref{eq:V} is bounded below and that its minima
+    satisfy~\eqref{eq:vacuum-manifold}. Linearize
+    \(\Phi=v\,\mathbb{I}+\sigma+i\pi\) in the internal space
+    (ignoring tangent structure) and read off \(m_\sigma^2\) and
+    \(m_\pi^2\).
+  \item \textbf{Why \(N\ge 4\).}
+    If the internal dimension is \(N=2\), can a vacuum of the
+    form~\eqref{eq:VEV} exist? What infrared representation content
+    is then missing?
+  \item \textbf{Commutator to derivative.}
+    In the Moyal plane with constant \(\Theta^{12}=-\Theta^{21}=\theta\)
+    and all other components zero, verify the leading term
+    of~\eqref{eq:dictionary} on a plane-wave matrix
+    \(\Phi=e^{ik\cdot\hat X}\). Where do higher powers of \(\theta\)
+    appear?
+  \item \textbf{IKKT vacuum energy.}
+    Evaluate the first term of~\eqref{eq:Smatrix} on the
+    \(c\)-number background~\eqref{eq:NC}. Show that it is a
+    constant proportional to \(\mathrm{Tr}(\Theta_{\mu\nu}\Theta^{\mu\nu})\).
+    This constant is a preview of the \(c_0\LUV^4\) problem.
+  \item \textbf{Transformation law.}
+    Starting from~\eqref{eq:Phi-transform} and the representative
+    vacuum~\eqref{eq:VEV}, compute the infinitesimal variation of
+    \(\Phi\) under a simultaneous internal rotation and local Lorentz
+    transformation that preserve the vacuum. Which generators are
+    broken? (This is the algebra of Chapter~10, prepared here.)
+  \item \textbf{No graviton in the scalar truncation.}
+    Set \(N=1\) and drop the tangent index, reducing \(\Phi\) to a
+    complex scalar. Show that the fluctuation spectrum of
+    \eqref{eq:Smicro} contains no spin-2 state. This is the
+    Chapter~1 ceiling written as a homework problem.
+\end{enumerate}
+
+\section{Bridge to Chapter~4}
+\label{sec:ch3-bridge}
+
+The field exists, the potential prefers a vacuum
+\(\langle\Phi^I{}_A\rangle=v\delta^I{}_A\), and the coordinate algebra
+supplies a cutoff. Nothing yet is a metric. Chapter~4 defines the
+emergent vierbein as the condensate gradient
+\begin{equation}
+  \label{eq:vierbein-next}
+  e^A_\mu(x)\equiv\langle\partial_\mu\Phi^{IA}(x)\rangle,
+\end{equation}
+reconstructs \(g_{\mu\nu}=\eta_{AB}e^A_\mu e^B_\nu\), and writes the
+Seiberg--Witten map that relates the non-commutative background
+\(\Theta^{\mu\nu}\) to the leading correction
+\(\mathcal{G}_{\mu\nu}(\langle\hat X\rangle)\). After that chapter,
+geometry is an output of the action written here.

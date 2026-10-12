@@ -1,0 +1,335 @@
+\chapter[Falsifiers]{Assumptions, Predictions, and Falsifiers}
+\label{ch:falsifiers}
+
+\paragraph{Learning outcomes.}
+After this chapter the reader should be able to:
+\begin{enumerate}
+  \item restate the derivation chain of Chapter~1 with the theorem
+        numbers now attached;
+  \item separate assumptions that kill NAMCG if they fail from
+        coefficients that can be adjusted;
+  \item name observations that would refute the framework rather
+        than merely bound \(\eta\) or \(r_0\);
+  \item refuse to treat a successful laboratory plot as evidence
+        for Theorems~\ref{thm:mT}--\ref{thm:Leff};
+  \item enter Chapter~17 knowing which open calculations are
+        optional refinements and which are missing load-bearing
+        proofs.
+\end{enumerate}
+
+A framework that cannot say what would kill it is not a framework.
+This chapter is the scorecard promised in Section~\ref{sec:ch1-checklist}.
+
+\section{The chain, with theorem numbers}
+\label{sec:ch16-chain}
+
+The argument of the book is the following sequence, and no shorter
+sequence.
+
+\begin{enumerate}
+  \item A matrix order parameter \(\Phi^I{}_A\) with potential
+        \eqref{eq:V} admits a frame-locking vacuum
+        (Assumptions~\ref{ass:frame-lock}, \ref{ass:dictionary}).
+  \item A composite vierbein and metric exist in the condensed
+        phase (Definition~\ref{def:vierbein},
+        Assumption~\ref{ass:nondeg}).
+  \item Fluctuations split into \(\psi\), \(A_\mu\), \(\omega_{AB}\),
+        and \(T_{\mu\nu}\) (Chapter~5).
+  \item Entanglement equilibrium on emergent diamonds is a property
+        of the condensate vacuum (Assumption~\ref{ass:EE}).
+  \item A Fierz--Pauli tensor block is incompatible with that
+        equilibrium unless \(m_T=0\) (Theorem~\ref{thm:mT}).
+  \item The Einstein--Hilbert prefactor is the heat-kernel
+        coefficient map (Theorem~\ref{thm:Geff}).
+  \item Four-derivative metric operators are EFT vertices, not
+        extra poles (Assumption~\ref{ass:EFT-a2}).
+  \item Local Lorentz invariance is a gauge symmetry and
+        \(\omega_{AB}\) is eaten (Theorem~\ref{thm:locking}).
+  \item The conformal mode is heavy (Assumption~\ref{ass:gap-psi}).
+  \item The total stress, including \(T_{\mu\nu}^{\mathrm{ent}}\),
+        is covariantly conserved (Theorem~\ref{thm:conservation}).
+  \item \(\Lambda_{\mathrm{eff}}\) is set by boundary entanglement
+        after an ultraviolet subtraction (Theorem~\ref{thm:Leff}).
+\end{enumerate}
+
+Items 5, 6, 8, 10, and 11 are theorems \emph{inside} the list of
+assumptions that precede them. If an earlier assumption fails, the
+later theorem is idle. Phenomenology in Chapters~13--15 sits after
+the whole list. It cannot substitute for any line.
+
+\section{Inventory of named assumptions}
+\label{sec:ch16-inventory}
+
+The named hypotheses of Parts~II--V are collected here. ``Load-
+bearing'' means that failure returns the infrared theory to analog
+gravity, scalar-tensor gravity, or an inconsistent extra force.
+``Coefficient'' means that failure changes a number or a regime of
+validity without destroying the graviton.
+
+\begin{center}
+\small
+\begin{tabular}{@{}llp{0.38\linewidth}@{}}
+\toprule
+Tag & Kind & Content \\
+\midrule
+\ref{ass:aux-metric} & setup & \(g^{(0)}\) is a scaffold \\
+\ref{ass:frame-lock} & load-bearing & vacuum
+  \(\langle\Phi^I{}_A\rangle=v\delta^I{}_A\) exists \\
+\ref{ass:dictionary} & load-bearing & commutator / covariant-derivative
+  dictionary \\
+\ref{ass:nondeg} & load-bearing & condensed frame is non-degenerate \\
+\ref{ass:lorentzian} & load-bearing & signature is Lorentzian \\
+\ref{ass:locked-block} & coefficient & extra internal scalars are heavy \\
+\ref{ass:EE} & load-bearing & microscopic entanglement equilibrium \\
+\ref{ass:gap-psi} & load-bearing & conformal mode is gapped \\
+\ref{ass:laplace} & setup & infrared operator is Laplace type \\
+\ref{ass:EFT-a2} & load-bearing & \(C^2,R^2\) are vertices, not poles \\
+\ref{ass:ECG} & model & cubic truncation in the static spherical
+  sector \\
+\ref{ass:local-lorentz} & load-bearing & local \(\mathrm{SO}(3,1)\)
+  is gauged \\
+\ref{ass:Sent-density} & load-bearing & local boundary entropy
+  density exists \\
+\ref{ass:bdy-EE} & load-bearing & boundary stationarity sets
+  \(\Lambda_{\mathrm{eff}}\) \\
+\ref{ass:track} & coefficient & static extra density tracks baryons;
+  disks use \(\nu_{\sqrt{}}\) of Appendix~\ref{app:empirical} \\
+\ref{ass:efe} & coefficient & external field saturates \(\nu\) at \(\nu(g_{\mathrm{ext}})\),
+  not \(\nu(g_{\mathrm{N}})\) \\
+\ref{ass:drag} & coefficient & working laboratory law
+  \(\mathbf{F}_{\mathrm{diss}}\propto -\mathbf{v}/d^4\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Two comments on the table.
+
+First, ``coefficient'' is not a synonym for ``unimportant.''
+Assumption~\ref{ass:track} is how galaxies enter the book. If it
+fails, galactic claims fail. The graviton claims need not.
+
+Second, Assumption~\ref{ass:dictionary} is the most important
+unproved microscopic bridge. If the infrared dictionary from
+Presentation~A to Presentation~B cannot be constructed, the heat
+kernel of Chapter~8 is a calculation in a different theory than
+the matrix action of Chapter~3.
+
+\section{What would kill the framework}
+\label{sec:ch16-kill}
+
+The following outcomes are incompatible with NAMCG as written,
+not merely with a choice of \(\eta\).
+
+\paragraph{A light extra tensor or a ghost below the cutoff.}
+If precision gravity, pulsar timing, or gravitational-wave
+propagation requires a second massless or light spin-2 field, or
+a ghost pole below \(\LUV\), Theorem~\ref{thm:mT} plus
+Assumption~\ref{ass:EFT-a2} has failed.
+
+\paragraph{A light conformal partner.}
+If Solar-System or binary-pulsar tests require a Brans--Dicke
+parameter that cannot be produced by a heavy \(\psi\), 
+Assumption~\ref{ass:gap-psi} has failed and the infrared theory
+is scalar-tensor gravity. That is the ceiling of Chapter~1,
+reopened.
+
+\paragraph{Non-conservation of the extra stress.}
+If an extra acceleration is demanded by data and cannot be written
+as \(\nabla^\mu T_{\mu\nu}^{\mathrm{ent}}\) with
+Theorem~\ref{thm:conservation} intact---a drag into nowhere, a
+preferred-frame force that cannot be improved to a tensor---then
+the geometric reading has failed. Analog dissipation remains
+possible. Geometrogenesis of the extra channel has not occurred.
+
+\paragraph{Failure of Lorentz locking.}
+If the infrared spectrum contains six extra Goldstone polarizations
+from \(\omega_{AB}\), Theorem~\ref{thm:locking} has failed. No
+later chapter can hide them.
+
+\paragraph{A cutoff that cannot serve Newton and Lorentz together.}
+If the only way to obtain \(\Geff=G_{\mathrm{N}}\) forces
+\(\LUV\) into a regime where Lorentz-violating \(\Theta^{\mu\nu}\)
+corrections are already excluded by current bounds, the
+coefficient map and the kinematic algebra cannot coexist.
+
+\paragraph{An induced Einstein--Hilbert term of the wrong sign.}
+If a complete heat-kernel evaluation on the locked bundle produces
+a repulsive Einstein term that cannot be flipped by fermions or
+by the Lorentzian continuation, the infrared force is not gravity.
+
+None of these killers is a rotation curve. None of them is a
+pretty laboratory inspiral.
+
+\section{What would only constrain a coefficient}
+\label{sec:ch16-constrain}
+
+The following outcomes bound parameters or restrict regimes.
+They do not, by themselves, refute Theorems~\ref{thm:mT}--\ref{thm:Leff}.
+
+\begin{itemize}
+  \item SPARC ranking of a global \(\nu(g_{\mathrm{N}})\) against
+        simple MOND and the published RAR
+        (Appendix~\ref{app:empirical}). Frozen
+        \(\nu_{\sqrt{}} \) at \(g_\dagger\) is equivalent to the
+        RAR and about \(0.2\%\) behind simple MOND in \(\chi^2\);
+        baryons-only is not competitive. That is a passed
+        coefficient check on disks, not a theorem. A later
+        sample that rejects every high-\(g\)-Newtonian,
+        low-\(g\)-square-root boost would restrict
+        Assumption~\ref{ass:track} to a smaller class of
+        systems, or kill the galactic claim only.
+  \item Wide binaries in the solar neighbourhood.
+        Isolated \(\nu_{\sqrt{}}(g_{\mathrm{N}})\) predicts
+        \(\gamma\approx 4\) at \(g_{\mathrm{N}}=10^{-11}\,\mathrm{m\,s^{-2}}\).
+        Assumption~\ref{ass:efe} predicts
+        \(\gamma\to\nu_{\sqrt{}}(g_{\mathrm{gal}})\approx 1.1\).
+        A quality-controlled Gaia sample consistent with Newton
+        constrains the isolated reading and is compatible with
+        Assumption~\ref{ass:efe}.
+        A surviving \(\gamma\approx 1.4\) is not explained by that
+        saturation.
+        Neither outcome touches Theorems~7.3--12.4.
+  \item Cluster lensing or the bullet-cluster mass offset.
+        Same status: the extra tensor may fail as a complete
+        replacement for particulate dark matter while the graviton
+        derivation stands.
+  \item Absence of an extra drag in LIGO-band vacuum inspirals.
+        Expected if \(\eta\) is negligible at those separations;
+        Section~\ref{sec:ch14-quad} already said so.
+  \item Absence of a visible core scale \(r_0\) in EHT images or
+        ringdowns. Expected if \(r_0\) is microscopic; bounds
+        \(\beta_{\mathrm{ECG}}\).
+  \item A measured \(\Lambda_{\mathrm{eff}}\) that does not match
+        a particular guess for \(S_{\mathrm{ent}}^{\mathrm{(IR)}}\).
+        Theorem~\ref{thm:Leff} changes the origin of the scale. It
+        does not compute the number.
+  \item A different mutual-information tail, hence a different
+        drag exponent than \(d^{-4}\). Assumption~\ref{ass:drag}
+        is a laboratory choice.
+\end{itemize}
+
+\section{Observational checklist}
+\label{sec:ch16-obs}
+
+A short list of current and near-term measurements, with the
+question each actually asks of the book.
+
+\paragraph{Solar System and pulsar timing.}
+Do they tolerate a massive \(\psi\) and a massive torsion at
+scale \(v\), and a \(\mu_{\mathrm{ent}}\) that is negligible at
+high acceleration? If no, Assumption~\ref{ass:gap-psi} or
+\ref{ass:track} dies. If yes, nothing about diamonds has been
+tested.
+
+\paragraph{Gravitational waves.}
+Is the propagating mode two TT polarizations at the speed of
+light, with no extra light tensor? That is a test of
+Theorem~\ref{thm:mT} plus Assumption~\ref{ass:EFT-a2}, and it is
+already passed at present precision. A measured extra
+polarization would be a killer. A measured inspiral-time
+deviation at LIGO frequencies is only a bound on \(\eta\).
+
+\paragraph{Black-hole images and ringdowns.}
+Is there a visible deviation from Kerr at the photon ring or in
+quasi-normal modes? That bounds \(r_0\). A perfectly Kerr object
+is compatible with microscopic \(r_0\).
+
+\paragraph{Galaxies, wide binaries, and clusters.}
+Do disks accept a single \(\nu_{\sqrt{}}(g_{\mathrm{N}})\) with
+\(\nu\to 1\) at Solar-System acceleration?
+Appendix~D says yes, at RAR accuracy.
+Do solar-neighbourhood wide binaries accept the isolated
+evaluation of that law?
+No: Assumption~\ref{ass:efe} saturates them at
+\(\nu_{\sqrt{}}(g_{\mathrm{gal}})\).
+Do merging clusters still require a stress that does not track
+baryons?
+That remains an open constraint on Assumption~\ref{ass:track}, not on
+Theorem~7.3, and the external field is not a substitute for the
+lensing offset.
+
+\paragraph{Cosmology.}
+Is \(\Lambda_{\mathrm{eff}}\) constant enough for a
+Friedmann equation, and is the ultraviolet quartic absent from
+the expansion history? This tests Theorem~\ref{thm:Leff} as a
+mechanism, not as a number. A detected bulk \(\LUV^4\) vacuum
+energy would kill the HBEV subtraction.
+
+\paragraph{Tidal disruptions.}
+Is there extra heating or altered fallback that hydrodynamics
+plus GR tides cannot account for? A possible window on
+Assumption~\ref{ass:drag}. A null result bounds \(\eta\) at
+\(r_{\mathrm{t}}\) and nothing else.
+
+\section{Claims the book has not made}
+\label{sec:ch16-not-made}
+
+The following sentences do not appear as theorems in this text,
+and must not appear on a cover, in an abstract, or in a chapter
+heading as if they did.
+
+\begin{itemize}
+  \item Dark matter has been explained.
+  \item The cosmological-constant problem has been solved
+        numerically.
+  \item Singularities have been proved absent in dynamical
+        collapse.
+  \item LIGO inspirals are driven by a \(1/d^4\) drag.
+  \item Lorentzian signature has been derived from a Euclidean
+        matrix model.
+  \item Presentation~A has been reduced to Presentation~B without
+        Assumption~\ref{ass:dictionary}.
+  \item The rationals \(A,B,C\) in the coefficient map are unique.
+  \item Isolated \(\nu_{\sqrt{}}\) has been derived, and wide
+    binaries have been predicted without an external field.
+\end{itemize}
+
+A sale-ready monograph that prints any of those sentences as
+results has left this book and entered advertising.
+
+\section{How to use Chapter~15 in public}
+\label{sec:ch16-public}
+
+Figure~\ref{fig:lab} may be shown as a numerical check of a
+conserved extra drag in a Newtonian laboratory. It may not be
+shown as ``NAMCG predicting an inspiral.'' The caption must
+retain the words ``reduced model.'' The toy value
+\(G_{\mathrm{toy}}=36\) must not be silently replaced by
+\(G_{\mathrm{N}}\) in a talk slide.
+
+\section{Exercises}
+\label{sec:ch16-exercises}
+
+\begin{enumerate}
+  \item \textbf{Sort the list.}
+    Take any popular article on emergent gravity and assign each
+    of its claims to ``killer,'' ``coefficient,'' or ``not a
+    claim of this book.''
+  \item \textbf{One-page chain.}
+    Write the eleven-line chain of Section~\ref{sec:ch16-chain}
+    from memory, without looking. Where you stall is the section
+    to reread.
+  \item \textbf{Design a killer.}
+    Propose one measurement, not already listed, that would
+    refute Theorem~\ref{thm:mT} without passing through
+    \(\eta\). State the null and the fatal outcome.
+  \item \textbf{Design a non-killer.}
+    Propose one measurement that looks dramatic and would only
+    bound \(r_0\).
+  \item \textbf{Abstract hygiene.}
+    Rewrite a five-sentence abstract of this book that contains
+    no sentence from Section~\ref{sec:ch16-not-made}.
+\end{enumerate}
+
+\section{Bridge to Chapter~17}
+\label{sec:ch16-bridge}
+
+The killers and the coefficients are now distinguished. What
+remains is a research agenda: the calculations that would turn
+Assumption~\ref{ass:dictionary} into a lemma, recompute
+\(A,B,C\), evaluate \(S_{\mathrm{ent}}^{\mathrm{(IR)}}\), derive
+\(\mu_{\mathrm{ent}}\) from \(I(A:B)\), including the external-field argument of Assumption~\ref{ass:efe}, and decide whether
+Lorentzian signature can be more than Assumption~\ref{ass:lorentzian}.
+Chapter~17 writes that agenda at the thickness of a reader who
+has read the book and wants to work, not at the thickness of a
+grant advertisement.

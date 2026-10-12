@@ -1,0 +1,571 @@
+\chapter[Preliminaries]{Mathematical Preliminaries}
+\label{ch:preliminaries}
+
+\paragraph{Learning outcomes.}
+After this chapter the reader should be able to:
+\begin{enumerate}
+  \item distinguish a primitive metric from a composite vierbein
+        bilinear, and write the conversion between \(g_{\mu\nu}\) and
+        \(e^A_\mu\);
+  \item vary the Einstein--Hilbert action to obtain
+        \(G_{\mu\nu}=8\pi G\,T_{\mu\nu}\) and state the contracted
+        Bianchi identity that forces
+        \(\nabla^\mu T_{\mu\nu}=0\);
+  \item expand a functional determinant to second Seeley--DeWitt order
+        and recognize which coefficient multiplies \(R\);
+  \item define a causal diamond, its modular Hamiltonian, and the
+        first variation \(\delta S_D\);
+  \item enter Chapter~3 already possessing every geometric sentence
+        used in the matrix action and the later Ward identities.
+\end{enumerate}
+
+This chapter is a toolkit, not a treatise. Every section exists because
+a later proof calls it by name. Results that are used as black boxes
+are labeled as such. Results that NAMCG must derive, rather than
+import, are flagged and postponed.
+
+\section{Lorentzian manifolds and index conventions}
+\label{sec:ch2-manifolds}
+
+A spacetime in this book is a smooth four-manifold \(M\) equipped with
+a non-degenerate symmetric tensor \(g_{\mu\nu}\) of signature
+\((-,+,+,+)\). The inverse is \(g^{\mu\nu}\), and
+\(g=\det(g_{\mu\nu})\). The volume form is
+\(\sqrt{-g}\,\mathrm{d}^4x\).
+
+Coordinate indices \(\mu,\nu,\rho,\sigma\) transform under
+diffeomorphisms. Tangent-space (Lorentz) indices \(A,B,\ldots\)
+transform under local \(\mathrm{SO}(3,1)\). Internal gauge indices
+\(I,J,\ldots\) transform under the microscopic gauge group of the
+condensate. These three alphabets are never mixed silently.
+
+The Levi-Civita connection compatible with \(g_{\mu\nu}\) is
+\begin{equation}
+  \label{eq:christoffel}
+  \Gamma^\rho_{\mu\nu}
+  =\frac12 g^{\rho\sigma}
+  \bigl(\partial_\mu g_{\nu\sigma}+\partial_\nu g_{\mu\sigma}
+        -\partial_\sigma g_{\mu\nu}\bigr).
+\end{equation}
+The Riemann tensor, Ricci tensor, and Ricci scalar follow the
+conventions
+\begin{equation}
+  \label{eq:riemann}
+  \begin{aligned}
+    R^\rho{}_{\sigma\mu\nu}
+    &=\partial_\mu\Gamma^\rho_{\nu\sigma}
+      -\partial_\nu\Gamma^\rho_{\mu\sigma}
+      +\Gamma^\rho_{\mu\lambda}\Gamma^\lambda_{\nu\sigma}
+      -\Gamma^\rho_{\nu\lambda}\Gamma^\lambda_{\mu\sigma},\\
+    R_{\mu\nu}&=R^\rho{}_{\mu\rho\nu},\qquad
+    R=g^{\mu\nu}R_{\mu\nu}.
+  \end{aligned}
+\end{equation}
+The Einstein tensor is
+\begin{equation}
+  \label{eq:einstein-tensor}
+  G_{\mu\nu}=R_{\mu\nu}-\frac12 g_{\mu\nu}R.
+\end{equation}
+
+\begin{remark}[Mostly-minus versus mostly-plus]
+  Particle-physics texts often use \((+,-,-,-)\). Every energy
+  condition and every sign in a heat-kernel coefficient is
+  convention-dependent. If a formula in a cited paper looks off by a
+  sign, check the signature before inventing new physics.
+\end{remark}
+
+\section{Vierbeine: primitive geometry versus composite geometry}
+\label{sec:ch2-vierbein}
+
+A vierbein (tetrad) is a local frame field \(e^A_\mu\) satisfying
+\begin{equation}
+  \label{eq:vierbein-def}
+  g_{\mu\nu}=\eta_{AB}\,e^A_\mu e^B_\nu,\qquad
+  \eta_{AB}=\mathrm{diag}(-1,+1,+1,+1).
+\end{equation}
+The inverse frame \(e^\mu_A\) obeys
+\(e^A_\mu e^\mu_B=\delta^A_B\) and
+\(e^A_\mu e^\nu_A=\delta^\mu_\nu\). Local Lorentz transformations act
+as
+\begin{equation}
+  \label{eq:local-lorentz}
+  e^A_\mu(x)\;\longmapsto\;
+  \Lambda^A{}_B(x)\,e^B_\mu(x),
+  \qquad
+  \Lambda^T\eta\Lambda=\eta.
+\end{equation}
+The spin connection \(\omega_\mu{}^A{}_B\) is the unique metric-
+compatible connection on the frame bundle (vanishing torsion in the
+theories used here),
+\begin{equation}
+  \label{eq:spin-connection}
+  \nabla_\mu e^A_\nu
+  =\partial_\mu e^A_\nu-\Gamma^\rho_{\mu\nu}e^A_\rho
+   +\omega_\mu{}^A{}_B e^B_\nu=0.
+\end{equation}
+
+\paragraph{Primitive metric.}
+In textbook general relativity one takes \(g_{\mu\nu}\) as the
+fundamental field. A vierbein is an optional rewriting, useful for
+spinors.
+
+\paragraph{Composite metric.}
+In NAMCG the logical order is reversed. A microscopic matrix field
+\(\Phi^I{}_A\) is fundamental. After condensation one defines
+\begin{equation}
+  \label{eq:composite-vierbein}
+  e^A_\mu(x)\equiv\langle\partial_\mu\Phi^{IA}(x)\rangle
+\end{equation}
+and only then reconstructs \(g_{\mu\nu}\) by~\eqref{eq:vierbein-def}.
+Equation~\eqref{eq:composite-vierbein} is not justified in this
+chapter. It is the definition that Chapter~4 must earn.
+
+The distinction matters for counting degrees of freedom. A primitive
+symmetric tensor in four dimensions has ten components, of which
+diffeomorphisms remove four and local Lorentz transformations are
+absent because there is no independent frame. A primitive vierbein has
+sixteen components; local Lorentz invariance removes six, diffeomorphisms
+remove four, and six remain, matching the metric. When the vierbein is
+composite, those sixteen numbers are not independent fields. They are
+expectation values of derivatives of \(\Phi\). Gauge redundancies of
+\(\Phi\) and of the emergent geometry must be matched, not double
+counted. That matching is Chapter~10.
+
+\section{Variation of the Einstein--Hilbert action}
+\label{sec:ch2-EH}
+
+The Einstein--Hilbert action with a cosmological term and a matter
+action is
+\begin{equation}
+  \label{eq:EH-full}
+  S[g]
+  =\frac{1}{16\pi G}\int_M\mathrm{d}^4x\,\sqrt{-g}\,(R-2\Lambda)
+   +S_{\mathrm{m}}[g,\Psi].
+\end{equation}
+Under a metric variation \(g_{\mu\nu}\to g_{\mu\nu}+\delta g_{\mu\nu}\)
+one uses
+\begin{equation}
+  \label{eq:var-identities}
+  \delta g^{\mu\nu}=-g^{\mu\alpha}g^{\nu\beta}\delta g_{\alpha\beta},\qquad
+  \delta\sqrt{-g}=\frac12\sqrt{-g}\,g^{\mu\nu}\delta g_{\mu\nu},
+\end{equation}
+and the Palatini identity
+\begin{equation}
+  \label{eq:palatini}
+  \delta R_{\mu\nu}
+  =\nabla_\rho(\delta\Gamma^\rho_{\mu\nu})
+   -\nabla_\nu(\delta\Gamma^\rho_{\mu\rho}).
+\end{equation}
+The covariant-derivative terms become a boundary integral. On a
+manifold without boundary, or after adding the Gibbons--Hawking--York
+term
+\begin{equation}
+  \label{eq:GHY}
+  S_{\mathrm{GHY}}
+  =\frac{1}{8\pi G}\int_{\partial M}\mathrm{d}^3x\,\sqrt{|h|}\,K,
+\end{equation}
+the bulk stationarity condition is
+\begin{equation}
+  \label{eq:EFE}
+  G_{\mu\nu}+\Lambda g_{\mu\nu}=8\pi G\,T_{\mu\nu},
+\end{equation}
+where the matter stress tensor is defined by
+\begin{equation}
+  \label{eq:T-def}
+  T_{\mu\nu}
+  =-\frac{2}{\sqrt{-g}}
+    \frac{\delta S_{\mathrm{m}}}{\delta g^{\mu\nu}}.
+\end{equation}
+The same definition will be used in Chapter~11 for the entropic
+contribution \(\Tent_{\mu\nu}\), with \(S_{\mathrm{m}}\) replaced by
+the entanglement functional.
+
+\begin{remark}[Boundary terms are not optional in this book]
+  Chapter~12 promotes a boundary entropy functional to a dynamical
+  object. The combination \(K/8\pi G\) appearing in~\eqref{eq:GHY} is
+  therefore not an afterthought. It is the gravitational piece of the
+  HBEV boundary action.
+\end{remark}
+
+\section{Bianchi identities and conservation}
+\label{sec:ch2-bianchi}
+
+The Riemann tensor obeys
+\begin{equation}
+  \label{eq:bianchi}
+  \nabla_{[\lambda}R_{\rho\sigma]\mu\nu}=0.
+\end{equation}
+Contracting twice yields the contracted Bianchi identity
+\begin{equation}
+  \label{eq:contracted-bianchi}
+  \nabla^\mu G_{\mu\nu}=0.
+\end{equation}
+If the field equation is \(G_{\mu\nu}+\Lambda g_{\mu\nu}=8\pi G\,T_{\mu\nu}\),
+then necessarily
+\begin{equation}
+  \label{eq:conservation}
+  \nabla^\mu T_{\mu\nu}=0.
+\end{equation}
+This is not a courtesy to matter. It is the geometric content of
+diffeomorphism invariance.
+
+In an emergent theory the same identity becomes a constraint on the
+microscopic construction. Suppose the total effective stress tensor is
+split as
+\begin{equation}
+  \label{eq:T-split}
+  T_{\mu\nu}^{\mathrm{total}}
+  =T_{\mu\nu}^{\mathrm{matter}}
+  +T_{\mu\nu}^{\mathrm{tensor}}
+  +\Tent_{\mu\nu}.
+\end{equation}
+Geometry still requires
+\(\nabla^\mu T_{\mu\nu}^{\mathrm{total}}=0\). It is not enough that
+ordinary matter be conserved by itself if the extra pieces dump
+momentum into the world. Chapter~11 exists to prove that the NAMCG
+split satisfies~\eqref{eq:conservation}. Until that proof, any
+inspiral ``drag'' is a phenomenological force and not a geometric
+backreaction.
+
+Noether's second theorem makes the same point in field language. If an
+action is invariant under local diffeomorphisms generated by an
+arbitrary vector field \(\xi^\mu\), the Euler--Lagrange tensor
+\(\mathcal{E}^{\mu\nu}\) of the metric obeys
+\(\nabla_\mu\mathcal{E}^{\mu\nu}=0\) identically, off shell as an
+identity of the tensor densities involved, and on shell as conservation
+of \(T^{\mu\nu}\). Mass terms that break
+\(\delta_\xi h_{\mu\nu}=\nabla_\mu\xi_\nu+\nabla_\nu\xi_\mu\)
+destroy that identity. That observation is the skeleton of Chapter~7.
+
+\section{Gauge covariant derivatives and a scalar warmup}
+\label{sec:ch2-gauge}
+
+Let \(A_\mu=A_\mu^a T^a\) be a connection on a principal bundle with
+compact gauge group, generators \(T^a\) anti-Hermitian in the
+conventions of this book. The covariant derivative on a field \(\Phi\)
+in a representation \(\rho\) is
+\begin{equation}
+  \label{eq:covdev}
+  D_\mu\Phi=\partial_\mu\Phi-iA_\mu\Phi
+\end{equation}
+(up to the representation matrices, restored whenever the index
+structure requires them). The field strength is
+\begin{equation}
+  \label{eq:fieldstrength}
+  F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu-i[A_\mu,A_\nu].
+\end{equation}
+
+A complex scalar with Mexican-hat potential,
+\begin{equation}
+  \label{eq:abelian-higgs}
+  S[\phi]
+  =\int\mathrm{d}^4x
+   \Bigl(
+     |D_\mu\phi|^2
+     -\frac{\lambda}{4}\bigl(|\phi|^2-v^2\bigr)^2
+   \Bigr),
+\end{equation}
+condenses at \(|\langle\phi\rangle|=v\). The phase is eaten by \(A_\mu\)
+(Abelian Higgs / Stueckelberg mechanism), and the physical spectrum
+contains a massive vector and a massive radial scalar. There is no
+graviton.
+
+This warmup is here for two reasons. First, the NAMCG potential in
+Chapter~3 is the non-Abelian matrix analogue of~\eqref{eq:abelian-higgs}.
+Second, the failure mode is already visible: a single complex scalar
+has one Goldstone phase. After it is eaten, nothing remains that can
+be identified with a symmetric trace-free tensor \(T_{\mu\nu}\).
+
+\section{One-loop effective actions and the heat kernel}
+\label{sec:ch2-heatkernel}
+
+Let \(\mathcal{O}\) be a second-order elliptic (or hyperbolic, after
+Wick rotation) differential operator on a bundle over \(M\), typically
+of Laplace type,
+\begin{equation}
+  \label{eq:laplace-type}
+  \mathcal{O}=-g^{\mu\nu}D_\mu D_\nu+E,
+\end{equation}
+with bundle endomorphism \(E\). The one-loop effective action obtained
+by integrating out a fluctuation \(\eta\) is
+\begin{equation}
+  \label{eq:one-loop}
+  W[g]
+  =\frac12\mathrm{Tr}\,\ln\mathcal{O}
+  =-\frac12\int_0^\infty\frac{\mathrm{d}s}{s}\,\mathrm{Tr}\,e^{-s\mathcal{O}},
+\end{equation}
+up to local counterterms and the usual \(i\varepsilon\) / Wick-rotation
+caveats. The operator \(e^{-s\mathcal{O}}\) is the heat kernel. Its
+diagonal admits the Seeley--DeWitt expansion
+\begin{equation}
+  \label{eq:SDW}
+  \langle x|e^{-s\mathcal{O}}|x\rangle
+  \sim
+  \frac{1}{(4\pi s)^{2}}
+  \bigl(
+    a_0(x)+a_1(x)s+a_2(x)s^2+\cdots
+  \bigr)
+  \qquad(s\to 0^+),
+\end{equation}
+in four dimensions. For a Laplace-type operator the first coefficients
+are
+\begin{equation}
+  \label{eq:SDW-coeffs}
+  \begin{aligned}
+    a_0&=1,\\
+    a_1&=\frac16 R-E,\\
+    a_2&=\frac{1}{180}\bigl(
+           R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+          -R_{\mu\nu}R^{\mu\nu}
+          +\tfrac72 R^2
+         \bigr)
+         +\frac12 E^2
+         -\frac16 RE
+         +\cdots,
+  \end{aligned}
+\end{equation}
+where the omitted terms involve derivatives of \(E\) and the bundle
+curvature. The precise tensor combination in \(a_2\) will be written
+in full in Appendix~A when it is needed for ghost analysis. What
+Chapter~8 requires is only this fact:
+
+\begin{proposition}[Which coefficient produces Newton’s constant]
+  \label{prop:a1-G}
+  In the derivative expansion of \(W[g]\), the term linear in
+  curvature and quadratic in the ultraviolet cutoff comes from
+  \(a_1\). After a cutoff \(\LUV\) is imposed on the proper-time
+  integral~\eqref{eq:one-loop}, one obtains a contribution of the
+  schematic form
+  \begin{equation}
+    \label{eq:W-R}
+    W[g]
+    \supset
+    \int\mathrm{d}^4x\,\sqrt{-g}
+    \bigl(
+      c_0\LUV^4+c_2\LUV^2 R+\cdots
+    \bigr).
+  \end{equation}
+  The coefficient \(c_2\) is the microscopic ancestor of
+  \(1/(16\pi\Geff)\). The coefficient \(c_0\) is the microscopic
+  ancestor of the cosmological-constant problem.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+  Insert~\eqref{eq:SDW} into~\eqref{eq:one-loop} and cut the
+  proper-time integral at \(s\sim\LUV^{-2}\). The \(a_0/s^3\) piece
+  produces \(\LUV^4\). The \(a_1/s^2\) piece produces \(\LUV^2\) times
+  \(\tfrac16 R-E\). After the endomorphism \(E\) is evaluated on the
+  condensate background, the curvature term remains and is absorbed
+  into the Einstein--Hilbert prefactor. Details and the logarithmic
+  \(v^2\ln(\LUV/\mu)\) piece are Chapter~8.
+\end{proof}
+
+Two warnings, both of which the later text will spend chapters
+respecting.
+
+\begin{enumerate}
+  \item The quartic term \(c_0\LUV^4\) is not small. Declaring
+        \(\Lambda_{\mathrm{eff}}\approx 10^{-120}\rho_{\mathrm{Pl}}\)
+        without a mechanism is not a calculation. Chapter~12 is that
+        mechanism, or it is a failure.
+  \item If the fluctuation operator is fourth order, as in the
+        quadratic action of Chapter~9, the heat-kernel calculus
+        changes and Ostrogradsky poles appear. One cannot quote
+        \(a_1\) from a second-order Laplacian and then use a
+        \(\Box^2\) kinetic term without further work.
+\end{enumerate}
+
+\section{Causal diamonds}
+\label{sec:ch2-diamonds}
+
+Let \(p\) and \(q\) be events in \(M\) with \(q\) in the chronological
+future of \(p\). The causal diamond (Alexandrov set)
+\begin{equation}
+  \label{eq:diamond}
+  D(p,q)
+  =J^+(p)\cap J^-(q)
+\end{equation}
+is the intersection of the causal future of \(p\) with the causal past
+of \(q\). Its boundary \(\partial D\) consists of two null cones
+joined at a spacelike 2-surface \(\mathcal{B}\) (the edge, or
+bifurcation surface in the small-diamond limit).
+
+A \emph{small} causal diamond is one whose proper size is short
+compared with the local curvature radius, so that the metric inside
+\(D\) may be written in Riemann normal coordinates
+\begin{equation}
+  \label{eq:RNC}
+  g_{\mu\nu}(x)
+  =\eta_{\mu\nu}
+   -\frac13 R_{\mu\rho\nu\sigma}(0)x^\rho x^\sigma
+   +O(x^3).
+\end{equation}
+Jacobson's thermodynamic derivation of Einstein's equation uses
+precisely such diamonds: the matter flux across \(\partial D\) is
+compared with the variation of entanglement entropy of the diamond
+interior.
+
+\emph{Dyadic} diamonds \(D_{j,n}\) are a nested family obtained by
+repeated bisection of a reference diamond. They are bookkeeping. The
+physics is in the statement that first variations of entropy vanish
+for arbitrary small deformations of \(\partial D\), not in the dyadic
+label.
+
+\begin{definition}[Diamond entanglement functional]
+  \label{def:SD}
+  Let \(\rho_D=\mathrm{Tr}_{M\setminus D}\rho\) be the reduced state
+  of the microscopic theory on the diamond interior. The von Neumann
+  entropy
+  \begin{equation}
+    \label{eq:vonneumann}
+    S_D=-\mathrm{Tr}(\rho_D\ln\rho_D)
+  \end{equation}
+  is the diamond entanglement functional. The modular Hamiltonian is
+  \begin{equation}
+    \label{eq:modular}
+    H_D=-\ln\rho_D,
+  \end{equation}
+  so that \(S_D=\langle H_D\rangle\) up to the additive constant
+  \(\mathrm{Tr}(\rho_D\ln\rho_D)+\langle\ln\rho_D\rangle=0\) written
+  in that form.
+\end{definition}
+
+For a free field in Rindler space, \(H_D\) is proportional to the
+boost generator (Bisognano--Wichmann). For a small diamond in a
+curved background the same statement holds approximately, with
+Unruh temperature
+\begin{equation}
+  \label{eq:unruh}
+  T_{\mathrm{Unruh}}=\frac{\kappa}{2\pi},
+\end{equation}
+where \(\kappa\) is the surface gravity of \(\partial D\) as seen by
+the conformal Killing vector that fixes \(\mathcal{B}\).
+
+This book does \emph{not} take Jacobson's equation of state as an
+axiom imported from thermodynamics of horizons. Chapter~6 derives
+\(\delta S_D=0\) from the microscopic matrix theory, or states
+clearly where an assumption remains. The definitions above are
+only the language in which that derivation is written.
+
+\section{Mutual information}
+\label{sec:ch2-MI}
+
+For two regions \(A\) and \(B\),
+\begin{equation}
+  \label{eq:MI}
+  I(A:B)=S(A)+S(B)-S(A\cup B).
+\end{equation}
+Mutual information is non-negative, vanishes if and only if
+\(\rho_{AB}=\rho_A\otimes\rho_B\) (for finite-dimensional algebras),
+and is invariant under local unitaries on \(A\) or \(B\). In NAMCG the
+macroscopic potential
+\begin{equation}
+  \label{eq:Uent}
+  U_{\mathrm{ent}}
+  =-\lambda\,I(A:B)
+  =-\lambda\bigl[S(A)+S(B)-S(A\cup B)\bigr]
+\end{equation}
+is the interaction energy assigned to two condensed cores \(A\) and
+\(B\). The sign is chosen so that positive mutual information lowers
+the potential: entanglement is attractive in the effective
+description.
+
+The variation of \(U_{\mathrm{ent}}\) with respect to the worldline of
+a core produces the drag acceleration of Chapter~11. Because
+\(I(A:B)\) is built from diffeomorphism scalars \(S(\,\cdot\,)\), that
+variation is not free to point in an arbitrary non-conservative
+direction. Making this remark precise is the content of
+Theorem~2 in the ultraviolet note, rewritten as a textbook proof in
+Chapter~11.
+
+\section{What this chapter deliberately omits}
+\label{sec:ch2-omits}
+
+The following topics are real, and they are not treated here.
+
+\begin{itemize}
+  \item A complete development of spinor bundles and the Dirac
+        operator. NAMCG as formulated in the source notes is bosonic
+        at the microscopic level. Fermionic matter can be coupled to
+        the emergent vierbein later; it is not needed to obtain
+        \(G_{\mu\nu}\).
+  \item Full renormalization of quantum gravity as a fundamental
+        metric theory. The metric is not fundamental here. The
+        ultraviolet object is the matrix condensate, with cutoff
+        \(\LUV\).
+  \item A self-contained treatise on Tomita--Takesaki modular theory.
+        Definition~\ref{def:SD} and the replica formula
+        \(S=(1-n\partial_n)\ln\mathrm{Tr}\,\rho^n|_{n=1}\)
+        are sufficient for Chapter~6. Appendix~B expands them.
+  \item Numerical relativity. The integrators of Chapter~15 are
+        ordinary-differential toy models, announced as such.
+\end{itemize}
+
+If a later proof appears to need a tool that is not in this chapter,
+the defect is in the later proof or in this chapter, and should be
+repaired rather than papered over with a citation.
+
+\section{Exercises}
+\label{sec:ch2-exercises}
+
+\begin{enumerate}
+  \item \textbf{Volume variation.}
+    Derive both identities in~\eqref{eq:var-identities} from
+    \(\delta g=g\,g^{\mu\nu}\delta g_{\mu\nu}\) and
+    \(g^{\mu\alpha}g_{\alpha\nu}=\delta^\mu_\nu\).
+  \item \textbf{Einstein tensor from variation.}
+    Starting from~\eqref{eq:EH-full} with \(\Lambda=0\) and no
+    boundary, obtain \(G_{\mu\nu}=8\pi G\,T_{\mu\nu}\). Keep the
+    Palatini terms long enough to see them become a total derivative.
+  \item \textbf{Contracted Bianchi.}
+    Contract~\eqref{eq:bianchi} twice and obtain
+    \(\nabla^\mu G_{\mu\nu}=0\). Do not use the field equations.
+  \item \textbf{Frame versus metric degrees of freedom.}
+    Count local components of \(e^A_\mu\) and of \(g_{\mu\nu}\).
+    Subtract local Lorentz transformations and diffeomorphisms. Confirm
+    that both descriptions have six physical components off shell in
+    the usual sense of geometric gravity, before any equations of
+    motion.
+  \item \textbf{Composite-frame warning.}
+    Suppose \(e^A_\mu=\langle\partial_\mu\Phi^{IA}\rangle\) and
+    \(\Phi\) is subject to a global internal rotation
+    \(\Phi\mapsto U\Phi\). What happens to \(e^A_\mu\)? What additional
+    structure is required before this rotation can be identified with
+    a local Lorentz transformation of the emergent frame? (The answer
+    is Chapter~10; write the question cleanly now.)
+  \item \textbf{Heat-kernel dimensions.}
+    In four dimensions, assign canonical mass dimensions to
+    \(a_0,a_1,a_2\) and to the proper-time variable \(s\). Show that
+    \(a_0\LUV^4\) and \(a_1\LUV^2\) are the only two local terms
+    generated by~\eqref{eq:SDW} that can appear as relevant or
+    marginal couplings of mass dimension four or less, aside from
+    logarithms.
+  \item \textbf{Small diamond.}
+    In Riemann normal coordinates~\eqref{eq:RNC}, compute the
+    spatial 3-volume of a small diamond of radius \(\ell\) to order
+    \(\ell^5 R\). This is the geometric ingredient in Jacobson's
+    original argument.
+  \item \textbf{Mutual information positivity.}
+    Prove \(I(A:B)\ge 0\) from strong subadditivity, or from relative
+    entropy \(S(\rho_{AB}\|\rho_A\otimes\rho_B)\). Why does the sign
+    in~\eqref{eq:Uent} then correspond to an attractive effective
+    potential?
+\end{enumerate}
+
+\section{Bridge to Chapter~3}
+\label{sec:ch2-bridge}
+
+The language is now in place. A metric may be primitive or composite.
+If it is composite, it is built from a vierbein, and the vierbein must
+come from a field that carries a tangent index. The Einstein tensor is
+the Euler--Lagrange tensor of~\eqref{eq:EH-full}, and Bianchi forces
+conservation. Newton's constant, if it is emergent, lives in the
+\(a_1\) heat-kernel coefficient. Entanglement lives on causal
+diamonds.
+
+What is missing is the field. Chapter~3 introduces the non-Abelian
+matrix order parameter \(\Phi^I{}_A\), the matrix-coordinate algebra
+\([\hat X^\mu,\hat X^\nu]=i\Theta^{\mu\nu}\), and the microscopic
+action whose condensation will produce the vierbein
+of~\eqref{eq:composite-vierbein}. After that chapter, geometry is no
+longer an independent ingredient. It is an output.

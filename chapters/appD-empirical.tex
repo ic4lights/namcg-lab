@@ -1,0 +1,122 @@
+\chapter{SPARC Rotation Curves: A Coefficient-Level Consistency Check}
+\label{app:empirical}
+
+\section{What is being tested}
+\label{sec:sparc-what}
+
+The function
+\begin{equation}
+  \label{eq:appD-nu}
+  \nu_{\sqrt{}}(g_{\mathrm{N}},g_s)
+  =\frac{1}{1-\exp\bigl(-\sqrt{g_{\mathrm{N}}/g_s}\bigr)}
+\end{equation}
+is the published Radial Acceleration Relation interpolator of
+McGaugh, Lelli \& Schombert (2016). Appendix~\ref{app:status}
+records that a derivation of this (or any other) interpolator from
+the mutual-information functional remains open (Problem~H). The
+present appendix asks only whether the same function, with the
+single scale fixed at the published value
+\(g_s=g_\dagger=1.20\times10^{-10}\,\mathrm{m\,s^{-2}}\),
+is compatible with the SPARC rotation-curve sample.
+
+The predicted circular velocity is
+\begin{equation}
+  \label{eq:appD-V}
+  V=V_{\mathrm{b}}\sqrt{\nu_{\sqrt{}}(g_{\mathrm{N}},g_s)},
+\end{equation}
+where \(V_{\mathrm{b}}\) is the Newtonian baryonic contribution
+computed from the SPARC mass models. No additional galactic
+parameters are introduced.
+
+\section{SPARC comparison}
+\label{sec:sparc-comparison}
+
+The comparison uses the public SPARC rotmod files
+(175 galaxies, 3391 radial points). Three models are scored by
+\(\chi^2\) and AIC:
+
+\begin{itemize}
+  \item baryons only (\(\nu=1\));
+  \item simple MOND with one free acceleration scale \(a_0\);
+  \item \(\nu_{\sqrt{}}\) with \(g_s\) fixed at \(g_\dagger\)
+        (zero free parameters) and, for reference, with \(g_s\) free.
+\end{itemize}
+
+\begin{table}[htbp]
+\centering
+\caption{Global \(\chi^2\) and AIC on 175 SPARC galaxies (3391 points).
+Lower AIC is better.}
+\label{tab:sparc_results}
+\begin{tabular}{lrrrr}
+\toprule
+Model & Free params & \(\chi^2\) & AIC & Scale (\(\mathrm{m\,s^{-2}}\)) \\
+\midrule
+\(\nu_{\sqrt{}}\) (fixed \(g_s=g_\dagger\)) & 0 & \(1.695\times10^5\) & \(1.695\times10^5\) & \(1.20\times10^{-10}\) \\
+\(\nu_{\sqrt{}}\) (free \(g_s\))            & 1 & \(1.695\times10^5\) & \(1.695\times10^5\) & \(1.20\times10^{-10}\) \\
+Simple MOND (free \(a_0\))                 & 1 & \(1.691\times10^5\) & \(1.691\times10^5\) & \(1.16\times10^{-10}\) \\
+Baryons only                               & 0 & \(1.960\times10^6\) & \(1.960\times10^6\) & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The fixed-\(g_s\) and free-\(g_s\) versions of \(\nu_{\sqrt{}}\) are
+statistically indistinguishable; the free fit returns
+\(g_s=1.20\times10^{-10}\,\mathrm{m\,s^{-2}}\). Relative to the
+best one-parameter MOND fit the \(\chi^2\) penalty is
+approximately \(0.2\%\). Both modified-gravity models improve on
+baryons-only by more than an order of magnitude in \(\chi^2\).
+
+\section{Numerical implementation}
+\label{sec:sparc-code}
+
+\begin{lstlisting}[style=namcgPythonStyle,caption={Core evaluation functions.}]
+import numpy as np
+
+KMS2_PER_KPC_TO_SI = 1.0e6 / 3.085677581491367e19
+G_DAGGER = 1.20e-10
+
+def gn_si(vb, r):
+    r = np.maximum(np.asarray(r, float), 1e-6)
+    return (np.asarray(vb, float)**2 / r) * KMS2_PER_KPC_TO_SI
+
+def nu_sqrt(gn, gs):
+    gs = max(float(gs), 1e-18)
+    x = np.clip(np.asarray(gn, float)/gs, 0.0, 1e12)
+    s = np.sqrt(x)
+    denom = 1.0 - np.exp(-s)
+    nu = np.empty_like(denom)
+    tiny = denom < 1e-12
+    nu[tiny] = 1.0 / np.maximum(s[tiny], 1e-30)
+    nu[~tiny] = 1.0 / denom[~tiny]
+    return nu
+
+def v_namcg(r, vb, gs=G_DAGGER):
+    return vb * np.sqrt(np.clip(nu_sqrt(gn_si(vb, r), gs), 1.0, 1e6))
+\end{lstlisting}
+
+\section{What the comparison is and is not}
+\label{sec:sparc-status}
+
+At low Newtonian acceleration,
+\(\nu_{\sqrt{}}\) approaches the square-root map
+\(g_{\mathrm{obs}}\approx\sqrt{g_{\mathrm{N}}g_\dagger}\).
+On the SPARC disks this keeps \(V\) from falling as fast as
+\(V_{\mathrm{b}}\). The numerical result shows that this
+particular function, frozen at the published \(g_\dagger\),
+is compatible with the sample at the same level as a
+one-parameter MOND fit.
+
+The comparison does not:
+\begin{itemize}
+  \item derive \(\nu_{\sqrt{}}\) from \(I(A:B)\) or from the
+        modular spectrum (Problem~H remains open);
+  \item fix \(g_\dagger\) from the condensate;
+  \item constrain \(m_T=0\), the heat-kernel coefficients, or
+        the conservation identity;
+  \item rule out particle dark-matter halos on other scales.
+\end{itemize}
+
+It is a coefficient-level consistency check: the infrared
+equation of the monograph can wear the published RAR
+interpolator without contradiction on this data set. That is
+the strongest statement the SPARC sample supports.

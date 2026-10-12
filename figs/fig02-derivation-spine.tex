@@ -1,0 +1,42 @@
+\begin{tikzpicture}[
+  x=1cm,y=1cm,
+  box/.style={
+    draw, thick, rounded corners=1.2pt,
+    align=center, font=\scriptsize,
+    inner sep=3.4pt, minimum height=0.78cm
+  },
+  arr/.style={-{Stealth[length=1.7mm]}, thick},
+  font=\small
+]
+  % row 1
+  \node[box] (phi) at (0,0)
+    {$\Phi^I{}_A$};
+  \node[box] (vev) at (2.55,0)
+    {$\langle\Phi\rangle=v\delta^I{}_A$};
+  \node[box] (e) at (5.35,0)
+    {$e^A_\mu=\langle\partial_\mu\Phi^{IA}\rangle$};
+  \draw[arr] (phi) -- (vev);
+  \draw[arr] (vev) -- (e);
+
+  % row 2
+  \node[box] (g) at (0,-1.45)
+    {$g_{\mu\nu}=\eta_{AB}e^A_\mu e^B_\nu$};
+  \node[box] (split) at (4.15,-1.45)
+    {$\delta\Phi=\psi+A+T_{\mu\nu}$};
+  \draw[arr] (e.south) -- ++(0,-0.28) -| (g.north);
+  \draw[arr] (g) -- (split);
+
+  % row 3
+  \node[box] (ee) at (0,-2.9)
+    {$\delta S_D=0$};
+  \node[box] (mt) at (2.7,-2.9)
+    {$m_T\to 0$};
+  \node[box] (eh) at (5.55,-2.9)
+    {$S_{\mathrm{EH}}[g]+S_{\mathrm{br}}$};
+  \draw[arr] (split.south) -- ++(0,-0.28) -| (ee.north);
+  \draw[arr] (ee) -- (mt);
+  \draw[arr] (mt) -- (eh);
+
+  \node[font=\scriptsize,text=black!70] at (2.7,-3.55)
+    {Eq.~\eqref{eq:spine}; $S_{\mathrm{br}}=$ backreaction};
+\end{tikzpicture}

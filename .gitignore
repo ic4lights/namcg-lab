@@ -1,2 +1,13 @@
 .venv/
 __pycache__/
+
+*.aux
+*.log
+*_KC*/
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.toc
+manual_posts/images/

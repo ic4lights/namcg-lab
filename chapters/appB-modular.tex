@@ -1,0 +1,203 @@
+\chapter{Modular Hamiltonians and the Replica Formula}
+\label{app:modular}
+
+This appendix records the entanglement formulae used in
+Chapters~6, 11, and~12. It introduces no new physical hypothesis.
+The working identity of the main text remains
+Proposition~\ref{prop:ward}. What follows is the language in which
+that identity was written.
+
+\section{States, reductions, and von Neumann entropy}
+\label{sec:appB-vN}
+
+Let \(\mathcal{H}\) be the Hilbert space of the microscopic theory
+and \(\rho\) a density operator on \(\mathcal{H}\). For a von
+Neumann algebra \(\mathcal{A}_D\) of observables associated with a
+region \(D\), the reduced state \(\rho_D\) is the restriction of
+\(\rho\) to \(\mathcal{A}_D\). In a tensor-product approximation
+\(\mathcal{H}\simeq\mathcal{H}_D\otimes\mathcal{H}_{D^c}\),
+\begin{equation}
+  \label{eq:appB-rhoD}
+  \rho_D=\mathrm{Tr}_{\mathcal{H}_{D^c}}\rho.
+\end{equation}
+Continuum quantum field theory does not have that tensor-product
+factorization. The algebraic definition (restriction to
+\(\mathcal{A}_D\)) is the honest one; equation~\eqref{eq:appB-rhoD}
+is the formula used in every explicit replica computation in the
+book.
+
+The von Neumann entropy and modular Hamiltonian of \(\rho_D\) are
+\begin{equation}
+  \label{eq:appB-SH}
+  S_D=-\mathrm{Tr}(\rho_D\ln\rho_D),
+  \qquad
+  H_D=-\ln\rho_D,
+\end{equation}
+so that
+\begin{equation}
+  \label{eq:appB-S-eq-H}
+  S_D=\langle H_D\rangle_{\rho_D}.
+\end{equation}
+If \(\rho_D\) has kernel, \(\ln\rho_D\) is defined on the support
+of \(\rho_D\) and \(S_D\) may be infinite. In quantum field theory
+\(S_D\) is ultraviolet divergent. Differences \(\delta S_D\) at
+fixed cutoff, and mutual informations, are the finite objects used
+in the main text.
+
+\section{Relative entropy and mutual information}
+\label{sec:appB-rel}
+
+For two states \(\rho\) and \(\sigma\) on the same algebra,
+\begin{equation}
+  \label{eq:appB-rel}
+  S(\rho\|\sigma)
+  =\mathrm{Tr}(\rho\ln\rho)-\mathrm{Tr}(\rho\ln\sigma)
+\end{equation}
+is non-negative and vanishes if and only if \(\rho=\sigma\)
+(when the expression is finite). Mutual information of two
+regions \(A\) and \(B\) is the relative entropy of \(\rho_{AB}\)
+with respect to \(\rho_A\otimes\rho_B\),
+\begin{equation}
+  \label{eq:appB-MI}
+  I(A:B)
+  =S(\rho_{AB}\|\rho_A\otimes\rho_B)
+  =S(A)+S(B)-S(A\cup B),
+\end{equation}
+the second equality holding when the three von Neumann entropies
+are regulated in the same scheme. Positivity of \(I(A:B)\) is
+therefore positivity of relative entropy. That is the source of
+the sign in Definition~\ref{def:Uent} and of
+\(\Gamma(d)\ge 0\) in Chapter~14.
+
+Strong subadditivity,
+\begin{equation}
+  \label{eq:appB-SSA}
+  S(A\cup B)+S(B\cup C)
+  \ge S(B)+S(A\cup B\cup C),
+\end{equation}
+is recorded for completeness. The main text does not use it
+beyond the positivity of \(I(A:B)\).
+
+\section{The replica formula}
+\label{sec:appB-replica}
+
+For integer \(n\ge 1\),
+\begin{equation}
+  \label{eq:appB-replica}
+  \mathrm{Tr}\,(\rho_D)^n
+  =Z_n/Z_1^n,
+\end{equation}
+where \(Z_n\) is the partition function of the microscopic theory
+on an \(n\)-sheeted cover branched over the edge
+\(\mathcal{B}=\partial D\cap\Sigma\). Analytic continuation in
+\(n\) and the identity
+\begin{equation}
+  \label{eq:appB-replica-S}
+  S_D
+  =\lim_{n\to 1}
+   \bigl(1-n\partial_n\bigr)\ln\mathrm{Tr}\,(\rho_D)^n
+\end{equation}
+produce the von Neumann entropy. Differentiating at \(n=1\)
+inserts a single modular Hamiltonian: the first variation
+\(\delta S_D=\delta\langle H_D\rangle\) used in Chapter~6 is the
+replica formula at first order, not a second definition.
+
+In Presentation~B the cover is a branched cover of the auxiliary
+manifold, later identified with the emergent spacetime by
+Proposition~\ref{prop:scaffold}. In Presentation~A the same
+construction requires Problem~A of Chapter~17.
+
+\section{Bisognano--Wichmann and small diamonds}
+\label{sec:appB-BW}
+
+On Minkowski space, let \(W\) be a Rindler wedge. The
+Bisognano--Wichmann theorem identifies the modular Hamiltonian of
+the vacuum restricted to \(W\) with the boost generator that
+fixes the edge,
+\begin{equation}
+  \label{eq:appB-BW}
+  H_W
+  =\frac{2\pi}{\kappa}
+   \int_{\Sigma\cap W}
+   \mathrm{d}\Sigma^\mu\,\xi^\nu T_{\mu\nu},
+\end{equation}
+where \(\xi^\mu\) is the boost Killing vector and
+\(\kappa\) its surface gravity (equal to \(1\) in standard Rindler
+coordinates, restored here for matching~\eqref{eq:HD-boost}).
+
+A small causal diamond in a slowly curved emergent geometry is,
+to leading order in Riemann normal coordinates~\eqref{eq:RNC}, a
+compact analogue of two opposing Rindler wedges glued at a
+2-sphere. The working formula~\eqref{eq:HD-boost} is that analogue:
+the same boost-energy integral plus an area term
+\(H_{\mathrm{area}}\) whose first variation is
+\(\delta A/(4\Geff)\) after Chapter~8 has named \(\Geff\). The
+error is \(O(\ell^3)\) in the diamond radius, which is the order
+dropped in Proposition~\ref{prop:ward}.
+
+The identification is exact for free fields in Rindler space. It
+is an operator-product approximation for interacting condensate
+fluctuations. The book does not claim a Bisognano--Wichmann
+theorem for the full matrix potential~\eqref{eq:V}.
+
+\section{Fixed volume}
+\label{sec:appB-volume}
+
+Jacobson's entanglement-equilibrium condition is imposed at fixed
+spatial volume of the maximal slice. In Riemann normal coordinates
+the volume of a small ball of radius \(\ell\) is~\eqref{eq:vol-exp}.
+A pure conformal variation \(\delta g_{\mu\nu}=\chi\eta_{\mu\nu}\)
+changes that volume at order \(\ell^3\). Holding \(V\) fixed
+removes that breathing from the comparison and is why the conformal
+block \(\psi\) and the tensor block \(T_{\mu\nu}\) do not enter
+the first law on the same footing.
+
+Fixed volume is a constraint on the variations admitted in
+Assumption~\ref{ass:EE}. It is not a statement that \(\psi\) is
+massive. That statement is Assumption~\ref{ass:gap-psi}.
+
+\section{Boundary entropy versus diamond entropy}
+\label{sec:appB-two}
+
+Chapter~12 uses a different functional: a local density
+\(S_{\mathrm{ent}}(h_{ij},\phi)\) on \(\partial M\). The replica
+construction of that density is the same formula,
+\eqref{eq:appB-replica-S}, applied to a thin tubular neighbourhood
+of the boundary and then localized as in
+Assumption~\ref{ass:Sent-density}. The two functionals must not be
+substituted for each other. Section~\ref{sec:ch12-diamonds}
+already assigned them different jobs.
+
+\section{What this appendix will not do}
+\label{sec:appB-not}
+
+It will not develop Tomita--Takesaki theory beyond the definition
+\(H_D=-\ln\rho_D\). It will not compute \(S_D\) for the matrix
+potential~\eqref{eq:V}. It will not prove Assumption~\ref{ass:EE}.
+Those are Problem~B of Chapter~17 and the physical input of
+Chapter~6, respectively.
+
+\section{Exercises}
+\label{sec:appB-exercises}
+
+\begin{enumerate}
+  \item \textbf{Replica derivative.}
+    From~\eqref{eq:appB-replica-S} and
+    \(\mathrm{Tr}\,\rho^n=\exp(\ln\mathrm{Tr}\,\rho^n)\), recover
+    \(S=\langle H\rangle\) at \(n=1\).
+  \item \textbf{Relative entropy and Klein's inequality.}
+    For finite-dimensional density matrices, prove
+    \(S(\rho\|\sigma)\ge 0\). Deduce \(I(A:B)\ge 0\).
+  \item \textbf{Rindler temperature.}
+    In standard Rindler coordinates, show that the Unruh
+    temperature seen by an accelerated observer is
+    \(\kappa/2\pi\). Match the factor in~\eqref{eq:appB-BW}.
+  \item \textbf{Area divergence.}
+    For a free scalar in Minkowski space, the unregulated
+    \(S_D\) diverges as \(\mathrm{Area}(\mathcal{B})/\epsilon^2\).
+    Why do mutual information and first variations \(\delta S_D\)
+    at fixed cutoff remain useful?
+  \item \textbf{Two functionals.}
+    Write four sentences explaining why a small-diamond \(S_D\)
+    cannot be used as the boundary density of Definition~\ref{def:HBEV}.
+\end{enumerate}

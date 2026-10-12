@@ -1,0 +1,339 @@
+\chapter[Lorentz locking]{Local Lorentz Locking and the Fate of the Goldstones}
+\label{ch:lorentz-locking}
+
+\paragraph{Learning outcomes.}
+After this chapter the reader should be able to:
+\begin{enumerate}
+  \item write the simultaneous action of internal gauge
+        transformations and local Lorentz transformations on
+        \(\Phi^I{}_A\);
+  \item identify the diagonal subgroup preserved by the polar vacuum
+        and the six broken generators;
+  \item exhibit the Stueckelberg replacement that eats
+        \(\omega_{AB}\) into a spin connection;
+  \item finish the counting table of Section~\ref{sec:ch5-count}
+        through the vector and Lorentz-Goldstone lines;
+  \item enter Chapter~11 with a composite frame that transforms as a
+        genuine vierbein, so that \(\nabla^\mu T_{\mu\nu}\) is well
+        defined.
+\end{enumerate}
+
+Since Chapter~5 the antisymmetric piece \(\omega_{AB}\) has been
+called a local-Lorentz Goldstone and postponed. This chapter
+constructs the gauge symmetry that justifies the name and the Higgs
+mechanism that removes \(\omega_{AB}\) from the infrared spectrum.
+
+\section{The two groups that act on \(\Phi\)}
+\label{sec:ch10-groups}
+
+The condensate field of Presentation~B transforms, by
+\eqref{eq:Phi-transform}, as
+\begin{equation}
+  \label{eq:Phi-tr-again}
+  \Phi^I{}_A(x)
+  \;\longmapsto\;
+  \Omega^I{}_J(x)\,\Phi^J{}_B(x)\,\Lambda^B{}_A(x).
+\end{equation}
+Here \(\Omega(x)\) takes values in the internal gauge group
+\(G_{\mathrm{int}}\) and \(\Lambda(x)\) takes values in
+\(\mathrm{SO}(3,1)\), or in its double cover if spinors are later
+coupled. Infinitesimally,
+\begin{equation}
+  \label{eq:Phi-inf}
+  \delta\Phi^I{}_A
+  =\alpha^I{}_J\Phi^J{}_A
+   +\Phi^I{}_B\,\beta^B{}_A,
+\end{equation}
+with \(\alpha\) in the Lie algebra of \(G_{\mathrm{int}}\) and
+\(\beta_{AB}=-\beta_{BA}\) in \(\mathfrak{so}(3,1)\).
+
+These are independent transformations at the level of field content.
+Nothing in Chapter~3 forced \(\Lambda(x)\) to be a gauge symmetry
+rather than a global classification of the index \(A\). Treating it
+as local is a choice, recorded as such.
+
+\begin{assumption}[Local Lorentz gauge symmetry]
+  \label{ass:local-lorentz}
+  The microscopic action~\eqref{eq:Smicro} is invariant under
+  local \(\Lambda(x)\in\mathrm{SO}(3,1)\) once a spin connection
+  \(\omega_\mu{}^A{}_B\) is introduced through the covariant
+  derivative on the tangent index,
+  \begin{equation}
+    \label{eq:D-both}
+    \mathcal{D}_\mu\Phi^I{}_A
+    =\partial_\mu\Phi^I{}_A
+     -i(A_\mu)^I{}_J\Phi^J{}_A
+     +\omega_\mu{}^B{}_A\Phi^I{}_B.
+  \end{equation}
+  The connection \(\omega_\mu{}^{AB}\) is, at this stage, an
+  independent gauge field.
+\end{assumption}
+
+Assumption~\ref{ass:local-lorentz} is the step that makes \(A\) a
+genuine tangent index rather than an internal flavour that happens
+to have four values. Combined with Assumption~\ref{ass:lorentzian},
+it is the origin of local Lorentz invariance in NAMCG. It is not
+derived from Presentation~A.
+
+\section{The vacuum and the broken generators}
+\label{sec:ch10-broken}
+
+The polar vacuum of Chapter~4, in the Minkowski frame,
+\begin{equation}
+  \label{eq:vac-lock}
+  \langle\Phi^I{}_A\rangle=v\,\delta^I{}_A,
+\end{equation}
+is invariant only under the diagonal combination
+\begin{equation}
+  \label{eq:diagonal}
+  \alpha^I{}_J
+  =-\,v^{-1}\delta^I{}_B\,\beta^B{}_C\,\delta^C{}_J
+   \Big|_{\text{locked \(4\times 4\) block}},
+\end{equation}
+that is, under simultaneous internal and Lorentz rotations that
+rotate the locked axes together. If \(G_{\mathrm{int}}\) contains
+\(\mathrm{SO}(3,1)\) (or a group large enough to have an
+\(\mathfrak{so}(3,1)\) subalgebra acting on the locked indices),
+six generators are unbroken and six are broken.
+
+\begin{proposition}[Goldstone count]
+  \label{prop:goldstone-count}
+  About the vacuum~\eqref{eq:vac-lock}, with
+  Assumption~\ref{ass:local-lorentz} in force and with the locked
+  block of dimension four, there are six broken generators. The
+  corresponding Goldstone fields are the antisymmetric components
+  \(\omega_{AB}\) of~\eqref{eq:linear-frame}.
+\end{proposition}
+
+\begin{proof}
+  The vacuum stabilizer is the diagonal
+  \(\mathrm{SO}(3,1)_{\mathrm{diag}}\). The coset
+  \(\mathrm{SO}(3,1)_{\mathrm{Lorentz}}\times
+   \mathrm{SO}(3,1)_{\mathrm{int}}/\mathrm{SO}(3,1)_{\mathrm{diag}}\)
+  has dimension \(6+6-6=6\). An infinitesimal broken transformation
+  with parameter \(\beta_{AB}\) shifts
+  \(\Phi^I{}_A\) by \(v\beta^I{}_A\), which is antisymmetric in
+  \((I,A)\) after lowering with \(\eta\). That shift is the
+  fluctuation \(\omega_{AB}\).
+\end{proof}
+
+If \(G_{\mathrm{int}}\) is larger than \(\mathrm{SO}(3,1)\),
+additional Goldstones live in the unlocked block. They belong to
+Assumption~\ref{ass:locked-block} and are taken heavy.
+
+\section{Eating \(\omega_{AB}\)}
+\label{sec:ch10-eat}
+
+A local broken symmetry with an independent connection is a Higgs
+mechanism. Introduce the Stueckelberg field
+\(\Lambda(x)\in\mathrm{SO}(3,1)\) already present in the polar
+decomposition~\eqref{eq:polar}, and replace the spin connection by
+the dressed connection
+\begin{equation}
+  \label{eq:dressed-omega}
+  \omega_\mu
+  \;\longmapsto\;
+  \Lambda^{-1}\omega_\mu\Lambda+\Lambda^{-1}\partial_\mu\Lambda.
+\end{equation}
+Choose the unitary gauge
+\begin{equation}
+  \label{eq:unitary}
+  \Lambda(x)=\mathbb{I},
+\end{equation}
+which is admissible wherever the polar decomposition is smooth
+(that is, wherever Assumption~\ref{ass:nondeg} holds and no
+condensate defect forces \(\det e=0\)). In that gauge
+\(\omega_{AB}\) has been absorbed into \(\omega_\mu{}^{AB}\), and
+the kinetic term of \(\Phi\) produces a mass term
+\begin{equation}
+  \label{eq:omega-mass}
+  \mathcal{L}_{\omega^2}
+  \supset
+  v^2\,\omega_\mu{}^{AB}\omega^\mu{}_{AB}.
+\end{equation}
+The connection is massive of order \(v\), or it is identified with
+the Levi-Civita spin connection of the composite frame and the
+mass term is reinterpreted as the statement that torsion is
+gapped.
+
+\begin{theorem}[Lorentz locking]
+  \label{thm:locking}
+  Under Assumptions~\ref{ass:frame-lock},
+  \ref{ass:local-lorentz}, and~\ref{ass:nondeg}, there exists a
+  gauge in which
+  \begin{enumerate}
+    \item the six Goldstones \(\omega_{AB}\) do not propagate;
+    \item the composite object \(e^A_\mu\) of
+          Definition~\ref{def:vierbein} transforms only under
+          the diagonal local Lorentz group, as a vierbein;
+    \item the independent spin connection is either massive of
+          order \(v\) or slaved to \(e^A_\mu\) by the torsion-free
+          condition~\eqref{eq:spin-connection}.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  Proposition~\ref{prop:goldstone-count} supplies six Goldstones.
+  The Stueckelberg replacement~\eqref{eq:dressed-omega} and the
+  gauge~\eqref{eq:unitary} remove them from the spectrum. In that
+  gauge \(\Phi^{IA}=(v+\sigma)\delta^{IA}\) plus tensor and vector
+  blocks, so \(e^A_\mu\) defined from \(\partial_\mu\Phi\) or from
+  the normalized vacuum transforms as
+  \(e^A_\mu\mapsto\Lambda_{\mathrm{diag}}{}^A{}_B e^B_\mu\). The
+  mass term~\eqref{eq:omega-mass} gaps any component of
+  \(\omega_\mu{}^{AB}\) that is not slaved to \(e\). The slaved
+  remainder is uniquely the torsion-free spin connection of
+  \(e^A_\mu\), by the standard Cartan lemma used
+  in~\eqref{eq:spin-connection}.
+\end{proof}
+
+\begin{remark}[Defects]
+  Unitary gauge fails where \(\Lambda(x)\) cannot be set to the
+  identity continuously---at defects where \(\det e=0\). Those loci
+  are condensate defects, not coordinate singularities of an
+  already existing manifold. They are possible ultraviolet
+  endpoints of the regular cores of Chapter~13, and they are not
+  analyzed further here.
+\end{remark}
+
+\section{The internal vector after locking}
+\label{sec:ch10-vector}
+
+The internal connection \(A_\mu\) of~\eqref{eq:Dmu-Phi} is not the
+same object as \(\omega_\mu{}^{AB}\). After locking, four of its
+components in the locked block mix with \(\omega_\mu\). The
+orthogonal combination is an ordinary Yang--Mills field of the
+unbroken diagonal subgroup, or of whatever remains of
+\(G_{\mathrm{int}}\) outside \(\mathrm{SO}(3,1)\).
+
+Its mass is a standard Higgs mass,
+\begin{equation}
+  \label{eq:A-mass}
+  m_A\sim g_{\mathrm{YM}}v,
+\end{equation}
+unless a residual exact gauge symmetry is left unbroken. In the
+latter case the infrared theory contains general relativity plus
+Yang--Mills, which is phenomenologically welcome and does not
+disturb Theorem~\ref{thm:mT}. In the former case the vector block
+decouples at scale \(m_A\) and is irrelevant below \(v\).
+
+This closes the vector line of the counting table.
+
+\section{Diffeomorphisms}
+\label{sec:ch10-diffs}
+
+Diffeomorphisms act on the coordinate index of every tensor
+constructed from \(\Phi(x)\). They are not eaten. They are the
+gauge symmetry of the composite metric, and they are what force
+\(\nabla^\mu T_{\mu\nu}^{\mathrm{total}}=0\) in Chapter~11.
+
+After Theorem~\ref{thm:locking}, an infinitesimal diffeomorphism
+\(\xi^\mu\) acts on the vierbein in the standard hybrid way,
+\begin{equation}
+  \label{eq:lie-vierbein}
+  \delta_\xi e^A_\mu
+  =\xi^\rho\partial_\rho e^A_\mu
+   +\partial_\mu\xi^\rho\,e^A_\rho,
+\end{equation}
+up to a local Lorentz transformation that can be used to keep a
+chosen gauge on the frame. The induced action on \(g_{\mu\nu}\) is
+the Lie derivative~\eqref{eq:lie-g}. No extra scalar Goldstone of
+diffeomorphisms appears: diffeomorphisms are gauged, not broken, in
+the condensed phase.
+
+\section{Completed counting table}
+\label{sec:ch10-table}
+
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Stage & What is removed & Remaining & Where \\
+\midrule
+algebraic split & --- & 16 & Ch.~5 \\
+eat \(\omega_{AB}\) & 6 Lorentz Goldstones & 10 & this chapter \\
+gap or Higgs \(A_\mu\) & 4 vector & 6 & this chapter \\
+gap \(\psi\) & 1 conformal scalar & 5 & Assp.~\ref{ass:gap-psi} \\
+\(m_T=0\) and TT gauge & 3 residual constraints & 2 TT & Ch.~7 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The six remaining after the vector is removed are the ten metric
+components minus four diffeomorphisms. Gapping \(\psi\) and imposing
+massless TT gauge then yields two polarizations. The table of
+Section~\ref{sec:ch5-count} is thereby completed, with the one
+outstanding dynamical hypothesis still being
+Assumption~\ref{ass:gap-psi}.
+
+\section{What locking does not do}
+\label{sec:ch10-not}
+
+Theorem~\ref{thm:locking} does not derive Lorentzian signature
+(Assumption~\ref{ass:lorentzian} remains). It does not derive local
+Lorentz invariance from Presentation~A
+(Assumption~\ref{ass:local-lorentz} remains). It does not gap
+\(\psi\). It does not compute \(\Geff\). It does not conserve
+\(\Tent_{\mu\nu}\).
+
+What it does is make the later covariant derivatives honest. From
+here on, \(\nabla_\mu\) is the Levi-Civita connection of the
+composite metric, and statements such as
+\(\nabla^\mu T_{\mu\nu}^{\mathrm{total}}=0\) are tensor equations
+on the emergent spacetime rather than slogans.
+
+\section{Exercises}
+\label{sec:ch10-exercises}
+
+\begin{enumerate}
+  \item \textbf{Stabilizer.}
+    Verify that~\eqref{eq:vac-lock} is invariant under the
+    diagonal combination~\eqref{eq:diagonal} and under no other
+    independent pair \((\alpha,\beta)\) acting on the locked block.
+  \item \textbf{Coset dimension.}
+    Compute
+    \(\dim\bigl(\mathrm{SO}(3,1)\times\mathrm{SO}(3,1)
+    /\mathrm{SO}(3,1)\bigr)\) and match it to the six components
+    of \(\omega_{AB}\).
+  \item \textbf{Stueckelberg.}
+    Starting from~\eqref{eq:D-both} and~\eqref{eq:polar}, perform
+    the replacement~\eqref{eq:dressed-omega} and isolate the
+    quadratic term~\eqref{eq:omega-mass} in unitary gauge.
+  \item \textbf{Torsion-free slaving.}
+    Given \(e^A_\mu\), write the explicit formula for the
+    torsion-free spin connection
+    \(\omega_\mu{}^{AB}(e)\). Confirm that it transforms
+    inhomogeneously under local Lorentz transformations, as a
+    connection must.
+  \item \textbf{Defect.}
+    Construct a hedgehog configuration of \(\Lambda(x)\) on a
+    spatial 2-sphere inside which \(\det e=0\) at a point. Why
+    can unitary gauge not be imposed globally on that slice?
+  \item \textbf{Residual Yang--Mills.}
+    Suppose \(G_{\mathrm{int}}=\mathrm{SO}(3,1)\times H\) with
+    \(H\) unbroken. What is the infrared field content after
+    Theorem~\ref{thm:locking}, in addition to the graviton?
+  \item \textbf{Hybrid diffeomorphism.}
+    Derive~\eqref{eq:lie-vierbein} from the action of a
+    coordinate shift on \(\Phi(x)\) and
+    Definition~\ref{def:vierbein}.
+\end{enumerate}
+
+\section{Bridge to Chapter~11}
+\label{sec:ch10-bridge}
+
+The emergent geometry now has a metric, a torsion-free connection,
+two massless graviton polarizations, and a computed \(\Geff\).
+Diffeomorphism invariance is in force. Noether's second theorem
+therefore requires
+\begin{equation}
+  \label{eq:cons-next}
+  \nabla^\mu T_{\mu\nu}^{\mathrm{total}}=0
+\end{equation}
+of whatever stress tensor sources the Einstein equation. Chapter~11
+defines \(T_{\mu\nu}^{\mathrm{total}}\) as the sum of ordinary
+matter, the tensor-block stress already used in Chapter~7, and the
+entropic stress \(\Tent_{\mu\nu}\) obtained by varying
+\(U_{\mathrm{ent}}\). It then proves that the sum is divergenceless
+on shell, which is the condition that licenses every later
+phenomenological drag as geometry rather than as a force added by
+hand.

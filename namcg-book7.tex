@@ -1,0 +1,157 @@
+\documentclass[11pt,openright]{book}
+
+\usepackage[
+  paperwidth=7in,
+  paperheight=10in,
+  inner=0.70in,       % Total inside margin = 0.80in (comfortably above KDP's 0.5in requirement)
+  outer=0.60in,       % Expands text width safely (KDP min is 0.25in)
+  top=0.80in,
+  bottom=0.80in,
+  bindingoffset=0.10in % Reserves space for physical spine curvature
+]{geometry}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{setspace}
+\setstretch{1.12}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\nouppercase{\leftmark}}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{15pt}
+
+\renewcommand{\chaptermark}[1]{%
+  \markboth{\thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{%
+  \markright{\thesection.\ #1}}
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,decorations.pathmorphing}
+
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Geff}{G_{\mathrm{eff}}}
+\newcommand{\LUV}{\Lambda_{\mathrm{UV}}}
+\newcommand{\Ttot}{T^{\mathrm{total}}}
+\newcommand{\Tent}{T^{\mathrm{ent}}}
+
+\title{Non-Abelian Matrix-Condensate Geometrogenesis}
+\author{Edward Schipani}
+\date{}
+
+
+
+
+
+
+\usepackage{graphicx} % Required for \resizebox to constrain table width
+\usepackage{booktabs} % Required for clean tabular rules
+\usepackage{listings} % Required for code listings
+\usepackage{xcolor}   % Required for syntax highlighting
+
+% Define the listing style safely in the preamble
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codegreen}{rgb}{0.1,0.5,0.2}
+\definecolor{codeblue}{rgb}{0.0,0.2,0.6}
+\definecolor{codebg}{rgb}{0.97,0.97,0.97}
+
+\lstdefinestyle{namcgPythonStyle}{
+    backgroundcolor=\color{codebg},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{codeblue}\bfseries,
+    commentstyle=\color{codegreen}\itshape,
+    stringstyle=\color{codegreen},
+    numbers=left,
+    numberstyle=\tiny\color{codegray},
+    stepnumber=1,
+    numbersep=6pt,
+    showstringspaces=false,
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    columns=fixed,
+    keepspaces=true,
+    frame=single,
+    framerule=0.4pt,
+    rulecolor=\color{black!20}
+}
+
+
+
+
+
+\newcommand{\LIR}{L_{\text{IR}}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\str}{\operatorname{str}}
+\newcommand{\tr}{\operatorname{tr}}
+
+
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents
+\include{frontmatter/preface}
+\include{frontmatter/notation}
+
+\mainmatter
+\include{chapters/ch01-geometrogenesis}
+\include{chapters/ch02-preliminaries}
+\include{chapters/ch03-matrix-action}
+\include{chapters/ch04-vierbein-emergence}
+\include{chapters/ch05-lorentz-decomposition}
+\include{chapters/ch06-entanglement-equilibrium}
+\include{chapters/ch07-massless-tensor}
+\include{chapters/ch08-heat-kernel}
+\include{chapters/ch09-ultraviolet}
+\include{chapters/ch10-lorentz-locking}
+\include{chapters/ch11-conservation}
+\include{chapters/ch12-hbev}
+\include{chapters/ch13-cores-galaxies}
+\include{chapters/ch14-dissipation}
+\include{chapters/ch15-numerics}
+\include{chapters/ch16-falsifiers}
+\include{chapters/ch17-agenda}
+
+\appendix
+\include{chapters/appA-seeley-dewitt}
+\include{chapters/appB-modular}
+\include{chapters/appC-integrator}
+\include{chapters/appD-empirical}
+\include{chapters/appE-rar-bridge}
+\include{chapters/appF-field-equation}
+\include{chapters/appG-sector-entropy}
+\include{chapters/appH-microscopic-proofs}
+\include{chapters/appI-gaia-wide}
+\include{chapters/appJ-summary}
+\include{chapters/appK-endomorphism}
+\include{chapters/appL-coupling}
+
+\backmatter
+\setcounter{secnumdepth}{-1} % Suppresses section numbering in backmatter
+
+\include{chapters/ch18-epilogue}
+
+\bibliographystyle{unsrtnat}
+\nocite{*}
+\bibliography{bib/namcg}
+\end{document}

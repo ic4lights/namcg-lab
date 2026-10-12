@@ -1,0 +1,423 @@
+\chapter[Entanglement equilibrium]{Entanglement Equilibrium and the Modular Hamiltonian}
+\label{ch:entanglement-equilibrium}
+
+\paragraph{Learning outcomes.}
+After this chapter the reader should be able to:
+\begin{enumerate}
+  \item write the reduced state \(\rho_D\), the modular Hamiltonian
+        \(H_D\), and the von Neumann entropy \(S_D\) of a causal
+        diamond in the matrix condensate;
+  \item state Jacobson's entanglement-equilibrium condition
+        \(\delta S_D=0\) and distinguish it from the Einstein
+        equation it will later imply;
+  \item obtain the first variation \(\delta S_D=\delta\langle H_D\rangle\)
+        at fixed diamond volume, including the meaning of that
+        constraint;
+  \item define the mutual-information potential \(U_{\mathrm{ent}}\)
+        used for two condensed cores;
+  \item enter Chapter~7 with a Ward identity ready to be applied to
+        \(T_{\mu\nu}\).
+\end{enumerate}
+
+Chapter~5 named the candidate graviton \(T_{\mu\nu}\) and left it
+with a generic mass \(m_T\). The mass is not removed by a further
+term in \(V(\Phi^\dagger\Phi)\). It is removed, if at all, by a
+stationarity condition on entanglement. This chapter writes that
+condition in a form that can be varied. The variation itself is
+Chapter~7.
+
+\section{The logical role of this chapter}
+\label{sec:ch6-role}
+
+There are two different claims that are easy to conflate.
+
+\begin{enumerate}
+  \item \textbf{Jacobson's theorem} (in the form used here).
+        For a quantum field on a prescribed geometry, the
+        first-order stationarity of vacuum entanglement in small
+        geodesic balls, at fixed volume, is equivalent to the
+        semiclassical Einstein equation. This direction assumes a
+        metric and a quantum field, and obtains \(G_{\mu\nu}\propto
+        \langle T_{\mu\nu}\rangle\).
+  \item \textbf{The NAMCG claim.}
+        The microscopic condensate state is itself an entanglement-
+        stationary state on the diamonds of its \emph{emergent}
+        metric. Stationarity is therefore a property of \(\rho\),
+        not an extra thermodynamic axiom pasted onto a metric theory.
+        Applied to the tensor block of Chapter~5, it forbids
+        \(m_T^2\neq 0\).
+\end{enumerate}
+
+Claim~1 is a theorem in the literature, with stated hypotheses
+(conformal matter at first order; a conjecture for non-conformal
+matter). Claim~2 is the load-bearing physical hypothesis of NAMCG.
+This chapter formulates Claim~2 so that it can be used. It does not
+pretend that Claim~2 has been derived from the path integral of
+Chapter~3 with the same status as Claim~1.
+
+\begin{assumption}[Microscopic entanglement equilibrium]
+  \label{ass:EE}
+  Let \(\rho\) be the vacuum state of the matrix condensate in the
+  condensed phase of Chapters~3--4. For every sufficiently small
+  causal diamond \(D\) constructed from the emergent metric
+  \(g_{\mu\nu}\),
+  \begin{equation}
+    \label{eq:EE}
+    \delta S_D=0
+  \end{equation}
+  at fixed spatial volume of the maximal slice of \(D\), to first
+  order in variations of the condensate that preserve the local
+  vacuum character of \(\rho\).
+\end{assumption}
+
+The remainder of the chapter unpacks every symbol in that statement.
+
+\section{Diamonds in the emergent geometry}
+\label{sec:ch6-diamonds}
+
+The causal diamond \(D(p,q)=J^+(p)\cap J^-(q)\) was defined in
+\eqref{eq:diamond}. From here on the causal structure is that of the
+\emph{emergent} metric~\eqref{eq:g-from-e}, not of the auxiliary
+scaffold \(g^{(0)}\). For a linearized analysis about Minkowski
+spacetime the distinction is invisible at zeroth order and appears
+at first order through \(h_{\mu\nu}\).
+
+A small diamond of radius \(\ell\) is one for which
+\(\ell^2\|R_{\mu\nu\rho\sigma}\|\ll 1\). In Riemann normal
+coordinates~\eqref{eq:RNC} its maximal-slice three-volume admits the
+expansion
+\begin{equation}
+  \label{eq:vol-exp}
+  V(D)
+  =\frac43\pi\ell^3
+   -\frac{4\pi\ell^5}{15}\,
+     \bigl(\tfrac13 R+\text{anisotropic Ricci terms}\bigr)
+   +O(\ell^7).
+\end{equation}
+``Fixed volume'' in Assumption~\ref{ass:EE} means that the first
+variation is taken subject to \(\delta V(D)=0\). The geometric
+meaning of that constraint is that a conformal breathing of the
+diamond is not counted as an independent entanglement variation; it
+has been used to fix the comparison background. This is the same
+gauge-like restriction Jacobson imposes, and it is why the conformal
+mode \(\psi\) of Chapter~5 and the tensor mode \(T_{\mu\nu}\) enter
+the first law differently.
+
+Dyadic labels \(D_{j,n}\) are a nested bookkeeping device. Nothing
+physical depends on bisection. Every identity written for a generic
+small \(D\) applies to each dyadic diamond.
+
+\section{Reduced states and the modular Hamiltonian}
+\label{sec:ch6-modular}
+
+Let \(\mathcal{A}_D\) be the algebra of condensate observables
+supported in \(D\). In Presentation~B these are functions of
+\(\Phi(x)\) and \(A_\mu(x)\) for \(x\in D\). In Presentation~A they
+are the operators generated by the spectral projections of
+\(\hat X^\mu\) whose eigenvalues lie in \(D\), after the dictionary
+of Assumption~\ref{ass:dictionary}.
+
+\begin{definition}[Diamond state and modular Hamiltonian]
+  \label{def:rhoD}
+  Given a global state \(\rho\) of the condensate,
+  \begin{equation}
+    \label{eq:rhoD}
+    \rho_D=\mathrm{Tr}_{\mathcal{A}_D'}\rho,
+  \end{equation}
+  where \(\mathcal{A}_D'\) is the commutant (the complement algebra).
+  The modular Hamiltonian and von Neumann entropy are
+  \begin{equation}
+    \label{eq:HD-SD}
+    H_D=-\ln\rho_D,
+    \qquad
+    S_D=-\mathrm{Tr}(\rho_D\ln\rho_D)=\langle H_D\rangle_{\rho_D}.
+  \end{equation}
+\end{definition}
+
+For a free field in Rindler space, the Bisognano--Wichmann theorem
+identifies \(H_D\) with \(2\pi/\kappa\) times the boost generator
+that fixes the edge \(\mathcal{B}=\partial D\cap\Sigma\). For a small
+diamond in a slowly varying background the same identification holds
+to leading order in \(\ell\):
+\begin{equation}
+  \label{eq:HD-boost}
+  H_D
+  =\frac{2\pi}{\kappa}
+   \int_{\Sigma\cap D}
+   \mathrm{d}\Sigma^\mu\,\xi^\nu T_{\mu\nu}^{\mathrm{op}}
+   +H_{\mathrm{area}}
+   +O(\ell^3).
+\end{equation}
+Here \(\xi^\mu\) is the approximate conformal Killing vector of \(D\),
+\(\kappa\) is its surface gravity at \(\mathcal{B}\),
+\(T_{\mu\nu}^{\mathrm{op}}\) is the microscopic stress tensor of the
+condensate fluctuations, and \(H_{\mathrm{area}}\) is the area term
+that will later match \(A/(4G_{\mathrm{eff}})\).
+
+Equation~\eqref{eq:HD-boost} is the working formula of this book. It
+is exact only for free fields in Rindler space. For interacting
+matrix fluctuations it is the first term in an operator product
+expansion on the diamond. Higher terms are absorbed into the
+\(O(\ell^3)\) remainder and into the definition of \(H_{\mathrm{area}}\).
+
+\section{Replica formula}
+\label{sec:ch6-replica}
+
+When a direct construction of \(\rho_D\) is unavailable, the replica
+trick supplies \(S_D\). For integer \(n\ge 1\),
+\begin{equation}
+  \label{eq:replica}
+  S_D
+  =\lim_{n\to 1}
+   \bigl(1-n\partial_n\bigr)
+   \ln\mathrm{Tr}\,(\rho_D)^n,
+\end{equation}
+and \(\mathrm{Tr}\,(\rho_D)^n\) is computed as a path integral of
+the microscopic action~\eqref{eq:Smicro} on an \(n\)-sheeted cover
+of \(M\) branched over the edge \(\mathcal{B}\). The first variation
+\(\delta S_D\) then becomes a variation of that branched partition
+function with respect to the background frame.
+
+Two remarks are enough for Chapter~7.
+
+\begin{itemize}
+  \item The replica construction is well defined in Presentation~B,
+        where a path integral exists. In Presentation~A it requires
+        the dictionary of Assumption~\ref{ass:dictionary}.
+  \item Differentiating~\eqref{eq:replica} at \(n=1\) produces an
+        insertion of the modular Hamiltonian. The first variation
+        \(\delta S_D=\delta\langle H_D\rangle\) used below is therefore
+        not a second formula; it is the replica formula at first
+        order.
+\end{itemize}
+
+\section{The first law of the diamond}
+\label{sec:ch6-first-law}
+
+Vary Definition~\ref{def:rhoD} at fixed diamond, then allow the
+diamond itself to vary with the metric. The result, to first order
+and at fixed volume, is the entanglement first law
+\begin{equation}
+  \label{eq:first-law}
+  \delta S_D
+  =\delta\langle H_D\rangle
+  =\frac{2\pi}{\kappa}
+   \int_{\Sigma\cap D}
+   \mathrm{d}\Sigma^\mu\,\xi^\nu
+   \delta\langle T_{\mu\nu}^{\mathrm{op}}\rangle
+   +\frac{\delta A}{4\Geff}
+   +O(\ell^3).
+\end{equation}
+The area variation \(\delta A\) is computed from the emergent metric.
+The identification of its prefactor with \(1/(4\Geff)\) is not
+justified in this chapter; it is the Bekenstein--Hawking relation
+that Chapter~8 will match to the heat kernel. Until then,
+\(1/(4\Geff)\) is a name for the coefficient of \(\delta A\).
+
+Assumption~\ref{ass:EE} now reads
+\begin{equation}
+  \label{eq:first-law-zero}
+  \frac{2\pi}{\kappa}
+   \int_{\Sigma\cap D}
+   \mathrm{d}\Sigma^\mu\,\xi^\nu
+   \delta\langle T_{\mu\nu}^{\mathrm{op}}\rangle
+   +\frac{\delta A}{4\Geff}
+  =0,
+\end{equation}
+up to \(O(\ell^3)\), for every small diamond and every allowed
+variation of the condensate.
+
+If \(\delta\langle T_{\mu\nu}^{\mathrm{op}}\rangle\) were the
+stress tensor of ordinary matter on a prescribed geometry, and if
+\(\delta A\) were computed from a prescribed Einstein metric,
+\eqref{eq:first-law-zero} would be Jacobson's derivation of
+\(G_{\mu\nu}=8\pi\Geff\,\langle T_{\mu\nu}\rangle\). In NAMCG both
+\(\delta\langle T^{\mathrm{op}}\rangle\) and \(\delta A\) are
+functionals of the \emph{same} fluctuation \(\delta\Phi\). That is
+the leverage used in Chapter~7.
+
+\section{Allowed variations}
+\label{sec:ch6-allowed}
+
+Not every deformation of \(\Phi\) is an allowed variation in
+Assumption~\ref{ass:EE}. The hypothesis is a statement about
+perturbations that remain locally vacuum-like: they do not inject
+an arbitrary excited-state entropy into \(D\).
+
+\begin{definition}[Allowed variation]
+  \label{def:allowed}
+  A first-order deformation \(\delta\Phi\) is \emph{allowed} if
+  \begin{enumerate}
+    \item it is smooth on a neighbourhood of \(D\);
+    \item it preserves the polar vacuum to zeroth order outside a
+          compact region, so that \(\rho\) remains a condensed-phase
+          vacuum at infinity;
+    \item its restriction to each algebraic block of
+          Chapter~5 may be chosen independently, after gauge fixing
+          of diffeomorphisms and local Lorentz transformations.
+  \end{enumerate}
+\end{definition}
+
+Condition~3 is the reason the tensor, vector, and conformal blocks
+can be tested separately. If a variation supported only on
+\(T_{\mu\nu}\) violates~\eqref{eq:first-law-zero} unless
+\(m_T=0\), that is a constraint on the tensor block alone.
+
+\section{Mutual information of two cores}
+\label{sec:ch6-MI}
+
+The same entropy data define an interaction between two disjoint
+condensed regions \(A\) and \(B\) (two compact-object cores, two
+stellar interiors, two laboratory samples).
+
+\begin{definition}[Entropic potential]
+  \label{def:Uent}
+  \begin{equation}
+    \label{eq:Uent-def}
+    U_{\mathrm{ent}}(A,B)
+    =-\lambda I(A:B)
+    =-\lambda\bigl[S(A)+S(B)-S(A\cup B)\bigr],
+  \end{equation}
+  with \(\lambda>0\) a microscopic coupling of dimension energy.
+\end{definition}
+
+Because \(I(A:B)\ge 0\), one has \(U_{\mathrm{ent}}\le 0\). Increasing
+the mutual information lowers the potential: the effective force is
+attractive. For two small balls whose proper separation \(d\) is
+large compared with their radii but small compared with the curvature
+radius,
+\begin{equation}
+  \label{eq:I-falloff}
+  I(A:B)
+  \;\sim\;
+  \frac{c\,\ell_A^2\ell_B^2}{d^{2}}
+  \qquad\text{(conformal matter, leading order)},
+\end{equation}
+up to a theory-dependent constant \(c\). Differentiating
+\eqref{eq:Uent-def} with respect to a worldline, and converting the
+result into an acceleration, produces a correction that falls as a
+power of \(d\). The Newtonian laboratory of Chapter~15 uses
+\begin{equation}
+  \label{eq:airrev-preview}
+  \mathbf{a}_{\mathrm{irrev}}
+  =-\eta\,\frac{1}{d^4}\,\mathbf{v}
+\end{equation}
+as a reduced, velocity-dependent representative of that correction
+in a time-dependent two-body problem. Equation~\eqref{eq:airrev-preview}
+is \emph{not} derived in this chapter. It is flagged here so that
+Chapter~11 knows which entropy functional it must vary covariantly.
+
+The conservation question is already visible. Mutual information is
+built from scalars \(S(\,\cdot\,)\). A covariant variation of
+\(U_{\mathrm{ent}}\) with respect to the metric defines a tensor
+\(\Tent_{\mu\nu}\) by the same rule as~\eqref{eq:T-def}. Whether
+\(\nabla^\mu\Tent_{\mu\nu}=0\) holds on shell is not automatic from
+the sign of \(\lambda\). It is a calculation, reserved for Chapter~11.
+
+\section{What stationarity does \emph{not} say}
+\label{sec:ch6-does-not}
+
+Assumption~\ref{ass:EE} does not assert any of the following.
+
+\begin{itemize}
+  \item That \(S_D\) is a maximum rather than a saddle. Jacobson's
+        original language is maximization at fixed volume; the
+        identities used below need only first-order stationarity.
+  \item That the area term in~\eqref{eq:first-law} has already been
+        matched to \(\Geff\). That match is Chapter~8.
+  \item That \(m_T=0\). Stationarity is a condition on variations.
+        Whether the tensor kinetic operator is compatible with that
+        condition is Chapter~7.
+  \item That \(\Lambda_{\mathrm{eff}}\) is small. Vacuum entropy of
+        the diamond includes a piece that will source a
+        cosmological term. Chapter~12 treats it.
+  \item That the replica path integral has been computed at two
+        loops. The book uses the first law~\eqref{eq:first-law} as
+        the working identity, not a finished replica evaluation of
+        \(S_D\) for the matrix potential~\eqref{eq:V}.
+\end{itemize}
+
+\section{The Ward identity that Chapter~7 will use}
+\label{sec:ch6-ward}
+
+Collecting~\eqref{eq:first-law-zero}, Definition~\ref{def:allowed},
+and the split~\eqref{eq:algebraic-split}, the usable statement is:
+
+\begin{proposition}[Entanglement Ward identity]
+  \label{prop:ward}
+  Under Assumptions~\ref{ass:EE} and~\ref{ass:dictionary}, every
+  allowed variation supported on a single algebraic block
+  \(\psi\), \(A_\mu\), or \(T_{\mu\nu}\) satisfies
+  \begin{equation}
+    \label{eq:ward}
+    \int_{\Sigma\cap D}
+    \mathrm{d}\Sigma^\mu\,\xi^\nu
+    \delta\langle T_{\mu\nu}^{\mathrm{op}}\rangle
+    +\frac{\kappa}{8\pi\Geff}\,\delta A
+    =0
+  \end{equation}
+  to first order in \(\ell\), at fixed \(V(D)\). The operator
+  \(T_{\mu\nu}^{\mathrm{op}}\) is the metric variation of the
+  quadratic action of that block.
+\end{proposition}
+
+The proof of Proposition~\ref{prop:ward} is the chain of this
+chapter: Definition~\ref{def:rhoD} to the first law
+\eqref{eq:first-law} to Assumption~\ref{ass:EE}, restricted to one
+block by Definition~\ref{def:allowed}. No property of \(T_{\mu\nu}\)
+beyond its being one algebraic block has been used. That is
+intentional. Chapter~7 substitutes the quadratic action
+\eqref{eq:ST-generic} into~\eqref{eq:ward} and reads off \(m_T=0\).
+
+\section{Exercises}
+\label{sec:ch6-exercises}
+
+\begin{enumerate}
+  \item \textbf{Volume constraint.}
+    From~\eqref{eq:vol-exp}, show that a pure conformal variation
+    \(\delta g_{\mu\nu}=\chi\eta_{\mu\nu}\) changes \(V(D)\) at
+    order \(\ell^3\). Why must this variation be excluded, or
+    compensated, if stationarity is imposed at fixed volume?
+  \item \textbf{Rindler check.}
+    In Rindler space with Unruh temperature \(T=\kappa/2\pi\),
+    verify that \(\delta S=\delta E/T\) for a boost-energy
+    perturbation is the restriction of~\eqref{eq:first-law} to a
+    diamond that has become a Rindler wedge.
+  \item \textbf{Replica derivative.}
+    Starting from~\eqref{eq:replica}, show that
+    \(\partial_n\ln\mathrm{Tr}\,\rho^n|_{n=1}=\langle\ln\rho\rangle\),
+    and hence that \(S=\langle H\rangle\) at \(n=1\).
+  \item \textbf{Allowed versus thermal variations.}
+    Give one example of a \(\delta\Phi\) that changes the particle
+    content of \(D\) (a one-particle excitation) and explain why
+    Assumption~\ref{ass:EE} is silent about it.
+  \item \textbf{Mutual information positivity.}
+    Prove \(I(A:B)\ge 0\) from relative entropy. Deduce
+    \(U_{\mathrm{ent}}\le 0\) for \(\lambda>0\).
+  \item \textbf{Falloff.}
+    For two spheres of radius \(\ell\) in Minkowski space and a
+    massless scalar, look up or derive the leading large-\(d\)
+    decay of \(I(A:B)\). How many powers of \(1/d\) must one
+    differentiate to obtain an acceleration that falls as
+    \(1/d^4\)?
+  \item \textbf{Two metrics.}
+    Write one paragraph explaining why the diamond of this chapter
+    is built from \(g_{\mu\nu}\) rather than from \(g^{(0)}_{\mu\nu}\).
+    What would go wrong, conceptually, if stationarity were imposed
+    on auxiliary-scaffold diamonds instead?
+\end{enumerate}
+
+\section{Bridge to Chapter~7}
+\label{sec:ch6-bridge}
+
+The candidate graviton \(T_{\mu\nu}\) has a quadratic action
+\eqref{eq:ST-generic} with an unknown mass \(m_T\). The condensate
+vacuum is assumed to obey the entanglement Ward identity
+\eqref{eq:ward} on every small diamond of the emergent geometry.
+Chapter~7 substitutes a compactly supported tensor variation into
+that identity. The area term tracks the Einstein operator. The
+stress-tensor term tracks \(m_T^2 T_{\mu\nu}\). Compatibility of the
+two forces \(m_T=0\), after which the surviving kinetic operator is
+the linearized Einstein operator and the infrared spectrum contains
+two massless TT polarizations---provided the conformal and vector
+blocks are separately gapped or eaten, as already flagged.

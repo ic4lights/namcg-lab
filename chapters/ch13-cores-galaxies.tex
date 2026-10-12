@@ -1,0 +1,391 @@
+\chapter[Cores and galaxies]{Regular Cores and Galactic Backreaction}
+\label{ch:cores-galaxies}
+
+\paragraph{Learning outcomes.}
+After this chapter the reader should be able to:
+\begin{enumerate}
+  \item write the static, spherically symmetric reduction of the
+        infrared equation
+        \(G_{\mu\nu}+\Lambda_{\mathrm{eff}}g_{\mu\nu}
+        =8\pi\Geff T_{\mu\nu}^{\mathrm{total}}\)
+        with the Einsteinian cubic term included;
+  \item obtain the regular-core profile
+        \(f(r)=1-2Mr^2/(r^3+r_0^3)+\Lambda_{\mathrm{eff}}r^2/3\)
+        as an approximate solution, and state where it is not
+        exact;
+  \item reduce the reversible part of \(T_{\mu\nu}^{\mathrm{ent}}\)
+        to a modification of Poisson's equation;
+  \item derive a schematic circular-velocity formula and list the
+        observations that would distinguish it from a particulate
+        halo;
+  \item enter Chapter~14 knowing that time-dependent dissipation is
+        a different tensor structure from the static extra potential
+        used here.
+\end{enumerate}
+
+The geometric programme of Parts~II--IV is complete enough to be
+solved in two symmetric sectors: static spherical interiors, and
+weak-field galactic exteriors. This chapter treats those sectors as
+consequences, not as evidence that the earlier theorems are true.
+
+\section{Static spherical ansatz}
+\label{sec:ch13-ansatz}
+
+Take the emergent metric in Schwarzschild coordinates,
+\begin{equation}
+  \label{eq:sss}
+  ds^2
+  =-f(r)\,dt^2
+   +\frac{dr^2}{f(r)}
+   +r^2 d\Omega^2,
+\end{equation}
+and restrict \(T_{\mu\nu}^{\mathrm{total}}\) to a static, spherical
+form. The Einstein tensor of~\eqref{eq:sss} has the standard
+components
+\begin{equation}
+  \label{eq:G-sss}
+  G^t{}_t=G^r{}_r
+  =-\frac{1-f-rf'}{r^2},
+  \qquad
+  G^\theta{}_\theta
+  =-\frac{rf''+2f'}{2r}.
+\end{equation}
+With only the Einstein--Hilbert term, vacuum solutions with
+constant \(\Lambda_{\mathrm{eff}}\) are Schwarzschild--de Sitter,
+\begin{equation}
+  \label{eq:SdS}
+  f(r)=1-\frac{2M}{r}+\frac{\Lambda_{\mathrm{eff}}}{3}r^2,
+\end{equation}
+which is singular at \(r=0\) whenever \(M\neq 0\).
+
+\section{Cubic correction in the spherical sector}
+\label{sec:ch13-cubic}
+
+Assumption~\ref{ass:ECG} promotes the Einsteinian cubic density
+\(\mathcal{P}\) to a term that is solved non-perturbatively in this
+sector. On~\eqref{eq:sss} the cubic contribution reduces to an
+algebraic modification of the mass function, not to a fourth-order
+ODE for \(f\). Write
+\begin{equation}
+  \label{eq:mass-function}
+  f(r)=1-\frac{2m(r)}{r}+\frac{\Lambda_{\mathrm{eff}}}{3}r^2.
+\end{equation}
+The ECG equation for \(m(r)\) in vacuum, through the order kept in
+the source notes, is solved approximately by
+\begin{equation}
+  \label{eq:m-reg}
+  m(r)=\frac{M r^3}{r^3+r_0^3},
+\end{equation}
+and therefore
+\begin{equation}
+  \label{eq:f-reg}
+  f(r)
+  =1-\frac{2M r^2}{r^3+r_0^3}
+   +\frac{\Lambda_{\mathrm{eff}}}{3}r^2.
+\end{equation}
+The core scale is
+\begin{equation}
+  \label{eq:r0}
+  r_0^3=2\beta_{\mathrm{ECG}}M
+\end{equation}
+up to the conventional factor used to normalize \(\mathcal{P}\).
+Assumption~\ref{ass:ECG} identifies \(r_0\) with a multiple of
+\(\LUV^{-1}\) at laboratory masses, or with a mass-dependent
+microscopic scale at compact-object masses. The book does not
+claim a measured value of \(r_0\).
+
+\paragraph{Limits.}
+As \(r\to\infty\), \eqref{eq:f-reg} returns to~\eqref{eq:SdS}.
+As \(r\to 0\),
+\begin{equation}
+  \label{eq:f-core}
+  f(r)
+  \to
+  1+\frac{\Lambda_{\mathrm{eff}}}{3}r^2
+  -\frac{2M}{r_0^3}r^2
+  +O(r^5),
+\end{equation}
+which is finite. The curvature scalars remain finite at the origin
+for \(r_0\neq 0\). Geodesic completeness through \(r=0\) is a
+separate question: the chart~\eqref{eq:sss} is not itself complete,
+and a regular origin still requires a smooth matching onto a
+neighbourhood covered by local inertial frames of
+Theorem~\ref{thm:locking}.
+
+\begin{remark}[Approximate, not exact]
+  Equation~\eqref{eq:f-reg} is the working profile of the notes.
+  It is exact for some cubic truncations and approximate for
+  others. Whenever a later numerical section uses~\eqref{eq:f-reg},
+  it is using this model, not a theorem that every ECG coupling
+  produces precisely the rational function \(r^3/(r^3+r_0^3)\).
+\end{remark}
+
+\section{Horizons and the core}
+\label{sec:ch13-horizons}
+
+Roots of \(f(r)=0\) are Killing horizons of~\eqref{eq:sss}. For
+\(\Lambda_{\mathrm{eff}}=0\) and \(r_0>0\) there is a range of
+\(M\) in which two positive roots exist, one, or none, according
+to the ratio \(M/r_0\). For astrophysical masses and microscopic
+\(r_0\) the exterior is indistinguishable from Schwarzschild at
+the photon sphere and beyond. The core is hidden behind a horizon
+if a horizon exists, and is naked if it does not.
+
+NAMCG does not require every compact object to be horizonless.
+It requires that the Einstein singularity not be accepted as
+fundamental. Whether LIGO ringdowns or EHT images can see
+\(r_0\) is a question for Chapter~16, not a claim of this
+chapter.
+
+The Einstein-plus-extra-tensor form of the infrared equation
+is collected in Appendix~\ref{app:field-eq}.
+
+\section{Weak-field exterior and the extra Poisson equation}
+\label{sec:ch13-poisson}
+
+Far from a core, \(r\gg r_0\), the cubic term is negligible and
+the geometry is Einstein plus \(\Tent_{\mu\nu}\). In the Newtonian
+gauge
+\begin{equation}
+  \label{eq:newton-gauge}
+  ds^2
+  =-(1+2\Phi)\,dt^2
+   +(1-2\Phi)\delta_{ij}dx^i dx^j,
+\end{equation}
+the reversible, static piece of the entropic stress reduces to an
+effective density
+\begin{equation}
+  \label{eq:rho-ent}
+  \rho_{\mathrm{ent}}
+  =T_{00}^{\mathrm{ent,rev}}.
+\end{equation}
+Poisson's equation becomes
+\begin{equation}
+  \label{eq:poisson}
+  \nabla^2\Phi
+  =4\pi\Geff
+   \bigl(\rho_{\mathrm{b}}+\rho_{\mathrm{ent}}\bigr),
+\end{equation}
+where \(\rho_{\mathrm{b}}\) is baryonic density. Conservation,
+Theorem~\ref{thm:conservation}, requires that \(\rho_{\mathrm{ent}}\)
+not be an arbitrary halo function. It is determined by the
+variation of \(U_{\mathrm{ent}}\) for the condensate configuration
+sourced by \(\rho_{\mathrm{b}}\).
+
+A useful schematic, sufficient for circular orbits and not
+sufficient for lensing tomography, is a source-tracking extra
+density
+\begin{equation}
+  \label{eq:rho-track}
+  \rho_{\mathrm{ent}}(r)
+  =\frac{1}{4\pi\Geff}
+   \nabla\cdot
+   \bigl(
+     \mu_{\mathrm{ent}}(g_{\mathrm{N}})\,\nabla\Phi_{\mathrm{b}}
+   \bigr),
+\end{equation}
+where \(g_{\mathrm{N}}=|\nabla\Phi_{\mathrm{b}}|\) is the Newtonian
+baryonic field and \(\mu_{\mathrm{ent}}\) is a dimensionless
+interpolating function fixed by the mutual-information functional.
+Equation~\eqref{eq:rho-track} is written to make the structure
+visible: \(\rho_{\mathrm{ent}}\) is slaved to baryons. It is not a
+six-parameter halo fitted independently of \(\rho_{\mathrm{b}}\).
+
+\begin{assumption}[Reversible extra density tracks baryons]
+  \label{ass:track}
+  In static, weak-field systems the leading reversible entropic
+  density is a local or mildly nonlocal functional of the baryonic
+  Newtonian field, of the form~\eqref{eq:rho-track} or a convolution
+  thereof with kernel width of order the core scale of the
+  constituent condensates.
+\end{assumption}
+
+Assumption~\ref{ass:track} is the galactic input. It is narrower
+than ``there exists dark matter,'' and it is stronger than anything
+proved from \(I(A:B)\) in Chapter~6. Chapter~17 lists a derivation
+of \(\mu_{\mathrm{ent}}\) from \(I(A:B)\) as open.
+
+\begin{assumption}[External field enters the interpolator]
+  \label{ass:efe}
+  For a subsystem whose internal Newtonian field
+  \(\mathbf{g}_{\mathrm{N}}\) is embedded in a baryonic field
+  \(\mathbf{g}_{\mathrm{ext}}\) that varies slowly across the
+  subsystem, the reversible boost is evaluated on the total
+  field,
+  \begin{equation}
+    \label{eq:nu-efe}
+    \mathbf{g}
+    =\nu_{\sqrt{}}(g_{\mathrm{tot}})\,\mathbf{g}_{\mathrm{N}}
+     +\Bigl[\nu_{\sqrt{}}(g_{\mathrm{ext}})
+            -\nu_{\sqrt{}}(g_{\mathrm{tot}})\Bigr]
+      \mathbf{g}_{\mathrm{ext}},
+  \end{equation}
+  with \(g_{\mathrm{tot}}=|\mathbf{g}_{\mathrm{N}}+\mathbf{g}_{\mathrm{ext}}|\)
+  and \(\nu_{\sqrt{}}\) as in~\eqref{eq:nu-sqrt}.
+  In the external-field-dominated limit
+  \(g_{\mathrm{N}}\ll g_{\mathrm{ext}}\),
+  \begin{equation}
+    \label{eq:efe-sat}
+    \gamma
+    \equiv\frac{g_{\mathrm{int}}}{g_{\mathrm{N}}}
+    \to\nu_{\sqrt{}}(g_{\mathrm{ext}}),
+  \end{equation}
+  not \(\nu_{\sqrt{}}(g_{\mathrm{N}})\).
+\end{assumption}
+
+Assumption~\ref{ass:efe} is a coefficient. It is what
+\(U_{\mathrm{ent}}[I(A:B)]\) must do if mutual information
+sees the Galactic baryons as well as the binary. It is not
+implied by Theorem~\ref{thm:conservation}, and it is not a
+solution of Problem~H. The Galactic scale at the Sun,
+\(g_{\mathrm{gal}}\approx 2.2\times 10^{-10}\,\mathrm{m\,s^{-2}}\),
+already satisfies \(g_{\mathrm{gal}}>g_\dagger\), so
+\(\nu_{\sqrt{}}(g_{\mathrm{gal}})\approx 1.1\). Isolated-RAR
+boosts of order \(4\) are then illegal for solar-neighborhood
+wide binaries. A null Gaia result constrains the isolated
+reading of Appendix~\ref{app:empirical}, not \(m_T=0\).
+
+
+\paragraph{Working interpolator.}
+Until Problem~H of Chapter~17 produces
+\(\mu_{\mathrm{ent}}\) from \(I(A:B)\), galactic comparisons use
+\begin{equation}
+  \label{eq:nu-sqrt}
+  \nu_{\sqrt{}}(g_{\mathrm{N}})
+  =\frac{1}{1-\exp\bigl(-\sqrt{g_{\mathrm{N}}/g_s}\bigr)},
+\end{equation}
+so that \(v_c=V_{\mathrm{b}}\sqrt{\nu_{\sqrt{}}}\). The default
+scale is the published SPARC value
+\(g_s=g_\dagger=1.20\times 10^{-10}\,\mathrm{m\,s^{-2}}\)
+\cite{McGaugh2016}. This \(\nu\) is the RAR interpolator written
+as a boost. It is not
+\(1/\bigl(1-\alpha\exp(-g_{\mathrm{N}}/g_s)\bigr)\) and it is not
+a per-galaxy radial profile. Appendix~\ref{app:empirical}
+records the SPARC ranking and retires the older exponential.
+
+\section{Circular velocities}
+\label{sec:ch13-vc}
+
+For circular orbits in the midplane,
+\begin{equation}
+  \label{eq:vc}
+  v_c^2(r)
+  =r\partial_r\Phi
+  =\Geff
+   \frac{M_{\mathrm{b}}(<r)+M_{\mathrm{ent}}(<r)}{r},
+\end{equation}
+with \(M_{\mathrm{ent}}\) the integral of~\eqref{eq:rho-ent}. Two
+regimes follow once \(\mu_{\mathrm{ent}}\) interpolates from \(0\)
+at large \(g_{\mathrm{N}}\) to a finite value at small \(g_{\mathrm{N}}\).
+
+\paragraph{Interior / high acceleration.}
+\(\rho_{\mathrm{ent}}\) is negligible and \(v_c^2\simeq\Geff
+M_{\mathrm{b}}/r\). Solar-System and inner-disk data constrain how
+small \(\mu_{\mathrm{ent}}\) must be at those accelerations.
+
+\paragraph{Outer / low acceleration.}
+If \(M_{\mathrm{ent}}(<r)\) grows approximately linearly with
+\(r\), \(v_c\) flattens. That growth is not mysterious once
+\eqref{eq:rho-track} is granted: it is the integral of an extra
+density that falls more slowly than \(\rho_{\mathrm{b}}\).
+
+On 175 SPARC rotmod files with fixed mass-to-light ratios,
+\eqref{eq:nu-sqrt} at frozen \(g_\dagger\) is statistically
+equivalent to the published RAR and about \(0.2\%\) behind
+simple MOND in \(\chi^2\), while baryons-only is an order of
+magnitude worse (Appendix~\ref{app:empirical}). That ranking
+is a coefficient check of Assumption~\ref{ass:track}. It is
+not a measurement of \(\Geff\), not a derivation from
+\(I(A:B)\), and not evidence reserved for the cover.
+Whether a single \(\nu_{\sqrt{}}\) survives clusters remains
+a Chapter~16 question.
+
+\section{What this is not}
+\label{sec:ch13-not}
+
+It is not a proof that dark matter particles are absent. Cluster
+lensing, the CMB, and colliding clusters probe \(\Tent_{\mu\nu}\)
+in regimes that~\eqref{eq:rho-track} may fail. If those data
+require a stress that does not track baryons, NAMCG must either
+supply an additional condensate configuration that does, or yield
+the dark-matter interpretation in those regimes.
+
+It is not MOND, though the interpolating function
+\(\mu_{\mathrm{ent}}\) invites comparison. MOND is a modification
+of inertia or of the gravitational field equation at a fixed
+acceleration scale \(a_0\). NAMCG obtains an extra conserved
+tensor from entanglement. If \(\mu_{\mathrm{ent}}\) happens to
+mimic MOND in disks and fails in clusters, that is a phenomenological
+coincidence to be measured, not a founding principle.
+
+It is not a replacement for Chapters~3--12. A successful rotation-
+curve fit that used an illegal drag, or a non-conserved extra
+density, would not support the framework.
+
+\section{Matching core to exterior}
+\label{sec:ch13-match}
+
+A compact object of mass \(M\) with core~\eqref{eq:f-reg} matched
+to a weak-field exterior~\eqref{eq:poisson} raises no new
+consistency issue beyond ordinary matching of \(f\) and \(f'\) at
+an intermediate radius. The cubic term is already negligible
+there if \(r_0\) is microscopic. The entropic density
+\(\rho_{\mathrm{ent}}\) of a single compact object is, by the
+falloff~\eqref{eq:I-falloff}, a small correction to the Newtonian
+field of that object. Galactic flattening, if it occurs, is a
+collective effect of many baryonic parcels, not a halo produced
+by one black-hole core.
+
+\section{Exercises}
+\label{sec:ch13-exercises}
+
+\begin{enumerate}
+  \item \textbf{Einstein limits.}
+    Recover~\eqref{eq:SdS} from~\eqref{eq:f-reg} as \(r_0\to 0\)
+    at fixed \(r>0\), and as \(r\to\infty\) at fixed \(r_0\).
+  \item \textbf{Core curvature.}
+    For \(\Lambda_{\mathrm{eff}}=0\), compute \(R\) at \(r=0\)
+    from~\eqref{eq:f-core}. Show it is finite for \(r_0\neq 0\).
+  \item \textbf{Horizon condition.}
+    With \(\Lambda_{\mathrm{eff}}=0\), discuss the number of
+    positive roots of \(f(r)=0\) as a function of \(M/r_0\).
+    A graphical argument is enough.
+  \item \textbf{Poisson split.}
+    Starting from~\eqref{eq:poisson} and~\eqref{eq:rho-track},
+    write an effective equation for \(\Phi\) in terms of
+    \(\Phi_{\mathrm{b}}\) only. What operator acts on
+    \(\Phi_{\mathrm{b}}\)?
+  \item \textbf{Flat-curve kinematics.}
+    Suppose \(M_{\mathrm{b}}+M_{\mathrm{ent}}=\kappa r\) at large
+    \(r\). Show \(v_c\) is constant. What density profile
+    \(\rho_{\mathrm{ent}}\) produces that mass growth, and is it
+    integrable at infinity?
+  \item \textbf{Solar-System bound.}
+    Estimate an upper bound on \(\mu_{\mathrm{ent}}\) at
+    \(g_{\mathrm{N}}\sim 1\,\mathrm{cm\,s^{-2}}\) from the
+    requirement that perihelion precession not be spoiled at
+    current precision. Order of magnitude is enough.
+  \item \textbf{Illegal halo.}
+    Write a spherical \(\rho_{\mathrm{halo}}\propto 1/(r^2+r_s^2)\)
+    independent of \(\rho_{\mathrm{b}}\). Which assumption of
+    this chapter does it violate, and which theorem of
+    Chapter~11 does it risk violating if it cannot be obtained
+    from \(U_{\mathrm{ent}}\)?
+\end{enumerate}
+
+\section{Bridge to Chapter~14}
+\label{sec:ch13-bridge}
+
+The extra stress used in this chapter was the reversible,
+static piece \(T_{\mu\nu}^{\mathrm{ent,rev}}\). Time-dependent
+processes---tidal disruptions, late inspirals, non-adiabatic
+shearing of condensate cores---activate
+\(T_{\mu\nu}^{\mathrm{ent,irrev}}\). Chapter~14 constructs that
+piece under the conservation law of Theorem~\ref{thm:conservation}
+and the energy balance of Proposition~\ref{prop:allowed-drag},
+obtains the working drag
+\(\mathbf{a}_{\mathrm{irrev}}\propto -\mathbf{v}/d^4\), and states
+where gravitational-wave dissipation remains the dominant channel.
+Chapter~15 then integrates a reduced two-body laboratory. Neither
+chapter is licensed to treat the drag as a substitute for quadrupole
+radiation.
