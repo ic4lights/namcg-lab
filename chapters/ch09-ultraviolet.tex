@@ -200,23 +200,18 @@ untrustworthy when curvature reaches \(\LUV^2\). A different
 higher-curvature object is needed if compact-object cores are to
 be regularized inside the derivative expansion.
 
-Einsteinian cubic gravity (ECG) is the four-dimensional cubic
-curvature invariant whose linearized spectrum about a maximally
-symmetric background coincides with that of Einstein gravity: no
-extra spin-2 ghost, no extra scalar at that order. A convenient
-writing is
+Einsteinian cubic gravity (ECG) uses a cubic curvature invariant.
+The invariant used here is
 \begin{equation}
   \label{eq:ECG}
   \mathcal{P}
-  =12 R_{\mu}{}^{\rho}{}_{\nu}{}^{\sigma}
-       R_{\rho}{}^{\tau}{}_{\sigma}{}^{\eta}
-       R_{\tau}{}^{\mu}{}_{\eta}{}^{\nu}
-   +\cdots,
+  =12 R_a{}^c{}_b{}^d R_c{}^e{}_d{}^f R_e{}^a{}_f{}^b
+   +R_{ab}{}^{cd}R_{cd}{}^{ef}R_{ef}{}^{ab}
+   -12R_{abcd}R^{ac}R^{bd}
+   +8R_a{}^bR_b{}^cR_c{}^a,
 \end{equation}
-the omitted terms being the unique combination of
-\(R^3\), \(RR_{\mu\nu}R^{\mu\nu}\), and
-\(R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}R\) that implements the
-spectral condition. The action used later in the book is
+with the Riemann convention for which \(R>0\) on spheres. The action
+used later in the book is
 \begin{equation}
   \label{eq:S-ECG}
   S_{\mathrm{ECG}}[g]
@@ -227,48 +222,62 @@ spectral condition. The action used later in the book is
    \Bigr).
 \end{equation}
 
-Two properties matter.
+Two distinct properties matter.
 
 \begin{enumerate}
-  \item For the first-integral equation displayed in
-        Section~\ref{sec:status-J}, the static spherical equation is
-        a nonlinear second-order ODE for \(f\), not an algebraic
-        prescription; that this equation follows from~\eqref{eq:S-ECG}
-        remains to be derived. The
-        regular-core profile
+  \item For the reduced action in Section~\ref{sec:status-J}, the
+        Euler--Lagrange equations have been checked symbolically:
+        \(N=1\) is a consistent vacuum branch and the lapse equation
+        yields the displayed first integral, including
+        \(\Lambda_{\mathrm{eff}}\). This check uses the static
+        spherical reduction; its relation to the unrestricted field
+        equations relies on a symmetric-criticality justification
+        not established here. The reduced coupling is
+        \(\alpha=-16\pi G_{\mathrm{eff}}\beta_{\mathrm{ECG}}\).
+        The regular-core profile
         \begin{equation}
           \label{eq:fr-ECG}
           f(r)
           =1-\frac{2M r^2}{r^3+r_0^3}
-           +\frac{\Lambda_{\mathrm{eff}}}{3}r^2
+           -\frac{\Lambda_{\mathrm{eff}}}{3}r^2
         \end{equation}
         used in Chapter~13 is a phenomenological regular-core model
-        with \(r_0^3\propto\beta_{\mathrm{ECG}}M\). For
-        \(\Lambda_{\mathrm{eff}}=0\) and \(Mr_0\ne0\) it is not an
-        exact vacuum solution of the first-integral equation of
-        Section~\ref{sec:status-J}
-        (conditional on that equation following from~\eqref{eq:S-ECG}).
-  \item The spectral condition is a statement about linearization
-        on maximally symmetric backgrounds. It is not a proof that
-        every time-dependent perturbation of~\eqref{eq:fr-ECG} is
-        ghost-free. The book uses ECG as a controlled model of
-        core regularity, not as a claim of non-perturbative
-        unitarity.
+        with \(r_0^3=2\beta_{\mathrm{ECG}}M\) a model
+        parametrization, not derived from~\eqref{eq:S-ECG}. For
+        \(\Lambda_{\mathrm{eff}}=0\) and \(Mr_0\ne0\), the rational
+        profile has nonzero residual in the displayed first integral.
+  \item Assume \(\Lambda_{\mathrm{eff}}=0\), or a specified
+        cancellation, so flat space solves the full equations. Since
+        \(\mathcal P\) is cubic in curvature, it contributes no term
+        quadratic in \(h_{\mu\nu}\) there; for the
+        Einstein--Hilbert-plus-ECG action the quadratic spectrum is
+        therefore the Einstein one. Any separately retained
+        curvature-squared operators are treated under
+        Assumption~\ref{ass:EFT-a2}; no no-extra-poles claim is made
+        for the combined theory including such terms.
+  \item Bueno and Cano~\cite{Bueno2016ECG} establish an Einstein-like
+        linearized equation on maximally symmetric backgrounds. The
+        generic noncritical branch has the massless spin-2 spectrum;
+        its effective kinetic normalization and sign require separate
+        checks and are not asserted here. This cited result does not
+        exclude nonlinear, sourced, or non-maximally-symmetric
+        pseudo-modes. This is a cited linear-spectrum property, not
+        a claim of general nonlinear or non-vacuum ghost freedom.
 \end{enumerate}
 
 \begin{assumption}[Cubic completion]
   \label{ass:ECG}
-  Through the curvature scales relevant to compact-object cores,
-  the metric effective action may be truncated at
-  \eqref{eq:S-ECG}, with \(\beta_{\mathrm{ECG}}\) set by the
-  matching of \(a_2\) and by the matrix scale \(r_0\sim\LUV^{-1}\)
-  up to an order-one factor.
+  As a model assumption, through the curvature scales relevant to
+  compact-object cores the metric effective action may be truncated
+  at~\eqref{eq:S-ECG}. The coupling and the core scale \(r_0\) have
+  not been derived or matched to the matrix theory.
 \end{assumption}
 
 Assumption~\ref{ass:ECG} is stronger than Assumption~\ref{ass:EFT-a2}.
 It promotes one cubic combination from a vertex to a term that is
 solved non-perturbatively in the static spherical sector. The
-promotion is justified only in that sector, and only as a model.
+promotion is a model assumption, not a consequence of the
+heat-kernel calculation.
 
 \section{Torsion and higher connections}
 \label{sec:ch9-torsion}
@@ -341,14 +350,11 @@ Chapter~5, is incomplete.
     or requires a Euclidean rotation, when one matrix is
     \(X^0\) with Lorentzian signature.
   \item \textbf{Spherical reduction.}
-    Take \(ds^2=-f(r)dt^2+f(r)^{-1}dr^2+r^2 d\Omega^2\) and list
-    which curvature scalars in a generic \(R^3\) combination
-    survive. The displayed first integral of
-    Section~\ref{sec:status-J} is a second-order equation in \(f\),
-    not a fourth-order one. Verify the leading \(1/r\) terms of that
-    equation as an asymptotic consistency check. This does not derive
-    the equation from~\(\mathcal{P}\); that derivation is the open
-    task of Problem~J.
+    Starting from the reduced action and invariant specified in
+    Section~\ref{sec:status-J}, derive the reduced Euler--Lagrange
+    equations, verify the \(N=1\) branch and first integral, and
+    recover the leading tail correction. State the boundary
+    conditions and the symmetric-reduction assumption used.
   \item \textbf{Torsion mass.}
     Give a dimensional estimate of the torsion mass if the only
     scale available is \(v\). Compare it with \(m_\psi\) from

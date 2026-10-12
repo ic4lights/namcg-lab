@@ -409,16 +409,40 @@ the framework.
 \section{Problem J: spherical ECG solutions}
 \label{sec:status-J}
 
-Consider the static spherical vacuum equation, with
-\(\Lambda_{\mathrm{eff}}=0\), written in the form of the first
-integral below. That this first integral is the field equation of the
-Einsteinian cubic invariant \(\mathcal P\) in~\eqref{eq:S-ECG} has
-not been verified in this manuscript, since \(\mathcal P\) is not
-fully specified there. All conclusions of this section are therefore
-conditional on it. The equation reads
+For the explicit invariant \(\mathcal P\) in~\eqref{eq:ECG}, consider
+the reduced action per unit time and angular volume
 \[
-\mathcal F[f](r)=4M,
+L[N,f]=N r^2\bigl(R-2\Lambda_{\mathrm{eff}}+\kappa\mathcal P\bigr),
 \qquad
+\kappa=16\pi G_{\mathrm{eff}}\beta_{\mathrm{ECG}}.
+\]
+This reduction assumes that the static, spherically symmetric
+variations capture the corresponding field equations; an appropriate
+symmetric-criticality argument is not established here. The reduced
+Euler--Lagrange operators, including all higher-derivative terms, are
+\[
+\mathcal E_q
+=\frac{\partial L}{\partial q}
+-\frac{\mathrm d}{\mathrm dr}\frac{\partial L}{\partial q'}
++\frac{\mathrm d^2}{\mathrm dr^2}\frac{\partial L}{\partial q''}
+-\cdots,\qquad q=N,f.
+\]
+Variations are taken with the fields and the derivatives required by
+the order of \(L\) fixed at the endpoints (or with compact support);
+otherwise the associated boundary terms must be retained. For the
+specified \(\mathcal P\), these reduced equations have been checked
+symbolically:
+\[
+\left.\mathcal E_f\right|_{N=1}\equiv0,\qquad
+\left.\mathcal E_N\right|_{N=1}
+=\frac{\mathrm d}{\mathrm dr}
+\left[2r(1-f)+3\kappa\mathcal B[f]
+-\frac23\Lambda_{\mathrm{eff}}r^3\right].
+\]
+Thus \(N=1\) is a consistent vacuum branch of the reduced equations,
+and, with \(\alpha=-\kappa\), the lapse equation has first integral
+\[
+\mathcal F[f]-\frac23\Lambda_{\mathrm{eff}}r^3=4M,\qquad
 \mathcal F[f]=2r(1-f)-3\alpha\,\mathcal B[f],
 \]
 where \(\alpha\) is the reduced ECG coupling and
@@ -431,7 +455,8 @@ where \(\alpha\) is the reduced ECG coupling and
 +\frac4r(f')^2
 -\frac8{r^2}ff'(f-1).
 \]
-For the rational profile with \(a=r_0^3\),
+For the rational profile with \(a=r_0^3\) and
+\(\Lambda_{\mathrm{eff}}=0\),
 \[
 f_{\mathrm{rat}}(r)
 =
@@ -441,53 +466,65 @@ f_{\mathrm{rat}}(r)
 \]
 substitution gives
 \[
-\mathcal F[f_{\mathrm{rat}}]
-=
-4M-\frac{4Ma}{r^3}+O(r^{-5}).
+\mathcal F[f_{\mathrm{rat}}]-4M
+=-\frac{4Ma}{r^3}-\frac{432\alpha M^2}{r^5}+O(r^{-6}).
 \]
 The \(r^{-3}\) term cannot be cancelled by the cubic contribution,
 which begins at \(r^{-5}\). Hence, for the displayed equation, this
 profile is not an exact vacuum solution when \(Mr_0\ne0\).
 
-Moreover, a smooth regular center has
-\(f(r)=1+O(r^2)\), which implies \(\mathcal B[f]\to0\) and
-\(\mathcal F(0)=0\). Asymptotic flatness with ADM mass \(M\) gives
-\(\mathcal F(\infty)=4M\). Since \(\mathcal F\) is constant, these
-boundary conditions require \(M=0\). Thus the displayed vacuum
-equation has no smooth, regular-centre, asymptotically flat solution
-of nonzero mass.
+Moreover, a smooth regular center has \(f(r)=1+O(r^2)\), which
+implies \(\mathcal B[f]\to0\) and
+\(\mathcal F(0)-\tfrac23\Lambda_{\mathrm{eff}}0^3=0\).
+Consequently the integration constant vanishes: this displayed
+equation has no smooth regular-centre vacuum solution with a nonzero
+integration constant, for any \(\Lambda_{\mathrm{eff}}\). For
+\(\Lambda_{\mathrm{eff}}=0\), the asymptotic falloff
+\(f=1-2M/r+o(r^{-1})\) identifies that constant as \(4M\) and \(M\)
+as the ADM mass. For nonzero \(\Lambda_{\mathrm{eff}}\), its
+interpretation is not automatically the ADM mass.
+
+\paragraph{Maximally symmetric branch.}
+For \(f=1-kr^2\), the first integral gives
+\[
+\frac{\mathcal F[f]}{r^3}=2k-16\alpha k^3,\qquad
+k-8\alpha k^3=\frac{\Lambda_{\mathrm{eff}}}{3}.
+\]
+This is a conditional background-curvature relation, not a stability
+claim.
 
 \paragraph{Large-radius tail.}
 For the displayed equation, write \(f=1-2M/r+\delta(r)\). Then
 \(2r(1-f)=4M-2r\delta\) and
-\(\mathcal B[1-2M/r]=144M^2/r^5+O(r^{-6})\), so
-\(\mathcal F[f]=4M\) gives
+\(\mathcal B[1-2M/r]=144M^2/r^5+O(r^{-6})\). The leading
+correction and the next asymptotic order give
 \[
-f(r)=1-\frac{2M}{r}-\frac{216\,\alpha M^2}{r^6}+\cdots .
+f(r)=1-\frac{2M}{r}-\frac{216\,\alpha M^2}{r^6}
++\frac{368\,\alpha M^3}{r^7}+\cdots .
 \]
-The rational profile has instead a term \(+2Ma/r^4\), with a
-different radial power; coefficient matching cannot be assessed until
-the relation between \(\alpha\) and \(\beta_{\mathrm{ECG}}\) is fixed.
-This is an additional asymptotic check on the displayed equation that
-\eqref{eq:f-reg} is a phenomenological model rather than a solution;
-it shares the unverified premise of the residual test above, and its
-coefficients are fixed only once \(\mathcal P\) and \(\alpha\) are
-specified, as part of item~(i) below.
+The rational profile instead has a \(+2Ma/r^4\) term. The tail
+expansion is an asymptotic check of the displayed first integral; it
+does not determine the model parameter \(r_0\) or establish a match to
+an independently published expansion. In the stated action
+normalization \(\alpha=-16\pi G_{\mathrm{eff}}\beta_{\mathrm{ECG}}\).
+If \(G_{\mathrm{eff}}>0\), then \(\alpha>0\) iff
+\(\beta_{\mathrm{ECG}}<0\), which fixes the sign of the leading
+correction. For \(M>0\), its magnitude defines the characteristic
+scale \(r_*\sim|\alpha M|^{1/5}\); it is not a core scale.
 
 \paragraph{Status.}
-For the displayed first-integral equation at
-\(\Lambda_{\mathrm{eff}}=0\), the rational profile is not an exact
-solution when \(Mr_0\ne0\), and a regular, massive, asymptotically
-flat vacuum solution is excluded. These conclusions are conditional on the displayed
-equation being the static spherical vacuum equation of the
-invariant in~\eqref{eq:S-ECG}; they do not yet close Problem~J. Open:
-(i) deriving the displayed first integral from the specified action
-and fixing \(\mathcal P\) and \(\alpha\); (ii) the case
-\(\Lambda_{\mathrm{eff}}\neq0\); (iii) a regular massive core, which
-needs a source, different boundary conditions, or modified
-field equations. The manuscript does not specify the entanglement
-stress needed for a sourced core, nor derive the ECG invariant and
-coupling from the matrix action.
+Conditional on the stated symmetric reduction, the reduced-action
+identities, first integral, regular-centre constraint, maximally
+symmetric curvature relation, and asymptotic tail above have been
+checked for the specified \(\mathcal P\). The cited Einstein-like
+linearized spectrum on maximally symmetric backgrounds is a separate
+result; no nonlinear, sourced, or non-maximally-symmetric stability
+claim follows. Problem~J
+remains open because the reduction's relation to the full field
+equations and the cubic truncation and its matching to the matrix
+theory are not established. A regular massive core still requires a
+specified source, different boundary conditions, or modified
+field equations; the entanglement stress for such a source is not specified.
 
 \section{What this appendix does not do}
 \label{sec:status-not}

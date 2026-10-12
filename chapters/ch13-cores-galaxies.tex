@@ -10,7 +10,7 @@ After this chapter the reader should be able to:
         =8\pi\Geff T_{\mu\nu}^{\mathrm{total}}\)
         with the Einsteinian cubic term included;
   \item state the regular-core profile
-        \(f(r)=1-2Mr^2/(r^3+r_0^3)+\Lambda_{\mathrm{eff}}r^2/3\)
+        \(f(r)=1-2Mr^2/(r^3+r_0^3)-\Lambda_{\mathrm{eff}}r^2/3\)
         as a phenomenological model, and state the scope of the
         no-go on its exactness (Section~\ref{sec:status-J});
   \item reduce the reversible part of \(T_{\mu\nu}^{\mathrm{ent}}\)
@@ -23,10 +23,10 @@ After this chapter the reader should be able to:
         potential used here.
 \end{enumerate}
 
-The geometric programme of Parts~II--IV is complete enough to be
-solved in two symmetric sectors: static spherical interiors, and
-weak-field galactic exteriors. This chapter treats those sectors as
-consequences, not as evidence that the earlier theorems are true.
+The geometric programme of Parts~II--IV is applied to two symmetric
+sectors: static spherical interiors and weak-field galactic
+exteriors. The regular-core profile below remains a model conditional
+on Problem~J, not a consequence of the earlier theorems.
 
 \section{Static spherical ansatz}
 \label{sec:ch13-ansatz}
@@ -54,7 +54,7 @@ With only the Einstein--Hilbert term, vacuum solutions with
 constant \(\Lambda_{\mathrm{eff}}\) are Schwarzschild--de Sitter,
 \begin{equation}
   \label{eq:SdS}
-  f(r)=1-\frac{2M}{r}+\frac{\Lambda_{\mathrm{eff}}}{3}r^2,
+  f(r)=1-\frac{2M}{r}-\frac{\Lambda_{\mathrm{eff}}}{3}r^2,
 \end{equation}
 which is singular at \(r=0\) whenever \(M\neq 0\).
 
@@ -71,7 +71,7 @@ function. The mass function below parametrises \(f\); it is not
 thereby a solution of that equation. Write
 \begin{equation}
   \label{eq:mass-function}
-  f(r)=1-\frac{2m(r)}{r}+\frac{\Lambda_{\mathrm{eff}}}{3}r^2.
+  f(r)=1-\frac{2m(r)}{r}-\frac{\Lambda_{\mathrm{eff}}}{3}r^2.
 \end{equation}
 The regular-core profile used here is the model
 \begin{equation}
@@ -83,18 +83,22 @@ and therefore
   \label{eq:f-reg}
   f(r)
   =1-\frac{2M r^2}{r^3+r_0^3}
-   +\frac{\Lambda_{\mathrm{eff}}}{3}r^2.
+   -\frac{\Lambda_{\mathrm{eff}}}{3}r^2.
 \end{equation}
 The core scale is
 \begin{equation}
   \label{eq:r0}
   r_0^3=2\beta_{\mathrm{ECG}}M
 \end{equation}
-up to the conventional factor used to normalize \(\mathcal{P}\).
-Assumption~\ref{ass:ECG} identifies \(r_0\) with a multiple of
-\(\LUV^{-1}\) at laboratory masses, or with a mass-dependent
-microscopic scale at compact-object masses. The book does not
-claim a measured value of \(r_0\).
+as a phenomenological parametrization (up to the conventional
+normalization of \(\mathcal P\)); this relation is not derived from
+the action or the first-integral equation. The ECG asymptotic
+correction instead defines a characteristic tail length
+\(r_*\sim|\alpha M|^{1/5}\), where
+\(\alpha=-16\pi G_{\mathrm{eff}}\beta_{\mathrm{ECG}}\) in the stated
+action normalization. This does not determine \(r_0\) or identify it
+with a core length. The book does not claim a measured value of
+\(r_0\).
 
 \paragraph{Limits.}
 As \(r\to\infty\), \eqref{eq:f-reg} returns to~\eqref{eq:SdS}.
@@ -103,7 +107,7 @@ As \(r\to 0\),
   \label{eq:f-core}
   f(r)
   \to
-  1+\frac{\Lambda_{\mathrm{eff}}}{3}r^2
+  1-\frac{\Lambda_{\mathrm{eff}}}{3}r^2
   -\frac{2M}{r_0^3}r^2
   +O(r^5),
 \end{equation}
@@ -116,13 +120,13 @@ Theorem~\ref{thm:locking}.
 
 \begin{remark}[Model, not an established solution]
   Equation~\eqref{eq:f-reg} is the working profile of the notes.
-  For the first-integral equation of Section~\ref{sec:status-J} with
-  \(\Lambda_{\mathrm{eff}}=0\), it is not an exact vacuum solution
-  when \(Mr_0\neq0\), and no smooth, regular-centre, asymptotically
-  flat vacuum solution of nonzero mass exists. That result is
-  conditional on the first integral following from the invariant
-  \(\mathcal P\) of~\eqref{eq:S-ECG}, and it is not shown for
-  \(\Lambda_{\mathrm{eff}}\neq0\). Whenever a later section
+  For the first-integral equation of Section~\ref{sec:status-J}, it
+  is not an exact vacuum solution when \(\Lambda_{\mathrm{eff}}=0\)
+  and \(Mr_0\neq0\). The equation also excludes a nonzero integration
+  constant for a smooth regular centre for any \(\Lambda_{\mathrm{eff}}\).
+  These conclusions are conditional on the reduction and the first
+  integral for the invariant \(\mathcal P\) of~\eqref{eq:S-ECG}.
+  Whenever a later section
   uses~\eqref{eq:f-reg}, it is using this model, not a theorem that
   ECG produces \(r^3/(r^3+r_0^3)\).
 \end{remark}
