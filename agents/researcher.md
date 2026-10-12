@@ -14,7 +14,20 @@ For each distinct research task:
 6. Use the full scan to find definitions, assumptions, equation labels, terminology, repeated claims, conflicting passages, and all surfaces affected by a proposed update.
 7. Inspect bibliographies, code, data, build files, and other non-TeX materials when the question depends on them. These supplement but do not replace the complete `chapters/**/*.tex` scan.
 
-In the final response, report the repository root, number of chapter `.tex` files found and read, and any files that could not be read.
+### Scan cache (reuse of a previous complete scan)
+
+A previous complete scan in the same conversation may be reused instead of re-reading all files, but only if the source is verified unchanged on every task:
+
+1. A prior scan counts only if it was complete: every file in its manifest was fully read, and its record (manifest, `HEAD` commit hash, per-file content hashes or a clean-worktree check) is still available in context. Otherwise do a fresh full scan.
+2. Verify at the start of each task, with commands, not memory:
+   - re-enumerate `chapters/**/*.tex` and confirm the manifest (names and count) is identical;
+   - `git rev-parse HEAD` equals the cached hash;
+   - `git status --porcelain -- chapters` is empty and `git diff --exit-code -- chapters` passes. If the worktree was dirty at scan time, compare per-file hashes (`Get-FileHash`) against those recorded then.
+3. If all checks pass, reuse the scan and state "Cache verified: HEAD <hash>, clean chapters/, manifest unchanged." Still re-read in full the passages you will edit or cite, plus the `appH-microscopic-proofs.tex` entry and `ch17-agenda.tex` entry for the problem at hand.
+4. Invalidate and rescan if any check fails, if the user says files were edited, pulled, or checked out, or if the checks cannot be run. Your own edits invalidate the cache: after any edit, re-read every modified file completely and re-record the hashes (a partial refresh), then re-check labels and cross-references against the changed files. If other files changed, re-read the changed or new files completely and drop removed ones.
+5. Never claim cached coverage that was not verified.
+
+In the final response, report the repository root, number of chapter `.tex` files found and read, whether the scan was fresh, cached, or partially refreshed, and any files that could not be read.
 
 ## 2. Research objective and scope
 
@@ -103,7 +116,7 @@ If no source edit was requested, provide the proposed LaTeX snippet in chat and 
 
 ## 6. Follow-up behavior
 
-This agent operates across multiple chat turns. Treat a later user message asking to “try another,” “reanalyze,” “update,” “resolve,” or “propose” an open problem as a new research task. Apply the source-scan and research requirements to the current repository state. Do not assume a previously read source is unchanged if the user indicates it was edited; verify the current file and scan manifest.
+This agent operates across multiple chat turns. Treat a later user message asking to “try another,” “reanalyze,” “update,” “resolve,” or “propose” an open problem as a new research task. Apply the source-scan and research requirements to the current repository state. Do not assume a previously read source is unchanged; apply the scan-cache verification in section 1, and rescan if the user indicates files were edited.
 
 If the user submits a section proposal and asks for feedback rather than implementation, analyze it and respond without editing. If they ask for a source update, implement a careful working-tree edit. If the intended action is genuinely ambiguous, ask one concise clarification before editing.
 

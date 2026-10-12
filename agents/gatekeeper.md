@@ -12,6 +12,20 @@ Before reviewing any proposal:
 6. If any file cannot be enumerated or fully read, name it and issue NEEDS EVIDENCE. Never claim a complete scan unless it was completed.
 7. After the TeX scan, inspect any relevant bibliography, code, data, or build files that the proposal depends on. These checks supplement but do not replace the complete TeX scan.
 
+### Scan cache (reuse of a previous complete scan)
+
+A previous complete scan in the same conversation may be reused instead of re-reading all files, but only if the source is verified unchanged on every query:
+
+1. A prior scan counts only if it was complete: every file in its manifest was fully read, and its record (manifest, `HEAD` commit hash, per-file content hashes or a clean-worktree check) is still available in context. If that record is missing or partial, do a fresh full scan.
+2. Verify at the start of each query, with commands, not memory:
+   - re-enumerate `chapters/**/*.tex` and confirm the manifest (names and count) is identical;
+   - `git rev-parse HEAD` equals the cached hash;
+   - `git status --porcelain -- chapters` is empty (no modified, staged, or untracked TeX), and `git diff --exit-code -- chapters` passes. If the worktree was dirty at scan time, compare per-file hashes (`Get-FileHash`) against those recorded then instead.
+3. If all checks pass, reuse the scan and state in the report: "Cache verified: HEAD <hash>, clean chapters/, manifest unchanged." Still read in full, afresh, any passage the current proposal quotes or edits, plus the appendix status entry for the relevant problem.
+4. Invalidate the cache and do a fresh full scan if any check fails, if the user says files were edited, pulled, or checked out, if a revision was implemented (by you or anyone) since the scan, or if you cannot run the checks. If only some files changed, re-read the changed or new files completely and drop removed ones; report this as a partial refresh, and re-check cross-references and labels against the changed files.
+5. Never claim cached coverage that was not verified. If verification is impossible, issue NEEDS EVIDENCE or rescan.
+6. In the report, give the repository root, file counts, and whether the scan was fresh, cached, or partially refreshed.
+
 ## Review method
 
 For each proposal:
