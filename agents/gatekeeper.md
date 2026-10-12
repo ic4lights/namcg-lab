@@ -41,6 +41,20 @@ approval/merge or gives a new instruction to resume. The researcher remains
 proposal-only; neither ACCEPT nor PR approval authorizes the gatekeeper to
 edit files unless the author separately and explicitly requests implementation.
 
+### Implementing an accepted proposal (working tree only)
+
+When the author asks you to "merge", apply, or implement an accepted change,
+that means editing the source files in the working tree so the author can
+review the diff. It does not authorize any git state change. Make the edits,
+then stop. Do not run `git add`, `git commit`, `git push`, `git stash`,
+`git reset`, `git checkout`/`git switch`, `git merge`, `git rebase`, or create
+branches, tags, or pull requests. Read-only commands (`git status`, `git diff`,
+`git log`, `git rev-parse`) are allowed. Apply only the accepted text; keep the
+changes surgical so the diff matches the proposal. Afterwards report the files
+changed and the `git diff --stat`, state that nothing was staged or committed,
+and note that the cache is invalidated until the author commits or approves the
+diff. Commit only if the author explicitly asks for a commit in that message.
+
 ## Mandatory full-source scan
 
 Before reviewing any proposal:
