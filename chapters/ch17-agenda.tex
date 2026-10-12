@@ -362,22 +362,36 @@ That ranking is a coefficient check. It does not solve
 Problem~H.
 
 The first finite computation is the replica free energy of a
-free field on a weak-field diamond in the infrared geometry of
-Chapter~12, with \(\Lambda=\Lambda_{\mathrm{eff}}\). Read the
-shift of the lowest modular eigenvalue \(\lambda_0\) when a
-Newtonian source of acceleration \(g_{\mathrm{N}}\) is
-introduced. Problem~H is solved if
+free field on a weak-field diamond whose infrared boundary is
+specified as part of the calculation. Chapter~\ref{ch:hbev} supplies
+\(\Lambda_{\mathrm{eff}}\) but does not define a stationary boundary
+geometry or its surface gravity \(\kappa_{\mathrm{IR}}\); a
+placeholder \(\kappa_{\mathrm{IR}}\) with \(\Lambda=\Lambda_{\mathrm{eff}}\)
+must be constructed and normalized there. Read the source-dependent
+modular excitation gap \(\Delta k(g_{\mathrm{N}},\kappa_{\mathrm{IR}})\)
+when a Newtonian source of acceleration \(g_{\mathrm{N}}\) is introduced;
+the absolute lowest eigenvalue is not used, because it depends on an
+additive normalization (Section~\ref{sec:status-H}). Problem~H is solved
+if the response to the extra stress, computed from the weighted
+multimode spectral sum of Section~\ref{sec:status-H} (or from a
+justified single-ladder response), reproduces~\eqref{eq:nu-target}
+with no SPARC input. In the single-ladder case this requires
 \begin{equation}
-  \label{eq:lambda0}
-  \lambda_0
-  \propto
-  \sqrt{\frac{g_{\mathrm{N}}}{\kappa_{\mathrm{IR}}}},
+  \label{eq:gap-H}
+  \Delta k
+  =
+  \sqrt{\frac{g_{\mathrm{N}}}{g_s}},
   \qquad
-  g_s=\kappa_{\mathrm{IR}},
+  g_s=c_\star\,\kappa_{\mathrm{IR}},
 \end{equation}
-and the occupation is bosonic, so that~\eqref{eq:nu-target}
-follows with no SPARC input. A linear eigenvalue
-\(\lambda_0\propto g_{\mathrm{N}}/\kappa_{\mathrm{IR}}\)
+with the order-one constant \(c_\star\) obtained from the calculation
+and not from galaxy data. The values \(c_\star=1\) and
+\(c_\star=1/(2\pi)\) both appear in this manuscript; neither is
+adopted, and a scaling
+\(\Delta k\propto\sqrt{g_{\mathrm{N}}/\kappa_{\mathrm{IR}}}\) alone does
+not fix \(c_\star\). A computed spectrum that does not reproduce
+\eqref{eq:nu-target} does not solve Problem~H. A linear gap
+\(\Delta k\propto g_{\mathrm{N}}/\kappa_{\mathrm{IR}}\)
 reproduces the retired \(\nu_{\mathrm{exp}}\) and kills
 Assumption~\ref{ass:sqrt-mod}.
 
@@ -387,7 +401,7 @@ nonlocal kernel instead. Refitting \(\alpha\), \(r_s\), or
 \(g_s\) to rotmod files is not a solution. Identifying
 \(g_s\) with \(g_\dagger\) inside the replica calculation is
 not allowed; compare \(\kappa_{\mathrm{IR}}\) to \(g_\dagger\)
-only after \(\lambda_0\) is obtained.
+only after the source-dependent gap and response are calculated.
 
 \paragraph{Problem I: dynamical origin of the drag.}
 Replace Assumption~\ref{ass:drag} by a low-frequency response
