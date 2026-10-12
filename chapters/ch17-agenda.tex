@@ -33,10 +33,9 @@ empty premises.
   \item Algebraic split of \(\delta\Phi_{\mu\nu}\) (Chapter~5).
   \item \(m_T=0\) from entanglement equilibrium plus Fierz--Pauli
         (Theorem~\ref{thm:mT}).
-  \item Structure of the coefficient map
-        \(1/\Geff = A\,\mathrm{Tr}(\mathbb{I})\LUV^2
-        +B v^2\ln(\LUV/\mu)+C\mu^2\)
-        (Theorem~\ref{thm:Geff}).
+  \item The conditional, truncated heat-kernel identity for specified
+        sectors and scheme (Theorem~\ref{thm:Geff}); physical
+        \(G_{\mathrm{eff}}\) remains open in Problem~F.
   \item Lorentz locking in unitary gauge
         (Theorem~\ref{thm:locking}).
   \item Conservation of the total stress
@@ -228,119 +227,69 @@ These problems change numbers and regimes. They do not, by
 themselves, create or destroy the graviton.
 
 \paragraph{Problem F: the rationals \(A,B,C\).}
-Recompute the Seeley--DeWitt coefficients on the bundle of
-\(\delta\Phi_{\mu\nu}\), including ghosts for diffeomorphisms and
-for local Lorentz transformations, and including the radial mode
-threshold. Report \(A,B,C\) in~\eqref{eq:Geff-structure} with
-the scheme specified. Until this is done, Theorem~\ref{thm:Geff}
-is a structural result with working rationals inherited from the
-notes.
+The target is to evaluate the weighted \(a_1\) and the
+curvature-linear part of \(a_2\) on the locked block, including
+diffeomorphism and local-Lorentz ghosts and the radial-mode
+threshold, with a scheme stated. The finite-dimensional fibre count
+alone does not determine these coefficients: the quadratic operator,
+its connection and endomorphism, the determinant weights, and finite
+counterterms enter.
 
-\paragraph{Lemma (universal piece of $A$, and the sign).}
-\label{lem:A-sign}
-On a Euclidean section the curvature piece of~\eqref{eq:appA-a1} is
-\(a_{1}\supset (\operatorname{tr}_{V}\mathbb{I})\,R_{E}/6\).
-Insert it into~\eqref{eq:appA-Wexp} and continue as in
-Appendix~\ref{app:seeley-dewitt}: \(\sqrt{g}\to\sqrt{-g}\) and
-\(R_{E}\to -R_{L}\). The Lorentzian effective action contains
-\begin{equation}
-  \label{eq:EH-universal}
-  W[g]
-  \supset
-  \frac{N_{\mathrm{eff}}}{96\pi^{2}}
-  \bigl(\LUV^{2}-\mu^{2}\bigr)
-  \int\mathrm{d}^{4}x\,\sqrt{-g}\,R,
-\end{equation}
-where \(N_{\mathrm{eff}}=\operatorname{tr}_{V}\mathbb{I}\) is the net fibre trace,
-bosons minus ghosts. Matching~\eqref{eq:EH-full} gives
-\begin{equation}
-  \label{eq:A-universal}
-  \frac{1}{16\pi\Geff}
-  =
-  \frac{N_{\mathrm{eff}}}{96\pi^{2}}
-  \bigl(\LUV^{2}-\mu^{2}\bigr)
-  +\text{threshold logarithms}.
-\end{equation}
-The prefactor is positive if and only if \(N_{\mathrm{eff}}>0\).
-That is the attractive sign required by Theorem~\ref{thm:Geff}.
-A net ghost excess is the killer already named in
-Chapter~16; it is not a new one.
+\paragraph{Verified heat-kernel bookkeeping (not closure).}
+For the proper-time convention of Appendix~\ref{app:seeley-dewitt},
+\[
+W_E=-\frac12\int_{\LUV^{-2}}^{\mu^{-2}}\frac{\mathrm{d}s}{s}\,
+\mathrm{Tr}\,e^{-s\mathcal O},
+\]
+termwise integration of the truncated, unresummed small-\(s\)
+expansion gives the \(a_0,a_1,a_2\) factors
+\(-1/(64\pi^2),-1/(32\pi^2),-1/(32\pi^2)\), respectively, with
+powers \(\LUV^4-\mu^4\), \(\LUV^2-\mu^2\), and
+\(\ln(\LUV^2/\mu^2)\). These are not exact finite-cutoff
+integrations of massive determinants; resumming mass exponentials
+produces sector-dependent threshold functions. The standard
+curvature-square part of \(a_2\) for \(\mathcal O=-D^2+E\) is
+\[
+\frac1{180}\left(R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+-R_{\mu\nu}R^{\mu\nu}+\frac52R^2\right),
+\]
+not the previously displayed \(7R^2/2\).
 
-\paragraph{Fibre trace on the locked block.}
-Before gauge fixing, Chapter~5 gives
-\(\operatorname{tr}_{V}\mathbb{I}=16=1+6+9\).
-Two subtractions are required by the redundancies already
-proved, and no others.
-\begin{center}
-\begin{tabular}{lrr}
-\hline
-Block & Weight & Trace \\
-\hline
-locked \(\delta\Phi_{\mu\nu}\) & \(+1\) & \(+16\) \\
-diffeomorphism ghosts (complex vector) & \(-2\) & \(-8\) \\
-local-Lorentz ghosts (antisymmetric) & \(-1\) & \(-6\) \\
-\hline
-net, Goldstones eaten & & \(+2\) \\
-\hline
-\end{tabular}
-\end{center}
-The net \(+2\) is the transverse-traceless count of
-Theorem~\ref{thm:mT}, read at the level of \(a_{0}\).
-The radial mode is not in that net: it has potential curvature
-\(\lambda v^{2}\) (Lemma~\ref{lem:msigma}), is treated as heavy under
-Assumption~\ref{ass:gap-psi}, and is integrated down to
-\(\mu\sim m_{\sigma}\), where it contributes to \(B\), not to
-the \(\LUV^{2}\) piece.
-Both legal partial counts, \(16-8=8\) before the Lorentz
-ghosts and \(16-8-6=2\) after them, are positive.
-Neither flips~\eqref{eq:EH-universal}.
+For one minimally coupled real bosonic Laplace-type field with
+\(E_R=0\), the universal \(a_1\) contribution to the Euclidean
+coefficient of \(\int\sqrt{g}\,R_E\) is
+\[
+C_{R,E}^{(a_1)}
+=-\frac{N_0}{192\pi^2}(\LUV^2-\mu^2),
+\]
+where \(N_0\) is the fibre trace of this single sector and the
+displayed limits are assigned to it. For a specified collection,
+the corresponding Euclidean contribution is the sum over the
+explicitly weighted sectors and their assigned limits. This is not
+the full locked-block result and does not establish a ghost-subtracted
+trace. It makes no claim about the Lorentzian Einstein--Hilbert sign
+or a physical \(G_{\mathrm{eff}}\); those require the specified
+sector sum and an explicit action/curvature continuation convention.
 
-\paragraph{The conformal mode does not flip \(G_{\mathrm{eff}}\).}
-Appendix~\ref{app:seeley-dewitt} records that a real scalar with
-\(E=\xi R+m^{2}\) contributes \((1/6-\xi)R\) to \(a_{1}\).
-At the conformal value \(\xi=1/6\) the trace mode cancels
-in \(a_{1}\) and does not renormalise \(G_{\mathrm{eff}}\).
-In the Repair~II pure-trace sector \(\psi=8\sigma/v\)
-(Lemma~\ref{lem:psi-sigma}). The induced Einstein--Hilbert term
-contributes to the kinetic coefficient of that mode with the sign of
-the conformal-factor problem. Whether a physical scalar pole results,
-and with what mass, is Problem~C and is not decided here; here it
-enters only through the choice of \(\xi_{\psi}\).
-A computation that kept \(\xi_{\psi}\neq 1/6\) would change
-\(N_{\mathrm{eff}}\) by \(6(1/6-\xi_{\psi})\), an order-one
-shift, not a sign change, for any \(\xi_{\psi}\) of order one.
+If \(E=E_0+QR+\cdots\), the \(a_1\) curvature coefficient is
+\(\operatorname{tr}(\tfrac16\mathbb I-Q)\). For a scalar with
+\(E=m^2+\xi R\), the mass-dependent curvature-linear term in \(a_2\)
+is \((\xi-\tfrac16)m^2R\), vanishing at \(\xi=1/6\). Thus the
+conformal radial scalar alone does not establish a nonzero logarithmic
+\(B\); the additional frame operator must be specified and evaluated.
 
-\paragraph{Rationals, scheme stated.}
-Convert~\eqref{eq:A-universal} to the normalisation of
-\eqref{eq:Geff-structure}. With \(N_{\mathrm{eff}}\) the net
-trace above,
-\begin{align}
-  A &= \frac{N_{\mathrm{eff}}}{6\pi\,\mathrm{Tr}(\mathbb{I})_{\mathrm{notes}}},
-  \label{eq:A-value}\\
-  B &= \frac{4\pi}{3}\,\kappa,
-  \label{eq:B-value}\\
-  C &= 0,
-  \label{eq:C-value}
-\end{align}
-at this order. The notes' value \(A=1/\pi\) is recovered
-exactly when \(\mathrm{Tr}(\mathbb{I})_{\mathrm{notes}}=N_{\mathrm{eff}}/6\),
-which is the absorption of the universal \(1/6\) already
-declared in the proof sketch of Theorem~\ref{thm:Geff}.
-The factor \(\kappa\) in \(B\) is \(1\) if the logarithm in
-\eqref{eq:Geff-structure} means \(\ln(\LUV^{2}/\mu^{2})\),
-and \(2\) if it means \(\ln(\LUV/\mu)\).
-Remark~8.3 records \(B=8\pi/3\) against \(\ln(\LUV/\mu)\), which is
-\(\kappa=2\) in~\eqref{eq:B-value}; \(4\pi/3\) is the coefficient of
-\(\ln(\LUV^{2}/\mu^{2})\). The two differ by a logarithm convention,
-not by a new diagram.
-
-\paragraph{What remains open inside Problem~F.}
-The \(a_{2}\) trace on the symmetric-traceless block,
-including \(\operatorname{tr}(F_{\mu\nu}F^{\mu\nu})\), has not been
-evaluated. It can move \(\kappa\) by a factor of order one.
-It cannot move \(A\) through zero while \(N_{\mathrm{eff}}>0\),
-and it does not settle the physical scalar spectrum, which is
-Problem~C.
+\paragraph{Missing step.}
+Specify the gauge-fixed quadratic Hessian for every locked-block
+field, including bundle connections, endomorphisms, diffeomorphism
+and local-Lorentz ghost operators and weights, the radial threshold
+prescription, finite counterterms, and continuation convention. Then
+compute the weighted \(a_1\) and relevant \(a_2\) terms in that scheme
+and match them to \(A,B,C\). The present manuscript does not specify
+those data. The asserted net \(+2\) from the on-shell TT count is not
+an off-shell heat-kernel trace, and no replacement ghost count can be
+inferred without the actual gauge fixing and ghost operators. The
+values \(A=1/\pi\), \(B=8\pi/3\), and \(C=0\) are not established.
+Problem~F remains open.
 
 
 \paragraph{Problem G: infrared boundary entropy.}
@@ -466,9 +415,10 @@ It does not exist so that the laboratory can become the theory.
 For a reader who has read the book and wants a first project:
 
 \begin{enumerate}
-  \item Recompute Problem~F for the locked \(4\times 4\) block
-        only, ignoring unlocked scalars. This is finite and
-        checks whether the working rationals survive.
+  \item Recompute Problem~F for the locked \(4\times4\) block only,
+        ignoring unlocked scalars. This is finite only after the
+        gauge-fixed operators, ghost weights, and scheme are
+        specified; the present manuscript does not provide those data.
   \item Compute the quadratic scalar operator of Problem~C at tree
         level (kinetic coefficient, mixing and mass). This decides
         whether the infrared theory is GR or scalar-tensor before any
@@ -497,8 +447,10 @@ NAMCG would be a completed infrared derivation, rather than a
 programme, if all of the following held.
 
 \begin{enumerate}
-  \item Problems~A and~B are lemmas, so Presentation~A and
-        entanglement equilibrium are no longer assumptions.
+  \item Problem~B is a lemma, so entanglement equilibrium is no longer
+        an assumption. Problem~A is additionally required only if the
+        theory is claimed to follow from Presentation~A rather than
+        being the Presentation~B theory studied here.
   \item Problem~C gives \(m_\psi\) large enough that Cassini is
         safe, or the theory is rewritten as scalar-tensor and
         tested as such.

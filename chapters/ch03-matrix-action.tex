@@ -343,7 +343,7 @@ to zero when \(g^{(0)}=\eta\). Their intended roles are:
 Quantity & Role \\
 \midrule
 \(\LUV\) & kinematic cutoff from \(\Theta^{\mu\nu}\) \\
-\(v\) & condensate scale; enters \(\Geff\) logarithmically \\
+\(v\) & condensate scale; appears in the working conditional \(\Geff\) parameterization \\
 \(\lambda\) & controls the radial Higgs mass \(m_\sigma\sim\sqrt{\lambda}\,v\) \\
 \(g_{\mathrm{YM}}\) & internal gauge coupling; enters the connection
                      that eats Goldstones \\
@@ -351,26 +351,26 @@ Quantity & Role \\
 \end{tabular}
 \end{center}
 
-Chapter~8 will produce
+Chapter~8 gives a conditional truncated heat-kernel identity. Define
+\(C_R^L\) as the Lorentzian curvature coefficient only after the
+specified sector sum and continuation:
 \begin{equation}
   \label{eq:Geff-again}
-  \frac{1}{16\pi\Geff}
-  =\frac{\mathrm{Tr}(\mathbb{I})\,\LUV^2}{16\pi^2}
-   +\frac{v^2}{12}\ln\Bigl(\frac{\LUV^2}{\mu^2}\Bigr).
+  C_R^L[\{\mathcal O_s,w_s,{\LUV}_s,\mu_s\},\mathcal S]
+  \quad\text{is not evaluated here.}
 \end{equation}
-Two immediate inequalities follow from insisting that the infrared
-Newton coupling be finite and that the radial mode be integrable:
+The scale hierarchy needed to integrate out the radial mode is
+separate from this coefficient matching:
 \begin{equation}
   \label{eq:scale-ineq}
   m_\sigma\ll\LUV,
   \qquad
   v\lesssim\LUV.
 \end{equation}
-If \(v\sim\LUV\) the logarithm is order one and the first term
-in~\eqref{eq:Geff-again} dominates unless the internal trace
-\(\mathrm{Tr}(\mathbb{I})\) is arranged to cancel against
-counterterms. The book does not hide that arrangement. It is part of
-the coefficient-matching problem, not a detail.
+These are working hierarchy assumptions, not consequences of a
+computed Newton coupling. No Planck-cutoff inference, cancellation,
+or numerical value of \(G_{\mathrm{eff}}\) follows before Problem~F
+is completed.
 
 \section{What has been assumed, collected}
 \label{sec:ch3-assumptions}

@@ -317,7 +317,7 @@ are
     a_2&=\frac{1}{180}\bigl(
            R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
           -R_{\mu\nu}R^{\mu\nu}
-          +\tfrac72 R^2
+          +\tfrac52 R^2
          \bigr)
          +\frac12 E^2
          -\frac16 RE
@@ -329,13 +329,13 @@ curvature. The precise tensor combination in \(a_2\) will be written
 in full in Appendix~A when it is needed for ghost analysis. What
 Chapter~8 requires is only this fact:
 
-\begin{proposition}[Which coefficient produces Newton’s constant]
+\begin{proposition}[Which coefficient contributes to the curvature term]
   \label{prop:a1-G}
-  In the derivative expansion of \(W[g]\), the term linear in
-  curvature and quadratic in the ultraviolet cutoff comes from
-  \(a_1\). After a cutoff \(\LUV\) is imposed on the proper-time
-  integral~\eqref{eq:one-loop}, one obtains a contribution of the
-  schematic form
+  In the derivative expansion for specified Laplace-type sectors,
+  the term linear in curvature and quadratic in the ultraviolet
+  cutoff receives a contribution from \(a_1\). After a cutoff
+  \(\LUV\) is imposed on the proper-time integral~\eqref{eq:one-loop},
+  the truncated expansion contains a contribution of the schematic form
   \begin{equation}
     \label{eq:W-R}
     W[g]
@@ -345,19 +345,22 @@ Chapter~8 requires is only this fact:
       c_0\LUV^4+c_2\LUV^2 R+\cdots
     \bigr).
   \end{equation}
-  The coefficient \(c_2\) is the microscopic ancestor of
-  \(1/(16\pi\Geff)\). The coefficient \(c_0\) is the microscopic
-  ancestor of the cosmological-constant problem.
+  The coefficient \(c_2\) contributes to the conditional matching
+  target for \(1/(16\pi\Geff)\); this proposition does not determine
+  it or establish a physical Newton coupling. The coefficient \(c_0\)
+  contributes to the vacuum-energy problem under the conventions
+  stated in Chapter~8.
 \end{proposition}
 
 \begin{proof}[Proof sketch]
   Insert~\eqref{eq:SDW} into~\eqref{eq:one-loop} and cut the
-  proper-time integral at \(s\sim\LUV^{-2}\). The \(a_0/s^3\) piece
-  produces \(\LUV^4\). The \(a_1/s^2\) piece produces \(\LUV^2\) times
-  \(\tfrac16 R-E\). After the endomorphism \(E\) is evaluated on the
-  condensate background, the curvature term remains and is absorbed
-  into the Einstein--Hilbert prefactor. Details and the logarithmic
-  \(v^2\ln(\LUV/\mu)\) piece are Chapter~8.
+  proper-time integral at \(s\sim\LUV^{-2}\). The \(a_0/s^3\) and
+  \(a_1/s^2\) terms give the quartic and quadratic cutoff dependence
+  term by term in the truncated expansion. The \(a_1\) curvature
+  contribution depends on the endomorphism \(E\), sector weights, and
+  thresholds; it need not remain nonzero in the completed sum.
+  Chapter~8 gives the conditional identity, while Problem~F requires
+  the missing sector calculation.
 \end{proof}
 
 Two warnings, both of which the later text will spend chapters

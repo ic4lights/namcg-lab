@@ -22,11 +22,20 @@ Chapter~8 produced
 \begin{equation}
   \label{eq:rho-debt}
   \rho_\Lambda
-  =\frac{\mathrm{Tr}(\mathbb{I})}{32\pi^2}
-   \bigl(\LUV^4-\mu^4\bigr)+\cdots.
+  =-\sum_{s\in\mathcal{S}_{\mathrm{sec}}}
+    \frac{w_s\operatorname{tr}_{V_s}\mathbb I_s}{64\pi^2}
+    \bigl({\LUV}_s^4-\mu_s^4\bigr)+\cdots.
 \end{equation}
-A constant of that size cannot be the observed cosmological
-constant. This chapter does not cancel~\eqref{eq:rho-debt} by a
+This is the truncated, unresummed sector sum of
+Chapter~8 under its stated continuation, with the same included
+sectors and determinant weights. A common-limit form using
+\(\mathcal N_0\) applies only when all included sectors are assigned
+the same limits; otherwise sector-dependent thresholds are retained.
+Only if the weighted quartic contribution is nonzero and remains
+uncancelled, including after finite local terms and counterterms are
+specified, must its magnitude be reconciled with the observed
+cosmological constant. Without those conditions no such comparison
+follows from~\eqref{eq:rho-debt}. This chapter does not cancel it by a
 bare counterterm tuned to 120 decimal places. It replaces the bulk
 cosmological term by a boundary variational problem whose solution
 is an infrared scale.
@@ -42,8 +51,9 @@ Three common manoeuvres are excluded in advance.
         declaring the sum zero is a renormalization condition at
         one scale. It does not explain the residual scale.
   \item \textbf{Setting \(\LUV\) to meV.}
-        Equation~\eqref{eq:Geff-size} then destroys Newton's
-        constant. The cutoff cannot serve both masters.
+        The cutoff constraint cannot be assessed until the physical
+        \(G_{\mathrm{eff}}\) is obtained from the specified sector
+        calculation of Problem~F.
   \item \textbf{A spacetime-dependent \(\rho_\Lambda(x)\) with no
         current.}
         Section~\ref{sec:ch11-vacuum} forbids this unless extra
@@ -52,8 +62,9 @@ Three common manoeuvres are excluded in advance.
 \end{enumerate}
 
 Any construction that survives must therefore (i)~replace the bulk
-quartic by an infrared datum, (ii)~leave \(\Geff\) as computed in
-Theorem~\ref{thm:Geff}, and (iii)~produce a conserved
+quartic by an infrared datum, (ii)~use a \(G_{\mathrm{eff}}\) matched
+from specified operators, weights, thresholds, continuation, and
+scheme as required by Problem~F, and (iii)~produce a conserved
 \(\Lambda_{\mathrm{eff}}g_{\mu\nu}\) or a conserved completion of
 it.
 
@@ -343,14 +354,16 @@ regularity condition \(f(r)\to 1+\Lambda_{\mathrm{eff}}r^2/3\) as
 \section{Bridge to Chapter~13}
 \label{sec:ch12-bridge}
 
-The infrared Einstein equation is now
+The conditional infrared Einstein equation has the form
 \begin{equation}
   \label{eq:EFE-ready}
   G_{\mu\nu}+\Lambda_{\mathrm{eff}}g_{\mu\nu}
   =8\pi\Geff\,T_{\mu\nu}^{\mathrm{total}},
 \end{equation}
-with \(\Geff\) from Theorem~\ref{thm:Geff},
-\(\Lambda_{\mathrm{eff}}\) from Theorem~\ref{thm:Leff},
+with \(G_{\mathrm{eff}}\) to be matched by the specified
+operator, weight, threshold, continuation, and scheme calculation
+of Problem~F, \(\Lambda_{\mathrm{eff}}\) from
+Theorem~\ref{thm:Leff},
 \(m_T=0\) from Theorem~\ref{thm:mT}, and conservation from
 Theorem~\ref{thm:conservation}. What remains of the geometric
 programme is the high-curvature interior, where the Einstein

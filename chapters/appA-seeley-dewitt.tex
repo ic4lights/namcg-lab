@@ -83,7 +83,7 @@ effective action, are
         \bigl(
           R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
           -R_{\mu\nu}R^{\mu\nu}
-          +\tfrac72 R^2
+          +\tfrac52 R^2
         \bigr)
         +\frac12 E^2
         -\frac16 RE\\
@@ -98,46 +98,77 @@ by integration by parts. For the bulk action of Chapter~8 those
 terms are discarded.
 
 The numerical coefficients in~\eqref{eq:appA-a2} are the standard
-DeWitt values for a Laplace-type operator. They are not the
-working rationals \(A,B,C\) of~\eqref{eq:Geff-structure}. Those
-rationals mix~\eqref{eq:appA-a1} and~\eqref{eq:appA-a2} with fibre
-traces, ghost signs, and a radial-mode threshold; they are the
-subject of Problem~F in Chapter~17.
+DeWitt values for a Laplace-type operator. They do not determine
+the coefficients \(A,B,C\) in the conditional
+parameterization~\eqref{eq:Geff-structure}. Their evaluation requires
+the specified operators, fibre traces, determinant weights, and
+thresholds; this remains part of Problem~F in Chapter~17.
 
 \section{Proper-time integrals}
 \label{sec:appA-integrals}
 
-The one-loop effective action on the Euclidean section is
+For the sectors actually included in a gauge-fixed calculation, let
+\(\mathcal{S}_{\mathrm{sec}}\) be their index set, \(w_s\) their determinant weights
+relative to a real bosonic determinant, and \(\mathcal O_s\) their
+operators. Define
+\begin{equation}
+  \label{eq:appA-sector-sum}
+  W_E^{(1)}
+  =\frac12\sum_{s\in\mathcal{S}_{\mathrm{sec}}}w_s
+        \operatorname{Tr}_{V_s}\ln\mathcal O_s,
+  \qquad
+  \mathcal N_0
+  :=\sum_{s\in\mathcal{S}_{\mathrm{sec}}}w_s
+        \operatorname{tr}_{V_s}\mathbb I_s .
+\end{equation}
+The corresponding proper-time representation is
 \begin{equation}
   \label{eq:appA-W}
-  W_E
-  =-\frac12\int_{s_{\min}}^{s_{\max}}
-    \frac{\mathrm{d}s}{s}
-    \int\mathrm{d}^4x\,\sqrt{g}\,
-    \mathrm{tr}_V K(s;x,x),
+  W_E^{(1)}
+  =-\frac12\sum_{s\in\mathcal{S}_{\mathrm{sec}}}w_s
+    \int_{s_{\min,s}}^{s_{\max,s}}\frac{\mathrm{d}s}{s}\,
+    \operatorname{Tr}_{V_s}e^{-s\mathcal O_s}.
 \end{equation}
-with \(s_{\min}=\LUV^{-2}\) and \(s_{\max}=\mu^{-2}\). Inserting
-\eqref{eq:appA-SDW} and integrating term by term gives
+The expressions below are term-by-term integrals of the truncated,
+unresummed small-\(s\) heat-kernel expansion through \(a_2\), not
+exact finite-cutoff integrations of massive determinants. If \(E_s\)
+contains \(m_s^2\), resumming \(\exp(-s m_s^2)\) replaces polynomial
+cutoff terms by sector-dependent threshold functions. A common pair of
+limits applies only to sectors explicitly assigned those limits;
+otherwise the sector-dependent limits are retained. Inserting the
+heat-kernel expansion and integrating term by term gives
 \begin{equation}
   \label{eq:appA-Wexp}
   \begin{aligned}
-    W_E
-    &\supset
-    \int\mathrm{d}^4x\,\sqrt{g}\,
-    \Biggl[
-      -\frac{a_0}{32\pi^2}(\LUV^4-\mu^4)
-      -\frac{a_1}{16\pi^2}(\LUV^2-\mu^2)\\
+      W_E^{(1)}
+      &\supset
+      \sum_{s\in\mathcal{S}_{\mathrm{sec}}}w_s
+      \int\mathrm{d}^4x\,\sqrt{g}\,
+      \Biggl[
+        -\frac{a_{0,s}}{64\pi^2}
+          ({\LUV}_s^4-\mu_s^4)
+        -\frac{a_{1,s}}{32\pi^2}
+          ({\LUV}_s^2-\mu_s^2)\\
       &\qquad\qquad
-      -\frac{a_2}{32\pi^2}\ln\Bigl(\frac{\LUV^2}{\mu^2}\Bigr)
-    \Biggr],
+        -\frac{a_{2,s}}{32\pi^2}
+          \ln\Bigl(\frac{{\LUV}_s^2}{\mu_s^2}\Bigr)
+      \Biggr],
   \end{aligned}
 \end{equation}
-which is~\eqref{eq:W-expand}. The continuation to the Lorentzian
-section of the main text replaces \(\sqrt{g}\) by \(\sqrt{-g}\) and
-sends the Euclidean Ricci scalar to minus the Lorentzian Ricci
-scalar in the conventions of~\eqref{eq:riemann}. After that
-continuation, the coefficient of \(\int\sqrt{-g}\,R\) is the
-Einstein--Hilbert prefactor.
+where \(a_{k,s}\) are the traced coefficients on \(V_s\). With common
+limits explicitly assigned to every included sector, the \(a_0\) term
+is \(-\mathcal N_0(\LUV^4-\mu^4)/(64\pi^2)\).
+
+For the Lorentzian vacuum-sign statement adopt \(S_E=-iS_L\) under
+\(t=-i\tau\) and define the Lorentzian vacuum term by
+\(S_L\supset-\rho_\Lambda\int\mathrm{d}^4x\,\sqrt{-g}\).
+For one real scalar, \(a_0=1\), and only under these conventions,
+\(W_E/\mathrm{Vol}\supset-(\LUV^4-\mu^4)/(64\pi^2)\) corresponds to
+\(\rho_\Lambda=-(\LUV^4-\mu^4)/(64\pi^2)\). The common-limit sector
+sum gives \(\rho_\Lambda=-\mathcal N_0(\LUV^4-\mu^4)/(64\pi^2)\)
+only when all displayed sectors share the assigned limits, within the
+same truncated, unresummed expansion. The Lorentzian sign is
+conditional on this continuation/action convention.
 
 \section{Worked example: a non-minimal scalar}
 \label{sec:appA-scalar}
@@ -154,13 +185,17 @@ one has \(E=\xi R+m^2\), \(\mathcal{F}_{\mu\nu}=0\), and
   a_1=\bigl(\tfrac16-\xi\bigr)R-m^2.
 \end{equation}
 The curvature piece of \(a_1\) cancels at \(\xi=1/6\). That
-cancellation is why a conformally coupled scalar does not
-renormalize Newton's constant through \(a_1\). The NAMCG radial
+cancellation removes this scalar's contribution to the curvature
+coefficient through \(a_1\). The NAMCG radial
 mode is not assumed to sit at \(\xi=1/6\); Exercise~3 of
 Chapter~8 is the corresponding warning.
 
-The \(a_0\) piece remains \(\LUV^4/32\pi^2\) per real scalar and
-is the scalar contribution to \(\rho_\Lambda\).
+For one real scalar the Euclidean \(a_0\) contribution is
+\(-(\LUV^4-\mu^4)/(64\pi^2)\). Under the continuation and Lorentzian
+vacuum-action convention stated above, this corresponds to
+\(\rho_\Lambda=-(\LUV^4-\mu^4)/(64\pi^2)\). For a collection of
+sectors the total density includes their determinant weights and
+sector-dependent thresholds.
 
 \section{Fibre traces on the locked block}
 \label{sec:appA-fibre}
@@ -174,11 +209,13 @@ contribute with the opposite sign and with their own Laplace-type
 operators; local-Lorentz ghosts do likewise after
 Theorem~\ref{thm:locking}.
 
-The symbol \(\mathrm{Tr}(\mathbb{I})\) in Theorem~\ref{thm:Geff}
-is the net fibre trace after whatever ghosts the working
-calculation includes. The notes use a normalization in which that
-net trace is absorbed into the first term of~\eqref{eq:Geff-thm}.
-A recomputation that keeps the traces explicit is Problem~F.
+\(\mathcal N_0\) is the weighted fibre trace over the sectors actually
+included, not automatically the locked-block dimension or a
+physical-mode count. A total locked-block result must specify the
+gauge-fixed fluctuation, Goldstone, diffeomorphism-ghost and
+local-Lorentz-ghost operators, determinant weights, and assigned
+thresholds. No factor of \(1/6\) is absorbed into \(\mathcal N_0\);
+the complete calculation is Problem~F.
 
 \section{What this appendix will not do}
 \label{sec:appA-not}
@@ -219,10 +256,10 @@ needed, not part of the working thickness of Chapter~8.
     complex vector with a Laplace-type operator. What factor
     multiplies its contribution to \(a_0\) relative to a real
     scalar, and why is the sign opposite to a physical field?
-  \item \textbf{From \(a_1\) to \(A\).}
-    Starting from~\eqref{eq:appA-a1} and~\eqref{eq:appA-Wexp},
-    reconstruct the structural first term of
-    \eqref{eq:Geff-structure}. Where does a factor of order one
-    enter when passing from \(\tfrac16\mathrm{tr}_V\mathbb{I}\)
-    to the working value of \(A\) used in the notes?
+  \item \textbf{Conditional curvature coefficient.}
+    Given specified sector operators, determinant weights, proper-time
+    limits, and a finite-counterterm scheme, derive the truncated
+    Euclidean curvature coefficient from \(a_1\) and \(a_2\). Identify
+    the additional data needed for its Lorentzian continuation and
+    comparison with \(G_{\mathrm{eff}}\).
 \end{enumerate}
