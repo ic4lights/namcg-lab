@@ -9,8 +9,10 @@ After this chapter the reader should be able to:
         produce a non-degenerate vierbein from
         \(\langle\partial_\mu\Phi\rangle\);
   \item write the polar decomposition
-        \(\Phi=(v+\sigma)\Lambda\) and construct an emergent frame
-        from the condensate gradient of \(\Lambda\);
+        \(\Phi=(v+\sigma)\Lambda\), state the polar-derivative
+        prescription of the source notes as an unverified
+        proposal that does not supply a frame (Problem~C), and
+        state the frame of Repair~II;
   \item reconstruct \(g_{\mu\nu}=\eta_{AB}e^A_\mu e^B_\nu\) and state
         the non-degeneracy condition;
   \item use the leading Seiberg--Witten map to relate
@@ -20,7 +22,9 @@ After this chapter the reader should be able to:
 \end{enumerate}
 
 Chapter~3 introduced the field and a preferred vacuum. This chapter
-turns that vacuum into geometry. No Einstein equation is derived
+turns that vacuum into geometry conditionally: it posits the Repair~II
+spacetime-dependent condensate as the frame, since the Repair~I
+prescription does not supply one. No Einstein equation is derived
 here. The only output is a composite metric, plus the dictionary that
 connects it to the non-commutative parameter \(\Theta^{\mu\nu}\).
 
@@ -40,17 +44,19 @@ If this expectation value is independent of \(x\), then
 The definition advertised in the source notes,
 \begin{equation}
   \label{eq:naive-vierbein}
-  e^A_\mu(x)\equiv\langle\partial_\mu\Phi^{IA}(x)\rangle,
+  \mathcal{E}^A{}_{\mu I}(x)
+  \equiv
+  \langle\partial_\mu\Phi^{IA}(x)\rangle,
 \end{equation}
 then yields the zero tensor. A zero tensor is not a frame.
 
 This is not a notational quibble. A textbook that passes from
 \eqref{eq:const-vev} to a non-degenerate \(g_{\mu\nu}\) without an
 intermediate step is asserting an identity that is false. There are
-two honest repairs. NAMCG uses both, in different places; they must
-be kept distinct.
+two candidate repairs. Only Repair~II is carried through in this book;
+they must be kept distinct.
 
-\paragraph{Repair I: the polar field carries the frame.}
+\paragraph{Repair I: the proposed polar-derivative prescription.}
 Write the field in polar form, as in the ultraviolet note,
 \begin{equation}
   \label{eq:polar}
@@ -67,8 +73,9 @@ vanish:
    +(v+\sigma)\,\partial_\mu\Lambda^A{}_I.
 \end{equation}
 A vacuum with \(\langle\sigma\rangle=0\) and a slowly varying
-\(\langle\Lambda\rangle\) produces a candidate frame from
-\(\langle\partial_\mu\Lambda\rangle\).
+\(\langle\Lambda\rangle\) has \(\langle\partial_\mu\Lambda\rangle\ne0\),
+but this is a candidate frame only in the sense of the source
+notes; see the discussion after Repair~II.
 
 \paragraph{Repair II: identify the vacuum itself with a frame.}
 Promote the representative vacuum to a spacetime-dependent but
@@ -90,38 +97,56 @@ after the internal and tangent bases have been identified.
 
 Repair~II is simpler and is the standard Higgs-gravity pattern.
 Repair~I is what the notes write when they insist on
-\eqref{eq:naive-vierbein}. This chapter adopts Repair~I as the
-official definition, because that is the formula used in the later
-fluctuation analysis, and records Repair~II as an equivalent leading-
-order gauge choice.
+\eqref{eq:naive-vierbein}. The two are not equivalent. Repair~II
+defines a frame directly from the condensate and, wherever
+Assumption~\ref{ass:nondeg} holds, supplies a non-degenerate
+\(e^A{}_\mu\). Repair~I, as written in
+Definition~\ref{def:vierbein}, leaves the index \(I\) uncontracted,
+and Appendix~\ref{app:status} (Section~\ref{sec:status-C}) shows that no
+Lorentz-equivariant linear contraction of \(\partial_\mu\Lambda\)
+produces a vierbein fluctuation. Definition~\ref{def:vierbein} is
+therefore kept only as a record of the prescription in the source
+notes; it is not a constructed frame. In the rest of the book the
+frame is the Repair~II frame~\eqref{eq:vev-is-frame}, or a
+non-degenerate coframe assumed separately
+(Assumption~\ref{ass:nondeg}); statements that use the explicit form
+\eqref{eq:official-vierbein} are conditional on a repair of Repair~I
+that this book does not supply.
 
-\begin{definition}[Official emergent vierbein]
+\begin{definition}[Repair~I prescription of the source notes]
   \label{def:vierbein}
   In a polar configuration~\eqref{eq:polar} with
-  \(\langle\sigma\rangle=0\),
+  \(\langle\sigma\rangle=0\), define the three-index object
   \begin{equation}
     \label{eq:official-vierbein}
-    e^A_\mu(x)
+    \mathcal{E}^{A}{}_{\mu I}(x)
     \equiv
-    \frac1v\,\bigl\langle
-      \partial_\mu\Phi^{IA}(x)
-    \bigr\rangle
-    \Big|_{\sigma=0}
-    =\bigl\langle
-      \partial_\mu\Lambda^{A}{}_I(x)
-    \bigr\rangle.
+    \bigl\langle\partial_\mu\Lambda^{A}{}_I(x)\bigr\rangle .
   \end{equation}
-  The factor \(1/v\) restores a dimensionless frame when \(\Phi\) has
-  the engineering dimension of \(v\). If a given formula in the notes
-  omits \(1/v\), it is using units \(v=1\).
+  By~\eqref{eq:polar-deriv} this is
+  \(v^{-1}\langle\partial_\mu\Phi^{IA}\rangle\) at \(\sigma=0\)
+  (with \(\langle\partial_\mu\sigma\rangle=0\)), which is the
+  prescription the source notes write as a vierbein, with the
+  internal index \(I\) left uncontracted and no identification of
+  \(I\) with a tangent index used. It is not a vierbein: it carries
+  the extra index \(I\), and no Lorentz-equivariant linear contraction
+  of it yields a vierbein fluctuation (Appendix~\ref{app:status},
+  Section~\ref{sec:status-C}). The factor \(1/v\) is the normalisation
+  the notes use when \(\Phi\) has the engineering dimension of \(v\);
+  if a formula in the notes omits \(1/v\), it is using units \(v=1\).
 \end{definition}
 
-\begin{remark}[When the two repairs agree]
-  Choose local coordinates and a gauge in which
-  \(\Lambda^A{}_I=\delta^A{}_I+v^{-1}\omega^A{}_{I\mu}x^\mu+\cdots\).
-  Then \(\partial_\mu\Lambda\) is constant to first order and
-  Repair~I reproduces Repair~II at that order. The distinction
-  reappears at quadratic order in fluctuations, which is Chapter~5.
+\begin{remark}[The two repairs do not agree]
+The expansion
+\(\Lambda^A{}_I=\delta^A{}_I+v^{-1}\omega^A{}_{I\mu}x^\mu+\cdots\)
+makes \(\partial_\mu\Lambda^A{}_I\) a constant three-index tensor,
+antisymmetric in \((A,I)\). It lies in
+\(V\otimes\mathfrak{so}(3,1)\), while a vierbein perturbation lies
+in \(V\otimes V\); the two share no irreducible summand
+(Appendix~\ref{app:status}, Section~\ref{sec:status-C}). Repair~I
+therefore does not reproduce Repair~II at first order. A
+corrected Repair~I would need additional background tensors or an
+independent coframe, which is part of Problem~C.
 \end{remark}
 
 \section{The composite metric}
@@ -129,7 +154,9 @@ order gauge choice.
 
 \begin{definition}[Composite metric]
   \label{def:composite-metric}
-  Given a vierbein~\eqref{eq:official-vierbein},
+  Given a non-degenerate frame \(e^A_\mu\), taken from
+  Repair~II,~\eqref{eq:vev-is-frame}, or supplied separately as an
+  assumption (Assumption~\ref{ass:nondeg}),
   \begin{equation}
     \label{eq:g-from-e}
     g_{\mu\nu}(x)
@@ -306,25 +333,18 @@ the resulting Lorentzian metric.
 \section{Worked example: a weak, static frame perturbation}
 \label{sec:ch4-example}
 
-Take Repair~I with
-\begin{equation}
-  \label{eq:example-Lambda}
-  \Lambda^A{}_I(x)
-  =\delta^A{}_I
-   +\frac12\delta^A{}_\alpha
-      \delta^\beta{}_I
-      \partial_\beta\zeta^\alpha(x),
-\end{equation}
-and \(\zeta^\alpha\) small. Then
+Take the Repair~II frame, or any assumed non-degenerate frame, with
+the constant background \(e^A{}_\mu=\delta^A{}_\mu\), and a small
+coordinate shift \(x^\mu\to x^\mu+\zeta^\mu(x)\). The frame changes by
+its Lie derivative,
 \begin{equation}
   \label{eq:example-e}
-  e^A_\mu
-  =\delta^A_\mu
-   +\frac12\partial_\mu\partial_\beta\zeta^\alpha\,
-     \delta^A{}_\alpha\delta^\beta{}_{\cdot},
+  \delta e^A{}_\mu
+  =\zeta^\nu\partial_\nu\delta^A{}_\mu
+   +\partial_\mu\zeta^\nu\,\delta^A{}_\nu
+  =\partial_\mu\zeta^A .
 \end{equation}
-which is a pure-gauge linearized frame if \(\zeta\) is a
-diffeomorphism parameter. The associated metric perturbation is
+The associated metric perturbation is
 \begin{equation}
   \label{eq:example-h}
   h_{\mu\nu}
@@ -335,10 +355,9 @@ coordinate artifact. A physical graviton must be a disturbance that
 cannot be written as~\eqref{eq:example-h}. Isolating that disturbance
 is the point of the irreducible decomposition in Chapter~5.
 
-The example is still useful. It shows that Definition~\ref{def:vierbein}
-does produce a metric perturbation of the correct tensor type, and
-that diffeomorphism redundancy is already visible at the level of
-\(\Lambda(x)\).
+The example demonstrates diffeomorphism redundancy of a Repair~II
+(or assumed) frame. It does not derive a frame from \(\Phi\) by
+Definition~\ref{def:vierbein}.
 
 \section{What this chapter has not done}
 \label{sec:ch4-not-done}
@@ -354,11 +373,15 @@ The following statements are \emph{not} theorems of Chapter~4.
   \item \(\mathcal{G}_{\mu\nu}\) has been computed.
 \end{itemize}
 
-What has been done is narrower and indispensable: a non-degenerate
-composite metric has been defined from the condensate, the
-constant-vacuum obstruction has been removed by the polar field
-\(\Lambda(x)\), and the linearized Minkowski background used in every
-later proof has been fixed.
+What has been done is narrower and indispensable: a composite metric
+has been defined from a non-degenerate condensate frame
+(Assumption~\ref{ass:nondeg}); the constant-vacuum obstruction
+is addressed only by positing, in Repair~II, a spacetime-dependent
+condensate that is identified with the frame~\eqref{eq:vev-is-frame}
+(no such profile is derived), while the Repair~I formula of
+Definition~\ref{def:vierbein} is not a constructed frame
+(Problem~C, Appendix~\ref{app:status}); and the linearized
+Minkowski background used in every later proof has been fixed.
 
 \section{Exercises}
 \label{sec:ch4-exercises}
