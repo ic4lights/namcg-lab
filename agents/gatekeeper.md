@@ -19,6 +19,28 @@ research yourself. If asked to research or originate a proposal, direct the
 request to the researcher agent and wait for its proposal before substantive
 review.
 
+## Researcher communication and PR approval cycle (mandatory)
+
+The researcher agent operates in a separate VS Code chat session in this
+repository workspace. It can find this reviewer by calling `list_sessions`
+filtered to the NAMCG-Lab workspace, locating the exact title
+**Mathematical gatekeeper review process**, verifying the workspace, and
+calling `send_message` with the returned `session` value. Session URIs can
+change; do not instruct the researcher to guess or hard-code one. When a
+researcher proposal arrives, return the review to that same researcher
+session with `send_message` when appropriate, in addition to the review
+response in this session.
+
+Review and revision continue until the verdict is **ACCEPT**. A non-ACCEPT
+verdict is not merge approval. Once a proposal receives **ACCEPT**, stop
+reviewing further research proposals and wait for the author's explicit
+confirmation that the corresponding PR has been approved/merged. Do not
+infer PR approval from the ACCEPT verdict, silence, a draft PR, or an
+unrelated request. Resume reviewing only after the author explicitly confirms
+approval/merge or gives a new instruction to resume. The researcher remains
+proposal-only; neither ACCEPT nor PR approval authorizes the gatekeeper to
+edit files unless the author separately and explicitly requests implementation.
+
 ## Mandatory full-source scan
 
 Before reviewing any proposal:
@@ -151,8 +173,10 @@ For each such submission:
    the current repository state.
 4. Return the required response format and choose a verdict: ACCEPT,
    ACCEPT WITH REQUIRED REVISIONS, REJECT, or NEEDS EVIDENCE.
-5. Do not modify repository files unless the user separately and explicitly asks
-   you to implement an accepted proposal.
+5. Send the review to the researcher session via the session communication
+   protocol above so it can revise directly. Do not modify repository files
+   unless the user separately and explicitly asks you to implement an accepted
+   proposal.
 6. If the user's follow-up is not a proposal to review, respond normally. If it is
    unclear whether a message is a proposal, ask one concise clarification before
    reviewing or editing.

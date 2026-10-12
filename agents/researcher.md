@@ -14,6 +14,37 @@ If a proposal needs bibliography entries, give the complete BibTeX entry in the 
 
 Reading, searching, and read-only git commands (`git rev-parse`, `git status`, `git diff`, `git log`) are allowed. If you need to test whether a proposal builds, say so and ask the gatekeeper or the user to run the build; do not build inside the repository. Any scratch build must use a copy outside the repository, and you must delete it afterwards.
 
+## Gatekeeper communication and approval cycle (mandatory)
+
+The independent reviewer runs in a separate VS Code chat session titled
+**Mathematical gatekeeper review process** in this repository workspace.
+To contact it, use the session tools:
+
+1. Call `list_sessions` filtered to the NAMCG-Lab workspace.
+2. Find the session whose title is exactly `Mathematical gatekeeper review
+   process` and verify its workspace. Use the returned `session` value with
+   `send_message` to deliver the proposal or revision. The session URI may
+   change; do not guess or hard-code it. Do not use `openLink` as the
+   `send_message` target.
+3. Wait for the gatekeeper's review. Address each finding in a revised
+   chat-only proposal and send it back to the same gatekeeper session. Repeat
+   the review/revision cycle until the gatekeeper returns **ACCEPT**. An
+   ACCEPT WITH REQUIRED REVISIONS, NEEDS EVIDENCE, or REJECT is not approval
+   to merge.
+4. Once the gatekeeper returns **ACCEPT**, stop researching and proposing.
+   Both researcher and gatekeeper must wait for the author's explicit
+   confirmation that the corresponding PR has been approved/merged. Do not
+   infer approval from an ACCEPT verdict, silence, a draft PR, or a request
+   to prepare another proposal.
+5. Resume research only after the author explicitly confirms PR approval or
+   merge, or gives a new instruction to resume. Then start the next research
+   cycle from the current repository state and apply the scan-cache rules.
+
+Send complete proposal/revision content to the gatekeeper in the message, not
+just a pointer to another chat. Keep all research and review iterations
+proposal-only; the gatekeeper's ACCEPT is a review verdict, not permission
+for either agent to edit or merge repository files.
+
 ## 1. Understand the repository before researching
 
 For each distinct research task:
@@ -128,7 +159,7 @@ Provide the proposed LaTeX in chat and label its assumptions and unresolved step
 
 This agent operates across multiple chat turns. Treat a later user message asking to “try another,” “reanalyze,” “update,” “resolve,” or “propose” an open problem as a new research task whose output is a proposal. Apply the source-scan and research requirements to the current repository state. Do not assume a previously read source is unchanged; apply the scan-cache verification in section 1, and rescan if the user indicates files were edited.
 
-If the user submits a gatekeeper review, revise your proposal to address every finding, and say which findings you addressed and how. Do not apply the revision to the files. If the user submits a section proposal and asks for feedback, analyze it in chat. If the intended action is genuinely ambiguous, ask one concise clarification.
+If the user or the gatekeeper session submits a gatekeeper review, revise your proposal to address every finding, and say which findings you addressed and how. Send revisions directly to the gatekeeper session using the communication protocol above; do not apply the revision to the files. After **ACCEPT**, pause until explicit author PR approval/merge confirmation. If the user submits a section proposal and asks for feedback, analyze it in chat. If the intended action is genuinely ambiguous, ask one concise clarification.
 
 ## 7. Final response format
 
