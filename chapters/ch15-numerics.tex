@@ -10,7 +10,7 @@ After this chapter the reader should be able to:
   \item implement a velocity-Verlet step on the conservative force
         with an explicit drag kick;
   \item accumulate the dissipated work \(W_{\mathrm{diss}}\) and
-        test Proposition~\ref{prop:allowed-drag} numerically;
+        verify the bookkeeping identity numerically;
   \item read a trajectory plot as a laboratory output, not as a
         derivation of general relativity;
   \item enter Chapter~16 with every phenomenological extra in the
@@ -21,8 +21,9 @@ This chapter is a reduced Newtonian laboratory. It does not derive
 Einstein gravity, does not compute \(\Geff\) from
 Theorem~\ref{thm:Geff}, and does not replace quadrupole radiation.
 It integrates Assumption~\ref{ass:drag} and checks that the energy
-bookkeeping of Proposition~\ref{prop:allowed-drag} can be made
-visible on a plot.
+bookkeeping identity of Chapter~\ref{ch:dissipation} can be made
+visible on a plot. That identity is not a check of
+Proposition~\ref{prop:allowed-drag}.
 
 \section{The ordinary-differential system}
 \label{sec:ch15-ode}
@@ -73,20 +74,21 @@ The dissipated work is
    \cdot\dot{\mathbf{r}}\,dt'
   =-\int_0^t\eta\mu\frac{v^{2}}{d^{4}}\,dt'.
 \end{equation}
-Proposition~\ref{prop:allowed-drag} requires that
+The reduced ODE implies that
 \begin{equation}
   \label{eq:balance-num}
   \mathcal{E}(t)
   \equiv
   E_{\mathrm{mech}}(t)-W_{\mathrm{diss}}(t)
 \end{equation}
-be constant up to integrator error. The combination
+is constant up to integrator error. The combination
 \(\mathcal{E}\) is the laboratory stand-in for
 \(E_{\mathrm{mech}}+E_{\mathrm{ent}}\) with
 \(E_{\mathrm{ent}}=-W_{\mathrm{diss}}\) accumulated from the
-initial time. If \(\mathcal{E}\) drifts systematically, the
-implementation is illegal in the sense of
-Section~\ref{sec:ch14-legal}.
+initial time. This is bookkeeping: it does not construct a
+microscopic \(E_{\mathrm{ent}}\). If \(\mathcal{E}\) drifts
+systematically, the implementation is inconsistent with the
+bookkeeping identity of Section~\ref{sec:ch14-legal}.
 
 \section{Integrator}
 \label{sec:ch15-verlet}
@@ -172,7 +174,7 @@ LIGO waveforms.
 Three curves: \(E_{\mathrm{mech}}(t)\), \(W_{\mathrm{diss}}(t)\),
 and \(\mathcal{E}(t)\). The first falls, the second is negative
 and falls, and the third is flat within integrator noise if the
-implementation is legal.
+implementation is correct.
 
 \begin{figure}[ht]
   \centering
@@ -274,13 +276,14 @@ print original.
 
 The shrinking orbit is not a measurement of \(\eta\) in nature.
 The value \(0.006\) was chosen so that decay is visible in
-\(1.2\times 10^{4}\) steps. A realistic mutual-information tail
-would produce a far smaller \(\eta\) at \(d\gg\ell_A+\ell_B\).
+\(1.2\times 10^{4}\) steps. This book does not calculate
+\(\eta\), so no realistic value at \(d\gg\ell_A+\ell_B\) is
+established here.
 
 The flatness of \(\mathcal{E}(t)\) is not a proof of
-Theorem~\ref{thm:conservation}. It is a check that the laboratory
-implements the balance that the theorem requires of any legal
-reduction. If \(\mathcal{E}\) is flat and the force law is not
+Theorem~\ref{thm:conservation}. It is a check of the reduced
+ODE's bookkeeping identity, not of a covariant reduction. If
+\(\mathcal{E}\) is flat and the force law is not
 \eqref{eq:Fdiss}, the check has been passed for the wrong theory.
 
 Comparing the laboratory decay time with a LIGO inspiral time is
@@ -311,9 +314,8 @@ already stated the regime in which quadrupole losses dominate.
     on the numerical trajectory.
   \item \textbf{Units.}
     Restore SI symbols in~\eqref{eq:lab-ode} and assign dimensions
-    to \(\eta\). What combination of \(\ell_A,\ell_B,c\) could
-    supply those dimensions if \(\eta\) is built from
-    \eqref{eq:I-tail}?
+    to \(\eta\). What combination of \(\ell_A,\ell_B,c\) and a
+    response time could supply those dimensions?
 \end{enumerate}
 
 \section{Bridge to Chapter~16}

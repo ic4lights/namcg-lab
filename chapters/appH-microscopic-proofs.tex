@@ -280,18 +280,122 @@ check, a standard area-term calculation, and an external-field
 consistency test, respectively; together they do not derive or
 uniquely select \(\nu_{\sqrt{}}\). Problem~H remains open.
 
-\section{Problem I: drag exponent}
+\section{Problem I: dynamical origin of the drag}
 \label{sec:status-I}
 
-The fall-off \(I(A:B)\propto d^{-4}\) and the linear-response integral that
-produces \(\mathbf{a}_{\mathrm{irrev}}\propto-\mathbf{v}/d^4\) are the
-phenomenological inputs already used in Chapter~14. They are consistent
-with the conservation identity of Theorem~\ref{thm:conservation} once the
-stress is divergenceless, but they are not derived from the modular data.
+Chapter~\ref{ch:dissipation} adopts a vector drag proportional to
+\(-\mathbf v/d^4\) as a working assumption. The microscopic target
+is to derive the low-frequency force-response tensor, including its
+separation and finite-size dependence, from specified dynamics and
+a specified stationary reference state.
+
+\paragraph{Conditional Kubo formulation.}
+Let \(\mathbf r\) denote the relative separation and
+\(H(\mathbf r)\) a microscopic Hamiltonian. At fixed \(\mathbf r\),
+choose a stationary reference state and define the connected
+generalized-force operator
+\[
+\delta\hat F_i
+=
+-\frac{\partial H}{\partial r_i}
+-\left\langle-\frac{\partial H}{\partial r_i}\right\rangle_{\mathbf r}.
+\]
+For a perturbation
+\(\delta H(t)=-\delta r_j(t)\delta\hat F_j\), define
+\[
+\chi^R_{ij}(t;\mathbf r,\ell_A,\ell_B)
+=
+\frac{i}{\hbar}\theta(t)
+\left\langle[\delta\hat F_i(t),\delta\hat F_j(0)]\right\rangle_{\mathbf r},
+\qquad
+\chi^R_{ij}(\omega)
+=
+\int_{-\infty}^{\infty} e^{i\omega t}
+\chi^R_{ij}(t)\,\mathrm dt .
+\]
+For a reciprocal passive reference state, if the low-frequency
+limit exists, define
+\[
+\Gamma_{ij}(\mathbf r;\ell_A,\ell_B)
+=
+\lim_{\omega\downarrow0}
+\frac{\operatorname{Im}\chi^R_{(ij)}
+(\omega;\mathbf r,\ell_A,\ell_B)}{\omega},
+\qquad
+\chi^R_{(ij)}=\frac{\chi^R_{ij}+\chi^R_{ji}}{2}.
+\]
+Passivity requires this dissipative tensor to be positive
+semidefinite. The corresponding low-frequency force contribution is
+\[
+\delta F_i^{\mathrm{diss}}
+=
+-\Gamma_{ij}(\mathbf r;\ell_A,\ell_B)\dot r_j.
+\]
+This is a conditional response prescription, not a calculation of
+the NAMCG force correlator, its reference state, or its passivity.
+
+If the reference state and environment are rotationally invariant,
+the response at nonzero separation can have distinct longitudinal
+and transverse components,
+\[
+\Gamma_{ij}
+=
+\Gamma_L(d;\ell_A,\ell_B)\hat r_i\hat r_j
++\Gamma_T(d;\ell_A,\ell_B)
+ \bigl(\delta_{ij}-\hat r_i\hat r_j\bigr).
+\]
+A radial response calculation determines only \(\Gamma_L\).
+The isotropic scalar drag used in the laboratory requires
+\(\Gamma_L=\Gamma_T\), or an explicit restriction to radial motion.
+
+For example, the causal response family
+\[
+\chi^R_{ij,\tau}(\omega)
+=
+\frac{\chi_{0,ij}}{1-i\omega\tau},
+\qquad \tau>0,
+\]
+with real symmetric positive-semidefinite \(\chi_{0,ij}\), has a
+pole at \(\omega=-i/\tau\) and satisfies
+\[
+\chi^R_{ij,\tau}(0)=\chi_{0,ij},
+\qquad
+\lim_{\omega\downarrow0}
+\frac{\operatorname{Im}\chi^R_{ij,\tau}(\omega)}{\omega}
+=\tau\chi_{0,ij}.
+\]
+Thus a fixed static susceptibility does not determine the
+low-frequency dissipative coefficient. This example is not a
+NAMCG derivation.
+
+Positivity of mutual information establishes \(I(A:B)\geq0\) for
+each state. It does not establish an ordering between adiabatic
+and non-adiabatic mutual informations, or the sign or separation
+dependence of a dissipative response.
+
+\paragraph{Separate static-tail consistency issue.}
+Chapter~\ref{ch:entanglement-equilibrium} and Chapter~\ref{ch:dissipation}
+display a static-tail term proportional to \(\ell_A^2\ell_B^2/d^2\),
+Appendix~\ref{app:rar-bridge} gives a \(\Delta\)-dependent
+expression, and earlier status text has referred to \(d^{-4}\).
+Their powers, dimensions, normalizations, and assumptions remain to
+be reconciled. Resolving this issue would not, by itself, determine
+the retarded force response.
+
+\paragraph{Missing step.}
+Specify the microscopic dynamics, stationary reference state, and
+force operators for the finite cores. Compute
+\(\chi^R_{ij}(\omega;\mathbf r,\ell_A,\ell_B)\), justify the
+passivity and low-frequency assumptions, and derive the
+longitudinal and transverse responses. Determine whether they
+reduce to the isotropic \(d^{-4}\) laboratory law and calculate its
+coefficient before estimating \(\eta\) at tidal or LIGO-band scales.
+Problem~I remains open.
 
 \paragraph{Status.}
-Coefficient, not load-bearing. A derivation from \(I(A:B)\) would be
-desirable; its absence does not kill the framework.
+Coefficient, not load-bearing. A derivation of the drag from
+microscopic dynamics would be desirable; its absence does not kill
+the framework.
 
 \section{Problem J: spherical ECG solutions}
 \label{sec:status-J}

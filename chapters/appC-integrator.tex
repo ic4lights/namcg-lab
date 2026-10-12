@@ -3,8 +3,10 @@
 
 This appendix records the integrator and the energy identity used
 in Chapter~15. It introduces no new physical hypothesis. The force
-law is Assumption~\ref{ass:drag}. The legality criterion is
-Proposition~\ref{prop:allowed-drag}. The source file is
+law is Assumption~\ref{ass:drag}. The bookkeeping reference is
+Proposition~\ref{prop:allowed-drag}, which this laboratory does not
+satisfy in the microscopic sense; the integrator tracks only
+\(W_{\mathrm{diss}}\). The source file is
 \texttt{code/namcg\_inspiral.py}.
 
 \section{Reduced equation}
@@ -160,10 +162,11 @@ chosen so that decay is visible, not so that \(\eta\) matches a
 tidal-disruption estimate from Problem~I of Chapter~17.
 
 Restoring dimensions, \(\eta\) in~\eqref{eq:appC-acc} has dimension
-\(\mathrm{length}^{3}/\mathrm{time}\). A mutual-information tail
-\eqref{eq:I-tail} can supply that combination from
-\(\ell_A^{2}\ell_B^{2}/t_*\) times a kinematic factor. The
-appendix does not evaluate the factor.
+\(\mathrm{length}^{4}/\mathrm{time}\), since
+\(\mathbf{a}=-\eta\mathbf{v}/d^{4}\). The static tail
+\eqref{eq:I-tail} does not supply this coefficient; deriving it
+requires the response calculation of Problem~\ref{sec:status-I},
+which this appendix does not attempt.
 
 \section{How to run the script}
 \label{sec:appC-run}

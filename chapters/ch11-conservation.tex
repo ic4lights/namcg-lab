@@ -10,8 +10,9 @@ After this chapter the reader should be able to:
         \(U_{\mathrm{ent}}\);
   \item prove that diffeomorphism invariance forces
         \(\nabla^\mu T_{\mu\nu}^{\mathrm{total}}=0\) on shell;
-  \item reduce that identity to a Newtonian force balance and see
-        which drags are allowed;
+  \item reduce that identity to a Newtonian force balance and state
+        a necessary bookkeeping condition for a drag to be a
+        covariant reduction;
   \item enter Chapter~12 knowing that vacuum energy is a
         conservation problem as well as a cosmological-constant
         problem.
@@ -164,20 +165,19 @@ is collected in Appendix~\ref{app:field-eq}.
 
 \section{Structure of the entropic stress}
 \label{sec:ch11-Tent}
-\label{sec:ch11-Tent}
 
-A first variation of \(S_{\mathrm{ent}}\) on a static background
-produces a conservative extra potential. A first variation on a
-time-dependent background produces, in addition, a piece odd under
-velocities. The split
+A first variation of the static entanglement potential produces a
+conservative interaction. A time-dependent configuration or
+first variation may introduce additional terms, but does not by
+itself establish a velocity-odd or dissipative stress. The split
 \begin{equation}
   \label{eq:Tent-split}
   T_{\mu\nu}^{\mathrm{ent}}
   =T_{\mu\nu}^{\mathrm{ent,rev}}
    +T_{\mu\nu}^{\mathrm{ent,irrev}}
 \end{equation}
-is the covariant version of ``energy from mutual information'' plus
-``drag from changing mutual information.''
+is phenomenological unless its second term is identified by a
+dynamical response calculation.
 
 On two worldlines \(\gamma_A,\gamma_B\) in a nearly Minkowski
 region one has, at leading post-Newtonian order,
@@ -197,63 +197,113 @@ and the four-force on body \(A\) is
     +\frac{\partial L_{\mathrm{ent}}}{\partial x_{A\mu}},
 \end{equation}
 with \(L_{\mathrm{ent}}=-U_{\mathrm{ent}}\) along the worldlines.
-The term built from \(\partial I/\partial d\) at vanishing velocity
-is reversible and conservative. The term built from
-\(\partial I/\partial\dot d\) or from the time derivative of
-\(\ell_A,\ell_B\) is irreversible in the thermodynamic sense of
-Chapter~6: it tracks a change of entanglement across the motion,
-not a stored potential.
+The static dependence on \(d\) gives the conservative interaction.
+Terms involving \(\dot d\) or changing \(\ell_A,\ell_B\) may occur
+in a more general effective action, but their presence alone does
+not establish irreversibility. Whether they produce dissipation
+must be determined from the dynamics and its retarded response.
 
-The Newtonian reduction of the irreversible piece, for a reduced
-mass \(\mu\) and a separation \(d\), is of the form
+A phenomenological Newtonian drag, for a reduced mass \(\mu\) and a
+separation \(d\), is of the form
 \begin{equation}
   \label{eq:airrev}
   \mathbf{a}_{\mathrm{irrev}}
   =-\eta(d,\ell_A,\ell_B)\,
-    \frac{\mathbf{v}}{d^{n}},
+    \frac{\mathbf{v}}{d^{n}}.
 \end{equation}
-with a positive coefficient \(\eta\) if mutual information decreases
-under adiabatic separation of two thermal cores. The source notes
-use \(n=4\) as a working exponent compatible with a second
-derivative of a \(1/d^2\) mutual-information tail
-\eqref{eq:I-falloff}. Chapter~15 adopts
+Neither the sign of the dissipative coefficient nor the exponent
+\(n\) in~\eqref{eq:airrev} follows from positivity of mutual
+information. The source notes use \(n=4\) as a working exponent,
+not as a consequence of differentiating a static tail. Such
+differentiation does not, by itself, derive a velocity-linear
+dissipative force. Chapter~15 adopts
 \begin{equation}
   \label{eq:airrev-lab}
   \mathbf{F}_{\mathrm{diss}}
   =-\eta\,\frac{\mu}{d^4}\,\mathbf{v}
 \end{equation}
-as a laboratory, not as a derived multipole formula.
+as a laboratory assumption, not as a derived multipole formula;
+deriving it requires the dynamical response calculation specified
+in Problem~\ref{sec:status-I}.
 
-\begin{proposition}[Allowed Newtonian drags]
+\begin{proposition}[Necessary condition for a covariant drag reduction]
   \label{prop:allowed-drag}
-  A two-body equation
+  Suppose a two-body equation
   \begin{equation}
     \label{eq:newton-drag}
     \mu\ddot{\mathbf{r}}
-    =-\nabla U_{\mathrm{N}}-\nabla U_{\mathrm{ent}}^{\mathrm{(rev)}}
+    =-\nabla U_{\mathrm{N}}
+     -\nabla U_{\mathrm{ent}}^{\mathrm{(rev)}}
      +\mathbf{F}_{\mathrm{diss}}
   \end{equation}
-  is the reduction of a covariantly conserved \(\Tent_{\mu\nu}\)
-  only if there exists an energy-balance identity
+  is claimed to follow from a covariantly conserved microscopic
+  stress. In a non-radiative reduced subsystem, a necessary
+  bookkeeping condition, to the post-Newtonian order retained, is
+  that there exist a functional \(E_{\mathrm{ent}}\) of the
+  microscopic state, \emph{specified independently of
+  \(\mathbf{F}_{\mathrm{diss}}\) and of the reduced equation of
+  motion~\eqref{eq:newton-drag} itself} --- in particular, not any
+  quantity derivable purely from the reduced two-body flow, such as
+  (but not limited to) a first integral of~\eqref{eq:newton-drag} or
+  the accumulated dissipation \(-W_{\mathrm{diss}}\) along a
+  trajectory --- such that, writing
+  \[
+    E_{\mathrm{mech}}
+    =\tfrac12\mu v^2+U_{\mathrm{N}}+U_{\mathrm{ent}}^{\mathrm{(rev)}},
+  \]
   \begin{equation}
     \label{eq:energy-balance}
     \frac{\mathrm{d}}{\mathrm{d}t}
     \bigl(E_{\mathrm{mech}}+E_{\mathrm{ent}}\bigr)
-    =\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}
-     +O(c^{-2})
+    =O(c^{-2}),
+    \qquad
+    \frac{\mathrm{d}E_{\mathrm{ent}}}{\mathrm{d}t}
+    =-\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}
+     +O(c^{-2}).
   \end{equation}
-  with \(E_{\mathrm{ent}}\) built from \(I(A:B)\), and only if the
-  equal-and-opposite force on the second body holds up to radiation
-  reaction of Isaacson type. A drag that dissipates mechanical
-  energy into nowhere, with no \(E_{\mathrm{ent}}\) and no
-  gravitational radiation, is not allowed.
+  A microscopic candidate for \(E_{\mathrm{ent}}\) must be defined
+  from degrees of freedom of the microscopic theory (e.g.\ a
+  specified functional of the reduced density matrix or of
+  \(I(A:B)\)), not from \((\mathbf r,\mathbf v)\) and
+  \(\mathbf F_{\mathrm{diss}}\) alone. We additionally require any
+  such candidate to be bounded below, since an unbounded reservoir
+  would let the balance accommodate arbitrary drag; this is a
+  physical requirement imposed here, not a consequence of covariant
+  conservation. The microscopic derivation must also account for the
+  force on the second body and, when radiation is present, the
+  corresponding energy flux. If the proposed \(E_{\mathrm{ent}}\) is
+  claimed to arise from mutual information, that relation must be
+  derived from the microscopic theory.
 \end{proposition}
 
-The laboratory~\eqref{eq:airrev-lab} satisfies
-Proposition~\ref{prop:allowed-drag} if and only if the integrator
-tracks an entanglement energy whose decrease equals
-\(-\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}\). Chapter~15 will do
-that bookkeeping explicitly.
+This proposition is a necessary condition for a claimed covariant
+reduction, and it has content only because \(E_{\mathrm{ent}}\) is
+required to come from outside the reduced two-body flow; that
+general exclusion is stated in the proposition itself. Two instances
+of a construction internal to the flow illustrate why the exclusion
+is needed, not an exhaustive list of what it rules out. First,
+\(E_{\mathrm{ent}}=-W_{\mathrm{diss}}+E_{\mathrm{ent}}(0)\), with
+\(W_{\mathrm{diss}}=\int\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}\,
+\mathrm{d}t\) a path-dependent functional of the trajectory,
+satisfies~\eqref{eq:energy-balance} identically for \emph{any}
+\(\mathbf{F}_{\mathrm{diss}}\). Second, because a smooth
+non-vanishing vector field admits a local first integral
+\(C(\mathbf r,\mathbf v)\) with \(\dot C=0\) along its flow (a
+flow-box argument), \(E_{\mathrm{ent}}:=C-E_{\mathrm{mech}}\), and
+indeed any function of such first integrals, also satisfies the
+balance identically, for any \(\mathbf F_{\mathrm{diss}}\), with no
+reference to mutual information or any microscopic quantity. None of
+these constructions is a microscopic state function in the required
+sense, and none derives \(E_{\mathrm{ent}}\) from \(I(A:B)\) or
+proves covariant stress conservation. For passive drag,
+\(\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}\leq0\), so a microscopic
+\(E_{\mathrm{ent}}\) satisfying the proposition, if one exists, gains
+the energy removed from the mechanical degree of freedom.
+
+The laboratory~\eqref{eq:airrev-lab} is not shown here to satisfy
+Proposition~\ref{prop:allowed-drag}. Chapter~15 tracks
+\(-W_{\mathrm{diss}}\), which is bookkeeping for the reduced ODE
+and is not a microscopic \(E_{\mathrm{ent}}\) in the sense above.
 
 \section{Exchange with matter}
 \label{sec:ch11-exchange}
@@ -265,17 +315,21 @@ Equation~\eqref{eq:cons-thm} permits
   =-\nabla^\mu\Tent_{\mu\nu}
    -\nabla^\mu T_{\mu\nu}^{\mathrm{tensor}}.
 \end{equation}
-Matter may heat or cool because entanglement of the condensate
-cores is changing. In a tidal disruption event the geometric
+Matter may heat or cool if entanglement of the condensate
+cores is changing. In a tidal disruption event the conditional
 reading is: as the disrupted star is sheared, the mutual information
-between debris parcels and the compact core changes, and the
-work done by \(\mathbf{F}_{\mathrm{diss}}\) is accounted in
-\(E_{\mathrm{ent}}\), not lost.
+between debris parcels and the compact core may change. If the
+phenomenological drag were the reduction of a covariantly conserved
+stress, the work done by \(\mathbf{F}_{\mathrm{diss}}\) would be
+accounted in a microscopic \(E_{\mathrm{ent}}\) rather than lost;
+that identification has not been derived and is part of
+Problem~\ref{sec:status-I}.
 
 This is still not a model of microphysical dissipation in a fluid
-with a viscosity measured in the laboratory. It is a channel
-required by conservation once \(U_{\mathrm{ent}}\) is admitted as
-part of the action.
+with a viscosity measured in the laboratory. Whether conservation
+of the total stress requires such a channel, once \(U_{\mathrm{ent}}\)
+is admitted as part of the action, depends on the dynamical response
+calculation of Problem~\ref{sec:status-I}.
 
 \section{Vacuum energy as a conservation constraint}
 \label{sec:ch11-vacuum}
@@ -307,9 +361,10 @@ aesthetic.
 Theorem~\ref{thm:conservation} does not compute \(\eta\), does not
 fix \(n=4\), does not evaluate \(I(A:B)\) for Kerr exteriors, and
 does not replace quadrupole radiation. Gravitational waves remain
-the dissipative channel of the tensor block. Entropic drag is an
-additional channel, allowed only because it sits inside a conserved
-total tensor.
+the dissipative channel of the tensor block. Any entropic drag
+would be an additional channel, admissible only if it sits inside a
+conserved total tensor; that the phenomenological drag does so
+remains Problem~\ref{sec:status-I}.
 
 The theorem also does not justify writing an arbitrary function
 \(\mathbf{a}_{\mathrm{irrev}}(\mathbf{r},\mathbf{v})\) and calling it
@@ -331,13 +386,16 @@ must state that they are studying a reduced laboratory.
     statement?
   \item \textbf{Energy bookkeeping.}
     Take~\eqref{eq:airrev-lab} with constant \(\eta\) and compute
-    \(\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}\). Propose an
-    \(E_{\mathrm{ent}}(d,\dot d)\) whose time derivative matches
-    that power. Is your \(E_{\mathrm{ent}}\) unique?
+    \(\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}\). Show that
+    \(E_{\mathrm{ent}}=-W_{\mathrm{diss}}+E_{\mathrm{ent}}(0)\)
+    satisfies~\eqref{eq:energy-balance} for the reduced ODE. Why
+    does this construction not satisfy
+    Proposition~\ref{prop:allowed-drag}?
   \item \textbf{Illegal drag.}
     Consider \(\mathbf{F}=-\gamma\mathbf{v}\) with constant
-    \(\gamma\), independent of \(d\). Why does this fail
-    Proposition~\ref{prop:allowed-drag} for two bodies that can
+    \(\gamma\), independent of \(d\). If \(E_{\mathrm{ent}}\) is
+    required to be a bounded functional of \(I(A:B)\), why does this
+    fail Proposition~\ref{prop:allowed-drag} for two bodies that can
     be separated to infinity at finite cost in \(I(A:B)\)?
   \item \textbf{Variable vacuum energy.}
     Let \(\rho_\Lambda=\rho_\Lambda(\phi)\) for a scalar

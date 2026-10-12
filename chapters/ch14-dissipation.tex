@@ -4,25 +4,29 @@
 \paragraph{Learning outcomes.}
 After this chapter the reader should be able to:
 \begin{enumerate}
-  \item split \(T_{\mu\nu}^{\mathrm{ent}}\) into reversible and
-        irreversible pieces and state the thermodynamic meaning
-        of the split;
-  \item reduce the irreversible piece to a two-body drag
-        \(\mathbf{a}_{\mathrm{irrev}}\) consistent with
-        Proposition~\ref{prop:allowed-drag};
-  \item recover the working law
+  \item distinguish the conservative force from the static
+        \(U_{\mathrm{ent}}\) from a proposed, phenomenological
+        dissipative component;
+  \item state the passivity condition under which a retarded
+        low-frequency response gives nonnegative dissipation;
+  \item implement and analyze the working law
         \(\mathbf{F}_{\mathrm{diss}}=-\eta\mu\mathbf{v}/d^4\)
-        as a laboratory, not as a multipole theorem;
-  \item compare that channel with quadrupole gravitational-wave
-        losses and say which process dominates where;
-  \item enter Chapter~15 with an ordinary-differential system
-        whose energy bookkeeping is already fixed.
+        as a reduced laboratory model, without treating it as a
+        microscopic derivation;
+  \item compare that assumed channel with quadrupole
+        gravitational-wave losses under stated model conditions;
+  \item distinguish the ODE's energy-bookkeeping identity from a
+        derivation of mutual-information energy or covariant stress
+        conservation.
 \end{enumerate}
 
-Chapter~13 used only the static extra density. Time-dependent
-cores change their mutual information, and the first law of
-Chapter~6 then requires an additional, velocity-odd stress.
-Conservation still applies to the sum.
+Chapter~13 used only the static extra density. A time-dependent
+configuration can change \(I(A:B)\), but that change alone does not
+establish irreversible work or a velocity-odd stress. Neither the
+first law nor the static mutual-information potential determines a
+retarded response by itself. The drag discussed in this chapter is
+a phenomenological component unless it is derived from microscopic
+dynamics, as required by Problem~\ref{sec:status-I}.
 
 \section{Reversible versus irreversible}
 \label{sec:ch14-split}
@@ -35,38 +39,36 @@ under \(\mathbf{v}\to-\mathbf{v}\).
 
 If the regions change in time---because two cores inspiral,
 because a star is sheared across a tidal radius, because a
-condensate defect is stretched---then
+condensate defect is stretched---then in general
 \begin{equation}
   \label{eq:I-dot}
   \frac{\mathrm{d}}{\mathrm{d}t}I(A:B)
-  \neq 0
+  \neq 0.
 \end{equation}
-even after the conservative force has been subtracted. The work
-associated with that change is the irreversible channel.
+A changing \(I(A:B)\) records a change in the correlations of the
+state. It does not, by itself, establish irreversible work or a
+force odd under time reversal.
 
-\begin{definition}[Irreversible entropic stress]
+\begin{definition}[Phenomenological entropic-stress split]
   \label{def:Tirrev}
-  Decompose
+  For bookkeeping, write
   \begin{equation}
     \label{eq:split-rev-irrev}
     T_{\mu\nu}^{\mathrm{ent}}
     =T_{\mu\nu}^{\mathrm{ent,rev}}
-     +T_{\mu\nu}^{\mathrm{ent,irrev}},
+     +T_{\mu\nu}^{\mathrm{ent,irrev}}.
   \end{equation}
-  where the first summand is the metric variation of
-  \(U_{\mathrm{ent}}\) at frozen velocities and the second is
-  whatever remainder is required for
-  Theorem~\ref{thm:conservation} to hold on a time-dependent
-  configuration. The remainder is odd under
-  local time reversal of the relative motion when the
-  entanglement production is itself odd.
+  The first term denotes the contribution assigned to the static
+  potential \(U_{\mathrm{ent}}\); the second is a proposed
+  remainder in the effective description. This split alone does
+  not establish that the remainder is dissipative or odd under
+  time reversal. Those properties require a dynamical response
+  calculation and an appropriate passivity condition.
 \end{definition}
 
-The split is thermodynamic rather than geometric:
-\(T_{\mu\nu}^{\mathrm{ent,rev}}\) stores recoverable mutual
-information; \(T_{\mu\nu}^{\mathrm{ent,irrev}}\) accounts for
-entanglement that is produced or erased along the motion and is
-not recovered by reversing the worldlines.
+Until that derivation is supplied, the split is phenomenological.
+Change or production of mutual information along a trajectory is
+not, on its own, evidence of irreversibility.
 
 \section{Worldline reduction}
 \label{sec:ch14-worldline}
@@ -93,33 +95,60 @@ At leading post-Newtonian order, with \(\ell_A,\ell_B\) frozen,
    -\eta^{\mu}(d,\dot d)\,\mathbf{v}
    +O(c^{-2}).
 \end{equation}
-The first term is Chapter~13. The second term is the drag. The
-coefficient \(\eta^{\mu}\) is not free: Proposition~\ref{prop:allowed-drag}
-requires an entanglement energy \(E_{\mathrm{ent}}(d,\dot d)\) such
-that
+The first term is Chapter~13. The second term is a phenomenological
+drag; it is not obtained by varying the static \(U_{\mathrm{ent}}\),
+and the coefficient \(\eta^{\mu}\) is not derived here.
+A covariant reduction of such a term would have to satisfy
+Proposition~\ref{prop:allowed-drag}, that is, there would have to be
+a microscopic entanglement energy \(E_{\mathrm{ent}}\) such that
 \begin{equation}
   \label{eq:balance-again}
   \frac{\mathrm{d}}{\mathrm{d}t}
   \bigl(E_{\mathrm{mech}}+E_{\mathrm{ent}}\bigr)
-  =\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}+O(c^{-2}),
+  =O(c^{-2}),
 \end{equation}
-and the force on \(B\) is equal and opposite up to radiation
-reaction of the tensor block.
+and the force on \(B\) would have to be equal and opposite up to
+radiation reaction of the tensor block.
 
-A linear-response expansion of \(U_{\mathrm{ent}}\) about adiabatic
-motion gives
+The dissipative response is defined by a conditional Kubo
+prescription. At fixed separation \(\mathbf r\), choose a stationary
+reference state of the microscopic Hamiltonian \(H(\mathbf r)\) and
+define the connected force operator
+\(\delta\hat F_i=-\partial H/\partial r_i
+-\langle-\partial H/\partial r_i\rangle_{\mathbf r}\). For a
+perturbation \(\delta H(t)=-\delta r_j(t)\,\delta\hat F_j\), the
+retarded response kernel is
 \begin{equation}
   \label{eq:linear-response}
-  \mathbf{F}_{\mathrm{diss}}
-  =-\Gamma(d)\,\mathbf{v},
+  \chi^R_{ij}(t)
+  =\frac{i}{\hbar}\,\theta(t)\,
+   \bigl\langle[\delta\hat F_i(t),\delta\hat F_j(0)]\bigr\rangle_{\mathbf r},
   \qquad
-  \Gamma(d)>0
+  \chi^R_{ij}(\omega)=\int_{-\infty}^{\infty}e^{i\omega t}
+  \chi^R_{ij}(t)\,\mathrm{d}t.
 \end{equation}
-whenever increasing \(d\) at finite speed decreases \(I(A:B)\)
-relative to the adiabatic value. The sign is fixed by the
-positivity of relative entropy: non-adiabatic separation produces
-less mutual information than the static configuration at the same
-\(d\), and the missing information is paid for by mechanical work.
+If the reference state is reciprocal and passive and the limit
+exists, the low-frequency dissipative tensor is
+\begin{equation}
+  \label{eq:Gamma-kubo}
+  \Gamma_{ij}
+  =\lim_{\omega\downarrow0}
+   \frac{\operatorname{Im}\chi^R_{(ij)}(\omega)}{\omega},
+  \qquad
+  \mathbf{F}_{\mathrm{diss},i}=-\Gamma_{ij}v_j,
+\end{equation}
+where \(\chi^R_{(ij)}\) is the symmetric part and \(\Gamma_{ij}\) is
+positive semidefinite by passivity. This is a conditional
+prescription: the NAMCG force correlator, its stationary reference
+state, and its passivity have not been calculated.
+The causal family \(\chi^R(\omega)=\chi_0/(1-i\omega\tau)\),
+\(\tau>0\), has the same static value \(\chi_0\) for every
+\(\tau\) but low-frequency slope \(\tau\chi_0\), so a static
+susceptibility does not determine the dissipative coefficient.
+Positivity of \(I(A:B)\) for each state likewise establishes neither
+an ordering between adiabatic and non-adiabatic mutual informations
+nor the sign of \(\Gamma\); Problem~\ref{sec:status-I} states the
+calculation required.
 
 \section{The working exponent}
 \label{sec:ch14-exponent}
@@ -129,16 +158,22 @@ Section~\ref{sec:ch6-MI} gave the conformal large-separation tail
   \label{eq:I-tail}
   I(A:B)\;\sim\;c\,\frac{\ell_A^2\ell_B^2}{d^{2}}.
 \end{equation}
-Two derivatives with respect to time, or one derivative converting
-a potential \(\sim 1/d^{2}\) into a velocity-dependent force after
-linear response, produce a coefficient
+The static mutual-information tail does not determine the
+low-frequency dissipative response. The manuscript's static-tail
+expressions, dimensions, and assumptions remain to be reconciled;
+see Problem~\ref{sec:status-I}. The scalar relation
 \begin{equation}
   \label{eq:Gamma}
   \Gamma(d)
   =\eta\,\frac{\mu}{d^{4}}
 \end{equation}
-as a working choice: \(\eta\) absorbs \(c\), \(\ell_A,\ell_B\), and
-the linear-response time. The source notes adopt this exponent.
+is therefore a working isotropic laboratory choice, not a
+deduction from the static tail or a calculation of the microscopic
+response tensor. The coefficient \(\eta\) has not been derived
+from a microscopic force-response function. The isotropic scalar
+form also requires the longitudinal and transverse components of
+\(\Gamma_{ij}\) to agree, or an explicit restriction to radial
+motion.
 
 \begin{assumption}[Working dissipative law]
   \label{ass:drag}
@@ -154,31 +189,31 @@ the linear-response time. The source notes adopt this exponent.
 \end{assumption}
 
 Assumption~\ref{ass:drag} is not a multipole theorem. A different
-tail of \(I(A:B)\) produces a different power. Chapter~16 treats
-the exponent as falsifiable. Chapter~15 integrates~\eqref{eq:Fdiss}
-and no other drag.
+static tail of \(I(A:B)\) does not, by itself, imply a different
+drag exponent. The response exponent remains undetermined until the
+dynamical calculation in Problem~\ref{sec:status-I} is supplied.
+Chapter~16 treats the working exponent as falsifiable;
+Chapter~15 integrates the specified laboratory law, not a derived
+microscopic response, and no other drag.
 
-An explicit energy that satisfies the balance for
-constant \(\eta\) is
-\begin{equation}
-  \label{eq:Eent-lab}
-  E_{\mathrm{ent}}
-  =-\frac{\eta\mu}{3d^{3}}
-   \log\Bigl(1+\frac{|\mathbf{v}|^2}{v_*^2}\Bigr)
-   +E_{\mathrm{ent}}^{\mathrm{(rev)}}(d),
-\end{equation}
-or any equivalent bookkeeping that makes
-\(\dot E_{\mathrm{ent}}-\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}\)
-a total derivative at the post-Newtonian order kept. The integrator
-in Chapter~15 may instead accumulate
+For the laboratory bookkeeping, define the accumulated work
 \begin{equation}
   \label{eq:Wdiss}
   W_{\mathrm{diss}}(t)
-  =\int_0^t\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}\,dt'
+  =\int_0^t\mathbf{F}_{\mathrm{diss}}\cdot\mathbf{v}\,\mathrm{d}t'.
 \end{equation}
-and display \(E_{\mathrm{mech}}(t)-W_{\mathrm{diss}}(t)\) as the
-conserved mechanical-plus-entropic combination. Either
-presentation is legal; omitting both is not.
+Then set
+\begin{equation}
+  \label{eq:Eent-lab}
+  E_{\mathrm{ent}}(t)=-W_{\mathrm{diss}}(t)+E_{\mathrm{ent}}(0).
+\end{equation}
+This definition makes \(E_{\mathrm{mech}}+E_{\mathrm{ent}}\)
+constant at the retained order when
+\(\dot E_{\mathrm{mech}}=\mathbf{F}_{\mathrm{diss}}\cdot\mathbf v\).
+It is bookkeeping for the reduced laboratory, not a derivation of
+an entanglement energy from \(I(A:B)\). The integrator in
+Chapter~15 displays \(E_{\mathrm{mech}}(t)-W_{\mathrm{diss}}(t)\)
+as this conserved combination.
 
 \section{Comparison with quadrupole losses}
 \label{sec:ch14-quad}
@@ -212,8 +247,10 @@ For a circular Newtonian orbit, \(v^2=\Geff M/d\) and
 with a positive power of \(d\) that makes the ratio \emph{grow}
 toward wide separations if \(\eta\) is held fixed. That conclusion
 is an artefact of treating \(\eta\) as constant down to laboratory
-distances. In a realistic condensate \(\eta\) itself falls with
-the mutual-information tail and is negligible in the Solar System.
+distances. If \(\eta\) is instead suppressed at wide separations, the
+growth need not occur; this book does not calculate that dependence,
+and a sufficiently small \(\eta\) is required for consistency with
+Solar-System tests.
 The intended domain of~\eqref{eq:Fdiss} is:
 
 \begin{itemize}
@@ -251,16 +288,18 @@ dynamical time
   t_{\mathrm{dyn}}
   \sim\sqrt{r_{\mathrm{t}}^3/\Geff M}.
 \end{equation}
-The irreversible channel is then unsuppressed: the process is
-not adiabatic with respect to the modular Hamiltonian of the
-combined system.
-
-The book does not simulate debris streams. It records the
-structural prediction that an extra, conserved drag of the type
-\eqref{eq:Fdiss} can act near \(r_{\mathrm{t}}\) in addition to
-ordinary hydrodynamics and tidal gravity. Observable consequences
-(changes to fallback rates, extra heating) belong to Chapter~16
+The non-adiabatic character of this process may motivate testing
+the phenomenological drag model near \(r_{\mathrm t}\), but it
+does not establish a dissipative response or its magnitude. The
+existence and size of any additional drag require the microscopic
+dynamics, reference state, and response calculation specified in
+Problem~\ref{sec:status-I}. Observable consequences such as
+changes to fallback rates or extra heating are therefore
+conditional phenomenological possibilities, not predictions
+derived in this chapter. They belong to Chapter~16
 and require hydrodynamics that this text does not contain.
+
+The book does not simulate debris streams.
 
 \section{Illegal and legal integrators}
 \label{sec:ch14-legal}
@@ -284,8 +323,14 @@ An integrator that evolves
    -\nabla U_{\mathrm{ent}}^{\mathrm{rev}}(d)
    -\eta\frac{\mu}{d^4}\mathbf{v}
 \end{equation}
-and accumulates~\eqref{eq:Wdiss} is a legal laboratory of
-Assumption~\ref{ass:drag}. Chapter~15 implements~\eqref{eq:legal}
+and accumulates~\eqref{eq:Wdiss} is the reduced laboratory
+implementation of Assumption~\ref{ass:drag}. Accumulating
+\(W_{\mathrm{diss}}\) makes
+\(E_{\mathrm{mech}}-W_{\mathrm{diss}}\) constant for the modeled
+ODE, up to numerical error. This bookkeeping identity does not
+establish a microscopic mutual-information energy or prove that
+the ODE is the reduction of a covariantly conserved NAMCG stress.
+Chapter~15 implements~\eqref{eq:legal}
 with a symplectic Verlet step on the conservative forces and an
 explicit treatment of the drag. The gravitational constant used
 there is a toy value, not \(\Geff\) from Theorem~\ref{thm:Geff}.
@@ -294,15 +339,21 @@ there is a toy value, not \(\Geff\) from Theorem~\ref{thm:Geff}.
 \label{sec:ch14-exercises}
 
 \begin{enumerate}
-  \item \textbf{Sign of \(\Gamma\).}
-    From positivity of relative entropy, argue that
-    non-adiabatic separation yields
-    \(I(A:B)\le I_{\mathrm{adiabatic}}(d)\). Deduce
-    \(\Gamma(d)\ge 0\) in~\eqref{eq:linear-response}.
-  \item \textbf{Power counting.}
-    If \(I\sim d^{-p}\), what exponent \(n\) appears in
-    \(\Gamma(d)\propto d^{-n}\) after one linear-response time
-    derivative? For which \(p\) does one recover \(n=4\)?
+  \item \textbf{Passivity and the sign of drag.}
+    For the reciprocal low-frequency response tensor
+    \(\Gamma_{ij}(\mathbf r;\ell_A,\ell_B)\) defined in
+    Problem~\ref{sec:status-I}, state the passivity condition.
+    Show that positive semidefiniteness implies
+    \(F_i^{\mathrm{diss}}v_i\leq0\). Explain why
+    \(I(A:B)\geq0\) alone implies neither an ordering between
+    adiabatic and non-adiabatic states nor a positive drag
+    coefficient. Which of the assumptions needed for this Kubo
+    conclusion have actually been established for NAMCG?
+  \item \textbf{Static versus dynamical scaling.}
+    Explain why a power law for static \(I(A:B)\) does not determine
+    the separation dependence of the low-frequency drag tensor.
+    Identify the dynamical response data needed to calculate that
+    dependence.
   \item \textbf{Energy identity.}
     For~\eqref{eq:Fdiss} with circular motion at instantaneous
     radius \(d(t)\), compute \(P_{\mathrm{ent}}\). Compare with
