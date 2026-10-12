@@ -159,11 +159,11 @@ With \(N=\mathrm{Tr}(\mathbb{I})\) locked directions,
   =\frac{\lambda}{4}N\bigl[(v+\sigma)^{2}-v^{2}\bigr]^{2}
   =N\lambda v^{2}\,\sigma^{2}+O(\sigma^{3}).
 \end{equation}
-The kinetic term in~\eqref{eq:Smicro} contributes
-\(N\,(\partial\sigma)^{2}\).
+The kinetic term in~\eqref{eq:Smicro}, in the signature \((-,+,+,+)\),
+contributes \(-N\,(\partial\sigma)^{2}\).
 Canonical normalisation \(\sigma_{c}=\sigma\sqrt{2N}\)
 puts the quadratic action in the form
-\(\tfrac12(\partial\sigma_{c})^{2}-\tfrac12 m_{\sigma}^{2}\sigma_{c}^{2}\),
+\(-\tfrac12(\partial\sigma_{c})^{2}-\tfrac12 m_{\sigma}^{2}\sigma_{c}^{2}\),
 with
 \begin{equation}
   \label{eq:msigma}
@@ -216,18 +216,48 @@ curvature only to \(\sigma\) and none to the
 For the metric~\eqref{eq:repairII-trace}, \(g=\Omega^{2}\eta\) with
 \(\Omega=1+\sigma/v\), the induced Einstein--Hilbert density is
 \(\sqrt{-g}\,R=-6\,\Omega\,\Box\Omega\), which equals
-\(6(\partial\Omega)^{2}\) up to a total derivative. It therefore adds a
-term proportional to \((\partial\sigma)^{2}/(G_{\mathrm{eff}}v^{2})\) to the
-kinetic coefficient of \(\sigma\), with the sign set by the
-conformal-factor convention, in addition to the microscopic kinetic
-term of Lemma~\ref{lem:msigma}. The physical mass squared of the
-pure-trace scalar, if a pole survives, is the potential curvature
-divided by the total kinetic coefficient, in the normalisation where
-the quadratic action is
-\(\tfrac12 Z(\partial\sigma)^2-\tfrac12 V''\sigma^2\), so that
-\(m^2=V''/Z\). That coefficient \(Z\), the non-minimal
-curvature coupling, the mixing with \(T_{\mu\nu}\), and the matter
-coupling are not derived here.
+\(6(\partial\Omega)^{2}\) up to a total derivative. With the curvature
+convention of Chapter~2, Section~\ref{sec:ch2-manifolds} (identified in
+Chapter~9 as the one for which \(R>0\) on spheres), this adds to the
+Lagrangian \(+\,3(\partial\sigma)^2/(8\pi G_{\mathrm{eff}}v^{2})\)
+if the Einstein--Hilbert term has the form of~\eqref{eq:W-EH} with
+\(G_{\mathrm{eff}}>0\); that sign of \(G_{\mathrm{eff}}\) is a declared
+condition (Chapter~8, Problem~F), not a derived result. In the signature
+\((-,+,+,+)\) a healthy scalar enters as
+\(-\tfrac12 Z(\partial\sigma)^2\) with \(Z>0\), so this term has the
+conformal-factor (ghost) sign relative to the microscopic term
+\(-N(\partial\sigma)^2\) of Lemma~\ref{lem:msigma}. Conditional on the
+pure-trace truncation, on adding the induced term to the microscopic one,
+and on \(G_{\mathrm{eff}}>0\) in the Lorentzian continuation, the quadratic
+action
+\(-\tfrac12 Z(\partial\sigma)^2-\tfrac12 V''\sigma^2\) has
+\begin{equation}
+  \label{eq:Z-sigma}
+  Z=2N-\frac{3}{4\pi G_{\mathrm{eff}}v^{2}}
+   =2N\Bigl(1-\frac{3M_{\mathrm P}^{2}}{Nv^{2}}\Bigr),
+  \qquad
+  V''=2N\lambda v^{2},
+  \qquad
+  M_{\mathrm P}^{2}=\frac1{8\pi G_{\mathrm{eff}}}.
+\end{equation}
+If \(Nv^{2}>3M_{\mathrm P}^{2}\) then \(Z>0\) and a pole of squared mass
+\(m^{2}=V''/Z=\lambda v^{2}\bigl(1-3M_{\mathrm P}^{2}/(Nv^{2})\bigr)^{-1}\)
+exists in this truncation; it tends to~\eqref{eq:msigma} only when
+\(3M_{\mathrm P}^{2}/(Nv^{2})\to0\), i.e.\
+\(G_{\mathrm{eff}}Nv^{2}\to\infty\). For \(Z<0\) (i.e.\
+\(Nv^{2}<3M_{\mathrm P}^{2}\)) the truncated mode has a wrong-sign kinetic
+term and, with \(\lambda>0\), also \(m^{2}=V''/Z<0\): in this truncation it
+is both ghost-like and tachyonic, so the kinetic sign is not the only
+instability. The pure-trace truncation therefore cannot support
+Assumption~\ref{ass:gap-psi} there; this signals an instability of the
+chosen background and truncation and is not a statement about the full
+scalar spectrum. At \(Nv^{2}=3M_{\mathrm P}^{2}\) one has \(Z=0\): the
+quadratic kinetic term of this truncation degenerates, and the formula
+establishes no canonically normalized finite-mass pole there. Since
+\(v/M_{\mathrm P}\) requires \(G_{\mathrm{eff}}\), this ties Problem~C to
+Problem~F. The mixing with \(T_{\mu\nu}\), the non-minimal curvature
+coupling, and the matter coupling are not derived here, and no Cassini
+conclusion follows.
 
 \paragraph{Cassini, revised.}
 The potential~\eqref{eq:V} gives the radial singlet the curvature

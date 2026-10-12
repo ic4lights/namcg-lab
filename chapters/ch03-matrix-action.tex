@@ -186,7 +186,7 @@ heat-kernel analysis is
   S_{\mathrm{micro}}[\Phi,A]
   =\int\mathrm{d}^4x\,\sqrt{-g^{(0)}}\,
    \mathrm{Tr}\Bigl(
-     g^{(0)\mu\nu}(D_\mu\Phi)^\dagger D_\nu\Phi
+    -\,g^{(0)\mu\nu}(D_\mu\Phi)^\dagger D_\nu\Phi
      -V(\Phi^\dagger\Phi)
    \Bigr).
 \end{equation}
@@ -194,6 +194,11 @@ The trace is over internal indices. Tangent indices on \(\Phi\) are
 contracted through the potential and through the identification of
 \(A\) with a frame index after condensation; they are not traced
 in the same sum.
+In the signature \((-,+,+,+)\) of Chapter~2 the kinetic term is written with
+the minus sign so that time derivatives have positive energy. This is a
+correction to the Presentation-B action as stated; that the matrix action
+of Presentation~A reproduces this sign is part of the unproved dictionary
+(Assumption~\ref{ass:dictionary}) and remains to be derived.
 
 The potential that triggers condensation is the matrix Mexican hat
 \begin{equation}
@@ -268,7 +273,7 @@ Varying~\eqref{eq:Smicro} with respect to \(\Phi^\dagger\) gives
 \begin{equation}
   \label{eq:Phi-eom}
   D_\mu\bigl(\sqrt{-g^{(0)}}\,g^{(0)\mu\nu}D_\nu\Phi\bigr)
-  +\sqrt{-g^{(0)}}\,
+  -\sqrt{-g^{(0)}}\,
    \frac{\lambda}{2}\Phi
    \bigl(\Phi^\dagger\Phi-v^2\mathbb{I}\bigr)
   =0.
@@ -315,9 +320,10 @@ following.
     \qquad\text{plus higher-derivative corrections in \(\Theta\).}
   \end{equation}
   Under this dictionary the quadratic commutator term
-  in~\eqref{eq:Smatrix} generates the kinetic term
-  in~\eqref{eq:Smicro}, and \(\LUV\) remains the cutoff of the
-  derivative expansion.
+  in~\eqref{eq:Smatrix} is required to generate the kinetic term
+  in~\eqref{eq:Smicro}, including its sign in the signature
+  \((-,+,+,+)\); this is a matching condition, not an established result.
+  \(\LUV\) remains the cutoff of the derivative expansion.
 \end{assumption}
 
 Assumption~\ref{ass:dictionary} is the most important unproved bridge
