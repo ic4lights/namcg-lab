@@ -262,16 +262,20 @@ A complex scalar with Mexican-hat potential,
 \begin{equation}
   \label{eq:abelian-higgs}
   S[\phi]
-  =\int\mathrm{d}^4x
+  =\int\mathrm{d}^4x\,\sqrt{-g}
    \Bigl(
-     |D_\mu\phi|^2
+     -\,g^{\mu\nu}(D_\mu\phi)^{*}D_\nu\phi
      -\frac{\lambda}{4}\bigl(|\phi|^2-v^2\bigr)^2
    \Bigr),
 \end{equation}
 condenses at \(|\langle\phi\rangle|=v\). The phase is eaten by \(A_\mu\)
 (Abelian Higgs / Stueckelberg mechanism), and the physical spectrum
 contains a massive vector and a massive radial scalar. There is no
-graviton.
+graviton. Here \(g_{\mu\nu}\) is a fixed Lorentzian background of
+signature \((-,+,+,+)\), so time derivatives enter with positive
+energy. The earlier form \(+|D_\mu\phi|^2-V\) belongs to the
+\((+,-,-,-)\) convention and is not used in this book. The Euclidean
+action has \(+g^{\mu\nu}(D_\mu\phi)^*D_\nu\phi+V\).
 
 This warmup is here for two reasons. First, the NAMCG potential in
 Chapter~3 is the non-Abelian matrix analogue of~\eqref{eq:abelian-higgs}.

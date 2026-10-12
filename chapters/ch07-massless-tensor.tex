@@ -52,27 +52,38 @@ step can be rejected independently.
 
 The unique two-derivative quadratic action for a massive symmetric
 tensor that is ghost-free about Minkowski spacetime is the
-Fierz--Pauli action. After the algebraic trace has been projected
-out, so that \(T^\mu{}_\mu=0\) identically, it reduces to
+Fierz--Pauli action. For a general symmetric \(h_{\mu\nu}\), in the
+signature \((-,+,+,+)\), the full action contains the following
+additional trace-dependent terms, where \(h=h^\mu{}_\mu\):
+\[
+  -\partial_\mu h^{\mu\nu}\partial_\nu h
+  +\tfrac12\partial_\rho h\,\partial^\rho h
+  +\tfrac12m_T^2h^2.
+\]
+On restriction to a traceless field \(T_{\mu\nu}\), it reduces to
 \begin{equation}
   \label{eq:FP}
   \begin{aligned}
     S_{\mathrm{FP}}[T]
     =\int\mathrm{d}^4x
      \Bigl(
-       &\tfrac12\partial_\rho T_{\mu\nu}\partial^\rho T^{\mu\nu}
-        -\partial^\rho T_{\rho\mu}\partial_\sigma T^{\sigma\mu}\\
+       &-\tfrac12\partial_\rho T_{\mu\nu}\partial^\rho T^{\mu\nu}
+        +\partial^\rho T_{\rho\mu}\partial_\sigma T^{\sigma\mu}\\
        &-\tfrac12 m_T^2 T_{\mu\nu}T^{\mu\nu}
      \Bigr).
   \end{aligned}
 \end{equation}
+In this signature the transverse-traceless spatial modes have kinetic
+term \(+\tfrac12\dot T_{ij}^{\,2}\).
 The derivative structure is required. A generic mass term
 \(m^2(T_{\mu\nu}T^{\mu\nu}-\alpha T^2)\) with \(\alpha\neq 1\)
 (before the trace projection) propagates a ghost. With the trace
 already zero the remaining danger is a wrong-sign kinetic term,
 which~\eqref{eq:FP} does not have.
 
-The Euler--Lagrange equation of~\eqref{eq:FP} is
+The unrestricted Euler--Lagrange equation of the full
+Fierz--Pauli action, evaluated at \(h_{\mu\nu}=T_{\mu\nu}\) with
+vanishing trace, is
 \begin{equation}
   \label{eq:FP-eom}
   \mathcal{E}_{\mu\nu}[T]-m_T^2 T_{\mu\nu}=0,
@@ -95,6 +106,23 @@ Minkowski spacetime. (The linearized Einstein tensor on a general
 \(h_{\mu\nu}\) contains additional trace pieces; they are absent
 here because \(T^\mu{}_\mu=0\).)
 
+For \(m_T\neq0\), the divergence of the full equation gives
+\(\partial^\mu h_{\mu\nu}=\partial_\nu h\). Combining this with its
+trace gives \(h=0\); only then does the trace of the equation imply
+\(\partial^\rho\partial^\sigma T_{\rho\sigma}=0\), yielding five
+polarizations for the full Fierz--Pauli theory. Varying
+\eqref{eq:FP} with \(T^\mu{}_\mu=0\) imposed in the action instead
+gives the traceless projection, with
+\(\tfrac12\eta_{\mu\nu}\partial^\rho\partial^\sigma
+T_{\rho\sigma}\). Its divergences give
+\((\Box+2m_T^2)\partial^\rho\partial^\sigma T_{\rho\sigma}=0\),
+not the constraint. Thus the displayed trace-constrained action alone
+does not establish the Fierz--Pauli constraints or five-polarization
+count, and the NAMCG tensor block is not shown to have the full
+Fierz--Pauli trace sector and constraint structure. Whether and how
+the \(\psi\) sector supplies them is unresolved and is a dependency of
+Problem~C.
+
 When \(m_T=0\), \eqref{eq:FP} is invariant under
 \begin{equation}
   \label{eq:FP-gauge}
@@ -103,17 +131,20 @@ When \(m_T=0\), \eqref{eq:FP} is invariant under
    -\tfrac12\eta_{\mu\nu}\partial\cdot\xi
 \end{equation}
 with \(\partial\cdot\xi\) arranged so that the trace remains zero.
-When \(m_T\neq 0\), that invariance is absent and the on-shell count
-is five degrees of freedom.
+For the full Fierz--Pauli theory, when \(m_T\neq0\) that invariance is
+absent and the on-shell count is five degrees of freedom; this count
+is not established here for the NAMCG tensor block.
 
 \section{Modular stress of the tensor block}
 \label{sec:ch7-stress}
 
 The operator \(T_{\mu\nu}^{\mathrm{op}}\) in
 Proposition~\ref{prop:ward} is defined by the same rule
-as~\eqref{eq:T-def}, applied to \(S_{\mathrm{FP}}\) treated as a
-matter action on the background metric that defines the diamond.
-To first order about Minkowski spacetime,
+as~\eqref{eq:T-def}, applied to the full Fierz--Pauli action treated
+as a matter action on the background metric that defines the diamond.
+The following relation holds for that full theory; it is not
+established here for the NAMCG tensor block. To first order about
+Minkowski spacetime, evaluated on the full-theory constraint surface,
 \begin{equation}
   \label{eq:Top-FP}
   \delta\langle T_{\mu\nu}^{\mathrm{op}}\rangle
