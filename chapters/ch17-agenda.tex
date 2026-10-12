@@ -4,8 +4,8 @@
 \paragraph{Learning outcomes.}
 After this chapter the reader should be able to:
 \begin{enumerate}
-  \item distinguish a missing load-bearing proof from a missing
-        numerical coefficient;
+  \item distinguish a load-bearing assumption from a critical-path
+        problem and an optional refinement;
   \item pick a first calculation that actually moves the framework,
         rather than a calculation that only decorates Chapter~15;
   \item state what would have to be true before NAMCG may be
@@ -17,7 +17,7 @@ After this chapter the reader should be able to:
 Chapter~16 said what would kill the theory. This chapter says what
 would complete it. The two lists are not the same.
 
-\section{What is closed inside the book}
+\section{What is closed conditionally inside the book}
 \label{sec:ch17-closed}
 
 The following are closed \emph{as arguments from named hypotheses
@@ -50,30 +50,67 @@ A reader who has worked every exercise through Chapter~16 can
 reproduce that list. Reproducing it is not the same as removing
 the hypotheses.
 
-\section{Load-bearing openings}
+\section{Status vocabulary and completion labels}
+\label{sec:ch17-labels}
+
+Status words are \emph{OPEN} and \emph{CLOSED CONDITIONALLY}.
+Closed conditionally means proved from named hypotheses to named
+conclusions; it does not remove those hypotheses. Completion words
+are \emph{DERIVED} and \emph{PROGRAMME-CONDITIONAL}. Derived means
+that the problem's target has no remaining assumed premise in the
+claimed chain. Programme-conditional means an assumption, input,
+reduced scope, or unresolved branch remains.
+
+\begin{quote}
+Keeping an assumption, treating a quantity as an input, narrowing
+the scope, or choosing a scope that leaves a branch unresolved
+documents a limitation and keeps the programme conditional. It does
+not close the problem or satisfy the finished-derivation criterion
+of Section~\ref{sec:ch17-done}. Closure of a critical-path problem
+means DERIVED. A reduced-scope result is stated as such and the
+problem stays OPEN. A critical-path problem is met for the
+matrix-derived label only by a derivation from the matrix theory; an
+external justification, model input, imposed premise, or reduced
+scope supports at most a scope-limited Presentation-B model.
+\end{quote}
+
+OPTIONAL means that a problem may remain open within a stated scope
+provided the claim given up is stated. Optional does not mean solved.
+Priority words are CRITICAL PATH and OPTIONAL.
+In Chapter~16, a \emph{load-bearing assumption} is a premise used by
+the chain; it is not thereby a critical-path problem.
+
+\begin{center}
+\begin{tabular}{@{}p{0.31\textwidth}p{0.63\textwidth}@{}}
+\toprule
+Label & Meaning \\
+\midrule
+\textbf{Completed infrared derivation (matrix-derived)} &
+The only label for meeting the five-item criterion in
+Section~\ref{sec:ch17-done}; every critical-path problem is DERIVED
+for NAMCG from the matrix theory. \\
+\textbf{Scope-limited Presentation-B infrared model} &
+A separately stated model with its imposed premises named. It is
+not matrix-derived, does not close critical-path problems, and does
+not satisfy the five-item criterion. \\
+\textbf{Programme} &
+Any other status; one or more critical-path premises or targets
+remain unresolved. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Critical-path problems: B, C, and D}
 \label{sec:ch17-bearing}
 
-These problems change the status of the theory if they are solved.
-They are ordered by how much of the later book depends on them.
-
-\paragraph{Problem A: the infrared dictionary.}
-Assumption~\ref{ass:dictionary} is a map
-\begin{equation}
-  \label{eq:dict-again}
-  [\hat X_\mu,\Phi]
-  \;\longleftrightarrow\;
-  i\Theta_{\mu\nu}D^\nu\Phi
-\end{equation}
-plus higher-derivative corrections. Construct it as a lemma from
-Presentation~A: specify the Hilbert space, the Weyl map, the
-sense in which a slowly varying \(\Phi(x)\) is recovered from
-functions of \(\hat X^\mu\), and the error term at each order in
-\(\Theta\). Until this exists, Chapter~8 is a calculation in
-Presentation~B that is only morally a calculation in the matrix
-model.
+Problems B, C, D, F, and G are critical path for a completed
+matrix-derived infrared derivation. The order below follows
+dependencies, not project size.
 
 \paragraph{Problem B: entanglement equilibrium from the path
 integral.}
+\emph{CRITICAL PATH; OPEN.} The fixed-algebra first-law identity
+is established, but not the required stationarity.
 Assumption~\ref{ass:EE} is the physical engine of
 Theorem~\ref{thm:mT}. Derive \(\delta S_D=0\) at fixed volume as
 a Ward identity of the microscopic action~\eqref{eq:Smicro}, or
@@ -83,8 +120,14 @@ computation on small diamonds, with the polar vacuum as background,
 is the obvious route. A result that holds only for conformal
 fluctuations must be flagged as such, because the tensor block is
 not conformal.
+Closure requires fixed-volume variations of the tensor (non-conformal)
+block from the microscopic action, a specified map
+\(g^{(0)}\mapsto g\), and no use of an already-existing metric. A
+conformal-only derivation is a sub-case and leaves B OPEN.
 
 \paragraph{Problem C: the conformal mode.}
+\emph{CRITICAL PATH; OPEN.} The radial potential curvature is
+known, but the physical scalar operator and coupling are not.
 Assumption~\ref{ass:gap-psi} is the remaining scalar-tensor
 ceiling. Compute the full quadratic scalar operator on the locked
 vacuum in a constructed frame: the canonically normalised kinetic
@@ -97,6 +140,10 @@ ratio \(m_\psi/v\), together with the coupling that can be compared
 with Cassini bounds. If \(m_\psi\) is not parametrically of order
 \(\sqrt{\lambda}\,v\), the assumption is false and the infrared
 theory must be rewritten as scalar-tensor NAMCG.
+Closure requires the operator, scalar coupling, and phenomenological
+comparison that define and test either the safe-mass or scalar-tensor
+outcome. Declaring a scalar-tensor scope without those data leaves
+Problem~C open and the result programme-conditional.
 
 \paragraph{Lemma (tree-level radial mass).}
 \label{lem:msigma}
@@ -207,12 +254,19 @@ bookkeeping.
 
 
 \paragraph{Problem D: local Lorentz invariance from Presentation~A.}
+\emph{CRITICAL PATH; OPEN.} Generator counting is closed
+conditionally, while local Lorentz symmetry is imposed.
 Assumption~\ref{ass:local-lorentz} puts
 \(\mathrm{SO}(3,1)\) into Presentation~B by hand. Either derive a
-local Lorentz gauge symmetry from the matrix algebra and the
-condensate, or state that NAMCG is a theory of a condensate field
-on an auxiliary spacetime and stop calling Presentation~A
-ontologically prior. The Chapter~10 generator count identifies six
+local Lorentz gauge symmetry from the matrix algebra and condensate
+(D1), or state that NAMCG is a theory of a condensate field on an
+auxiliary spacetime and stop calling Presentation~A ontologically
+prior (D2). D1 closure requires the \(\omega\), \(A_\mu\), \(B\), and
+ghost operators and the resulting field content to be specified.
+Under D2, even with these operators specified, the result is only a
+scope-limited Presentation-B model: D remains OPEN and CRITICAL PATH,
+and a full matrix-derived spectrum is not established. The Chapter~10
+generator count identifies six
 Goldstone orbit variables removable in unitary gauge; it does not
 determine the dynamics of the independent diagonal connection \(B\)
 or whether torsion vanishes, propagates, or is massive. Torsion-free
@@ -228,20 +282,50 @@ survival in the weighted trace depends on unspecified operators and
 weights. Deriving the connection and endomorphism dependence or
 counting \(B\) and torsion as additional field content remains open;
 Problem~D is unresolved.
+Within D2, reduced claims may be limited to Levi-Civita metric
+geometry of \(g=e^T e\) and conservation of the total stress, without
+using \(B\); unitary-gauge Lorentz locking removes the six Goldstone
+orbit variables, while frame/metric bookkeeping remains provisional.
+D2 does not establish a full-spectrum account, the dynamics or
+masslessness of \(B\), torsion-free \(B\), or the quadratic operator
+of \(A_\mu\). Problem~F then applies only to an explicitly stated
+frame/metric truncation omitting \(B\) and \(A_\mu\), conditional on
+that truncation and with the corresponding ghost sector specified.
 
-\paragraph{Problem E: Lorentzian signature.}
-Assumption~\ref{ass:lorentzian} is unproved. A Euclidean matrix
-integral that prefers a Lorentzian saddle would be a genuine
-addition. A Wick rotation performed because the infrared world is
-Lorentzian is not.
-
-\section{Coefficient openings}
+\section{Open problems by scope and priority}
 \label{sec:ch17-coeff}
 
-These problems change numbers and regimes. They do not, by
-themselves, create or destroy the graviton.
+\subsection{Optional problems A and E}
+
+\paragraph{Problem A: the infrared dictionary.}
+\emph{OPEN; OPTIONAL only if Presentation~B is the operative theory
+and no claim is made that NAMCG follows from Presentation~A or that
+Presentation~A is ontologically prior.} The claim given up is a
+derivation from the matrix model; Chapter~8 remains a Presentation-B
+calculation. A claim of matrix-model priority makes A critical path.
+Assumption~\ref{ass:dictionary} is the map
+\begin{equation}
+  \label{eq:dict-again}
+  [\hat X_\mu,\Phi]
+  \;\longleftrightarrow\;
+  i\Theta_{\mu\nu}D^\nu\Phi
+\end{equation}
+plus higher-derivative corrections. A derivation must specify the
+Hilbert space, Weyl map, continuum limit, and error at each order in
+\(\Theta\).
+
+\paragraph{Problem E: Lorentzian signature.}
+\emph{OPEN; OPTIONAL within a scope that retains
+Assumption~\ref{ass:lorentzian}.} The claim given up is that
+Lorentzian signature is emergent or derived. Euclidean positivity
+and a formal Wick rotation do not select it; rotating because the
+infrared world is Lorentzian is not a derivation.
+
+\subsection{Critical-path items F and G}
 
 \paragraph{Problem F: the rationals \(A,B,C\).}
+\emph{CRITICAL PATH; OPEN.} The conditional heat-kernel identity
+does not compute the physical coupling.
 The target is to evaluate the weighted \(a_1\) and the
 curvature-linear part of \(a_2\) on the locked block, including
 diffeomorphism and local-Lorentz ghosts and the radial-mode
@@ -308,13 +392,34 @@ Problem~F remains open.
 
 
 \paragraph{Problem G: infrared boundary entropy.}
+\emph{CRITICAL PATH; mechanism CLOSED CONDITIONALLY, derivation OPEN.}
 Evaluate \(S_{\mathrm{ent}}^{\mathrm{(IR)}}\) on an explicit
 cosmological or large-tube boundary and produce a candidate
 \(\Lambda_{\mathrm{eff}}\) from~\eqref{eq:Leff}. A symbolic
 formula in terms of a late-time entanglement scale is more useful
 than a claim to have obtained \(10^{-122}\).
 
+\paragraph{G completion levels.}
+For G-model, a scaling or value computed within a stated assumed
+boundary model is PROGRAMME-CONDITIONAL and does not satisfy the
+matrix-derived completion criterion. For G-external, independently
+justified boundary entropy and stationarity may support only a
+scope-limited Presentation-B model; G remains open for the
+matrix-derived label. G is DERIVED only when the entropy density and
+stationarity relation are derived from the matrix theory and
+\(\Lambda_{\mathrm{eff}}\) follows from them. A scaling selected to
+reproduce a target remains an input. The required entropy density is
+the one in Assumption~\ref{ass:Sent-density}, derived by the replica
+construction from the matrix theory, and boundary stationarity
+Assumption~\ref{ass:bdy-EE} must likewise be derived rather than
+retained.
+
+\subsection{Optional problems continued}
+
 \paragraph{Problem H: interpolating function.}
+\emph{OPEN; OPTIONAL research within the theory.} The claim given
+up is a derivation of \(\nu_{\sqrt{}}\) from modular data; current
+empirical comparisons remain coefficient checks.
 Derive \(\nu_{\sqrt{}}\) in~\eqref{eq:nu-sqrt}, or a function
 that beats it on a SPARC hold-out, from the modular data of
 Chapters~6 and~12. The target is
@@ -373,6 +478,10 @@ not allowed; compare \(\kappa_{\mathrm{IR}}\) to \(g_\dagger\)
 only after the source-dependent gap and response are calculated.
 
 \paragraph{Problem I: dynamical origin of the drag.}
+\emph{OPEN; OPTIONAL falsifiable phenomenological extension.}
+It becomes critical only if the drag is claimed to be derived or
+predicted. Otherwise the microscopic exponent and rate remain open,
+and Assumption~\ref{ass:drag} is a working law.
 Replace Assumption~\ref{ass:drag} by a low-frequency response
 calculation of \(\Gamma_{ij}(\mathbf r;\ell_A,\ell_B)\) from
 specified microscopic dynamics and a specified stationary reference
@@ -384,6 +493,10 @@ assumptions are recorded in Problem~\ref{sec:status-I}; no static-tail
 power determines the retarded response.
 
 \paragraph{Problem J: spherical ECG solutions.}
+\emph{OPEN; OPTIONAL research within the stated model scope.} The
+claim given up is singularity resolution derived from the matrix
+theory; reduced results remain conditional on symmetric reduction
+and the ECG model assumption.
 For the explicit invariant~\(\mathcal P\) in~\eqref{eq:ECG}, used in
 the action~\eqref{eq:S-ECG}, Section~\ref{sec:status-J} records
 checked reduced Euler--Lagrange
@@ -430,61 +543,81 @@ It does not exist so that the laboratory can become the theory.
 \section{A recommended order of work}
 \label{sec:ch17-order}
 
-For a reader who has read the book and wants a first project:
+The critical-path dependency order is:
 
 \begin{enumerate}
-  \item Recompute Problem~F for the locked \(4\times4\) block only,
-        ignoring unlocked scalars. This is finite only after the
-        gauge-fixed operators, ghost weights, and scheme are
-        specified; the present manuscript does not provide those data.
-  \item Compute the quadratic scalar operator of Problem~C at tree
-        level (kinetic coefficient, mixing and mass). This decides
-        whether the infrared theory is GR or scalar-tensor before any
-        galaxy is discussed.
-  \item Attempt the replica variation of Problem~B on a Minkowski
-        diamond for a free tensor field with a mass term. This
-        is a miniature of Theorem~\ref{thm:mT} with the logic
-        reversed: one sees whether \(\delta S_D=0\) really
-        forbids \(m_T\neq 0\) for that free field.
-  \item Only then open Problem~A. It is larger than a term-long
-        project if done honestly.
+  \item Problem~D1: derive local \(SO(3,1)\) from the matrix algebra
+        and condensate; specify the \(\omega,A_\mu,B\) and ghost
+        operators needed by Problem~F.
+  \item Problem~C: compute the tree-level scalar operator, including
+        kinetic coefficient, mixing, mass and testable matter coupling.
+  \item Problem~F: compute \(A,B,C\) with the specified operators,
+        ghosts, thresholds and scheme, and derive \(G_{\mathrm{eff}}\).
+  \item Problem~B: derive the fixed-volume tensor-block stationarity
+        from the microscopic action, not only for conformal variations.
+  \item Problem~G: derive \(S_{\mathrm{ent}}^{\mathrm{(IR)}}\) and
+        boundary stationarity from the matrix theory, then derive the
+        \(\Lambda_{\mathrm{eff}}\) scaling or value.
 \end{enumerate}
 
-Problems~H--J remain phenomenological. Appendix~\ref{app:empirical}
-has already spent the SPARC budget of Problem~H as a coefficient
-check. Further galactic work waits on a derivation from
-\(I(A:B)\), and should not start before Problems~C and~F have
-rough answers. Otherwise \(\nu_{\sqrt{}}\) will be fitted in a
-theory whose Newton coupling and extra scalar are not under
-control.
+\paragraph{Alternate scope: model work outside the critical-path sequence.}
+Taking Presentation~B with imposed local Lorentz symmetry (D2), an
+externally justified boundary result (G-external), or \(G_{\mathrm{eff}}\)
+as an input may make a scope-limited Presentation-B model calculable
+and testable, for example by specifying full quadratic and ghost
+operators and computing Problem~F for a stated truncation. Such work
+leaves Problems~D, F, G and the matrix-derived completion criterion
+open, must name its imposed premises, and is not a step in the
+sequence above.
+
+Problems~A, E, H, I, and J are optional within their stated scopes.
+Appendix~\ref{app:empirical} records the coefficient-level check for
+Problem~H; further galactic work should not be described as a
+derivation from \(I(A:B)\) without the modular calculation.
 
 \section{What ``finished'' would mean}
 \label{sec:ch17-done}
 
-NAMCG would be a completed infrared derivation, rather than a
-programme, if all of the following held.
+The label \emph{Completed infrared derivation (matrix-derived)}
+applies only if all five critical-path problems are DERIVED:
 
 \begin{enumerate}
-  \item Problem~B is a lemma, so entanglement equilibrium is no longer
-        an assumption. Problem~A is additionally required only if the
-        theory is claimed to follow from Presentation~A rather than
-        being the Presentation~B theory studied here.
-  \item Problem~C gives \(m_\psi\) large enough that Cassini is
-        safe, or the theory is rewritten as scalar-tensor and
-        tested as such.
-  \item Problem~F reports \(A,B,C\) with ghosts included.
-  \item Problem~D is decided in one direction or the other.
-  \item Conservation and HBEV remain as they are now, with
-        Problem~G supplying at least a scaling for
-        \(\Lambda_{\mathrm{eff}}\).
+  \item Problem~B is a lemma: Assumption~\ref{ass:EE} is no longer an
+        assumption, and fixed-volume variations include the
+        non-conformal tensor block.
+  \item Problem~C has a computed scalar operator, coupling, and
+        phenomenological comparison defining and testing either a
+        sufficiently heavy \(m_\psi\) or the scalar-tensor outcome.
+  \item Problem~D1: an \(SO(3,1)\) gauge symmetry is derived from the
+        matrix algebra and condensate, with the \(\omega,A_\mu,B\)
+        and ghost operators specified and the field content stated.
+  \item Problem~F has \(A,B,C\) and the sign/scheme dependence of
+        \(G_{\mathrm{eff}}\) computed from the specified operators;
+        \(G_{\mathrm{eff}}\) is not an input.
+  \item Problem~G-derived: the infrared boundary entropy density
+        and stationarity relation are derived from the matrix theory,
+        and the \(\Lambda_{\mathrm{eff}}\) scaling or value follows
+        from them. G-model and G-external do not meet this item.
 \end{enumerate}
 
-Problems~E and~H--J can remain open in a completed infrared
-derivation. Signature, galaxies, and cores are then research
-inside the theory, not pillars of it.
+If local Lorentz symmetry is instead imposed (D2), even with the
+full quadratic and ghost content specified, the result is a
+scope-limited Presentation-B infrared model. It may be studied and
+tested as such, but Problem~D stays OPEN and CRITICAL PATH and the
+five-item criterion is not met. No label of ``completed infrared
+derivation'' is allowed for that scope. Any critical-path item met
+only by an imposed premise, input, or reduced scope likewise yields
+at most a scope-limited model or programme, never the matrix-derived
+label.
 
-Until the first four items exist, the honest public description
-is the subtitle of the book, read as a programme:
+Problems~A, E, H, I, and J may remain open in a completed derivation
+within the stated scopes; the claims given up are listed above.
+Problem~A is additionally required if the theory is claimed to
+follow from Presentation~A. Problem~I is a prerequisite only if
+drag is claimed to be derived or predicted.
+
+Until all five items are derived, the honest public description is
+the subtitle of the book, read as a programme:
 \emph{an attempt} to derive general relativity and massless
 spin-2 dynamics from a matrix condensate held at entanglement
 equilibrium. The attempt is written so that it can fail in
