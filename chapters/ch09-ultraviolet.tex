@@ -292,13 +292,19 @@ vanishing torsion. A torsion tensor
    +\omega_\mu{}^A{}_B e^B_\nu
    -\omega_\nu{}^A{}_B e^B_\mu
 \end{equation}
-is an additional infrared field if \(\omega\) is independent of
-\(e\). In NAMCG the connection is not independent: it is the
-connection that eats the Goldstone \(\omega_{AB}\) of Chapter~5.
-After that eating, torsion is either zero or massive of order
-\(v\). Massive torsion is an ultraviolet correction of the same
-type as the \(a_2\) vertices. It is not retained as a propagating
-infrared field.
+is an additional field if \(\omega\) is independent of \(e\).
+In NAMCG the independent connection and the condensate term's
+broken-direction combination must be distinguished. The condensate
+term gives a quadratic Higgs-type contribution only in that broken
+direction; whether torsion vanishes, is massive, or supplies
+additional field content is not determined here (Problem~D).
+Torsion-free behavior follows only under the conditional
+Palatini--Holst hypotheses of Proposition~\ref{prop:B-torsion-free}
+in Chapter~10. The \(a_1\) coefficient for a Laplace-type operator
+is \(\operatorname{tr}(R(g)/6-E)\): its explicit universal curvature
+term is the Levi-Civita scalar \(R(g)\). Since \(E\) is unspecified,
+no conclusion about additional \(B\)-dependence follows, and a
+Palatini \(R(B)\) term is not established.
 
 \section{A checklist before Lorentz locking}
 \label{sec:ch9-check}
@@ -306,7 +312,7 @@ infrared field.
 The metric effective theory, as it now stands, is:
 
 \begin{center}
-\begin{tabular}{@{}ll@{}}
+\begin{tabular}{@{}p{0.28\textwidth}p{0.66\textwidth}@{}}
 \toprule
 Ingredient & Status \\
 \midrule
@@ -315,16 +321,18 @@ conditional truncated \(R\)-coefficient & Thm.~\ref{thm:Geff}; physical match op
 quartic vacuum energy & isolated, not tamed \\
 \(C^2\) and \(R^2\) & EFT vertices, Assp.~\ref{ass:EFT-a2} \\
 cubic core regularity & ECG model, Assp.~\ref{ass:ECG} \\
-torsion & massive or zero after eating \\
+torsion & undetermined (Problem~D); torsion-free only under the
+conditional Palatini--Holst hypotheses of
+Proposition~\ref{prop:B-torsion-free} \\
 local Lorentz invariance as a gauge symmetry
   of \(\Phi\) & not yet constructed \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-The missing gauge symmetry is the last geometric ingredient. Without
-it the identification of \(\omega_{AB}\) as a Goldstone, used since
-Chapter~5, is incomplete.
+The local Lorentz gauge symmetry is assumed in Chapter~10. The
+connection and torsion dynamics remain open; the identification of
+\(\omega_{AB}\) as a Goldstone is conditional on that assumption.
 
 \section{Exercises}
 \label{sec:ch9-exercises}
@@ -356,24 +364,23 @@ Chapter~5, is incomplete.
     recover the leading tail correction. State the boundary
     conditions and the symmetric-reduction assumption used.
   \item \textbf{Torsion mass.}
-    Give a dimensional estimate of the torsion mass if the only
-    scale available is \(v\). Compare it with \(m_\psi\) from
-    Assumption~\ref{ass:gap-psi}.
+    If torsion is massive (an assumption, not a result; Problem~D),
+    estimate its mass using \(v\) as the only available scale.
+    Compare it with \(m_\psi\) from Assumption~\ref{ass:gap-psi}.
 \end{enumerate}
 
 \section{Bridge to Chapter~10}
 \label{sec:ch9-bridge}
 
 The infrared metric theory is Einstein gravity plus controlled
-higher-curvature corrections and an untamed \(\rho_\Lambda\). What
-it still lacks is an explicit demonstration that local
-\(\mathrm{SO}(3,1)\) is a gauge symmetry of the condensate and that
-the six Goldstones \(\omega_{AB}\) are eaten by the connection,
-leaving no extra massless scalars. Chapter~10 constructs that
-locking. After it, the counting table of Section~\ref{sec:ch5-count}
-is complete through the line ``eat \(\omega_{AB}\),'' and the
-frame, taken from Repair~II,~\eqref{eq:vev-is-frame} (or from an
-assumed non-degenerate coframe), transforms as a vierbein under the
-diagonal local Lorentz group, under the assumptions of
-Theorem~\ref{thm:locking}. Definition~\ref{def:vierbein} is not
-used to construct it (Problem~C).
+higher-curvature corrections and an untamed \(\rho_\Lambda\).
+Chapter~10 assumes local \(\mathrm{SO}(3,1)\) gauge symmetry and
+identifies the six Goldstone orbit variables \(\omega_{AB}\) as
+removable in unitary gauge. The provisional sector bookkeeping of
+Section~\ref{sec:ch5-count} records that removal without claiming a
+full-spectrum count. The frame, taken from Repair~II,
+\eqref{eq:vev-is-frame} (or from an assumed non-degenerate coframe),
+transforms as a vierbein under the diagonal local Lorentz group under
+Theorem~\ref{thm:locking}; that theorem does not determine the
+diagonal connection's dynamics or torsion. Definition~
+\ref{def:vierbein} is not used to construct it (Problem~C).

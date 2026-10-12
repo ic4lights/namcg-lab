@@ -9,19 +9,19 @@ After this chapter the reader should be able to:
         \(\Phi^I{}_A\);
   \item identify the diagonal subgroup preserved by the polar vacuum
         and the six broken generators;
-  \item exhibit the Stueckelberg replacement that eats
-        \(\omega_{AB}\) into a spin connection;
-  \item finish the counting table of Section~\ref{sec:ch5-count}
-        through the vector and Lorentz-Goldstone lines;
+  \item exhibit the Stueckelberg replacement that removes the
+        Goldstone orbit variables \(\omega_{AB}\) in unitary gauge;
+  \item state the provisional sector bookkeeping through the
+        Goldstone and vector lines;
   \item enter Chapter~11 with a composite frame that transforms as a
         genuine vierbein, so that \(\nabla^\mu T_{\mu\nu}\) is well
         defined.
 \end{enumerate}
 
 Since Chapter~5 the antisymmetric piece \(\omega_{AB}\) has been
-called a local-Lorentz Goldstone and postponed. This chapter
-constructs the gauge symmetry that justifies the name and the Higgs
-mechanism that removes \(\omega_{AB}\) from the infrared spectrum.
+called a local-Lorentz Goldstone and postponed. This chapter assumes the local gauge symmetry and shows that the six
+Goldstone orbit variables \(\omega_{AB}\) are removable in unitary
+gauge. It does not determine the full propagating spectrum.
 
 \section{The two groups that act on \(\Phi\)}
 \label{sec:ch10-groups}
@@ -142,19 +142,37 @@ Choose the unitary gauge
 \end{equation}
 which is admissible wherever the polar decomposition is smooth
 (that is, wherever Assumption~\ref{ass:nondeg} holds and no
-condensate defect forces \(\det e=0\)). In that gauge
-\(\omega_{AB}\) has been absorbed into \(\omega_\mu{}^{AB}\), and
-the kinetic term of \(\Phi\) produces a mass term
+condensate defect forces \(\det e=0\)). In that gauge the six orbit variables \(\omega_{AB}\) are removed.
+Identify the locked indices \(I\leftrightarrow A\) through
+\(\langle\Phi^I{}_A\rangle=v\delta^I{}_A\), and write
+\((A_\mu)^I{}_A=(A_\mu)^I{}_J\delta^J{}_A\) on the locked block.
+Then~\eqref{eq:D-both} gives
+\[
+  \mathcal D_\mu\langle\Phi^I{}_A\rangle
+  =v\bigl[(\omega_\mu)^I{}_A-i(A_\mu)^I{}_A\bigr].
+\]
+The factor \(i\) follows the Hermitian-generator convention in
+\eqref{eq:D-both}; with real antisymmetric generators the corresponding
+combination is \(\omega-A\). Define the broken-direction combination
+\(\Xi_\mu:=\omega_\mu-iA_\mu|_{\mathrm{locked}}\) in this convention.
+Write \(B_\mu\) for the connection along the unbroken diagonal
+stabilizer direction; no complementary connection combination is
+canonical until kinetic terms specify a metric on the
+\((\omega,A)\) field space. The stabilizer direction lies in the
+kernel of the condensate covariant derivative. The invariant
+contraction on the locked block depends on the action and generator
+conventions, so the quadratic term is written as
 \begin{equation}
   \label{eq:omega-mass}
-  \mathcal{L}_{\omega^2}
-  \supset
-  v^2\,\omega_\mu{}^{AB}\omega^\mu{}_{AB}.
+  \mathcal L_{\mathrm{cond}}^{(2)}
+  \supset v^2 Q_{\mathrm{locked}}(\Xi_\mu),
 \end{equation}
-The connection is massive of order \(v\), or it is identified with
-the Levi-Civita spin connection of the composite frame and the
-mass term is reinterpreted as the statement that torsion is
-gapped.
+where \(Q_{\mathrm{locked}}\) denotes that contraction; it is not
+assumed to be a real Lorentz-vector square. This is a quadratic
+Higgs-type contribution, not a physical mass assertion. Its pole and
+sign require gauge-field kinetic terms and canonical normalization,
+which are unspecified. Torsion and the dynamics of the diagonal
+connection remain open (Problem~D).
 
 \begin{theorem}[Lorentz locking]
   \label{thm:locking}
@@ -162,29 +180,31 @@ gapped.
   \ref{ass:local-lorentz}, and~\ref{ass:nondeg}, there exists a
   gauge in which
   \begin{enumerate}
-    \item the six Goldstones \(\omega_{AB}\) do not propagate;
+    \item the six Goldstone orbit variables \(\omega_{AB}\) are
+          removable in unitary gauge; this makes no claim about the
+          full propagating spectrum;
     \item the frame \(e^A_\mu=\Phi^A{}_\mu/v\) of
           Repair~II,~\eqref{eq:vev-is-frame} (or an independently
           supplied non-degenerate coframe), transforms only under
           the diagonal local Lorentz group, as a vierbein;
-    \item the independent spin connection is either massive of
-          order \(v\) or slaved to \(e^A_\mu\) by the torsion-free
-          condition~\eqref{eq:spin-connection}.
+    \item the condensate term supplies a quadratic Higgs-type
+          contribution in the broken direction \(\Xi_\mu\); the
+          diagonal connection's dynamics are not determined. A
+          torsion-free result follows only under the conditional
+          hypotheses of Proposition~\ref{prop:B-torsion-free}.
   \end{enumerate}
 \end{theorem}
 
 \begin{proof}
   Proposition~\ref{prop:goldstone-count} supplies six Goldstones.
   The Stueckelberg replacement~\eqref{eq:dressed-omega} and the
-  gauge~\eqref{eq:unitary} remove them from the spectrum. In that
+  gauge~\eqref{eq:unitary} remove the six orbit variables. In that
   gauge \(\Phi^{IA}=(v+\sigma)\delta^{IA}\) plus tensor and vector
-  blocks, so the Repair~II frame \(e^A_\mu=\Phi^A{}_\mu/v\) transforms as
-  \(e^A_\mu\mapsto\Lambda_{\mathrm{diag}}{}^A{}_B e^B_\mu\). The
-  mass term~\eqref{eq:omega-mass} gaps any component of
-  \(\omega_\mu{}^{AB}\) that is not slaved to \(e\). The slaved
-  remainder is uniquely the torsion-free spin connection of
-  \(e^A_\mu\), by the standard Cartan lemma used
-  in~\eqref{eq:spin-connection}.
+  blocks, so the Repair~II frame \(e^A_\mu=\Phi^A{}_\mu/v\) transforms
+  as \(e^A_\mu\mapsto\Lambda_{\mathrm{diag}}{}^A{}_B e^B_\mu\).
+  This argument establishes the frame transformation and the
+  quadratic broken-direction term, but does not determine the
+  diagonal connection's spectrum or torsion.
 \end{proof}
 
 \begin{remark}[Defects]
@@ -199,25 +219,92 @@ gapped.
 \section{The internal vector after locking}
 \label{sec:ch10-vector}
 
-The internal connection \(A_\mu\) of~\eqref{eq:Dmu-Phi} is not the
-same object as \(\omega_\mu{}^{AB}\). After locking, four of its
-components in the locked block mix with \(\omega_\mu\). The
-orthogonal combination is an ordinary Yang--Mills field of the
-unbroken diagonal subgroup, or of whatever remains of
-\(G_{\mathrm{int}}\) outside \(\mathrm{SO}(3,1)\).
+The internal connection \(A_\mu\) is distinct from the independent
+Lorentz connection \(\omega_\mu{}^{AB}\). The condensate term mixes
+them only through \(\Xi_\mu\); an orthogonal complement is defined
+only after kinetic terms provide a metric on the \((\omega,A)\)
+field space. Neither a Higgs mass \(m_A\sim g_{\mathrm{YM}}v\) nor a
+decoupling scale follows without those terms. If a specified
+internal-vector quadratic operator gaps the four components counted
+in Section~\ref{sec:ch5-count}, they are omitted from the low-energy
+frame/metric-sector bookkeeping; otherwise their spectrum remains
+open. If an internal subgroup \(H\) is unbroken, its corresponding
+gauge field is massless (conditional). This identifies the
+conditional vector row of the provisional sector bookkeeping; it
+does not establish the dynamics of the diagonal connection
+(Problem~D).
 
-Its mass is a standard Higgs mass,
-\begin{equation}
-  \label{eq:A-mass}
-  m_A\sim g_{\mathrm{YM}}v,
-\end{equation}
-unless a residual exact gauge symmetry is left unbroken. In the
-latter case the infrared theory contains general relativity plus
-Yang--Mills, which is phenomenologically welcome and does not
-disturb Theorem~\ref{thm:mT}. In the former case the vector block
-decouples at scale \(m_A\) and is irrelevant below \(v\).
+\begin{proposition}[Conditional torsion-free diagonal connection]
+  \label{prop:B-torsion-free}
+  Let \(e^A{}_\mu\) be an invertible coframe and \(B_\mu{}^{AB}\) an
+  independent diagonal Lorentz connection. Suppose its dependence in
+  the action is either the Palatini term
+  \(\epsilon_{ABCD}e^A\wedge e^B\wedge F^{CD}(B)\), or that term
+  plus the Holst term
+  \(\gamma^{-1}e_A\wedge e_B\wedge F^{AB}(B)\), with finite real
+  \(\gamma\ne0\), \(\gamma^2\ne-1\), or \(\gamma=\infty\) (pure
+  Palatini). Assume there are no spin sources and no other
+  torsion-dependent terms, including \(F(B)^2\), torsion-squared
+  terms, or matter couplings to \(B\). Then the \(B\) equation is
+  the Holst-modified Cartan equation and gives \(T^A=0\);
+  consequently \(B\) is the Levi-Civita spin connection of \(e\).
+\end{proposition}
 
-This closes the vector line of the counting table.
+\begin{proof}
+  Since \(\delta F^{AB}=D(\delta B^{AB})\), compactly supported
+  variations give, for the Palatini term,
+  \[
+    \delta_B S_{\mathrm P}
+    \simeq -4\int \epsilon_{ABCD}\,
+       T^A\wedge e^B\wedge\delta B^{CD}.
+  \]
+  Thus \(\epsilon_{ABCD}T^A\wedge e^B=0\). Expand
+  \(T^A=\tfrac12T^A{}_{EF}e^E\wedge e^F\) and contract the
+  three-form equation with \(\epsilon^{EFGM}\). In frame components
+  this yields, up to an overall nonzero convention-dependent factor,
+  \[
+    2(\tau_C\delta_D^M-\tau_D\delta_C^M)
+       +2T^M{}_{CD}=0,\qquad
+    \tau_C:=T^A{}_{AC}.
+  \]
+  Tracing \(M=D\) gives \(4\tau_C=0\), since
+  \(T^D{}_{CD}=-\tau_C\). Hence \(\tau_C=0\), and the uncontracted
+  equation then gives \(T^M{}_{CD}=0\).
+
+  With the Holst term, the equation is
+  \((\star+\gamma^{-1})Y_{CD}=0\), where
+  \(Y_{CD}:=T_{[C}\wedge e_{D]}\), and \(\star\) is the internal
+  Lorentzian Hodge dual on antisymmetric internal index pairs. The
+  internal dual of \(Y\) is proportional to the Palatini Cartan
+  equation. Since \(\star^2=-1\),
+  \[
+    (\star+\gamma^{-1})(-\star+\gamma^{-1})
+    =(1+\gamma^{-2})\mathbb I.
+  \]
+  The map is invertible for the stated parameters. Therefore
+  \(Y=0\), which implies the Palatini Cartan
+  equation and \(T^A=0\) by the preceding argument. For an
+  invertible coframe, vanishing torsion fixes the metric-compatible
+  spin connection uniquely to the Levi-Civita one.
+\end{proof}
+
+\begin{remark}
+  This proposition constrains \(B\) only under its hypotheses. It is
+  not needed to define the Levi-Civita connection \(\nabla\) of
+  \(g=e^T e\) or to state diffeomorphism conservation
+  \(\nabla^\mu T_{\mu\nu}=0\). NAMCG has not been shown to induce
+  these Palatini or Holst hypotheses. For a Laplace-type operator,
+  \(a_1=\operatorname{tr}(R(g)/6-E)\); the explicit universal
+  curvature term is the Levi-Civita scalar \(R(g)\). Because \(E\)
+  is unspecified, no conclusion about additional \(B\)-dependence
+  of \(a_1\) follows, and a Palatini \(R(B)\) term is not
+  established. If \(B\) enters the bundle connection of the actual
+  operator, \(a_2\) may contain a
+  \(\operatorname{tr}F(B)^2\) term; whether it survives in the
+  weighted trace depends on the unspecified operator
+  representation and weights. Deriving the \(B\)-dependence of
+  \(E\) and the bundle connection is open.
+\end{remark}
 
 \section{Diffeomorphisms}
 \label{sec:ch10-diffs}
@@ -241,29 +328,42 @@ the Lie derivative~\eqref{eq:lie-g}. No extra scalar Goldstone of
 diffeomorphisms appears: diffeomorphisms are gauged, not broken, in
 the condensed phase.
 
-\section{Completed counting table}
+\section{Provisional sector bookkeeping (frame/metric sector only)}
 \label{sec:ch10-table}
 
+Component counts in the algebraic split are distinct from on-shell
+polarization counts. The independent diagonal connection \(B\),
+torsion modes, and internal vector \(A_\mu\) are not part of
+\(\delta\Phi_{\mu\nu}\) and are counted separately.
+
 \begin{center}
-\begin{tabular}{@{}llll@{}}
+\begin{tabular}{@{}p{0.22\textwidth}p{0.72\textwidth}@{}}
 \toprule
-Stage & What is removed & Remaining & Where \\
+Sector & Count and status \\
 \midrule
-algebraic split & --- & 16 & Ch.~5 \\
-eat \(\omega_{AB}\) & 6 Lorentz Goldstones & 10 & this chapter \\
-gap or Higgs \(A_\mu\) & 4 vector & 6 & this chapter \\
-gap \(\psi\) & 1 conformal scalar & 5 & Assp.~\ref{ass:gap-psi} \\
-\(m_T=0\) and TT gauge & 3 residual constraints & 2 TT & Ch.~7 \\
+algebraic split & \(\psi:1,\quad F_{\mu\nu}:6,\quad
+T_{\mu\nu}:9;\quad\text{total}:16\) \\
+\(F_{\mu\nu}\) & Six Goldstone orbit variables
+(\(\omega_{AB}\)); removable in unitary gauge (Ch.~10).
+No full-spectrum claim follows. \\
+\(\psi\) & One component; gapped or constrained only under
+Assumption~\ref{ass:gap-psi}. \\
+\(T_{\mu\nu}\) & Nine algebraic components. For massive
+Fierz--Pauli, four on-shell divergence constraints leave five
+polarizations. Two TT helicities follow only under the separately
+established massless FP/diffeomorphism-gauge limit
+(Theorem~\ref{thm:mT}); this is not a smooth
+\(m_T\to0\) limit of all massive polarizations. \\
+Outside \(\delta\Phi_{\mu\nu}\) & \(A_\mu\): four components, omitted
+from the low-energy frame/metric-sector bookkeeping only if its
+specified quadratic operator gaps them; otherwise its spectrum is
+open. \(B\) and torsion remain unresolved (Problem~D). \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-The six remaining after the vector is removed are the ten metric
-components minus four diffeomorphisms. Gapping \(\psi\) and imposing
-massless TT gauge then yields two polarizations. The table of
-Section~\ref{sec:ch5-count} is thereby completed, with the one
-outstanding dynamical hypothesis still being
-Assumption~\ref{ass:gap-psi}.
+No total mode count of the full theory follows from this bookkeeping;
+the “2” is a metric-sector target, not a full-spectrum result.
 
 \section{What locking does not do}
 \label{sec:ch10-not}
@@ -276,10 +376,11 @@ Lorentz invariance from Presentation~A
 \(\Tent_{\mu\nu}\).
 
 What it does is make the later covariant derivatives honest. From
-here on, \(\nabla_\mu\) is the Levi-Civita connection of the
-composite metric, and statements such as
-\(\nabla^\mu T_{\mu\nu}^{\mathrm{total}}=0\) are tensor equations
-on the emergent spacetime rather than slogans.
+here on, \(\nabla_\mu\) denotes the Levi-Civita connection of the
+composite metric \(g=e^T e\). This is distinct from the independent
+Lorentz connection \(B\), whose dynamics remain open. Statements
+such as \(\nabla^\mu T_{\mu\nu}^{\mathrm{total}}=0\) refer to this
+Levi-Civita connection.
 
 \section{Exercises}
 \label{sec:ch10-exercises}
@@ -298,12 +399,13 @@ on the emergent spacetime rather than slogans.
     Starting from~\eqref{eq:D-both} and~\eqref{eq:polar}, perform
     the replacement~\eqref{eq:dressed-omega} and isolate the
     quadratic term~\eqref{eq:omega-mass} in unitary gauge.
-  \item \textbf{Torsion-free slaving.}
+  \item \textbf{Torsion-free spin connection.}
     Given \(e^A_\mu\), write the explicit formula for the
     torsion-free spin connection
-    \(\omega_\mu{}^{AB}(e)\). Confirm that it transforms
-    inhomogeneously under local Lorentz transformations, as a
-    connection must.
+    \(\omega_\mu{}^{AB}(e)\). This is not a statement that the
+    independent connection \(B\) equals \(\omega(e)\).
+    Confirm that \(\omega(e)\) transforms inhomogeneously under local
+    Lorentz transformations, as a connection must.
   \item \textbf{Defect.}
     Construct a hedgehog configuration of \(\Lambda(x)\) on a
     spatial 2-sphere inside which \(\det e=0\) at a point. Why
@@ -321,10 +423,15 @@ on the emergent spacetime rather than slogans.
 \section{Bridge to Chapter~11}
 \label{sec:ch10-bridge}
 
-The emergent geometry now has a metric, a torsion-free connection,
-two massless graviton polarizations, and a \(\Geff\) whose
-heat-kernel matching remains conditional on the specified sector
-calculation in Problem~F.
+The emergent geometry now has a metric \(g=e^T e\) with its
+Levi-Civita connection \(\nabla\), a frame-sector target of two
+massless TT polarizations, and a \(\Geff\) whose heat-kernel matching
+remains conditional on the specified sector calculation in
+Problem~F. The independent Lorentz connection \(B\) is a separate
+field: its dynamics are not determined here, and it is torsion-free
+only under the hypotheses of Proposition~\ref{prop:B-torsion-free}.
+This does not affect the Levi-Civita connection \(\nabla\), to which
+\(\nabla^\mu T_{\mu\nu}=0\) refers.
 Diffeomorphism invariance is in force. Noether's second theorem
 therefore requires
 \begin{equation}
