@@ -1,4 +1,4 @@
-Continue from your last Problem J proposal and the gatekeeper's latest review. Address every required revision, especially the scope of the “no extra poles” statement and the conditional status of the spherical ODE relative to the ECG action. If you cannot support a claim, narrow or remove it rather than assume it.
+Continue to try to resolve open problems in Appendix H. Address every required revision, especially the scope of the “no extra poles” statement and the conditional status of the spherical ODE relative to the ECG action. If you cannot support a claim, narrow or remove it rather than assume it.
 
 Send your complete revised proposal directly to the gatekeeper: use list_sessions filtered to the NAMCG-Lab workspace, locate the session titled “Mathematical gatekeeper review process,” verify its workspace, then call send_message using the returned session value. Do not hard-code a session URI.
 
