@@ -332,6 +332,82 @@ this dictionary as an open problem. Every later heat-kernel formula
 is a calculation \emph{within} Presentation~B, contingent on the
 dictionary.
 
+\begin{remark}[Constant-\(\Theta\) Moyal check (conditional; not closure)]
+  \label{rem:ch3-moyal-check}
+Assume a Moyal realization with constant, real, antisymmetric
+\(\Theta^{\mu\nu}\), and define
+\[
+  (f\star g)(x)
+  =f(x)\exp\!\left(
+    \frac{i}{2}\Theta^{\mu\nu}
+    \overleftarrow{\partial_\mu}\overrightarrow{\partial_\nu}
+  \right)g(x).
+\]
+For general symbols,
+\[
+  [f,g]_\star
+  =i\Theta^{\mu\nu}(\partial_\mu f)(\partial_\nu g)
+   -\frac{i}{24}\Theta^{\mu\nu}\Theta^{\rho\sigma}
+      \Theta^{\alpha\beta}
+      (\partial_\mu\partial_\rho\partial_\alpha f)
+      (\partial_\nu\partial_\sigma\partial_\beta g)
+   +O(\Theta^5).
+\]
+For the coordinate symbol \(x_\mu\), derivatives of order greater
+than one vanish, so
+\[
+  [x_\mu,\phi]_\star
+  =i\Theta_{\mu\nu}\partial^\nu\phi
+\]
+exactly in this realization. This verifies the coordinate-background
+kinematic identity, but not the full dictionary
+\eqref{eq:dictionary} for fluctuating matrix coordinates, a gauge
+connection, or nonconstant \(\Theta\).
+
+There is a further restriction if the two-commutator contraction is
+to reproduce a Lorentzian kinetic metric. With signature
+\((-,+,+,+)\), define
+\[
+  K_\Theta^{\nu\rho}
+  :=\eta_{\alpha\beta}\Theta^{\alpha\nu}\Theta^{\beta\rho},
+  \qquad
+  N^\mu{}_\nu:=\Theta^{\mu\alpha}\eta_{\alpha\nu}.
+\]
+Then \(N\) is a real Lorentz generator and
+\(K_\Theta^{\nu\rho}=-(N^2)^\nu{}_\sigma\eta^{\sigma\rho}\).
+Thus a nonzero metric-proportional contraction
+\(K_\Theta^{\nu\rho}=c\,\eta^{\nu\rho}\), \(c\ne0\), would require
+\(N^2=-c\,\mathbb I\). In a Lorentz frame, writing \(N\) in terms of
+boost and rotation vectors \(\mathbf E,\mathbf B\), its
+characteristic polynomial is
+\[
+  p(z)=z^4+(|\mathbf B|^2-|\mathbf E|^2)z^2
+             -(\mathbf E\cdot\mathbf B)^2 .
+\]
+But \(N^2=-c\,\mathbb I\) would give
+\(p(z)=(z^2+c)^2\), whose constant term \(c^2>0\), whereas the
+displayed Lorentz-generator polynomial has constant term
+\(-(\mathbf E\cdot\mathbf B)^2\leq0\). Hence no nonzero \(c\) is
+possible. If \(c=0\), \(K_\Theta=0\) says that the image of the
+antisymmetric map \(\Theta\) is totally null. In Lorentzian
+four-space a totally null subspace has dimension at most one, while
+the rank of an antisymmetric matrix is even; therefore
+\(\Theta=0\). So no nonzero constant real \(\Theta\) contracted with
+\(\eta\) yields a tensor proportional to \(\eta^{\nu\rho}\).
+For example, if only \(\Theta^{12}=-\Theta^{21}=\theta\) is nonzero,
+then \(K_\Theta^{\nu\rho}=\theta^2
+\operatorname{diag}(0,1,1,0)\).
+
+This obstruction concerns only the stated constant-\(\Theta\)
+contraction. Matching a Lorentzian kinetic term would need a
+different specified mechanism, such as a dynamical or
+nonconstant background, a fluctuation-generated metric, or an
+additional tangent-index contraction from a derived field structure.
+It does not rule out those possibilities or an enlarged matrix
+construction, and it does not derive the kinetic term, its sign, a
+coframe, or local Lorentz symmetry. The matrix-derived criterion of
+Problem~D remains open. Problems~B, C, D, F and~G remain open.
+\end{remark}
 \section{Energy scales and coupling constants}
 \label{sec:ch3-scales}
 
