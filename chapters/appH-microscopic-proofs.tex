@@ -233,6 +233,39 @@ permitted and unestablished claims, including the consequent
 truncation for Problem~F, are listed in
 Section~\ref{sec:ch17-bearing}.
 
+\paragraph{Linear metric content of a real locked block (conditional; not closure).}
+Restrict to a real \(4\times4\) locked block, \(e=\mathbb{I}+M\) with \(M\)
+real, and \(g=e^{T}\eta e\) as in~\eqref{eq:g-from-e}. To first order
+\(\delta g=M^{T}\eta+\eta M\). For real symmetric \(M=H\):
+\(\delta g_{00}=-2H_{00}\), \(\delta g_{ij}=2H_{ij}\), \(\delta g_{0i}=0\).
+For real antisymmetric \(M=K\): \(\delta g_{0i}=-2K_{0i}\),
+\(\delta g_{ij}=0\). On this real slice the three directions \(K_{0i}\)
+change the metric, and the quadratic potential of the preceding Hessian
+paragraph is independent of \(K\). (For complex \(\Phi\) the Hermitian and
+anti-Hermitian parts of that paragraph are not the real symmetric and
+antisymmetric parts used here; the correspondence holds only on the real
+slice.)
+
+Internal transformations that preserve the positive-definite contraction
+in~\eqref{eq:Smicro} are unitary; those that also map real frames to real
+frames are orthogonal; those that further preserve \(\eta_{AB}\) commute with
+\(\eta\). Their Lie algebra is \(\mathfrak{so}(3)\): no boost generator
+survives (at the group level the intersection is
+\(\mathrm{O}(1)\times\mathrm{O}(3)\)). This concerns the internal index only.
+For the tangent index, \(\Phi\mapsto\Phi\Lambda\) sends
+\(\mathrm{Tr}\,\Phi^\dagger\Phi\) to
+\(\mathrm{Tr}\,\Lambda\Lambda^\dagger\Phi^\dagger\Phi\). This equals
+\(\mathrm{Tr}\,\Phi^\dagger\Phi\) for arbitrary \(\Phi\) only if
+\(\Lambda\Lambda^\dagger=\mathbb{I}\); a boost does not satisfy this and
+generically changes the contraction, although it may leave it unchanged for
+particular configurations. Hence the contractions displayed
+in~\eqref{eq:Smicro} and~\eqref{eq:V} are not invariant under local boosts
+as symmetries of the action. Imposing local Lorentz invariance in D2
+(Assumption~\ref{ass:local-lorentz}) therefore requires a completed action,
+with the tangent connection and an invariant contraction, and not merely a
+relabelling of~\eqref{eq:Smicro}. Whether such an action exists, and what its
+spectrum is, is not examined here. Problem~D remains open.
+
 \section{Problem E: signature}
 \label{sec:status-E}
 
@@ -299,10 +332,11 @@ Theorem~\ref{thm:Geff}, does not close F or D, and leaves the missing step
 above unchanged.
 
 \paragraph{Gauge-group dependence of the scalar block (conditional; not closure).}
-The potential in~\eqref{eq:V} and the contraction \(\mathrm{Tr}\,\Phi^\dagger\Phi\)
-are positive-definite, so they are invariant under constant unitary
-transformations of the internal index and of the tangent index, but not under
-non-compact boosts of the tangent index. The covariant kinetic term has a
+The contraction \(\mathrm{Tr}\,\Phi^\dagger\Phi\) is a positive-definite norm,
+and the potential in~\eqref{eq:V}, being built from it, is invariant under
+constant unitary transformations of the internal index and of the tangent
+index; neither is invariant under non-compact boosts of the tangent index.
+The covariant kinetic term has a
 \emph{local} symmetry only for those transformations for which a connection and
 its transformation law are specified; for the tangent index this requires
 Assumption~\ref{ass:local-lorentz} with \(\omega_\mu\), which is not part
