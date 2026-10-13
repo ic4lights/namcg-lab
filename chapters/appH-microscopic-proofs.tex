@@ -631,6 +631,48 @@ the count is not a heat-kernel trace for the Problem~F target. The
 discrepancy with the \(\mathrm{SO}(3,1)\) assumption is recorded, not resolved.
 Problem~F remains open.
 
+\paragraph{Bookkeeping for one sector of the sum: the Hermitian scalar
+block (conditional; not closure).}
+This paragraph illustrates how Theorem~\ref{thm:Geff} would be applied
+to one block.  It is not a derivation of that block's coefficients.
+The Hessian paragraph above is evaluated on the fixed flat scaffold
+\(g^{(0)}\) of Assumption~\ref{ass:aux-metric}, where \(R=0\), so the
+displayed action supplies no curvature coupling for the emergent
+metric.  The operator on the emergent background and the curvature
+coupling \(Q\) below are the Presentation-B assumptions of
+Chapter~\ref{ch:heat-kernel}, not outputs of the displayed action.
+
+Take the Hermitian block \(H\) of the Hessian paragraph above, with sixteen real
+components.  Assume (i) that this diagonal block at \(A_\mu=0\) is
+treated as decoupled from the other sectors, so the coupled determinant
+is not given; (ii) the determinant weight is \(w=1\) per real bosonic
+component; and (iii) the operator of Equation~\eqref{eq:O-eta} on the
+block is \(-\nabla^2+E\) with \(E=\lambda v^2+QR_E\), where \(Q\) is
+proportional to the identity on the sixteen components (otherwise
+\(1/6-Q\) below is replaced by its trace over the components).  With
+\(a_1=\mathrm{tr}(R/6-E)\) of~\eqref{eq:a0a1} and the standard
+curvature-linear part of
+\(a_2\supset\tfrac12\,\mathrm{tr}(R/6-E)^2\), which has the same sign
+convention as \(a_1\) and is used here without being re-derived, the
+coefficients of \(R_E\) for this block are
+\(\mathcal A_{1,R,H}=16(\tfrac16-Q)\) and
+\(\mathcal A_{2,R,H}=16\lambda v^2(Q-\tfrac16)=-\lambda v^2\mathcal A_{1,R,H}\).
+In the truncated, unresummed identity of Theorem~\ref{thm:Geff} with
+common proper-time limits, the block would contribute
+\(-\frac{\mathcal A_{1,R,H}}{32\pi^2}\bigl[(\LUV^2-\mu^2)
+-\lambda v^2\ln(\LUV^2/\mu^2)\bigr]\) to \(C_R^E\); that is, in this
+block's contribution the coefficient of \(\lambda v^2\ln(\LUV^2/\mu^2)\)
+is minus the coefficient of \(\LUV^2-\mu^2\).  Both coefficients vanish
+at \(Q=\tfrac16\); this concerns only this block's \(R_E\)-coefficient
+in the truncated expansion.  Because the block has mass \(\lambda v^2\),
+a resummed treatment replaces these terms by threshold functions, so
+the expression is not the physical coefficient.  No comparison with
+\(A,B,C\) of Equation~\eqref{eq:Geff-structure} is made.  The
+anti-Hermitian block, the \(A_\mu\) and \(\omega_\mu\) sectors, the
+tensor block, the ghosts, the continuation and the scheme are not
+specified here, so this does not determine \(G_{\mathrm{eff}}\), does
+not fix the sign of the Lorentzian term, and leaves Problem~F open.
+
 \section{Problem G: HBEV}
 \label{sec:status-G}
 
