@@ -409,6 +409,110 @@ coframe, or local Lorentz symmetry. The matrix-derived criterion of
 Problem~D remains open. Problems~B, C, D, F and~G remain open.
 \end{remark}
 
+\begin{remark}[Constant-\(\Theta\) trace and quadratic fluctuations
+(conditional; not closure)]
+  \label{rem:ch3-trace-quadratic}
+Assume the irreducible Weyl representation of the constant,
+nondegenerate Heisenberg algebra
+\[
+  [\bar X^\mu,\bar X^\nu]
+  =i\Theta^{\mu\nu}\mathbb{I},
+\]
+and use the Weyl convention
+\[
+  \hat f
+  :=\int\frac{\mathrm{d}^4k}{(2\pi)^4}\,
+       \widetilde f(k)e^{ik_\mu\bar X^\mu}.
+\]
+For Schwartz symbols, the Weyl trace formula and Moyal trace
+identity are
+\[
+  \operatorname{Tr}_{\mathcal H}\hat f
+  =\frac{1}{(2\pi)^2|\operatorname{Pf}\Theta|}
+       \int\mathrm{d}^4x\,f(x),
+  \qquad
+  \int\mathrm{d}^4x\, f\star g
+  =\int\mathrm{d}^4x\,fg .
+\]
+Thus the constant-\(\Theta\) trace density in this representation is
+\((2\pi)^{-2}|\operatorname{Pf}\Theta|^{-1}\).
+
+For the fluctuation calculation, restrict to the
+\(C_{\mu\nu\lambda}=0\) branch of~\eqref{eq:Smatrix} and omit matter
+fluctuations. The central background is a classical solution of the
+pure quartic matrix equation because its commutators are central.
+Write
+\[
+  \hat X^\mu=\bar X^\mu+\hat A^\mu,\qquad
+  D^\mu=[\bar X^\mu,\,\cdot\,],\qquad
+  f^{\mu\nu}=D^\mu\hat A^\nu-D^\nu\hat A^\mu .
+\]
+Assume the fluctuation symbols \(a^\mu(x)\) decay rapidly enough for
+the trace formula and integrations by parts to apply, so the linear
+term vanishes. The quadratic matrix action is
+\[
+  S_{\mathrm{YM}}^{(2)}
+  =-\frac{1}{4g_{\mathrm{YM}}^2}
+       \operatorname{Tr}(f_{\mu\nu}f^{\mu\nu}).
+\]
+The exact constant-\(\Theta\) coordinate identity gives
+\[
+  f^{\mu\nu}\longleftrightarrow
+       i\mathcal F_\Theta^{\mu\nu},\qquad
+  \mathcal F_\Theta^{\mu\nu}
+  :=\Theta^{\mu\rho}\partial_\rho a^\nu
+    -\Theta^{\nu\rho}\partial_\rho a^\mu .
+\]
+Consequently,
+\[
+  \boxed{
+  S_{\mathrm{YM}}^{(2)}
+  =\frac{1}{4g_{\mathrm{YM}}^2(2\pi)^2
+                 |\operatorname{Pf}\Theta|}
+       \int\mathrm{d}^4x\,
+       \mathcal F_{\Theta,\mu\nu}\mathcal F_\Theta^{\mu\nu}}
+\]
+with indices contracted using \(\eta_{\mu\nu}\). In particular,
+\[
+  \mathcal F_{\Theta,\mu\nu}\mathcal F_\Theta^{\mu\nu}
+  =2K_\Theta^{\rho\sigma}
+       \partial_\rho a_\nu\,\partial_\sigma a^\nu
+   -2\Theta^{\mu\rho}\Theta_\nu{}^\sigma
+       \partial_\rho a^\nu\,\partial_\sigma a_\mu,
+  \qquad
+  K_\Theta^{\rho\sigma}
+  :=\eta_{\mu\nu}\Theta^{\mu\rho}\Theta^{\nu\sigma}.
+\]
+The second, mixed term is part of the vector kinetic operator; this
+is not the scalar operator of
+Remark~\ref{rem:ch3-varying-theta}.
+
+Under the linearized matrix-gauge transformation
+\[
+  \delta a^\mu=\Theta^{\mu\rho}\partial_\rho\lambda,
+\]
+the antisymmetry of \(\Theta\) and commutativity of partial
+derivatives give \(\delta\mathcal F_\Theta^{\mu\nu}=0\). In Fourier
+space, writing \(q^\mu=\Theta^{\mu\rho}k_\rho\), the quadratic
+kernel is proportional to
+\[
+  \mathcal M_{\alpha\beta}(k)
+  =q^2\eta_{\alpha\beta}-q_\alpha q_\beta,
+  \qquad
+  \mathcal M_{\alpha\beta}q^\beta=0,
+  \qquad q^2=K_\Theta^{\rho\sigma}k_\rho k_\sigma .
+\]
+For the usual flat scaffold \(g^{(0)}_{\mu\nu}=\eta_{\mu\nu}\),
+the constant-\(\Theta\) obstruction of
+Remark~\ref{rem:ch3-moyal-check} gives
+\(K_\Theta\ne c\,g^{(0)}\) for nonzero real \(\Theta\). Thus this
+quadratic action does not have the \(g^{(0)}\)-contracted form used
+in Presentation~B. Its sign does not establish a healthy Lorentzian
+energy. This is an action for the matrix-coordinate symbol \(a^\mu\),
+not for \(\Phi^I{}_A\). It does not construct \(\Phi^I{}_A\), a
+coframe, or a tangent-space connection, and makes no claim for
+nonconstant \(\Theta\). Problems~B, C, D, F and~G remain open.
+\end{remark}
 \begin{remark}[A varying-\(\Theta\) Lorentzian toy geometry
 (conditional; not a matrix derivation)]
   \label{rem:ch3-varying-theta}
