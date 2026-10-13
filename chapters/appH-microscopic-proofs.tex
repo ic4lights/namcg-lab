@@ -207,7 +207,58 @@ strength \(\beta=M_{\mathrm P}^{2}/(Nv^{2}-3M_{\mathrm P}^{2})\)
 relative to the nominal Einstein-sector Newtonian potential
 (Chapter~17); this is conditional on the assumptions listed there and
 is not a Cassini bound.
-Problem~C remains OPEN.
+
+\emph{Off-shell trace--tensor mixing from the induced
+Einstein--Hilbert term (conditional; not closure).}
+Assume Repair~II, which is assumed rather than derived, with
+\(g_{\mu\nu}=\eta_{\mu\nu}+h_{\mu\nu}\) and
+\(h_{\mu\nu}=T_{\mu\nu}+\tfrac14\eta_{\mu\nu}\psi\). Also assume the
+induced Lorentzian term is
+\(S_{\mathrm{EH}}=(16\pi G_{\mathrm{eff}})^{-1}\int\sqrt{-g}\,R\),
+with \(G_{\mathrm{eff}}>0\). For a general symmetric \(h_{\mu\nu}\),
+define \(\mathcal E_{\mu\nu}[h]:=-2G^{(1)}_{\mu\nu}[h]\); on traceless
+tensors this agrees with \(\mathcal E_{\mu\nu}\) of
+Equation~\ref{eq:einstein-op}. In these conventions, up to boundary
+terms,
+\[
+  S_{\mathrm{EH}}^{(2)}
+  =\frac{1}{16\pi G_{\mathrm{eff}}}
+   \int\mathrm{d}^4x\,\frac14 h^{\mu\nu}\mathcal E_{\mu\nu}[h].
+\]
+For \(s_{\mu\nu}=\tfrac14\eta_{\mu\nu}\psi\),
+\[
+  \mathcal E_{\mu\nu}[s]
+  =\frac12\bigl(\partial_\mu\partial_\nu\psi
+                -\eta_{\mu\nu}\Box\psi\bigr).
+\]
+Expanding the quadratic action in this field basis gives
+\[
+  S_{\mathrm{EH}}^{(2)}
+  =\frac{1}{16\pi G_{\mathrm{eff}}}
+   \int\mathrm{d}^4x\left[
+     \frac14T^{\mu\nu}\mathcal E_{\mu\nu}[T]
+    +\frac14T^{\mu\nu}\partial_\mu\partial_\nu\psi
+    +\frac{3}{32}(\partial\psi)^2
+   \right].
+\]
+Thus, using \(\psi=8\sigma/v\) at linear order, the cross term is
+\[
+  \frac{1}{16\pi G_{\mathrm{eff}}}
+  \int\mathrm{d}^4x\,\frac{2}{v}
+  T^{\mu\nu}\partial_\mu\partial_\nu\sigma .
+\]
+The tensor-only term here is normalized relative to the assumed
+\(S_{\mathrm{EH}}\); Equation~\ref{eq:EH-lin} states a structure and
+is not used to set this coefficient. The cross term is
+basis-dependent: it is the usual conformal-mode mixing in the
+gauge-invariant quadratic Einstein--Hilbert action and can be
+rearranged by a field redefinition. It does not by itself establish an
+observable effect or scalar-exchange strength. Although it vanishes if
+transversality is imposed, transversality cannot be assumed when
+forming the coupled off-shell Hessian. The displayed microscopic action
+on the fixed scaffold does not specify the full coupled, gauge-fixed
+tensor operator or the remaining scalar couplings.
+Problems~B, C, D, F and~G remain open.
 
 \section{Problem D: local Lorentz}
 \label{sec:status-D}
