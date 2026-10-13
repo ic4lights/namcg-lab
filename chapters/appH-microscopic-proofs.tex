@@ -647,6 +647,71 @@ ghost-free, does not identify the block with the tensor sector of
 Chapter~\ref{ch:lorentz-decomposition}, and leaves Problems~B, C, D, F
 and~G open.
 
+\paragraph{Displayed action plus an assumed induced Fierz--Pauli term:
+time-kinetic test (conditional; not closure).}
+This paragraph keeps the displayed action as the tree-level term and
+adds only the induced term assumed above; it introduces no new
+tree-level structure.  On the \(\eta\)-self-adjoint block, with
+\(h_{\mu\nu}\) proportional to \((\eta M)_{\mu\nu}\) as above, the
+displayed kinetic term of Equation~\eqref{eq:Smicro} contracts the
+components with the Euclidean form, \(\mathrm{Tr}\,M^{T}M=\sum_{\mu\nu}
+h_{\mu\nu}^2\) for \(M=\eta h\), so take
+\(Q=tk^2\sum_{\mu\nu}h_{\mu\nu}^2+g\,Q_{\mathrm{FP}}+Q_{\mathrm{mass}}\)
+with \(t>0\), the same \(Q_{\mathrm{FP}}\) and the same sign convention
+as above.  The displayed potential acts through the Hermitian part
+\(H=(M+M^{T})/2\) of the Hessian paragraph in Problem~F; for \(M=\eta h\)
+the \(0i\) entries of \(H\) cancel, so \(Q_{\mathrm{mass}}\propto
+h_{00}^2+\sum_{ij}h_{ij}^2\) acts on seven components and the three
+\(0i\) components are massless at this order.  A symbolic computation
+(\texttt{sympy}, a check and not a proof) gives the
+\(\omega^2\)-coefficients of the form at \(k=(\omega,0,0,0)\), which do not
+depend on the mass, in the convention where healthy modes have negative
+coefficient: \(-2t\) (once), \(-4t\) (three times), \(4g-2t\) (once, the
+trace direction), \(-2(g+t)\) (twice) and \(-4(g+t)\) (three times).  All
+ten are healthy exactly when \(t>0\) and \(-t<g<t/2\); for \(g>0\) only
+\(g<t/2\) binds.  Without the mass term, the determinant at
+\(k=(\omega,0,0,q)\) factors as
+\(t^4(g+t)^2(q^2-\omega^2)^6\,
+\bigl[(t-g)q^2-(t+g)\omega^2\bigr]^2\,
+\bigl[t(t-g)(q^2-\omega^2)^2-2g^2(q^2+\omega^2)^2\bigr]\)
+up to a constant.  The squared factor gives modes with
+\(c^2=(t-g)/(t+g)\neq1\) for \(g\neq0\), and the final quartic factor is
+also non-luminal for \(g\neq0\).  The dispersion is then
+Lorentz-violating at order \(g/t\), in tension with the exact Lorentz
+invariance that the locking construction of
+Chapter~\ref{ch:lorentz-locking} is intended to deliver; this tension is
+recorded, not resolved.
+
+If the induced term is the linearised \((1/16\pi G_{\mathrm{eff}})\int
+\sqrt{-g}\,R\), with \(\delta g_{\mu\nu}=2h_{\mu\nu}\) from
+Equation~\eqref{eq:g-from-e} and the standard normalisation of the
+linearised Einstein--Hilbert quadratic form (used, not re-derived), then
+matching the coefficient of \(k^2h_{\mu\nu}h^{\mu\nu}\) gives
+\(t=v^2\) from Equation~\eqref{eq:Smicro} and \(g=1/(16\pi G_{\mathrm{eff}})\).
+For \(G_{\mathrm{eff}}>0\), the window above is then
+\(1/G_{\mathrm{eff}}<8\pi v^2\), and \(1-c^2\approx 2g/t=1/(8\pi
+G_{\mathrm{eff}}v^2)\) is small only if \(G_{\mathrm{eff}}v^2\gg1\).
+Inserting the conditional parameterization of
+Equation~\eqref{eq:Geff-structure}, the window reads
+\(A\mathcal N_0\Lambda_{\mathrm{UV}}^2/v^2+B\ln(\Lambda_{\mathrm{UV}}/\mu)
++C\mu^2/v^2<8\pi\); if the logarithmic and \(\mu^2\) terms are
+negligible, it reads \(A\mathcal N_0\Lambda_{\mathrm{UV}}^2<8\pi v^2\).
+The coefficients \(A,B,C\), \(\mathcal N_0\), \(\mu\) and
+\(\Lambda_{\mathrm{UV}}\) are undetermined (Theorem~\ref{thm:Geff} and
+Problem~F), so this identifies the combination that Problem~F would have
+to satisfy and does not decide whether it does.  The window has the same
+structure as the condition \(Z>0\) with
+\(Z=2N-3/(4\pi G_{\mathrm{eff}}v^2)\) of the Repair~II pure-trace
+truncation above (a conformal-mode kinetic coefficient that turns
+negative when \(G_{\mathrm{eff}}v^2\) is small), but the numerical factors
+differ and no equivalence is claimed.  The result is for an assumed
+linearised induced term; it is a statement about the time-kinetic matrix
+and the dispersion at quadratic order, so it is not a spectrum or
+unitarity result.  It does not treat the vector, ghost or \(\omega_\mu\)
+sectors, does not identify the block with the tensor sector of
+Chapter~\ref{ch:lorentz-decomposition}, and leaves Problems~B, C, D, F
+and~G open.
+
 \section{Problem E: signature}
 \label{sec:status-E}
 
