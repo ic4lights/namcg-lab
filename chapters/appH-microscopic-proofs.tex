@@ -926,6 +926,81 @@ potential choices of Problem~D), the diffeomorphism and local-Lorentz
 ghost operators and weights, the per-sector limits, the thresholds,
 and the continuation convention. Problems~B, C, D, F and~G remain open.
 
+\paragraph{Conditional gauge-fixed Hermitian block in the compact
+\(U(4)\) branch (not closure).}
+This calculation concerns only the separate compact \(U(4)\) model
+described above, not the \(\mathrm{SO}(3,1)\)-compatible construction.
+Assume \(A_\mu\) is a Hermitian \(U(4)\) connection, with no
+\(F_{\mu\nu}F^{\mu\nu}\) term, and write
+\(\Phi=v\mathbb I+H+iY\), where \(H,Y\) are Hermitian. To quadratic
+order the displayed action gives
+\[
+  D_\mu\Phi
+  =\partial_\mu H+i(\partial_\mu Y-vA_\mu)+O(\text{quadratic}),
+\]
+\[
+  S_{\Phi,A}^{(2)}
+  =\int\mathrm{d}^4x\,\sqrt{-g^{(0)}}\,
+   \operatorname{Tr}\!\left[
+   -g^{(0)\mu\nu}\left(
+    \partial_\mu H\,\partial_\nu H+
+    (\partial_\mu Y-vA_\mu)(\partial_\nu Y-vA_\nu)
+   \right)-\lambda v^2H^2\right].
+\]
+Thus the derivative mixing is between \(Y\) and \(A_\mu\), not \(H\)
+and \(A_\mu\). Choose the linearized unitary gauge \(Y/v=0\); \(Y\)
+is eliminated by this gauge condition and is not integrated as a
+fluctuation in this gauge. For
+\(\Phi\mapsto e^{i\alpha}\Phi\), one has \(\delta Y=v\alpha\) at the
+vacuum, so the Faddeev--Popov operator for this condition is
+\(\mathbb I_{16}\) there. A complex ghost pair has relative
+determinant weight \(w=-2\) in the convention of
+Equation~\eqref{eq:ch8-sector-sum}, but this operator is ultralocal.
+In the same gauge \(A_\mu\) has only an algebraic quadratic term:
+the action supplies no differential operator for it. Its determinant
+and the ghost determinant are therefore not Laplace-type
+heat-kernel sectors; their regulated local contributions are not
+evaluated here.
+
+For the differential Hermitian block \(H\) alone, further assume
+that its operator on the emergent background is
+\(-\nabla^2+\lambda v^2\), with no \(R_E\) term in \(E\), and assign
+it common limits \(\LUV,\mu\). These are Presentation-B and cutoff
+assumptions, not consequences of the displayed action on the fixed
+scaffold. In the truncated, unresummed expansion,
+\[
+  \mathcal N_{0,H}=16,\qquad
+  \mathcal A_{1,R,H}=\frac83,\qquad
+  \mathcal A_{2,R,H}=-\frac83\lambda v^2 .
+\]
+The \(a_2\) coefficient uses, without re-derivation, the
+curvature-linear term
+\(\tfrac12\operatorname{tr}(R_E/6-E)^2\) used in the preceding
+Hermitian-block bookkeeping paragraph; the expressions here are its
+\(Q=0\) specialization. With the Euclidean matching convention
+\(C_R^E=-1/(16\pi G_H)\), Theorem~\ref{thm:Geff} then gives the
+single-block contribution
+\[
+  \frac1{G_H}
+  =\frac{4}{3\pi}\left[
+     \LUV^2-\mu^2
+     -\lambda v^2\ln\!\left(\frac{\LUV^2}{\mu^2}\right)
+   \right].
+\]
+Using \(\ln(\LUV^2/\mu^2)=2\ln(\LUV/\mu)\), this block alone
+corresponds formally to
+\(A_H=1/(12\pi)\), \(B_H=-8\lambda/(3\pi)\), and
+\(C_H=-4/(3\pi)\) in Equation~\eqref{eq:Geff-structure}. These are
+formal single-block values in a parameterization whose sectors need
+not share \(\mu\); they are not full-theory coefficients. The
+unresummed expansion requires \(\lambda v^2\ll\LUV^2\), so these
+values are not threshold-correct. The algebraic determinants, other
+fluctuation and ghost sectors, sector thresholds, continuation, and
+finite curvature counterterm are not included. The displayed
+nonnegative potential is not boost-invariant, so this compact branch
+does not supply the missing \(\mathrm{SO}(3,1)\)-compatible sector
+sum. Problems~B, C, D, F and~G remain open.
+
 \section{Problem G: HBEV}
 \label{sec:status-G}
 
