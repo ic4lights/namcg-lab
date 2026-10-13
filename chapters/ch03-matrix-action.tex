@@ -529,6 +529,64 @@ in agreement with the scalar curvature above. This is the
 Levi--Civita connection determined by the chosen toy metric, not a
 derivation of the independent gauge connection or its dynamics from
 the matrix action.
+
+For comparison, assume in addition that the continuum trace uses
+the symplectic density
+\[
+  \rho(y)=\frac{1}{|\operatorname{Pf}\Theta|}
+         =\frac{1}{|a|b(y)}
+\]
+and that the scalar kinetic term is built from the two-commutator
+tensor \(K_\Theta^{\mu\nu}\). These are extra assumptions for
+nonconstant \(\Theta\); neither the trace map nor this kinetic term
+is derived here. The corresponding divergence operator is
+\[
+  \mathcal L_\Theta\phi
+  :=\rho^{-1}\partial_\mu
+       \bigl(\rho K_\Theta^{\mu\nu}\partial_\nu\phi\bigr)
+  =a^2(\partial_0^2-\partial_1^2)\phi
+    +b(y)^2(\partial_y^2+\partial_3^2)\phi
+    +2\kappa y\,b(y)^2\partial_y\phi .
+\]
+Define instead a conformally related metric \(g_\rho\) by
+\[
+  g_\rho^{\mu\nu}:=\rho K_\Theta^{\mu\nu},
+  \qquad
+  (g_\rho)_{\mu\nu}
+  =\operatorname{diag}\!\left(
+      \frac{b}{|a|},-\frac{b}{|a|},
+      \frac{|a|}{b},\frac{|a|}{b}\right).
+\]
+It is Lorentzian and \(\sqrt{|\det g_\rho|}=1\), whence
+\[
+  \Box_{g_\rho}
+  =\partial_\mu\bigl(\rho K_\Theta^{\mu\nu}\partial_\nu\bigr),
+  \qquad
+  \mathcal L_\Theta=\rho^{-1}\Box_{g_\rho}.
+\]
+Thus the Poisson-trace operator is a position-dependent scalar
+multiple of this metric's Laplace--Beltrami operator, not exactly
+the Laplace--Beltrami operator itself. Since \(\rho\ne0\), the two
+operators have the same homogeneous zero-mode equation, but are
+different differential operators and need not have the same
+spectrum or heat kernel.
+
+The metric \(g_\rho\) is conformal to the hand-chosen
+\(\tilde g\):
+\[
+  g_\rho^{\mu\nu}
+  =\ell_*^4\rho\,\tilde g^{\mu\nu}.
+\]
+Its scalar curvature, in the same curvature convention as above, is
+\[
+  R[g_\rho]
+  =-\frac{b(y)}{|a|}
+       \bigl(2\kappa+6\kappa^2y^2\bigr),
+\]
+which differs in general from \(\tilde R\). Accordingly, \(\tilde R\)
+is not the curvature associated with this assumed
+Poisson-trace operator through \(g_\rho\). Neither curvature is
+derived from the matrix action by this comparison.
 This is only an algebraic construction: \(b(y)\), \(\kappa\), and
 the metric identification are chosen by hand. Accordingly,
 \(\tilde R\) is a property of those choices, not a prediction of the
