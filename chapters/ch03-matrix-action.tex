@@ -508,7 +508,53 @@ Remark~\ref{rem:ch3-moyal-check} gives
 \(K_\Theta\ne c\,g^{(0)}\) for nonzero real \(\Theta\). Thus this
 quadratic action does not have the \(g^{(0)}\)-contracted form used
 in Presentation~B. Its sign does not establish a healthy Lorentzian
-energy. This is an action for the matrix-coordinate symbol \(a^\mu\),
+energy.
+
+For \(g^{(0)}_{\mu\nu}=\eta_{\mu\nu}\), let
+\[
+  P(k):=q^2=K_\Theta^{\rho\sigma}k_\rho k_\sigma .
+\]
+This is a characteristic-level statement for the displayed
+quadratic kernel, not a claim about the full gauge-fixed PDE. When
+\(q^2\ne0\), \(\mathcal M=q^2\eta-qq\) has rank three with kernel
+spanned by \(q\); its determinant on the quotient is proportional
+to \((q^2)^3\). When \(q\ne0\) is null,
+\(\mathcal M=-qq\) has rank one, so the rank of \(\mathcal M\) drops
+to one and its kernel grows to dimension three.
+
+A degenerate example is the rank-two electric block
+\[
+  \Theta^{01}=E\ne0,\qquad
+  \Theta^{\mu\nu}=0
+  \quad\text{for all other independent components}.
+\]
+It gives
+\[
+  K_\Theta=\operatorname{diag}(E^2,-E^2,0,0),
+  \qquad
+  P(k)=E^2(k_0^2-k_1^2).
+\]
+The characteristic roots in scaffold time \(x^0\) are real,
+\(k_0=\pm k_1\), but the polynomial is degenerate: it contains no
+\(k_2\) or \(k_3\). When \(k_0=k_1=0\), \(q^\mu=0\) and the entire
+quadratic vector kernel vanishes, even for nonzero transverse
+momenta. This is a characteristic-level observation, not a claim
+of well-posedness for a gauge-fixed initial-value problem.
+
+If \(\Theta\) is nondegenerate, \(K_\Theta\) is a nondegenerate
+Lorentzian form by congruence. For any \(\eta\)-timelike covector
+\(n_\rho\), antisymmetry gives
+\(n_\mu\Theta^{\mu\rho}n_\rho=0\), so
+\(q^\mu=\Theta^{\mu\rho}n_\rho\) is orthogonal to \(n\).
+Since \(\Theta\) is invertible and \(n\ne0\), \(q\ne0\), and hence
+\(P(n)=q^2>0\). Therefore no \(\eta\)-timelike covector is a
+hyperbolic direction for this characteristic polynomial. The
+polynomial does have hyperbolic directions with \(P(n)<0\), but
+they are not \(\eta\)-timelike. Neither the degenerate nor
+nondegenerate case establishes a healthy Lorentzian energy or a
+well-posed gauge-fixed problem.
+
+This is an action for the matrix-coordinate symbol \(a^\mu\),
 not for \(\Phi^I{}_A\). It does not construct \(\Phi^I{}_A\), a
 coframe, or a tangent-space connection, and makes no claim for
 nonconstant \(\Theta\). Problems~B, C, D, F and~G remain open.
