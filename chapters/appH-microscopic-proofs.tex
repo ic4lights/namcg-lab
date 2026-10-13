@@ -551,6 +551,48 @@ the endomorphism \(E\) of~\eqref{eq:O-eta}, which
 Chapter~\ref{ch:heat-kernel} does not specify.  Problems~B, C, D, F and G
 remain open.
 
+\paragraph{Diagonal invariance and the self-adjoint traceless block
+(conditional; not closure).}
+Write the real locked block as \(\Phi=v(\mathbb{I}+M)\), with
+mixed-index components \(M^I{}_A\), and let the unbroken diagonal
+\(\mathrm{SO}(3,1)\) of Proposition~\ref{prop:goldstone-count} act by
+conjugation, \(\delta M=[\alpha,M]\) with \(\eta\alpha\) antisymmetric.
+The sixteen components decompose as \(\mathbf 1\oplus\mathbf 6\oplus\mathbf 9\):
+the trace, the six \(\eta\)-anti-self-adjoint components, and the nine
+\(\eta\)-self-adjoint traceless components (six \(ij\) and three \(0i\)).
+The nine components form the real irreducible representation \((1,1)\),
+which has trivial commutant, so by Schur's lemma a quadratic form on them
+that is invariant under the diagonal group is unique up to a scale.  The
+form \(\mathrm{K}\) of the boost-invariant completed-action paragraph above,
+restricted to this block, is such a form, with signature \((6,3)\); the
+signature \((7,3)\) quoted there includes the trace direction.  Every
+nonzero invariant form on the block is therefore \(c\,\mathrm{K}\), with
+signature \((6,3)\) or \((3,6)\) according to the sign of \(c\).  A
+numerical check (\texttt{numpy}, not a proof) found four independent
+invariant quadratic forms on the sixteen components, whose restrictions to
+the nine-component block span a one-dimensional space, consistent with
+this count.
+
+The statement assumes that the quadratic form is invariant under constant
+diagonal \(\mathrm{SO}(3,1)\) acting by conjugation.  The displayed
+potential does not have this property (see the paragraph on the assumed
+group \(G_{\mathrm{int}}\supseteq\mathrm{SO}(3,1)\) in Problem~F); the
+condition is a requirement on completions of the action, not a property of
+the displayed action.  Under it, for a potential Hessian or for a kinetic
+form with the spacetime index contracted through \(g^{(0)\mu\nu}\) only, as
+in~\eqref{eq:Smicro}, the form on the nine components is indefinite unless
+it vanishes, so a nonzero Hessian is not positive there, and a nonzero
+kinetic form has at least three wrong-sign directions (three or six,
+depending on the sign of \(c\)).  This holds for every diagonal-invariant
+form without derivative--tangent mixing, which is a class of constructions
+and not all of them.  Terms that tie the derivative index to the tangent
+index through the vacuum identification of Equation~\eqref{eq:vev-is-frame}
+add invariants and are not analysed here, so a Fierz--Pauli-type structure
+is not excluded.  The trace and the anti-self-adjoint block are not
+constrained by this argument.  It adds no field, symmetry or constraint,
+does not identify the nine components with the tensor sector of
+Chapter~\ref{ch:lorentz-decomposition}, and leaves Problem~D open.
+
 \section{Problem E: signature}
 \label{sec:status-E}
 
