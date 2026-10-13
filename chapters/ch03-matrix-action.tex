@@ -426,7 +426,7 @@ As a geometric example, choose by hand
    +b(y)\,\partial_2\wedge\partial_3,\qquad
   y=x^2,\qquad b(y)=b_0e^{\kappa y^2},
 \]
-with real nonzero constants \(a,b_0\). This is a Poisson bivector:
+with real \(a\ne0\) and \(b_0>0\). This is a Poisson bivector:
 the two blocks have disjoint coordinates, and \(b\) depends only on a
 coordinate within its own two-dimensional block. Its Pfaffian is
 \(ab(y)\ne0\). The algebraic tensor
@@ -460,14 +460,85 @@ curvature
 \]
 It is nonflat for \(\kappa\ne0\).
 
+For completeness, one orthonormal coframe for this chosen metric is
+obtained by setting
+\[
+  L=\frac{\ell_*^2}{|a|},\qquad
+  f(y)=\frac{\ell_*^2}{b(y)}>0,\qquad
+  \eta_{\hat a\hat b}
+  =\operatorname{diag}(-,+,+,+),
+\]
+and choosing
+\[
+  \tilde e^{\hat 0}=L\,\mathrm{d}x^1,\qquad
+  \tilde e^{\hat 1}=L\,\mathrm{d}x^0,\qquad
+  \tilde e^{\hat 2}=f(y)\,\mathrm{d}y,\qquad
+  \tilde e^{\hat 3}=f(y)\,\mathrm{d}x^3.
+\]
+The swap of the first two coordinate labels assigns the negative
+frame direction to \(x^1\). This coframe obeys
+\[
+  \tilde g_{\mu\nu}
+  =\eta_{\hat a\hat b}\,
+    \tilde e^{\hat a}{}_\mu\tilde e^{\hat b}{}_\nu
+\]
+and reproduces the displayed metric. It is one choice; other
+orthonormal coframes are related locally by Lorentz transformations
+preserving \(\eta_{\hat a\hat b}\). This freedom follows from the
+metric description and is not a gauge symmetry derived from the
+matrix action.
+
+Define the torsion-free, metric-compatible spin connection by
+\[
+  \mathrm{d}\tilde e^{\hat a}
+  +\tilde\omega^{\hat a}{}_{\hat b}
+       \wedge\tilde e^{\hat b}=0,\qquad
+  \tilde\omega_{\hat a\hat b}
+  =-\tilde\omega_{\hat b\hat a},
+\]
+with curvature convention
+\[
+  \tilde{\mathcal R}^{\hat a}{}_{\hat b}
+  =\mathrm{d}\tilde\omega^{\hat a}{}_{\hat b}
+   +\tilde\omega^{\hat a}{}_{\hat c}\wedge
+    \tilde\omega^{\hat c}{}_{\hat b}.
+\]
+Writing \(q=f'/f=-2\kappa y\), the only nonzero connection
+one-forms are
+\[
+  \tilde\omega^{\hat 3}{}_{\hat 2}
+       =q\,\mathrm{d}x^3,\qquad
+  \tilde\omega^{\hat 2}{}_{\hat 3}
+       =-q\,\mathrm{d}x^3,
+\]
+or, with both frame indices raised,
+\(\tilde\omega^{\hat 2\hat 3}=2\kappa y\,\mathrm{d}x^3\).
+The only independent curvature two-form is
+\[
+  \tilde{\mathcal R}^{\hat 2}{}_{\hat 3}
+  =2\kappa\,\mathrm{d}y\wedge\mathrm{d}x^3
+  =\frac{2\kappa}{f(y)^2}\,
+       \tilde e^{\hat 2}\wedge\tilde e^{\hat 3}.
+\]
+It gives
+\[
+  \tilde R=\frac{4\kappa}{f(y)^2}
+  =\frac{4\kappa b_0^2e^{2\kappa y^2}}{\ell_*^4},
+\]
+in agreement with the scalar curvature above. This is the
+Levi--Civita connection determined by the chosen toy metric, not a
+derivation of the independent gauge connection or its dynamics from
+the matrix action.
 This is only an algebraic construction: \(b(y)\), \(\kappa\), and
 the metric identification are chosen by hand. Accordingly,
 \(\tilde R\) is a property of those choices, not a prediction of the
 matrix action or the emergent curvature
 \(R[g]\) of Chapter~\ref{ch:vierbein-emergence}, and not the
 heat-kernel curvature contribution of Chapter~\ref{ch:heat-kernel}.
-A metric identification does not by itself supply a coframe, spin
-connection, or local Lorentz symmetry. The matrix-derived criterion
+A metric identification does not by itself supply a matrix-derived
+coframe, a dynamical connection, or a local Lorentz gauge symmetry.
+The coframe above is chosen rather than matrix-derived, and its
+Lorentz-related freedom is not derived from the matrix action. The matrix-derived criterion
 of Problem~D remains open. Problems~B, C, D, F and~G remain open.
 \end{remark}
 
