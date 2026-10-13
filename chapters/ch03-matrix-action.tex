@@ -408,6 +408,69 @@ construction, and it does not derive the kinetic term, its sign, a
 coframe, or local Lorentz symmetry. The matrix-derived criterion of
 Problem~D remains open. Problems~B, C, D, F and~G remain open.
 \end{remark}
+
+\begin{remark}[A varying-\(\Theta\) Lorentzian toy geometry
+(conditional; not a matrix derivation)]
+  \label{rem:ch3-varying-theta}
+The exact coordinate-commutator identity in
+Remark~\ref{rem:ch3-moyal-check} is for constant \(\Theta\) and is
+not asserted for the varying bivector used here; a nonconstant
+Poisson bivector requires a corresponding deformation-quantization
+product, whose coordinate commutators can include derivatives of
+\(\Theta\).
+
+As a geometric example, choose by hand
+\[
+  \Theta
+  =a\,\partial_0\wedge\partial_1
+   +b(y)\,\partial_2\wedge\partial_3,\qquad
+  y=x^2,\qquad b(y)=b_0e^{\kappa y^2},
+\]
+with real nonzero constants \(a,b_0\). This is a Poisson bivector:
+the two blocks have disjoint coordinates, and \(b\) depends only on a
+coordinate within its own two-dimensional block. Its Pfaffian is
+\(ab(y)\ne0\). The algebraic tensor
+\[
+  K_\Theta^{\nu\rho}
+  :=\eta_{\alpha\beta}\Theta^{\alpha\nu}\Theta^{\beta\rho}
+  =\operatorname{diag}(a^2,-a^2,b(y)^2,b(y)^2)
+\]
+is built from this chosen \(\Theta\). If, as an additional
+normalization and metric-identification assumption, one sets
+\[
+  K_\Theta^{\nu\rho}
+  =\ell_*^4\,\tilde g^{\nu\rho},
+\]
+then
+\[
+  \mathrm{d}\tilde s^2
+  =\ell_*^4\left[
+    a^{-2}(\mathrm{d}x^0)^2-a^{-2}(\mathrm{d}x^1)^2
+    +b(y)^{-2}\bigl((\mathrm{d}y)^2+(\mathrm{d}x^3)^2\bigr)
+  \right].
+\]
+In the signature \((+,-,+,+)\) of \(\tilde g\), \(x^1\) is the
+odd-signed coordinate. The two-dimensional conformal factor is
+\(e^\sigma=\ell_*^2/b(y)\), so this chosen metric has scalar
+curvature
+\[
+  \tilde R(y)
+  =-2e^{-2\sigma}\frac{\mathrm{d}^2\sigma}{\mathrm{d}y^2}
+  =\frac{4\kappa b_0^2}{\ell_*^4}e^{2\kappa y^2}.
+\]
+It is nonflat for \(\kappa\ne0\).
+
+This is only an algebraic construction: \(b(y)\), \(\kappa\), and
+the metric identification are chosen by hand. Accordingly,
+\(\tilde R\) is a property of those choices, not a prediction of the
+matrix action or the emergent curvature
+\(R[g]\) of Chapter~\ref{ch:vierbein-emergence}, and not the
+heat-kernel curvature contribution of Chapter~\ref{ch:heat-kernel}.
+A metric identification does not by itself supply a coframe, spin
+connection, or local Lorentz symmetry. The matrix-derived criterion
+of Problem~D remains open. Problems~B, C, D, F and~G remain open.
+\end{remark}
+
 \section{Energy scales and coupling constants}
 \label{sec:ch3-scales}
 
