@@ -593,6 +593,60 @@ constrained by this argument.  It adds no field, symmetry or constraint,
 does not identify the nine components with the tensor sector of
 Chapter~\ref{ch:lorentz-decomposition}, and leaves Problem~D open.
 
+\paragraph{Tree-level terms plus an assumed induced Fierz--Pauli term:
+quadratic test (conditional; not closure).}
+This paragraph tests which tree-level coefficients are compatible with a
+healthy spin-two sector if an induced Fierz--Pauli term is assumed.  On
+the \(\eta\)-self-adjoint block, Equation~\eqref{eq:g-from-e} gives
+\(\delta g_{\mu\nu}=2(\eta M)_{\mu\nu}\), which is symmetric; write
+\(h_{\mu\nu}\) for a field proportional to \((\eta M)_{\mu\nu}\), the
+normalisation being absorbed into the coefficients below, and identify
+tangent and coordinate indices through Equation~\eqref{eq:vev-is-frame}.
+Take the quadratic form at momentum \(k\) to be
+\(Q=(tk^2+m)\,h_{\mu\nu}h^{\mu\nu}+(t'k^2+m')\,h^2+g\,Q_{\mathrm{FP}}\),
+with \(k^2=\eta^{\mu\nu}k_\mu k_\nu\).  The first two terms are the most
+general tree-level form invariant under the diagonal \(\mathrm{SO}(3,1)\)
+with the derivative index contracted through \(g^{(0)\mu\nu}\) only (the
+trace has an independent coefficient), and \(Q_{\mathrm{FP}}\) is the
+Fierz--Pauli structure with ratios \((1,-2,2,-1)\), indices raised with
+\(\eta\).  The induced term is an assumed input in the form of a
+linearised Einstein--Hilbert term with unspecified coefficient \(g\), in
+the manner of Chapter~\ref{ch:heat-kernel}; its coefficient and sign,
+which depend on Problem~F, are not computed here.  The Lagrangian is
+taken as \(\mp Q\), with the sign chosen so that the spin-two modes are
+healthy; all wrong-sign statements below are relative to the spin-two
+modes.
+
+A symbolic computation (\texttt{sympy}, a check and not a proof) confirms
+that \(Q_{\mathrm{FP}}\) is invariant under \(\delta h=k\xi\) and gives,
+at \(k=(\omega,0,0,q)\), a determinant of the ten-by-ten form with the
+following structure.  If \(t=t'=m=m'=0\), the four components \(h_{0\mu}\)
+are non-dynamical and the form is the massless Fierz--Pauli form.  If
+\(t\neq0\), there are three poles at \(k^2=-m/t\), five spin-two poles at
+\((g+t)k^2+m=0\), and two poles in the scalar sector, so the
+\(h_{0\mu}\) components propagate.  For \(t'=m'=0\), \(g>0\) and
+\(|t|\ll g\), the coefficient matrix of \(\omega^2\) has, at \(t=0\), one
+direction of sign opposite to the spin-two modes (the trace) and four null
+directions; for \(t>0\) the three \(h_{0i}\) directions have a sign opposite
+to the spin-two modes, and for \(t<0\) the \(h_{00}\) direction does.  For
+\(t=t'=0\) and \(m'\neq-m\) there is one additional scalar pole, whose
+sign (ghost or tachyon) is not determined here; it is absent for
+\(m'=-m\), the Fierz--Pauli mass form, leaving only the five spin-two poles
+at \(gk^2+m=0\).  Diagonal invariance alone does not impose \(t=t'=0\) or
+\(m'=-m\).  Within this class and these parameter ranges, therefore, a
+tree-level derivative term on the symmetric block adds propagating
+components that carry directions of sign opposite to the spin-two modes,
+and a tree-level mass leaves no extra scalar pole only at the
+Fierz--Pauli trace ratio.  These are conditions that such a completion
+would place on the tree-level coefficients.  The displayed kinetic term of
+Equation~\eqref{eq:Smicro} is not diagonal-invariant (see the preceding
+paragraphs) and so is not a member of this class.  The vector and ghost
+sectors, the sign and size of \(g\), the continuation and the one-loop
+operator are not treated, so this does not show that an induced route is
+ghost-free, does not identify the block with the tensor sector of
+Chapter~\ref{ch:lorentz-decomposition}, and leaves Problems~B, C, D, F
+and~G open.
+
 \section{Problem E: signature}
 \label{sec:status-E}
 
