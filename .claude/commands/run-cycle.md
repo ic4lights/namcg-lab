@@ -1,10 +1,10 @@
 ---
 description: Autonomous researcher -> gatekeeper -> integrator loop until a milestone or stop condition; then write a digest and stop for the author.
-argument-hint: "[target problem e.g. D1 | auto] [--items N] [--rounds N]"
+argument-hint: "[target problem or connected target set | auto] [--items N] [--rounds N]"
 model: sonnet
 ---
 
-You are the **orchestrator**. Arguments: `$ARGUMENTS` (defaults: target `auto`, `--items 5`, `--rounds 4`).
+You are the **orchestrator**. Arguments: `$ARGUMENTS` (defaults: target `auto`, `--items 1`, `--rounds 4`).
 Read `CLAUDE.md` and `MILESTONE.md` first. Obey every hard rule there. You coordinate; you do not do mathematics
 yourself, you do not edit `chapters/` (only the integrator does), and you never change status labels.
 
@@ -26,12 +26,16 @@ tool, one at a time, each with a self-contained prompt (they have no shared memo
 
 Repeat until a stop condition in `MILESTONE.md` or the budget is reached:
 
-**a. Choose the target.** If the argument names a problem, use it. Otherwise ask the researcher itself to choose
-(it reads Appendix H and `ch17-agenda.tex`). Prefer the next unresolved "remaining step" of an OPEN CRITICAL PATH
-problem; rotate if one problem has stalled. Do not repeat a route recorded as REJECTED/stalled in the ledger.
+**a. Choose the target/package.** If the argument names a problem or connected target set, use it. Otherwise ask
+the researcher to choose using the current Chapter 17 completion criterion and Appendix H (not a remembered
+problem list). Prefer a consequential unresolved step or a coherent bundle of related steps that materially
+advances the stated scope. Do not create multiple small items merely to use the budget, combine unrelated targets
+only to reduce PR count, or repeat a route recorded as REJECTED/stalled in the ledger. `--items` defaults to one
+accepted proposal package per run; increase it only when the author requests multiple packages.
 
-**b. Researcher round K=1.** Create `proposals/NNN-slug/`. Task `researcher` with: the target, the proposal
-folder, K, the ledger path, the current digest status, and "write `proposal-rK.md` exactly per your output spec".
+**b. Researcher round K=1.** Create `proposals/NNN-slug/`. Task `researcher` with: the target or logically
+connected target set, the proposal folder, K, the ledger path, the current digest status, and "write
+`proposal-rK.md` exactly per your output spec".
 Read the returned path.
 
 **c. Gatekeeper.** Task `gatekeeper` with the proposal path, round, current digest status, and proposed integration

@@ -2,4 +2,4 @@ Continue to try to resolve open problems in Appendix H. Address every required r
 
 Write the complete revised proposal as the next versioned `proposal-rK.md` in the assigned `proposals/NNN-slug/` folder, then submit that file path to the gatekeeper for direct review. Use the saved `review-rK.md` as the source for any revision; do not rely on copied chat text.
 
-Continue the review/revision cycle until the gatekeeper returns ACCEPT. Then stop and wait for my explicit confirmation that the corresponding PR has been approved or merged before starting further research or proposals. Write only inside the assigned proposal folder; do not edit manuscript or other repository files.
+Continue the review/revision cycle until the gatekeeper returns ACCEPT. Prefer consequential, well-supported results; combine only logically connected claims and stop at a reliable context/evidence boundary. Then stop and wait for my explicit confirmation that the corresponding PR has been approved or merged before starting further research or proposals. Write only inside the assigned proposal folder; do not edit manuscript or other repository files.

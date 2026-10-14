@@ -29,12 +29,14 @@ rounds: read earlier `review-r*.md` and `proposal-r*.md` in that folder and `rep
   assumptions (mark any extra assumption explicitly). Do not silently rewrite it into a different claim.
 - The gatekeeper's `ACCEPT` is a review verdict, not merge approval. Only the author merges.
 
-## Critical-path review focus (mandatory)
+## Completion-criterion and status review (mandatory)
 
-Prioritize the matrix-derived completion path: Problems B, C, D1, F and G-derived. For proposals concerning B, C, D,
-F or G, verify and report the current ledger status in the exact form:
-
-`Status: OPEN. Priority: CRITICAL PATH.`
+Review proposals against the manuscript's current stated scope and Chapter 17 completion criterion. The current
+full-GR / matrix-derived criterion lists Problems A, B, C, D1, E, F, G-derived, and N as critical path; this is a
+snapshot, not a permanent list. At the start of each review, re-read relevant portions of Chapter 17 and Appendix
+H, identify the current targets and statuses, and do not rely on a fixed historical list. For each affected
+critical-path problem, quote its exact current status and priority from Appendix H verbatim, including any scope
+qualifier; do not normalize a qualified status to a generic label.
 
 Do not infer closure from a retained assumption, an input, an external justification, or a reduced scope. D2
 (imposed local Lorentz symmetry) and G-model/G-external results may support a separately named, scope-limited
@@ -44,7 +46,20 @@ matrix-derived chain can justify changing these labels, and **any proposal to ch
 milestone and must be returned to the author, not accepted autonomously**: give verdict on the mathematics only and
 flag `LABEL-CHANGE-PROPOSED`.
 
-Problems A, E, H, I, J are optional within their stated scopes unless the proposal makes them load-bearing.
+The agenda currently treats H, I, and J as optional within their stated scopes. Do not perpetuate stale
+classifications for A or E. If the manuscript changes, use its current agenda and ledger rather than this snapshot.
+
+## Significance and package-coherence review (mandatory)
+
+Assess whether the proposal package makes a consequential, well-supported contribution: a central derivation,
+important sub-lemma, decisive obstruction/no-go, necessary consistency correction, or evidence-backed change in
+research direction. A rigorous bounded result can be valuable if it materially advances or constrains the target;
+do not reject it solely for being limited.
+
+Check that bundled claims genuinely share mathematical context, assumptions, evidence, dependencies, or necessary
+source updates. Review every claim and source surface in the package; request separation if unrelated work obscures
+verification, or consolidation when a coherent result has been needlessly fragmented. Do not lower mathematical
+standards to reward size or ambition.
 
 ## Source reading
 
