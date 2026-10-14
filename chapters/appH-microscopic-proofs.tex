@@ -519,6 +519,66 @@ exact Moyal Leibniz defect for noncentral frame coefficients, derive
 local frame rotations from the matrix action, or supply independent
 connection dynamics. Problems~B, C, D, F and~G remain open.
 
+For the hand-chosen Poisson background of
+Remark~\ref{rem:ch3-varying-theta},
+\[
+  \Theta=a\,\partial_0\wedge\partial_1
+         +b(y)\,\partial_2\wedge\partial_3,
+  \qquad b(y)=b_0e^{\kappa y^2},
+\]
+the Hamiltonian frame \(V_A=X_{x_A}\), with
+\(X_f(g)=\{f,g\}_\Theta\), is
+\[
+  (V_0,V_1,V_2,V_3)
+  =(a\partial_1,-a\partial_0,b\partial_3,-b\partial_y).
+\]
+Its only nonzero frame bracket is
+\[
+  [V_2,V_3]=b'(y)V_2=2\kappa y\,b(y)\,V_2.
+\]
+The associated structure function is \(C^2{}_{23}=b'(y)\);
+the composite connection contains the logarithmic derivative
+\[
+  \omega^2{}_3=\frac{b'(y)}{b(y)}\,\mathrm{d}x^3
+  =2\kappa y\,\mathrm{d}x^3.
+\]
+With \(\eta_{AB}=\operatorname{diag}(-,+,+,+)\), the provisional
+inverse metric constructed from this frame is
+\[
+  g_{\mathrm{cand}}^{\mu\nu}
+  =\eta^{AB}V_A{}^\mu V_B{}^\nu
+  =\operatorname{diag}(a^2,-a^2,b(y)^2,b(y)^2)
+  =K_\Theta^{\mu\nu}.
+\]
+It therefore reproduces the tensor used in
+Remark~\ref{rem:ch3-varying-theta}; with that remark's
+normalization \(K_\Theta^{\mu\nu}=\ell_*^4\tilde g^{\mu\nu}\),
+\(g_{\mathrm{cand}}=\ell_*^{-4}\tilde g\).
+
+A dual coframe is
+\[
+  \vartheta^0=\frac{\mathrm{d}x^1}{a},\qquad
+  \vartheta^1=-\frac{\mathrm{d}x^0}{a},\qquad
+  \vartheta^2=\frac{\mathrm{d}x^3}{b(y)},\qquad
+  \vartheta^3=-\frac{\mathrm{d}y}{b(y)}.
+\]
+Its torsion-free connection has
+\(\omega^2{}_3=2\kappa y\,\mathrm{d}x^3\), and
+\(\mathcal R^2{}_3=2\kappa\,\mathrm{d}y\wedge\mathrm{d}x^3\).
+In the curvature convention of
+Remark~\ref{rem:ch3-varying-theta}, this gives
+\(R[g_{\mathrm{cand}}]=4\kappa b(y)^2\).
+This identifies the candidate Poisson-frame metric with the
+already chosen toy geometry, up to the stated constant
+normalization; it is not an independent derivation of that
+geometry.
+
+The calculation is at classical Poisson-symbol order on a
+hand-chosen background. It derives neither that background from
+the matrix action nor local Lorentz gauge symmetry, a
+noncommutative frame module, or independent connection dynamics.
+Problems~B, C, D, F and~G remain open.
+
 In particular, Presentation~A as specified contains no coframe
 \(e^A{}_\mu\), independent tangent index \(A\), or spin connection
 \(\omega_\mu{}^{AB}\). The infrared dictionary~\eqref{eq:dictionary}
