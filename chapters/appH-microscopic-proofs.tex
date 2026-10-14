@@ -987,6 +987,63 @@ tensor block, the ghosts, the continuation and the scheme are not
 specified here, so this does not determine \(G_{\mathrm{eff}}\), does
 not fix the sign of the Lorentzian term, and leaves Problem~F open.
 
+\paragraph{Mass-resummed curvature threshold for the Hermitian block
+(conditional; not closure).}
+Keep the assumptions of the preceding one-block bookkeeping paragraph:
+sixteen decoupled real components, determinant weight \(w=1\), common
+proper-time limits, and
+\(\mathcal O_H=-\nabla^2+E\), with
+\(E=m^2+Q R_E\), \(m^2=\lambda v^2\), and constant \(m^2\) and \(Q\)
+proportional to the identity. At the retained order assume
+\(\nabla E=0\), and keep only terms linear in \(R_E\), dropping
+curvature-squared invariants and curvature-derivative terms. Retaining
+the mass exponential, the coincident-point heat kernel then contains
+\[
+\operatorname{tr}\langle x|e^{-s\mathcal O_H}|x\rangle
+\supset
+\frac{16}{(4\pi s)^2}e^{-sm^2}
+s\left(\frac16-Q\right)R_E .
+\]
+Thus this block's contribution to \(C_R^E\), in the sign and
+normalization convention of the preceding paragraph, with
+\(s_{\min}=\LUV^{-2}\) and \(s_{\max}=\mu^{-2}\), is
+\[
+-\frac{16}{32\pi^2}\left(\frac16-Q\right)
+J(m^2;s_{\min},s_{\max}),
+\]
+where
+\[
+\begin{aligned}
+J(m^2;s_{\min},s_{\max})
+&:=\int_{s_{\min}}^{s_{\max}}\frac{\mathrm{d}s}{s^2}e^{-m^2s}\\
+&=\frac{e^{-m^2s_{\min}}}{s_{\min}}
+ -\frac{e^{-m^2s_{\max}}}{s_{\max}}
+ -m^2\left[
+ E_1(m^2s_{\min})-E_1(m^2s_{\max})
+ \right],
+\qquad
+E_1(x):=\int_x^\infty\frac{e^{-t}}{t}\,\mathrm{d}t .
+\end{aligned}
+\]
+The \(m\to0\) limit is \(J(0)=\LUV^2-\mu^2\). For
+\(m^2s_{\max}\ll1\),
+\[
+J=\LUV^2-\mu^2
+ -m^2\ln\!\left(\frac{\LUV^2}{\mu^2}\right)
+ +O\!\left(m^4s_{\max}\right).
+\]
+This small-mass expansion gives the earlier truncated expression;
+the resummed \(J\) is the threshold function, and the earlier
+expression is not removed. At this order in curvature, the resummed
+expression includes the mass insertions represented by that
+curvature-linear \(a_2\) term; they must not be added a second time.
+For \(m^2s_{\min}\gg1\), this block's loop contribution is
+exponentially suppressed. The full coefficient still includes the
+scheme-dependent local curvature counterterm of
+Theorem~\ref{thm:Geff}; this block calculation does not specify that
+counterterm or the other sectors, their operators and weights, the
+gauge fixing, or the continuation. Problems~B, C, D, F and~G remain
+open.
 \paragraph{The assumed group \(G_{\mathrm{int}}\supseteq\mathrm{SO}(3,1)\)
 and the displayed potential (conditional; not closure).}
 Chapter~\ref{ch:lorentz-locking} takes \(G_{\mathrm{int}}\) to contain
