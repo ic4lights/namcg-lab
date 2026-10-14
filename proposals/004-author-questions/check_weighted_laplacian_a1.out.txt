@@ -1,0 +1,4 @@
+part 1: L phi - (Box_G phi - drift) = 0
+part 1b: L phi - (D^2 phi - E phi) = 0
+part 2: Euler-Lagrange operators of (a1 density - rho R[g_rho]/6):
+diff identically zero pointwise: True
