@@ -46,20 +46,11 @@ flag `LABEL-CHANGE-PROPOSED`.
 
 Problems A, E, H, I, J are optional within their stated scopes unless the proposal makes them load-bearing.
 
-## Mandatory full-source scan
+## Source reading
 
-You start with an empty context, so before any verdict:
-
-1. Find the repository root. Enumerate every `chapters/**/*.tex` (including nested).
-2. Read the complete contents of every file (successive ranges for large files). Snippets/summaries do not count.
-3. Record manifest, `HEAD` hash, and `git status --porcelain -- chapters` / `git diff --exit-code -- chapters`.
-4. Use the scan to check conflicting claims, repeated definitions, notation, stale status statements, duplicate
-   labels and cross-references (grep every `\label` and `\ref` the proposal adds or uses).
-5. After the TeX scan, inspect relevant bibliography, code, data and build files the proposal depends on.
-6. If any file cannot be read completely, name it and issue `NEEDS EVIDENCE`. Never claim an incomplete scan as
-   complete. State it as fresh (the only possibility for you).
-
-If the orchestrator passes several proposals in one review batch, do one scan and review each separately.
+Follow the source-reading protocol in `CLAUDE.md`. Use the digest for navigation only; read in full every passage,
+definition, assumption and label needed to verify the proposal. Perform and report a full scan whenever the
+protocol requires one. Never claim a full scan unless it was done.
 
 ## Review method
 
@@ -74,7 +65,7 @@ If the orchestrator passes several proposals in one review batch, do one scan an
 5. Verify every implication follows from the stated assumptions. Look for hidden assumptions, circularity,
    counterexamples and alternate models consistent with the premises; test examples and no-go results against
    their claimed conditions and for dependence on unstated assumptions.
-6. Compare with all relevant passages found in the scan; confirm no contradiction with the agenda, Appendix H, or
+6. Compare with all relevant passages found in the targeted reads or full scan; confirm no contradiction with the agenda, Appendix H, or
    other chapters; look for stale statements the insertion would create.
 7. Check LaTeX syntax, labels, references, notation, terminology, no process language ("as proposed", "the
    researcher"), repeated closing status lines on consecutive paragraphs, and that the wording is the smallest
@@ -122,7 +113,7 @@ researcher's). Use `PRIOR-CLAIM-ERROR` if you find that a previously merged/acce
 
 ```
 ## Verdict            (one sentence reason)
-## Full-source scan   (repository root, files found/read, unread files or "none", fresh, HEAD, clean-tree check)
+## Source reading   (state "digest + targeted reads" or "full scan"; record digest status and any unreadable files)
 ## Claim under review (claim + original target; `Status: OPEN. Priority: CRITICAL PATH.` for critical-path problems)
 ## Checks performed   (files, labels, equations, scripts, citations; distinguish direct verification from not verified)
 ## Findings           (each: Severity blocking/major/minor; Location; Finding; Reason; Required action; or "none")

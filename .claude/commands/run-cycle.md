@@ -1,6 +1,7 @@
 ---
 description: Autonomous researcher -> gatekeeper -> integrator loop until a milestone or stop condition; then write a digest and stop for the author.
 argument-hint: "[target problem e.g. D1 | auto] [--items N] [--rounds N]"
+model: sonnet
 ---
 
 You are the **orchestrator**. Arguments: `$ARGUMENTS` (defaults: target `auto`, `--items 5`, `--rounds 4`).
@@ -16,7 +17,8 @@ tool, one at a time, each with a self-contained prompt (they have no shared memo
    `auto/*` branch, continue on it.
 2. `git status --porcelain` must be empty (if not, stop: the author must commit or stash first).
 3. Record `BASE=$(git rev-parse HEAD)`, the chapter manifest count, and run `python scripts/build_check.py`
-   to confirm the baseline builds. Ensure `.claude/state/allow_chapters` does not exist.
+   to confirm the baseline builds. Run `python scripts/make_digest.py`, then verify it with
+   `python scripts/make_digest.py --check` (`DIGEST CURRENT`). Ensure `.claude/state/allow_chapters` does not exist.
 4. Read `reports/ledger.md` (create it with a header if absent) and list `proposals/` to find the next id `NNN`.
 5. Initialise counters: `accepted=0`, `stalled_in_a_row=0`.
 
@@ -29,10 +31,12 @@ Repeat until a stop condition in `MILESTONE.md` or the budget is reached:
 problem; rotate if one problem has stalled. Do not repeat a route recorded as REJECTED/stalled in the ledger.
 
 **b. Researcher round K=1.** Create `proposals/NNN-slug/`. Task `researcher` with: the target, the proposal
-folder, K, the ledger path, and "write `proposal-rK.md` exactly per your output spec". Read the returned path.
+folder, K, the ledger path, the current digest status, and "write `proposal-rK.md` exactly per your output spec".
+Read the returned path.
 
-**c. Gatekeeper.** Task `gatekeeper` with the proposal path and round. Save its full reply verbatim to
-`proposals/NNN-slug/review-rK.md`. Parse the first line (`VERDICT | MILESTONE | FLAGS`).
+**c. Gatekeeper.** Task `gatekeeper` with the proposal path, round, current digest status, and proposed integration
+ordinal (`accepted + 1`). Save its full reply verbatim to `proposals/NNN-slug/review-rK.md`. Parse the first line
+(`VERDICT | MILESTONE | FLAGS`).
 
 **d. Branch on the verdict.**
 - `ACCEPT WITH REQUIRED REVISIONS`, `REJECT` (with a stated smallest correction) or `NEEDS EVIDENCE` that the
@@ -50,9 +54,11 @@ folder, K, the ledger path, and "write `proposal-rK.md` exactly per your output 
 label, does not use "closed/solved/derived" about B, C, D, F, G, and ends with a scoped status sentence. If it
 does, treat as `LABEL-CHANGE-PROPOSED` and stop. Confirm the review round equals the proposal round.
 
-**f. Integrate.** Create `.claude/state/allow_chapters`, Task `integrator` with the proposal path, review path and
-branch, then ensure the flag file is removed. If it reports a build failure or anchor mismatch: ledger entry
-`INTEGRATION-FAILED`, stop the run. Else `accepted+=1`, `stalled_in_a_row=0`.
+**f. Integrate.** Create `.claude/state/allow_chapters`, Task `integrator` with the proposal path, review path,
+branch and current digest status, then ensure the flag file is removed. If it reports a build failure or anchor
+mismatch: ledger entry `INTEGRATION-FAILED`, stop the run. Else increment `accepted`, rebuild the digest with
+`python scripts/make_digest.py`, verify `python scripts/make_digest.py --check` prints `DIGEST CURRENT`, and set
+`stalled_in_a_row=0`. Pass the refreshed digest status to all later subagents.
 
 **g. Ledger.** Append one block to `reports/ledger.md`: id, date, problem, claim (one sentence), rounds, final
 verdict, commit hash or "not integrated", what is proved/conditional/open, milestone code (gatekeeper's M-code,

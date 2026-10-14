@@ -43,12 +43,20 @@ Subagent definitions live in `.claude/agents/`. The human author is the only par
 - Keep sympy/Python verification scripts under `scratch/` (git-ignored) or inside the proposal folder so the
   gatekeeper can re-run them. Symbolic output is a check, not a proof.
 
-## Mandatory source scan
+## Source reading (token-efficient protocol)
 
-Every subagent starts with an empty context, so each must do its own scan: enumerate `chapters/**/*.tex`, read
-every file completely (successive `view_range`/offset reads for large files), and record the manifest, `HEAD`
-hash, and whether `git status --porcelain -- chapters` is clean. Never claim coverage that was not completed.
-Read `appH-microscopic-proofs.tex` and `ch17-agenda.tex` with particular care.
+1. The orchestrator runs `python scripts/make_digest.py` once per run and again after every integration.
+   `python scripts/make_digest.py --check` must print `DIGEST CURRENT` before a subagent relies on it.
+2. Each subagent reads `scratch/digest.md` first, then reads IN FULL: the Problem entry in
+   `chapters/appH-microscopic-proofs.tex`, the matching passage in `chapters/ch17-agenda.tex`, every passage it
+   cites, edits or relies on, and every definition, assumption and label it uses (grep the digest, then view ranges).
+3. A FULL 30-file scan is mandatory (a) for the gatekeeper on every 5th integrated item, (b) for the gatekeeper
+   before issuing a milestone verdict that triggers a milestone digest, (c) for any proposal that changes a
+   definition, an assumption, a scope statement or a status passage, and (d) when the digest is stale or
+   `dirty-chapters: yes`.
+4. Never claim a full scan unless it was done. State "digest + targeted reads" otherwise.
+5. In revision rounds, the gatekeeper receives the proposal diff and the previous review. It re-derives the central
+   equations and every changed claim, and re-verifies each earlier finding.
 
 ## Autonomy protocol
 

@@ -42,14 +42,10 @@ hook enforces this; do not try to bypass it.
 
 ## 1. Understand the repository before researching
 
-1. Enumerate every `.tex` file under `chapters/` (including nested) and **read each completely**. Large files:
-   read in successive ranges. Search snippets and summaries do not count. Record manifest and coverage, `HEAD`
-   hash, and `git status --porcelain -- chapters`. If a file cannot be read, name it and do not claim a full scan.
-2. Read `appH-microscopic-proofs.tex` and `ch17-agenda.tex` with particular care.
-3. Search the manuscript for existing results bearing on the missing step before proposing new arguments, and for
-   all duplicated/stale status statements a proposal would affect.
-4. Inspect bibliography, code, data and build files when the question depends on them.
-5. Read previous proposals/reviews in `proposals/` and `reports/ledger.md` so you do not repeat rejected routes.
+Follow the source-reading protocol in `CLAUDE.md`. Search the manuscript for existing results bearing on the
+missing step before proposing new arguments, and inspect bibliography, code, data and build files when the question
+depends on them. Read previous proposals/reviews in `proposals/` and `reports/ledger.md` so you do not repeat
+rejected routes.
 
 ## 2. Research objective
 
@@ -125,7 +121,7 @@ Write `proposals/NNN-slug/proposal-rK.md` containing, in order:
 # Proposal NNN-slug, round K
 ## Result            (what is established, or why the target remains open; no overclaiming)
 ## Target and status (problem, exact current status/priority from Appendix H, original target, dependencies, DERIVED or PROGRAMME-CONDITIONAL)
-## Source coverage   (repository root, files found/read, fresh scan, HEAD, clean-tree check, unreadable files)
+## Source reading   (state "digest + targeted reads" or "full scan"; record digest status and any unreadable files)
 ## Research and reasoning (derivation, assumptions, literature checked vs not verified, comparison with original target)
 ## Claim classification   (each claim tagged: established / conditional / input / conjecture / unresolved)
 ## Proposed changes  (per file: passage anchor, quoted boundary, what is kept; fenced `latex` block; stale passages elsewhere + replacements)
