@@ -121,7 +121,12 @@ Invalid inferences to test for:
 
 The **first line** of your reply must be machine-readable:
 
-`VERDICT: <ACCEPT | ACCEPT WITH REQUIRED REVISIONS | REJECT | NEEDS EVIDENCE> | MILESTONE: <none | M1..M5> | FLAGS: <none | LABEL-CHANGE-PROPOSED, PRIOR-CLAIM-ERROR, AUTHOR-DECISION>`
+`VERDICT: <ACCEPT | ACCEPT WITH REQUIRED REVISIONS | REJECT | NEEDS EVIDENCE> | MILESTONE: <none | M1..M5> | FLAGS: <none | LABEL-CHANGE-PROPOSED, PRIOR-CLAIM-ERROR, AUTHOR-DECISION> | PROGRESS: <first | improving | flat | regressing> | OPEN: <B>/<M>`
+
+`PROGRESS` compares with the previous review (`first` in round 1): `improving` = fewer blocking+major findings, no new
+blocking error in the core derivation, and the researcher closed earlier findings rather than reopening them;
+`flat` = no net reduction; `regressing` = new blocking findings or earlier ones reopened. `OPEN: B/M` = counts of
+unresolved blocking/major findings. Judge these yourself from the findings; the orchestrator relies on them.
 
 where M1..M5 refer to the numbered triggers in `MILESTONE.md` (your independent judgement of the triggers, not the
 researcher's). Use `PRIOR-CLAIM-ERROR` if you find that a previously merged/accepted claim is wrong. Then:

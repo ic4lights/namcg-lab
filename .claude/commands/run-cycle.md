@@ -45,8 +45,13 @@ ordinal (`accepted + 1`). Save its full reply verbatim to `proposals/NNN-slug/re
 **d. Branch on the verdict.**
 - `ACCEPT WITH REQUIRED REVISIONS`, `REJECT` (with a stated smallest correction) or `NEEDS EVIDENCE` that the
   researcher can supply: K+=1; Task `researcher` with the previous proposal and review paths; it writes
-  `proposal-rK.md` addressing every finding. Go to (c). Stop the item after `--rounds` rounds, mark it
-  `STALLED` in the ledger, `stalled_in_a_row+=1`. If `stalled_in_a_row>=2`, stop the run.
+  `proposal-rK.md` addressing every finding. Go to (c). At the base cap (`--rounds`, default 4) without ACCEPT,
+  extend by up to 4 more rounds (hard max `--rounds + 4`, i.e. 8) only if the latest review has
+  `PROGRESS: improving`, the smallest correction is concrete and needs no new research, and no stop condition
+  below holds; log one line "extended at round K: <reason>" in the ledger. Never extend if the last two reviews
+  both have `PROGRESS: flat` or `regressing` (stop immediately, even before the cap), the same blocking finding
+  recurs, or the researcher repeats a rejected route. Otherwise (or at the hard max) mark the item `STALLED` in the
+  ledger, `stalled_in_a_row+=1`. If `stalled_in_a_row>=2`, stop the run.
 - `REJECT` because the target step is false or circular with no salvage: record the no-go/negative result
   in the ledger. If the gatekeeper marks it M2/M3, treat as a milestone. Otherwise next item.
 - `NEEDS EVIDENCE` requiring the author (external data/reference you cannot obtain): stop the run.

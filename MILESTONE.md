@@ -28,8 +28,10 @@ scope, dimensional or sign corrections to non-load-bearing text, bookkeeping.
 
 - `ACCEPTED_BATCH_LIMIT` accepted-and-integrated proposal packages since the run began (default 1, matching
   `/run-cycle`; increase only when the author requests multiple packages).
-- `MAX_ROUNDS` researcher/gatekeeper revision rounds on one item without `ACCEPT` (default 4). Record the
-  item as stalled; if two consecutive items stall, stop.
+- `MAX_ROUNDS` researcher/gatekeeper revision rounds on one item without `ACCEPT` (default 4), extendable by up to 4
+  more rounds (hard max 8) only while the gatekeeper's `PROGRESS` is `improving` (see `/run-cycle` step d); stop
+  early after two consecutive `flat`/`regressing` reviews. Record the extension reason and rounds used per item in
+  the ledger and digest. Record the item as stalled when the cap is reached; if two consecutive items stall, stop.
 - The gatekeeper returns `NEEDS EVIDENCE` that needs the author (data, an external reference you must supply).
 - A choice among materially different designs where the author's preference matters.
 - Pre-flight failures: dirty `chapters/`, on `main`, build already broken, tools missing.
