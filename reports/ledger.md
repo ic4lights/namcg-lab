@@ -36,3 +36,8 @@
 - A: appK a_1 sign corrected to tr(R/6-E); A2 narrowed (F F term quadratic; linear tr(S E_0) term not excluded). B: alpha gloss on N target (ch17, appH sec:status-N). C: ch16 inventory row for ass:emergent-op (load-bearing), premise sentence, chain item 6.
 - Commit 5ddf637. Build PASS 246 pages, 0 undefined refs. No label touched. Integrated count this run: 3.
 - Still queued: Barvinsky-Vilkovisky citation for the N form-factor sentence (integrator may now add accepted BibTeX).
+
+## 007-N-formfactor-citation — integrated 2026-10-14
+- \cite{BarvinskyVilkovisky1990} after "momentum-dependent form factors" in appH sec:status-N; BibTeX added to bib/namcg.bib (record verified against Crossref by gatekeeper). Decay clause stays an uncited assumption. r1 ACCEPT, flags none.
+- Commit 6e5f56a. Process note: integrator committed after build_check reported FAIL (citation undefined because scripts/build_check.py runs pdflatex only, never bibtex; .bbl is gitignored). After a manual bibtex + 2x pdflatex the cite resolves; orchestrator re-ran build_check: PASS 246 pages, 0 undefined. Infrastructure gap: build_check.py does not run bibtex (left for the author).
+- No label touched. Integrated count this run: 4.
