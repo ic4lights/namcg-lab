@@ -1,3 +1,4 @@
+---
 description: Autonomous researcher -> gatekeeper -> integrator loop until a milestone or stop condition; then write a digest and stop for the author.
 argument-hint: "[target problem or connected target set | auto] [--items N] [--rounds N]"
 model: sonnet
@@ -59,7 +60,7 @@ ordinal (`accepted + 1`). Save its full reply verbatim to `proposals/NNN-slug/re
 - `NEEDS EVIDENCE` requiring the author (external data/reference you cannot obtain): stop the run.
 - `ACCEPT` with `FLAGS` containing `LABEL-CHANGE-PROPOSED` or `AUTHOR-DECISION` or `PRIOR-CLAIM-ERROR`: **do not
   integrate**. Record, and stop the run (milestone).
-- `ACCEPT` with FLAGS `none`.
+- `ACCEPT` with FLAGS `none`: go to (e).
 
 **e. Independence sanity check (you, cheaply).** Confirm the accepted proposal text does not add, remove, or
 change any status, priority, or completion-classification label, and does not claim an open critical-path target
@@ -80,9 +81,20 @@ or the researcher's if the gatekeeper said none and you agree it matches a `MILE
 loop now. Otherwise, if `accepted >= --items`, stop. Otherwise start the next item (re-run pre-flight steps 2-3
 only if something unexpected happened; the integrator's build already confirmed the tree).
 
-## 2. Digest and stop
+## 2. Author questions, digest and stop
 
-When the loop ends for any reason, write `reports/run-<YYYYMMDD-HHMM>.md` with exactly the contents listed at the
+**Author-question recommendations.** If the run produced open author questions (`AUTHOR-DECISION` or
+`PRIOR-CLAIM-ERROR` flags, or "Author decision needed" items in a proposal or review), triage them first. Questions
+whose answer cannot fundamentally break NAMCG (corrections, notation, wording, citation choices, how to record a
+corrected claim, which within-core route to pursue next) go to the researcher in advisory mode: create
+`proposals/NNN-author-questions/` and task `researcher` with the questions, the source proposal/review paths and the
+output path `recommendations-r1.md`. Ask for a best-course recommendation favouring the NAMCG infrared derivation
+and/or full-GR derivation. Options that would change the NAMCG core or make a critical-path dependency optional stay
+in a separate "STRUCTURAL - author only" section. Do not send the author's own merge or integrate decisions. The
+recommendations are advisory: integrate nothing on their basis, change no label, and list them in the digest
+under item 4.
+
+**Digest.** When the loop ends for any reason, write `reports/run-<YYYYMMDD-HHMM>.md` with exactly the contents listed at the
 end of `MILESTONE.md`. Make sure the branch is clean (`git status --porcelain` empty), run
 `git log --oneline $BASE..HEAD`, and `git diff --stat $BASE..HEAD`. Commit the digest and ledger on the branch
 (`git add reports proposals; git commit -m "Run digest and proposals"`).
