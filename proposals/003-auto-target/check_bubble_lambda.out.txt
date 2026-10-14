@@ -1,0 +1,12 @@
+p^2 coefficient of B: -exp(-m2/Lambda**2)/(96*pi**2*m2)
+  equals -exp(-m2/L^2)/(96 pi^2 m2): True
+  large-Lambda series: 1/(96*pi**2*Lambda**2) - 1/(96*pi**2*m2) + O(Lambda**(-3), (Lambda, oo))
+  int_{L^-2}^oo ds/s e^{-s z} == E1(z/L^2) (numeric, z=0.7, L=3): True
+Gamma_E (d sigma)^2 coefficient from H block: 3*lambda*exp(-lambda*v**2/Lambda**2)/(8*pi**2)
+  Delta Z = 2*that = 3*lambda*exp(-lambda*v**2/Lambda**2)/(4*pi**2)  -> leading 3*lambda/(4*pi**2)
+  tree Z = 2N = 8; relative correction (leading): 3*lambda/(32*pi**2)
+massless integrand small-z expansion (E1(z) = -gamma - ln z + z + ...): p2*(-x**2/Lambda**2 + x/Lambda**2) + 2*log(Lambda) - log(p2) - log(x) - log(1 - x) - EulerGamma
+  analytic p^2 coefficient after x-integration: 1/(96*pi**2) / Lambda^2
+Lambda/m =    10:  B formula 0.0252661201693  direct 0.0252661201693  dB/dp2(0) -0.001044927197  vs -exp(-1/L^2)/(96 pi^2) = -0.001044927302
+Lambda/m =   100:  B formula 0.0543630481415  direct 0.0543630481415  dB/dp2(0) -0.001055323353  vs -exp(-1/L^2)/(96 pi^2) = -0.001055323459
+Lambda/m =  1000:  B formula 0.0835249707703  direct 0.0835249707703  dB/dp2(0) -0.001055427835  vs -exp(-1/L^2)/(96 pi^2) = -0.001055427941

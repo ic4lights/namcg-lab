@@ -1,0 +1,12 @@
+(i) Tr(delta^dag delta) == sum h^2 + k^2 : True
+(ii) gradient at Phi_bar = phi0 I (should vanish only at phi0 = v): [-lambda*phi0*(-phi0 + v)*(phi0 + v), 0]
+(ii) off-diagonal entries of E: []
+(ii) E_H entries: {-lambda*(-3*phi0**2 + v**2)/2}  target: -lambda*(-3*phi0**2 + v**2)/2
+(ii) E_K entries: {-lambda*(-phi0 + v)*(phi0 + v)/2}  target: -lambda*(-phi0 + v)*(phi0 + v)/2
+     at phi0 = v + sigma:  E_H = 3*lambda*sigma**2/2 + 3*lambda*sigma*v + lambda*v**2 ;  E_K = lambda*sigma**2/2 + lambda*sigma*v
+     dE_H/dsigma|0 = 3*lambda*v ; dE_K/dsigma|0 = lambda*v
+     tr E(sigma) (no derivatives; enters only via Lambda^2 tr E): 16*lambda*(2*sigma**2 + 4*sigma*v + v**2)
+     Tr(I) (d sigma)^2 coefficient N = 4
+(iv) sqrt(g) R + 6 Omega Box Omega = 0
+     R on stereographic unit S^4 (expect +12): 12
+(iv) emergent-metric a_1 term: Gamma_E coefficient of (d sigma)^2 = -Lambda_UV**2*N_0/(32*pi**2*v**2)  (= -N0 Lambda^2/(32 pi^2 v^2))
