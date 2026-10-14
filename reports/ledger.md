@@ -30,3 +30,9 @@
 - Not a closure of the composite-metric EH route. Relaxable hypotheses: Theta-built regulator/kinetic metric (Presentation A), non-invariant vacuum, curved scaffold, non-linear composite map.
 - Queued for author: Item 7 (ch16 inventory row for ass:emergent-op + premise sentence + chain item 6; optional ch17 F missing-step sentence) — changes Ch.17 completion criterion by cross-reference.
 - Milestone: M3, M2 (non-stopping under autonomy directive). Integrated count this run: 2.
+
+## 006-followups-002-003-004 — integrated 2026-10-14
+- Bookkeeping follow-ups (author-approved B and C: "proceed with worth integrating items"). r1 ACCEPT, flags none, full scan.
+- A: appK a_1 sign corrected to tr(R/6-E); A2 narrowed (F F term quadratic; linear tr(S E_0) term not excluded). B: alpha gloss on N target (ch17, appH sec:status-N). C: ch16 inventory row for ass:emergent-op (load-bearing), premise sentence, chain item 6.
+- Commit 5ddf637. Build PASS 246 pages, 0 undefined refs. No label touched. Integrated count this run: 3.
+- Still queued: Barvinsky-Vilkovisky citation for the N form-factor sentence (integrator may now add accepted BibTeX).
