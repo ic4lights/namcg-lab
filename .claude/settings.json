@@ -1,0 +1,64 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Grep",
+      "Glob",
+      "WebFetch",
+      "WebSearch",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git branch:*)",
+      "Bash(git switch -c auto/*)",
+      "Bash(git checkout -b auto/*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git restore -- namcg-book7.pdf)",
+      "Bash(git ls-files:*)",
+      "Bash(python:*)",
+      "Bash(pdflatex:*)",
+      "Bash(bibtex:*)",
+      "Bash(touch .claude/state/*)",
+      "Bash(rm .claude/state/allow_chapters)",
+      "Bash(ls:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)",
+      "Edit(proposals/**)",
+      "Write(proposals/**)",
+      "Write(reports/**)",
+      "Edit(reports/**)",
+      "Write(scratch/**)",
+      "Edit(chapters/**)",
+      "Write(.claude/state/**)"
+    ],
+    "deny": [
+      "Bash(git push:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git clean:*)",
+      "Bash(git merge:*)",
+      "Bash(git rebase:*)",
+      "Bash(rm -rf:*)",
+      "Edit(agents/**)",
+      "Write(agents/**)",
+      "Edit(.claude/agents/**)",
+      "Edit(.claude/hooks/**)",
+      "Edit(CLAUDE.md)",
+      "Edit(MILESTONE.md)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard.py\""
+          }
+        ]
+      }
+    ]
+  }
+}

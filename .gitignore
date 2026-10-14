@@ -11,3 +11,7 @@ __pycache__/
 *.out
 *.toc
 manual_posts/images/
+
+scratch/
+.claude/state/
+.claude/settings.local.json
