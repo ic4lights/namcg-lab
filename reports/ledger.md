@@ -16,3 +16,9 @@
 - Proved: Hessian structure + Lemma 1 (scaffold proper-time regulator, A_mu fixed); conformal-mode counterexample to prop:scaffold's final sentence; psi-T orthogonality at tree level; Lemma 2 (flat scaffold, rotation-preserving regulator and gauge fixing, invariant vacuum, h a fixed linear image of Phi). Conditional: Delta Z = 3 lambda/(4 pi^2) (A_mu fixed, s_max -> infinity). Not covered: A_mu-integrated theory, Theta-dependent regulators, curved scaffolds, Presentation A, Weinberg-Witten applicability. F, C, B, D stay OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL.
 - Milestone: M3 (prop:scaffold final inference wrong; ch05 psi dd T clause false, non-load-bearing), M2 (no-go for loop-generated composite-metric EH/FP in the scaffold-symmetric class).
 - Author items: prop:scaffold form (proposition vs remark/assumption) and ch16 inventory; structural ingredient tying derivative and tangent indices; stale passages ch04 Ex.7 L418-423, ch08 L56-58, appG L19-29.
+
+## 002-auto-target — integrated 2026-10-14
+- Integrated proposal-r2 items 1-3 (appH Problem N conditional block; deletion of "No computation is recorded."; ch09 Stelle qualifier) under the author's 2026-10-14 autonomy directive (flags concerned only outside items). Commit eecd202. Build PASS 242 pages, 0 undefined refs. No label touched. N stays OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL.
+
+## 004-author-questions — advisory recommendations
+- r1 reviewed (ACCEPT WITH REQUIRED REVISIONS, OPEN 0/4); r2 written addressing findings 1-7. Not for integration; under the autonomy directive its within-core recommendations become researcher decisions to be carried into normal proposal rounds (Q1 appK sign; Q2/Q3 N gloss + citation; Q4/Q6 with 003).
