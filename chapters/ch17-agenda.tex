@@ -77,8 +77,11 @@ scope supports at most a scope-limited Presentation-B model.
 OPTIONAL means that a problem may remain open within a stated scope
 provided the claim given up is stated. Optional does not mean solved.
 Priority words are CRITICAL PATH and OPTIONAL.
-In Chapter~16, a \emph{load-bearing assumption} is a premise used by
-the chain; it is not thereby a critical-path problem.
+In Chapter~\ref{ch:falsifiers}, a \emph{load-bearing assumption} is a
+premise used by the chain. The critical-path problems are those
+listed in Section~\ref{sec:ch17-done}. For the matrix-derived label,
+each load-bearing assumption must be discharged by one of them; a
+scope-limited model may retain it.
 
 \begin{center}
 \begin{tabular}{@{}p{0.31\textwidth}p{0.63\textwidth}@{}}
@@ -86,13 +89,18 @@ the chain; it is not thereby a critical-path problem.
 Label & Meaning \\
 \midrule
 \textbf{Completed infrared derivation (matrix-derived)} &
-The only label for meeting the five-item criterion in
-Section~\ref{sec:ch17-done}; every critical-path problem is DERIVED
-for NAMCG from the matrix theory. \\
+The only label for meeting the criterion in
+Section~\ref{sec:ch17-done}; every critical-path problem listed
+there is DERIVED for NAMCG from the matrix theory, so no
+load-bearing assumption of Chapter~\ref{ch:falsifiers} remains
+assumed in their chains. \\
 \textbf{Scope-limited Presentation-B infrared model} &
-A separately stated model with its imposed premises named. It is
-not matrix-derived, does not close critical-path problems, and does
-not satisfy the five-item criterion. \\
+A separately stated model with its imposed premises named,
+including any retained load-bearing assumption such as
+Assumption~\ref{ass:dictionary}, \ref{ass:lorentzian}
+or~\ref{ass:EFT-a2}. It is not matrix-derived, does not close
+critical-path problems, and does not satisfy the criterion of
+Section~\ref{sec:ch17-done}. \\
 \textbf{Programme} &
 Any other status; one or more critical-path premises or targets
 remain unresolved. \\
@@ -100,11 +108,14 @@ remain unresolved. \\
 \end{tabular}
 \end{center}
 
-\section{Critical-path problems: B, C, and D}
+\section{Critical-path problems I: B, C, and D}
 \label{sec:ch17-bearing}
 
-Problems B, C, D, F, and G are critical path for a completed
-matrix-derived infrared derivation. The order below follows
+The critical-path problems are those listed in
+Section~\ref{sec:ch17-done}. Problems B, C and D are treated here.
+The remaining critical-path problems, together with the optional
+problems H, I and J, are treated in Section~\ref{sec:ch17-coeff}.
+The order of work in Section~\ref{sec:ch17-order} follows
 dependencies, not project size.
 
 \paragraph{Problem B: entanglement equilibrium from the path
@@ -325,6 +336,10 @@ local Lorentz gauge symmetry from the matrix algebra and condensate
 auxiliary spacetime and stop calling Presentation~A ontologically
 prior (D2). D1 closure requires the \(\omega\), \(A_\mu\), \(B\), and
 ghost operators and the resulting field content to be specified.
+D1 closure also requires that the locked frame exist and be
+non-degenerate on the claimed domain, derived from the same
+microscopic data rather than taken from
+Assumptions~\ref{ass:frame-lock} and~\ref{ass:nondeg}.
 Under D2, even with these operators specified, the result is only a
 scope-limited Presentation-B model: D remains OPEN and CRITICAL PATH,
 and a full matrix-derived spectrum is not established. The Chapter~10
@@ -357,14 +372,14 @@ that truncation and with the corresponding ghost sector specified.
 \section{Open problems by scope and priority}
 \label{sec:ch17-coeff}
 
-\subsection{Optional problems A and E}
+\subsection{Critical-path problems A and E}
 
 \paragraph{Problem A: the infrared dictionary.}
-\emph{OPEN; OPTIONAL only if Presentation~B is the operative theory
-and no claim is made that NAMCG follows from Presentation~A or that
-Presentation~A is ontologically prior.} The claim given up is a
-derivation from the matrix model; Chapter~8 remains a Presentation-B
-calculation. A claim of matrix-model priority makes A critical path.
+\emph{OPEN; CRITICAL PATH for the matrix-derived label.} A
+scope-limited Presentation-B model may retain
+Assumption~\ref{ass:dictionary}; it then claims no derivation from
+the matrix model, and Chapter~8 remains a Presentation-B
+calculation.
 Assumption~\ref{ass:dictionary} is the map
 \begin{equation}
   \label{eq:dict-again}
@@ -377,13 +392,13 @@ Hilbert space, Weyl map, continuum limit, and error at each order in
 \(\Theta\).
 
 \paragraph{Problem E: Lorentzian signature.}
-\emph{OPEN; OPTIONAL within a scope that retains
-Assumption~\ref{ass:lorentzian}.} The claim given up is that
+\emph{OPEN; CRITICAL PATH for the matrix-derived label.} A scope
+that retains Assumption~\ref{ass:lorentzian} gives up the claim that
 Lorentzian signature is emergent or derived. Euclidean positivity
 and a formal Wick rotation do not select it; rotating because the
 infrared world is Lorentzian is not a derivation.
 
-\subsection{Critical-path items F and G}
+\subsection{Critical-path problems F, G and N}
 
 \paragraph{Problem F: the rationals \(A,B,C\).}
 \emph{CRITICAL PATH; OPEN.} The conditional heat-kernel identity
@@ -478,6 +493,24 @@ the one in Assumption~\ref{ass:Sent-density}, derived by the replica
 construction from the matrix theory, and boundary stationarity
 Assumption~\ref{ass:bdy-EE} must likewise be derived rather than
 retained.
+
+\paragraph{Problem N: control of the effective expansion.}
+\emph{CRITICAL PATH for the matrix-derived label; OPEN.}
+Assumption~\ref{ass:EFT-a2} states that the four-derivative terms are
+vertices of an expansion in \(p/\LUV\) and are not diagonalized into
+extra propagating modes of \(h_{\mu\nu}\). Chapter~\ref{ch:ultraviolet}
+justifies it only by observing that the metric is composite. The
+target is to derive from the matrix path integral, and not from
+Stelle's action~\eqref{eq:stelle}, that the graviton two-point
+function has no propagating Ostrogradsky ghost for \(p<\LUV\), for
+the values of \(\alpha\) and \(G_{\mathrm{eff}}\) computed in
+Problem~F, with the region of those values in which it holds stated.
+The target is no stronger than the requirement of
+Chapter~\ref{ch:geometrogenesis}, item~6, that no propagating
+Ostrogradsky ghosts remain in the infrared; it claims no
+nonperturbative ultraviolet completion. A statement valid only for a
+truncated or imposed expansion leaves Assumption~\ref{ass:EFT-a2} in
+place and yields at most a scope-limited model.
 
 \subsection{Optional problems continued}
 
@@ -612,18 +645,29 @@ The critical-path dependency order is:
 
 \begin{enumerate}
   \item Problem~D1: derive local \(SO(3,1)\) from the matrix algebra
-        and condensate; specify the \(\omega,A_\mu,B\) and ghost
-        operators needed by Problem~F.
+        and condensate, together with the existence and
+        non-degeneracy of the locked frame; specify the
+        \(\omega,A_\mu,B\) and ghost operators needed by Problem~F.
   \item Problem~C: compute the tree-level scalar operator, including
         kinetic coefficient, mixing, mass and testable matter coupling.
   \item Problem~F: compute \(A,B,C\) with the specified operators,
         ghosts, thresholds and scheme, and derive \(G_{\mathrm{eff}}\).
+  \item Problem~N: using the \(\alpha\) and \(G_{\mathrm{eff}}\) of
+        Problem~F, control the effective expansion and exclude
+        propagating Ostrogradsky ghosts for \(p<\LUV\).
   \item Problem~B: derive the fixed-volume tensor-block stationarity
         from the microscopic action, not only for conformal variations.
   \item Problem~G: derive \(S_{\mathrm{ent}}^{\mathrm{(IR)}}\) and
         boundary stationarity from the matrix theory, then derive the
         \(\Lambda_{\mathrm{eff}}\) scaling or value.
 \end{enumerate}
+
+Problems~A and~E are not placed in this sequence. Each removes a
+premise (Assumption~\ref{ass:dictionary} and
+Assumption~\ref{ass:lorentzian}) that several items above use, so
+either may be attacked at any point. A derivation of B or F that
+still invokes Assumption~\ref{ass:dictionary} is DERIVED only after
+Problem~A is.
 
 \paragraph{Alternate scope: model work outside the critical-path sequence.}
 Taking Presentation~B with imposed local Lorentz symmetry (D2), an
@@ -635,7 +679,7 @@ leaves Problems~D, F, G and the matrix-derived completion criterion
 open, must name its imposed premises, and is not a step in the
 sequence above.
 
-Problems~A, E, H, I, and J are optional within their stated scopes.
+Problems~H, I, and J are optional within their stated scopes.
 Appendix~\ref{app:empirical} records the coefficient-level check for
 Problem~H; further galactic work should not be described as a
 derivation from \(I(A:B)\) without the modular calculation.
@@ -644,18 +688,32 @@ derivation from \(I(A:B)\) without the modular calculation.
 \label{sec:ch17-done}
 
 The label \emph{Completed infrared derivation (matrix-derived)}
-applies only if all five critical-path problems are DERIVED:
+applies only if all the critical-path problems below are DERIVED.
+DERIVED means no remaining assumed premise in the claimed chain, so
+a chain that still uses Assumption~\ref{ass:dictionary},
+\ref{ass:lorentzian}, \ref{ass:frame-lock}, \ref{ass:nondeg},
+\ref{ass:gap-psi} or~\ref{ass:EFT-a2} does not qualify.
 
 \begin{enumerate}
+  \item Problem~A: Assumption~\ref{ass:dictionary} is derived, or
+        the chains of the other items are re-derived without
+        invoking it. Renaming the same map does not meet this item.
   \item Problem~B is a lemma: Assumption~\ref{ass:EE} is no longer an
-        assumption, and fixed-volume variations include the
-        non-conformal tensor block.
+        assumption, fixed-volume variations include the
+        non-conformal tensor block, and the derivation does not
+        invoke Assumption~\ref{ass:dictionary}.
   \item Problem~C has a computed scalar operator, coupling, and
         phenomenological comparison defining and testing either a
-        sufficiently heavy \(m_\psi\) or the scalar-tensor outcome.
+        sufficiently heavy \(m_\psi\) or the scalar-tensor outcome;
+        Assumption~\ref{ass:gap-psi} is discharged.
   \item Problem~D1: an \(SO(3,1)\) gauge symmetry is derived from the
         matrix algebra and condensate, with the \(\omega,A_\mu,B\)
         and ghost operators specified and the field content stated.
+        The locked frame and its non-degeneracy on the claimed
+        domain are derived, not assumed
+        (Assumptions~\ref{ass:frame-lock} and~\ref{ass:nondeg}).
+  \item Problem~E: Lorentzian signature is derived rather than
+        retained (Assumption~\ref{ass:lorentzian}).
   \item Problem~F has \(A,B,C\) and the sign/scheme dependence of
         \(G_{\mathrm{eff}}\) computed from the specified operators;
         \(G_{\mathrm{eff}}\) is not an input.
@@ -663,25 +721,29 @@ applies only if all five critical-path problems are DERIVED:
         and stationarity relation are derived from the matrix theory,
         and the \(\Lambda_{\mathrm{eff}}\) scaling or value follows
         from them. G-model and G-external do not meet this item.
+  \item Problem~N: Assumption~\ref{ass:EFT-a2} is discharged; there
+        is no propagating Ostrogradsky ghost for \(p<\LUV\) in the
+        derived graviton two-point function, for the values of
+        \(\alpha\) and \(G_{\mathrm{eff}}\) computed in Problem~F,
+        with the region of those values in which it holds stated.
 \end{enumerate}
 
 If local Lorentz symmetry is instead imposed (D2), even with the
 full quadratic and ghost content specified, the result is a
 scope-limited Presentation-B infrared model. It may be studied and
 tested as such, but Problem~D stays OPEN and CRITICAL PATH and the
-five-item criterion is not met. No label of ``completed infrared
+criterion of this section is not met. No label of ``completed infrared
 derivation'' is allowed for that scope. Any critical-path item met
 only by an imposed premise, input, or reduced scope likewise yields
 at most a scope-limited model or programme, never the matrix-derived
 label.
 
-Problems~A, E, H, I, and J may remain open in a completed derivation
+Problems~H, I, and J may remain open in a completed derivation
 within the stated scopes; the claims given up are listed above.
-Problem~A is additionally required if the theory is claimed to
-follow from Presentation~A. Problem~I is a prerequisite only if
-drag is claimed to be derived or predicted.
+Problem~I is a prerequisite only if drag is claimed to be derived or
+predicted.
 
-Until all five items are derived, the honest public description is
+Until all the critical-path problems are derived, the honest public description is
 the subtitle of the book, read as a programme:
 \emph{an attempt} to derive general relativity and massless
 spin-2 dynamics from a matrix condensate held at entanglement
