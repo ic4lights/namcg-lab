@@ -95,6 +95,47 @@ the fixed-algebra identity.  This paragraph records that distinction;
 it does not derive the area term or the stationarity condition, and
 Problem~B remains open.
 
+\paragraph{Replica insertion identity (conditional; not closure).}
+Let \(Z_n(\varepsilon)\) be the Euclidean partition function on a
+regulated \(n\)-sheeted cover. Assume the usual path-integral assumptions
+and analytic continuation in \(n\) from integer replica number to a
+neighborhood of \(n=1\). As \(\varepsilon\) varies, hold fixed the
+regulated geometry, branch locus, conical-locus data, and integration
+measure. Include the conical-locus contributions in
+\(S_{E,n}(\varepsilon)\), and define
+\[
+W_n(\varepsilon)=\ln Z_n(\varepsilon)-n\ln Z_1(\varepsilon),
+\qquad
+S_D(\varepsilon)
+=(1-n\partial_n)W_n(\varepsilon)\big|_{n=1},
+\qquad
+\mathcal I_n:=\partial_\varepsilon S_{E,n}.
+\]
+Here \(\mathcal I_n\) is the total action insertion over the whole
+\(n\)-sheeted cover, not an insertion per sheet. Differentiating the
+normalized replica formula and using
+\(\partial_\varepsilon\ln Z_n=-\langle\mathcal I_n\rangle_n\) gives
+\[
+\partial_\varepsilon S_D
+=
+\left.\partial_n\langle\mathcal I_n\rangle_n\right|_{n=1}
+-\langle\mathcal I_1\rangle_1 .
+\]
+Thus \(\partial_\varepsilon S_D=0\) is equivalent, under these
+assumptions, to
+\[
+\left.\partial_n\langle\mathcal I_n\rangle_n\right|_{n=1}
+=\langle\mathcal I_1\rangle_1 .
+\]
+The replica formula alone does not establish this equality. If a
+deformation changes the geometry, branch locus, conical-locus data, or
+integration measure, the corresponding variations must also be included.
+Applying the identity to non-conformal tensor-block variations still
+requires a specified source or background deformation representing that
+block in the replica action, together with the map from the auxiliary
+scaffold \(g^{(0)}\) to the emergent metric and the corresponding area
+variation. Those inputs are not supplied by the displayed microscopic
+action. Problems~B, C, D, F and~G remain open.
 \section{Problem C: conformal mode and Cassini}
 \label{sec:status-C}
 
