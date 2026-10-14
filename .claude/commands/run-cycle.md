@@ -1,4 +1,3 @@
----
 description: Autonomous researcher -> gatekeeper -> integrator loop until a milestone or stop condition; then write a digest and stop for the author.
 argument-hint: "[target problem or connected target set | auto] [--items N] [--rounds N]"
 model: sonnet
@@ -43,6 +42,7 @@ ordinal (`accepted + 1`). Save its full reply verbatim to `proposals/NNN-slug/re
 (`VERDICT | MILESTONE | FLAGS`).
 
 **d. Branch on the verdict.**
+- **Research Decision Branch**: Any verdict whose `FLAGS` contain `RESEARCHER-DECISION` (and no `AUTHOR-DECISION`, `LABEL-CHANGE-PROPOSED`, or `PRIOR-CLAIM-ERROR`): treat as `ACCEPT WITH REQUIRED REVISIONS`; increment `K += 1`; task the researcher with the proposal and review paths; counts toward `--rounds`.
 - `ACCEPT WITH REQUIRED REVISIONS`, `REJECT` (with a stated smallest correction) or `NEEDS EVIDENCE` that the
   researcher can supply: K+=1; Task `researcher` with the previous proposal and review paths; it writes
   `proposal-rK.md` addressing every finding. Go to (c). At the base cap (`--rounds`, default 4) without ACCEPT,
@@ -57,7 +57,7 @@ ordinal (`accepted + 1`). Save its full reply verbatim to `proposals/NNN-slug/re
 - `NEEDS EVIDENCE` requiring the author (external data/reference you cannot obtain): stop the run.
 - `ACCEPT` with `FLAGS` containing `LABEL-CHANGE-PROPOSED` or `AUTHOR-DECISION` or `PRIOR-CLAIM-ERROR`: **do not
   integrate**. Record, and stop the run (milestone).
-- `ACCEPT` with FLAGS `none`: go to (e).
+- `ACCEPT` with FLAGS `none`.
 
 **e. Independence sanity check (you, cheaply).** Confirm the accepted proposal text does not add, remove, or
 change any status, priority, or completion-classification label, and does not claim an open critical-path target
