@@ -54,9 +54,10 @@ ordinal (`accepted + 1`). Save its full reply verbatim to `proposals/NNN-slug/re
   integrate**. Record, and stop the run (milestone).
 - `ACCEPT` with FLAGS `none`: go to (e).
 
-**e. Independence sanity check (you, cheaply).** Confirm the accepted proposal text does not change a status
-label, does not use "closed/solved/derived" about B, C, D, F, G, and ends with a scoped status sentence. If it
-does, treat as `LABEL-CHANGE-PROPOSED` and stop. Confirm the review round equals the proposal round.
+**e. Independence sanity check (you, cheaply).** Confirm the accepted proposal text does not add, remove, or
+change any status, priority, or completion-classification label, and does not claim an open critical-path target
+is closed/solved/derived without establishing it for the current scope. If it proposes any label change, treat it
+as `LABEL-CHANGE-PROPOSED` and stop for the author. Confirm the review round equals the proposal round.
 
 **f. Integrate.** Create `.claude/state/allow_chapters`, Task `integrator` with the proposal path, review path,
 branch and current digest status, then ensure the flag file is removed. If it reports a build failure or anchor
