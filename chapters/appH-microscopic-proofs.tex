@@ -1469,6 +1469,184 @@ not determine \(C_R^E\). It is confined to the compact \(U(4)\) branch
 and does not provide the missing \(\mathrm{SO}(3,1)\)-compatible
 sector sum. Problems~B, C, D, F and~G remain open.
 
+\paragraph{Which metric the scaffold one-loop action induces (conditional; not closure).}
+Consider the displayed action~\eqref{eq:Smicro} with
+potential~\eqref{eq:V} on the square locked block, on the scaffold
+\(g^{(0)}\) of Assumption~\ref{ass:aux-metric}, after Wick rotation,
+with the internal connection held at a background value
+\(\bar A_\mu\) and not integrated. Expand \(\Phi=\bar\Phi+\varphi\)
+about a smooth background \(\bar\Phi\) and write \(\varphi\) in
+thirty-two real components normalized so that the kinetic term is
+\(\sum_a g^{(0)\mu\nu}\bar D_\mu\varphi_a\bar D_\nu\varphi_a\). The
+kinetic term is bilinear in \(\Phi\), so its second variation does not
+depend on \(\bar\Phi\), and the fluctuation operator is
+\[
+  \mathcal O_{\bar\Phi}
+  =-g^{(0)\mu\nu}\bar D_\mu\bar D_\nu+E(\bar\Phi),
+\]
+where \(\bar D\) is built from \(g^{(0)}\) and \(\bar A_\mu\), and
+\(E(\bar\Phi)\) is one half of the Hessian of \(V\) at \(\bar\Phi\);
+\(E\) contains no derivative of \(\bar\Phi\). Use this operator
+in~\eqref{eq:W-again} with the limits~\eqref{eq:s-limits}. For
+\(I(\LUV)=\int_{\LUV^{-2}}^{\mu^{-2}}s^{-1}f(s)\,\mathrm{d}s\) one has
+\(\partial_{\LUV}I=2\LUV^{-1}f(\LUV^{-2})\), so the
+\(\LUV\)-dependence of \(W_E^{(1)}\) is fixed by the small-\(s\)
+expansion of the heat trace through \(a_2\), up to terms that vanish as
+\(\LUV\to\infty\). By~\eqref{eq:appA-a0}--\eqref{eq:appA-a2},
+\[
+  W_E^{(1)}\supset
+  -\int\mathrm{d}^4x\,\sqrt{g^{(0)}}\left[
+    \frac{32\,\LUV^4}{64\pi^2}
+    +\frac{\LUV^2}{32\pi^2}
+     \operatorname{tr}\Bigl(\tfrac16R[g^{(0)}]-E(\bar\Phi)\Bigr)
+    +\frac{1}{32\pi^2}\ln\Bigl(\frac{\LUV^2}{\mu^2}\Bigr)a_2
+  \right],
+\]
+where \(a_2\) contains \(E^2\), \(R[g^{(0)}]E\), curvature-squared
+terms of \(g^{(0)}\), \(\bar F_{\mu\nu}\bar F^{\mu\nu}\) and total
+derivatives. No \(\LUV^4\), \(\LUV^2\) or \(\ln\LUV\) term contains a derivative of
+\(\bar\Phi\) outside a total derivative; terms with derivatives of
+\(\bar\Phi\) have coefficients that are independent of \(\LUV\) or vanish
+as \(\LUV\to\infty\). The \(\LUV^2\) curvature term
+is the term~\eqref{eq:universal-R}, with \(\mathcal N_0=32\), for the
+scaffold metric \(g^{(0)}\), which Assumption~\ref{ass:aux-metric}
+holds fixed.
+
+For the composite metric the corresponding coefficient vanishes. On
+the flat scaffold take \(\bar A_\mu=0\) and
+\(\bar\Phi=(v+\sigma)\mathbb I\), so that
+\(g=(1+\sigma/v)^2\eta\) by~\eqref{eq:repairII-trace}; in the
+Euclidean section \(\sqrt g\,R[g]=6(\partial\sigma)^2/v^2\) up to a
+total derivative. The \(\LUV^2\) term above is
+\(\tfrac{\LUV^2}{32\pi^2}\int\mathrm{d}^4x\operatorname{tr}E(\sigma)\),
+with \(\operatorname{tr}E(\sigma)=16\lambda(v^2+4v\sigma+2\sigma^2)\),
+and contains no \((\partial\sigma)^2\). Building the operator on \(g\)
+instead, as in Assumption~\ref{ass:emergent-op}, gives
+\(-\mathcal N_0\LUV^2(\partial\sigma)^2/(32\pi^2v^2)\) at the same
+order, which is the induced term of~\eqref{eq:Z-sigma} with
+\(1/(16\pi G_{\mathrm{eff}})=\mathcal N_0\LUV^2/(192\pi^2)\). The
+replacement supplies the whole \(\LUV^2\) coefficient for the composite
+metric; it does not correct a scaffold value.
+
+The \((\partial\sigma)^2\) term of the scaffold one-loop action has no
+\(\LUV^2\) or \(\ln\LUV\) piece. Take the limits~\eqref{eq:s-limits}
+and \(p^2\ll\mu^2\ll\lambda v^2\). At \(\bar A_\mu=0\) the sixteen
+Hermitian components have
+\(E_H=\tfrac\lambda2\bigl(3(v+\sigma)^2-v^2\bigr)\) and the sixteen
+anti-Hermitian components have
+\(E_K=\tfrac\lambda2\bigl((v+\sigma)^2-v^2\bigr)\). At second order in
+\(\sigma\) a block of \(n\) components with mass \(m\) gives
+\[
+  W_E^{(1)}\supset
+  -\frac n4\,E'(0)^2\int\frac{\mathrm{d}^4p}{(2\pi)^4}\,
+   \tilde\sigma(p)\tilde\sigma(-p)\,B(p),
+\]
+\[
+  B(p)=\frac{1}{16\pi^2}\int_0^1\mathrm{d}x\left[
+   E_1\!\left(\frac{m^2+x(1-x)p^2}{\LUV^2}\right)
+   -E_1\!\left(\frac{m^2+x(1-x)p^2}{\mu^2}\right)\right],
+\]
+with \(E_1(x)=\int_x^\infty e^{-t}t^{-1}\,\mathrm dt\), the exponential
+integral. For the Hermitian block, \(n=16\), \(E'(0)=3\lambda v\),
+\(m^2=\lambda v^2\) and
+\(\partial_{p^2}B|_{p=0}=-\bigl(e^{-\lambda v^2/\LUV^2}
+-e^{-\lambda v^2/\mu^2}\bigr)/(96\pi^2\lambda v^2)\). For the
+anti-Hermitian block, \(n=16\), \(E'(0)=\lambda v\), \(m=0\) and
+\(\partial_{p^2}B|_{p=0}=(\LUV^{-2}-\mu^{-2})/(96\pi^2)\). The local
+term \(\tfrac12\Delta Z\int\mathrm{d}^4x\,(\partial\sigma)^2\) therefore
+adds to the microscopic value \(2N\) of \(Z\) in~\eqref{eq:Z-sigma}
+\[
+  \Delta Z=\frac{3\lambda}{4\pi^2}
+   \Bigl(e^{-\lambda v^2/\LUV^2}-e^{-\lambda v^2/\mu^2}\Bigr)
+   +\frac{\lambda^2v^2}{12\pi^2}\Bigl(\frac1{\mu^2}-\frac1{\LUV^2}\Bigr),
+\]
+that is, \(3\lambda/4\pi^2\) up to \(O(\lambda v^2/\LUV^2)\) and
+\(O(e^{-\lambda v^2/\mu^2})\) from the Hermitian block, plus a positive
+term from the anti-Hermitian block that depends on the infrared limit
+\(\mu\) and is replaced by a term non-analytic in \(p^2\) as
+\(\mu\to0\). Both terms are positive for \(\mu<\LUV\) and carry
+no \(\LUV^2\) or \(\ln\LUV\) piece. In this one-loop calculation the
+conformal-mode kinetic term keeps the sign of Lemma~\ref{lem:msigma}.
+The opposite-sign term of~\eqref{eq:Z-sigma} is not produced in this
+calculation; in the manuscript it arises from the induced
+Einstein--Hilbert term, that is, from the operator built on the
+emergent metric.
+
+\paragraph{Scaffold rotations exclude linearized diffeomorphism invariance in a stated class (conditional; not closure).}
+In~\eqref{eq:Smicro} the components of \(\Phi^I{}_A\) are scalars of
+the scaffold: a scaffold index appears only on \(\partial_\mu\) and
+\(A_\mu\), and on \(\omega_\mu\) in the completion~\eqref{eq:D-both}.
+On the flat Euclidean scaffold, rotations \(x\mapsto Rx\),
+\(R\in\mathrm{SO}(4)\), acting on scaffold indices alone are a
+symmetry, and the background \(\bar\Phi=v\mathbb I\),
+\(\bar A_\mu=\bar\omega_\mu=0\) is invariant. Assume that the regulator
+and the gauge fixing preserve this symmetry, as the scaffold
+proper-time regulator above does, and that the composite-metric
+fluctuation \(h_{\mu\nu}\) is a fixed linear function of the components
+of \(\Phi\), for example the one obtained from~\eqref{eq:g-from-e}
+with the identification~\eqref{eq:vev-is-frame}. Then, at any loop
+order, the quadratic part of the effective action in the components of
+\(\Phi\), with the connections set to zero or eliminated at quadratic
+order, has the form
+\(\sum_{a,b}\tilde\varphi_a(-p)F_{ab}(p^2)\tilde\varphi_b(p)\):
+invariance gives \(F_{ab}(Rp)=F_{ab}(p)\), an
+\(\mathrm{SO}(4)\)-invariant function of one vector depends only on
+\(p^2\), and eliminating a connection, whose mixed and diagonal kernels
+have the forms \(p_\mu f(p^2)\) and
+\(\alpha(p^2)\delta_{\mu\nu}+\beta(p^2)p_\mu p_\nu\) with internal
+labels suppressed, preserves this form. Let \(Q_p\) be the reduced form
+on \(h\) obtained by eliminating the remaining components; it is the
+reduced form that inherits any invariance of the full effective action
+under a linearized gauge transformation, and it too depends on \(p\)
+only through \(p^2\). If \(Q_p\) is invariant under
+\(h\mapsto h+p\otimes\xi+\xi\otimes p\) for all \(\xi\), then \(Q_p\)
+annihilates \(p'\otimes\xi+\xi\otimes p'\) for every \(p'\) with
+\(p'^2=p^2\); for \(p\neq0\) these tensors span all symmetric tensors,
+so \(Q_p=0\). The same holds on the traceless block with the
+transformation~\eqref{eq:FP-gauge}. The linearized Einstein--Hilbert
+form and the massless Fierz--Pauli form~\eqref{eq:FP} are invariant
+and nonzero, hence depend on the direction of \(p\); \(Q_p\) cannot
+equal \(c\) times either of them plus a form depending on \(p\) only
+through \(p^2\) unless \(c=0\). A form depending only on \(p^2\) can
+coincide with a gauge-fixed linearized Einstein--Hilbert operator, for
+example the Feynman--de~Donder form
+\(p^2\bigl(h_{\mu\nu}h_{\mu\nu}-\tfrac12h^2\bigr)\), but without the
+gauge symmetry and its ghosts each nondegenerate direction of such a
+form, including directions of opposite sign, is a propagating
+component. This statement holds for a flat scaffold, a regulator and
+gauge fixing that preserve scaffold rotations, a vacuum and background
+invariant under them, and a composite-metric fluctuation that is a
+fixed linear function of the components of \(\Phi\). It does not
+exclude a composite-metric Einstein--Hilbert term in general: a
+regulator or kinetic metric built from \(\Theta^{\mu\nu}\) in
+Presentation~A (Remark~\ref{rem:ch3-varying-theta}), a vacuum or
+background that is not invariant under scaffold rotations, a curved
+scaffold, or a composite metric that is not a fixed linear image of
+\(\Phi\) each relaxes one of these hypotheses and is not covered.
+
+\paragraph{What the two preceding results imply for Problem~F (conditional; not closure).}
+In the class of the preceding paragraph, neither the displayed action
+nor its quantum corrections give the composite-metric fluctuation a
+linearized diffeomorphism invariance, an induced Einstein--Hilbert
+term, or the Fierz--Pauli block of hypothesis~5 of
+Theorem~\ref{thm:mT}; the induced Fierz--Pauli term assumed in the
+quadratic tests of Section~\ref{sec:status-D} is likewise not
+generated in this way. These structures need an ingredient that ties
+derivative indices to tangent indices. The
+operator~\eqref{eq:O-eta} on the emergent background, used in
+Theorem~\ref{thm:Geff}, is such an ingredient; it enters as
+Assumption~\ref{ass:emergent-op}, which is assumed, not derived. The
+one-loop \(\Phi\)--\(\Phi\) action of the displayed action on the
+scaffold contributes to the \(\LUV^2\) and \(\ln\LUV\) coefficients
+\(A\) and \(B\) of~\eqref{eq:Geff-structure} only through the curvature
+of \(g^{(0)}\), not through that of the composite metric; the missing
+step of Problem~F includes discharging
+Assumption~\ref{ass:emergent-op}, or replacing it by another derived
+ingredient. Not covered here: integration of the auxiliary \(A_\mu\) in
+the first result, the hypotheses relaxed in the second, and
+Presentation~A in general. No value or sign of \(G_{\mathrm{eff}}\)
+follows. Problems~B, C, D and~F remain open.
+
 \section{Problem G: HBEV}
 \label{sec:status-G}
 

@@ -53,9 +53,9 @@ After condensation, split
   \label{eq:split-loop}
   \Phi=\langle\Phi\rangle+\eta,
 \end{equation}
-where \(\eta\) contains every algebraic block of Chapter~5. Integrate
-\(\eta\) at one loop on a slowly varying emergent background
-\(g_{\mu\nu}\), using Presentation~B. The dictionary is needed to
+where \(\eta\) contains every algebraic block of Chapter~5. Integrate \(\eta\) at one loop on a slowly varying emergent
+background \(g_{\mu\nu}\), using Presentation~B and
+Assumption~\ref{ass:emergent-op}. The dictionary is needed to
 attribute this calculation to Presentation~A, not to formulate it in
 Presentation~B. For each specified sector the fluctuation operator is
 of Laplace type,
@@ -282,19 +282,37 @@ the isolation from being mistaken for a solution.
 
 Assumption~\ref{ass:aux-metric} declared \(g^{(0)}\) non-dynamical.
 The heat kernel of this chapter is nevertheless written on
-\(g_{\mu\nu}\). The justification is the derivative expansion:
+\(g_{\mu\nu}\). This is an assumption of the chapter, not a consequence of the action:
 
-\begin{proposition}[Scaffold replacement]
-  \label{prop:scaffold}
-  Let \(g_{\mu\nu}=g^{(0)}_{\mu\nu}+h_{\mu\nu}\) with \(h\) slowly
-  varying on the scale \(\LUV^{-1}\). Replacing \(g^{(0)}\) by \(g\)
-  inside \(\mathcal{O}_\eta\) changes \(W\) by operators of the form
-  \(\LUV^{2}\|h-h^{(0)}\|\), \(\|h-h^{(0)}\|R\), and higher. On the
-  Minkowski scaffold \(g^{(0)}=\eta\) these are the same operators
-  already kept in~\eqref{eq:W-expand}. Self-consistently substituting
-  the emergent metric is therefore valid through the order of this
-  conditional truncated identity.
-\end{proposition}
+\begin{assumption}[Fluctuation operator on the emergent background]
+  \label{ass:emergent-op}
+  The fluctuation operator \(\mathcal{O}_\eta\) of~\eqref{eq:O-eta} is
+  built from the emergent metric \(g_{\mu\nu}\) of
+  Chapter~\ref{ch:vierbein-emergence}, with the endomorphism and
+  curvature coupling stated for each sector, and not from the scaffold
+  \(g^{(0)}_{\mu\nu}\).
+\end{assumption}
+
+\begin{remark}[Operator on the scaffold and on the emergent metric]
+  \label{rem:ch8-scaffold-vs-emergent}
+  The displayed action~\eqref{eq:Smicro} does not supply the operator
+  of Assumption~\ref{ass:emergent-op}. With the operator built from
+  \(g^{(0)}\) and the internal connection held at a background value,
+  no term of the one-loop action that grows with \(\LUV\)
+  (\(\LUV^4\), \(\LUV^2\), \(\ln\LUV\)) contains a derivative of the
+  condensate, so the \(\LUV^2\) curvature term
+  of~\eqref{eq:W-expand} multiplies the curvature of \(g^{(0)}\). For
+  \(\bar\Phi=(v+\sigma)\mathbb I\) on a flat scaffold, where
+  \(g=(1+\sigma/v)^2\eta\), the \(\LUV^2(\partial\sigma)^2\) coefficient
+  is zero with the scaffold operator and is the induced term
+  of~\eqref{eq:Z-sigma} with the operator built on \(g\)
+  (Appendix~\ref{app:status}, Section~\ref{sec:status-F}). Replacing
+  \(g^{(0)}\) by \(g\) therefore supplies this coefficient; it does not
+  correct a scaffold value. The expansion~\eqref{eq:W-expand} and
+  Theorem~\ref{thm:Geff} are stated for operators built on \(g\), that
+  is, under this assumption. Discharging
+  Assumption~\ref{ass:emergent-op} is part of Problem~F.
+\end{remark}
 
 At higher order the replacement produces the backreaction tensor
 \(\mathcal{G}_{\mu\nu}\) of~\eqref{eq:SW}. That tensor is not needed
@@ -361,10 +379,10 @@ exact two-loop \(\Geff\) & not computed & Ch.~17 \\
     weights and compute \(\mathcal N_0\). Explain why this alone does
     not determine the curvature coefficient.
   \item \textbf{Scaffold error.}
-    Expand Proposition~\ref{prop:scaffold} to first order in
-    \(h_{\mu\nu}\) on a flat scaffold and list the operators
-    produced. Which of them renormalize \(\Geff\), and which
-    renormalize higher-curvature couplings?
+    For \(\bar\Phi=(v+\sigma)\mathbb{I}\) on a flat scaffold, compare
+    the \(\LUV^2(\partial\sigma)^2\) coefficient of the one-loop
+    action computed with the scaffold operator and with the operator
+    of Assumption~\ref{ass:emergent-op}.
 \end{enumerate}
 
 \section{Bridge to Chapter~9}
