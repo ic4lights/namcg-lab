@@ -454,6 +454,71 @@ remaining fields and couplings to transform compatibly. This
 conditional representation-theoretic result does not establish
 Problem~D1. Problems~B, C, D, F and~G remain open.
 
+A conditional classical-symbol construction is possible if the
+background Poisson tensor varies. Let
+\(\Theta^{\mu\nu}(x)\) be a real, nondegenerate Poisson tensor,
+so its bracket
+\[
+  \{f,g\}_\Theta
+  :=\Theta^{\mu\nu}\partial_\mu f\,\partial_\nu g
+\]
+obeys the Jacobi identity. For local coordinate functions \(x_A\),
+with the frame index \(A\) identified with the coordinate label,
+define the Hamiltonian vector fields
+\(V_A:=X_{x_A}\), where \(X_f(g):=\{f,g\}_\Theta\), and assume
+they form an invertible frame. The Poisson Jacobi identity gives
+\[
+  [V_A,V_B]=X_{\Theta_{AB}},
+  \qquad
+  \Theta_{AB}:=\{x_A,x_B\}_\Theta .
+\]
+Define \(C^C{}_{AB}\) by
+\([V_A,V_B]=C^C{}_{AB}V_C\). A provisional candidate inverse
+metric is
+\[
+  g_{\mathrm{cand}}^{\mu\nu}
+  :=\eta^{AB}V_A{}^\mu V_B{}^\nu .
+\]
+It is Lorentzian by construction when the frame is invertible, but
+is not thereby identified with the emergent metric of
+Chapter~\ref{ch:vierbein-emergence}.
+
+Under a local frame change
+\(V'_A=\Lambda_A{}^B(x)V_B\), with
+\(\Lambda(x)\in\mathrm{SO}(3,1)\), the bracket, expanded in the
+original frame \(V_F\), is
+\[
+  [V'_A,V'_B]
+  =
+  \left(
+    \Lambda_A{}^D\Lambda_B{}^E C^F{}_{DE}
+    +\Lambda_A{}^D V_D(\Lambda_B{}^F)
+    -\Lambda_B{}^D V_D(\Lambda_A{}^F)
+  \right)V_F .
+\]
+Accordingly, the structure functions of the new frame are the
+displayed coefficients contracted with
+\((\Lambda^{-1})_F{}^G\), since
+\([V'_A,V'_B]=C'^G{}_{AB}V'_G\). For this provisional frame
+and metric, the dual coframe \(\vartheta^A\) determines the
+composite Levi-Civita spin connection through
+\[
+  \mathrm{d}\vartheta^A+\omega^A{}_B\wedge\vartheta^B=0,
+  \qquad
+  \omega_{AB}=-\omega_{BA}.
+\]
+It transforms inhomogeneously under the local frame change.
+
+For constant \(\Theta\), the fields \(V_A{}^\mu\) are constant,
+so \(C^C{}_{AB}=0\) and this composite connection and its
+curvature vanish in that frame. A varying \(\Theta\) is therefore
+needed for this construction to be nontrivial, although variation
+alone does not guarantee nonzero curvature. This is a
+classical Poisson-symbol construction: it does not address the
+exact Moyal Leibniz defect for noncentral frame coefficients, derive
+local frame rotations from the matrix action, or supply independent
+connection dynamics. Problems~B, C, D, F and~G remain open.
+
 In particular, Presentation~A as specified contains no coframe
 \(e^A{}_\mu\), independent tangent index \(A\), or spin connection
 \(\omega_\mu{}^{AB}\). The infrared dictionary~\eqref{eq:dictionary}
