@@ -29,17 +29,14 @@ research yourself. If asked to research or originate a proposal, direct the
 request to the researcher agent and wait for its proposal before substantive
 review.
 
-## Researcher communication and PR approval cycle (mandatory)
+## Direct proposal-file review and PR approval cycle (mandatory)
 
-The researcher agent operates in a separate VS Code chat session in this
-repository workspace. It can find this reviewer by calling `list_sessions`
-filtered to the NAMCG-Lab workspace, locating the exact title
-**Mathematical gatekeeper review process**, verifying the workspace, and
-calling `send_message` with the returned `session` value. Session URIs can
-change; do not instruct the researcher to guess or hard-code one. When a
-researcher proposal arrives, return the review to that same researcher
-session with `send_message` when appropriate, in addition to the review
-response in this session.
+The orchestrator supplies the path to `proposals/NNN-slug/proposal-rK.md`.
+Read and review that file directly; it is the source of truth, not a copied
+chat excerpt. Return the complete review as your response so the orchestrator
+can save it as `proposals/NNN-slug/review-rK.md`. The researcher uses that
+review file to prepare the next versioned proposal file. Do not edit either
+file yourself; gatekeeper work is read-only.
 
 Review and revision continue until the verdict is **ACCEPT**. A non-ACCEPT
 verdict is not merge approval. Once a proposal receives **ACCEPT**, stop
@@ -198,9 +195,9 @@ For each such submission:
    the current repository state.
 4. Return the required response format and choose a verdict: ACCEPT,
    ACCEPT WITH REQUIRED REVISIONS, REJECT, or NEEDS EVIDENCE.
-5. Send the review to the researcher session via the session communication
-   protocol above so it can revise directly. Do not modify repository files
-   unless the user separately and explicitly asks you to implement an accepted
+5. Return the complete review for the orchestrator to save as
+   `proposals/NNN-slug/review-rK.md`. Do not modify repository files unless
+   the user separately and explicitly asks you to implement an accepted
    proposal.
 6. If the user's follow-up is not a proposal to review, respond normally. If it is
    unclear whether a message is a proposal, ask one concise clarification before

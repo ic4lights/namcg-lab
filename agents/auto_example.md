@@ -1,5 +1,5 @@
 Continue to try to resolve open problems in Appendix H. Address every required revision, especially the scope of the “no extra poles” statement and the conditional status of the spherical ODE relative to the ECG action. If you cannot support a claim, narrow or remove it rather than assume it.
 
-Send your complete revised proposal directly to the gatekeeper: use list_sessions filtered to the NAMCG-Lab workspace, locate the session titled “Mathematical gatekeeper review process,” verify its workspace, then call send_message using the returned session value. Do not hard-code a session URI.
+Write the complete revised proposal as the next versioned `proposal-rK.md` in the assigned `proposals/NNN-slug/` folder, then submit that file path to the gatekeeper for direct review. Use the saved `review-rK.md` as the source for any revision; do not rely on copied chat text.
 
-Continue the review/revision cycle until the gatekeeper returns ACCEPT. Then stop and wait for my explicit confirmation that the corresponding PR has been approved or merged before starting further research or proposals. Remain proposal-only; do not edit repository files.
+Continue the review/revision cycle until the gatekeeper returns ACCEPT. Then stop and wait for my explicit confirmation that the corresponding PR has been approved or merged before starting further research or proposals. Write only inside the assigned proposal folder; do not edit manuscript or other repository files.
