@@ -10,15 +10,17 @@ yourself, you do not edit `chapters/` (only the integrator does), and you never 
 Subagents cannot spawn subagents, so you call `researcher`, `gatekeeper` and `integrator` directly with the Task
 tool, one at a time, each with a self-contained prompt (they have no shared memory). Pass file paths, not summaries.
 
-## 0. Pre-flight (stop and report if any fails)
+## 0. Pre-flight & Unmerged Proposals
 
 1. `git branch --show-current`. If `main`/`master`, create and switch to `auto/<YYYYMMDD-HHMM>`. If already on an
    `auto/*` branch, continue on it.
 2. `git status --porcelain` must be empty (if not, stop: the author must commit or stash first).
-3. Record `BASE=$(git rev-parse HEAD)`, the chapter manifest count, and run `python scripts/build_check.py`
+3. **Check for unmerged proposals**: Scan `proposals/` for any existing unmerged proposal folder (e.g., `proposals/NNN-slug/`) containing a `proposal-rK.md` or `review-rK.md` that has not yet been merged into `chapters/`. 
+   - If an unmerged proposal exists, resume execution directly from that folder and its latest round `K`, rather than creating a new proposal ID `NNN`.
+   - If no unmerged proposal exists, list `proposals/` to find the next sequential ID `NNN`.
+4. Record `BASE=$(git rev-parse HEAD)`, the chapter manifest count, and run `python scripts/build_check.py`
    to confirm the baseline builds. Run `python scripts/make_digest.py`, then verify it with
    `python scripts/make_digest.py --check` (`DIGEST CURRENT`). Ensure `.claude/state/allow_chapters` does not exist.
-4. Read `reports/ledger.md` (create it with a header if absent) and list `proposals/` to find the next id `NNN`.
 5. Initialise counters: `accepted=0`, `stalled_in_a_row=0`.
 
 ## 1. Loop
@@ -32,10 +34,10 @@ advances the stated scope. Do not create multiple small items merely to use the 
 only to reduce PR count, or repeat a route recorded as REJECTED/stalled in the ledger. `--items` defaults to one
 accepted proposal package per run; increase it only when the author requests multiple packages.
 
-**b. Researcher round K=1.** Create `proposals/NNN-slug/`. Task `researcher` with: the target or logically
-connected target set, the proposal folder, K, the ledger path, the current digest status, and "write
-`proposal-rK.md` exactly per your output spec".
-Read the returned path.
+**b. Researcher execution (Round K).** 
+- If starting a new item, create `proposals/NNN-slug/` and set `K=1`. 
+- If resuming an unmerged/paused proposal, use its existing folder and latest round `K`. 
+Task `researcher` with: the target set, the proposal folder, round `K`, the ledger path, the current digest status, and instructions to address prior reviews or write the proposal package. Read the returned path.
 
 **c. Gatekeeper.** Task `gatekeeper` with the proposal path, round, current digest status, and proposed integration
 ordinal (`accepted + 1`). Save its full reply verbatim to `proposals/NNN-slug/review-rK.md`. Parse the first line
