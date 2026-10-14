@@ -42,7 +42,6 @@
       "Bash(rm -rf:*)",
       "Edit(agents/**)",
       "Write(agents/**)",
-      "Edit(.claude/agents/**)",
       "Edit(.claude/hooks/**)",
       "Edit(CLAUDE.md)",
       "Edit(MILESTONE.md)"
