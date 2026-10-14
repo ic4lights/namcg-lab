@@ -22,3 +22,11 @@
 
 ## 004-author-questions — advisory recommendations
 - r1 reviewed (ACCEPT WITH REQUIRED REVISIONS, OPEN 0/4); r2 written addressing findings 1-7. Not for integration; under the autonomy directive its within-core recommendations become researcher decisions to be carried into normal proposal rounds (Q1 appK sign; Q2/Q3 N gloss + citation; Q4/Q6 with 003).
+
+## 003-auto-target (Problem F; C, B, D1) — integrated 2026-10-14
+- Rounds: 3. r1 AWRR (M3, M2); r2 AWRR (improving, OPEN 0/0; Item 7 excluded as AUTHOR-DECISION); r3 ACCEPT | M3, M2 | PRIOR-CLAIM-ERROR.
+- Integrated Items 1-5 (appH, ch08, appB, ch04 Ex.7, appG, ch03, ch05). Commit 85f49d0. Build PASS 244 pages, 0 undefined refs. No label touched.
+- Proved: Lemma 1 (fixed A_mu, scaffold regulator: no Lambda^4/Lambda^2/ln Lambda term with derivatives of Phi); conformal-mode counterexample; finite Delta Z incl. Delta Z_K; Lemma 2 no-go within H1-H4 only (flat scaffold, rotation-preserving regulator+gauge fixing, invariant vacuum, h fixed linear image of Phi); psi-T orthogonality. Correction: prop:scaffold -> ass:emergent-op + rem:ch8-scaffold-vs-emergent.
+- Not a closure of the composite-metric EH route. Relaxable hypotheses: Theta-built regulator/kinetic metric (Presentation A), non-invariant vacuum, curved scaffold, non-linear composite map.
+- Queued for author: Item 7 (ch16 inventory row for ass:emergent-op + premise sentence + chain item 6; optional ch17 F missing-step sentence) — changes Ch.17 completion criterion by cross-reference.
+- Milestone: M3, M2 (non-stopping under autonomy directive). Integrated count this run: 2.
