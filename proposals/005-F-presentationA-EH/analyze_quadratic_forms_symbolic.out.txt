@@ -1,0 +1,24 @@
+== s0,a0,b0 = 1 1 2
+Mx det(Q_red - lam M_red) == -det(M_red) * prod(lam - root): True
+Mh det(Q_red - lam M_red) == -det(M_red) * prod(lam - root): True
+p2_eta = p0**2 + p1**2 + p2**2 + p3**2   rho0 = 1/2
+== s0,a0,b0 = -1 1 2
+Mx det(Q_red - lam M_red) == -det(M_red) * prod(lam - root): True
+Mh det(Q_red - lam M_red) == -det(M_red) * prod(lam - root): True
+p2_eta = -p0**2 + p1**2 + p2**2 + p3**2   rho0 = 1/2
+== s0,a0,b0 = -1 1 1
+Mx det(Q_red - lam M_red) == -det(M_red) * prod(lam - root): True
+Mh det(Q_red - lam M_red) == -det(M_red) * prod(lam - root): True
+p2_eta = -p0**2 + p1**2 + p2**2 + p3**2   rho0 = 1
+== s0,a0,b0 = 1 1 1
+Mx det(Q_red - lam M_red) == -det(M_red) * prod(lam - root): True
+Mh det(Q_red - lam M_red) == -det(M_red) * prod(lam - root): True
+p2_eta = p0**2 + p1**2 + p2**2 + p3**2   rho0 = 1
+== 1 2 3
+Mx det(Q_red - lam M_red) == -det(M_red) * prod(lam - root): True
+Mh det(Q_red - lam M_red) == -det(M_red) * prod(lam - root): True
+p2_eta = p0**2 + p1**2 + p2**2 + p3**2   rho0 = 1/6
+== -1 3 1
+Mx det(Q_red - lam M_red) == -det(M_red) * prod(lam - root): True
+Mh det(Q_red - lam M_red) == -det(M_red) * prod(lam - root): True
+p2_eta = -p0**2 + p1**2 + p2**2 + p3**2   rho0 = 1/3

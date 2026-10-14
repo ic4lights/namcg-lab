@@ -1,0 +1,13 @@
+Jacobi sum: 0
+(1) Liouville: [0, 0, 0, 0]
+K = Matrix([[a(x0, x1)**2, 0, 0, 0], [0, a(x0, x1)**2, 0, 0], [0, 0, b(x2, x3)**2, 0], [0, 0, 0, b(x2, x3)**2]])
+sqrt|G| check: 1/Abs(a(x0, x1)**4*b(x2, x3)**4) - 1/(a(x0, x1)**4*b(x2, x3)**4)
+(2) comp 0  EL - rho*eta*O A = True ; EL + ... = False
+(2) comp 1  EL - rho*eta*O A = True ; EL + ... = False
+(2) comp 2  EL - rho*eta*O A = True ; EL + ... = False
+(2) comp 3  EL - rho*eta*O A = True ; EL + ... = False
+(2b) D_mu D^mu f - L f = 0
+(3) -D^2+E = O  : True
+(4a) scalar:  sqrtG(R_G/6-E_s) - rho R[g_rho]/6 = 0
+(4b) vector:  sqrtG tr(R_G/6-E) - 4 rho R/6 - rho^2 Xspin = 0
+Xspin = 2*Derivative(a(x0, x1), x0)**2 + 2*Derivative(a(x0, x1), x1)**2 + 2*Derivative(b(x2, x3), x2)**2 + 2*Derivative(b(x2, x3), x3)**2

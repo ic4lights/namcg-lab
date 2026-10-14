@@ -1,0 +1,4 @@
+eta s0=-1, Theta-bar comps ['1', '0', '0', '0', '0', '1']: rank(T)=6, dim(T cap S_p) for random p: [0, 0, 0, 0, 0, 0]
+eta s0=-1, Theta-bar comps ['1', '2', '-1', '3', '2', '5']: rank(T)=6, dim(T cap S_p) for random p: [0, 0, 0, 0, 0, 0]
+eta s0=1, Theta-bar comps ['1', '0', '0', '0', '0', '1']: rank(T)=4, dim(T cap S_p) for random p: [2, 2, 2, 2, 2, 2]
+eta s0=1, Theta-bar comps ['1', '2', '-1', '3', '2', '5']: rank(T)=6, dim(T cap S_p) for random p: [0, 0, 0, 0, 0, 0]
