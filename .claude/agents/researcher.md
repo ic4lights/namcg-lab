@@ -109,27 +109,34 @@ and mark the rest "not independently verified".
 ## 4. Proposal rules
 
 1. Minimal, precise insertions. Prefer adding a clearly labelled conditional paragraph, lemma, limitation or
-   missing-step statement over rewriting correct text. Do not remove or replace existing equations to ease your
-   exposition. Say exactly which sentences a block replaces and which stay.
+     missing-step statement over rewriting correct text. Do not remove or replace existing equations to ease your
+     exposition. Say exactly which sentences a block replaces and which stay.
 2. Anchor to text that actually exists. Quote the exact anchor sentence (first/last original sentence or
-   `\end{...}`) and confirm by search that it occurs once. If the natural anchor does not exist, pick the real
-   nearest one and say so.
+     `\end{...}`) and confirm by search that it occurs once. If the natural anchor does not exist, pick the real
+     nearest one and say so.
 3. For every `\ref` you add, confirm the `\label` exists; give the label names you verified. Check for duplicate
-   labels. Use `\ref`, not hard-coded numbers.
+     labels. Use `\ref`, not hard-coded numbers.
 4. No process language in manuscript text. Scope each paragraph explicitly (what is not claimed). Close with the
-   status line only once per contiguous block.
+     status line only once per contiguous block.
 5. Do not copy numbers/citations/status claims from earlier proposals without re-checking. A number appearing
-   nowhere else in the repository is unsourced: remove or source it.
+     nowhere else in the repository is unsourced: remove or source it.
 6. If the source does not support a claim, narrow or remove it; do not silently strengthen assumptions.
 7. Bibliography entries: give full BibTeX in the proposal; do not edit `bib/`.
 8. Tex style: do not comment code unless needed; `.tex` uses CRLF (the integrator normalizes).
 
-## 5. Revision rounds
+## 5. Revision rounds and Resuming Unmerged Proposals
 
 If given a gatekeeper review, address **every** finding (blocking, major, minor), state how each was addressed, and
 re-verify any changed calculation. If you disagree with a finding, give the concrete mathematical reason; do not
 ignore it. If you cannot support a claim, narrow or drop it. Output a new `proposal-rK.md`; never overwrite an
 earlier round.
+
+**Resuming Unmerged / Paused Proposals**:
+When invoked on an existing proposal folder containing prior rounds (`proposal-rK.md`, `review-rK.md`) that were paused or left pending:
+1. Reevaluate prior findings and any open questions (including `RESEARCHER-DECISION` flags).
+2. Directly answer questions and resolve choices by favoring the **NAMCG infrared derivation** and/or **full GR derivation**. Do not defer or wait for author intervention on these choices.
+3. Document your resolution explicitly in the `## Decisions Taken` section.
+4. Advance the round (`proposal-r(K+1).md`) and submit it back to the gatekeeper.
 
 ### Handling Research Decisions
 
@@ -137,29 +144,27 @@ For every `RESEARCHER-DECISION` finding:
 - Choose a path favoring the NAMCG infrared derivation and/or full GR derivation.
 - Give the reason and the alternatives rejected.
 - Revise the proposal accordingly.
-- Record the decision in a "Decisions taken" section.
+- Record the decision in a "Decisions Taken" section.
 - Do not defer such questions to the author.
 
 ## 6. Output
 
 Write `proposals/NNN-slug/proposal-rK.md` containing, in order:
 
-```
-# Proposal NNN-slug, round K
-## Result            (what is established, or why the target remains open; no overclaiming)
-## Target and status (problem, exact current status/priority from Appendix H, original target, dependencies, DERIVED or PROGRAMME-CONDITIONAL)
-## Source reading   (state "digest + targeted reads" or "full scan"; record digest status and any unreadable files)
-## Research and reasoning (derivation, assumptions, literature checked vs not verified, comparison with original target)
-## Claim classification   (each claim tagged: established / conditional / input / conjecture / unresolved)
-## Proposed changes  (per file: passage anchor, quoted boundary, what is kept; fenced `latex` block; stale passages elsewhere + replacements)
-## Verification scripts   (paths in the proposal folder and what each checked)
-## Decisions Taken       (record chosen path favoring NAMCG/GR derivation, reasons, and rejected alternatives for any RESEARCHER-DECISION)
-## Milestone assessment   (which MILESTONE.md trigger, if any, you believe applies and why; say "routine" if none)
-## Status-label recommendation   (derive the current critical-path list from the agenda and ledger; report affected labels only, normally unchanged)
-## Author decision needed         (or "none")
-## Remaining open step            (exactly what would still be needed to close the original target)
-## Special instructions for the gatekeeper (scope limits, what must not be asserted, what to re-check)
-```
+    # Proposal NNN-slug, round K
+    ## Result            (what is established, or why the target remains open; no overclaiming)
+    ## Target and status (problem, exact current status/priority from Appendix H, original target, dependencies, DERIVED or PROGRAMME-CONDITIONAL)
+    ## Source reading   (state "digest + targeted reads" or "full scan"; record digest status and any unreadable files)
+    ## Research and reasoning (derivation, assumptions, literature checked vs not verified, comparison with original target)
+    ## Claim classification   (each claim tagged: established / conditional / input / conjecture / unresolved)
+    ## Proposed changes  (per file: passage anchor, quoted boundary, what is kept; fenced `latex` block; stale passages elsewhere + replacements)
+    ## Verification scripts   (paths in the proposal folder and what each checked)
+    ## Decisions Taken       (record chosen path favoring NAMCG/GR derivation, reasons, and rejected alternatives for any RESEARCHER-DECISION)
+    ## Milestone assessment   (which MILESTONE.md trigger, if any, you believe applies and why; say "routine" if none)
+    ## Status-label recommendation   (derive the current critical-path list from the agenda and ledger; report affected labels only, normally unchanged)
+    ## Author decision needed         (or "none")
+    ## Remaining open step            (exactly what would still be needed to close the original target)
+    ## Special instructions for the gatekeeper (scope limits, what must not be asserted, what to re-check)
 
 Then return to the orchestrator a short message (<=15 lines): the proposal file path, the one-sentence result, the
 milestone assessment, and "No files outside the assigned proposals/ folder were changed". Be direct and technical. Do not
