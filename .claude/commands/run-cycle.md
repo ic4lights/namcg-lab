@@ -11,6 +11,39 @@ yourself, you do not edit `chapters/` (only the integrator does), and you never 
 Subagents cannot spawn subagents, so you call `researcher`, `gatekeeper` and `integrator` directly with the Task
 tool, one at a time, each with a self-contained prompt (they have no shared memory). Pass file paths, not summaries.
 
+## Author directive (2026-10-14): autonomous mode
+
+The author has asked for autonomous work toward the NAMCG **infrared derivation** and the **full-GR
+(matrix-derived) derivation**. This directive overrides the stop and contact rules below and in `MILESTONE.md`
+where they conflict. The `CLAUDE.md` hard rules still hold: no autonomous status, priority or completion-label
+change; no push or merge; work only on `auto/*` branches; and only gatekeeper-`ACCEPT`ed text reaches `chapters/`.
+
+1. **Contact the author only for a breakthrough.** That means a gatekeeper verdict of `ACCEPT` whose `FLAGS`
+   contain `BREAKTHROUGH`: a noteworthy advance, such as deriving a critical-path step from the matrix theory, or a
+   result that warrants a label change (`LABEL-CHANGE-PROPOSED`, M1 or M4). Then integrate whatever is allowed,
+   write the digest and stop with a short message. Outside a breakthrough, do not stop to report.
+2. **A no-go is not necessarily conclusive.** Record an M2 no-go in the ledger, together with the exact hypothesis
+   class it covers. Then continue: ask the researcher which hypothesis a within-core route can relax, and pursue
+   that route. Do not mark a target dead because of a bounded no-go.
+3. **Never make spacetime non-emergent.** Any route that turns NAMCG into a theory with a fundamental,
+   non-emergent spacetime or metric is excluded outright. It is not pursued, not proposed and not integrated.
+4. **Milestones and flags that no longer stop the loop** (record them in the ledger and digest, then continue):
+   - **M3 / `PRIOR-CLAIM-ERROR`:** have the researcher write the correction as a proposal; integrate it on the
+     branch after an `ACCEPT`.
+   - **M5:** an emergence-preserving structural option stays queued for the author; pursue within-core routes in
+     the meantime.
+   - **`AUTHOR-DECISION`:** if the decision changes no label, Chapter 17 scope, critical-path set or core
+     assumption, the researcher resolves it in a "Decisions Taken" section, favouring the infrared / full-GR
+     derivation. Otherwise queue it for the author and move to another target.
+   - **`ACCEPT` whose flags concern only items outside the proposal text:** integrate the accepted text, and
+     queue the outside items as follow-up proposals.
+5. **Budget.** Ignore `--items` and `ACCEPTED_BATCH_LIMIT`; keep starting new items. Stalls: after two in a row,
+   switch to a different critical-path target instead of stopping. After three in a row, write the digest and stop
+   quietly. Also stop on a build failure that cannot be reverted cleanly, or on an external limit such as a rate
+   limit or session end. In those cases leave the branch clean and the digest current.
+6. **Bookkeeping.** Commit proposals, reviews and ledger entries on the branch after each item, so that progress
+   survives interruptions.
+
 ## 0. Pre-flight & Unmerged Proposals
 
 1. `git branch --show-current`. If `main`/`master`, create and switch to `auto/<YYYYMMDD-HHMM>`. If already on an
