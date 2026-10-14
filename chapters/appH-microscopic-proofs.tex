@@ -411,6 +411,49 @@ or module-valued frame, or an enlarged matrix model. A matrix-derived
 frame module with a connection that compensates this defect is a
 conjectured route, not a result established here. Problems~B, C, D, F
 and~G remain open.
+
+For real, nondegenerate constant \(\Theta\), consider
+\(\Lambda\in\mathrm{SO}(3,1)\) that preserves the fixed tensor,
+\(\Lambda\Theta\Lambda^T=\Theta\). In a Lorentz frame with
+\(\Theta^{01}=E\), \(\Theta^{23}=B\), \(EB\ne0\), and all other
+independent components zero, its identity-component stabilizer is
+\(\mathrm{SO}^+(1,1)\times\mathrm{SO}(2)\): a boost in the
+\(01\)-plane and a rotation in the \(23\)-plane. Equivalently, in
+the self-dual representation its stabilizer is
+\(\mathrm{SO}(2,\mathbb C)\), of real dimension two. This is a
+constant-background stabilizer, not a local Lorentz gauge symmetry.
+
+The corresponding linear automorphisms of the Heisenberg algebra
+are implementable by inner automorphisms of its irreducible Weyl
+representation. Infinitesimally, write \(\Lambda=\mathbb I+A\);
+preservation of \(\Theta\) requires
+\[
+  A\Theta+\Theta A^T=0.
+\]
+Since \(\Theta\) is invertible,
+\[
+  H_{\mu\nu}:=(\Theta^{-1})_{\mu\rho}A^\rho{}_\nu
+\]
+is symmetric. On the common invariant domain of the Weyl
+generators, the symmetrically ordered quadratic generator
+\[
+  G=\frac14 H_{\mu\nu}
+    \{\bar X^\mu,\bar X^\nu\}
+\]
+satisfies
+\[
+  \delta\bar X^\mu=i[G,\bar X^\mu]
+  =A^\mu{}_\nu\bar X^\nu.
+\]
+The finite implementation is the metaplectic unitary, unique up
+to phase by the Stone--von Neumann theorem. This implements only
+the constant stabilizer: it supplies neither six arbitrary local
+Lorentz parameters nor an independent tangent-frame index or spin
+connection. Invariance of the full action also requires the
+remaining fields and couplings to transform compatibly. This
+conditional representation-theoretic result does not establish
+Problem~D1. Problems~B, C, D, F and~G remain open.
+
 In particular, Presentation~A as specified contains no coframe
 \(e^A{}_\mu\), independent tangent index \(A\), or spin connection
 \(\omega_\mu{}^{AB}\). The infrared dictionary~\eqref{eq:dictionary}
