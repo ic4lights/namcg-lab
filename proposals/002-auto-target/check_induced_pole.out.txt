@@ -1,0 +1,58 @@
+G_eff = 2*pi/(A1*(Lambda**2 - mu**2))   (1/G = A1*(Lambda**2 - mu**2)/(2*pi) )
+m_2^2 (extra spin-2, ghost residue) = A1*(-Lambda**2 + mu**2)/(2*L*Wc)
+m_0^2 (extra spin-0, healthy residue) = A1*(Lambda**2 - mu**2)/(6*L*Rc)
+TT expansion parameter 32 pi G c_W k^2 / k^2 = 2*L*Wc/(A1*(Lambda**2 - mu**2))
+(Riem^2-Ric^2)/180 in (C2,EGB,R2) basis: C2/120 - EGB/360
+R^2 coefficient of a2 for E=E0+QR: (6*Q - 1)**2/72  equals (1/2)(1/6-Q)^2 ? True
+scalars, mu<<Lam: m_2^2/Lam^2 = -10/L
+scalars, mu<<Lam: m_0^2/Lam^2 = 2/L
+a = A1/(2 Wc) for scalars = 10
+
+TT zeros on principal sheet, x = k^2/Lam^2 (mostly plus):
+  a=    10 c=     0 branch= 0 x=       (-2.12161 + 3.31439j) |x|=  3.9353 residual=2.97e-31
+  a=    10 c=     0 branch=-1 x=       (-2.12161 - 3.31439j) |x|=  3.9353 residual=2.97e-31
+  a=    10 c= 1.423 branch= 0 x=      (-0.979462 + 5.55719j) |x|=  5.6428 residual=3.21e-31
+  a=    10 c= 1.423 branch=-1 x=      (-0.979462 - 5.55719j) |x|=  5.6428 residual=3.21e-31
+  a=    10 c=    -2 branch= 0 x=       (-2.00539 + 1.66133j) |x|=  2.6042 residual=4.13e-31
+  a=    10 c=    -2 branch=-1 x=       (-2.00539 - 1.66133j) |x|=  2.6042 residual=4.13e-31
+  a=    10 c=     2 branch= 0 x=       (0.467054 + 6.63162j) |x|=   6.648 residual=1.48e-30
+  a=    10 c=     2 branch=-1 x=       (0.467054 - 6.63162j) |x|=   6.648 residual=1.48e-30
+  a=     1 c=     0 branch= 0 x=      (0.168376 + 0.707754j) |x|= 0.72751 residual=3.26e-32
+  a=     1 c=     0 branch=-1 x=      (0.168376 - 0.707754j) |x|= 0.72751 residual=3.26e-32
+  a=     1 c= 1.423 branch= 0 x=                     2.95891 |x|=  2.9589 residual=9.86e-32
+  a=     1 c= 1.423 branch=-1 x=                    0.450343 |x|= 0.45034 residual=0.0
+  a=     1 c=    -2 branch= 0 x=     (-0.203562 + 0.370512j) |x|= 0.42275 residual=3.26e-32
+  a=     1 c=    -2 branch=-1 x=     (-0.203562 - 0.370512j) |x|= 0.42275 residual=3.26e-32
+  a=     1 c=     2 branch= 0 x=                      6.3054 |x|=  6.3054 residual=1.38e-30
+  a=     1 c=     2 branch=-1 x=                    0.317844 |x|= 0.31784 residual=9.86e-32
+  a=0.3679 c=     0 branch= 0 x=                    0.367879 |x|= 0.36788 residual=0.0
+  a=0.3679 c=     0 branch=-1 x=                    0.367879 |x|= 0.36788 residual=0.0
+  a=0.3679 c= 1.423 branch= 0 x=                     3.76219 |x|=  3.7622 residual=2.96e-31
+  a=0.3679 c= 1.423 branch=-1 x=                   0.0982964 |x|=0.098296 residual=0.0
+  a=0.3679 c=    -2 branch= 0 x=    (-0.0433276 + 0.196157j) |x|= 0.20089 residual=4.96e-32
+  a=0.3679 c=    -2 branch=-1 x=    (-0.0433276 - 0.196157j) |x|= 0.20089 residual=4.96e-32
+  a=0.3679 c=     2 branch= 0 x=                     7.01135 |x|=  7.0114 residual=1.13e-30
+  a=0.3679 c=     2 branch=-1 x=                   0.0816559 |x|=0.081656 residual=0.0
+  a=   0.2 c=     0 branch= 0 x=                    0.771691 |x|= 0.77169 residual=2.47e-32
+  a=   0.2 c=     0 branch=-1 x=                   0.0786584 |x|=0.078658 residual=0.0
+  a=   0.2 c= 1.423 branch= 0 x=                      3.9435 |x|=  3.9435 residual=4.93e-31
+  a=   0.2 c= 1.423 branch=-1 x=                   0.0439889 |x|=0.043989 residual=2.47e-32
+  a=   0.2 c=    -2 branch= 0 x=    (0.00364126 + 0.129541j) |x|= 0.12959 residual=2.87e-32
+  a=   0.2 c=    -2 branch=-1 x=    (0.00364126 - 0.129541j) |x|= 0.12959 residual=2.87e-32
+  a=   0.2 c=     2 branch= 0 x=                     7.18625 |x|=  7.1862 residual=2.47e-30
+  a=   0.2 c=     2 branch=-1 x=                   0.0379376 |x|=0.037938 residual=2.47e-32
+
+a=10: |x|=1 at c* = -9.5845785  (|x|<1 for c > c*? check:) 1.04592 0.957695
+c=0: |x|=1 at a* = 1.5707963
+   a= 1.41372  |x|= 0.92793
+   a= 1.72788  |x|= 1.07033
+
+form-factor illustration (Lam=1):
+  k=0.01 mu=1e-05  I - ln(Lam^2/k^2) = 1.422799   (2 - gamma_E = 1.4227843)
+  k=0.01 mu=1e-07  I - ln(Lam^2/k^2) = 1.422801   (2 - gamma_E = 1.4227843)
+  k=0.01 mu=1e-09  I - ln(Lam^2/k^2) = 1.422801   (2 - gamma_E = 1.4227843)
+  local value ln(Lam^2/mu^2) would be: ['23.026', '32.236', '41.447']
+  k=0.001 mu=1e-05  I - ln(Lam^2/k^2) = 1.4225845   (2 - gamma_E = 1.4227843)
+  k=0.001 mu=1e-07  I - ln(Lam^2/k^2) = 1.4227845   (2 - gamma_E = 1.4227843)
+  k=0.001 mu=1e-09  I - ln(Lam^2/k^2) = 1.4227845   (2 - gamma_E = 1.4227843)
+  local value ln(Lam^2/mu^2) would be: ['23.026', '32.236', '41.447']

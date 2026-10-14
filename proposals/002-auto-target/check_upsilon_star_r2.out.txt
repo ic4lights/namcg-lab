@@ -1,0 +1,13 @@
+delta=      -10  U*=   10.401705  theta=  2.86277  zeros(U*-eps)=2  zeros(U*+eps)=0
+delta= -9.58458  U*=   10.000001  theta=  2.85234  zeros(U*-eps)=2  zeros(U*+eps)=0
+delta=       -6  U*=   6.5862853  theta=  2.71646  zeros(U*-eps)=2  zeros(U*+eps)=0
+delta=       -4  U*=   4.7546944  theta=  2.57043  zeros(U*-eps)=2  zeros(U*+eps)=0
+delta=       -2  U*=   3.0396051  theta=  2.28893  zeros(U*-eps)=2  zeros(U*+eps)=0
+delta=       -1  U*=   2.2618263  theta=  2.02876  zeros(U*-eps)=2  zeros(U*+eps)=0
+delta=        0  U*=   1.5707963  theta=   1.5708  zeros(U*-eps)=2  zeros(U*+eps)=0
+delta=      0.5  U*=   1.2682795  theta=  1.16556  zeros(U*-eps)=2  zeros(U*+eps)=0
+delta=      0.9  U*=   1.0507467  theta= 0.542281  zeros(U*-eps)=2  zeros(U*+eps)=0
+delta=        1  U*=         1.0  theta=      0.0  zeros(U*-eps)=1  zeros(U*+eps)=0
+delta=        2  U*=         2.0  theta=      0.0  zeros(U*-eps)=1  zeros(U*+eps)=0
+delta=        5  U*=         5.0  theta=      0.0  zeros(U*-eps)=1  zeros(U*+eps)=0
+Upsilon=10 lower edge delta = -9.5845785

@@ -1,0 +1,11 @@
+k^2 = -omega**2 + q**2
+spin-2 coefficient  a2(k) = (-omega + q)*(omega + q)*(-32*pi*G*c_W*omega**2 + 32*pi*G*c_W*q**2 - 1)/(64*pi*G)
+spin-0s coefficient a0(k) = (-omega + q)*(omega + q)*(-96*pi*G*c_R*omega**2 + 96*pi*G*c_R*q**2 + 1)/(32*pi*G)
+a2 as function of k2: k2*(32*pi*G*c_W*k2 - 1)/(64*pi*G)
+a0 as function of k2: k2*(96*pi*G*c_R*k2 + 1)/(32*pi*G)
+zeros of a2 (besides k2=0): [1/(32*pi*G*c_W)]
+zeros of a0 (besides k2=0): [-1/(96*pi*G*c_R)]
+spin-2: residue at k2=0: -64*pi*G  residue at extra zero: 64*pi*G  ratio: -1
+spin-0: residue at k2=0: 32*pi*G  residue at extra zero: -32*pi*G  ratio: -1
+Stelle check: with c_W=-alpha/2, extra spin-2 zero at k2 = -1/(16*pi*G*alpha)
+Gauss-Bonnet quadratic form identically zero: True
