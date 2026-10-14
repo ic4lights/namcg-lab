@@ -140,7 +140,8 @@ and mark the rest "not independently verified".
 5. Do not copy numbers/citations/status claims from earlier proposals without re-checking. A number appearing
      nowhere else in the repository is unsourced: remove or source it.
 6. If the source does not support a claim, narrow or remove it; do not silently strengthen assumptions.
-7. Bibliography entries: give full BibTeX in the proposal; do not edit `bib/`.
+7. Bibliography entries: give full BibTeX in the proposal, and verify the record (DOI/arXiv). Do not edit `bib/`
+     yourself; the integrator adds gatekeeper-accepted entries to `bib/namcg.bib`.
 8. Tex style: do not comment code unless needed; `.tex` uses CRLF (the integrator normalizes).
 
 ## 5. Revision rounds and Resuming Unmerged Proposals

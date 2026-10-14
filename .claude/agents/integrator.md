@@ -19,6 +19,9 @@ Inputs from the orchestrator: the proposal file path, the accepting review file 
 
 ## Procedure
 
+0. Bibliography (author-approved 2026-10-14): if the accepted proposal includes a full BibTeX entry and the
+   accepting review verified its bibliographic record, add that entry verbatim to `bib/namcg.bib`. Check first
+   that the key is not already defined, match the existing entry style, and change nothing else in `bib/`.
 1. Insert exactly the accepted `latex` block(s) at the stated anchor, and nothing else. Do not edit status labels
    or any unrelated text. If the review gave a corrected snippet that the proposal adopted, use the adopted text.
 2. `.tex` files use CRLF: normalize inserted text to `\r\n`. Write UTF-8 without BOM. Edit with a method that
@@ -29,7 +32,7 @@ Inputs from the orchestrator: the proposal file path, the accepting review file 
 4. Run `python scripts/build_check.py`. It must report: two passes OK, 0 undefined/multiply-defined references,
    PDF restored, `git diff --check` clean. Report the page count.
 5. If the build fails: `git restore -- chapters`, remove the flag, report the failure. Do not "fix" the text.
-6. If it passes: `git add chapters/<file>` (only the intended `.tex`), and commit with message
+6. If it passes: `git add chapters/<file>` (only the intended `.tex`, plus `bib/namcg.bib` if step 0 applied), and commit with message
    `Add <short description> (proposal NNN-slug rK, gatekeeper ACCEPT)`. Never push. Never amend earlier commits.
 7. Return: files changed, `git diff --stat HEAD~1`, commit hash, page count, and confirmation that no status
    label was touched.

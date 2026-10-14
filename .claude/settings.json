@@ -31,6 +31,7 @@
       "Edit(reports/**)",
       "Write(scratch/**)",
       "Edit(chapters/**)",
+      "Edit(bib/**)",
       "Write(.claude/state/**)"
     ],
     "deny": [
