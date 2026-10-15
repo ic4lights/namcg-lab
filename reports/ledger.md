@@ -106,3 +106,6 @@
 - No PRIOR-CLAIM-ERROR: merged 011/013 never claimed the background solves eq:Smatrix ("off-shell"; "does not derive the background").
 - Open routes: induced (one-loop) term, subleading orders (ranked first), other sectors, entanglement route (ass:EE).
 - Integrated count this run: 12.
+
+## 015-entropy-action-identity — INTEGRATION-FAILED (r2), 2026-10-15
+- Build failed: "Double subscript" from \LUV_s / \LUV_v in the accepted appH text (\LUV = \Lambda_{\mathrm{UV}}). Integrator restored chapters/bib; nothing committed. Needs an r3 macro fix (\Lambda_{\mathrm{UV},s}) and gatekeeper re-accept.
