@@ -1,0 +1,8 @@
+PB/lie ratios (s): [np.float64(-0.9999999999999998), np.float64(-1.0), np.float64(-0.9999999999999989), None]
+s = -1
+m = M^45 = -4.010564164064347  F = -2.0008990861504206  phi = -0.6236511761185753  q^2 = 0.21  q.c = 0.3628571428571429
+lam=     10  |L - lam^2 m^2 F e (q^2 c_a - q_a q.c)| / (lam^2 m^2 |F|) per component: ['7.634e-03', '5.198e-03', '1.584e-02', '1.013e-02']
+lam=     30  |L - lam^2 m^2 F e (q^2 c_a - q_a q.c)| / (lam^2 m^2 |F|) per component: ['2.535e-03', '1.701e-03', '5.278e-03', '3.374e-03']
+lam=    100  |L - lam^2 m^2 F e (q^2 c_a - q_a q.c)| / (lam^2 m^2 |F|) per component: ['7.602e-04', '5.093e-04', '1.583e-03', '1.012e-03']
+lam=    300  |L - lam^2 m^2 F e (q^2 c_a - q_a q.c)| / (lam^2 m^2 |F|) per component: ['2.534e-04', '1.697e-04', '5.278e-04', '3.374e-04']
+lam=   1000  |L - lam^2 m^2 F e (q^2 c_a - q_a q.c)| / (lam^2 m^2 |F|) per component: ['7.601e-05', '5.092e-05', '1.583e-04', '1.012e-04']
