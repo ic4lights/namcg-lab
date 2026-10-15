@@ -1,0 +1,6 @@
+(A) rank of linearised Einstein image over 12 random fluctuation profiles (product leaf, 3 transverse S^2 coordinates): 3 (D=4 value: 3)
+    dK depends only on <A^mu>_C: by construction of the first-order formula (V^{i mu}=0 in a product)
+(B) F(x) quad vs closed form max diff: 2.2637447472106942e-13  F values: [9.99037e-01 9.95862e-01 9.82978e-01 9.34611e-01 7.77627e-01 4.09144e-01
+ 4.10910e-02 4.00000e-06]
+    fuzzy sphere S^2_n: sum_{l<n}(2l+1) = n^2 verified, n=2,3,5,8
+    TT coefficient (all thresholds equal): c_TT = Z*(1 - (N_s+2)/24); with N_s = D-4 transverse scalars: 1-(D-2)/24 = [11/12, 2/3]

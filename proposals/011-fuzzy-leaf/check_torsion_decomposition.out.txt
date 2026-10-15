@@ -1,0 +1,19 @@
+exact identity X = G_{mu nu} T^{ab mu} T_{ab}^nu : max |coefficient of rho^2 (I1 - X)| = 2.362843839373786e-10
+QUADRATIC
+  x ~ h,r            coeffs [-4. -4.]  rel.resid 8.303e-16
+  x ~ h,r,S          coeffs [-1.377049 -0.065574  1.967213]  rel.resid 3.570e-16
+  x ~ h,r,V          coeffs [-4. -2. -2.]  rel.resid 7.625e-16
+  x ~ h,r,S,V        coeffs [-1.395349 -0.046512  1.953488 -0.046512]  rel.resid 2.943e-16
+  x ~ h,r,S,V,VdL    coeffs [-1.405405 -0.036036  1.945946 -0.036036 -0.036036]  rel.resid 3.874e-16
+  x ~ h,r,A,B,V      coeffs [-0.179104 -0.059701  0.955224 -0.059701 -0.059701]  rel.resid 6.219e-16
+  x ~ A (trivial)    coeffs [1.]  rel.resid 2.425e-16
+CUBIC
+  x ~ h,r            coeffs [-3.058413 -2.685798]  rel.resid 2.689e-01
+  x ~ h,r,S          coeffs [-2.  -1.   1.5]  rel.resid 8.053e-16
+  x ~ h,r,V          coeffs [-3.058413 -1.342899 -1.342899]  rel.resid 2.689e-01
+  x ~ h,r,S,V        coeffs [-2.  -0.5  1.5 -0.5]  rel.resid 8.712e-16
+  x ~ h,r,S,V,VdL    coeffs [-2.       -0.333333  1.5      -0.333333 -0.333333]  rel.resid 8.422e-16
+  x ~ h,r,A,B,V      coeffs [-0.173913 -0.043478  0.956522 -0.086957 -0.043478]  rel.resid 5.221e-16
+  x ~ A (trivial)    coeffs [1.]  rel.resid 3.103e-16
+singular values (normalized) of cubic coefficient matrix [h r A B V S VdL]: [1.         0.30898845 0.14573331 0.         0.         0.
+ 0.        ]

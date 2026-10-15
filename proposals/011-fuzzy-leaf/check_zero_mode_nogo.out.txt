@@ -1,0 +1,15 @@
+(a) S00 = sum_{I>=1}(Theta^{I0})^2 and tr S = sum_{I>=4}(Theta^{I0})^2 + sum_{I>=1,k>=1}(Theta^{Ik})^2 verified symbolically, D=4..7
+(b) violations of S00>=0, trS>=0 in 2000 random measures: 0
+(c) D=4 points=1: min over measures of min_c ||S-c eta^-1||/||S|| = 0.7071
+(c) D=4 points=2: min over measures of min_c ||S-c eta^-1||/||S|| = 0.5774
+(c) D=4 points=4: min over measures of min_c ||S-c eta^-1||/||S|| = 0.5000
+(c) D=5 points=1: min over measures of min_c ||S-c eta^-1||/||S|| = 0.5000
+(c) D=5 points=2: min over measures of min_c ||S-c eta^-1||/||S|| = 0.5000
+(c) D=5 points=4: min over measures of min_c ||S-c eta^-1||/||S|| = 0.5000
+(c) D=7 points=1: min over measures of min_c ||S-c eta^-1||/||S|| = 0.5000
+(c) D=7 points=2: min over measures of min_c ||S-c eta^-1||/||S|| = 0.5000
+(c) D=7 points=4: min over measures of min_c ||S-c eta^-1||/||S|| = 0.5000
+    overall minimum found 0.5000000000030215 (positive; the proof gives S00>=0 and trS>=0 incompatible with c != 0)
+(d) dim 2: det M = -9/25 < 0 ; sign(det g) = -1  -> M^2 = -c impossible (needs det M = c^1 > 0)
+(d) dim 4: det M = -81/169 < 0 ; sign(det g) = -1  -> M^2 = -c impossible (needs det M = c^2 > 0)
+(d) dim 6: det M = -6724/6922161 < 0 ; sign(det g) = -1  -> M^2 = -c impossible (needs det M = c^3 > 0)

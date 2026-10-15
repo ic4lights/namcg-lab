@@ -1,0 +1,7 @@
+mask 1: n=12  c = Res/TD : mean (2+0j)  spread 1.16e-13   max|Res|/scale 2.00e+00
+mask 2: n=12  c = Res/TD : mean (2+0j)  spread 4.00e-15   max|Res|/scale 2.00e+00
+mask 3: n=12  c = Res/TD : mean (2+0j)  spread 1.55e-14   max|Res|/scale 2.44e+00
+mask 4: n=12  c = Res/TD : mean (2+0j)  spread 2.04e-14   max|Res|/scale 2.00e+00
+mask 5: n=12  c = Res/TD : mean (2+0j)  spread 1.64e-14   max|Res|/scale 1.93e+00
+mask 6: n=12  c = Res/TD : mean (2+0j)  spread 3.02e-14   max|Res|/scale 3.29e+00
+mask 7: n=12  c = Res/TD : mean (2+0j)  spread 1.87e-13   max|Res|/scale 2.31e+00
