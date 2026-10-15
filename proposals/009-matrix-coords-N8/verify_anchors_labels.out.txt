@@ -1,4 +1,5 @@
 ch03 anchor count: 1
+ch03 eq:Smatrix precedes anchor: True
 appH anchor count: 1
 def:matrix-coords 1
 def:matrix-coords-ext 0
