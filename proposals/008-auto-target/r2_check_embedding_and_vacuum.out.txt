@@ -1,0 +1,7 @@
+(A) D= 4: K = theta^T g theta : True ; signature of g = (1 neg, 3 pos)
+(A) D= 6: K = theta^T g theta : True ; signature of g = (1 neg, 3 pos)
+(A) D=10: K = theta^T g theta : True ; signature of g = (1 neg, 3 pos)
+(B) e^T e = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]] ; G = e^T eta e = [[1, 0, 0, 0], [0, -1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+    J antisymmetric orthogonal complex structure for J = R J0 R^T (R generic SO(4)): True True
+    G(J) == 1 - 2 n n^T with n = -J e_0 : True ; n.e_0 = 0 ; |n|^2 = 1
+    delta e tangent to the vacuum manifold {Phi^T Phi = v^2}: dimension of the kernel of dTheta -> Sym(e^T de) = 2 ; massive (V^(2) = lam v^2 Tr H^2) directions: 4

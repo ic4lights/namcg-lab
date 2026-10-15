@@ -1,0 +1,14 @@
+[sig=-1] (a) dG = +[(Gu)(.)p + n(.)m] : True ;  dG = -[...] : False
+        (b) d ln rho = 1 * (p.u)
+        u = q : dG = 0: True  drho = 0: True
+        (c) <n,p>_K = 0 ; <n,n>_K - p^T eta^{-1} p = 0
+        (d) rank of u -> (dG, drho): 3 ; rank of u -> (dg_rho, drho): 3
+        (e) background G     : rank of Einstein operator on image = 3 ; dim of conserved symmetric sources = 6
+        (e) background g_rho : rank of Einstein operator on image = 3 ; dim of conserved symmetric sources = 6
+[sig=1] (a) dG = +[(Gu)(.)p + n(.)m] : True ;  dG = -[...] : False
+        (b) d ln rho = 1 * (p.u)
+        u = q : dG = 0: True  drho = 0: True
+        (c) <n,p>_K = 0 ; <n,n>_K - p^T eta^{-1} p = 0
+        (d) rank of u -> (dG, drho): 3 ; rank of u -> (dg_rho, drho): 3
+        (e) background G     : rank of Einstein operator on image = 3 ; dim of conserved symmetric sources = 6
+        (e) background g_rho : rank of Einstein operator on image = 3 ; dim of conserved symmetric sources = 6
