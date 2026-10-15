@@ -90,3 +90,11 @@
 - ch06 paragraph after Claim 1/Claim 2: Dorau-Much as the operator-algebraic matter side of Claim 1 (free scalar, coherent states, bifurcate Killing horizon); assumes metric, local Minkowski, Raychaudhuri, S=A/4; no support for Claim 2 or Problems A, B. appB sentence: relative entropy = horizon energy flux for free scalars/coherent states, prescribed metric only.
 - Commit 9100a5a. Build PASS 252 pages, 0 undefined. No label touched. Integrated count this run: 10.
 - SME suggestion 4 (relative-entropy form of ass:EE): researcher recommends against (first variation vanishes on the finite-dimensional diamond algebra; carries only the first law). Not adopted.
+
+## 013-cp12-einstein-rank (Problem F; A, D1, E) — integrated 2026-10-15
+- Rounds: 2. r1 AWRR (unverified "lowest member of tower" attribution; scope wording); r2 ACCEPT, flags none. Gatekeeper independently re-derived rank (own script, random base points; also random W_y planes).
+- Integrated two appH paragraphs before \section{Problem G: HBEV} + bib SperlingSteinacker2019 (verified). Commit d4bca69. Build PASS 254 pages, 0 undefined. No label touched.
+- Established (kinematic, H_CP: Poisson limit, linear, frozen coefficients, leading order in 1/(|q| l), fibre-integrated operator tensor, one sheet): only the 12 first-harmonic fibre amplitudes (frame-type A = kappa T) respond; exact constraint q q h = 0; image dim 9, linearized Einstein rank 6 = number of conserved sources; kernel on image = transverse diffeomorphisms = matrix-gauge image; gauge group of the class is divergence-free diffeos, density fixed by Liouville; 12 = 3 inert + 3 gauge + 6 gauge-invariant. Rank 6 follows from surjectivity onto the hyperplane (a count), independent of W_y. Fibre-constant and l != 1 fluctuations give no linear response (exact, in class). Partial base-function closure argument (alpha = 0).
+- First class where neither the 008/009 rank obstruction nor the 011 proportionality obstruction occurs. Not a breakthrough (no dynamics; second- vs third-order mismatch; leading-symbol gauge invariance only).
+- Next: dynamics of the level-1 amplitudes (action, masses, positivity, order mismatch).
+- Integrated count this run: 11.
