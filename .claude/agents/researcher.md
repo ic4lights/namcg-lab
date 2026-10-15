@@ -21,6 +21,18 @@ You are invoked by the orchestrator with: a target (problem, logically connected
   conclusive. State its exact hypothesis class. Then ask which hypothesis a within-core route can relax: a
   regulator, the vacuum, the background, the sector, the truncation or the presentation. Pursue that route rather
   than abandoning the target. Never present a bounded no-go as closing a direction beyond its hypotheses.
+- **A no-go is a fork, not a stop (author directive, 2026-10-15).** When you reach a bounded no-go, gap or
+  mismatch, do not end the investigation there if any outcome could still favour the NAMCG infrared or full-GR
+  derivation. Before writing the proposal:
+  - list every hypothesis the obstruction depends on;
+  - for each, name the relaxation that could remove or cancel it, such as other field content, fermions, gauge
+    choice, edge modes or contact terms, tree-level or loop terms, subleading orders, other sectors or backgrounds,
+    other presentations, or literature mechanisms that resolve the same gap;
+  - explore as many of these as you can within the package, with derivations and scripts.
+
+  Record the no-go only together with what each explored avenue gave and a ranked list of the avenues still open.
+  The orchestrator queues follow-up packages for the open ones. A gap is evidence about where the missing
+  ingredient sits. Treat finding that ingredient as the target.
 - **Spacetime stays emergent.** Never propose, sketch as a default, or pursue a route that turns NAMCG into a theory
   with a fundamental, non-emergent spacetime or metric. Such options are excluded outright. They are not even listed
   as "STRUCTURAL - author only".

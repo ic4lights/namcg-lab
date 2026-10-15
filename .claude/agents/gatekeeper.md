@@ -28,6 +28,10 @@ rounds: read earlier `review-r*.md` and `proposal-r*.md` in that folder and `rep
 
   Routine sharpenings, corrections, conditional reductions and bounded no-go results are not breakthroughs. Never
   flag one to reward effort or elegance.
+- **Open avenues after a no-go (2026-10-15).** When you accept a bounded no-go, gap or mismatch, list in "Scope of
+  what is established" every relaxation that could still favour the infrared or full-GR derivation, and rank the
+  ones you judge most promising. The loop follows these up. Do not penalise a proposal for exploring such avenues,
+  provided each one is correctly scoped.
 - **No-go results.** Verify a no-go within its exact hypotheses, and state that class explicitly in "Scope of what
   is established". Do not treat it as closing a direction beyond those hypotheses. Where you can see it, name
   which hypothesis a within-core route could relax, without originating that research yourself.

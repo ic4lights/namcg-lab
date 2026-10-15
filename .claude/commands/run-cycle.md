@@ -46,6 +46,13 @@ author can follow it in VS Code. It replaces the per-run `auto/<YYYYMMDD-HHMM>` 
    contain `BREAKTHROUGH`: a noteworthy advance, such as deriving a critical-path step from the matrix theory, or a
    result that warrants a label change (`LABEL-CHANGE-PROPOSED`, M1 or M4). Then integrate whatever is allowed,
    write the digest and stop with a short message. Outside a breakthrough, do not stop to report.
+2a. **Follow every favourable avenue after a no-go (author directive, 2026-10-15).** When a package records a
+   bounded no-go, gap or mismatch and lists open relaxations that could favour the infrared or full-GR derivation:
+   - queue a follow-up package straight away that explores those avenues. Ask the SME (mode 1) for literature
+     mechanisms that resolve the same gap when that helps.
+   - keep following up until each avenue has either produced a positive result or been bounded in turn.
+   - do not move on to unrelated targets while a favourable avenue on the current gap is still unexplored, unless
+     it is blocked.
 2. **A no-go is not necessarily conclusive.** Record an M2 no-go in the ledger, together with the exact hypothesis
    class it covers. Then continue: ask the researcher which hypothesis a within-core route can relax, and pursue
    that route. Do not mark a target dead because of a bounded no-go.

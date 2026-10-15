@@ -54,6 +54,11 @@ The first line of the reply is
 The orchestrator saves it to `reports/sme-scout-<YYYYMMDD-HHMM>.md`. The researcher reads the latest scout report
 when choosing targets. Advice only: do not write derivations or manuscript text.
 
+**Gap resolution (2026-10-15).** When the orchestrator asks about a specific NAMCG no-go or gap, look specifically
+for published mechanisms that resolve the same kind of gap in other settings, and map them onto NAMCG's
+hypotheses. Examples: edge modes or contact terms that reconcile entanglement entropy with induced couplings;
+cancellations through field content; gauge-choice effects.
+
 ### Mode 2: gatekeeper consultant
 When the gatekeeper raises an `SME-CONSULT` question, the orchestrator sends you that question, the proposal path and
 the review. Answer only the question asked, for example:
