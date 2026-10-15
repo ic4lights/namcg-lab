@@ -109,3 +109,11 @@
 
 ## 015-entropy-action-identity — INTEGRATION-FAILED (r2), 2026-10-15
 - Build failed: "Double subscript" from \LUV_s / \LUV_v in the accepted appH text (\LUV = \Lambda_{\mathrm{UV}}). Integrator restored chapters/bib; nothing committed. Needs an r3 macro fix (\Lambda_{\mathrm{UV},s}) and gatekeeper re-accept.
+
+## 015-entropy-action-identity (Problem B; F) — integrated 2026-10-15
+- Route: SME Problem-B route map (Dorau-Much / Jacobson line), primary target. Rounds: 3. r1 AWRR | M2 (no PRIOR-CLAIM-ERROR: appG overgeneral, thm:mT conditional, R-coefficient variable dependence are clarifications); r2 ACCEPT; integration failed (double subscript \LUV_s); r3 notation fix, ACCEPT.
+- Integrated: appH sec:status-B two paragraphs; appG replica-cone sentences + Status sentence (conical-delta convention); ch07 sentence (coefficient equality is content of Hypotheses 5-6); bib Solodukhin2011, SusskindUglum1994 (verified). Commit 333c282. Build PASS 260 pages, 0 undefined. No label touched.
+- Established: pulled-back replica (I) cone area coefficient S = (A_G/48pi) sum w tr1 Lambda^2, contact term Q = 0 per sector, so the delta-A coefficient equals the Lambda^2 coefficient of thm:Geff (B2 at conditional scope); contact term sign consistent with Solodukhin (321)-(323); singular-rho replica (II) gives -1/2 (branch-conditional, unused); R coefficient depends on variables (E_s = R_G/4 + torsion^2).
+- Bounded no-go: EE needs G_T = G_A; in class (Poisson, Euclidean, Feynman background gauge, one loop, Lambda^2, delta rho = 0, replica I) c_T = N_tot/6 - 4 vs c_A = N_tot/6, 1/G_A - 1/G_T = 2 Lambda^2/pi from rho^2 X. Survives replica II for positive G.
+- Open avenues (gatekeeper rank): content (fermions / torsion-coupled scalars, b = 0), tensor-block identification / Phi-a mixing, tree-level 014 class, gauge fixing, Moyal, curved backgrounds, replica choice. SME gap scout: reports/sme-scout-gap-GT-GA-20261015.md. Follow-up: proposal 017 (in progress).
+- Integrated count this run: 13.
