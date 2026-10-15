@@ -60,3 +60,8 @@
 
 ## Author directive update — 2026-10-14
 - "proceed with positive impact changes that remain namcg emergent spacetime, automatically": emergence-preserving, positive-impact structural/scope/core-definition changes are pre-approved (gatekeeper review still required; label changes still author-only). Encoded in run-cycle.md and gatekeeper.md (commit 401db7b); researcher.md edit was denied by the permission classifier, so the pre-approval is passed in researcher prompts.
+
+## 010-sme-followups — integrated 2026-10-14
+- From the independent SME review (reports/sme-auto-20261014-1520-20261014-2054.md). r1 ACCEPT, flags none.
+- A: ch09 Weyl-sign sentence now states dependence on the curvature-continuation convention of sec:status-N. B: appK conformal-mode/no-TT conclusion scoped (metric-variation form not derived; F-linear tr(S E_0) term not excluded). C: no summaries of 003/008 no-gos in ch01/ch16/ch17; no edit.
+- Commit ab0fa84. Build PASS 250 pages, 0 undefined refs. No label touched. Integrated count this run: 7.
