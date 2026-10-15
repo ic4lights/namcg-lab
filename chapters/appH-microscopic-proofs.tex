@@ -1856,8 +1856,111 @@ Problem~F, with the region of those values in which it holds stated.
 This is the requirement of item~6 of Chapter~\ref{ch:geometrogenesis}
 and no stronger.
 
+\paragraph{Induced Weyl term and the extra spin-two pole (conditional; not closure).}
+Work in the truncated identity of Theorem~\ref{thm:Geff}, expanded about
+a flat background with the vacuum term cancelled or neglected so that
+flat space is a solution, with every included sector assigned the common
+limits \(\LUV,\mu\), \(\mu\ll\LUV\), with \(S_E=-iS_L\) as in
+Appendix~\ref{app:seeley-dewitt}, and with curvature invariants
+continued without change of sign (an added convention). Rewrite the
+traced \(a_{2,s}\) of~\eqref{eq:appA-a2} in the basis
+\(\{C^2,R^2,E_{\mathrm{GB}}\}\), and let
+\(\mathcal W_C:=\sum_sw_sc_{C,s}\) and \(\mathcal W_R:=\sum_sw_sc_{R,s}\),
+where \(c_{C,s}\) and \(c_{R,s}\) are the coefficients of
+\(C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma}\) and \(R^2\). For a real
+scalar sector with \(E=E_0+QR\), \(c_{C,s}=\operatorname{tr}\mathbb I_s/120\)
+and \(c_{R,s}=\tfrac12\operatorname{tr}(\tfrac16\mathbb I_s-Q)^2\); for
+other sectors \(c_{C,s}\) also depends on \(E\) and on the bundle
+curvature and is not computed here. The logarithmic term
+of~\eqref{eq:W-expand} gives, in~\eqref{eq:W4},
+\[
+  c_W=\frac{\mathcal W_C L}{32\pi^2},\qquad
+  c_R=\frac{\mathcal W_R L}{32\pi^2},\qquad
+  L:=\ln\frac{\LUV^2}{\mu^2},
+\]
+that is, \(\alpha=-2c_W\) and \(\beta=2c_R\) in~\eqref{eq:stelle}; the
+Gauss--Bonnet term does not contribute at quadratic order on a flat
+background. With \(g_{\mu\nu}=\eta_{\mu\nu}+h_{\mu\nu}\) and
+\(k^2=\eta^{\mu\nu}k_\mu k_\nu\), the spin-two part of the quadratic form
+of \(R/(16\pi G_{\mathrm{eff}})+c_WC^2+c_RR^2\) is proportional to
+\(k^2(1-32\pi G_{\mathrm{eff}}c_Wk^2)\) and its spin-zero part to
+\(k^2(1+96\pi G_{\mathrm{eff}}c_Rk^2)\) (a symbolic check, not a proof).
+There is therefore a spin-two pole at \(k^2=-m_2^2\) with residue
+opposite in sign to that of the massless graviton, and a spin-zero pole
+at \(k^2=-m_0^2\) with residue of the graviton's sign, where
+\[
+  m_2^2=-\frac{1}{32\pi G_{\mathrm{eff}}c_W}
+       =-\frac{\Upsilon\LUV^2}{L},
+  \qquad
+  m_0^2=\frac{1}{96\pi G_{\mathrm{eff}}c_R},
+  \qquad
+  \Upsilon:=\frac{\pi}{G_{\mathrm{eff}}\mathcal W_C\LUV^2}.
+\]
+If \(G_{\mathrm{eff}}\mathcal W_C>0\), the extra spin-two pole of this
+fixed-\(L\) form is a tachyonic ghost, with \(|m_2|<\LUV\) exactly when
+\(L>\Upsilon\). If \(1/G_{\mathrm{eff}}\) is taken from the
+universal \(a_1\) term alone, \(1/G_{\mathrm{eff}}
+=\mathcal A_1(\LUV^2-\mu^2)/(2\pi)\) with
+\(\mathcal A_1:=\sum_sw_s\mathcal A_{1,R,s}\), and
+\(\Upsilon=\mathcal A_1/(2\mathcal W_C)\) up to \(O(\mu^2/\LUV^2)\),
+independent of \(\LUV\). For sectors of minimally coupled real scalars,
+\(\mathcal A_1=\mathcal N_0/6\) and \(\mathcal W_C=\mathcal N_0/120\), so
+\(\Upsilon=10\) for every \(\mathcal N_0>0\),
+\(|m_2|<\LUV\) in this fixed-\(L\) form once \(\LUV/\mu>e^{5}\), and
+\(m_0^2=2\LUV^2/L\). Since \(|m_2|^2/\mu^2=\Upsilon e^{L}/L\), which is
+much larger than one for \(\mu\ll\LUV\) unless \(\Upsilon\) is
+exponentially small, this pole lies at momenta where the fixed-\(L\)
+form does not apply (see below); it is a property of that form, not a
+one-loop prediction. For \(|k|\lesssim\mu\), where the fixed-\(L\) form
+applies, the Weyl correction relative to the Einstein term is
+\(32\pi G_{\mathrm{eff}}c_Wk^2=(L/\Upsilon)\,k^2/\LUV^2\).
+
+The fixed-\(L\) form is not the one-loop result at momenta
+\(\mu\ll|k|\ll\LUV\). At second order in curvature the one-loop action
+is nonlocal, with momentum-dependent form factors; assuming that
+the Weyl form factor decays when \(sk^2\gg1\), its proper-time integral
+is cut off at \(s\sim k^{-2}\) rather than at \(\mu^{-2}\), and for
+massless sectors \(L\) is replaced by \(\ln(\LUV^2/k^2)+\delta_W\), with
+a constant \(\delta_W\) fixed by the non-logarithmic part of the form
+factor and by the finite Weyl counterterm. For the analogous
+second-order form factor \(\int_0^1\mathrm d\tau\,
+e^{-\tau(1-\tau)sk^2}\) of a potential insertion, a direct
+numerical evaluation gives \(\ln(\LUV^2/k^2)+2-\gamma_{\mathrm E}\),
+with \(\gamma_{\mathrm E}\) Euler's constant,
+independent of \(\mu\) for \(k\gg\mu\); this illustrates the mechanism
+and does not compute \(\delta_W\). With \(x:=k^2/\LUV^2\) and the
+principal logarithm, the spin-two factor becomes
+\[
+  F(x)=1-\frac{x}{\Upsilon}\Bigl(\ln\frac1x+\delta_W\Bigr),
+\]
+whose zeros on the principal sheet are
+\(x=-\Upsilon/W_j(-\Upsilon e^{-\delta_W})\), \(j\in\{0,-1\}\), with
+\(W_j\) the branches of the Lambert function; \(\mu\) no longer enters.
+At \(\delta_W=0\) the zeros cross \(|x|=1\) at \(x=\pm i\) when
+\(\Upsilon=\pi/2\). A numerical scan with an argument-principle count
+(a check, not a proof) finds that \(F\) has no zero in the disc
+\(|k^2|<\LUV^2\) exactly when \(\Upsilon>\Upsilon_*(\delta_W)\), with
+\(\Upsilon_*(0)=\pi/2\) and \(\Upsilon_*(\delta_W)=\delta_W\) for
+\(\delta_W\ge1\), where the crossing is at \(x=1\). For \(\Upsilon=10\)
+the condition is \(-9.58<\delta_W<10\); at \(\delta_W=0\) the zeros
+are a complex-conjugate pair with \(|k^2|\approx3.9\LUV^2\).
+
+These statements are conditional on the truncated identity, the
+continuation and common limits stated, massless sectors (massive
+sectors require the threshold functions of Problem~F), and the use of
+the leading-logarithmic form factor up to \(|k^2|\sim\LUV^2\), where
+the derivative expansion is not controlled. They do not compute
+\(\mathcal W_C\), \(\mathcal A_1\), \(G_{\mathrm{eff}}\) or \(\delta_W\)
+for the locked block, do not derive the induced coefficients from the
+matrix path integral, and do not decide whether complex-conjugate zeros
+beyond \(\LUV\) are propagating ghosts. Within the leading-logarithmic
+model \(F\), absence of a zero in \(|k^2|<\LUV^2\) is a numerical
+condition on \(\Upsilon\) and \(\delta_W\), which are outputs of
+Problem~F, and is not implied by the metric being composite.
+Problems~F and~N remain open.
+
 \paragraph{Status.}
-Remains Assumption~\ref{ass:EFT-a2}. No computation is recorded.
+Remains Assumption~\ref{ass:EFT-a2}.
 
 \section{What this appendix does not do}
 \label{sec:status-not}

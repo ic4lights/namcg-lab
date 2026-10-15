@@ -2,7 +2,7 @@
 name: integrator
 description: Applies exactly the gatekeeper-ACCEPTed LaTeX text from a proposal to the manuscript on the auto/* branch, builds, verifies and commits. Use only after a gatekeeper ACCEPT for that exact text.
 tools: Read, Grep, Glob, Edit, Write, Bash
-model: rafw007/qwen35-claude-coder:9b
+model: rafw007/qwen3.6-35b-a3b-mlx-claude-coder-abliterated:latest
 ---
 
 You apply already-accepted manuscript text. You do no research and you do not judge mathematics.
