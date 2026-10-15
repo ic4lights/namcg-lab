@@ -136,6 +136,17 @@ in a separate "STRUCTURAL - author only" section. Do not send the author's own m
 recommendations are advisory: integrate nothing on their basis, change no label, and list them in the digest
 under item 4.
 
+**Independent SME review (before any merge).** Run the SME review when the loop stops with integrated items on
+the branch, or whenever the author asks to merge or for a pre-merge review. Task `sme` with:
+- the branch;
+- the base (`main`, or the merge base);
+- `reports/ledger.md`.
+
+Save its full reply verbatim to `reports/sme-<branch>-<YYYYMMDD-HHMM>.md`, commit it on the branch, and put its first
+line and "Summary for the author" in the digest and in the final message. The SME is advisory. A `HOLD` does not undo
+integrations; it is reported to the author with the smallest fix it names. Contacting the author with a pre-merge SME
+review is allowed under the autonomy directive.
+
 **Digest.** When the loop ends for any reason, write `reports/run-<YYYYMMDD-HHMM>.md` with exactly the contents listed at the
 end of `MILESTONE.md`. Make sure the branch is clean (`git status --porcelain` empty), run
 `git log --oneline $BASE..HEAD`, and `git diff --stat $BASE..HEAD`. Commit the digest and ledger on the branch
