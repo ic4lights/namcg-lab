@@ -65,3 +65,11 @@
 - From the independent SME review (reports/sme-auto-20261014-1520-20261014-2054.md). r1 ACCEPT, flags none.
 - A: ch09 Weyl-sign sentence now states dependence on the curvature-continuation convention of sec:status-N. B: appK conformal-mode/no-TT conclusion scoped (metric-variation form not derived; F-linear tr(S E_0) term not excluded). C: no summaries of 003/008 no-gos in ch01/ch16/ch17; no edit.
 - Commit ab0fa84. Build PASS 250 pages, 0 undefined refs. No label touched. Integrated count this run: 7.
+
+## 009-matrix-coords-N8 (ass:emergent-op; Problems F, A, D1, E) — integrated 2026-10-14
+- Author-pre-approved structural extension (M5). Rounds: 2. r1 AWRR | M5 (headline no-go already merged via 008; N_tot line unsupported; literature over-attributed); r2 ACCEPT | M5 | flags none.
+- Integrated: ch03 def:matrix-coords-ext (D matrix coordinates, Poisson limit, 4-dim symplectic leaf, fixed eta_IJ; reduces to def:matrix-coords for D=4); appH paragraph on linear-response ranks; bib KumarSteinacker2023, Steinacker2026 (records verified at abstract level). Commit d9da131. Build PASS 250 pages, 0 undefined. No label touched.
+- Established (kinematic): linearized Einstein rank exactly 3 about a flat brane for every D; min(6, D-1) for generic frozen second fundamental form (exact upper bound; lower bound by exact-rational sample + semicontinuity), so all 6 conserved sources reachable from D=7; D>=8 incl. density is a necessary count only. G != c g for real Lorentzian g and 4-dim leaf, any D (cross-referenced to 008).
+- Not established: Einstein-type field equation for G; gap of the D-4 transverse scalars (not covered by ass:locked-block); Phi = tangent frame; G_eff.
+- Next (researcher-ranked): relax the 4-dimensional leaf (fuzzy extra dimensions, cf. Steinacker2023); then derive the extra conserved stress.
+- Integrated count this run: 8.
