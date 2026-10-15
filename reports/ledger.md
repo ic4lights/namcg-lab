@@ -41,3 +41,11 @@
 - \cite{BarvinskyVilkovisky1990} after "momentum-dependent form factors" in appH sec:status-N; BibTeX added to bib/namcg.bib (record verified against Crossref by gatekeeper). Decay clause stays an uncited assumption. r1 ACCEPT, flags none.
 - Commit 6e5f56a. Process note: integrator committed after build_check reported FAIL (citation undefined because scripts/build_check.py runs pdflatex only, never bibtex; .bbl is gitignored). After a manual bibtex + 2x pdflatex the cite resolves; orchestrator re-ran build_check: PASS 246 pages, 0 undefined. Infrastructure gap: build_check.py does not run bibtex (left for the author).
 - No label touched. Integrated count this run: 4.
+
+## 005-F-presentationA-EH (Problem F) — integrated 2026-10-14
+- Rounds: 2. r1 AWRR (no milestone; "obstruction" downgraded to conditional computation); r2 ACCEPT, flags none, full scan (5th integration).
+- Integrated one appH paragraph before \section{Problem G: HBEV}. Commit 9c68802. Build PASS 248 pages, 0 undefined refs. No label touched.
+- Established: scalar-sector identity sqrt|G|(R_G/6-E)=rho R[g_rho]/6 (Poisson-limit operator); G = eta_AB e^A e^B for e = eta^-1 Theta^-1; connection-sector trace (4/6)rho R + rho^2 X (ghosts -2/6 rho R); quadratic eigenvalues +1, -1/4, -3/4; net TT Maxwell-kernel coefficient 1 - N_tot/24 (N_tot = N_s + 2, input count). Sampled counterexample: rho^2 X is not alpha rho R + beta rho|grad ln rho|^2 mod total derivatives at cubic order ((g_rho, rho)-covariant class; eta-using rewritings untested).
+- Conditional on Poisson limit, bosonic 4D content, background gauge, diagonal heat kernel with local cutoff, Euclidean signs. Not established: ass:emergent-op discharge (<Phi>/v = coframe not derived), any G_eff value/sign.
+- Open relaxations: fermion/extra-scalar content, Moyal corrections, non-minimal gauges, Phi-a mixing, Presentation-B frame coupling, eta-using rewritings of X.
+- Milestone: none. Integrated count this run: 5.
