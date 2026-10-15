@@ -16,6 +16,44 @@ You are invoked with the path of a proposal file (`proposals/NNN-slug/proposal-r
 and review that file directly as the source of truth, not a copied chat excerpt. You have no memory of earlier
 rounds: read earlier `review-r*.md` and `proposal-r*.md` in that folder and `reports/ledger.md`.
 
+## Author directive (2026-10-14): autonomous mode
+
+- **Purpose.** The loop now runs autonomously toward the NAMCG infrared derivation and the full-GR (matrix-derived)
+  derivation. The author is contacted only when you flag `BREAKTHROUGH`. Your standards do not change.
+- **When to flag `BREAKTHROUGH`.** Use it with `ACCEPT` only for a noteworthy, verified advance, such as:
+  - deriving a critical-path step (or an important missing link of one) from the matrix theory without new
+    unsupported inputs;
+  - a result that warrants a label change;
+  - a decisive resolution that materially changes what the infrared / full-GR derivation can achieve.
+
+  Routine sharpenings, corrections, conditional reductions and bounded no-go results are not breakthroughs. Never
+  flag one to reward effort or elegance.
+- **Open avenues after a no-go (2026-10-15).** When you accept a bounded no-go, gap or mismatch, list in "Scope of
+  what is established" every relaxation that could still favour the infrared or full-GR derivation, and rank the
+  ones you judge most promising. The loop follows these up. Do not penalise a proposal for exploring such avenues,
+  provided each one is correctly scoped.
+- **No-go results.** Verify a no-go within its exact hypotheses, and state that class explicitly in "Scope of what
+  is established". Do not treat it as closing a direction beyond those hypotheses. Where you can see it, name
+  which hypothesis a within-core route could relax, without originating that research yourself.
+- **Emergence.** `REJECT` any proposal that would make spacetime or the metric fundamental and non-emergent in
+  NAMCG.
+- **Structural changes are pre-approved.** The author pre-approved structural, scope and core-definition changes
+  that keep spacetime emergent and have a positive impact on the infrared / full-GR derivation. Review them on
+  the mathematics, consistency across all chapters (full scan), emergence and impact. If they hold up, `ACCEPT`
+  them without `AUTHOR-DECISION`. Use `AUTHOR-DECISION` only for status, priority or completion-label changes
+  (with `LABEL-CHANGE-PROPOSED`). Use `RESEARCHER-DECISION` for other open choices. `REJECT` anything that makes
+  spacetime non-emergent.
+- **Uncommitted manuscript changes are expected (2026-10-15).** The author commits `chapters/` and `bib/` personally
+  after reviewing the diff in VS Code. The working tree may therefore hold accepted, build-verified integrations that
+  are not yet committed. Review against the working-tree files, not `HEAD`. A `dirty-chapters: yes` digest caused by
+  them is expected; apply `CLAUDE.md` 3(d) as written, by reading the affected passages directly.
+- **SME consultation (2026-10-15).** If a verdict depends on a literature or field-context question you cannot settle
+  yourself, add the flag `SME-CONSULT` and a section `## SME consultation request` stating the exact questions. Such
+  questions include: is the result already known; does the cited work support the claim; does a published no-go apply;
+  what is the standard form of an identity. Issue your provisional verdict anyway. The orchestrator sends the questions
+  to the independent SME agent and returns its answer to you for a final verdict. The SME's answer is evidence to
+  weigh, not a verdict; the decision stays yours.
+
 ## Read-only and no-originating-research rules (mandatory)
 
 - You have no write tools. Do not modify, create, stage or commit anything. Bash is for read-only inspection
@@ -121,7 +159,7 @@ Invalid inferences to test for:
 
 The **first line** of your reply must be machine-readable:
 
-`VERDICT: <ACCEPT | ACCEPT WITH REQUIRED REVISIONS | REJECT | NEEDS EVIDENCE> | MILESTONE: <none | M1..M5> | FLAGS: <none | LABEL-CHANGE-PROPOSED, PRIOR-CLAIM-ERROR, AUTHOR-DECISION, RESEARCHER-DECISION> | PROGRESS: <first | improving | flat | regressing> | OPEN: <B>/<M>`
+`VERDICT: <ACCEPT | ACCEPT WITH REQUIRED REVISIONS | REJECT | NEEDS EVIDENCE> | MILESTONE: <none | M1..M5> | FLAGS: <none | LABEL-CHANGE-PROPOSED, PRIOR-CLAIM-ERROR, AUTHOR-DECISION, RESEARCHER-DECISION, BREAKTHROUGH, SME-CONSULT> | PROGRESS: <first | improving | flat | regressing> | OPEN: <B>/<M>`
 
 `PROGRESS` compares with the previous review (`first` in round 1): `improving` = fewer blocking+major findings, no new
 blocking error in the core derivation, and the researcher closed earlier findings rather than reopening them;

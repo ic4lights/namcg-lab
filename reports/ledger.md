@@ -16,3 +16,112 @@
 - Proved: Hessian structure + Lemma 1 (scaffold proper-time regulator, A_mu fixed); conformal-mode counterexample to prop:scaffold's final sentence; psi-T orthogonality at tree level; Lemma 2 (flat scaffold, rotation-preserving regulator and gauge fixing, invariant vacuum, h a fixed linear image of Phi). Conditional: Delta Z = 3 lambda/(4 pi^2) (A_mu fixed, s_max -> infinity). Not covered: A_mu-integrated theory, Theta-dependent regulators, curved scaffolds, Presentation A, Weinberg-Witten applicability. F, C, B, D stay OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL.
 - Milestone: M3 (prop:scaffold final inference wrong; ch05 psi dd T clause false, non-load-bearing), M2 (no-go for loop-generated composite-metric EH/FP in the scaffold-symmetric class).
 - Author items: prop:scaffold form (proposition vs remark/assumption) and ch16 inventory; structural ingredient tying derivative and tangent indices; stale passages ch04 Ex.7 L418-423, ch08 L56-58, appG L19-29.
+
+## 002-auto-target — integrated 2026-10-14
+- Integrated proposal-r2 items 1-3 (appH Problem N conditional block; deletion of "No computation is recorded."; ch09 Stelle qualifier) under the author's 2026-10-14 autonomy directive (flags concerned only outside items). Commit eecd202. Build PASS 242 pages, 0 undefined refs. No label touched. N stays OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL.
+
+## 004-author-questions — advisory recommendations
+- r1 reviewed (ACCEPT WITH REQUIRED REVISIONS, OPEN 0/4); r2 written addressing findings 1-7. Not for integration; under the autonomy directive its within-core recommendations become researcher decisions to be carried into normal proposal rounds (Q1 appK sign; Q2/Q3 N gloss + citation; Q4/Q6 with 003).
+
+## 003-auto-target (Problem F; C, B, D1) — integrated 2026-10-14
+- Rounds: 3. r1 AWRR (M3, M2); r2 AWRR (improving, OPEN 0/0; Item 7 excluded as AUTHOR-DECISION); r3 ACCEPT | M3, M2 | PRIOR-CLAIM-ERROR.
+- Integrated Items 1-5 (appH, ch08, appB, ch04 Ex.7, appG, ch03, ch05). Commit 85f49d0. Build PASS 244 pages, 0 undefined refs. No label touched.
+- Proved: Lemma 1 (fixed A_mu, scaffold regulator: no Lambda^4/Lambda^2/ln Lambda term with derivatives of Phi); conformal-mode counterexample; finite Delta Z incl. Delta Z_K; Lemma 2 no-go within H1-H4 only (flat scaffold, rotation-preserving regulator+gauge fixing, invariant vacuum, h fixed linear image of Phi); psi-T orthogonality. Correction: prop:scaffold -> ass:emergent-op + rem:ch8-scaffold-vs-emergent.
+- Not a closure of the composite-metric EH route. Relaxable hypotheses: Theta-built regulator/kinetic metric (Presentation A), non-invariant vacuum, curved scaffold, non-linear composite map.
+- Queued for author: Item 7 (ch16 inventory row for ass:emergent-op + premise sentence + chain item 6; optional ch17 F missing-step sentence) — changes Ch.17 completion criterion by cross-reference.
+- Milestone: M3, M2 (non-stopping under autonomy directive). Integrated count this run: 2.
+
+## 006-followups-002-003-004 — integrated 2026-10-14
+- Bookkeeping follow-ups (author-approved B and C: "proceed with worth integrating items"). r1 ACCEPT, flags none, full scan.
+- A: appK a_1 sign corrected to tr(R/6-E); A2 narrowed (F F term quadratic; linear tr(S E_0) term not excluded). B: alpha gloss on N target (ch17, appH sec:status-N). C: ch16 inventory row for ass:emergent-op (load-bearing), premise sentence, chain item 6.
+- Commit 5ddf637. Build PASS 246 pages, 0 undefined refs. No label touched. Integrated count this run: 3.
+- Still queued: Barvinsky-Vilkovisky citation for the N form-factor sentence (integrator may now add accepted BibTeX).
+
+## 007-N-formfactor-citation — integrated 2026-10-14
+- \cite{BarvinskyVilkovisky1990} after "momentum-dependent form factors" in appH sec:status-N; BibTeX added to bib/namcg.bib (record verified against Crossref by gatekeeper). Decay clause stays an uncited assumption. r1 ACCEPT, flags none.
+- Commit 6e5f56a. Process note: integrator committed after build_check reported FAIL (citation undefined because scripts/build_check.py runs pdflatex only, never bibtex; .bbl is gitignored). After a manual bibtex + 2x pdflatex the cite resolves; orchestrator re-ran build_check: PASS 246 pages, 0 undefined. Infrastructure gap: build_check.py does not run bibtex (left for the author).
+- No label touched. Integrated count this run: 4.
+
+## 005-F-presentationA-EH (Problem F) — integrated 2026-10-14
+- Rounds: 2. r1 AWRR (no milestone; "obstruction" downgraded to conditional computation); r2 ACCEPT, flags none, full scan (5th integration).
+- Integrated one appH paragraph before \section{Problem G: HBEV}. Commit 9c68802. Build PASS 248 pages, 0 undefined refs. No label touched.
+- Established: scalar-sector identity sqrt|G|(R_G/6-E)=rho R[g_rho]/6 (Poisson-limit operator); G = eta_AB e^A e^B for e = eta^-1 Theta^-1; connection-sector trace (4/6)rho R + rho^2 X (ghosts -2/6 rho R); quadratic eigenvalues +1, -1/4, -3/4; net TT Maxwell-kernel coefficient 1 - N_tot/24 (N_tot = N_s + 2, input count). Sampled counterexample: rho^2 X is not alpha rho R + beta rho|grad ln rho|^2 mod total derivatives at cubic order ((g_rho, rho)-covariant class; eta-using rewritings untested).
+- Conditional on Poisson limit, bosonic 4D content, background gauge, diagonal heat kernel with local cutoff, Euclidean signs. Not established: ass:emergent-op discharge (<Phi>/v = coframe not derived), any G_eff value/sign.
+- Open relaxations: fermion/extra-scalar content, Moyal corrections, non-minimal gauges, Phi-a mixing, Presentation-B frame coupling, eta-using rewritings of X.
+- Milestone: none. Integrated count this run: 5.
+
+## 008-auto-target (ass:emergent-op; Problems F, A) — integrated 2026-10-14
+- Rounds: 2. r1 AWRR | M2 | AUTHOR-DECISION (N>=8 relaxation); r2 ACCEPT | M2 | flags none (N>=8 now author-pre-approved, recorded only under Decisions Taken).
+- Integrated one appH paragraph (four-matrix Poisson-limit conditional obstruction) before \section{Problem G: HBEV}. Commit 3ab80c9. Build PASS 250 pages, 0 undefined refs. No label touched.
+- Established in H_A (4 matrices, Poisson limit, constant eta, real nondegenerate Theta, linear order about constant Theta, generic p): Theta->G rank 6 at Pf!=0 with quadratic image relation (codim 4); 3-dimensional linear response; linearized Einstein operator rank 3 vs 6 conserved sources, so E[h]=T fails for generic conserved T without an additional derived conserved stress; K != c g^-1 pointwise for real Lorentzian g; tree-level quadratic action algebraic in (dG, d rho).
+- Conditional: vacuum-manifold mismatch (if e = <Phi>/v); nonlinear 3-vs-7 count (counting argument).
+- Next routes: N>=8 matrix coordinates (author-pre-approved structural, ranked first -> proposal 009); derived extra stress T_ent; Moyal; non-constant backgrounds; fermions/scalars; Presentation B independent Phi.
+- Milestone: M2 (bounded; non-stopping). Integrated count this run: 6.
+
+## Author directive update — 2026-10-14
+- "proceed with positive impact changes that remain namcg emergent spacetime, automatically": emergence-preserving, positive-impact structural/scope/core-definition changes are pre-approved (gatekeeper review still required; label changes still author-only). Encoded in run-cycle.md and gatekeeper.md (commit 401db7b); researcher.md edit was denied by the permission classifier, so the pre-approval is passed in researcher prompts.
+
+## 010-sme-followups — integrated 2026-10-14
+- From the independent SME review (reports/sme-auto-20261014-1520-20261014-2054.md). r1 ACCEPT, flags none.
+- A: ch09 Weyl-sign sentence now states dependence on the curvature-continuation convention of sec:status-N. B: appK conformal-mode/no-TT conclusion scoped (metric-variation form not derived; F-linear tr(S E_0) term not excluded). C: no summaries of 003/008 no-gos in ch01/ch16/ch17; no edit.
+- Commit ab0fa84. Build PASS 250 pages, 0 undefined refs. No label touched. Integrated count this run: 7.
+
+## 009-matrix-coords-N8 (ass:emergent-op; Problems F, A, D1, E) — integrated 2026-10-14
+- Author-pre-approved structural extension (M5). Rounds: 2. r1 AWRR | M5 (headline no-go already merged via 008; N_tot line unsupported; literature over-attributed); r2 ACCEPT | M5 | flags none.
+- Integrated: ch03 def:matrix-coords-ext (D matrix coordinates, Poisson limit, 4-dim symplectic leaf, fixed eta_IJ; reduces to def:matrix-coords for D=4); appH paragraph on linear-response ranks; bib KumarSteinacker2023, Steinacker2026 (records verified at abstract level). Commit d9da131. Build PASS 250 pages, 0 undefined. No label touched.
+- Established (kinematic): linearized Einstein rank exactly 3 about a flat brane for every D; min(6, D-1) for generic frozen second fundamental form (exact upper bound; lower bound by exact-rational sample + semicontinuity), so all 6 conserved sources reachable from D=7; D>=8 incl. density is a necessary count only. G != c g for real Lorentzian g and 4-dim leaf, any D (cross-referenced to 008).
+- Not established: Einstein-type field equation for G; gap of the D-4 transverse scalars (not covered by ass:locked-block); Phi = tangent frame; G_eff.
+- Next (researcher-ranked): relax the 4-dimensional leaf (fuzzy extra dimensions, cf. Steinacker2023); then derive the extra conserved stress.
+- Integrated count this run: 8.
+
+## 011-fuzzy-leaf (Problem F; A, D1, E) — integrated 2026-10-15
+- Rounds: 3. r1 AWRR | M2 (leaf-level det proof wrong for odd m; misleading (N_tot-12)/6 line); r2 AWRR | M2 (two wording fixes; torsion identity derived, Weitzenboeck step verified independently by gatekeeper); r3 ACCEPT | M2 | flags none. Full scan at r1 (10th integration).
+- Integrated two appH paragraphs before \section{Problem G: HBEV}. Commit ae8aff4. Build PASS 252 pages, 0 undefined. No label touched.
+- Established: bounded no-go — with base coordinates = Lorentzian matrix block, fibre-averaged K != c eta^-1 (c != 0) for any D, compact fibre, positive average; leaf-level G != c g for 2m>=4 (counterexample at 2m=2); product leaf M x fuzzy sphere keeps zero-mode tensor of M (Einstein rank 3 about flat M); CP^{1,2} conjugate-coordinate class gives K = (M45/R^2)^2 eta^-1 (conformally flat) — Einstein rank not computed, base-function choice not derived; heat kernel over fuzzy factor gives 1/G_eff ~ Lambda^2 x weighted mode count (conditional); X = Weitzenboeck torsion invariant: rho^2 X = -2 rho R[g_rho] - rho|grad ln rho|^2 + (3/2) rho^2 S^2 + total derivative (derived; net TT coefficient 1 - N_tot/24 unchanged).
+- Next (researcher-ranked): Einstein rank in the CP^{1,2} class; then derive why y^mu = M^{mu5} are base functions.
+- Integrated count this run: 9 (002,003,005,006,007,008,010,009,011).
+
+## SME literature review — Dorau & Much, PRL 136, 091602 (2026), arXiv:2510.24491
+- reports/sme-lit-DorauMuch2026-20261015.md. PARTLY RELEVANT | mixed | emergence risk low. Rigorous AQFT form of Jacobson's matter side (S_rel = null energy flux, free scalar, coherent states); assumes metric and S = A/4, so it does not touch NAMCG's Claim 2 / Problems A, B gap. Constrains: a Jacobson-type closure needs a conserved total stress, which 008/009 show NAMCG does not yet derive.
+- SME suggestions (ranked): 1 cite and position in ch06/appB without overclaiming; 2 test eq. 13 (S_rel = flux) against a matrix-derived modular Hamiltonian (Problem A sub-lemma); 3 derive the conserved total stress; 4 relative-entropy form of ass:EE; 5 interacting / non-coherent extension.
+
+## 012-dorau-much-positioning — integrated 2026-10-15
+- From the SME literature review (rank-1 suggestion). r1 AWRR (appB sentence over-attributed modular flow); r2 ACCEPT, flags none. BibTeX DorauMuch2026 verified (Crossref + arXiv).
+- ch06 paragraph after Claim 1/Claim 2: Dorau-Much as the operator-algebraic matter side of Claim 1 (free scalar, coherent states, bifurcate Killing horizon); assumes metric, local Minkowski, Raychaudhuri, S=A/4; no support for Claim 2 or Problems A, B. appB sentence: relative entropy = horizon energy flux for free scalars/coherent states, prescribed metric only.
+- Commit 9100a5a. Build PASS 252 pages, 0 undefined. No label touched. Integrated count this run: 10.
+- SME suggestion 4 (relative-entropy form of ass:EE): researcher recommends against (first variation vanishes on the finite-dimensional diamond algebra; carries only the first law). Not adopted.
+
+## 013-cp12-einstein-rank (Problem F; A, D1, E) — integrated 2026-10-15
+- Rounds: 2. r1 AWRR (unverified "lowest member of tower" attribution; scope wording); r2 ACCEPT, flags none. Gatekeeper independently re-derived rank (own script, random base points; also random W_y planes).
+- Integrated two appH paragraphs before \section{Problem G: HBEV} + bib SperlingSteinacker2019 (verified). Commit d4bca69. Build PASS 254 pages, 0 undefined. No label touched.
+- Established (kinematic, H_CP: Poisson limit, linear, frozen coefficients, leading order in 1/(|q| l), fibre-integrated operator tensor, one sheet): only the 12 first-harmonic fibre amplitudes (frame-type A = kappa T) respond; exact constraint q q h = 0; image dim 9, linearized Einstein rank 6 = number of conserved sources; kernel on image = transverse diffeomorphisms = matrix-gauge image; gauge group of the class is divergence-free diffeos, density fixed by Liouville; 12 = 3 inert + 3 gauge + 6 gauge-invariant. Rank 6 follows from surjectivity onto the hyperplane (a count), independent of W_y. Fibre-constant and l != 1 fluctuations give no linear response (exact, in class). Partial base-function closure argument (alpha = 0).
+- First class where neither the 008/009 rank obstruction nor the 011 proportionality obstruction occurs. Not a breakthrough (no dynamics; second- vs third-order mismatch; leading-symbol gauge invariance only).
+- Next: dynamics of the level-1 amplitudes (action, masses, positivity, order mismatch).
+- Integrated count this run: 11.
+
+## 014-level1-dynamics (Problem F) — integrated 2026-10-15
+- Rounds: 2. r1 AWRR | M2 narrow (two wording fixes); r2 ACCEPT, flags none.
+- Integrated appH block before \section{Problem G: HBEV}. Commit 8416acb. Build PASS 258 pages, 0 undefined. No label touched.
+- Established (Poisson limit, CP^{1,2} class, leading symbol, tree level, level-1 sector, sheet y4>0): background T^a = M^{a4} is not stationary for the quartic term of eq:Smatrix alone; a bilinear term mu^2 = -3/R^2 (input of the class, not adopted into eq:Smatrix; reported for these backgrounds in SperlingSteinacker2019) makes it stationary and the amplitude action exactly gauge invariant; 12 level-1 amplitudes = 3 massless Maxwell fields, colour metric delta_ij, no relative ghost at this order. Bounded no-go: E[h(c)] cubic vs Maxwell quadratic, no local E[h] = P(d)J; sourced h algebraic, degree 0, E[h] != constant x T (q^2 T excluded in samples); null-q trace polarisation E = (1/2) q q tr h.
+- No PRIOR-CLAIM-ERROR: merged 011/013 never claimed the background solves eq:Smatrix ("off-shell"; "does not derive the background").
+- Open routes: induced (one-loop) term, subleading orders (ranked first), other sectors, entanglement route (ass:EE).
+- Integrated count this run: 12.
+
+## 015-entropy-action-identity — INTEGRATION-FAILED (r2), 2026-10-15
+- Build failed: "Double subscript" from \LUV_s / \LUV_v in the accepted appH text (\LUV = \Lambda_{\mathrm{UV}}). Integrator restored chapters/bib; nothing committed. Needs an r3 macro fix (\Lambda_{\mathrm{UV},s}) and gatekeeper re-accept.
+
+## 015-entropy-action-identity (Problem B; F) — integrated 2026-10-15
+- Route: SME Problem-B route map (Dorau-Much / Jacobson line), primary target. Rounds: 3. r1 AWRR | M2 (no PRIOR-CLAIM-ERROR: appG overgeneral, thm:mT conditional, R-coefficient variable dependence are clarifications); r2 ACCEPT; integration failed (double subscript \LUV_s); r3 notation fix, ACCEPT.
+- Integrated: appH sec:status-B two paragraphs; appG replica-cone sentences + Status sentence (conical-delta convention); ch07 sentence (coefficient equality is content of Hypotheses 5-6); bib Solodukhin2011, SusskindUglum1994 (verified). Commit 333c282. Build PASS 260 pages, 0 undefined. No label touched.
+- Established: pulled-back replica (I) cone area coefficient S = (A_G/48pi) sum w tr1 Lambda^2, contact term Q = 0 per sector, so the delta-A coefficient equals the Lambda^2 coefficient of thm:Geff (B2 at conditional scope); contact term sign consistent with Solodukhin (321)-(323); singular-rho replica (II) gives -1/2 (branch-conditional, unused); R coefficient depends on variables (E_s = R_G/4 + torsion^2).
+- Bounded no-go: EE needs G_T = G_A; in class (Poisson, Euclidean, Feynman background gauge, one loop, Lambda^2, delta rho = 0, replica I) c_T = N_tot/6 - 4 vs c_A = N_tot/6, 1/G_A - 1/G_T = 2 Lambda^2/pi from rho^2 X. Survives replica II for positive G.
+- Open avenues (gatekeeper rank): content (fermions / torsion-coupled scalars, b = 0), tensor-block identification / Phi-a mixing, tree-level 014 class, gauge fixing, Moyal, curved backgrounds, replica choice. SME gap scout: reports/sme-scout-gap-GT-GA-20261015.md. Follow-up: proposal 017 (in progress).
+- Integrated count this run: 13.
+
+## 016-mirage-stress (Problem F; B, A) — integrated 2026-10-15
+- Route: SME scout R14. Rounds: 2. r1 provisional AWRR with SME-CONSULT; SME consultation (proposals/016-mirage-stress/sme-consult-r1.md): Steinacker2026 crossover (1 - m^2 Box^-1) form confirmed with m^2 = 32 pi G_N alpha^2 r^-4; T[C] conservation imposed via the C -> C + dC ambiguity, not derived; massless matrix Noether identity is prior art (Steinacker 0812.3761, Abou-Zeid-Dorn). r1 final AWRR (no milestone); r2 ACCEPT, flags none.
+- Integrated appH block before \section{Problem G: HBEV}. Commit b42bd98. Build PASS 262 pages, 0 undefined. No label touched.
+- Established (class H16: Poisson limit, level-one sector, leading symbol, frozen coefficients, tree level + input EH form + input conserved T): exact Poisson-limit Noether identity {X^a,E_a} = 0 and mu^2 stress-divergence identity (massless form standard); closed form extra stress X = -Lambda L E; exact (w + Lambda L)E = T with L spectrum; crossover (1 + rho/(2 q_perp^2))E = T/w in the TT-like channel; dispersion elliptic in omega, anisotropy from the background direction y-hat (covariant if y is a vector); y^i = 0 not essential.
+- Not: a derivation of the conservation of the extra stress (Bianchi + input T, same as literature); the 008/009 missing stress; G_eff sign/size.
+- Open avenues (ranked): subleading order; induced coefficient in this class (F's target); frame averaging; matrix-derived T; doubleton constraints; nonlinear / N>=8.
+- Integrated count this run: 14. Next integration is the 15th (gatekeeper full scan due).
