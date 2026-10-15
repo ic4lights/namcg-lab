@@ -1,0 +1,18 @@
+1 appH-microscopic-proofs.tex do not apply; no linearized-diffeomorphism invariance is claimed. Prob
+1 thm:Geff
+1 eq:O-eta
+1 ass:emergent-op
+1 ass:dictionary
+1 rem:ch3-moyal-check
+1 rem:ch3-trace-quadratic
+1 rem:ch3-varying-theta
+1 def:composite-metric
+1 eq:g-from-e
+1 eq:vev-is-frame
+1 eq:Smicro
+1 eq:V
+1 ass:EE
+1 sec:status-B
+1 sec:status-D
+1 eq:Smatrix
+LUV macro: check preamble
