@@ -16,7 +16,31 @@ tool, one at a time, each with a self-contained prompt (they have no shared memo
 The author has asked for autonomous work toward the NAMCG **infrared derivation** and the **full-GR
 (matrix-derived) derivation**. This directive overrides the stop and contact rules below and in `MILESTONE.md`
 where they conflict. The `CLAUDE.md` hard rules still hold: no autonomous status, priority or completion-label
-change; no push or merge; work only on `auto/*` branches; and only gatekeeper-`ACCEPT`ed text reaches `chapters/`.
+change; no push or merge; work only on the fixed branch `remote/claude`; and only gatekeeper-`ACCEPT`ed text
+reaches `chapters/`.
+
+**SME scouting and consultation (author directive, 2026-10-15).**
+- **Scouting.** Task the `sme` agent in mode 1 (literature scout):
+  - at the start of a run;
+  - after every fifth integration;
+  - whenever the author asks.
+
+  Save its reply verbatim to `reports/sme-scout-<YYYYMMDD-HHMM>.md` and commit it. When choosing a target (step a),
+  give the researcher the path of the latest scout report and ask it to weigh the ranked routes there.
+- **Consultation.** If a gatekeeper review carries `FLAGS` containing `SME-CONSULT`:
+  1. Task `sme` in mode 2 with the questions from the review's `## SME consultation request`, plus the proposal and
+     review paths.
+  2. Save its reply verbatim as `proposals/NNN-*/sme-consult-rK.md`.
+  3. Resume the same gatekeeper with the reply, or re-task it if it can no longer be resumed, to issue a final
+     verdict.
+  4. Save that final verdict as `review-rK.md`, overwriting the provisional one, after first keeping the provisional
+     verdict as `review-rK-provisional.md`.
+
+  Then branch on the final verdict as usual.
+
+**Working branch (author directive, 2026-10-15).** All work happens on the single fixed branch `remote/claude`, so the
+author can follow it in VS Code. It replaces the per-run `auto/<YYYYMMDD-HHMM>` branches. Wherever this file or
+`CLAUDE.md` says `auto/*`, read `remote/claude`. The author merges `remote/claude` into `main`.
 
 1. **Contact the author only for a breakthrough.** That means a gatekeeper verdict of `ACCEPT` whose `FLAGS`
    contain `BREAKTHROUGH`: a noteworthy advance, such as deriving a critical-path step from the matrix theory, or a
@@ -55,8 +79,10 @@ change; no push or merge; work only on `auto/*` branches; and only gatekeeper-`A
 
 ## 0. Pre-flight & Unmerged Proposals
 
-1. `git branch --show-current`. If `main`/`master`, create and switch to `auto/<YYYYMMDD-HHMM>`. If already on an
-   `auto/*` branch, continue on it.
+1. `git branch --show-current`. If it is already `remote/claude`, continue on it. Otherwise:
+   - If `remote/claude` exists, switch to it with `git checkout remote/claude`. If it is behind `main`, stop and ask
+     the author to update it; never rebase or reset it.
+   - If it does not exist, create it from the current branch with `git checkout -b remote/claude`.
 2. `git status --porcelain` must be empty (if not, stop: the author must commit or stash first).
 3. **Check for unmerged proposals**: Scan `proposals/` for any existing unmerged proposal folder (e.g., `proposals/NNN-slug/`) containing a `proposal-rK.md` or `review-rK.md` that has not yet been merged into `chapters/`. 
    - If an unmerged proposal exists, resume execution directly from that folder and its latest round `K`, rather than creating a new proposal ID `NNN`.

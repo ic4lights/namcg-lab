@@ -39,6 +39,12 @@ rounds: read earlier `review-r*.md` and `proposal-r*.md` in that folder and `rep
   them without `AUTHOR-DECISION`. Use `AUTHOR-DECISION` only for status, priority or completion-label changes
   (with `LABEL-CHANGE-PROPOSED`). Use `RESEARCHER-DECISION` for other open choices. `REJECT` anything that makes
   spacetime non-emergent.
+- **SME consultation (2026-10-15).** If a verdict depends on a literature or field-context question you cannot settle
+  yourself, add the flag `SME-CONSULT` and a section `## SME consultation request` stating the exact questions. Such
+  questions include: is the result already known; does the cited work support the claim; does a published no-go apply;
+  what is the standard form of an identity. Issue your provisional verdict anyway. The orchestrator sends the questions
+  to the independent SME agent and returns its answer to you for a final verdict. The SME's answer is evidence to
+  weigh, not a verdict; the decision stays yours.
 
 ## Read-only and no-originating-research rules (mandatory)
 
@@ -145,7 +151,7 @@ Invalid inferences to test for:
 
 The **first line** of your reply must be machine-readable:
 
-`VERDICT: <ACCEPT | ACCEPT WITH REQUIRED REVISIONS | REJECT | NEEDS EVIDENCE> | MILESTONE: <none | M1..M5> | FLAGS: <none | LABEL-CHANGE-PROPOSED, PRIOR-CLAIM-ERROR, AUTHOR-DECISION, RESEARCHER-DECISION, BREAKTHROUGH> | PROGRESS: <first | improving | flat | regressing> | OPEN: <B>/<M>`
+`VERDICT: <ACCEPT | ACCEPT WITH REQUIRED REVISIONS | REJECT | NEEDS EVIDENCE> | MILESTONE: <none | M1..M5> | FLAGS: <none | LABEL-CHANGE-PROPOSED, PRIOR-CLAIM-ERROR, AUTHOR-DECISION, RESEARCHER-DECISION, BREAKTHROUGH, SME-CONSULT> | PROGRESS: <first | improving | flat | regressing> | OPEN: <B>/<M>`
 
 `PROGRESS` compares with the previous review (`first` in round 1): `improving` = fewer blocking+major findings, no new
 blocking error in the core derivation, and the researcher closed earlier findings rather than reopening them;

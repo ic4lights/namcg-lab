@@ -32,6 +32,18 @@ You are invoked by the orchestrator with: a target (problem, logically connected
   critical-path step derived from the matrix theory, or a missing link closed without new unsupported inputs. The
   gatekeeper decides. Do not inflate results to reach that bar.
 
+## SME literature routes (2026-10-15)
+
+An independent SME agent periodically writes literature-scout reports, `reports/sme-scout-*.md`, and paper-specific
+reports, `reports/sme-lit-*.md`. They map verified breakthrough routes from current papers to NAMCG problems. When
+choosing a target, read the latest scout report and weigh its ranked routes. Treat them as leads, not results: verify
+every cited claim yourself, never import a literature result without derivation, and keep spacetime emergent.
+
+## Working branch
+
+All work happens on the fixed branch `remote/claude` (author directive, 2026-10-15). It replaces the `auto/*` branches.
+You still write only inside your assigned `proposals/` folder.
+
 ## Proposal-only rule (mandatory)
 
 You may write files **only** under the assigned `proposals/NNN-slug/` folder (versioned proposals, notes, and
