@@ -4,7 +4,7 @@ Theorem 1: for real antisymmetric Theta^{IJ} (D x D), eta = diag(-1,1,...,1), ba
 satisfies  S^{00} >= 0  and  tr S >= 0  (Euclidean trace over mu).  S = c eta^{-1} (eta^{-1}=diag(-1,1,1,1)) needs S^{00} = -c, trS = 2c,
 hence c = 0.  Checks: (a) symbolic identities for S^{00} and trS as sums of squares (D = 4..7);
 (b) random measures: inequalities; (c) adversarial minimisation of min_c ||S - c eta^{-1}||/||S|| over 1..4-point measures;
-(d) leaf-level statement in dimension 2m: G=K^{-1} = c g impossible for real Lorentzian g (determinant argument, exact rationals).
+(d) leaf-level statement in dimension 2m>=4: K = c g^{-1}, c != 0 impossible for real Lorentzian g (c>0 determinant, c<0 null eigenspaces); 2m=2 counterexample.
 """
 import sympy as sp, numpy as np, random
 from scipy.optimize import minimize
@@ -54,7 +54,20 @@ for D in (4, 5, 7):
         print('(c) D=%d points=%d: min over measures of min_c ||S-c eta^-1||/||S|| = %.4f' % (D, k, m))
         best = min(best, m)
 print('    overall minimum found', best, '(positive; the proof gives S00>=0 and trS>=0 incompatible with c != 0)')
-# (d) leaf-level: M = g^{-1} omega, det M = Pf(omega)^2/det g < 0 for Lorentzian g, but M^2=-c needs det M = c^m > 0
+# (d) leaf-level statement in dimension 2m>=4, K = theta^T g theta = c g^{-1}, c != 0, N = theta g, N^2 = -c.
+#   c>0: det N = c^m > 0 but det N = Pf(theta)^2 det g < 0.  c<0: N g-skew, N^2 = |c|, +-sqrt|c| eigenspaces totally null,
+#   each of dim <= 1 in Lorentzian signature, so 2m <= 2.  At 2m = 2 a counterexample exists (c = -4).
+print('(d) leaf-level companion')
+g2 = sp.diag(-1, 1); th2 = 2*sp.Matrix([[0, 1], [-1, 0]])
+K2 = th2.T*g2*th2
+assert K2 == -4*g2.inv()
+N2 = th2*g2
+assert N2*N2 == 4*sp.eye(2)
+ev = N2.eigenvects()
+print('    2m=2 counterexample: theta=2 eps, g=diag(-1,1): K = -4 g^{-1}  (c=-4<0); N^2 =', (N2*N2).tolist())
+for lam, mult, vecs in ev:
+    v = vecs[0]
+    print('       eigenvalue', lam, ': g(v,v) =', (v.T*g2*v)[0], '(null eigenvector, as predicted)')
 random.seed(3)
 R = lambda: sp.Rational(random.randint(-4, 4), random.randint(1, 3))
 for n2 in (2, 4, 6):
@@ -68,5 +81,10 @@ for n2 in (2, 4, 6):
             for j in range(i+1, n2):
                 W[i, j] = R(); W[j, i] = -W[i, j]
         if W.det() != 0: break
-    M = g.inv()*W
-    print('(d) dim %d: det M = %s < 0 ; sign(det g) = %s' % (n2, M.det(), sp.sign(g.det())), ' -> M^2 = -c impossible (needs det M = c^%d > 0)' % (n2//2))
+    N = W*g
+    print('    dim %d: det N = %s, sign det g = %s  -> c>0 excluded (needs det N = c^%d > 0)' % (n2, N.det(), sp.sign(g.det()), n2//2))
+# c<0, 2m=4: N g-skew with N^2 = +1 means g(Nu,v) = -g(u,Nv); eigenspaces E_+ : g(u,u') = -g(Nu,u') ... = -g(u,Nu') => g(u,u')=0.
+# Check numerically that a Lorentzian g in dim 4 has no 2-dim totally null subspace (Witt index 1): max isotropic dim via signature.
+for D in (4, 6):
+    sig_pos, sig_neg = D-1, 1
+    print('    Witt index of signature (%d,%d) = min = %d: totally null subspaces have dim <= 1, so dim E_+ + dim E_- = %d >= 4 is impossible when both are totally null' % (sig_neg, sig_pos, min(sig_pos, sig_neg), D))

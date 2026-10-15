@@ -1,0 +1,14 @@
+sig -1 seed 0 [True, True, True, True, True, True, True] lhs=1303.69 rhs=1303.69
+sig -1 seed 1 [True, True, True, True, True, True, True] lhs=-9.16889 rhs=-9.16889
+sig -1 seed 2 [True, True, True, True, True, True, True] lhs=-18.5626 rhs=-18.5626
+sig -1 seed 3 [True, True, True, True, True, True, True] lhs=-79.4778 rhs=-79.4778
+sig -1 seed 4 [True, True, True, True, True, True, True] lhs=73.2569 rhs=73.2569
+sig -1 seed 5 [True, True, True, True, True, True, True] lhs=2.35847 rhs=2.35847
+sig 1 seed 0 [True, True, True, True, True, True, True] lhs=1657.6 rhs=1657.6
+sig 1 seed 1 [True, True, True, True, True, True, True] lhs=114.366 rhs=114.366
+sig 1 seed 2 [True, True, True, True, True, True, True] lhs=115.778 rhs=115.778
+sig 1 seed 3 [True, True, True, True, True, True, True] lhs=222.925 rhs=222.925
+sig 1 seed 4 [True, True, True, True, True, True, True] lhs=127.32 rhs=127.32
+sig 1 seed 5 [True, True, True, True, True, True, True] lhs=363.797 rhs=363.797
+cases 12 {'|detG|=rho^4': True, '(i) X=I_A': True, '(ii) V=dln rho': True, '(iii) teleparallel': True, '(iv) conformal': True, '(v) S^2 algebra': True, '(vi) final identity': True}
+generic (non-closed) coframe teleparallel identity, 6 seeds x 2 signatures: True
