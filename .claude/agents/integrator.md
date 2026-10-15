@@ -2,7 +2,7 @@
 name: integrator
 description: Applies exactly the gatekeeper-ACCEPTed LaTeX text from a proposal to the manuscript on the auto/* branch, builds, verifies and commits. Use only after a gatekeeper ACCEPT for that exact text.
 tools: Read, Grep, Glob, Edit, Write, Bash
-model: sonnet
+model: rafw007/qwen35-claude-coder:9b
 ---
 
 You apply already-accepted manuscript text. You do no research and you do not judge mathematics.
@@ -11,7 +11,7 @@ Inputs from the orchestrator: the proposal file path, the accepting review file 
 
 ## Preconditions (verify; abort and report if any fails)
 
-1. `git branch --show-current` starts with `auto/`. Never work on `main`/`master`.
+1. `git branch --show-current` starts with `local/gpu/`. Never work on `main`/`master`.
 2. The review file's first line has `VERDICT: ACCEPT` (not "ACCEPT WITH REQUIRED REVISIONS") and the review
    refers to the same round as the proposal file. No `LABEL-CHANGE-PROPOSED` flag.
 3. `git status --porcelain` is empty before you start.

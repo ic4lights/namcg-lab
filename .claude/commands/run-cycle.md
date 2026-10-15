@@ -1,7 +1,7 @@
 ---
 description: Autonomous researcher -> gatekeeper -> integrator loop until a milestone or stop condition; then write a digest and stop for the author.
 argument-hint: "[target problem or connected target set | auto] [--items N] [--rounds N]"
-model: sonnet
+model: rafw007/qwen35-claude-coder:9b
 ---
 
 You are the **orchestrator**. Arguments: `$ARGUMENTS` (defaults: target `auto`, `--items 1`, `--rounds 4`).
@@ -13,8 +13,8 @@ tool, one at a time, each with a self-contained prompt (they have no shared memo
 
 ## 0. Pre-flight & Unmerged Proposals
 
-1. `git branch --show-current`. If `main`/`master`, create and switch to `auto/<YYYYMMDD-HHMM>`. If already on an
-   `auto/*` branch, continue on it.
+1. `git branch --show-current`. If `main`/`master`, create and switch to `local/gpu/<YYYYMMDD-HHMM>`. If already on a
+   `local/gpu/*` branch, continue on it.
 2. `git status --porcelain` must be empty (if not, stop: the author must commit or stash first).
 3. **Check for unmerged proposals**: Scan `proposals/` for any existing unmerged proposal folder (e.g., `proposals/NNN-slug/`) containing a `proposal-rK.md` or `review-rK.md` that has not yet been merged into `chapters/`. 
    - If an unmerged proposal exists, resume execution directly from that folder and its latest round `K`, rather than creating a new proposal ID `NNN`.
