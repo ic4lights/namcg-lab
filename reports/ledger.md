@@ -84,3 +84,9 @@
 ## SME literature review — Dorau & Much, PRL 136, 091602 (2026), arXiv:2510.24491
 - reports/sme-lit-DorauMuch2026-20261015.md. PARTLY RELEVANT | mixed | emergence risk low. Rigorous AQFT form of Jacobson's matter side (S_rel = null energy flux, free scalar, coherent states); assumes metric and S = A/4, so it does not touch NAMCG's Claim 2 / Problems A, B gap. Constrains: a Jacobson-type closure needs a conserved total stress, which 008/009 show NAMCG does not yet derive.
 - SME suggestions (ranked): 1 cite and position in ch06/appB without overclaiming; 2 test eq. 13 (S_rel = flux) against a matrix-derived modular Hamiltonian (Problem A sub-lemma); 3 derive the conserved total stress; 4 relative-entropy form of ass:EE; 5 interacting / non-coherent extension.
+
+## 012-dorau-much-positioning — integrated 2026-10-15
+- From the SME literature review (rank-1 suggestion). r1 AWRR (appB sentence over-attributed modular flow); r2 ACCEPT, flags none. BibTeX DorauMuch2026 verified (Crossref + arXiv).
+- ch06 paragraph after Claim 1/Claim 2: Dorau-Much as the operator-algebraic matter side of Claim 1 (free scalar, coherent states, bifurcate Killing horizon); assumes metric, local Minkowski, Raychaudhuri, S=A/4; no support for Claim 2 or Problems A, B. appB sentence: relative entropy = horizon energy flux for free scalars/coherent states, prescribed metric only.
+- Commit 9100a5a. Build PASS 252 pages, 0 undefined. No label touched. Integrated count this run: 10.
+- SME suggestion 4 (relative-entropy form of ass:EE): researcher recommends against (first variation vanishes on the finite-dimensional diamond algebra; carries only the first law). Not adopted.
