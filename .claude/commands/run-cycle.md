@@ -30,11 +30,20 @@ change; no push or merge; work only on `auto/*` branches; and only gatekeeper-`A
 4. **Milestones and flags that no longer stop the loop** (record them in the ledger and digest, then continue):
    - **M3 / `PRIOR-CLAIM-ERROR`:** have the researcher write the correction as a proposal; integrate it on the
      branch after an `ACCEPT`.
-   - **M5:** an emergence-preserving structural option stays queued for the author; pursue within-core routes in
-     the meantime.
-   - **`AUTHOR-DECISION`:** if the decision changes no label, Chapter 17 scope, critical-path set or core
-     assumption, the researcher resolves it in a "Decisions Taken" section, favouring the infrared / full-GR
-     derivation. Otherwise queue it for the author and move to another target.
+   - **M5 / structural changes (author directive, 2026-10-14, second part):** "proceed with positive impact
+     changes that remain namcg emergent spacetime, automatically". A structural or scope change, including a change
+     to a core definition (e.g. `def:matrix-coords`), is pre-approved when:
+     - it keeps spacetime and the metric emergent;
+     - it has a positive impact on the infrared / full-GR derivation;
+     - it changes no status, priority or completion label;
+     - it passes a normal gatekeeper review.
+
+     Have the researcher develop it as a normal proposal (with a full scan, since it changes a definition), and
+     integrate it after `ACCEPT`. Record it in the ledger and digest as an author-pre-approved structural change.
+   - **`AUTHOR-DECISION`:** if the decision changes no status, priority or completion label and keeps spacetime
+     emergent, the researcher resolves it in a "Decisions Taken" section, favouring the infrared / full-GR
+     derivation. That covers scope, core-assumption and structural choices. Queue it for the author only if it
+     would change a label (contact the author then) or would make spacetime non-emergent (excluded outright).
    - **`ACCEPT` whose flags concern only items outside the proposal text:** integrate the accepted text, and
      queue the outside items as follow-up proposals.
 5. **Budget.** Ignore `--items` and `ACCEPTED_BATCH_LIMIT`; keep starting new items. Stalls: after two in a row,

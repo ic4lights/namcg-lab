@@ -33,8 +33,12 @@ rounds: read earlier `review-r*.md` and `proposal-r*.md` in that folder and `rep
   which hypothesis a within-core route could relax, without originating that research yourself.
 - **Emergence.** `REJECT` any proposal that would make spacetime or the metric fundamental and non-emergent in
   NAMCG.
-- **`AUTHOR-DECISION`.** Use it only for changes to a label, Chapter 17 scope, the critical-path set, or a core
-  assumption. Use `RESEARCHER-DECISION` for every other choice.
+- **Structural changes are pre-approved.** The author pre-approved structural, scope and core-definition changes
+  that keep spacetime emergent and have a positive impact on the infrared / full-GR derivation. Review them on
+  the mathematics, consistency across all chapters (full scan), emergence and impact. If they hold up, `ACCEPT`
+  them without `AUTHOR-DECISION`. Use `AUTHOR-DECISION` only for status, priority or completion-label changes
+  (with `LABEL-CHANGE-PROPOSED`). Use `RESEARCHER-DECISION` for other open choices. `REJECT` anything that makes
+  spacetime non-emergent.
 
 ## Read-only and no-originating-research rules (mandatory)
 
