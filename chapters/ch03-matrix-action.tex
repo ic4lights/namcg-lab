@@ -75,7 +75,8 @@ There is an auxiliary manifold with a non-dynamical metric
 \(g^{(0)}_{\mu\nu}\). The dynamical object is the field
 \(\Phi^I{}_A(x)\). The physical metric \(g_{\mu\nu}\) is not
 \(g^{(0)}_{\mu\nu}\). The auxiliary metric is a scaffold for writing
-derivatives and heat kernels. Chapter~8 uses this scaffold.
+derivatives and heat kernels. Chapter~8 writes its heat kernel on the emergent metric under
+Assumption~\ref{ass:emergent-op}.
 
 This book treats Presentation~A as the ontological starting point and
 Presentation~B as the background-field language appropriate after a
@@ -167,6 +168,41 @@ matrices \(\hat X^\mu\) in the sense of the Weyl map associated with
 \(\Theta^{\mu\nu}\). This book does not need the full star-product
 calculus until phenomenology with explicit localized sources appears
 in Chapter~14. The existence of such a map is enough for now.
+
+\begin{definition}[Extended matrix coordinates (conditional extension)]
+  \label{def:matrix-coords-ext}
+  Let \(D\ge4\) and let \(\hat X^I\), \(I=0,\dots,D-1\), be Hermitian
+  operators on \(\mathcal{H}\) with
+  \([\hat X^I,\hat X^J]=i\Theta^{IJ}\), \(\Theta^{IJ}=-\Theta^{JI}\).
+  Matrix indices are contracted with the fixed constant form
+  \(\eta_{IJ}=\mathrm{diag}(-1,1,\dots,1)\), exactly as \(\eta_{\mu\nu}\)
+  is used in the first (quartic) term and in the matter term
+  of~\eqref{eq:Smatrix}, read with \(I,J\) in place of \(\mu,\nu\); the
+  cubic term is not extended here. The definition reduces, for \(D=4\),
+  to Definition~\ref{def:matrix-coords}.
+  In the semiclassical regime a configuration is a map \(y\mapsto x^I(y)\)
+  from a four-dimensional manifold carrying a nondegenerate Poisson
+  bivector \(\theta^{\alpha\beta}\), with
+  \(\Theta^{IJ}=\theta^{\alpha\beta}\partial_\alpha x^I\partial_\beta x^J\)
+  and \(\operatorname{Tr}\to\int\mathrm{d}^4y\,\rho\), where
+  \(\rho=1/|\operatorname{Pf}\theta|\). Two tensors are
+  then defined from the configuration, not from the action: the induced
+  tensor \(g_{\alpha\beta}=\eta_{IJ}\partial_\alpha x^I\partial_\beta x^J\)
+  and the operator tensor
+  \(K^{\mu\nu}=\theta^{\alpha\mu}g_{\alpha\beta}\theta^{\beta\nu}\), which
+  is the kinetic tensor of a fluctuation \([\hat X^I,\cdot\,]\) in the
+  Poisson limit. This definition adds no fundamental metric: the form
+  \(\eta_{IJ}\) contracts matrix indices only, and its Lorentzian
+  signature is retained as Assumption~\ref{ass:lorentzian}. The index
+  \(I\) of this definition is not the internal index of \(\Phi^I{}_A\)
+  in Presentation~B, and the \(D-4\) transverse coordinates are not
+  covered by Assumption~\ref{ass:locked-block}. For a real
+  four-dimensional leaf and a real Lorentzian \(g\), \(K^{-1}\) is
+  nowhere proportional to \(g\), for every \(D\ge4\)
+  (Appendix~\ref{app:status}); neither \(g\) nor \(K^{-1}\) is asserted
+  here to be the emergent metric of Equation~\eqref{eq:g-from-e} or the
+  metric of Assumption~\ref{ass:emergent-op}.
+\end{definition}
 
 \section{Presentation B: the covariant condensate action}
 \label{sec:ch3-Phi-action}
