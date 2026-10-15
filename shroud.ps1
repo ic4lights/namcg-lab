@@ -1,0 +1,8 @@
+$env:ANTHROPIC_AUTH_TOKEN="ollama"
+$env:ANTHROPIC_API_KEY="null"
+$env:ANTHROPIC_BASE_URL="http://10.0.0.143:11434"
+
+$env:CLAUDE_CODE_MAX_CONTEXT_TOKENS=64000
+$env:CLAUDE_CODE_AUTO_COMPACT_WINDOW=64000
+
+claude --model rafw007/qwen35-claude-coder:9b
