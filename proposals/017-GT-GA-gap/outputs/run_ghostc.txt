@@ -1,0 +1,12 @@
+ghostc kappa=1.0 n=16: lam^2: eig(rel to rho^2 p^2 M) = [-1.32675527e-05 -1.32675527e-05  1.19294524e-01]  gauge residual 1.14e-16
+ghostc kappa=1.0 n=16: lam^4: eig(rel to rho^2 p^2 M) = [-1.47333002 -1.3899968  -1.3899968 ]  gauge residual 2.81e-16
+time 27
+ghostc kappa=0.5 n=16: lam^2: eig(rel to rho^2 p^2 M) = [-3.40005037e-06 -3.40005037e-06  1.19304392e-01]  gauge residual 2.01e-16
+ghostc kappa=0.5 n=16: lam^4: eig(rel to rho^2 p^2 M) = [-0.46208239 -0.37874916 -0.37874916]  gauge residual 1.46e-16
+time 4
+ghostc kappa=2.0 n=16: lam^2: eig(rel to rho^2 p^2 M) = [-5.27375622e-05 -5.27375622e-05  1.19255054e-01]  gauge residual 8.66e-16
+ghostc kappa=2.0 n=16: lam^4: eig(rel to rho^2 p^2 M) = [-5.51832057 -5.43498735 -5.43498735]  gauge residual 9.73e-17
+time 5
+ghostc kappa=1.0 n=16: lam^2: eig(rel to rho^2 p^2 M) = [-7.21696384e-06 -7.21696384e-06  1.27848322e-01]  gauge residual 1.46e-16
+ghostc kappa=1.0 n=16: lam^4: eig(rel to rho^2 p^2 M) = [-1.08909194 -1.00575868 -1.00575868]  gauge residual 1.56e-16
+time 24

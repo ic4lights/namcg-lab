@@ -1,0 +1,3 @@
+dirac kappa=0.0 n=16: lam^2: eig(rel to rho^2 p^2 M) = [4.43531648e-06 4.43531648e-06 4.77235602e-01]  gauge residual 1.45e-16
+dirac kappa=0.0 n=16: lam^4: eig(rel to rho^2 p^2 M) = [-2.14473148e-06  3.33330760e-01  3.33330760e-01]  gauge residual 4.88e-16
+time 73

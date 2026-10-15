@@ -1,0 +1,19 @@
+c_T          = N_s/6 + alpha/6 + 4*n_D/3 - 23/6
+c_A (unrot)  = N_s/6 + alpha/6 + n_D/3 + 1/6
+gap = c_A - c_T (unrot) = 4 - n_D    (rotated connection: 3 - n_D )
+c2 (third-mode / Einstein-in-g_rho test) = alpha**2/2 + 2*n_D - 9/2
+
+Feynman gauge al=1, no fermions: c_T = N_s/6 - 11/3  c_A = N_s/6 + 1/3  gap = 4  c2 = -4
+solve c2 = 0 for al (n_D = 0): [-3, 3]
+solve gap = 0 for n_D (unrotated / rotated): [4] [3]
+solve c2 = 0 for n_D at al = 1: [2]
+
+Maximally supersymmetric content (matrix model with D coordinates, 4 with Poisson background, N_s = D-4):
+  D=4: n_D=1/2: c_R-part(N_s+2-4 n_D)/6 = 0, c_T=-3, c_A(unrot)=1/2, gap=7/2, c2=-3
+  D=6: n_D=1: c_R-part(N_s+2-4 n_D)/6 = 0, c_T=-2, c_A(unrot)=1, gap=3, c2=-2
+  D=10: n_D=2: c_R-part(N_s+2-4 n_D)/6 = 0, c_T=0, c_A(unrot)=2, gap=2, c2=0
+
+1/G_A - 1/G_T = gap * Lambda^2/(2 pi)  (1/(16 pi G) = c Lambda^2/(32 pi^2));  gap=4 -> 2 Lambda^2/pi as in proposal 015
+
+replica (II), alpha=1: c_A = -N_s/12 + n_D/3 - 1/6 ; gap_II = c_A - c_T = -N_s/4 - n_D + 7/2 ; equality at W = [14 - 4*n_D]  (n_D=0: N_tot = 16; n_D=2: W=0, i.e. N_s=6, both sides vanish)
+positivity of c_T at n_D=4, al=1: N_s/6 + 5/3  c2 = 4

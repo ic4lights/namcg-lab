@@ -22,7 +22,7 @@ pending review material and must be preserved byte for byte.
 ## Preconditions (verify; abort and report if any fails)
 
 1. `git branch --show-current` is `remote/claude`, the fixed working branch the author designated on 2026-10-15.
-   Older `auto/*` branches are legacy. Never work on `main`/`master`.
+   Older `remote/claude` branches are legacy. Never work on `main`/`master`.
 2. The review file's first line has `VERDICT: ACCEPT` (not "ACCEPT WITH REQUIRED REVISIONS") and the review
    refers to the same round as the proposal file. No `LABEL-CHANGE-PROPOSED` flag.
 3. Outside `chapters/`, `bib/` and other agents' untracked `proposals/` folders, `git status --porcelain` shows no

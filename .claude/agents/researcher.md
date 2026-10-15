@@ -53,7 +53,7 @@ every cited claim yourself, never import a literature result without derivation,
 
 ## Working branch
 
-All work happens on the fixed branch `remote/claude` (author directive, 2026-10-15). It replaces the `auto/*` branches.
+All work happens on the fixed branch `remote/claude` (author directive, 2026-10-15). It replaces the `remote/claude` branches.
 You still write only inside your assigned `proposals/` folder.
 
 ## Proposal-only rule (mandatory)

@@ -1,0 +1,22 @@
+anchor 'the off-shell quadratic form is gauge dependent' in appH (expect 1):
+1
+anchor '\section{Problem C: conformal mode and Cassini}' in appH (expect 1):
+1
+label sec:status-F defined 1 time(s)
+label sec:status-B defined 1 time(s)
+label sec:status-A defined 1 time(s)
+label ass:emergent-op defined 1 time(s)
+label thm:Geff defined 1 time(s)
+label ass:EE defined 1 time(s)
+label thm:mT defined 1 time(s)
+label rem:ch3-trace-quadratic defined 1 time(s)
+label eq:O-eta defined 1 time(s)
+label eq:Geff-structure defined 1 time(s)
+label eq:W-expand defined 1 time(s)
+bib keys:
+1
+1
+1
+macros:
+1
+new labels introduced by 017: none

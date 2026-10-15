@@ -40,7 +40,7 @@ reaches `chapters/`.
 
 **Working branch (author directive, 2026-10-15).** All work happens on the single fixed branch `remote/claude`, so the
 author can follow it in VS Code. It replaces the per-run `auto/<YYYYMMDD-HHMM>` branches. Wherever this file or
-`CLAUDE.md` says `auto/*`, read `remote/claude`. The author merges `remote/claude` into `main`.
+`CLAUDE.md` says `remote/claude`, read `remote/claude`. The author merges `remote/claude` into `main`.
 
 1. **Contact the author only for a breakthrough.** That means a gatekeeper verdict of `ACCEPT` whose `FLAGS`
    contain `BREAKTHROUGH`: a noteworthy advance, such as deriving a critical-path step from the matrix theory, or a

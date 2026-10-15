@@ -56,7 +56,7 @@ if tool in ("Write", "Edit", "MultiEdit", "NotebookEdit"):
         if not os.path.exists(CHAPTERS_FLAG):
             deny("chapters/ may only be edited by the integrator step (flag .claude/state/allow_chapters absent)")
         if not branch().startswith("auto/"):
-            deny("chapters/ edits are only allowed on an auto/* branch")
+            deny("chapters/ edits are only allowed on an remote/claude branch")
         old = inp.get("old_string", "") or ""
         new = inp.get("new_string", "") or ""
         for edit in inp.get("edits", []) or []:
@@ -94,8 +94,8 @@ elif tool == "Bash":
         if re.search(pat, low):
             deny("forbidden command: " + name)
     if re.search(r"\bgit\s+commit\b", low) and branch() in ("main", "master", ""):
-        deny("commits are only allowed on an auto/* branch")
+        deny("commits are only allowed on an remote/claude branch")
     if re.search(r"\bgit\s+(add|commit)\b", low) and branch() not in ("",) and not branch().startswith("auto/"):
-        deny("git add/commit only on an auto/* branch")
+        deny("git add/commit only on an remote/claude branch")
 
 sys.exit(0)
