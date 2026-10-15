@@ -73,3 +73,14 @@
 - Not established: Einstein-type field equation for G; gap of the D-4 transverse scalars (not covered by ass:locked-block); Phi = tangent frame; G_eff.
 - Next (researcher-ranked): relax the 4-dimensional leaf (fuzzy extra dimensions, cf. Steinacker2023); then derive the extra conserved stress.
 - Integrated count this run: 8.
+
+## 011-fuzzy-leaf (Problem F; A, D1, E) — integrated 2026-10-15
+- Rounds: 3. r1 AWRR | M2 (leaf-level det proof wrong for odd m; misleading (N_tot-12)/6 line); r2 AWRR | M2 (two wording fixes; torsion identity derived, Weitzenboeck step verified independently by gatekeeper); r3 ACCEPT | M2 | flags none. Full scan at r1 (10th integration).
+- Integrated two appH paragraphs before \section{Problem G: HBEV}. Commit ae8aff4. Build PASS 252 pages, 0 undefined. No label touched.
+- Established: bounded no-go — with base coordinates = Lorentzian matrix block, fibre-averaged K != c eta^-1 (c != 0) for any D, compact fibre, positive average; leaf-level G != c g for 2m>=4 (counterexample at 2m=2); product leaf M x fuzzy sphere keeps zero-mode tensor of M (Einstein rank 3 about flat M); CP^{1,2} conjugate-coordinate class gives K = (M45/R^2)^2 eta^-1 (conformally flat) — Einstein rank not computed, base-function choice not derived; heat kernel over fuzzy factor gives 1/G_eff ~ Lambda^2 x weighted mode count (conditional); X = Weitzenboeck torsion invariant: rho^2 X = -2 rho R[g_rho] - rho|grad ln rho|^2 + (3/2) rho^2 S^2 + total derivative (derived; net TT coefficient 1 - N_tot/24 unchanged).
+- Next (researcher-ranked): Einstein rank in the CP^{1,2} class; then derive why y^mu = M^{mu5} are base functions.
+- Integrated count this run: 9 (002,003,005,006,007,008,010,009,011).
+
+## SME literature review — Dorau & Much, PRL 136, 091602 (2026), arXiv:2510.24491
+- reports/sme-lit-DorauMuch2026-20261015.md. PARTLY RELEVANT | mixed | emergence risk low. Rigorous AQFT form of Jacobson's matter side (S_rel = null energy flux, free scalar, coherent states); assumes metric and S = A/4, so it does not touch NAMCG's Claim 2 / Problems A, B gap. Constrains: a Jacobson-type closure needs a conserved total stress, which 008/009 show NAMCG does not yet derive.
+- SME suggestions (ranked): 1 cite and position in ch06/appB without overclaiming; 2 test eq. 13 (S_rel = flux) against a matrix-derived modular Hamiltonian (Problem A sub-lemma); 3 derive the conserved total stress; 4 relative-entropy form of ass:EE; 5 interacting / non-coherent extension.
