@@ -1647,6 +1647,171 @@ the first result, the hypotheses relaxed in the second, and
 Presentation~A in general. No value or sign of \(G_{\mathrm{eff}}\)
 follows. Problems~B, C, D and~F remain open.
 
+\paragraph{Presentation~A in the Poisson limit: the \(\Theta\)-built metric and the connection sector (conditional; not closure).}
+Let \(\Theta^{\mu\nu}(x)\) be a nondegenerate Poisson bivector and
+\(\rho=1/|\operatorname{Pf}\Theta|\), so that
+\(\partial_\mu(\rho\,\Theta^{\mu\nu})=0\). Keep the leading
+semiclassical order only:
+\([\cdot,\cdot]\to i\{\cdot,\cdot\}\) with
+\(\{f,g\}=\Theta^{\mu\nu}\partial_\mu f\,\partial_\nu g\),
+\(\operatorname{Tr}\to\int\mathrm{d}^4x\,\rho\), and matrix-coordinate
+indices contracted with \(\eta\). With
+\(K^{\mu\nu}=\eta_{\alpha\beta}\Theta^{\alpha\mu}\Theta^{\beta\nu}\) and
+\(g_\rho^{\mu\nu}=\rho K^{\mu\nu}\) as in
+Remark~\ref{rem:ch3-varying-theta}, let \(G\) be the metric with
+\(G^{\mu\nu}=K^{\mu\nu}\); then \(G=\rho\,g_\rho\),
+\(|\det g_\rho|=1\) and \(\sqrt{|G|}=\rho^2\). Higher Moyal terms are
+dropped. They are not small at momenta of order \(\LUV\), so the
+coefficients below are those of the Poisson-limit operators within the
+truncated expansion of Theorem~\ref{thm:Geff}. Signs and eigenvalues
+refer to the Euclidean section \(\eta=\delta\); the algebraic identities
+do not depend on the signature.
+
+\emph{Scalar sector.} A real fluctuation whose kinetic term is the
+Poisson limit of \(\operatorname{Tr}[\hat X_\mu,\varphi]^2\) has the
+operator
+\(\mathcal O_s=-\rho^{-1}\partial_\mu(\rho K^{\mu\nu}\partial_\nu\,\cdot\,)\).
+On the metric \(G\) it has the form~\eqref{eq:O-eta}, with
+\(D=\nabla+\omega\), \(\omega_\mu=-\tfrac12\partial_\mu\ln\rho\) and
+\(E=-\tfrac12\Box_G\ln\rho
++\tfrac14G^{\mu\nu}\partial_\mu\ln\rho\,\partial_\nu\ln\rho\).
+Since \(G=\rho\,g_\rho\) in four dimensions,
+\(R_G=\rho^{-1}\bigl[R-3\Box_{g_\rho}\ln\rho
+-\tfrac32|\nabla\ln\rho|^2_{g_\rho}\bigr]\) and
+\(E=\rho^{-1}\bigl[-\tfrac12\Box_{g_\rho}\ln\rho
+-\tfrac14|\nabla\ln\rho|^2_{g_\rho}\bigr]\), so that
+\[
+  \sqrt{|G|}\Bigl(\tfrac16R_G-E\Bigr)=\tfrac16\,\rho\,R[g_\rho]
+\]
+pointwise. For a constant \(\LUV\), one such component contributes
+\(-\tfrac{\LUV^2}{192\pi^2}\int\mathrm{d}^4x\,\rho\,R[g_\rho]\)
+to~\eqref{eq:W-expand}: the coefficient of
+Theorem~\ref{thm:Geff}, multiplying the curvature of the
+\(\Theta\)-built metric \(g_\rho\) with a factor \(\rho\). The
+component is minimally coupled to \(g_\rho\).
+
+\emph{Frame.} Let \(\omega=\Theta^{-1}\), \(\omega_{\mu B}\Theta^{B\nu}
+=\delta_\mu{}^\nu\), and \(e^A{}_\mu=\eta^{AB}\omega_{\mu B}\). Then
+\(G_{\mu\nu}=\eta_{AB}e^A{}_\mu e^B{}_\nu\), which is the
+form~\eqref{eq:g-from-e} of Definition~\ref{def:composite-metric} for
+a coframe with \(\eta_{AB}e^B{}_\mu\) antisymmetric in \((A,\mu)\).
+At the sample points tested the map \(\Theta\mapsto G\) has rank six,
+so that the \(\Theta\)-built metrics form a six-parameter subfamily of
+the metrics, and no pure-gauge perturbation
+\(p_{(\mu}\xi_{\nu)}\) of \(G\) lies in its tangent space. If
+\(\langle\Phi\rangle/v\) of~\eqref{eq:vev-is-frame} were identified with
+this coframe, the operator above would be that of
+Assumption~\ref{ass:emergent-op} for the metric \(G\). This
+identification is not derived.
+
+\emph{Connection sector.} In background gauge with gauge-fixing term
+\(\tfrac12\rho\,(D_\mu a^\mu)^2\), \(D^\mu=\{x^\mu,\cdot\}\), the part of
+\eqref{eq:Smatrix} quadratic in the matrix gauge potential \(a^\mu\)
+is, up to a constant factor,
+\(\int\mathrm{d}^4x\,\rho\,[K^{\rho\sigma}\partial_\rho a_\nu\partial_\sigma a^\nu
+-2a^\mu\{\Theta_{\mu\nu},a^\nu\}]\), the term linear in \(a^\mu\) not
+being assumed to vanish. The ghost operator is
+\(D_\mu D^\mu=-\mathcal O_s\), of weight \(-2\). The operator
+\(\mathcal O_va^\mu=\mathcal O_sa^\mu
+-2\eta^{\mu\alpha}\{\Theta_{\alpha\nu},a^\nu\}\) has the
+form~\eqref{eq:O-eta} on \(G\) with
+\(\omega_\sigma=-\tfrac12\partial_\sigma\ln\rho\,\mathbb I+\mathcal B_\sigma\),
+\((\mathcal B^\sigma)^\mu{}_\nu=\eta^{\mu\alpha}\Theta^{\rho\sigma}
+\partial_\rho\Theta_{\alpha\nu}\), and
+\(E=\nabla_\sigma\omega^\sigma+\omega_\sigma\omega^\sigma\). Then
+\[
+  \sqrt{|G|}\operatorname{tr}\Bigl(\tfrac16R_G-E\Bigr)
+  =\tfrac46\,\rho\,R[g_\rho]+\rho^2X,\qquad
+  X=\eta^{\rho\lambda}\eta_{\mu\alpha}\eta_{\nu\beta}\,
+    \partial_\rho\Theta^{\mu\nu}\,\partial_\lambda\Theta^{\alpha\beta},
+\]
+and with the ghosts the connection sector contributes
+\(\tfrac26\rho R[g_\rho]+\rho^2X\). The derivative index of \(X\) is
+contracted with \(\eta\) and not with \(G\). For
+\(\Theta^{01}=\vartheta_1(x^0,x^1)\), \(\Theta^{23}=\vartheta_2(x^2,x^3)\)
+one finds
+\(X=2K^{\mu\nu}\partial_\mu\ln\rho\,\partial_\nu\ln\rho\); for a
+generic Poisson bivector \(X\) differs from this one expression.
+
+\emph{Quadratic form about constant \(\bar\Theta\).} Let
+\(\Theta=\bar\Theta+\epsilon T\), \(T^{\mu\nu}
+=\bar\Theta^{\mu\rho}\partial_\rho a^\nu-\bar\Theta^{\nu\rho}\partial_\rho a^\mu\),
+\(a^\mu=u^\mu\cos(p\cdot x)\). With \(q^\mu=\bar\Theta^{\mu\rho}p_\rho\),
+the phase-averaged second-order terms of \(\rho R[g_\rho]\) and
+\(\rho^2X\) are quadratic forms on the three-dimensional quotient by
+\(u\propto q\). Relative to the tree-level kernel
+\(M=q^2\eta-qq\) of Remark~\ref{rem:ch3-trace-quadratic}, with
+\(p_\eta^2=\eta^{\mu\nu}p_\mu p_\nu\) and
+\(\bar\rho=1/|\operatorname{Pf}\bar\Theta|\), their Euclidean
+eigenvalues are
+\(\bar\rho^{2}p_\eta^2\) (three modes) for \(\rho^2X\), and
+\(-\tfrac14\bar\rho^{2}p_\eta^2\) (two modes with \(\delta\rho=0\), for
+which the linearized Einstein--Hilbert form of \(\delta g_\rho\) equals
+that of its transverse-traceless part with respect to \(p\) and
+\(\bar g_\rho\)) and \(-\tfrac34\bar\rho^{2}p_\eta^2\) (one mode with
+\(\delta\rho\ne0\)) for \(\rho R[g_\rho]\). Let
+\(N_{\mathrm{tot}}=N_s+2\), where \(N_s\) counts, with statistical
+sign, the real components whose fluctuation operator is
+\(\mathcal O_s\) with the same cutoff; it is an input, not a derived
+count. In the Euclidean section the \(\LUV^2\) quadratic form is
+\(-\tfrac{\LUV^2}{32\pi^2}\bar\rho^{2}p_\eta^2\,
+(1-N_{\mathrm{tot}}/24)\,M\) on the two transverse-traceless-type
+modes and \((1-N_{\mathrm{tot}}/8)\,M\) on the third. The net
+coefficient on the two transverse-traceless-type modes has the sign of
+a positive induced Einstein--Hilbert term only if
+\(N_{\mathrm{tot}}>24\); the Einstein--Hilbert-type piece itself always
+has that sign. For the connection sector alone, \(\rho^2X\) has the
+opposite sign and dominates. This is a statement about the
+Maxwell-kernel coefficient on these modes. Both pieces are multiples of
+\(M\) by functions of \(p_\eta^2\), so they do not move the cone
+\(q^2=0\), and about a constant background they do not fix
+\(G_{\mathrm{eff}}\).
+
+\emph{Beyond quadratic order.} Nondegenerate Poisson bivectors near
+\(\bar\Theta\) are \(\Theta=(\psi^*\bar\omega)^{-1}\),
+\(\bar\omega=\bar\Theta^{-1}\), \(\psi=x+w(x)\). Modulo total
+derivatives, the scalar densities of weight \(\rho\) with two
+derivatives built covariantly from \(g_\rho\) and \(\rho\) are the
+combinations of \(\rho R[g_\rho]\) and
+\(\rho\,g_\rho^{\mu\nu}\partial_\mu\ln\rho\,\partial_\nu\ln\rho\). At
+quadratic order about constant \(\bar\Theta\), \(\rho^2X\) coincides
+with \(-4\rho R[g_\rho]-4\rho\,g_\rho^{\mu\nu}\partial_\mu\ln\rho\,
+\partial_\nu\ln\rho\) for the random backgrounds and both signatures
+sampled. In a numerical test (double precision, \(w\) a sum of three
+plane waves with \(\sum p_j=0\), forty random samples) the cubic
+coefficient of \(\rho^2X\) is not of the form
+\(c_1\rho R[g_\rho]+c_2\rho\,g_\rho^{\mu\nu}\partial_\mu\ln\rho\,
+\partial_\nu\ln\rho\) for any constants (relative residual about
+\(0.3\) for the best fit). So, on this sample, \(\rho^2X\) is not a
+combination of these two covariant densities modulo total derivatives,
+and the quadratic agreement does not extend. Rewritings that use
+further structure, such as the constant \(\eta\), are not tested.
+
+If \(\LUV^2\) is replaced by \(\LUV^2f(\rho)\) (a local proper-time
+cutoff on the diagonal heat kernel), the coefficient of
+\(R[g_\rho]\) becomes \(f(\rho)\rho\); with
+\(\hat g=f\rho\,g_\rho\),
+\(\int f\rho R[g_\rho]=\int\sqrt{\hat g}\,[\hat R
+-\tfrac32\hat g^{\mu\nu}\partial_\mu\ln(f\rho)\partial_\nu\ln(f\rho)]\).
+The factor on the two transverse-traceless-type modes is unchanged, and
+for \(f=\rho^s\) the third becomes \(1-N_{\mathrm{tot}}(2s+3)/24\).
+
+This is a computation for Poisson-limit operators of a bosonic
+four-dimensional matrix gauge sector in a stated gauge, off shell or
+about a constant background. It does not identify \(G\) with the
+emergent metric of Chapter~\ref{ch:vierbein-emergence}, does not
+treat Moyal corrections at the cutoff, fermionic or additional scalar
+fields, the mixing of \(\Phi\) with \(a^\mu\), the locked-block
+diffeomorphism and local-Lorentz ghosts, or the relation of the induced
+term to the tree-level term of~\eqref{eq:Smatrix}, and gives no value or
+sign of \(G_{\mathrm{eff}}\). The kinetic metric and regulator here
+are built from \(\Theta\), and the map \(\Theta\mapsto G\) is nonlinear,
+so the hypotheses of the scaffold-rotation statement above (a flat
+scaffold, a rotation-preserving regulator, an invariant vacuum, and a
+composite-metric fluctuation that is a fixed linear image of \(\Phi\))
+do not apply; no linearized-diffeomorphism invariance is claimed.
+Problems~B, C, D and~F remain open.
+
 \section{Problem G: HBEV}
 \label{sec:status-G}
 
