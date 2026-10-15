@@ -6,4 +6,4 @@ $env:CLAUDE_CODE_MAX_CONTEXT_TOKENS=150000
 $env:CLAUDE_CODE_AUTO_COMPACT_WINDOW=150000
 $env:CLAUDE_CODE_MAX_OUTPUT_TOKENS=150000
 
-claude --model rafw007/qwen35-claude-coder:9b
+claude --model rafw007/qwen35-claude-coder:9b @args
