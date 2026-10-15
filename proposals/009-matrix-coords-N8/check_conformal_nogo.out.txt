@@ -1,0 +1,11 @@
+exact rational: det(omega)=Pf^2 True; det M = Pf^2/det g (<0) True; G = -g M^2 True
+D= 4 Lorentzian samples 3000  min relative residual |G-c g|/|G| = 2.219e-01
+D= 5 Lorentzian samples 2606  min relative residual |G-c g|/|G| = 2.992e-01
+D= 6 Lorentzian samples 2239  min relative residual |G-c g|/|G| = 2.643e-01
+D= 7 Lorentzian samples 1886  min relative residual |G-c g|/|G| = 3.075e-01
+D= 8 Lorentzian samples 1520  min relative residual |G-c g|/|G| = 2.844e-01
+D= 9 Lorentzian samples 1196  min relative residual |G-c g|/|G| = 3.332e-01
+D=10 Lorentzian samples  930  min relative residual |G-c g|/|G| = 2.664e-01
+D=11 Lorentzian samples  751  min relative residual |G-c g|/|G| = 4.175e-01
+Euclidean contrast: G = g? True
+Kleinian (2,2) contrast: G proportional to g? True

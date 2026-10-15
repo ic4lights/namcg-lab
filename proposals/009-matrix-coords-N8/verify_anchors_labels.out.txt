@@ -1,0 +1,27 @@
+ch03 anchor count: 1
+appH anchor count: 1
+def:matrix-coords 1
+def:matrix-coords-ext 0
+eq:Smatrix 1
+eq:NC 1
+eq:g-from-e 1
+ass:emergent-op 1
+ass:lorentzian 1
+ass:locked-block 1
+ass:dictionary 1
+ass:frame-lock 1
+rem:ch3-moyal-check 1
+thm:Geff 1
+def:composite-metric 1
+sec:status-D 1
+sec:status-E 1
+eq:vev-is-frame 1
+ass:EE 1
+eq:Geff-structure 1
+sec:ch3-two-presentations 1
+bib Steinacker2023 1
+bib KumarSteinacker2023 0
+bib Steinacker2026 0
+bib Steinacker2016Gravity 1
+bib IKKT1997 1
+bib Steinacker2010 1
