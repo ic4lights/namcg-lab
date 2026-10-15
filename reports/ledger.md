@@ -117,3 +117,11 @@
 - Bounded no-go: EE needs G_T = G_A; in class (Poisson, Euclidean, Feynman background gauge, one loop, Lambda^2, delta rho = 0, replica I) c_T = N_tot/6 - 4 vs c_A = N_tot/6, 1/G_A - 1/G_T = 2 Lambda^2/pi from rho^2 X. Survives replica II for positive G.
 - Open avenues (gatekeeper rank): content (fermions / torsion-coupled scalars, b = 0), tensor-block identification / Phi-a mixing, tree-level 014 class, gauge fixing, Moyal, curved backgrounds, replica choice. SME gap scout: reports/sme-scout-gap-GT-GA-20261015.md. Follow-up: proposal 017 (in progress).
 - Integrated count this run: 13.
+
+## 016-mirage-stress (Problem F; B, A) — integrated 2026-10-15
+- Route: SME scout R14. Rounds: 2. r1 provisional AWRR with SME-CONSULT; SME consultation (proposals/016-mirage-stress/sme-consult-r1.md): Steinacker2026 crossover (1 - m^2 Box^-1) form confirmed with m^2 = 32 pi G_N alpha^2 r^-4; T[C] conservation imposed via the C -> C + dC ambiguity, not derived; massless matrix Noether identity is prior art (Steinacker 0812.3761, Abou-Zeid-Dorn). r1 final AWRR (no milestone); r2 ACCEPT, flags none.
+- Integrated appH block before \section{Problem G: HBEV}. Commit b42bd98. Build PASS 262 pages, 0 undefined. No label touched.
+- Established (class H16: Poisson limit, level-one sector, leading symbol, frozen coefficients, tree level + input EH form + input conserved T): exact Poisson-limit Noether identity {X^a,E_a} = 0 and mu^2 stress-divergence identity (massless form standard); closed form extra stress X = -Lambda L E; exact (w + Lambda L)E = T with L spectrum; crossover (1 + rho/(2 q_perp^2))E = T/w in the TT-like channel; dispersion elliptic in omega, anisotropy from the background direction y-hat (covariant if y is a vector); y^i = 0 not essential.
+- Not: a derivation of the conservation of the extra stress (Bianchi + input T, same as literature); the 008/009 missing stress; G_eff sign/size.
+- Open avenues (ranked): subleading order; induced coefficient in this class (F's target); frame averaging; matrix-derived T; doubleton constraints; nonlinear / N>=8.
+- Integrated count this run: 14. Next integration is the 15th (gatekeeper full scan due).
