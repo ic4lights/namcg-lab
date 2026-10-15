@@ -98,3 +98,11 @@
 - First class where neither the 008/009 rank obstruction nor the 011 proportionality obstruction occurs. Not a breakthrough (no dynamics; second- vs third-order mismatch; leading-symbol gauge invariance only).
 - Next: dynamics of the level-1 amplitudes (action, masses, positivity, order mismatch).
 - Integrated count this run: 11.
+
+## 014-level1-dynamics (Problem F) — integrated 2026-10-15
+- Rounds: 2. r1 AWRR | M2 narrow (two wording fixes); r2 ACCEPT, flags none.
+- Integrated appH block before \section{Problem G: HBEV}. Commit 8416acb. Build PASS 258 pages, 0 undefined. No label touched.
+- Established (Poisson limit, CP^{1,2} class, leading symbol, tree level, level-1 sector, sheet y4>0): background T^a = M^{a4} is not stationary for the quartic term of eq:Smatrix alone; a bilinear term mu^2 = -3/R^2 (input of the class, not adopted into eq:Smatrix; reported for these backgrounds in SperlingSteinacker2019) makes it stationary and the amplitude action exactly gauge invariant; 12 level-1 amplitudes = 3 massless Maxwell fields, colour metric delta_ij, no relative ghost at this order. Bounded no-go: E[h(c)] cubic vs Maxwell quadratic, no local E[h] = P(d)J; sourced h algebraic, degree 0, E[h] != constant x T (q^2 T excluded in samples); null-q trace polarisation E = (1/2) q q tr h.
+- No PRIOR-CLAIM-ERROR: merged 011/013 never claimed the background solves eq:Smatrix ("off-shell"; "does not derive the background").
+- Open routes: induced (one-loop) term, subleading orders (ranked first), other sectors, entanglement route (ass:EE).
+- Integrated count this run: 12.
