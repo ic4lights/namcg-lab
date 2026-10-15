@@ -43,6 +43,10 @@ rounds: read earlier `review-r*.md` and `proposal-r*.md` in that folder and `rep
   them without `AUTHOR-DECISION`. Use `AUTHOR-DECISION` only for status, priority or completion-label changes
   (with `LABEL-CHANGE-PROPOSED`). Use `RESEARCHER-DECISION` for other open choices. `REJECT` anything that makes
   spacetime non-emergent.
+- **Uncommitted manuscript changes are expected (2026-10-15).** The author commits `chapters/` and `bib/` personally
+  after reviewing the diff in VS Code. The working tree may therefore hold accepted, build-verified integrations that
+  are not yet committed. Review against the working-tree files, not `HEAD`. A `dirty-chapters: yes` digest caused by
+  them is expected; apply `CLAUDE.md` 3(d) as written, by reading the affected passages directly.
 - **SME consultation (2026-10-15).** If a verdict depends on a literature or field-context question you cannot settle
   yourself, add the flag `SME-CONSULT` and a section `## SME consultation request` stating the exact questions. Such
   questions include: is the result already known; does the cited work support the claim; does a published no-go apply;

@@ -90,7 +90,10 @@ author can follow it in VS Code. It replaces the per-run `auto/<YYYYMMDD-HHMM>` 
    - If `remote/claude` exists, switch to it with `git checkout remote/claude`. If it is behind `main`, stop and ask
      the author to update it; never rebase or reset it.
    - If it does not exist, create it from the current branch with `git checkout -b remote/claude`.
-2. `git status --porcelain` must be empty (if not, stop: the author must commit or stash first).
+2. `git status --porcelain` must show nothing except uncommitted changes in `chapters/` and `bib/` and untracked
+   `proposals/` folders. Integrated manuscript changes are left uncommitted for the author to review in VS Code (see
+   "Manuscript changes are not committed" below). Anything else dirty means stop: the author must commit or stash
+   first.
 3. **Check for unmerged proposals**: Scan `proposals/` for any existing unmerged proposal folder (e.g., `proposals/NNN-slug/`) containing a `proposal-rK.md` or `review-rK.md` that has not yet been merged into `chapters/`. 
    - If an unmerged proposal exists, resume execution directly from that folder and its latest round `K`, rather than creating a new proposal ID `NNN`.
    - If no unmerged proposal exists, list `proposals/` to find the next sequential ID `NNN`.
@@ -142,6 +145,19 @@ change any status, priority, or completion-classification label, and does not cl
 is closed/solved/derived without establishing it for the current scope. If it proposes any label change, treat it
 as `LABEL-CHANGE-PROPOSED` and stop for the author. Confirm the review round equals the proposal round.
 
+**Manuscript changes are not committed (author directive, 2026-10-15).** The integrator edits `chapters/` and
+`bib/` in the working tree, builds and verifies, and does not commit. The author reviews the uncommitted diff in
+VS Code and commits it. As a consequence:
+- Never run `git add` or `git commit` on `chapters/` or `bib/`. Never stash, reset or restore them.
+- When committing proposals, reviews, reports or the ledger, add only those paths explicitly, e.g.
+  `git add proposals/NNN-* reports/ledger.md`. Never use `git add -A`, `git add .` or `git commit -a`.
+- While the manuscript has uncommitted changes, `make_digest.py` reports `dirty-chapters: yes`. Under `CLAUDE.md`
+  3(d) that obliges a full scan for any gatekeeper review that relies on the digest. Tell the gatekeeper explicitly
+  that the dirty state comes from accepted, build-verified integrations awaiting the author's commit. It may then
+  read the working-tree files directly and need not treat the dirty flag itself as a scan trigger beyond what
+  `CLAUDE.md` requires.
+- In the ledger, record "uncommitted (author to commit)" and the integrator's backup path instead of a commit hash.
+
 **f. Integrate.** Create `.claude/state/allow_chapters`, Task `integrator` with the proposal path, review path,
 branch and current digest status, then ensure the flag file is removed. If it reports a build failure or anchor
 mismatch: ledger entry `INTEGRATION-FAILED`, stop the run. Else increment `accepted`, rebuild the digest with
@@ -181,9 +197,10 @@ integrations; it is reported to the author with the smallest fix it names. Conta
 review is allowed under the autonomy directive.
 
 **Digest.** When the loop ends for any reason, write `reports/run-<YYYYMMDD-HHMM>.md` with exactly the contents listed at the
-end of `MILESTONE.md`. Make sure the branch is clean (`git status --porcelain` empty), run
-`git log --oneline $BASE..HEAD`, and `git diff --stat $BASE..HEAD`. Commit the digest and ledger on the branch
-(`git add reports proposals; git commit -m "Run digest and proposals"`).
+end of `MILESTONE.md`. Run `git log --oneline $BASE..HEAD`, `git diff --stat $BASE..HEAD`, and
+`git diff --stat -- chapters bib` for the uncommitted manuscript changes awaiting the author. Commit only the digest,
+ledger and proposals (`git add reports proposals; git commit -m "Run digest and proposals"`). Leave `chapters/` and
+`bib/` uncommitted.
 
 Then **stop**. Final message to the author: the stop reason, the milestone (if any) in two sentences, the branch
 name, the digest path, and the exact commands to review (`git diff <BASE>..HEAD`) and to merge or discard. Do not
