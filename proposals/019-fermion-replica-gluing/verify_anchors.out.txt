@@ -1,0 +1,13 @@
+replace-sentence count:
+1
+insert anchor count:
+1
+next section after anchor:
+193:\section{Problem C: conformal mode and Cassini}
+bib keys present:
+MantaSteinackerTran2024 1
+Solodukhin2011 1
+IKKT1997 1
+CasiniHuerta2009 0
+FursaevMiele1997 0
+macros in insert:

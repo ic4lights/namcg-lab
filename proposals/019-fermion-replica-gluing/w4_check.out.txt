@@ -1,0 +1,6 @@
+generic  tr_V(B.B)=-71.17687  tr_D(B.B)=-35.58844  ratio D/V=0.500000 | weighted tr[B_s,B_t]^2 (nD=2) = 0.00e+00 | weighted cubic = 3.58e-15 | W4 (nD=2) = 844.138466
+generic  tr_V(B.B)=-54.23651  tr_D(B.B)=-27.11825  ratio D/V=0.500000 | weighted tr[B_s,B_t]^2 (nD=2) = 5.68e-14 | weighted cubic = 3.31e-15 | W4 (nD=2) = 547.949641
+SD       tr_V(B.B)=-45.21500  tr_D(B.B)=-22.60750  ratio D/V=0.500000 | weighted tr[B_s,B_t]^2 (nD=2) = 0.00e+00 | weighted cubic = 7.82e-17 | W4 (nD=2) = 0.000000
+ASD      tr_V(B.B)=-41.67746  tr_D(B.B)=-20.83873  ratio D/V=0.500000 | weighted tr[B_s,B_t]^2 (nD=2) = 0.00e+00 | weighted cubic = 1.05e-16 | W4 (nD=2) = 0.000000
+min W4 over 2000 generic draws: 1.033e+02 (>=0 expected)
+W4 = c1 |l|^2|r|^2 + c2 |K|^2 fit: c1=0.500000 c2=1.000000  max residual 3.18e-12
