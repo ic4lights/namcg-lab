@@ -1,0 +1,4 @@
+orientation sign (+1=SD) by (sign y0, sign y4) [centre basis vector 0]: {(-1, -1): {-1}, (-1, 1): {1}}
+y4=l(1+0.20) res=1.9e-30 |r|/|p| in [0.09091,0.09091]; from closed form f2/f1 in [0.83333,0.83333] -> |r|/|p|=(1-x)/(1+x) in [0.09091,0.09091]
+y4=l(1+0.10) res=1.4e-33 |r|/|p| in [0.04762,0.04762]; from closed form f2/f1 in [0.90909,0.90909] -> |r|/|p|=(1-x)/(1+x) in [0.04762,0.04762]
+y4=l(1+0.05) res=2.9e-31 |r|/|p| in [0.02439,0.02439]; from closed form f2/f1 in [0.95238,0.95238] -> |r|/|p|=(1-x)/(1+x) in [0.02439,0.02439]
