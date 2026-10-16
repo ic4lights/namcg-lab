@@ -1,0 +1,6 @@
+pdflatex rc 0
+bibtex rc 0
+pdflatex rc 0
+pdflatex rc 0
+errors: 0  undefined refs/cites: 0  multiply defined: 0  double subscript: 0
+['Output written on namcg-book7.pdf (264 pages, 1964771 bytes).']
