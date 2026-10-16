@@ -125,3 +125,11 @@
 - Not: a derivation of the conservation of the extra stress (Bianchi + input T, same as literature); the 008/009 missing stress; G_eff sign/size.
 - Open avenues (ranked): subleading order; induced coefficient in this class (F's target); frame averaging; matrix-derived T; doubleton constraints; nonlinear / N>=8.
 - Integrated count this run: 14. Next integration is the 15th (gatekeeper full scan due).
+
+## 017-GT-GA-gap (Problem B; F, A) — integrated 2026-10-15 (uncommitted, author to commit)
+- Route: 015 open avenue (gauge parameter, fermion content) + SME gap scout. Rounds: 2. r1 AWRR | M2, full scan (ordinal 15), three major scope fixes (tip-domain claim deleted; numerical fits labelled, alpha = 1/3..3; periodic gluing reported); r2 ACCEPT, flags none.
+- Integrated appH sec:status-B, after the 015 block, before \section{Problem C}. Working tree only (author directive: chapters/bib not committed by agents). Backup scratch/integrator-backup/017-GT-GA-gap/. Build PASS 264 pages, 0 undefined. No label touched.
+- Established: gauge lemma O_v Gr = Gr O_s - {J,.}, Gr^dag Gr = O_s (any Poisson bivector); on J = 0 backgrounds (stated tip domain) connection-sector a_1 = ((3+alpha)/6) rho R + rho^2 X, so c_A - c_T = 4 is alpha-independent; off-shell numerics (rational fits, 1/3 <= alpha <= 3) agree; EOM-term gauge function enlarges the gap; Dirac a_1 = (4/6) rho R + (1/2) rho^2 X, b_total = 1 - n_D/2.
+- Gluing-conditional: gap 4 - n_D (antiperiodic, spinor-transported) or 4 - 2n_D (unrotated periodic; 0 = 0 at n_D = 2 with c_T = c_A = 0, an equality of vanishing Lambda^2 coefficients, not a derivation). Gluing selected by the matrix state is not determined (Problem A).
+- Open avenues (ranked): (1) next order (log / a_2, Moyal) in D = 10 content per gluing; (2) replica gluing from matrix modular flow (Problem A sub-lemma); (3) tensor-block identification; (4) non-constant J = 0 backgrounds; (5) other gauge functions; (6) tip domain / edge modes; (7) tree-level, Moyal, curved.
+- Integrated count this run: 15. SME scout due (5th-integration cadence).
