@@ -16,4 +16,4 @@ $env:ANTHROPIC_BASE_URL="http://10.0.0.143:11434"
 # $env:CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS    = "1"
 # $env:CLAUDE_CODE_AUTO_MODE_SERVER              = "0"
 
-claude --model qwen3.6:35b-a3b @args
+claude --model rafw007/qwen3.6-35b-a3b-mlx-claude-coder-abliterated:latest @args
