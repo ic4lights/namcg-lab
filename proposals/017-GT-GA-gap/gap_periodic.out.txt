@@ -1,0 +1,4 @@
+gap antiperiodic 4 - n_D
+gap periodic 4 - 2*n_D
+D=10: cT 0 cA anti 2 cA per 0
+rho^2 X coefficient 1-nD/2 at nD=2: 0
