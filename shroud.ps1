@@ -2,18 +2,18 @@ $env:ANTHROPIC_AUTH_TOKEN="ollama"
 $env:ANTHROPIC_API_KEY="null"
 $env:ANTHROPIC_BASE_URL="http://10.0.0.143:11434"
 
-$env:CLAUDE_CODE_MAX_CONTEXT_TOKENS=96000
-$env:CLAUDE_CODE_AUTO_COMPACT_WINDOW=96000
-$env:CLAUDE_CODE_MAX_OUTPUT_TOKENS=96000
+# $env:CLAUDE_CODE_MAX_CONTEXT_TOKENS=96000
+# $env:CLAUDE_CODE_AUTO_COMPACT_WINDOW=96000
+# $env:CLAUDE_CODE_MAX_OUTPUT_TOKENS=96000
 
 
-# 3. PERFORMANCE & CONTEXT BREAKERS (Solves Classifier Timeouts & VRAM Spikes)
-$env:LOCAL_LIGHTWEIGHT_MODE   = "true"
-$env:CLAUDE_CODE_MAX_TOKENS   = "2048"
+# # 3. PERFORMANCE & CONTEXT BREAKERS (Solves Classifier Timeouts & VRAM Spikes)
+# $env:LOCAL_LIGHTWEIGHT_MODE   = "true"
+# $env:CLAUDE_CODE_MAX_TOKENS   = "2048"
 
-# 4. TIMEOUT & PROTOCOL HARDENING
-$env:API_TIMEOUT_MS                            = "60000"
-$env:CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS    = "1"
-$env:CLAUDE_CODE_AUTO_MODE_SERVER              = "0"
+# # 4. TIMEOUT & PROTOCOL HARDENING
+# $env:API_TIMEOUT_MS                            = "60000"
+# $env:CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS    = "1"
+# $env:CLAUDE_CODE_AUTO_MODE_SERVER              = "0"
 
-claude --model rafw007/qwen3.6-35b-a3b-mlx-claude-coder-abliterated:latest @args
+claude --model qwen3.6:35b-a3b-64k @args
