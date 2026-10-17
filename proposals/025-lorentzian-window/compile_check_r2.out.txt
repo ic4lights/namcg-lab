@@ -1,0 +1,7 @@
+anchor unique; block equals proposal block
+pdflatex rc 0
+bibtex rc 0
+pdflatex rc 0
+pdflatex rc 0
+errors: 0  undefined: 0  multiply: 0  double subscript: 0
+['Output written on namcg-book7.pdf (281 pages, 2085879 bytes).']
