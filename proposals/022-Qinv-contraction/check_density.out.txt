@@ -1,0 +1,3 @@
+W - (8 sinh^2 x + 3 + n) = 0
+large-x limit of f^2-density coefficient: 1/(2*pi**2) = 1/(2 pi^2) -> 0
+int_0^oo u^3/sinh^2(u) du = Integral(x**3/sinh(x)**2, (x, 0, oo)) = 3 zeta(3)/2: -3*zeta(3)/2 + Integral(x**3/sinh(x)**2, (x, 0, oo))

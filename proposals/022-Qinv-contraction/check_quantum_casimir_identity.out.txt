@@ -1,0 +1,4 @@
+so(6) relations hold with sign -1
+kappa = -1
+N=2 c_G=+1: max |H + c_G G^dag G - (C6 - C5tot + C5vec + m2)| = 3.552713678800501e-15
+N=2 c_G=-1: max |H + c_G G^dag G - (C6 - C5tot + C5vec + m2)| = 8.000000000000007
