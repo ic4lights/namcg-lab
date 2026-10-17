@@ -1,0 +1,22 @@
+(a) generalised eigenvalues of (K_H^{Lorentz}, A_kappa), kappa = 0.75; columns: (y^4)^2, ell^2, negative eigenvalue, positive ones
+     0.0075   3.6855   [-2.      0.      0.      0.004   2.0081  2.0081]
+     2.0477   0.7391   [-2.      0.      0.      5.5408 13.0816 13.0816]
+     5.7639   2.5234   [-2.     -0.     -0.      4.5683 11.1367 11.1367]
+     0.4891   2.3183   [-2.      0.      0.      0.4219  2.8439  2.8439]
+     6.9567   2.7707   [-2.      0.      0.      5.0217 12.0434 12.0434]
+    75.9809   3.6737   [-2.     -0.     -0.     41.3651 84.7303 84.7303]
+    47.2673   2.6597   [-2.     -0.      0.     35.5429 73.0859 73.0859]
+     0.3938   0.7566   [-2.     -0.      0.      1.0409  4.0817  4.0817]
+(b) Euclid-contracted Zeeman depth d_* (|f1-f2| per sqrt(A_kappa)), kappa = 0.75, and f2/f1 range
+   d_* = 2.0482   f2/f1 in [0.119, 0.135]
+   d_* = 3.8965   f2/f1 in [0.004, 0.015]
+   d_* = 1.7191   f2/f1 in [0.166, 0.418]
+   d_* = 2.0105   f2/f1 in [0.009, 0.012]
+   d_* = 2.0210   f2/f1 in [0.027, 0.082]
+   d_* = 5.5503   f2/f1 in [0.022, 0.091]
+(c) det(A_kappa) ratios vs closed form 1/[(kappa-1/2)^2 (1-kappa)]  (volume factor of the window {A<=Lambda^2} up to a kappa-independent factor)
+   kappa=0.55  det^(-1/2)=4.5972  closed form*const=4.5972
+   kappa=0.65  det^(-1/2)=0.6567  closed form*const=0.6567
+   kappa=0.75  det^(-1/2)=0.3310  closed form*const=0.3310
+   kappa=0.85  det^(-1/2)=0.2815  closed form*const=0.2815
+   kappa=0.95  det^(-1/2)=0.5108  closed form*const=0.5108
