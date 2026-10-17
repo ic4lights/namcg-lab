@@ -1,4 +1,4 @@
-"""023 script 5: pencil of the SO(4,1)-invariant symbols K41, K42 (and K31, Box4) on the leaf: generalised eigenvalues, definite interval for R_kappa = C41 - kappa*C42,
+"""023 script 5: pencil of the SO(4,1)-invariant symbols K41, K42 (and K31, Box4) on the leaf: generalised eigenvalues, definite interval for R_kappa = C41 - kappa*C42 = -Delta_kappa (sigma(R_kappa) = K41 - kappa*K42 = -sigma(Delta_kappa); sigma = sum w (xi.v)^2 = minus principal symbol),
 and the invariance of the splitting (independence of the orbit point)."""
 import numpy as np, scipy.linalg as sl
 from symbol_tools import *

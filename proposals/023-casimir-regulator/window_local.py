@@ -1,4 +1,4 @@
-"""023 script 10: local window analysis for R_kappa = kappa*C42 - C41 (positive symbol A_kappa = K41 - kappa*K42, kappa in (1/2,1)).
+"""023 script 10: local window analysis for R_kappa = kappa*C42 - C41 (positive principal symbol A_kappa = K41 - kappa*K42 = -sigma(Delta_kappa); convention: sigma(.) = quadratic form sum w (xi.v)^2 = minus the principal symbol, K_i = sigma(C_i), kappa in (1/2,1)).
 (a) Lorentzian four-matrix symbol K_H = sum eta_a v_{a4}^2 against the window: generalised eigenvalues of (K_H, A_kappa) (3 positive, 1 negative, 2 zero), vs (y^4)^2.
 (b) Euclid-contracted model (eta -> delta, as in 020): Zeeman depth |f1-f2| over the centre variable zeta with A_kappa(zeta) <= Lambda^2:  d_* = max_zeta |f1-f2| / sqrt(A_kappa(zeta)).
 (c) window volume factor det(A_kappa)^(-1/2) against the closed form [(kappa-1/2)^2 (1-kappa)]^(-1) * const."""
