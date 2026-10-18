@@ -1,0 +1,9 @@
+C:\Users\redgi\Projects\namcg-lab\proposals\027-fibre-window-spin1\shell_apex_lemma.py:86: IntegrationWarning: The occurrence of roundoff error is detected, which prevents 
+  the requested tolerance from being achieved.  The error may be 
+  underestimated.
+  val += quad(h, edges[i0], edges[i0+1], weight='cauchy', wvar=f0, limit=200)[0]
+I0 = 32.17212745852616  closed form (a,a,a isotropic): 2 pi^2 * 2/(a+c) = 32.17212745852614
+J_kk = [2.97705572 9.73169058 9.73169058 9.73169058]  check trace identity  sum_k J_kk/lam_k = I0*? (wave-equation: tr(S^-1 J) = I0 tr(S^-1)/2): 34.19864848397039 34.198648483970395
+(F1) |p|=0.450 r=1:  quadratic formula 14.19139   brute force 14.18981
+|p| = 1.2288205727444508
+(F3) |p|>r: brute force 3.84053   cap formula 4.05767   quadratic-extension (not valid) 1.01971

@@ -12,7 +12,7 @@ ginv4 = sp.Matrix(4, 4, lambda i, j: eta[i, j] + y[i]*y[j]/ell**2)
 sqrtg4 = ell/sp.sqrt(m2)
 g4 = sp.Matrix(4, 4, lambda i, j: eta[i, j] + yl[i]*yl[j]/m2)
 print("g4*ginv4 = 1:", sp.simplify(g4*ginv4) == sp.eye(4))
-print("det check sqrt|g4| = ell/m:", sp.simplify(-ginv4.det() - m2/ell**2) == 0 or sp.simplify(ginv4.det() + m2/ell**2) == 0, sp.simplify(ginv4.det()))
+dd = sp.simplify(ginv4.det()); print("det(ginv4) = -(m2/ell^2)*(-1)?  det(ginv4)*ell^2/m2 =", sp.simplify(dd*ell**2/m2), "; det(g4)*m2/ell^2... sqrt|g4| = ell/m requires |det g4| = ell^2/m2 :", sp.simplify(abs(1/dd) - ell**2/m2) == 0 or sp.simplify(1/dd + ell**2/m2) == 0 or sp.simplify(1/dd - ell**2/m2) == 0)
 # Delta_4 first-order coefficient A_D^j = ell^2 (1/sqrt g) d_i(sqrt g g^{ij})
 AD = [ell**2*sum(sp.diff(sqrtg4*ginv4[i, j], y[i]) for i in range(4))/sqrtg4 for j in range(4)]
 ABox = [-y[j] for j in range(4)]                      # m eta^{ij} d_i m = -y^j
