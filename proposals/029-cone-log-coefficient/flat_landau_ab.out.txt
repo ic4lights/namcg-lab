@@ -5,4 +5,4 @@ reg a=-b: C1 b*(b - 1)/2  lin b*(b - 1)*(2*b - 1)/6
 flag a<0: const b  lin b**2  expected b, +b^2
 [(1, 0, 0), (2, 1/8, 1/8), (3, 2/9, 2/9), (4, 5/16, 5/16), (5, 2/5, 2/5)]
 dS2/dn at 1 = 1/6
-sum_k sigma*flag*(-a|a|): [(2, -1/8, -1/16), (3, -2/9, -1/9), (4, -5/16, -5/32), (5, -2/5, -1/5)]
+sum_k sigma*flag*(-a|a|) = -S2 (attractive-channel assignment sigma*a>0 is an input checked by hand, not derived here): (N, tot, -S2) [(2, -1/8, -1/8), (3, -2/9, -2/9), (4, -5/16, -5/16), (5, -2/5, -2/5)]

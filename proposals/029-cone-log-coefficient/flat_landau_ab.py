@@ -26,4 +26,4 @@ print([ (N,S2(N),sp.Rational(N*N-1,12*N)) for N in (1,2,3,4,5)])
 print('dS2/dn at 1 =',sp.diff((n**2-1)/(12*n),n).subs(n,1))
 # net omega coefficient: sum_k sum_sigma sigma*[g_reg + flag*(-a|a|)] : g_reg cancels; flag terms
 tot=lambda N: sum( -(+1)*ak*abs(ak) *(1 if ak>0 else 0) + (-1)*(-ak*abs(ak))*(1 if ak<0 else 0) for ak in [sp.Rational(2*j-(N-1),2)/N for j in range(N)])
-print('sum_k sigma*flag*(-a|a|):',[(N,tot(N),-S2(N)/2*2/2) for N in (2,3,4,5)])
+print('sum_k sigma*flag*(-a|a|) = -S2 (attractive-channel assignment sigma*a>0 is an input checked by hand, not derived here): (N, tot, -S2)',[(N,tot(N),-S2(N)) for N in (2,3,4,5)])
