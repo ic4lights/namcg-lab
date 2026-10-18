@@ -1,0 +1,11 @@
+keys ['R', 'riem2', 'ric2', 'rho', 'scalar', 'vector', 'weyl_upper', 'weyl_lower', 'J', 'Pf_omega']
+Pf omega(0) = 2*h1 + 4  J = [(-h1**3 - 4*h1**2 - 10*h1 - 2*h2)/(2*h1**3 + 12*h1**2 + 24*h1 + 16), 0, 0, 0]
+h2(u) = -u*(u**2 + 4*u + 10)/2    h3(u) = 3*u*(u**4 + 8*u**3 + 26*u**2 + 40*u + 40)/4
+rho = 2*(u + 2)
+sqrtG a1_total on shell: 0
+sqrtG a2_total on shell: 0
+scalar sqrtG a2 on shell = u**2*(u + 4)*(12*u**5 + 147*u**4 + 688*u**3 + 1560*u**2 + 1728*u + 768)/(360*(u + 2)**2)
+vector sqrtG a2 on shell = -u**2*(u + 4)*(18*u**5 + 393*u**4 + 2072*u**3 + 4560*u**2 + 4752*u + 2112)/(90*(u + 2)**2)
+weyl_upper sqrtG a2 on shell = -u**2*(u + 4)*(18*u**5 + 393*u**4 + 2072*u**3 + 4560*u**2 + 4752*u + 2112)/(90*(u + 2)**2)
+weyl_lower sqrtG a2 on shell = u**2*(u + 4)*(12*u**5 + 147*u**4 + 688*u**3 + 1560*u**2 + 1728*u + 768)/(90*(u + 2)**2)
+R_G on shell = -3*u**2*(3*u**2 + 16*u + 24)/(8*(u + 2)**2)   Weyl^2-type (riem2-2ric2+R2/3) = 3*u**2*(u + 4)**2/2

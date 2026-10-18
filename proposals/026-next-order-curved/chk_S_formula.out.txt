@@ -1,0 +1,6 @@
+trial 0  S(nD=2) = 41108.12727271297  8 tr a tr b + 16 tr(c c^T) = 41108.127272712976
+trial 1  S(nD=2) = 24009.051368894652  8 tr a tr b + 16 tr(c c^T) = 24009.051368894634
+trial 2  S(nD=2) = 53118.14114810182  8 tr a tr b + 16 tr(c c^T) = 53118.14114810181
+trial 3  S(nD=2) = 7809.049481466983  8 tr a tr b + 16 tr(c c^T) = 7809.049481466988
+trial 4  S(nD=2) = 11104.535075194926  8 tr a tr b + 16 tr(c c^T) = 11104.535075194925
+max relative deviation over all nD: 2.3682869995831877e-14

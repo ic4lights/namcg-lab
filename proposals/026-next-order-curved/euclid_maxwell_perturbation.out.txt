@@ -1,0 +1,9 @@
+Step 1  J(0)/eps (jets): [ 26.9375 -19.4975   4.8425  -6.045 ]
+        J1 (formula)     : [-26.9375  19.4975  -4.8425   6.045 ]
+        max |B_jets/eps - B^(1)| = 7.105427357601002e-15   (O(eps) corrections expected)
+Step 2  rank of J1 map on quadratic a: 4 ; nullspace dimension 36 (of 40)
+   |J1| = 8.88e-16   tr a = 18.9703  tr b = 16.3876   S = 4082.0757
+   |J1| = 2.66e-15   tr a = 22.3365  tr b = 24.5406   S = 5494.3741
+   |J1| = 2.44e-15   tr a = 21.5872  tr b = 9.4578   S = 2414.7999
+   |J1| = 2.33e-15   tr a = 30.7762  tr b = 13.7249   S = 4993.8988
+   |J1| = 3.55e-15   tr a = 17.8023  tr b = 20.6631   S = 4929.0076
