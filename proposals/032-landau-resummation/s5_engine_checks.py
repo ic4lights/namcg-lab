@@ -97,9 +97,9 @@ if __name__ == "__main__":
         ss = [0.2, 0.4, 0.6, 0.8, 1.0]
         cs = np.array([coeff_k2(s) for s in ss])
         pc = np.polyfit(ss, cs, 4)[::-1]            # c0, c1, c2, ...
-        # tensor A with alpha upper index (alpha^a), y upper (y^b), kappa lower: a_mu = alpha_lower, v = y_up, q = kappa_lower
-        al_lo = eta @ alpha; q = kappa; v = y
-        qa = q @ alpha; q2 = q @ eta @ q; a2 = al_lo @ alpha; v2 = v @ eta @ v; av = al_lo @ v
+        # tensor A with m_a^c = -alpha_a y^c (alpha_a lower, y^c upper, kappa_c lower); u^mu = alpha^mu, a_mu = alpha_mu, v = y, q = kappa
+        al_lo = alpha; al_up = eta @ alpha; q = kappa; v = y
+        qa = q @ al_up; q2 = q @ eta @ q; a2 = al_lo @ al_up; v2 = v @ eta @ v; av = al_lo @ v
         A = (1 / 24) * (v2 * (qa ** 2 - q2 * a2) - 2 * q2 * av ** 2)
         ratios.append(pc[1] / A)
         print("   draw %d: T2/Theta0 |_{kappa^2} = %s + %s s + %s s^2 + ... ; c1/A = %s" % (t, np.round(pc[0], 8), np.round(pc[1], 8), np.round(pc[2], 8), np.round(pc[1] / A, 8)))

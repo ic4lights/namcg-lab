@@ -1,0 +1,17 @@
+C:\Users\redgi\Projects\namcg-lab\proposals\032-landau-resummation\s4_leaf_hessian.py:16: RuntimeWarning: overflow encountered in sinh
+  return np.sum((-1.0) ** n / np.sinh(n * np.pi * r))
+point | a_=|y4|/l | f_e/f_m on kernel plane (min..max over directions) | 1/a_
+  0 | 0.0238 | 42.01232 .. 42.01232 | 42.01232
+  1 | 2.7779 | 0.35999 .. 0.35999 | 0.35999
+  2 | 1.3598 | 0.73542 .. 0.73542 | 0.73542
+  3 | 0.0137 | 72.89202 .. 72.89202 | 72.89202
+
+Resummed Maxwell-type quadratic form q(alpha) (leaf-averaged), Re and Im parts
+   a_=0.024 Re: gauge test |q kappa|/(|q||kappa|) = 9.0e-09 ; eigenvalues on quotient [-0.231  0.436  1.   ] ; best fit to lambda*G residual 0.762 (rel.)
+   a_=0.024 Im: gauge test |q kappa|/(|q||kappa|) = 1.1e-01 ; eigenvalues on quotient [-1.    -0.143 -0.018] ; best fit to lambda*G residual 0.924 (rel.)
+   a_=2.778 Re: gauge test |q kappa|/(|q||kappa|) = 7.4e-09 ; eigenvalues on quotient [-1.    -0.574  0.02 ] ; best fit to lambda*G residual 0.987 (rel.)
+   a_=2.778 Im: gauge test |q kappa|/(|q||kappa|) = 2.0e-09 ; eigenvalues on quotient [-0.149  0.602  1.   ] ; best fit to lambda*G residual 0.822 (rel.)
+   a_=1.360 Re: gauge test |q kappa|/(|q||kappa|) = 3.2e-10 ; eigenvalues on quotient [-1.    -0.302  0.038] ; best fit to lambda*G residual 0.742 (rel.)
+   a_=1.360 Im: gauge test |q kappa|/(|q||kappa|) = 3.4e-10 ; eigenvalues on quotient [-0.287 -0.172  1.   ] ; best fit to lambda*G residual 0.399 (rel.)
+   a_=0.014 Re: gauge test |q kappa|/(|q||kappa|) = 1.7e-05 ; eigenvalues on quotient [-0.429  0.408  1.   ] ; best fit to lambda*G residual 0.727 (rel.)
+   a_=0.014 Im: gauge test |q kappa|/(|q||kappa|) = 5.0e-07 ; eigenvalues on quotient [-1.    -0.007 -0.   ] ; best fit to lambda*G residual 0.994 (rel.)
