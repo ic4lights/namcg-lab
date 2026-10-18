@@ -4,7 +4,7 @@ and  V(s) = Theta(s) * (chi_V(s) - 4),  chi_V = 2 cosh 2x + 2 cos 2y   (the Zeem
 Claims checked: (1) species identity  chi_str = 2cosh2x + 2cos2y + 6 - 2 - 8 cosh x cos y ;  (2) on the ray s = rho e^{-i th}: |C| ~ exp(rho |a cos th - b sin th|),
     |V| ~ same rate; vanishes only for th* = arctan(a/b);  (3) asymptotic form C -> (a b/pi^2) sinh^2( s (a - i b)/2 );  (4) on th* the integrand is bounded and oscillatory
     (decays only through the remainder), the integral  I4 = int_{ray th*} ds/s C(s)  exists (conditionally);  a real-axis (th=0, i eps) integral diverges exponentially for a>0.
-(5) masses enter chi as phases exp(-i s m) and do not change the rates."""
+(5) masses enter chi as phases exp(-i s m): unchanged rates on the real axis only; on a ray of angle th a mass m shifts the rate by -m sin th (see s8_mass_shift.py)."""
 import mpmath as mp, numpy as np
 mp.mp.dps = 40
 
