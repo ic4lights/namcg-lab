@@ -1,0 +1,18 @@
+Clifford relation (real 4x4): OK
+V algebra: [S,S] = +rhs err 0.00e+00 ; = -rhs err 2.00e+00
+D algebra: [S,S] = +rhs err 0.00e+00 ; = -rhs err 1.00e+00
+component count sum w d = 0.0
+T_0 = 0.0
+n=1 : max |sum_i w_i tr(Z...Z)| = 0.000e+00
+n=2 : max |sum_i w_i tr(Z...Z)| = 0.000e+00
+n=3 : max |sum_i w_i tr(Z...Z)| = 0.000e+00
+n=4 : max |sum_i w_i tr(Z...Z)| = 1.500e+00
+tr(Sigma_D Sigma_D)/tr(Sigma_V Sigma_V) over all index pairs: min 0.500000 max 0.500000
+random F: f_e=0.7144 f_m=1.4831 s=0.05  Str-char numeric (4.587e-05-0j)  4(cos s f_m - cosh s f_e)^2 = 0.00004587   s^4 (fe^2+fm^2)^2 = 0.00004590
+random F: f_e=0.7144 f_m=1.4831 s=0.30  Str-char numeric (0.05799972-0j)  4(cos s f_m - cosh s f_e)^2 = 0.05799972   s^4 (fe^2+fm^2)^2 = 0.05948715
+random F: f_e=3.4101 f_m=1.6559 s=0.05  Str-char numeric (0.00129556+0j)  4(cos s f_m - cosh s f_e)^2 = 0.00129556   s^4 (fe^2+fm^2)^2 = 0.00129077
+random F: f_e=3.4101 f_m=1.6559 s=0.30  Str-char numeric (1.91233558+0j)  4(cos s f_m - cosh s f_e)^2 = 1.91233558   s^4 (fe^2+fm^2)^2 = 1.67283804
+random F: f_e=0.4542 f_m=0.3032 s=0.05  Str-char numeric (5.6e-07+0j)  4(cos s f_m - cosh s f_e)^2 = 0.00000056   s^4 (fe^2+fm^2)^2 = 0.00000056
+random F: f_e=0.4542 f_m=0.3032 s=0.30  Str-char numeric (0.00072145+0j)  4(cos s f_m - cosh s f_e)^2 = 0.00072145   s^4 (fe^2+fm^2)^2 = 0.00072021
+random F: f_e=0.1299 f_m=0.8301 s=0.05  Str-char numeric (3.11e-06-0j)  4(cos s f_m - cosh s f_e)^2 = 0.00000311   s^4 (fe^2+fm^2)^2 = 0.00000312
+random F: f_e=0.1299 f_m=0.8301 s=0.30  Str-char numeric (0.00399695-0j)  4(cos s f_m - cosh s f_e)^2 = 0.00399695   s^4 (fe^2+fm^2)^2 = 0.00403748

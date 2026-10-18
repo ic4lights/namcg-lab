@@ -1,0 +1,10 @@
+random F: f_e=0.1299 f_m=0.8301 s=0.05  Str-char numeric (3.11e-06-0j)  4(cos s f_m - cosh s f_e)^2 = 0.00000311   s^4 (fe^2+fm^2)^2 = 0.00000312
+random F: f_e=0.1299 f_m=0.8301 s=0.30  Str-char numeric (0.00399695-0j)  4(cos s f_m - cosh s f_e)^2 = 0.00399695   s^4 (fe^2+fm^2)^2 = 0.00403748
+fit of f(t) = sum c_k t^k (degree 14, 41 nodes in [-0.4,0.4]):
+  c_0 = -3.512e-10
+  c_1 = 6.994e-09
+  c_2 = 4.753e+02
+  c_3 = -1.726e-06
+  c_4 = 1.149e+03
+  c_5 = 1.817e+01
+M_str = sum w d m = -7.8000 ;  predicted c_2 = -M_str Tr[chi e^-H] = 4.753230e+02 ;  fitted c_2 = 4.753230e+02
