@@ -3,4 +3,4 @@ pass 2 returncode 0
 undefined refs/cites: 60 ["Citation `Bueno2016ECG' on page 6 undefined", "Citation `DorauMuch2026' on page 50 undefined", "Citation `Cardy2013MI' on page 53 undefined", "Citation `Bueno2016ECG' on page 77 undefined", "Citation `McGaugh2016' on page 109 undefined"]
 multiply defined: 0 []
 pages: 277
-build dir: C:/Users/redgi/AppData/Local/Temp/claude/C--Users-redgi-Projects-namcg-lab/4d0177a0-6b3d-45ad-bb6d-645d2be99f00/scratchpad/build026
+build dir: C:/Users/redgi/AppData/Local/Temp/claude/C--Users-redgi-Projects-namcg-lab/4d0177a0-6b3d-45ad-bb6d-645d2be99f00/scratchpad/build026r2
