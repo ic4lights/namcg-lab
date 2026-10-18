@@ -1,0 +1,40 @@
+seed 0 pt (1/3, 0) rho 289/324
+   R_Sigma 4D-formula - intrinsic = -7203*2**(139/204)*3**(7/68)*5**(16/51)*7**(5/204)/1250 + 88344/4913  | W= -2401*2**(139/204)*3**(7/68)*5**(16/51)*7**(5/204)/1250 + 29448/4913
+   (3/2)X-T - 2R_Sigma = -535032/4913 + 7203*2**(139/204)*3**(7/68)*5**(16/51)*7**(5/204)/250  ; X/R_Sigma = 23592226*2**(139/204)*3**(7/68)*5**(16/51)*7**(5/204)/(-11796113*2**(139/204)*3**(7/68)*5**(16/51)*7**(5/204) + 74310000)  T/R_Sigma = 74310000/(-11796113*2**(139/204)*3**(7/68)*5**(16/51)*7**(5/204) + 74310000)
+   |grad ln rho|^2_Sigma / R_Sigma = 49080000/(-11796113*2**(139/204)*3**(7/68)*5**(16/51)*7**(5/204) + 74310000)
+seed 0 pt (1/3, -1/3) rho 55225/236196
+   R_Sigma 4D-formula - intrinsic = 0  | W= 0
+   (3/2)X-T - 2R_Sigma = 918330048/12977875  ; X/R_Sigma = 246363/65201  T/R_Sigma = 376765/130402
+   |grad ln rho|^2_Sigma / R_Sigma = 164242/65201
+seed 1 pt (0, 0) rho 1
+   R_Sigma 4D-formula - intrinsic = 0  | W= 0
+   (3/2)X-T - 2R_Sigma = 0  ; X/R_Sigma = 3  T/R_Sigma = 5/2
+   |grad ln rho|^2_Sigma / R_Sigma = 2
+seed 1 pt (-1/3, 1/2) rho 49/46656
+   R_Sigma 4D-formula - intrinsic = 0  | W= 0
+   (3/2)X-T - 2R_Sigma = -644972544/343  ; X/R_Sigma = 2403/829  T/R_Sigma = 4061/1658
+   |grad ln rho|^2_Sigma / R_Sigma = 1602/829
+seed 2 pt (0, 2/5) rho 187991521/31640625
+   R_Sigma 4D-formula - intrinsic = 0  | W= 0
+   (3/2)X-T - 2R_Sigma = 2562890625000/2577551744431  ; X/R_Sigma = 996711/249971  T/R_Sigma = 1496653/499942
+   |grad ln rho|^2_Sigma / R_Sigma = 664474/249971
+seed 2 pt (-1/3, -3/5) rho 1040191504/284765625
+   R_Sigma 4D-formula - intrinsic = 0  | W= 0
+   (3/2)X-T - 2R_Sigma = 2883251953125/1048383012094  ; X/R_Sigma = 395019831/115998805  T/R_Sigma = 627017441/231997610
+   |grad ln rho|^2_Sigma / R_Sigma = 263346554/115998805
+seed 3 pt (-1/5, 1/2) rho 42784681/8100000000
+   R_Sigma 4D-formula - intrinsic = 0  | W= 0
+   (3/2)X-T - 2R_Sigma = 19945440000000000/279854598421  ; X/R_Sigma = 867046503/282304435  T/R_Sigma = 1431655373/564608870
+   |grad ln rho|^2_Sigma / R_Sigma = 578031002/282304435
+seed 3 pt (1/2, 1/2) rho 1849/5184
+   R_Sigma 4D-formula - intrinsic = 0  | W= 0
+   (3/2)X-T - 2R_Sigma = -3732480/79507  ; X/R_Sigma = 1095/623  T/R_Sigma = 2341/1246
+   |grad ln rho|^2_Sigma / R_Sigma = 730/623
+seed 4 pt (-3/4, -1/5) rho 919034747569/230400000000
+   R_Sigma 4D-formula - intrinsic = 0  | W= 0
+   (3/2)X-T - 2R_Sigma = 1877852160000000000/881044608208740247  ; X/R_Sigma = 6366624303/1308303214  T/R_Sigma = 8983230731/2616606428
+   |grad ln rho|^2_Sigma / R_Sigma = 2122208101/654151607
+seed 4 pt (-1/3, 1/3) rho 104329/59049
+   R_Sigma 4D-formula - intrinsic = 0  | W= 0
+   (3/2)X-T - 2R_Sigma = 57395628/1982251  ; X/R_Sigma = -99030/16409  T/R_Sigma = -33106/16409
+   |grad ln rho|^2_Sigma / R_Sigma = -66020/16409

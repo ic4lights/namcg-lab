@@ -1,0 +1,11 @@
+J=0 profile sign 1 x0 (0, 0, 3/5, 4/5)  W= -25/18  24pi sigma_fs = -1/72  24pi C_E = -59/48  24pi C_Om = 179/144  TOTAL = 0
+J=0 profile sign 1 x0 (0, 0, 4/5, -3/5)  W= -25/18  24pi sigma_fs = -1/72  24pi C_E = -59/48  24pi C_Om = 179/144  TOTAL = 0
+J=0 profile sign -1 x0 (0, 0, 3/5, 4/5)  W= -200/9  24pi sigma_fs = 2008/9  24pi C_E = -944/3  24pi C_Om = 824/9  TOTAL = 0
+J=0 profile sign -1 x0 (0, 0, 4/5, -3/5)  W= -200/9  24pi sigma_fs = 2008/9  24pi C_E = -944/3  24pi C_Om = 824/9  TOTAL = 0
+J!=0 profile 1+r^2 x0 (0, 0, 3/5, 4/5)  W= -401/1944  24pi sigma_fs = 4/81  24pi C_E = -1447/2592  24pi C_Om = 41/72  TOTAL = 157/2592
+J!=0 profile 1/(1+r^2) x0 (0, 0, 3/5, 4/5)  W= 14/3  24pi sigma_fs = -32  24pi C_E = 65/2  24pi C_Om = -6  TOTAL = -11/2
+J!=0 profile r^3+2 x0 (0, 0, 3/5, 4/5)  W= -413/4374  24pi sigma_fs = 76/729  24pi C_E = -1579/5832  24pi C_Om = 41/162  TOTAL = 505/5832
+J=0 sign 1  e - R/6 = 0  uniform scalar+ghost contact (24pi units) 6(e-R/6) = 0
+J=0 sign -1  e - R/6 = 0  uniform scalar+ghost contact (24pi units) 6(e-R/6) = 0
+J!=0 1+r^2  e - R/6 = -259/15552
+J!=0 1/(1+r^2)  e - R/6 = 101/12
