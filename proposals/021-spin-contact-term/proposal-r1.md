@@ -1,103 +1,47 @@
 # Proposal 021-spin-contact-term, round 1
 
 ## Result
+Bounded no-go plus localisation of the missing ingredient. Problem B stays open; nothing is closed.
 
-Item 021 establishes a **bounded no-go** at n_D=2 (IKKT content, N_s=6) for the comparison of G_T with G_A at the Lambda^2 order: three distinct contact/edge term prescriptions give c_A ∈ {2, 1, 0} while c_T=0 in all cases. None of these values derives the stationarity condition delta S_D=0 for fixed-volume tensor variations. The "smooth first-order cone" reading gives c_A^{sm}=c_T=0, an equality of vanishing coefficients that holds whenever N_tot=0 and Q is sector-uniform, but this is a structural identity not a derivation. Which c_A value applies depends on the flux of nabla ln rho through Sigma in the regularised replica — a quantity not determined by any of the derivations herein.
+1. **Direction of the spin term (established algebra).** The spin term is not missing from the area side; it is what creates the gap. The antiperiodic Dirac cone value +1/3 equals the unrotated / (G,rho,dTheta)-reading value -2/3 plus +1 per Dirac field, and that +1 is exactly the Lichnerowicz contact of the R_G/4 term. `dirac_lichnerowicz.py` gives tr E_f/4 = R_G/4 - T^2/16 + T T'/8 (residual 3e-13, 7 random closed omega), i.e. Q_f = 1/4 per component in the torsion reading (scalar: +T^2/16). `cone_contact_bookkeeping.py` gives (AP - P)'(1) = 1/2 = 2 Q_f per two-component block. The Larsen-Wilczek / xi R-type term is therefore already inside c_A = ... + n_D/3 and cannot be added again. Double counting with the 015 Q=0 statement is avoided as follows: Q=0 refers to the endomorphism E in (G,rho,dTheta) variables on the pulled-back cover, whereas the spin excess is the holonomy/gluing of the connection; they are the same number at n=1, not two terms. It raises c_A; closing needs c_A to fall by 2.
+2. **First-order Weitzenboeck identity (established, exact symbolic).** For omega = omega_bar + eps dA (any constant omega_bar, any A): R_G^(1) = -2 Box delta ln rho and rho R[g_rho]^(1) = -(1/2) rho^2 R_G^(1) (`firstorder_poisson.py`). Hence a first-order smooth conical deficit of a Poisson structure forces ln rho to carry flux through Sigma (rho singular); the 015/017/019 replica (pull-back, rho regular, cone on G) is not a limit of smooth Poisson structures. For the smooth first-order replica Q = 1/4 in every sector (the -1/2 factor of 015, now branch-free) and c_A^sm = -N_tot/12. For Dirac fields this reproduces +1/3 with no gluing assumption, an independent support for the 019 fermion value. Identity: c_A^sm = c_A(AP) - (1/4)(N_s+2). The two readings differ by the total derivative 3c Box delta ln rho, i.e. by the flux of grad ln rho through Sigma.
+3. **Outcome at (n_D, N_s) = (2, 6) (c_T = 0, N_tot = 0).** Fixed-state AP: c_A = 2. AP plus a Kabat/Donnelly-Wall vector contact (-1): 1. Smooth first-order: 0. The 0 is 0 = 0 for every sector-uniform Q because N_tot = 0 (same character as the 019 periodic coincidence); it is not a derivation. Standard contacts have weight +1 per Dirac (included), -1 vector, 0 scalars/ghosts, so at most c_A = 1. No known contact/edge term closes the gap non-vacuously at Lambda^2.
+4. **Edge modes.** Donnelly-Wall edge modes reproduce the Kabat vector contact for Maxwell (abstract level). Kabat: for spin 1/2 the BH and entanglement entropies are identical (abstract verified), so no fermion contact beyond the Lichnerowicz term already counted. I found no source on fermion edge modes (searched; not found, so not examined). Whether the symplectic-diffeomorphism sector of a^mu has a Maxwell-like edge term is not shown; even granted, c_A = 1.
+5. **Where the ingredient sits.** Which of {2, 0} is the Lambda^2 area coefficient is decided by one boundary datum: the flux of grad ln rho through Sigma in the regularised replica (zero for the fixed-state cover, nonzero for the smooth replica). This is a tip-regularisation (Problem A) datum, not a bulk-operator datum. If it selects the smooth value, the Lambda^2 comparison is 0 = 0 at the D=10 content and the burden moves to the next order (019 avenue 2).
 
 ## Target and status
-
-- **Problem**: B (entanglement stationarity from microscopic action).
-- **Exact current status** (from `chapters/appH-microscopic-proofs.tex` L44-46): OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL.
-- **Original target** (from `chapters/ch17-agenda.tex` L121-137): Derive delta S_D=0 at fixed volume as a Ward identity of the microscopic action, for fixed-volume variations of the tensor (non-conformal) block; requires specified map g^(0) ↦ g and no use of an already-existing metric.
-- **Dependencies**: Problem A (matrix-to-modular map, OPEN/CRITICAL PATH); Problem F (sector sum for G_eff, OPEN/CRITICAL PATH).
-- **DERIVED / PROGRAMME-CONDITIONAL**: The three c_A values are derived conditional on specific contact prescriptions (Lichnerowicz Q_f=1/4 per component, Kabat edge term -1 per Dirac field, or smooth first-order deformation with sector-uniform Q). None closes the original target.
+Problem B (`sec:status-B`): Status OPEN, Priority CRITICAL PATH, Completion PROGRAMME-CONDITIONAL (appH lines 45-47). Chapter 17 full-GR criterion: A, B, C, D1, E, F, G-derived, N all DERIVED; H, I, J optional. No discrepancy found. Problem F enters only through c_T. Original target: derive fixed-volume stationarity of the tensor block with the area coefficient identified with the emergent-metric Einstein coefficient (G_T = G_A). Dependencies: A (state, modular flow, tip domain), F, C, D. This package: PROGRAMME-CONDITIONAL bounded no-go; no label change.
 
 ## Source reading
-
-**Digest + targeted reads.** Read `scratch/digest.md` (manuscript digest showing 30 chapter files, current head 8bdb9a5, Problem B status OPEN/CRITICAL PATH at L45-46 of appH). Targeted reads:
-1. `chapters/appH-microscopic-proofs.tex` L41-199 (Problem B section: ledger label, missing step, replica insertion identity, replica cone coefficient, fermionic content, fermion replica gluing).
-2. `chapters/ch17-agenda.tex` L111-170 (Critical-path problems I; Problem B at L121-137).
-3. `reports/ledger.md` L145-158 (Items 017, 019, 020 — the prior open avenue (1) for this item).
-4. `proposals/021-spin-contact-term/appH_insert.tex` (three paragraphs: spin term/Lichnerowicz contact, smooth first-order cone, outcome for n_D=2).
-5. `proposals/021-spin-contact-term/cone_contact_bookkeeping.py`, `dirac_lichnerowicz.py`, `firstorder_poisson.py` (verification scripts).
-
-All files cited by this proposal were read in full or to the extent their content is relevant. The manuscript's Problem B passage at appH L41-199 was read in full (lines 41-199 inclusive).
+Digest + targeted reads (digest flagged dirty-chapters: yes; not a full scan). Read in full: appH `sec:status-B` (lines 41-198), 019 review-r2 and insert, 017 gap_table.py and hk_lib header, 015 verify_E_torsion.py, `reports/sme-scout-gluing-fermions-20261015.md`, ch08 `eq:O-eta`. The working tree now also contains the accepted 020 block and Troost2000; neither touches the anchor (anchor strings re-counted: each occurs once).
 
 ## Research and reasoning
+Setting: Poisson limit, eta = delta, alpha = 1, Lambda^2 term, one loop (H1-H9 of 019 unchanged; H10 relaxed here).
 
-### Background: the gap that item 021 addresses
+(a) Operators. O_s = -D_mu D_mu (not rho^{-1} D rho D, which is the Laplace-Beltrami operator of G with E = 0); O_f = O_s - (1/2) gamma^{mu nu}{Theta_{mu nu},.}. Gilkey data extracted in exact arithmetic reproduce E_s = -(1/2) Box ln rho + (1/4)|d ln rho|^2, the scalar torsion identity of 015, and the 019 table entry tr(R_G/6 - E_f) = (4/6) R[g_rho]/rho + (1/2) X (independent re-derivation, diff <= 2e-13). New: the E_f identity. Interpretation: D_f = D_LC minus axial torsion minus a trace part absorbed in rho; no V^2 or Box ln rho term survives in the trace.
 
-Items 017 and 019 established, for the Poisson-limit operators at Lambda^2 about a constant background bar{Theta}:
-- With antiperiodic gluing (polar-frame condition from quasi-free state with rotational modular flow): c_A - c_T = 4 - n_D. At n_D=2 this gap vanishes because N_tot = N_s + 2 - 4n_D = 0, giving c_A = c_T = 0 for unrotated periodic gluing. This is "an equality of vanishing Lambda^2 coefficients, not a derivation" (appH L189).
-- With antiperiodic gluing: c_A - c_T = 4 - n_D = 2 at n_D=2; the Dirac field contributes +1/3 per Dirac field to c_A (two blocks, each giving -(-1/6) = +1/6, weight -1 gives +1/3).
+(b) Sides. T side: quadratic-form eigenvalue c_T = N_tot/6 - 4b, reading independent. A side: cone data of the chosen replica, plus a contact if E carries a delta. Reading (I): pulled-back, rho regular, E bounded, Q = 0 for bosons; the Dirac spin gluing adds +1 (holonomy of the Cartesian-component connection, equal at n=1 to the Q=1/4 delta of the Lichnerowicz reading). Reading (II): smooth first-order, all Q = 1/4. The fermion value is +1/3 in both; bosons are 1 (I) versus -1/2 (II) times the R[g_rho] coefficient.
 
-The gap between c_T and c_A for antiperiodic gluing at n_D=2 is 2. Item 021 asks: which contact/edge terms could account for this difference? Three avenues are evaluated.
+(c) Bookkeeping (`cone_contact_bookkeeping.py`; W = N_tot, b = 1 - n_D/2): c_T = W/6 - 4b; c_A(unrot) = W/6 (gap 4 - 2n_D); c_A(AP) = W/6 + n_D (gap 4 - n_D); c_A(AP + vector contact) = W/6 + n_D - 1 (gap 3 - n_D); c_A(smooth) = -W/12 (gap 7/2 - N_s/4 - n_D). Smooth equals c_T on the line N_s = 14 - 4 n_D (e.g. non-vacuous at (n_D,N_s) = (5/2,4), (3,2), c_T > 0); supersymmetric D=6 (1,2) and D=4 (1/2,0) are not on it; (2,6) is on it with W = 0. Covariant N=4 SYM benchmark (minimal scalars, Lichnerowicz Dirac, Maxwell with Ricci): induced = cone with Kabat contact = 1, not 0; the matrix c_T = 0 differs because of the non-covariant rho^2 X structure.
 
-### Avenue (a): Lichnerowicz spin contact term
+(d) Sector cutoffs. With separate cutoffs the gap is 4 Lambda_v^2 - n_D Lambda_f^2 (scalar and ghost sectors 0); it vanishes at Lambda_f^2 = 2 Lambda_v^2 for n_D = 2, which nothing derived forces and which would also spoil c_T = 0. Recorded only.
 
-From the Dirac operator O_f = -(gamma^mu D_mu)^2 on G with omega_sigma = -1/2 partial_sigma ln rho + beta_sigma:
-- At random two-jets of a closed omega, tr(E_f)/4 = R_G/4 + torsion terms, with no further term. This is verified by `dirac_lichnerowicz.py` (7 samples on random closed omega, exact rational arithmetic at 2-jets).
-- The Lichnerowicz coefficient per Dirac component is Q_f = 1/4 in the torsion variables. In the (G, rho, partial Theta) variables it is Q_f = 0.
-- The difference between the antiperiodic cone value (+1/3 per Dirac field) and the unrotated periodic value (-2/3 per Dirac field) is +1 = 2 Q_f per Dirac field: the excess +1 per Dirac field of the antiperiodic over the unrotated area coefficient is the Lichnerowicz contact.
-- For n_D=2, the spin contact contributes at most +n_D × (+1) = +2 to c_A. Adding a contact -tr(Q_f) per Dirac field to c_A would count it twice (the contact is already contained in the antiperiodic cone value).
+Literature (fetched): Kabat hep-th/9503016 (NPB 453 (1995) 281-299, DOI 10.1016/0550-3213(95)00443-V): BH = entanglement entropy for spin 0 and 1/2, contact term for spin 1 (abstract). Donnelly-Wall 1506.05792 (PRD 94, 104053): edge modes account for the Kabat contact (abstract level). Larsen-Wilczek hep-th/9506066 (NPB 458 (1996) 249; abstract only; not used in the LaTeX). Solodukhin 1104.3712: abstract only this round; the vector value -1 in these units is taken from the merged statement that the vector with ghosts goes from 1/3 to -2/3. Not verified: any source on fermion edge modes; a Maxwell-like edge structure for the symplectic gauge sector.
 
-**Result**: In the torsion reading, Q_f=1/4 per component gives a contact of +1 per Dirac field relative to the unrotated value. This accounts for the gap 4-n_D = 2 at n_D=2 between c_A and c_T for antiperiodic gluing. The coefficient is already contained in c_A as defined from the antiperiodic cone; no further addition is needed.
-
-### Avenue (b): Smooth first-order Poisson deformation
-
-For omega = bar{omega} + epsilon dA with constant antisymmetric invertible bar{omega}:
-- First order: R_G^{(1)} = -2 Box_{bar{G}}(delta ln rho). A conical deficit requires delta ln rho to carry flux through Sigma, i.e., a singular rho.
-- The replica of the main manuscript (rho regular, cone on G) is not a limit of smooth Poisson structures. For smooth deformation every sector has Q=1/4 at first order and c_A^{sm} = -N_tot/12.
-- Verified by `firstorder_poisson.py` (exact symbolic computation on arbitrary A_nu).
-
-**Result**: At n_D=2, N_s=6: N_tot = 0, so c_A^{sm} = 0 = c_T. This equality holds for every sector-uniform Q because N_tot=0; it is a structural identity not a derivation of delta S_D=0. The factor -1/2 between g_rho and G readings (R[g_rho]^{(1)} * (1/rho_0) / R_G^{(1)} = -1/2) is the key geometric input making c_A^{sm} equal to c_T when Q is sector-uniform.
-
-### Avenue (c): Kabat-valued contact for the vector sector
-
-The connection sector at alpha=1 gives coefficient 5/6 on the two modes with delta rho=0 and 1/2 on the mode with delta rho≠0. If the vector field carries a contact of the Kabat value -1 (in these units, taking the Maxwell field with ghosts from +1/3 to -2/3), then c_A = 1 at n_D=2 for antiperiodic Dirac fields.
-
-**Result**: This is conditional on whether the symplectic gauge sector a^mu in the matrix model carries a Donnelly-Wall edge-mode term of the Kabat value. The manuscript does not establish this; it is an external input. Not verified here.
-
-### Which reading applies to the matrix state?
-
-The difference between the fixed-state antiperiodic c_A=2 and the smooth cone c_A^{sm}=0 is carried by the boundary flux of nabla ln rho through Sigma in the regularised replica:
-- The smooth reading requires singular rho (delta ln rho with flux through Sigma).
-- The fixed-state replica has regular rho and cone on G.
-- These differ by the total derivative Box(delta ln rho), i.e., the boundary flux.
-
-Which of c_A=2 and c_A^{sm}=0 gives the Lambda^2 area coefficient of the matrix state is **the value of this flux** — not determined by any derivation in this proposal. The Kabat-contacted value c_A=1 would apply if the vector sector carries an edge-mode term of -1, also not determined here.
-
-### Why this does not close Problem B
-
-Problem B's original target (ch17 L121-137): "Derive delta S_D=0 at fixed volume as a Ward identity of the microscopic action, for fixed-volume variations of the tensor (non-conformal) block."
-
-The bounded no-go here addresses one sub-component: the Lambda^2 area coefficient c_A and its comparison with the tensor kinetic coefficient c_T. Even if all three readings gave identical c_A = c_T, that would not derive delta S_D=0 for fixed-volume tensor variations — it would only show that the Lambda^2 coefficients of the area and tensor blocks match. The missing steps (appH L67-77) still require:
-1. Deriving delta S_D=0 from microscopic dynamics for fixed-volume tensor block variations.
-2. Establishing the area contribution and its relation to the emergent metric without presupposing that metric or the fluctuation split.
-3. Specifying the map g^(0) ↦ g between auxiliary scaffold and emergent diamond.
-
-None of these are addressed by computing contact terms at Lambda^2. The no-go is bounded by the hypotheses stated (Poisson limit, one loop, Lambda^2 order, Feynman gauge alpha=1, quasi-free state with rotational modular flow) and does not generalise beyond them.
+Fork (hypotheses and relaxations of c_A - c_T = 2): H10 conical-only (relaxed: contacts examined, result above); replica geometry (I) vs (II) (relaxed: (II) gives 0 = 0); sectors/cutoffs (d); next order Lambda^0 and log on a curved J = 0 leaf (open); vector/ghost/scalar tip domains (open); non-rotational or non-quasi-free state (open); symplectic-gauge edge modes (open, bounded by c_A = 1 if Maxwell-like).
 
 ## Claim classification
-
-| # | Claim | Classification |
-|---|-------|---------------|
-| 1 | tr(E_f)/4 = R_G/4 + torsion terms at random two-jets of closed omega (no further term) | **Established identity** — verified by `dirac_lichnerowicz.py` on 7 random samples, exact rational arithmetic. Residual < 10^{-9} in all components. |
-| 2 | Lichnerowicz coefficient Q_f = 1/4 per Dirac component (torsion variables) | **Established identity** — follows from (1). Verified by fitting tr(E_f)/4 - R_G/4 to torsion invariants T^2, TT, V^2, box ln rho on the same samples. |
-| 3 | c_A(Dirac) = +1/3 per Dirac field with antiperiodic gluing (two blocks, weight -1) | **Established identity** — direct from heat-trace constant (n^2-1)/(12n), derivative at n=1 gives -1/6 per block, S = (1-n partial_n)F, minus sign from entropy formula gives +1/6 per block × 2 blocks × (-1) weight = +1/3. |
-| 4 | Smooth cone: c_A^{sm} = -N_tot/12 for sector-uniform Q=1/4 | **Conditional result** — verified by `firstorder_poisson.py` (exact symbolic computation on arbitrary A_nu). Conditional on smooth deformation (singular rho) not being the fixed-state replica. |
-| 5 | At n_D=2, N_s=6: c_T = c_A^{sm} = 0, equality of vanishing coefficients | **Established identity** — direct consequence of (4) with N_tot=0. Not a derivation of delta S_D=0. |
-| 6 | Kabat contact -1 for vector sector gives c_A = 1 at n_D=2 | **Conditional result** — conditional on the symplectic gauge sector a^mu carrying an edge-mode term of the Donnelly-Wall value in these units. Not verified here. |
-| 7 | The flux of nabla ln rho through Sigma determines which c_A applies | **Established identity** — follows from the total derivative Box(delta ln rho) = boundary term. The value is not determined by any derivation herein. |
-| 8 | None of these readings derives delta S_D=0 for fixed-volume tensor variations | **Conditional result** — conditional on Problem B's stated missing step (appH L67-77, ch17 L126-137). Directly follows from the scope statements. |
+- E_f = R_G/4 - T^2/16 + T T'/8 (trace/4); first-order identities; (AP - P)' = 2 Q_f: established (symbolic / exact-arithmetic numerics; the cone constants are the 019 conditional ones).
+- Spin excess = Lichnerowicz contact, no double counting: established at n=1, conditional on the 019 constants.
+- c_A^sm = -N_tot/12 with gluing-free Dirac +1/3: conditional (first-order smooth replica, alpha = 1, Lambda^2).
+- Smooth replica forced by the Poisson class: conditional (smooth family with conical limit).
+- Difference of readings = flux of grad ln rho: established algebra; its value in the matrix replica: unresolved.
+- Vector contact -1 applying to a^mu: input / conjecture.
+- Fermion edge modes: unresolved (no source found).
+- Cutoff relation Lambda_f^2 = 2 Lambda_v^2: input, not derived.
 
 ## Proposed changes
-
-### File: `chapters/appH-microscopic-proofs.tex`
-
-Anchor paragraph: `\paragraph{Fermion replica gluing for \(\operatorname{Tr}\rho^n\) and the supertrace character (conditional; not closure).}` (L193, first sentence). The preceding block ends with `These statements are conditional on ... they do not compute the next order of either side. Problems~B, C, D, F and~G remain open.` at L198.
-
-Insert the following three paragraphs **before** `\section{Problem C}` (i.e., after the existing L198 block and before the Problem C section):
+File `chapters/appH-microscopic-proofs.tex`, `sec:status-B`. Anchor, occurring once and ending the 019 third paragraph: "...and they do not compute the next order of either side. Problems~B, C, D, F and~G remain open." The block goes immediately after that line and before `\section{Problem C: conformal mode and Cassini}` (occurs once). Nothing is replaced. No `\ref` added. New cites Kabat1995 and DonnellyWall2016 (neither is in `bib/namcg.bib`; entries in `bib_entries.bib`, for the integrator). `\LUV` is defined (`namcg-book7.tex:54`). Scratch compile outside the repo (working tree plus block plus entries; pdflatex, bibtex, pdflatex x2): 271 pages, 0 undefined or multiply-defined lines. `appH_insert.tex` is the same text (LF; integrator writes CRLF).
 
 ```latex
 \paragraph{Spin term, Lichnerowicz contact and the smooth first-order cone in the comparison of \(G_T\) with \(G_A\) (conditional; not closure).}
@@ -108,93 +52,62 @@ Keep the setting of the two preceding paragraphs: Poisson limit, Euclidean secti
 \emph{Outcome for \(n_D=2\), \(N_s=6\).} Here \(c_T=0\) and \(N_{\mathrm{tot}}=0\). The fixed-state replica gives \(c_A=2\). If the connection sector carries a contact of the Kabat value \(-1\) in these units (the value that takes the vector with its ghosts from \(\tfrac13\) to \(-\tfrac23\)), which for a Maxwell field is the edge-mode term of Donnelly and Wall~\cite{DonnellyWall2016}, then \(c_A=1\). The smooth reading gives \(c_A^{\mathrm{sm}}=0=c_T\), an equality of vanishing coefficients, which holds for every sector-uniform \(Q\) because \(N_{\mathrm{tot}}=0\) and is not a derivation. The contacts of these three types have weight \(+1\) per Dirac field (already contained in \(c_A\)), \(-1\) for the vector and \(0\) for the scalars and ghosts, so they give at most the value \(1\) above. Which of \(2\) and \(0\) is the \(\LUV^2\) area coefficient of the matrix state is the value of the flux of \(\nabla\ln\rho\) through \(\Sigma\) in the regularised replica. These statements are for the Poisson-limit operators, the \(\LUV^2\) term, one loop, \(\alpha=1\) and the fixed-state and first-order smooth replicas stated; they do not derive that flux, the state, the tip domain, or the gluing, do not treat edge modes of the symplectic gauge sector of \(a^\mu\), of the ghosts or of fermions (not examined), the \(\LUV^4\) term for \(N_{\mathrm{tot}}\neq0\), or the next order of either side, and give no value or sign of \(G_{\mathrm{eff}}\). Problems~B, C, D, F and~G remain open.
 ```
 
-**What stays**: The preceding paragraphs on fermion replica gluing (L193-198) are unchanged — they provide the antiperiodic value c_A=2 at n_D=2 that this block explains. The Problem C section is unchanged; the inserted block precedes it. No labels or references in existing text are altered.
-
-**Bibliography entries needed** (to be added to `bib/namcg.bib` by the integrator if accepted):
+BibTeX (records verified through Crossref; DOIs resolve):
 
 ```bibtex
 @article{Kabat1995,
-  author  = {Kabat, Robert},
-  title   = {Gravitational entropy and corner variables},
-  journal = {arXiv:gr-qc/9504027},
-  year    = {1995}
+  author  = {Kabat, Daniel},
+  title   = {Black hole entropy and entropy of entanglement},
+  journal = {Nuclear Physics B},
+  volume  = {453},
+  number  = {1--2},
+  pages   = {281--299},
+  year    = {1995},
+  doi     = {10.1016/0550-3213(95)00443-V},
+  eprint  = {hep-th/9503016},
+  archivePrefix = {arXiv}
 }
 
 @article{DonnellyWall2016,
-  author  = {Donnelly, Wayne and Wall, Anthony},
-  title   = {Entanglement horizon and universal conductance},
-  journal = {arXiv:1604.08307},
-  year    = {2016}
+  author  = {Donnelly, William and Wall, Aron C.},
+  title   = {Geometric entropy and edge modes of the electromagnetic field},
+  journal = {Physical Review D},
+  volume  = {94},
+  number  = {10},
+  pages   = {104053},
+  year    = {2016},
+  doi     = {10.1103/PhysRevD.94.104053},
+  eprint  = {1506.05792},
+  archivePrefix = {arXiv}
 }
 ```
 
-**Verification of citations**: 
-- `Solodukhin2011` is already in bib/namcg.bib (L439).
-- `SusskindUglum1994` is already in bib/namcg.bib (L452).
-- `CasiniHuerta2009` and `FursaevMiele1997` were verified via Crossref by item 019.
-- `Kabat1995`: arXiv gr-qc/9504027 — **verified** (arXiv record exists, title "Gravitational entropy and corner variables" matches the claim about Lichnerowicz contact for spin-1/2). Not independently verified beyond arXiv metadata.
-- `DonnellyWall2016`: arXiv 1604.08307 — **verified** (arXiv record exists, title "Entanglement horizon and universal conductance" matches the claim about edge-mode terms for Maxwell fields). Not independently verified beyond arXiv metadata.
-
-### File: `reports/ledger.md`
-
-Append after item 020's entry (around L158) the following ledger entry:
-
-```
-## 021-spin-contact-term (Problem B) — not yet integrated
-- Route: open avenue (1) from item 019 (contact/edge terms at n_D=2 for Lambda^2). Rounds: 1. r1 AWRR | no PRIOR-CLAIM-ERROR.
-- Proposed insert: three paragraphs in appH before \section{Problem C} (L198-L199), recording Lichnerowicz contact Q_f=1/4, smooth first-order cone c_A^{sm}, and outcome at IKKT n_D=2.
-- Two bib entries proposed: Kabat1995 (arXiv:gr-qc/9504027, VERIFIED), DonnellyWall2016 (arXiv:1604.08307, VERIFIED).
-- Result: bounded no-go at n_D=2; three possible c_A values (2, 1, 0) depending on contact prescription. None derives delta S_D=0 or G_T=G_A. No label changes.
-```
-
 ## Verification scripts
-
-1. **`proposals/021-spin-contact-term/dirac_lichnerowicz.py`**: Verifies tr(E_f)/4 = R_G/4 + torsion terms at random two-jets of closed omega (7 samples), confirms Q_f=1/4 per component via fit to T^2, TT, V^2, box invariants. Also verifies tr(R_G/6 - E_f) = (4/6)R[g_rho]/rho + (1/2)X (the manuscript's table entry). Exact rational arithmetic on random polynomial omega of degree 2 and 3.
-
-2. **`proposals/021-spin-contact-term/firstorder_poisson.py`**: Verifies R_G^{(1)} = -2 Box_{G0}(delta ln rho) and R[g_rho]^{(1)} * (1/rho_0) / R_G^{(1)} = -1/2 for first-order Poisson deformation omega = bar{omega} + eps dA on arbitrary A_nu. Exact symbolic computation with sympy, no truncation beyond first order in epsilon.
-
-3. **`proposals/021-spin-contact-term/cone_contact_bookkeeping.py`**: (A) Bookkeeping of cone constants per two-component block: AP = (n^2-1)/(12n), P = (1/6)(1/n - n), contact dAP-dP = 3/2 giving Q=1/4 per component. (B) Full bookkeeping of c_T, c_A_unrot, c_A_AP, c_A_smooth at general N_s and n_D, plus IKKT point N_s=6, n_D=2 showing c_T=0, unrot=0, AP=2, smooth=0, AP+vector contact=1. Also computes sector-resolved gap Delta_s for separate cutoffs (vanishes iff Lambda_f^2 = 2 Lambda_v^2).
+- `dirac_lichnerowicz.py` / `.out.txt`: Gilkey extraction of E_s, E_f for random closed omega; scalar formula, Dirac torsion identity (fit), manuscript table entry. About 2.5 min.
+- `firstorder_poisson.py` / `.out.txt`: symbolic R_G^(1) = -2 Box delta ln rho, rho R[g_rho]^(1) = -(1/2) rho^2 R_G^(1), E_s^(1) = R^(1)/4.
+- `cone_contact_bookkeeping.py` / `.out.txt`: cone constants AP/P (odd n up to 15), contact derivative, all c_A scenarios, IKKT values, equality line, sector-cutoff gap.
+Run with `python -I`. These are checks, not proofs.
 
 ## Decisions Taken
-
-1. **No scope change.** Deriving delta S_D=0 for fixed-volume tensor block variations does not depend on determining c_A at the Lambda^2 order alone. The missing steps in Problem B (appH L67-77) require: (i) deriving the stationarity condition from microscopic dynamics; (ii) establishing the area contribution and its relation to emergent metric without presupposing it; (iii) specifying g^(0) ↦ g. Computing contact terms at Lambda^2 addresses none of these directly. **Alternative rejected**: proposing that determining c_A for all contact types is a prerequisite for Problem B's derivation — this would be an unsupported scope expansion, since the missing step does not state such a dependency.
-
-2. **No status label change.** Problem B remains OPEN/CRITICAL PATH/PROGRAMME-CONDITIONAL. The three possible c_A values constrain what a correct derivation must account for but do not establish delta S_D=0 or close any sub-problem. **Alternative rejected**: marking B as CONDITIONAL on a future determination of the boundary flux — this would be closure-by-scope (the original target is not "compute c_A" but "derive delta S_D=0").
-
-3. **No structural redesign.** The bounded no-go is within the Poisson-limit / one-loop / Lambda^2 / quasi-free-state scope and does not suggest a core modification to NAMCG. The open avenue remains: which contact/edge terms apply at n_D=2, i.e., what is the flux of nabla ln rho through Sigma. **Alternative rejected**: proposing that the smooth first-order cone reading is the canonical replica — this would change the status of the fixed-state replica without derivation from Problem A.
+- Treated the proposed "missing +1" as a sign question and answered it directly: it is an excess to be removed, not a deficit to be supplied.
+- Put the first-order smooth reading in the LaTeX because it removes the branch dependence of the factor -1/2 and independently supports the 019 fermion value. Rejected a stronger statement that the smooth reading is the physical one (not derivable here).
+- Rejected: writing the sector-cutoff relation into the manuscript (tuned input); writing the equality line N_s = 14 - 4 n_D into the manuscript (unphysical contents; kept here only).
+- Spacetime remains emergent: G is built from Theta throughout.
 
 ## Milestone assessment
-
-**Routine.** No milestone trigger applies. The result does not: (M1) establish a central step or important sub-lemma toward deriving delta S_D=0; (M2) resolve a consequential dependency or inconsistency (the gap between c_A values is bounded, not closed); (M3) correct a materially false claim; (M4) close an open critical-path problem. Item 021 provides a bounded no-go and identifies the remaining ingredient (boundary flux of nabla ln rho through Sigma), but does not produce it.
+Candidate M2 (new bounded no-go: Lichnerowicz, Kabat and Donnelly-Wall contacts do not close the Lambda^2 gap non-vacuously; the ambiguity is localised to a boundary-flux datum). Not a breakthrough: no critical-path step is derived.
 
 ## Status-label recommendation
-
-Deriving from `chapters/ch17-agenda.tex` (L121-137, L139-157) and `chapters/appH-microscopic-proofs.tex` (L44-46, L201+):
-
-| Problem | Current label in ch17 | Current label in appH | Match? |
-|---------|----------------------|-----------------------|--------|
-| B       | OPEN, CRITICAL PATH  | OPEN, CRITICAL PATH   | Yes    |
-| C       | OPEN, CRITICAL PATH  | OPEN (L201)           | Yes    |
-| D       | (in ch17-coeff)      | (separate section)    | —      |
-| F       | (in ch17-coeff)      | OPEN, CRITICAL PATH   | Yes    |
-
-**Recommendation**: No label changes. Problem B status remains OPEN/CRITICAL PATH/PROGRAMME-CONDITIONAL as stated. Item 021 does not alter the original classification because: (i) delta S_D=0 is not derived; (ii) G_T=G_A is not established; (iii) no sub-problem is closed by the bounded no-go.
+None. Problem B and the Chapter 17 set (A, B, C, D1, E, F, G-derived, N) unchanged.
 
 ## Author decision needed
-
-**None.** The result is a bounded no-go within the stated hypotheses. It does not propose a structural core change, scope modification, or status label change requiring author approval. The question of which c_A value applies to the matrix state at n_D=2 depends on computing the boundary flux of nabla ln rho through Sigma in the regularised replica — this is an open research step, not a decision point requiring author intervention.
+None.
 
 ## Remaining open step
-
-1. **Primary**: Compute the flux of nabla ln rho through Sigma in the regularised replica for the matrix state at n_D=2 (determines which of c_A ∈ {2, 1, 0} applies). This requires extending beyond the Poisson-limit operators to include edge modes of a^mu and fermions, and treating the tip domain of the replica cover — none of which are examined in this proposal.
-
-2. **Secondary**: Derive delta S_D=0 for fixed-volume tensor block variations from the microscopic action (the original Problem B target). This remains open regardless of the bounded no-go at Lambda^2, as it requires: specified map g^(0) ↦ g; evaluation of sub-Lambda^2 terms (tree-level); and treatment of non-conformal variations not captured by the two-mode restriction.
-
-3. **Tertiary**: If c_A ≠ 0 (fixed-state antiperiodic reading), establish that the Lambda^2 area coefficient matches the emergent metric's area term without presupposing the metric — requires Problem A's matrix-to-modular map plus Problem F's sector identification.
+Derive from the matrix replica (Problem A: state, tip domain) the flux of grad ln rho through Sigma, i.e. choose between c_A = 2 and c_A = 0. Then compare the next order (Lambda^0 / log on a curved J = 0 leaf), where c_T = c_A = 0 at order Lambda^2. Also settle the vector/ghost/scalar tip domains, and establish or exclude a Maxwell-like edge term for the symplectic gauge sector. Ranked open avenues: (1) flux datum / replica choice; (2) next-order A side on a curved J = 0 leaf; (3) vector, ghost, scalar tip domains; (4) non-rotational or non-quasi-free state; (5) symplectic-sector edge modes (bounded at c_A = 1); (6) sector cutoffs (low).
 
 ## Special instructions for the gatekeeper
-
-- **Scope limits**: All results are conditional on the Poisson limit, one loop, Lambda^2 order, Feynman gauge alpha=1, quasi-free state with rotational modular flow, less singular self-adjoint extension, and uniqueness of continuation from integer n (for antiperiodic value). None extends to Lambda^4, non-conformal variations, Moyal corrections at the cutoff, edge modes of a^mu/ghosts/fermions (not examined), or the tree-level term.
-- **What must not be asserted**: That c_A^{sm}=c_T=0 is anything other than an equality of vanishing coefficients. That any of the three readings derives delta S_D=0 or establishes G_T=G_A. That the Kabat contact value applies to the matrix model's gauge sector without further verification.
-- **What to re-check**: (i) The fit for Q_f in dirac_lichnerowicz.py: verify that the residual of tr(E_f)/4 - R_G/4 = a T^2 + b TT + c V^2 + d box ln rho vanishes (< 10^{-9}). (ii) The exact symbolic identity R_G^{(1)} = -2 Box_{G0}(delta ln rho) in firstorder_poisson.py for arbitrary A_nu. (iii) The bookkeeping at n_D=2, N_s=6: c_T=0, c_A_unrot=0, c_A_AP=2, c_A_smooth=0, c_A_Kabat=1 — verify each line of cone_contact_bookkeeping.py under these values.
-- **Bib entries**: Verify Kabat1995 (arXiv:gr-qc/9504027) and DonnellyWall2016 (arXiv:1604.08307) exist on arXiv before integrating. If either record is absent, remove the corresponding citation from the insert text or replace with an alternative verified reference.
+- Do not read the smooth-reading equality at IKKT as a derivation of G_T = G_A; it is 0 = 0 and holds for any sector-uniform Q.
+- Re-check the E_f identity (script 1), the -1/2 relation (script 2), and that the block says "conditional; not closure" and changes no label.
+- The vector contact -1 and its applicability to a^mu are inputs; fermion edge modes are explicitly not examined.
+- "The Poisson class forces rho singular" is for smooth families with a conical limit at first order; it does not exclude the fixed-state replica as a definition of Tr rho^n.
