@@ -1,0 +1,14 @@
+r0 done in 0.0s
+r1 done in 0.2s
+r2 done in 5.0s
+r0 eps^0 : powers of Ui0: [1]  nterms: {1: 1}
+r0 eps^1 : powers of Ui0: [0]  nterms: {0: 1}
+r0 eps^2 : powers of Ui0: [2, 3]  nterms: {3: 10, 2: 4}
+r1 eps^0 : powers of Ui0: [0]  nterms: {0: 1}
+r1 eps^1 : powers of Ui0: [0]  nterms: {0: 1}
+r1 eps^2 : powers of Ui0: [0]  nterms: {0: 1}
+r2 eps^0 : powers of Ui0: [0]  nterms: {0: 1}
+r2 eps^1 : powers of Ui0: [0]  nterms: {0: 1}
+r2 eps^2 : powers of Ui0: [3, 4, 5]  nterms: {5: 100, 4: 88, 3: 10}
+r0 eps^2 coefficient (phase-averaged): {3: 2*al1**2*o1**2*zeta**2 - 4*al1*al2*o1*o2*zeta**2 - 4*al1*al3*o1*o3*zeta**2 - 4*al1*al4*o1*o4*zeta**2 + 2*al2**2*o2**2*zeta**2 + 4*al2*al3*o2*o3*zeta**2 + 4*al2*al4*o2*o4*zeta**2 + 2*al3**2*o3**2*zeta**2 + 4*al3*al4*o3*o4*zeta**2 + 2*al4**2*o4**2*zeta**2, 2: al1**2*zeta**2/2 - al2**2*zeta**2/2 - al3**2*zeta**2/2 - al4**2*zeta**2/2}
+r1 eps^0,1,2 coefficients: {0: {0: 0}, 1: {0: 0}, 2: {0: 0}}

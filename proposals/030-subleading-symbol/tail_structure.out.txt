@@ -1,0 +1,12 @@
+point 0: y.y=-1.532 m=-0.029
+   Q0 = lam0*Gm: lam0=1.65403e-05 residual 3.01e-14 | Q1: |Re|/|Im|=1.5e-12, gauge test |Q1 kappa|/(|Q1||kappa|)=0.310, covariant-fit residual=0.814 (A=-3.676e-03,B=1.003e-02), eigenvalues of Im Q1/|Q1|: [-0.249 -0.124  0.038  0.96 ]
+point 1: y.y=-0.930 m=-0.791
+   Q0 = lam0*Gm: lam0=3.31190e-06 residual 2.20e-15 | Q1: |Re|/|Im|=5.9e-15, gauge test |Q1 kappa|/(|Q1||kappa|)=0.496, covariant-fit residual=0.056 (A=-2.633e-04,B=3.077e-06), eigenvalues of Im Q1/|Q1|: [-0.507 -0.493 -0.442  0.553]
+point 2: y.y=-10.948 m=-3.078
+   Q0 = lam0*Gm: lam0=3.22122e-10 residual 1.00e-16 | Q1: |Re|/|Im|=1.3e-15, gauge test |Q1 kappa|/(|Q1||kappa|)=0.194, covariant-fit residual=0.939 (A=-1.007e-10,B=7.502e-11), eigenvalues of Im Q1/|Q1|: [-0.223 -0.048 -0.033  0.973]
+point 3: y.y=-0.769 m=0.608
+   Q0 = lam0*Gm: lam0=7.02941e-07 residual 1.24e-15 | Q1: |Re|/|Im|=1.9e-14, gauge test |Q1 kappa|/(|Q1||kappa|)=0.487, covariant-fit residual=0.891 (A=-1.011e-06,B=1.344e-06), eigenvalues of Im Q1/|Q1|: [-0.415 -0.113 -0.013  0.903]
+point 4: y.y=-1.328 m=-0.074
+   Q0 = lam0*Gm: lam0=1.36429e-05 residual 9.10e-16 | Q1: |Re|/|Im|=8.9e-17, gauge test |Q1 kappa|/(|Q1||kappa|)=0.600, covariant-fit residual=0.994 (A=-8.177e-05,B=-8.927e-05), eigenvalues of Im Q1/|Q1|: [-0.405 -0.152  0.052  0.9  ]
+point 5: y.y=-0.260 m=0.003
+   Q0 = lam0*Gm: lam0=4.44212e-03 residual 8.06e-09 | Q1: |Re|/|Im|=3.2e-06, gauge test |Q1 kappa|/(|Q1||kappa|)=0.041, covariant-fit residual=0.328 (A=4.139e+01,B=-2.792e+01), eigenvalues of Im Q1/|Q1|: [-0.849 -0.491 -0.197  0.002]
