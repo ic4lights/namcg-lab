@@ -1,0 +1,25 @@
+seed 12 th=0.3 central     a=8.368 b=3.297 c0=+86.71  A=-6.9088e+01  c*(small-s ratio T2 s/c)=1.0000+0.0001j  Fin/c = 104.8517 +109.8435j
+seed 12 th=0.3 interleaved a=8.368 b=3.297 c0=+86.71  A=-6.9088e+01  c*(small-s ratio T2 s/c)=1.0000+0.0001j  Fin/c = 42.8190 +126.5668j
+seed 12 th=0.8 central     a=8.368 b=3.297 c0=+83.18  A=-6.9088e+01  c*(small-s ratio T2 s/c)=1.0000+0.0001j  Fin/c = 84.3890 +95.4404j
+seed 12 th=0.8 interleaved a=8.368 b=3.297 c0=+83.18  A=-6.9088e+01  c*(small-s ratio T2 s/c)=1.0000+0.0001j  Fin/c = 43.0449 +105.5492j
+seed 12 th=1.4 central     a=8.368 b=3.297 c0=+52.51  A=-6.9088e+01  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 20.3543 +18.7235j
+seed 12 th=1.4 interleaved a=8.368 b=3.297 c0=+52.51  A=-6.9088e+01  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 26.7410 +13.5356j
+seed 12 th=2.0 central     a=8.368 b=3.297 c0=+3.49  A=-6.9088e+01  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 9.2520 +1.1507j
+seed 12 th=2.0 interleaved a=8.368 b=3.297 c0=+3.49  A=-6.9088e+01  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 8.5603 +1.0451j
+seed 12 th=2.6 central     a=8.368 b=3.297 c0=-46.75  A=-6.9088e+01  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 20.9815 +13.4041j
+seed 12 th=2.6 interleaved a=8.368 b=3.297 c0=-46.75  A=-6.9088e+01  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 20.6343 +10.6042j
+seed 12 th=3.0 central     a=8.368 b=3.297 c0=-72.08  A=-6.9088e+01  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 60.2372 +55.3628j
+seed 12 th=3.0 interleaved a=8.368 b=3.297 c0=-72.08  A=-6.9088e+01  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 32.4222 +64.0721j
+seed 21 th=0.3 central     a=126.343 b=3.007 c0=-109.95  A=-4.1471e+00  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 11.4080 +1.2170j
+seed 21 th=0.3 interleaved a=126.343 b=3.007 c0=-109.95  A=-4.1471e+00  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 13.2111 +1.2171j
+seed 21 th=0.8 central     a=126.343 b=3.007 c0=-117.92  A=-4.1471e+00  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 11.4877 +1.2288j
+seed 21 th=0.8 interleaved a=126.343 b=3.007 c0=-117.92  A=-4.1471e+00  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 12.5326 +1.2289j
+seed 21 th=1.4 central     a=126.343 b=3.007 c0=-89.71  A=-4.1471e+00  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 11.7357 +1.2364j
+seed 21 th=1.4 interleaved a=126.343 b=3.007 c0=-89.71  A=-4.1471e+00  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 11.5478 +1.2364j
+seed 21 th=2.0 central     a=126.343 b=3.007 c0=-30.17  A=-4.1471e+00  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 11.6918 +1.2052j
+seed 21 th=2.0 interleaved a=126.343 b=3.007 c0=-30.17  A=-4.1471e+00  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 11.5759 +1.2052j
+seed 21 th=2.6 central     a=126.343 b=3.007 c0=+39.92  A=-4.1471e+00  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 11.6206 +1.2067j
+seed 21 th=2.6 interleaved a=126.343 b=3.007 c0=+39.92  A=-4.1471e+00  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 11.9979 +1.2067j
+seed 21 th=3.0 central     a=126.343 b=3.007 c0=+80.29  A=-4.1471e+00  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 11.5348 +1.2161j
+seed 21 th=3.0 interleaved a=126.343 b=3.007 c0=+80.29  A=-4.1471e+00  c*(small-s ratio T2 s/c)=1.0000+0.0000j  Fin/c = 12.6917 +1.2162j
+time 147.51276206970215

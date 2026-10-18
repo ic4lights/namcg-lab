@@ -1,0 +1,9 @@
+model interleaved seed 12 theta 0.8 time 143s
+ yy: |Q kappa|/(|Q||kappa|) = 8.0e-01
+ cc: |Q kappa|/(|Q||kappa|) = 2.8e-07
+ full: |Q kappa|/(|Q||kappa|) = 5.8e-01
+ yy Re: best fit lambda*A-form: lambda=1.8836e-01  residual 0.894 ; eigenvalues on quotient (normalised) [-1.    -0.395  0.144]
+ yy Im: best fit lambda*A-form: lambda=-1.4027e-02  residual 1.000 ; eigenvalues on quotient (normalised) [-0.078 -0.028  1.   ]
+ A-form eigenvalues on quotient (normalised): [-1.    -0.315  0.502]
+ cc Re: eigenvalues on quotient (normalised) [-1.     0.001  0.005]
+ cc Im: eigenvalues on quotient (normalised) [-1.    -0.087  0.021]
