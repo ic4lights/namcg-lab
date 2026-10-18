@@ -1,0 +1,2 @@
+contact (E_delta + Omega_delta), weight -1 per Dirac field: R - tau/2 - 3*trEf/2
+D - Dper - contact = 0

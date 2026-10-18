@@ -1,0 +1,66 @@
+=== identity checks at every point (exact) ===
+SD example (029)             (0, 0, 1/3, 1/5)         all zero
+SD example (029)             (0, 0, 1/2, -1/3)        all zero
+SD example (029)             (0, 0, 2/3, 1/7)         all zero
+SD rot-invariant             (0, 0, -1/2, 2/3)        all zero
+SD rot-invariant             (0, 0, 0, 2/3)           all zero
+SD rot-invariant             (0, 0, -1/2, 2/3)        all zero
+SD rot-invariant             (0, 0, 2/5, 4/5)         all zero
+SD rot-invariant             (0, 0, 1/3, 3/2)         all zero
+SD rot-invariant             (0, 0, 4/5, 1)           all zero
+SD rot-invariant             (0, 0, 1/2, 3/2)         all zero
+SD rot-invariant             (0, 0, -3/4, 2/3)        all zero
+non-SD J=0 (h=1+ sqrt(1-C/r^ (0, 0, 3/5, 4/5)         all zero
+non-SD J=0 (h=1+ sqrt(1-C/r^ (0, 0, 4/5, -3/5)        all zero
+non-SD J=0 (h=1- sqrt(1-C/r^ (0, 0, 3/5, 4/5)         all zero
+non-SD J=0 (h=1- sqrt(1-C/r^ (0, 0, 4/5, -3/5)        all zero
+non-SD J!=0 h=1+r^2          (0, 0, 3/5, 4/5)         all zero
+non-SD J!=0 h=1/(1+r^2)      (0, 0, 3/5, 4/5)         all zero
+generic closed omega (algebr seed 0                   all zero
+generic closed omega (algebr seed 1                   all zero
+generic closed omega (algebr seed 2                   all zero
+nonzero checks: 0
+
+=== closed forms (symbolic in Ns,nD), 24 pi units ===
+Ntot = Ns - 4*nD + 2  b = 1 - nD/2
+A_comp  = -(1/2) a1tot + b tau - (Ntot/30)(Rsig-3W);  A_fs = A_comp + (3/2) a1_bos - tau ; S_per = a1tot - (Ntot/30)(Rsig-3W)
+A_fs - S_per = -(3/2) nD a1_D - nD tau/2 (Dirac contacts only);  A_comp - S_per = -(3/2) a1tot + b tau
+
+=== rotation-invariant SD family (e=R/6, W=0, tau=R_Sigma+3g/4, Xp=3g/2) ===
+(0, 0, 1/3, 1/5)         A_comp-(b-Ntot/30)R_S = 0 | A_fs-((b-Ntot/30-1)R_S+3g/2) = 0 | S_per-(b X'-(Ntot/30)R_S) = 0
+(0, 0, 1/2, -1/3)        A_comp-(b-Ntot/30)R_S = 0 | A_fs-((b-Ntot/30-1)R_S+3g/2) = 0 | S_per-(b X'-(Ntot/30)R_S) = 0
+(0, 0, 2/3, 1/7)         A_comp-(b-Ntot/30)R_S = 0 | A_fs-((b-Ntot/30-1)R_S+3g/2) = 0 | S_per-(b X'-(Ntot/30)R_S) = 0
+(0, 0, -1/2, 2/3)        A_comp-(b-Ntot/30)R_S = 0 | A_fs-((b-Ntot/30-1)R_S+3g/2) = 0 | S_per-(b X'-(Ntot/30)R_S) = 0
+(0, 0, 0, 2/3)           A_comp-(b-Ntot/30)R_S = 0 | A_fs-((b-Ntot/30-1)R_S+3g/2) = 0 | S_per-(b X'-(Ntot/30)R_S) = 0
+(0, 0, -1/2, 2/3)        A_comp-(b-Ntot/30)R_S = 0 | A_fs-((b-Ntot/30-1)R_S+3g/2) = 0 | S_per-(b X'-(Ntot/30)R_S) = 0
+(0, 0, 2/5, 4/5)         A_comp-(b-Ntot/30)R_S = 0 | A_fs-((b-Ntot/30-1)R_S+3g/2) = 0 | S_per-(b X'-(Ntot/30)R_S) = 0
+(0, 0, 1/3, 3/2)         A_comp-(b-Ntot/30)R_S = 0 | A_fs-((b-Ntot/30-1)R_S+3g/2) = 0 | S_per-(b X'-(Ntot/30)R_S) = 0
+(0, 0, 4/5, 1)           A_comp-(b-Ntot/30)R_S = 0 | A_fs-((b-Ntot/30-1)R_S+3g/2) = 0 | S_per-(b X'-(Ntot/30)R_S) = 0
+(0, 0, 1/2, 3/2)         A_comp-(b-Ntot/30)R_S = 0 | A_fs-((b-Ntot/30-1)R_S+3g/2) = 0 | S_per-(b X'-(Ntot/30)R_S) = 0
+(0, 0, -3/4, 2/3)        A_comp-(b-Ntot/30)R_S = 0 | A_fs-((b-Ntot/30-1)R_S+3g/2) = 0 | S_per-(b X'-(Ntot/30)R_S) = 0
+=> on this family A_comp = (b - Ntot/30) R_Sigma for every content, independent of g;  b - Ntot/30 = (28 - Ns - 11 nD)/30
+   zero set of A_comp coefficient: Ns + 11 nD = 28 -> [28 - 11*nD]
+
+=== T side: weighted a_2 = (Ns-2) s + v - nD d ; decomposition ===
+SD example (029)             (0, 0, 1/3, 1/5)       T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 1163911148437500000/11379844838561358721 v' = -67160856375000000000/11379844838561358721 d' = -33580428187500000000/11379844838561358721
+SD example (029)             (0, 0, 1/2, -1/3)      T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 3873221369856/39924626145605 v' = -56578926477312/7984925229121 d' = -28289463238656/7984925229121
+SD example (029)             (0, 0, 2/3, 1/7)       T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 136202954143338840303/12096149735780725587968 v' = -1800331427584368998109/3024037433945181396992 d' = -1800331427584368998109/6048074867890362793984
+SD rot-invariant             (0, 0, -1/2, 2/3)      T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 193701167775800966164836704256/28734892384593628682166015625 v' = -3546403500387970337221426839552/5746978476918725736433203125 d' = -1773201750193985168610713419776/5746978476918725736433203125
+SD rot-invariant             (0, 0, 0, 2/3)         T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 41541556996974281473323/25988331363625024000000000 v' = -48100361557496691700989/1299416568181251200000000 d' = -48100361557496691700989/2598833136362502400000000
+SD rot-invariant             (0, 0, -1/2, 2/3)      T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 41514966466985139394744516608/548553905096242127493528005 v' = -719313143554858907248751149056/109710781019248425498705601 d' = -359656571777429453624375574528/109710781019248425498705601
+SD rot-invariant             (0, 0, 2/5, 4/5)       T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 4892087863012752532958984375/924245234558789168523121505928 v' = -452794005638648891448974609375/693183925919091876392341129446 d' = -452794005638648891448974609375/1386367851838183752784682258892
+SD rot-invariant             (0, 0, 1/3, 3/2)       T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 13729061188643286994661670912/4086914014975505907163276102807201 v' = -1307804912612399640537691324416/4086914014975505907163276102807201 d' = -653902456306199820268845662208/4086914014975505907163276102807201
+SD rot-invariant             (0, 0, 4/5, 1)         T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 740530520073366878007202148437500000/3680704055019732853310956398559722241 v' = -73067885502000909505773925781250000000/3680704055019732853310956398559722241 d' = -36533942751000454752886962890625000000/3680704055019732853310956398559722241
+SD rot-invariant             (0, 0, 1/2, 3/2)       T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 4769232977092608/2491557071590605605 v' = -111147741177348096/498311414318121121 d' = -55573870588674048/498311414318121121
+SD rot-invariant             (0, 0, -3/4, 2/3)      T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 6520877676836220484048847982114688702881988608/109151741740332936967216174930688876984857053605 v' = -147158562920416927163405061237988019855117254656/21830348348066587393443234986137775396971410721 d' = -73579281460208463581702530618994009927558627328/21830348348066587393443234986137775396971410721
+non-SD J=0 (h=1+ sqrt(1-C/r^ (0, 0, 3/5, 4/5)       T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 5057/77760 v' = -3895/3888 d' = -3895/7776
+non-SD J=0 (h=1+ sqrt(1-C/r^ (0, 0, 4/5, -3/5)      T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 5057/77760 v' = -3895/3888 d' = -3895/7776
+non-SD J=0 (h=1- sqrt(1-C/r^ (0, 0, 3/5, 4/5)       T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 13088/1215 v' = 252320/243 d' = 126160/243
+non-SD J=0 (h=1- sqrt(1-C/r^ (0, 0, 4/5, -3/5)      T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: True | s = 13088/1215 v' = 252320/243 d' = 126160/243
+non-SD J!=0 h=1+r^2          (0, 0, 3/5, 4/5)       T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: False | s = 941183/806215680 v' = -157213/10077696 d' = -379451/40310784
+non-SD J!=0 h=1/(1+r^2)      (0, 0, 3/5, 4/5)       T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: False | s = 4484033437500*2**(7/43)*3**(33/43)*5**(40/43)*7**(26/43)/4747561509943 v' = -135/2 d' = -1145/8
+generic closed omega (algebr seed 0                 T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: False | s = 4713603889829783/1388674238113901520 v' = -496723944013163/11572285317615846 d' = -1071827111691707/23144570635231692
+generic closed omega (algebr seed 1                 T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: False | s = 21850654564002823/995328000000000 v' = 14159874825683/207360000000 d' = -524799438342071/3317760000000
+generic closed omega (algebr seed 2                 T - [Ntot s + (v'-nD d')] =0: True | d' = v'/2: False | s = 69074297021939999/14231195050382138880 v' = -2989395964324151/59296646043258912 d' = -20366595255767785/237186584173035648
+On chiral points T = Ntot s + b v' with s, v' != 0: vanishes iff Ntot = 0 and b = 0, i.e. (Ns,nD)=(6,2).
+number of points with d' = v'/2 exactly: 15
