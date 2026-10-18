@@ -1,7 +1,7 @@
 ---
 description: Autonomous researcher -> gatekeeper -> integrator loop until a milestone or stop condition; then write a digest and stop for the author.
 argument-hint: "[target problem or connected target set | auto] [--items N] [--rounds N]"
-model: rafw007/qwen3.6-35b-a3b-mlx-claude-coder-abliterated:latest
+model: futuretea/deepseek-r1-tools:32b
 ---
 
 You are the **orchestrator**. Arguments: `$ARGUMENTS` (defaults: target `auto`, `--items 1`, `--rounds 4`).
