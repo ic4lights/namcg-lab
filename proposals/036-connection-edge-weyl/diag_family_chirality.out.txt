@@ -1,0 +1,4 @@
+s = +1 (SD): delta part of Omega_12 = [[0, -2*La, 0, 0], [2*La, 0, 0, 0], [0, 0, 0, -2*Lb], [0, 0, 2*Lb, 0]]
+   holonomy coefficients  H = 1 * c_a J_12 + 1 * c_b J_34
+s = -1 (ASD): delta part of Omega_12 = [[0, -2*La, 0, 0], [2*La, 0, 0, 0], [0, 0, 0, 2*Lb], [0, 0, -2*Lb, 0]]
+   holonomy coefficients  H = 1 * c_a J_12 + -1 * c_b J_34
