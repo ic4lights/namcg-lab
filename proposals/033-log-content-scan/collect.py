@@ -22,7 +22,7 @@ def point_record(wj):
     d = S.run_jets(wj)
     Th = theta_from_omega(wj)
     out, sqrtG, base = geom.sector_all(Th, gm)
-    rec = {k: str(sp.nsimplify(v)) for k, v in d.items()}
+    rec = {k: str(sp.Rational(sp.simplify(v))) for k, v in d.items()}
     rec['W'] = str(sp.nsimplify(d['Rijij'] - d['Rii'] + d['R'] / 3))
     rec['riem2'] = str(Cc(base['riem2']))
     rec['ric2'] = str(Cc(base['ric2']))
