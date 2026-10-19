@@ -1,26 +1,31 @@
 # namcg-lab
-Official repository for Non-Abelian Matrix-Condensate Geometrogenesis (NAMCG). Includes the complete monograph PDF, Python code for Chapter 15, Appendices D &amp; I, and visualization scripts for metric emergence and Gaia DR3 deprojections.
 
-> **Read the monograph:** [Review the included NAMCG monograph](namcg-book7.pdf).
+Official repository for **Non-Abelian Matrix-Condensate Geometrogenesis (NAMCG)**.
 
-## Reproducing Appendix D and I
+NAMCG is a research programme that attempts to derive an emergent Lorentzian metric, massless transverse-traceless spin-2 modes, and a covariantly conserved entropic stress from a microscopic matrix-valued order parameter \(\Phi^I_A\). The composite metric is defined by
+\[
+e^A_\mu \equiv \langle \partial_\mu \Phi^I_A \rangle, \qquad
+g_{\mu\nu} = \eta_{AB}\, e^A_\mu e^B_\nu.
+\]
+The programme is organised as a single derivation chain; many steps remain open (see Appendix H of the monograph).
 
-Run these commands from the repository root with Python 3.12 installed. Install the project dependencies first in a virtual environment:
+> **Read the monograph:** [NAMCG monograph (namcg-book7.pdf)](namcg-book7.pdf)
+
+## Repository contents
+
+- Complete monograph (PDF)
+- Python laboratory for the reduced Newtonian inspiral model of Chapter 15
+- Coefficient-level consistency checks for SPARC rotation curves (Appendix D) and Gaia DR3 wide binaries (Appendix I)
+- Supporting visualisation scripts for metric emergence and deprojections
+
+## Reproducing Appendix D and Appendix I
+
+From the repository root, with Python 3.12:
 
 ```bash
+python -m venv .venv
+source .venv/bin/activate   # or .venv\Scripts\activate on Windows
 python -m pip install -r requirements.txt
-```
 
-Then run the scripts that produce the Appendix D and Appendix I results:
-
-```bash
 python appD-sparc-rar.py
 python appI-gaia-dr3-msmm.py
-```
-
-Appendix D reads the SPARC rotation-curve files from `sparc/rotmod` and writes its summary to `sparc_namcg_vs_summary.csv`. Appendix I reads `gaia_dr3_wide_binaries.csv` and prints the Monte Carlo deprojection and model-comparison results. Keep the input data in the repository's expected locations when running the scripts.
-
-## Licensing
-* **Source Code:** Licensed under the [Apache 2.0 License](LICENSE).
-* **Monograph & Documentation:** Licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/).
-
