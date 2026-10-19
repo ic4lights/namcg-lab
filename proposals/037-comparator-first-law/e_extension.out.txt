@@ -1,0 +1,12 @@
+== SD
+ (i) Q_1 - Q_2 on single modes : [0, 0, 0, 0]
+     B_1 - B_2 on pairs of modes (different wave vectors): [109389505/1944, -21560875/31104, 3184925/5832, -5065861/324, -2073178/81, 213/16]
+ (ii) trial 0: B_1(S_mode, S_generic) = -19665785/23328 ; B_2 = 642515/23328 ; difference = -5077075/5832
+ (ii) trial 1: B_1(S_mode, S_generic) = 58885/648 ; B_2 = 33727585/23328 ; difference = -31607725/23328
+ (ii) trial 2: B_1(S_mode, S_generic) = 2943295/46656 ; B_2 = -52160345/46656 ; difference = 2295985/1944
+== ASD
+ (i) Q_1 - Q_2 on single modes : [0, 0, 0, 0]
+     B_1 - B_2 on pairs of modes (different wave vectors): [566529475/5832, -27670175/31104, -10452325/2916, -5985/4, -3304750/243, -515/144]
+ (ii) trial 0: B_1(S_mode, S_generic) = -15788915/23328 ; B_2 = -55435/432 ; difference = -12795425/23328
+ (ii) trial 1: B_1(S_mode, S_generic) = -210655/972 ; B_2 = 4213505/11664 ; difference = -6741365/11664
+ (ii) trial 2: B_1(S_mode, S_generic) = 5127865/46656 ; B_2 = -356375/46656 ; difference = 12695/108

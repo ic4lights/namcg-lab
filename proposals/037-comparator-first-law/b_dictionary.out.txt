@@ -1,0 +1,18 @@
+== SD
+ W-coefficient of tau = tr(J12 Omega12): -2  ; kappa_J = tr Omega^2/(12 C^2) = -1/3
+ universal comparator 12 kappa_C^T = Ns/10 + 8*nD/5 - 19/5
+  periodic  A_W = Ns/10 - 2*nD/5 + 1/5 ; gap vs universal = 4 - 2*nD ; gap vs Noether(0, 0) = 0
+  fixed     A_W = Ns/10 + 3*nD/5 + 1/5 ; gap vs universal = 4 - nD ; gap vs Noether(0, 1) = 0
+  completed A_W = Ns/10 + 3*nD/5 - 9/5 ; gap vs universal = 2 - nD ; gap vs Noether(1, 1) = 0
+ residual of each replica against T_N(1,1): {'periodic': 2 - nD, 'fixed': 2, 'completed': 0}
+ common alpha with T_N(a,a) = 12 kappa_C^T : [2]
+ T_N(0,0) - universal = 4 - 2*nD  (= 4 kappa_X = 4 - 2*nD )
+== ASD
+ W-coefficient of tau = tr(J12 Omega12): -2  ; kappa_J = tr Omega^2/(12 C^2) = -1/3
+ universal comparator 12 kappa_C^T = Ns/10 + 8*nD/5 - 19/5
+  periodic  A_W = Ns/10 - 2*nD/5 + 1/5 ; gap vs universal = 4 - 2*nD ; gap vs Noether(0, 0) = 0
+  fixed     A_W = Ns/10 + 3*nD/5 + 1/5 ; gap vs universal = 4 - nD ; gap vs Noether(0, 1) = 0
+  completed A_W = Ns/10 + 3*nD/5 - 9/5 ; gap vs universal = 2 - nD ; gap vs Noether(1, 1) = 0
+ residual of each replica against T_N(1,1): {'periodic': 2 - nD, 'fixed': 2, 'completed': 0}
+ common alpha with T_N(a,a) = 12 kappa_C^T : [2]
+ T_N(0,0) - universal = 4 - 2*nD  (= 4 kappa_X = 4 - 2*nD )

@@ -1,0 +1,4 @@
+lambda = Derivative(om(x), (x, 2))
+theta-equation of L_ext with lambda eliminated and omega = F[theta]: (th(x)*Derivative(th(x), (x, 4)) + 4*Derivative(th(x), x)*Derivative(th(x), (x, 3)) + 3*Derivative(th(x), (x, 2))**2)*th(x)
+Euler-Lagrange of composite L_c                                    : (th(x)*Derivative(th(x), (x, 4)) + 4*Derivative(th(x), x)*Derivative(th(x), (x, 3)) + 3*Derivative(th(x), (x, 2))**2)*th(x)
+difference: 0  or sum: 2*(th(x)*Derivative(th(x), (x, 4)) + 4*Derivative(th(x), x)*Derivative(th(x), (x, 3)) + 3*Derivative(th(x), (x, 2))**2)*th(x)
