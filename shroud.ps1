@@ -20,5 +20,6 @@ $env:ANTHROPIC_BASE_URL="http://10.0.0.143:11434"
 # Triggers compaction at 90% utilization instead of defaulting down prematurely
 # $env:CLAUDE_AUTOCOMPACT_PCT_OVERRIDE = "90"
 
+$env:CLAUDE_CODE_MAX_CONTEXT_TOKENS=262144
 
-claude --model ishumilin/deepseek-r1-coder-tools:32b @args
+claude --model qwen35-claude-coder-ctx2:9b @args
