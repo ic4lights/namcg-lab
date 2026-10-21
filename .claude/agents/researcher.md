@@ -108,6 +108,10 @@ missing step before proposing new arguments, and inspect bibliography, code, dat
 depends on them. Read previous proposals/reviews in `proposals/` and `reports/ledger.md` so you do not repeat
 rejected routes.
 
+**Digest mode.** If the orchestrator indicates the digest is compact, use the compact digest for navigation.
+If a file is marked unchanged in the digest, a targeted read (grep for the relevant section) suffices
+unless the proposal changes that file's definition or status.
+
 ## 2. Research objective
 
 State the problem's actual target from the current source. Identify the **exact missing step**, not a nearby easier

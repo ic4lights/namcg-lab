@@ -97,10 +97,20 @@ author can follow it in VS Code. It replaces the per-run `auto/<YYYYMMDD-HHMM>` 
 3. **Check for unmerged proposals**: Scan `proposals/` for any existing unmerged proposal folder (e.g., `proposals/NNN-slug/`) containing a `proposal-rK.md` or `review-rK.md` that has not yet been merged into `chapters/`. 
    - If an unmerged proposal exists, resume execution directly from that folder and its latest round `K`, rather than creating a new proposal ID `NNN`.
    - If no unmerged proposal exists, list `proposals/` to find the next sequential ID `NNN`.
-4. Record `BASE=$(git rev-parse HEAD)`, the chapter manifest count, and run `python scripts/build_check.py`
-   to confirm the baseline builds. Run `python scripts/make_digest.py`, then verify it with
+4. Record `BASE=$(git rev-parse HEAD)`, the chapter manifest count, and run `python scripts/build_check.py --fast`
+   to confirm the baseline builds (skips pdflatex if no .tex files changed). Run `python scripts/make_digest.py`
+   (compact by default; produces ~10KB digest vs ~52KB full), then verify it with
    `python scripts/make_digest.py --check` (`DIGEST CURRENT`). Ensure `.claude/state/allow_chapters` does not exist.
 5. Initialise counters: `accepted=0`, `stalled_in_a_row=0`.
+
+**Digest mode decision (optimized rescans).**
+- `make_digest.py` uses **compact mode by default**: unchanged files are TOC-only (one line each), changed files show full content.
+  Typical digest size: ~10KB (vs ~52KB full). Saves ~70-80% tokens on digest reads.
+- Use `python scripts/make_digest.py --full` when: gatekeeper requires full scan (every 5th integrated item),
+  a milestone verdict (M1-M5) is triggered, or tree-hash is stale with actual content changes.
+- Before passing digest to subagents: if digest size < 20KB, pass compact digest + targeted reads.
+- Gatekeeper may use compact digest for navigation + targeted file reads; only full scan when protocol requires.
+- `build_check.py --fast` skips pdflatex when no .tex files changed (saves ~2 pdflatex passes per integration).
 
 ## 1. Loop
 
@@ -116,10 +126,14 @@ accepted proposal package per run; increase it only when the author requests mul
 **b. Researcher execution (Round K).** 
 - If starting a new item, create `proposals/NNN-slug/` and set `K=1`. 
 - If resuming an unmerged/paused proposal, use its existing folder and latest round `K`. 
-Task `researcher` with: the target set, the proposal folder, round `K`, the ledger path, the current digest status, and instructions to address prior reviews or write the proposal package. Read the returned path.
+Task `researcher` with: the target set, the proposal folder, round `K`, the ledger path, the current digest status (compact/full),
+and instructions to address prior reviews or write the proposal package. The researcher may use the compact digest for navigation
+and targeted reads. Read the returned path.
 
-**c. Gatekeeper.** Task `gatekeeper` with the proposal path, round, current digest status, and proposed integration
-ordinal (`accepted + 1`). Save its full reply verbatim to `proposals/NNN-slug/review-rK.md`. Parse the first line
+**c. Gatekeeper.** Task `gatekeeper` with the proposal path, round, current digest status (compact/full, tree-hash),
+and proposed integration ordinal (`accepted + 1`). The gatekeeper may use the compact digest for navigation + targeted
+file reads; only full scan when protocol requires (5th item, milestone, definition/assumption change, or stale tree-hash).
+Save its full reply verbatim to `proposals/NNN-slug/review-rK.md`. Parse the first line
 (`VERDICT | MILESTONE | FLAGS`).
 
 **d. Branch on the verdict.**
@@ -161,8 +175,9 @@ VS Code and commits it. As a consequence:
 **f. Integrate.** Create `.claude/state/allow_chapters`, Task `integrator` with the proposal path, review path,
 branch and current digest status, then ensure the flag file is removed. If it reports a build failure or anchor
 mismatch: ledger entry `INTEGRATION-FAILED`, stop the run. Else increment `accepted`, rebuild the digest with
-`python scripts/make_digest.py`, verify `python scripts/make_digest.py --check` prints `DIGEST CURRENT`, and set
-`stalled_in_a_row=0`. Pass the refreshed digest status to all later subagents.
+`python scripts/make_digest.py` (compact by default), verify `python scripts/make_digest.py --check` prints `DIGEST CURRENT`,
+and set `stalled_in_a_row=0`. Pass the refreshed digest status to all later subagents. Use `python scripts/build_check.py --fast`
+for the integration build (skips pdflatex if no .tex files changed).
 
 **g. Ledger.** Append one block to `reports/ledger.md`: id, date, problem, claim (one sentence), rounds, final
 verdict, commit hash or "not integrated", what is proved/conditional/open, milestone code (gatekeeper's M-code,

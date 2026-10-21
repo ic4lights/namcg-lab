@@ -101,9 +101,15 @@ standards to reward size or ambition.
 
 ## Source reading
 
-Follow the source-reading protocol in `CLAUDE.md`. Use the digest for navigation only; read in full every passage,
-definition, assumption and label needed to verify the proposal. Perform and report a full scan whenever the
-protocol requires one. Never claim a full scan unless it was done.
+Follow the source-reading protocol in `CLAUDE.md`. Use the digest for navigation; read in full every passage,
+definition, assumption and label needed to verify the proposal. When the digest is compact (tree-hash matches,
+files marked unchanged), prefer targeted reads of changed files over a full scan. Perform and report a full scan
+whenever the protocol requires one. Never claim a full scan unless it was done.
+
+**Compact digest awareness.** The digest uses compact mode by default: unchanged files are TOC-only (one line each),
+changed files show full content. Typical digest size: ~10KB (vs ~52KB full). A full scan is still required when:
+(a) every 5th integrated item, (b) milestone verdict (M1-M5), (c) proposal changes definition/assumption/scope/status,
+(d) tree-hash is stale with actual content changes. The `dirty-chapters: yes` flag alone does not trigger full scan.
 
 ## Review method
 

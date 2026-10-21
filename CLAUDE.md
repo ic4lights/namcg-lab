@@ -85,3 +85,8 @@ until a milestone trigger fires, a stop condition occurs, or the budget is reach
 - `proposals/NNN-slug/` — `proposal-rK.md`, `review-rK.md`, verification scripts.  Not part of the manuscript.
 - `reports/` — run digests and the running ledger (`reports/ledger.md`).
 - `.claude/state/` — transient flags used by the guard hook. Do not edit by hand.
+
+## Execution & Concurrency Rules
+- **Strict Sequential Flow:** Always perform operations one task at a time.
+- **No Parallel Tool Calls:** Execute tool calls serially. Wait for the output of one tool before invoking the next.
+- **No Unprompted Sub-Agents:** Do not spawn background sub-agents or split tasks across multiple concurrent threads.

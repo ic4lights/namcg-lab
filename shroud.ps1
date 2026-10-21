@@ -12,7 +12,8 @@ $env:ANTHROPIC_BASE_URL="http://10.0.0.143:11434"
 # $env:CLAUDE_CODE_MAX_TOKENS   = "2048"
 
 # # 4. TIMEOUT & PROTOCOL HARDENING
-$env:API_TIMEOUT_MS                            = "90000"
+$env:API_TIMEOUT_MS                            = "600000"
+$env:CLAUDE_CODE_MAX_RETRIES                   = "20"
 # $env:CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS    = "1"
 # $env:CLAUDE_CODE_AUTO_MODE_SERVER              = "0"
 
