@@ -1,7 +1,7 @@
 ---
 description: Autonomous researcher -> gatekeeper -> integrator loop until a milestone or stop condition; then write a digest and stop for the author.
 argument-hint: "[target problem or connected target set | auto] [--items N] [--rounds N]"
-model: qwen35-claude-coder-ctx2:9b
+model: qwen-coder-chunked:latest
 ---
 
 You are the **orchestrator**. Arguments: `$ARGUMENTS` (defaults: target `auto`, `--items 1`, `--rounds 4`).
