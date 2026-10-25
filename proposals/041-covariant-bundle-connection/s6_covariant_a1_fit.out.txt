@@ -1,0 +1,6 @@
+eta=(1, 1, 1, 1): 24 J=0 samples;  max |a1(V)-a1(M)| = 1.61e-12   (max |a1| = 51.77)
+   fit a1(V) = cR R + cV V2 + cbox box + cth |dth|^2 :  cR=-3.33333 cV=+5.00000 cbox=-8.00000 cth=-0.00000;  max resid 4.19e-12, rank 4
+   fit a1(M) = cR R + cV V2 + cbox box + cth |dth|^2 :  cR=-3.33333 cV=+5.00000 cbox=-8.00000 cth=-0.00000;  max resid 4.40e-12, rank 4
+eta=(-1, 1, 1, 1): 24 J=0 samples;  max |a1(V)-a1(M)| = 2.08e-12   (max |a1| = 11.65)
+   fit a1(V) = cR R + cV V2 + cbox box + cth |dth|^2 :  cR=-3.33333 cV=+5.00000 cbox=-8.00000 cth=+0.00000;  max resid 5.69e-12, rank 4
+   fit a1(M) = cR R + cV V2 + cbox box + cth |dth|^2 :  cR=-3.33333 cV=+5.00000 cbox=-8.00000 cth=+0.00000;  max resid 5.71e-12, rank 4

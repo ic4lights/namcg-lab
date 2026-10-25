@@ -1,0 +1,5 @@
+compile_check (scratch copy outside the repository; CRLF preserved: True)
+pdflatex exit codes [0, 0], 307 pages
+undefined \ref targets: []
+multiply defined labels: []
+undefined citations: 33 (bibtex not run in the scratch copy; the inserted text contains no \cite and no \ref)

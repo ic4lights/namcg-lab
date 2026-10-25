@@ -190,9 +190,9 @@ if __name__ == '__main__':
             C0, a0, b0 = extract(make_opM(0.0, 1.0))
             M0 = symbol(C0, q)
             kap = np.trace(M0)/(3*qG2)
-            Gq = Gz @ q
-            print(f'   (M) Maxwell symbol: kappa={kap:.6f}; transversality |M0 Gq| = {np.linalg.norm(M0@Gq):.1e}; '
-                  f'|M0 - kap (q2 1 - Gq q^T)| = {np.linalg.norm(M0 - kap*(qG2*np.eye(D) - np.outer(Gq, q))):.2e}')
+            Kq = Kz @ q
+            print(f'   (M) Maxwell symbol (c = 0): kappa={kap:.6f}; transversality |M0 q| = {np.linalg.norm(M0@q):.1e}; '
+                  f'|M0 - kap (q_G^2 1 - q (G^-1 q)^T)| = {np.linalg.norm(M0 - kap*(qG2*np.eye(D) - np.outer(q, Kq))):.2e}')
             best = None
             for cs in np.linspace(0.25, 4.0, 16):
                 CM, aM, bM = extract(make_opM(kap*cs*rho0*0 + kap*cs, kap))
