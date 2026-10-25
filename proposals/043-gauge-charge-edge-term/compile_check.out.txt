@@ -1,0 +1,9 @@
+baseline (current working tree): CRLF preserved True; exit codes (pdflatex, bibtex, pdflatex, pdflatex) [0, 0, 0, 0]; 315 pages
+   undefined refs: []
+   undefined citations: []
+   multiply defined labels: []
+with insert and bib entry: CRLF preserved True; exit codes (pdflatex, bibtex, pdflatex, pdflatex) [0, 0, 0, 0]; 317 pages
+   undefined refs: []
+   undefined citations: []
+   multiply defined labels: []
+scratch removed: True
