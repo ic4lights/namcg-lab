@@ -1,0 +1,8 @@
+antisymmetric part of E^mu_A e_{B mu}: rows = (seed, pair), columns = coefficients of (TT, TT', V^2); first rows:
+   ['1.070241', '0.18618062', '0.36065057']
+   ['-1.2111324', '0.69523356', '0.044833669']
+   ['-0.32538253', '0.19073656', '0.014022647']
+singular values: ['4.68825', '1.28028', '1.28599e-29']
+null vector normalised to first entry 1/4: ['0.25', '0.5', '-1.0'] (TEGR: 1/4, 1/2, -1)
+TEGR combination residual: 1.659e-29
+X = TT alone residual     : 4.5746

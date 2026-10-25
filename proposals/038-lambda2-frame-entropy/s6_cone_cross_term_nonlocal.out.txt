@@ -1,0 +1,6 @@
+b_1 = x2*(n - 1)/(x1**2 + x2**2)  b_2 = x1*(1 - n)/(x1**2 + x2**2)  (entry [0,1] of the 4x4 so(4)-valued one-form)
+   matches (n-1)*(-x2, x1)/r^2 * J12 up to the normalisation of the entry: True
+trial 0: int b_c.beta/(n-1) - int Omega ln(L/r) = 0
+trial 1: int b_c.beta/(n-1) - int Omega ln(L/r) = 0
+trial 2: int b_c.beta/(n-1) - int Omega ln(L/r) = 0
+constant Omega_12=w:  int Omega ln(L/r) d^2x = pi*L**2*w/2

@@ -1,0 +1,20 @@
+1. constant aligned Theta_bar = a e12 + b e34, normal-plane rotation J12
+   pure  L Theta = [[a, 0, 0, 0], [0, a, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+   joint L~Theta = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+2. generic constant antisymmetric Theta_bar: joint derivative = -[omega,Theta]-type; invariant subspace
+   condition L~=0 solved: [{t13: 0, t14: 0, t23: 0, t24: 0}]  -> free parameters: t12, t34 (2 of 6)
+   self-dual a(e12+e34): joint derivative zero: True ; a(e13-e24) (also self-dual): joint derivative = [[0, 0, 0, a], [0, 0, a, 0], [0, -a, 0, 0], [-a, 0, 0, 0]]
+3. replica family Theta^{12}=1/f(r), Theta^{34}=1
+   Euclid, joint derivative: True
+   pure derivative (nonzero entries): {(0, 0): 1/f(sqrt(x1**2 + x2**2)), (1, 1): 1/f(sqrt(x1**2 + x2**2))}
+   Lorentz boost, joint derivative: True
+   finite rotation: R Theta R^T == Theta at rotated point: True
+4. regularity at Sigma = {x1=x2=0} for f = r^(n-1), omega=Theta^{-1}, e^A_mu = omega_{mu A}
+   Theta check: [[0, (x1**2 + x2**2)**(1/2 - n/2), 0, 0], [-(x1**2 + x2**2)**(1/2 - n/2), 0, 0, 0], [0, 0, 0, 1], [0, 0, -1, 0]]
+   TT = X = 2*(n - 1)**2/(x1**2 + x2**2)**n   (on r>0)
+   first order in epsilon = n-1: 2*epsilon**2/(x1**2 + x2**2) + O(epsilon**3)
+   X*u^2 = 2*(n - 1)**2/n**2   -> X ~ (n-1)^2 / u^2 up to a factor, unbounded at u->0 for n != 1
+   Theta^{12}=r^{1-n}: first order in eps: 1 - epsilon*log(x1**2 + x2**2)/2 + O(epsilon**2)
+   -> Theta^{12} = 1 - eps*ln r + O(eps^2): log-singular at r=0 already at first order; Pf Theta -> 0 (n<1), infinity (n>1)
+5. non-linear chart change leaves the slice {eta_{AB}e^B_mu antisymmetric}
+   e'_{mu A} + e'_{A mu} (should vanish on the slice) = [[-32/35, -7/10, -17/30, 3/14], [-7/10, 23/75, -37/75, 34/175], [-17/30, -37/75, 2/21, 1/21], [3/14, 34/175, 1/21, 8/7]]
