@@ -36,6 +36,12 @@ def build(sc, with_insert):
         assert 'Chen2022' not in braw
         nl = CRLF if CRLF in braw else LF
         open(bp, 'wb').write((braw.rstrip() + nl + nl + bibadd.replace(LF, nl)).encode('utf-8'))
+        cp = os.path.join(sc, 'chapters', 'ch07-massless-tensor.tex')
+        craw = open(cp, 'rb').read().decode('utf-8')
+        o7 = r'   \bigl((\ell^2-t^2-r^2)\partial_t^\mu+2t\,x^\mu\bigr)'
+        n7 = r'   \bigl((\ell^2-t^2-r^2)\partial_t^\mu-2t\,x^i\delta^\mu_i\bigr)'
+        assert craw.count(o7) == 1
+        open(cp, 'wb').write(craw.replace(o7, n7).encode('utf-8'))
     if crlf:
         s = s.replace(LF, CRLF)
     open(p, 'wb').write(s.encode('utf-8'))
@@ -56,7 +62,7 @@ def build(sc, with_insert):
 
 
 lines = []
-for tag, w in (('baseline (current working tree)', False), ('with insert and bib entry', True)):
+for tag, w in (('baseline (current working tree)', False), ('with insert, bib entry and ch07 L227 fix', True)):
     sc = os.path.join(base, 'b' if not w else 'i')
     crlf, codes, pages, und, cit, mult = build(sc, w)
     lines.append(f'{tag}: CRLF preserved {crlf}; exit codes (pdflatex, bibtex, pdflatex, pdflatex) {codes}; {pages} pages')
