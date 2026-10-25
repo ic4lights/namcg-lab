@@ -1,0 +1,14 @@
+eta (1, 1, 1, 1)
+  seed 1: rank(dS map)=3, C1 alone: residual 6.9e-16;  dim ker C2 (in-class rotations) = 0;  C1 with C2 imposed: residual 1.000 (|C2 x| = 5.4e-07), |S|=0.487
+  seed 2: rank(dS map)=3, C1 alone: residual 6.5e-16;  dim ker C2 (in-class rotations) = 0;  C1 with C2 imposed: residual 1.000 (|C2 x| = 1.3e-05), |S|=1.680
+  seed 3: rank(dS map)=3, C1 alone: residual 4.5e-16;  dim ker C2 (in-class rotations) = 0;  C1 with C2 imposed: residual 1.000 (|C2 x| = 2.9e-06), |S|=1.766
+  seed 4: rank(dS map)=3, C1 alone: residual 4.9e-16;  dim ker C2 (in-class rotations) = 0;  C1 with C2 imposed: residual 1.000 (|C2 x| = 1.9e-06), |S|=1.852
+  seed 5: rank(dS map)=3, C1 alone: residual 3.6e-16;  dim ker C2 (in-class rotations) = 0;  C1 with C2 imposed: residual 1.000 (|C2 x| = 1.0e-05), |S|=2.466
+  seed 6: rank(dS map)=3, C1 alone: residual 8.0e-16;  dim ker C2 (in-class rotations) = 0;  C1 with C2 imposed: residual 1.000 (|C2 x| = 1.8e-06), |S|=0.786
+eta (-1, 1, 1, 1)
+  seed 1: rank(dS map)=3, C1 alone: residual 6.7e-16;  dim ker C2 (in-class rotations) = 0;  C1 with C2 imposed: residual 1.000 (|C2 x| = 4.5e-07), |S|=0.383
+  seed 2: rank(dS map)=3, C1 alone: residual 3.4e-16;  dim ker C2 (in-class rotations) = 0;  C1 with C2 imposed: residual 1.000 (|C2 x| = 1.6e-06), |S|=1.197
+  seed 3: rank(dS map)=3, C1 alone: residual 3.6e-16;  dim ker C2 (in-class rotations) = 0;  C1 with C2 imposed: residual 1.000 (|C2 x| = 2.9e-06), |S|=1.773
+  seed 4: rank(dS map)=3, C1 alone: residual 8.4e-16;  dim ker C2 (in-class rotations) = 0;  C1 with C2 imposed: residual 1.000 (|C2 x| = 1.8e-06), |S|=1.560
+  seed 5: rank(dS map)=3, C1 alone: residual 2.7e-16;  dim ker C2 (in-class rotations) = 0;  C1 with C2 imposed: residual 1.000 (|C2 x| = 4.4e-06), |S|=2.829
+  seed 6: rank(dS map)=3, C1 alone: residual 5.8e-16;  dim ker C2 (in-class rotations) = 0;  C1 with C2 imposed: residual 1.000 (|C2 x| = 7.7e-07), |S|=0.996
