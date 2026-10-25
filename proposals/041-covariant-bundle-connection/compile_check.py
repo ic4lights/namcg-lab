@@ -19,11 +19,15 @@ s = raw.replace('\r\n', '\n')
 ins = open(os.path.join(here, 'appH_insert.tex'), encoding='utf-8').read()
 bS = ins.index('\\paragraph{Moser variables')
 fS = ins.index('\\paragraph{Conjugate-coordinate class: the Casimir form')
-blockB = ins[bS:ins.index('%% ===== BLOCK 2')].rstrip() + '\n\n'
+blockB = ins[bS:fS].rstrip() + '\n\n'
 blockF = ins[fS:].rstrip() + '\n\n'
 aC = '\\section{Problem C: conformal mode and Cassini}'
 aG = '\\section{Problem G: HBEV}'
 assert s.count(aC) == 1 and s.count(aG) == 1
+oldA = 'It stays undetermined until the frame is dragged by a flow whose internal part is a local symmetry, that is until the question of local frame rotations (Problem~D) is settled.'
+newA = r'In the coframe variables it stays undetermined until the frame is dragged by a flow whose internal part is a local symmetry, that is until the question of local frame rotations (Problem~D) is settled; in the variables \((G,\rho,\vartheta)\) of the paragraph on Moser variables the Noether coefficient takes two values related by one numerical identity, and covariance does not select one.'
+assert s.count(oldA) == 1
+s = s.replace(oldA, newA)
 s = s.replace(aC, blockB + aC).replace(aG, blockF + aG)
 if crlf:
     s = s.replace('\n', '\r\n')
