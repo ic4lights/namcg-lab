@@ -1,0 +1,88 @@
+C:\Users\redgi\Projects\namcg-lab\proposals\040-zeeman-vector-mass\l9_fin_analysis.py:71: RuntimeWarning: invalid value encountered in scalar divide
+  lam = np.sum(part * lpart) / np.sum(lpart * lpart)
+seed 12 theta0 0.8 r 0.12 mode yy a,b 1.0041049882505548 0.395672576899886 theta* 1.1954254446478736
+small-s scal: s*f/(c) at rho=0.0017 : (0.999-0.0009j)
+small-s vec: s*f/(c) at rho=0.0017 : (1-0j)
+small-s dirac: s*f/(c) at rho=0.0017 : (1+0j)
+=== regulator m2 = 0.40 max(a,b) ===
+ scal  gauge |Qk|/(|Q||k|)=3.3e-10
+ vec   gauge |Qk|/(|Q||k|)=5.5e-06
+ dirac gauge |Qk|/(|Q||k|)=3.3e-06
+ vec vs log form (4A-F1): Re lam=3.394e-02 defect=1.498e-01 ; Im lam=nan defect=nan
+ vec vs A             : Re lam=-1.071e+00 defect=1.361e+00 ; Im lam=nan defect=nan
+ scal vs A            : Re lam=3.539e-02 defect=4.324e-02 ; Im lam=nan defect=nan
+ quotient spectra  scal Re/Im: [-0.93319  0.03285  0.33187] [-0.06093  0.05575  3.4834 ]
+                   vec  Re/Im: [ 0.14507  0.56869 30.70191] [ 1.12859  4.29143 28.33254]
+ x = n_ex mu_i^2 values (grid -60..60) giving a definite quotient form for x*Q_S + mu2*Q_V : [('Im', np.float64(-60.0)), ('Im', np.float64(-59.5)), ('Im', np.float64(-59.0)), ('Im', np.float64(-58.5)), ('Im', np.float64(-58.0)), ('Im', np.float64(-57.5))] ... count 219
+=== regulator m2 = 0.50 max(a,b) ===
+ scal  gauge |Qk|/(|Q||k|)=9.6e-11
+ vec   gauge |Qk|/(|Q||k|)=1.5e-06
+ dirac gauge |Qk|/(|Q||k|)=1.1e-06
+ vec vs log form (4A-F1): Re lam=4.190e-02 defect=1.538e-01 ; Im lam=nan defect=nan
+ vec vs A             : Re lam=-1.073e+00 defect=1.442e+00 ; Im lam=nan defect=nan
+ scal vs A            : Re lam=-1.293e-03 defect=3.063e-02 ; Im lam=nan defect=nan
+ quotient spectra  scal Re/Im: [-0.27864  0.02153  0.46629] [-0.06757  0.01608  3.1125 ]
+                   vec  Re/Im: [ 0.49602  1.72457 31.82107] [ 0.97271  3.19589 23.1952 ]
+ x = n_ex mu_i^2 values (grid -60..60) giving a definite quotient form for x*Q_S + mu2*Q_V : [('Im', np.float64(-60.0)), ('Im', np.float64(-59.5)), ('Im', np.float64(-59.0)), ('Im', np.float64(-58.5)), ('Im', np.float64(-58.0)), ('Im', np.float64(-57.5))] ... count 285
+=== regulator m2 = 0.60 max(a,b) ===
+ scal  gauge |Qk|/(|Q||k|)=2.8e-11
+ vec   gauge |Qk|/(|Q||k|)=4.5e-07
+ dirac gauge |Qk|/(|Q||k|)=3.8e-07
+ vec vs log form (4A-F1): Re lam=4.699e-02 defect=1.477e-01 ; Im lam=nan defect=nan
+ vec vs A             : Re lam=-1.016e+00 defect=1.421e+00 ; Im lam=nan defect=nan
+ scal vs A            : Re lam=-2.692e-02 defect=3.155e-02 ; Im lam=nan defect=nan
+ quotient spectra  scal Re/Im: [-0.0112   0.01122  0.73539] [-0.07179 -0.01508  2.643  ]
+                   vec  Re/Im: [ 0.57303  3.36872 30.79307] [ 0.18559  1.957   18.91191]
+ x = n_ex mu_i^2 values (grid -60..60) giving a definite quotient form for x*Q_S + mu2*Q_V : [('Re', np.float64(-60.0)), ('Re', np.float64(-59.5)), ('Re', np.float64(-59.0)), ('Re', np.float64(-58.5)), ('Re', np.float64(-58.0)), ('Re', np.float64(-57.5))] ... count 357
+=== regulator m2 = 0.80 max(a,b) ===
+ scal  gauge |Qk|/(|Q||k|)=2.3e-12
+ vec   gauge |Qk|/(|Q||k|)=4.1e-08
+ dirac gauge |Qk|/(|Q||k|)=4.0e-08
+ vec vs log form (4A-F1): Re lam=4.782e-02 defect=1.196e-01 ; Im lam=nan defect=nan
+ vec vs A             : Re lam=-8.238e-01 defect=1.195e+00 ; Im lam=nan defect=nan
+ scal vs A            : Re lam=-5.161e-02 defect=3.913e-02 ; Im lam=nan defect=nan
+ quotient spectra  scal Re/Im: [-0.00776  0.06557  1.14661] [-0.0754  -0.04841  1.69768]
+                   vec  Re/Im: [ 0.68919  6.24931 24.96037] [-3.25847  1.46063 12.44758]
+ x = n_ex mu_i^2 values (grid -60..60) giving a definite quotient form for x*Q_S + mu2*Q_V : [('Re', np.float64(-60.0)), ('Re', np.float64(-59.5)), ('Re', np.float64(-59.0)), ('Re', np.float64(-58.5)), ('Re', np.float64(-58.0)), ('Re', np.float64(-57.5))] ... count 266
+=== regulator m2 = 1.00 max(a,b) ===
+ scal  gauge |Qk|/(|Q||k|)=1.8e-13
+ vec   gauge |Qk|/(|Q||k|)=4.1e-09
+ dirac gauge |Qk|/(|Q||k|)=4.0e-09
+ vec vs log form (4A-F1): Re lam=3.976e-02 defect=8.978e-02 ; Im lam=nan defect=nan
+ vec vs A             : Re lam=-6.392e-01 defect=9.036e-01 ; Im lam=nan defect=nan
+ scal vs A            : Re lam=-5.421e-02 defect=3.835e-02 ; Im lam=nan defect=nan
+ quotient spectra  scal Re/Im: [-0.02188  0.04937  1.17639] [-0.07643 -0.0513   0.96356]
+                   vec  Re/Im: [ 0.78001  7.67198 18.04987] [-4.91027  1.35662  7.68856]
+ x = n_ex mu_i^2 values (grid -60..60) giving a definite quotient form for x*Q_S + mu2*Q_V : [('Re', np.float64(-60.0)), ('Re', np.float64(-59.5)), ('Re', np.float64(-59.0)), ('Re', np.float64(-58.5)), ('Re', np.float64(-58.0)), ('Re', np.float64(-57.5))] ... count 164
+=== regulator m2 = 1.30 max(a,b) ===
+ scal  gauge |Qk|/(|Q||k|)=3.4e-15
+ vec   gauge |Qk|/(|Q||k|)=1.4e-10
+ dirac gauge |Qk|/(|Q||k|)=1.3e-10
+ vec vs log form (4A-F1): Re lam=2.377e-02 defect=5.940e-02 ; Im lam=nan defect=nan
+ vec vs A             : Re lam=-4.455e-01 defect=5.671e-01 ; Im lam=nan defect=nan
+ scal vs A            : Re lam=-4.267e-02 defect=2.852e-02 ; Im lam=nan defect=nan
+ quotient spectra  scal Re/Im: [-0.03689  0.0224   0.90917] [-0.07863 -0.02878  0.33636]
+                   vec  Re/Im: [ 0.88161  7.25188 10.49687] [-4.48528  1.12652  3.19141]
+ x = n_ex mu_i^2 values (grid -60..60) giving a definite quotient form for x*Q_S + mu2*Q_V : [('Re', np.float64(-60.0)), ('Re', np.float64(-59.5)), ('Re', np.float64(-59.0)), ('Re', np.float64(-58.5)), ('Re', np.float64(-58.0)), ('Re', np.float64(-57.5))] ... count 165
+=== extrapolation of Fin_vec(m2) entries to m2 -> 0 (Neville, polynomial in m2) ===
+ scal extrap with first 3 points: [-0.5315+0.3216j -0.622 -0.0362j -4.1568+3.3813j -0.8829+0.6034j
+ -0.7094-0.0112j -1.9442+1.4323j]
+ scal extrap with first 4 points: [-0.5996+0.1798j -0.473 -0.2024j -4.9584+2.4483j -1.0166+0.3916j
+ -0.6428-0.2182j -2.2714+0.9826j]
+ scal extrap with first 6 points: [-0.5328+0.0197j -0.1809-0.1349j -4.8807+1.107j  -0.9524+0.1262j
+ -0.3964-0.3084j -2.1786+0.3836j]
+ scal at m2=(0.4, 1.3) (first, last): [-0.0472+0.2598j -0.1828+0.3376j -0.2588+2.4019j -0.0797+0.4788j
+ -0.1917+0.299j  -0.1578+1.0905j] [0.0472-0.0466j 0.1601+0.0791j 0.5738+0.1775j 0.1136+0.0189j
+ 0.1061+0.0476j 0.2661+0.0828j]
+ vec extrap with first 3 points: [ 1.69   +4.3644j -6.2329 +1.5328j  4.3672+46.7289j  1.7571 +7.4759j
+  2.8312 -4.7582j  2.9998+18.2795j]
+ vec extrap with first 4 points: [ 0.5908 +4.4332j  3.1147 -1.7191j -9.3797+40.5615j -0.6271 +6.9486j
+  4.2909 -2.9427j -2.8343+16.3862j]
+ vec extrap with first 6 points: [-0.3235 +2.8045j 11.0106+10.4177j -8.089 +19.2449j -1.3278 +3.3181j
+  1.694  -0.7933j -3.4753 +7.4314j]
+ vec at m2=(0.4, 1.3) (first, last): [ 2.3611 +2.024j   1.2252+15.4416j 23.814 +14.1473j  4.0152 +2.1397j
+ -1.3179 -1.0963j  9.6135 +4.9142j] [1.6382+1.3592j 9.6678+1.328j  6.0194-2.9329j 1.3049+0.0783j
+ 1.0696+1.0802j 2.4057-0.9704j]
+=== massless supertrace: integrand (vec + 4 scal - 2 dirac_block)/s ===
+ alpha-index 3: |f_str| at rho=0.0017, 0.0310, 0.3, 1.5, 10: [0.007780930660423273, 0.14269006875824763] [1.40904389975635, 6.118068712591897, 35.21409484985282]
+ alpha-index 7: |f_str| at rho=0.0017, 0.0310, 0.3, 1.5, 10: [0.08483856595425784, 1.5558085540951476] [15.365650133686222, 60.14608475897265, 860.4660854476328]
