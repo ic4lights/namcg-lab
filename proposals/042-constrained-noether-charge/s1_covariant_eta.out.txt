@@ -1,0 +1,24 @@
+[Euclid] (a) covariance, matrix chart vs random chart with gamma = phi^* eta:
+   X    : matrix chart  0.7825431919   y chart  0.7825431919   exact difference 0
+   TTp  : matrix chart  0.2059383267   y chart  0.2059383267   exact difference 0
+   V2   : matrix chart  0.2990388746   y chart  0.2990388746   exact difference 0
+   calT : matrix chart -0.0004339132   y chart -0.0004339132   exact difference 0
+   divV : matrix chart -0.5996117319   y chart -0.5996117319   exact difference 0
+   R_G  : matrix chart  1.1996573771   y chart  1.1996573771   exact difference 0
+   R_W in matrix chart = 0, in y chart = 0 (flat gamma)
+   R_G + calT + 2 divV: matrix chart 0, y chart 0
+[Euclid] (b) non-flat gamma, trial 0: R_G+calT+2divV = -19.279360000000, R_W = -19.279360000000, exact lhs - R_W = 0, R_W != 0: True
+[Euclid] (b) non-flat gamma, trial 1: R_G+calT+2divV = -0.606943814563, R_W = -0.606943814563, exact lhs - R_W = 0, R_W != 0: True
+[Euclid] (b) non-flat gamma, trial 2: R_G+calT+2divV =  0.505119375574, R_W =  0.505119375574, exact lhs - R_W = 0, R_W != 0: True
+[Lorentz] (a) covariance, matrix chart vs random chart with gamma = phi^* eta:
+   X    : matrix chart -17.1548621415   y chart -17.1548621415   exact difference 0
+   TTp  : matrix chart  210.5683462772   y chart  210.5683462772   exact difference 0
+   V2   : matrix chart  193.7083664373   y chart  193.7083664373   exact difference 0
+   calT : matrix chart -92.7129088340   y chart -92.7129088340   exact difference 0
+   divV : matrix chart -182.4248931279   y chart -182.4248931279   exact difference 0
+   R_G  : matrix chart  457.5626950898   y chart  457.5626950898   exact difference 0
+   R_W in matrix chart = 0, in y chart = 0 (flat gamma)
+   R_G + calT + 2 divV: matrix chart 0, y chart 0
+[Lorentz] (b) non-flat gamma, trial 0: R_G+calT+2divV =  1.011972318339, R_W =  1.011972318339, exact lhs - R_W = 0, R_W != 0: True
+[Lorentz] (b) non-flat gamma, trial 1: R_G+calT+2divV =  37.657600000000, R_W =  37.657600000000, exact lhs - R_W = 0, R_W != 0: True
+[Lorentz] (b) non-flat gamma, trial 2: R_G+calT+2divV = -2.755659474971, R_W = -2.755659474971, exact lhs - R_W = 0, R_W != 0: True
