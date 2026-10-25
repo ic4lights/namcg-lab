@@ -1,0 +1,6 @@
+compile check (scratch copy outside repository, block inserted before the unique anchor \section{Problem C: conformal mode and Cassini}, CRLF):
+pdflatex two passes rc=0 / rc=0 (no bibtex run in scratch)
+LaTeX Warning: Reference ... undefined: 0
+multiply defined labels: 0
+citation warnings (pre-existing; bibtex not run in scratch): 80
+anchor occurrences in chapters/appH-microscopic-proofs.tex: 1
