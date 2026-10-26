@@ -1,0 +1,13 @@
+bytes 10683; non-ASCII 0; CR 0; TAB 0
+brace balance 0; \( - \) 0; \[ - \] 0
+\label in insert: 0; \paragraph count: 1
+ref ass:lorentzian: label occurrences in chapters = 1
+ref ch:vierbein-emergence: label occurrences in chapters = 1
+ref sec:status-B: label occurrences in chapters = 1
+cite Steinacker2023: bib entries = 1
+anchor '\section{Problem G: HBEV}' occurrences in appH: 1
+title fragment 'fibre spectrum, proper-time interpolation between the two readings' occurrences in appH: 0
+process-language scan: []
+line before anchor ends with: an}. Problems~B and~F remain open and PROGRAMME-CONDITIONAL.
+macros used: ['Box', 'Delta', 'Sigma', 'bar', 'beta', 'bigl', 'bigr', 'cdot', 'cite', 'coth', 'delta', 'det', 'dim', 'dots', 'ell', 'emph', 'eta', 'gamma', 'ge', 'gg', 'infty', 'int', 'lambda', 'langle', 'le', 'll', 'ln', 'lvert', 'mathbb', 'mathbf', 'mathrm', 'mu', 'neq', 'nu', 'operatorname', 'paragraph', 'partial', 'perp', 'phi', 'pm', 'propto', 'rangle', 'ref', 'rvert', 'sigma', 'sim', 'simeq', 'sqrt', 'sum', 'tau', 'tfrac', 'theta', 'to']
+045 sentence corrected by the insert, occurrences in appH: 1
