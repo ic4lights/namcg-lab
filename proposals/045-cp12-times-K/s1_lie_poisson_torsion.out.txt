@@ -1,0 +1,18 @@
+base point y^A = M^{A5} = [-5.  0.  0.  0.  3.] ; ell^2 = -y.y = 16.0
+  {M^04, M^14} / lie(...) = -1.000000000000
+  {M^12, M^23} / lie(...) = -1.000000000000
+  {M^05, M^15} / lie(...) = -1.000000000000
+bracket sign s = -1
+(A) {T^a, y^mu} = s eta^{a mu} M^{45} exactly: True
+(A) background torsion {F^{ab}, y^mu} = eta^{a mu} y^b - eta^{b mu} y^a exactly (fibre independent): True
+fibre check: max |y(z) - y_b| over samples = 2.10e-13
+singular values of the fibre samples of M^{mu rho} (expect 3 nonzero): [1.         0.99657703 0.98305444 0.         0.         0.        ]
+invariant quadric fit: max |w^T Q w - 1| = 3.95e-14
+reconstruction M^{mu rho} = sum_i e^i S_i^{mu rho} on the fibre: max residual 9.97e-14
+(B) highest lam power: dE has lam^2 terms: False ; dT has lam^3 terms: False
+(B) dE: fitted constant k = -1j (spread 2.5e-14 over 12 random points/q/c), max relative residual 2.80e-14
+(B) dF: fitted constant k = -1j (spread 2.2e-15 over 12 random points/q/c), max relative residual 1.19e-15
+(B) dT: fitted constant k = (-1+0j) (spread 2.5e-14 over 12 random points/q/c), max relative residual 2.80e-14
+(C) <e^i> max |.| = 0.010 ; <e e> - 1 max |.| = 0.011 ; ||<eeee> - (3/5)iso|| / ||(3/5)iso|| = 0.016  (Monte Carlo, N = 20000, noise ~ 0.021)
+    |e|^2 on the fibre: mean 3.000000, std 5.45e-14 (a constant radius: e/|e| is a point of S^2)
+    Gram (1/2) S_i.S_j (eta contraction): [[2.333333, 0.0, 0.0], [0.0, 2.333333, 0.0], [0.0, 0.0, 2.333333]]

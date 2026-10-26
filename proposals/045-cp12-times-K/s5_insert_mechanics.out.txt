@@ -1,0 +1,12 @@
+bytes 7691; non-ASCII 0; CR 0; TAB 0
+brace balance 0; \( - \) 0; \[ - \] 0
+\label in insert: 0; \paragraph count: 1
+ref ass:lorentzian: label occurrences in chapters = 1
+ref ch:vierbein-emergence: label occurrences in chapters = 1
+ref sec:status-B: label occurrences in chapters = 1
+cite Steinacker2023: bib entries = 1
+anchor '\section{Problem G: HBEV}' occurrences in appH: 1
+title fragment 'Conjugate-coordinate class times a fuzzy factor' occurrences in appH: 0
+process-language scan: []
+line before anchor ends with: bre. Problems~B and~F remain open and PROGRAMME-CONDITIONAL.
+macros used: ['LUV', 'alpha', 'bar', 'cdot', 'cite', 'delta', 'det', 'ell', 'emph', 'eta', 'gamma', 'gg', 'ln', 'mathbb', 'mathrm', 'mu', 'nu', 'operatorname', 'paragraph', 'partial', 'phi', 'pm', 'propto', 'ref', 'rho', 'sqrt', 'sum', 'tfrac']
