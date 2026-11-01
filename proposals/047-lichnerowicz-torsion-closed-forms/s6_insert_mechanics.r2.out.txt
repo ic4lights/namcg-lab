@@ -1,0 +1,13 @@
+bytes 13992; non-ASCII 0; CR 0; TAB 0
+brace balance 0; \( - \) 0; \[ - \] 0
+\label in insert: 0; \paragraph count: 1; status closing count: 1
+ref ass:lorentzian: label occurrences in chapters = 1
+ref ch:vierbein-emergence: label occurrences in chapters = 1
+ref sec:status-B: label occurrences in chapters = 1
+cite Kabat1995: bib entries = 1
+cite MantaSteinackerTran2024: bib entries = 1
+anchor occurrences in appH: 1, in all chapters: 1
+title fragment occurrences in appH: 0
+macro \mathcal S_4 in appH: 10 ; \mathcal Z_{ab} in appH: 13
+process-language scan: []
+line before anchor ends with: sec:status-B}. Problems~B and~F remain open and PROGRAMME-CONDITIONAL.
