@@ -1,0 +1,69 @@
+(A) exact algebra
+   u_i=(0, 0, 0): Ttilde eta^-1 Ttilde - eta/4 = 0 : True
+   u_i=(3/5, 0, 0): Ttilde eta^-1 Ttilde - eta/4 = 0 : True
+   u_i=(1/3, 2/3, 0): Ttilde eta^-1 Ttilde - eta/4 = 0 : True
+   J Q^-1 J = [u.u/v.v + (rho-1)(v.T.v)^2/(v.v)^2]/A exactly at the sampled draws: True
+
+(B) null q: v = sqrt(a)(n1 e1 + n2 e2); T transverse traceless, T.T = 2 tau0^2/a^2 in the merged units
+   I[T]/T.T = rho/4 + 1/4  ; (1+rho)/4 = rho/4 + 1/4
+   c_TT^all = 8A/(1+rho) = V*(2*T + V)/(2*(T + 2*V))  ; V=T: T/2  ; level-one value (2V+T)/5 ; level-one/all-harmonic at V=T: 6/5
+   variational inequality c_TT^level-one >= c_TT^all (2V+T)/5 - c_eff =  (2*T**2 - 2*T*V + 3*V**2)/(10*(T + 2*V))
+
+(C) static dust at rest, q=(0,0,0,k), c = cos theta, r = 1/s^2, theta_ = 1+r, c0 = sqrt(r/theta_) = 1/cosh tau
+   s^2=0.5625    g(tau)=0.0435996609 (PV numeric 0.0435996609) ; tanh^4 tau = 0.1296000000 ; 1-g = 9.564e-01 ; 2/s^2=3.556e+00
+   s^2=1         g(tau)=0.1883873799 (PV numeric 0.1883873799) ; tanh^4 tau = 0.2500000000 ; 1-g = 8.116e-01 ; 2/s^2=2.000e+00
+   s^2=4         g(tau)=0.6278364236 (PV numeric 0.6278364236) ; tanh^4 tau = 0.6400000000 ; 1-g = 3.722e-01 ; 2/s^2=5.000e-01
+   s^2=9         g(tau)=0.8068060535 (PV numeric 0.8068060535) ; tanh^4 tau = 0.8100000000 ; 1-g = 1.932e-01 ; 2/s^2=2.222e-01
+   s^2=100       g(tau)=0.9802635028 (PV numeric 0.9802635028) ; tanh^4 tau = 0.9802960494 ; 1-g = 1.974e-02 ; 2/s^2=2.000e-02
+   s^2=10000     g(tau)=0.9998000267 (PV numeric 0.9998000267) ; tanh^4 tau = 0.9998000300 ; 1-g = 2.000e-04 ; 2/s^2=2.000e-04
+   s^2=1e+06     g(tau)=0.9999980000 (PV numeric 0.9999980000) ; tanh^4 tau = 0.9999980000 ; 1-g = 2.000e-06 ; 2/s^2=2.000e-06
+   S1, rho=1: u.u = (1/4) T00^2 v.v exactly, I = T00^2/4, G_stat/G_TT = 1 for every tau; gamma = g(tau)
+   S2, rho=1: u.u = -T00^2 (v^0)^2, I = T00^2 g(tau), G_stat/G_TT = 4 g(tau); hbar^{ab} = 0, gamma_PPN = 0
+   g(tau) changes sign at s^2 = 0.439229 (cosh tau = 1.199679, c0 = 0.833557, root of c0 arctanh c0 = 1)
+   Cassini-size check, |gamma-1| < 2.3e-5 under S1, rho=1: s^2 > about 86956.52173913043
+
+(D) Galerkin truncation on odd fibre orders J <= N, real spherical harmonics, Gauss-Legendre x trapezoid quadrature
+   null q, a=1, TT source T^=diag(1,-1) on (s1,s2); restrict to j=1,2 (s3 is the gauge direction q). c_N in units A: c_N/A = 2 T.T/I_N, T.T = 2
+   rho=1.00: (N, c_N/A): [(1, np.float64(4.8)), (3, np.float64(4.28571)), (5, np.float64(4.14815)), (7, np.float64(4.09091)), (9, np.float64(4.06154)), (13, np.float64(4.03361)), (17, np.float64(4.02116)), (25, np.float64(4.01061))]  exact N=oo 8/(1+rho) = 4.0
+   rho=0.75: (N, c_N/A): [(1, np.float64(5.6)), (3, np.float64(4.92308)), (5, np.float64(4.75238)), (7, np.float64(4.68215)), (9, np.float64(4.64627)), (13, np.float64(4.61226)), (17, np.float64(4.59712)), (25, np.float64(4.5843))]  exact N=oo 8/(1+rho) = 4.571428571428571
+   check N=1, rho=1: c_1/A = 24/5 means c_1 = (3/5) T at A = T/8, the merged c_TT at V_i=T_i=T: printed value above
+
+   static dust, S1 and S2, m=k=1, r=1/s^2, axisymmetric reduction beta_1=n1 f(c), beta_2=n2 f(c), beta_3=p(c), f even, p odd, orders <= N (same space as J <= N by the symmetry)
+   s^2=10000 S1 rho=1 eps=0.02: I_N real part [(1, 0.13866), (3, 0.17816), (9, 0.21072), (33, 0.21058), (129, 0.21067), (513, 0.21067)] ; regulated N=oo 0.21067 ; eps->0 exact 0.25000
+   s^2=10000 S2 rho=1 eps=0.02: I_N real part [(1, 0.55498), (3, 0.71327), (9, 0.84373), (33, 0.84291), (129, 0.84327), (513, 0.84327)] ; regulated N=oo 0.84327 ; eps->0 exact 0.99980
+   s^2=100 S1 rho=1 eps=0.02: I_N real part [(1, 0.13108), (3, 0.1643), (9, 0.2036), (33, 0.20546), (129, 0.20558), (513, 0.20558)] ; regulated N=oo 0.20558 ; eps->0 exact 0.25000
+   s^2=100 S2 rho=1 eps=0.02: I_N real part [(1, 0.55866), (3, 0.72551), (9, 0.88146), (33, 0.85893), (129, 0.85874), (513, 0.85874)] ; regulated N=oo 0.85874 ; eps->0 exact 0.98026
+   level one comparison: ratio G_stat/G_TT at N=1 = I_1/I_GR * c_oo/c_1 with I_GR = 1/4 at c = c_oo: s3 gives 2/3 (S1) and 8/3 (S2) at late times
+   N=1, s^2=1e4: I_1(S1) = 0.138815 -> ratio 0.66631 ; I_1(S2) = 0.555593 -> ratio 2.66684 (s3: 0.666311 and 2.666844)
+   V != T, late time limit S1: I -> rho/4 and c_stat = 4(A+B) = V/2; rho=0.75, s^2=1e6, N=513, eps=0.002 real part: 0.1794  rho/4 = 0.1875
+
+(E) tree term, rho=1 dust S1: factor <v.v/(v.v + tau)>, tau = 8 pi^2 rho_M m^6/(g^2 A) (units m k): closed form with PV, against the J=0 reading
+   s^2=10000    tau/(mk)^2=0.01   fibre-resolved=0.989967 (Lorentz-regulated numeric 0.989888) ; J=0 reading <v.v>/(<v.v>+tau)=1.030934
+   s^2=10000    tau/(mk)^2=0.1    fibre-resolved=0.896458 (Lorentz-regulated numeric 0.896433) ; J=0 reading <v.v>/(<v.v>+tau)=1.428694
+   s^2=10000    tau/(mk)^2=0.5    fibre-resolved=0.376818 (Lorentz-regulated numeric 0.376807) ; J=0 reading <v.v>/(<v.v>+tau)=-1.998800
+   s^2=10000    tau/(mk)^2=2      fibre-resolved=-0.246407 (Lorentz-regulated numeric -0.246407) ; J=0 reading <v.v>/(<v.v>+tau)=-0.199952
+   s^2=10000    tau/(mk)^2=20     fibre-resolved=-0.017182 (Lorentz-regulated numeric -0.017182) ; J=0 reading <v.v>/(<v.v>+tau)=-0.016946
+   s^2=100      tau/(mk)^2=0.1    fibre-resolved=0.897141 (Lorentz-regulated numeric 0.897115) ; J=0 reading <v.v>/(<v.v>+tau)=1.441176
+   s^2=10000    tau/(mk)^2=0.001  fibre-resolved=0.999000 (Lorentz-regulated numeric 0.998741) ; J=0 reading <v.v>/(<v.v>+tau)=1.003010
+   IR limit tp->oo: fibre-resolved -> -3.3e-07 (screening, as in the published k->0 statement)
+
+(F) off-shell helicity-two source, rho=1: I[T]/T.T = (1/2) h(x), h = <x(1-c^2)/(x(1-c^2)+c^2)>, x = a/b
+   x=1.0001   h=0.66668000 numeric 0.66668000
+   x=1.5      h=0.71896201 numeric 0.71896201
+   x=3        h=0.79808902 numeric 0.79808902
+   x=10       h=0.89813213 numeric 0.89813213
+   x=100      h=0.97971412 numeric 0.97971412
+   x=10000    h=0.99957010 numeric 0.99957010
+   x=1e+06    h=0.99999340 numeric 0.99999340
+   static (x=-r): h = 1 - g(tau); late times h ~ 2/s^2 >0 . So one coefficient on helicity two holds at x = infinity only; dust is a different channel.
+
+(G) checks added: regulator sequence, stress entries, gamma from the pointwise solution
+   s^2=1e4 eps=0.02: regulated N=oo I(S1) = 0.210668, I(S2) = 0.843269
+   s^2=1e4 eps=0.002: regulated N=oo I(S1) = 0.237284, I(S2) = 0.951362
+   s^2=1e4 eps=0.0002: regulated N=oo I(S1) = 0.245532, I(S2) = 0.987453
+   s^2=1e4 eps=2e-05: regulated N=oo I(S1) = 0.249226, I(S2) = 0.998237
+   X v . X v - [ (rho0^2/4) v.v - (rho0 p + p^2) (v^0)^2 ] = 0
+   so I = rho0^2/4 + g (rho0 p + p^2); GR value (1/2)(T.T - T^2/2) = p*rho0 + rho0**2/4
+   s^2=100 eps=1e-05: dhat^00 = -0.249961 (exact -1/4 at eps=0), dhat^11 = -0.245047, gamma = 0.980339, g(tau) = 0.980264
+   s^2=9 eps=1e-05: dhat^00 = -0.249989 (exact -1/4 at eps=0), dhat^11 = -0.201696, gamma = 0.806822, g(tau) = 0.806806
+   s^2=10000 eps=1e-06: dhat^00 = -0.249961 (exact -1/4 at eps=0), dhat^11 = -0.249930, gamma = 0.999879, g(tau) = 0.999800
