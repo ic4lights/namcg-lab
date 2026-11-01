@@ -1,0 +1,26 @@
+R1 applied
+R2 applied
+R3 applied
+R4 applied
+R5 applied
+R6 applied
+R7 applied
+R8 applied
+R9 applied
+R10 applied
+R11 applied
+R12 applied
+R13 applied
+R14 applied
+R15 applied
+R16 applied
+R17 applied
+R18 applied
+R19 applied
+R20 applied
+E1 applied
+E2 applied
+E3 applied
+E4 applied
+E5 applied
+written appH_insert.tex 21698 bytes, sha256 92f8033b70adb8140f1c70b69e81f101ae30597d10d662c4c70f72045a10e4e2
