@@ -1,0 +1,65 @@
+(A) pointwise elimination
+    residual of -m^2/C * I_n against the extremum: 0
+    numeric extremum 1.9678445075, formula 1.9678445075
+    numeric extremum -1.5787601191, formula -1.5787601191
+    numeric extremum -24.3092422125, formula -24.3092422125
+(B) I for X = rho0 (u u + (beta/2) eta), per rho0^2
+    I/rho0^2 = -(-beta**2*varrho + 4*beta*g*varrho - 4*g - 4*g2*varrho + 4*g2)/4
+    residual of rho (beta/2 - g)^2 + [g - g2 + rho (g2 - g^2)]: 0
+    at rho=1: -(-beta**2 + 4*beta*g - 4*g)/4  S1 (beta=1): 1/4  S2 (beta=0): g
+    at g=g2=1: varrho*(beta - 2)**2/4
+(C) closed forms of g, g2
+         s^2          g         g2 | eps=1e-3:          g         g2 | eps=1e-5:          g         g2
+      0.5625   0.043600  -0.156456 |             0.043247  -0.156645 |             0.043596  -0.156458
+      1.0000   0.188387  -0.108709 |             0.187833  -0.109125 |             0.188382  -0.108714
+      4.0000   0.627836   0.353404 |             0.626432   0.351719 |             0.627822   0.353387
+     25.0000   0.924071   0.852025 |             0.920221   0.846473 |             0.924032   0.851970
+    100.0000   0.980264   0.960787 |             0.972459   0.949197 |             0.980185   0.960671
+    large s^2: 1-g ~ 2/s^2, g-g2 ~ 2/s^2, g2-g^2 = O(1/s^4):
+      s^2=     100  (1-g)s^2=1.97365  (g-g2)s^2=1.94761  (g2-g^2)s^4=-1.29155  g(1-g)s^2=1.93470
+      s^2=    1000  (1-g)s^2=1.99734  (g-g2)s^2=1.99468  (g2-g^2)s^4=-1.32908  g(1-g)s^2=1.99335
+      s^2=   10000  (1-g)s^2=1.99973  (g-g2)s^2=1.99947  (g2-g^2)s^4=-1.33291  g(1-g)s^2=1.99933
+      s^2=  100000  (1-g)s^2=1.99997  (g-g2)s^2=1.99995  (g2-g^2)s^4=-1.33329  g(1-g)s^2=1.99993
+    048 K(tau) = 4 g2 - 4 g + 1 from the S1 case of (B); values:
+      s^2=     1.0 K=-0.188387
+      s^2=     4.0 K=-0.097731
+      s^2=   100.0 K=0.922096
+      s^2= 10000.0 K=0.999200
+(D) potentials at rho=1, per rho0, from hbar proportional to <(Xv v + v Xv)/v.v>
+    hbar^00 = g*(2 - beta) , hbar^11 = beta*(1 - g)/2 , t = beta - 2*g
+    h_beta^00 = -(-beta**2 + 4*beta*g - 4*g)/2 , h_beta^11 = beta*(-beta + g + 1)/2
+    residual of 2 h_beta^00 against I (the source couples to h_beta): 0
+    sum h^00 + h^11 same in both readings, residual: 0
+    gamma_beta(g) = -beta*(-beta + g + 1)/(-beta**2 + 4*beta*g - 4*g)
+    gamma_beta(g=1) = -beta/(beta - 2) ; at beta=1: g ; at beta=0: 0
+    R(beta) = 4 I at rho=1, g=1 : (beta - 2)**2
+    roots of gamma=1 at general g: [5*g/4 - sqrt(25*g**2 - 22*g + 1)/4 + 1/4, 5*g/4 + sqrt(25*g**2 - 22*g + 1)/4 + 1/4]
+    t = 0 at beta = 2 g: hbar^11/hbar^00 = 1/2 , I at rho=1 = -g*(g - 1)
+    table at g=1:  beta, kappa_m=1-beta/2, gamma=beta/(2-beta), R=(2-beta)^2
+          -1    3/2   -1/3      9
+        -1/2    5/4   -1/5   25/4
+        -1/6  13/12  -1/13 169/36
+           0      1      0      4
+         1/2    3/4    1/3    9/4
+           1    1/2      1      1
+(E) trace mass term and vacuum shift
+    residual of the closed response with a trace mass: 0
+    residual with rho -> q^2/(q^2 - q_b^2) against the three poles: 0
+(F) discretised fibre with a regulator, V = T + vacuum shift, compared with the closed result
+         s^2   beta    rho |       closed     eps=1e-3     eps=1e-5
+        4.00   0.00   1.00 |     0.627836     0.626713     0.627825
+        4.00   0.00   0.50 |     0.451135     0.450685     0.451130
+        4.00   1.00   1.00 |     0.250000     0.250000     0.250000
+        4.00   1.00   0.50 |     0.262216     0.262329     0.262217
+        4.00  -1.00   1.00 |     1.505673     1.503425     1.505650
+        4.00  -1.00   0.50 |     0.890053     0.889041     0.890043
+        4.00  -0.50   1.00 |     1.004255     1.002569     1.004238
+        4.00  -0.50   0.50 |     0.639344     0.638613     0.639336
+       25.00   0.00   1.00 |     0.924071     0.920369     0.924034
+       25.00   0.00   0.50 |     0.498058     0.497026     0.498048
+       25.00   1.00   1.00 |     0.250000     0.250000     0.250000
+       25.00   1.00   0.50 |     0.161023     0.161841     0.161031
+       25.00  -1.00   1.00 |     2.098142     2.090738     2.098068
+       25.00  -1.00   0.50 |     1.085094     1.082210     1.085065
+       25.00  -0.50   1.00 |     1.448606     1.443053     1.448551
+       25.00  -0.50   0.50 |     0.760326     0.758368     0.760306
