@@ -1,4 +1,4 @@
-bytes 10683; non-ASCII 0; CR 0; TAB 0
+bytes 10874; non-ASCII 0; CR 0; TAB 0
 brace balance 0; \( - \) 0; \[ - \] 0
 \label in insert: 0; \paragraph count: 1
 ref ass:lorentzian: label occurrences in chapters = 1
