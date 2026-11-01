@@ -1,0 +1,27 @@
+review-r1.md sha256 89912cffbae1c779bc7e0eb45039439b72d5f0500e747321cbc8a234cbba26a2
+input appH_insert.tex bytes 15572 sha256 6ec4f65732b683bb5320deb5fd54733640b977ebeb39f0f509ab9b379ac87a5c
+R1  ok: old once; delta +2 chars
+R2  ok: old once; delta +80 chars
+R3  ok: old once; delta +92 chars
+R4  ok: old once; delta +23 chars
+R5  ok: old once; delta +7 chars
+R6  ok: old once; delta +2 chars
+R7  ok: old once; delta +41 chars
+R8  ok: old once; delta +61 chars
+R9  ok: old once; delta +64 chars
+R10 ok: old once; delta +173 chars
+R11 ok: old once; delta +7 chars
+R12 ok: old once; delta +20 chars
+R13 ok: old once; delta +118 chars
+R14 ok: old once; delta +24 chars
+R15 ok: old once; delta +40 chars
+R16 ok: old once; delta +12 chars
+R17 ok: old once; delta +12 chars
+R18 ok: old once; delta +24 chars
+R19 ok: old once; delta +12 chars
+R20 ok: old once; delta +12 chars
+R21 ok: old once; delta -8 chars
+result chars 16390 bytes 16390 ASCII True CR 0 BOM False
+result sha256 6124496b4d016b93ba3fa385e93eddd30b9347e63e491119869e092d7988804f
+kept round-1 text as appH_insert.r1.tex
+wrote appH_insert.tex

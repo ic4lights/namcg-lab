@@ -95,20 +95,36 @@ print("\n(E) insert mechanics")
 ins_b = open(os.path.join(here, 'appH_insert.tex'), 'rb').read()
 print("   bytes", len(ins_b), "ASCII", all(b < 128 for b in ins_b), "CR count", ins_b.count(b'\r'), "BOM", ins_b[:3] == b'\xef\xbb\xbf')
 ins = ins_b.decode()
-repo = os.path.join(here, '..', '..')
-appH = open(os.path.join(repo, 'chapters', 'appH-microscopic-proofs.tex'), encoding='utf-8').read()
-anchor = '\\section{Problem G: HBEV}'
-print("   anchor count in appH:", appH.count(anchor))
-allt = ''
-for root, _, files in os.walk(os.path.join(repo, 'chapters')):
-    for fn in files:
-        if fn.endswith('.tex'): allt += open(os.path.join(root, fn), encoding='utf-8').read()
-for lab in re.findall(r'\\ref\{([^}]+)\}', ins):
-    print("   ref", lab, "labels found:", allt.count('\\label{' + lab + '}'))
-bib = open(os.path.join(repo, 'bib', 'namcg.bib'), encoding='utf-8').read()
-for keyset in set(re.findall(r'\\cite\{([^}]+)\}', ins)):
-    for key in keyset.split(','):
-        print("   cite", key, "entries:", bib.count('{' + key.strip() + ','))
+def find_repo():
+    # NAMCG_REPO if set, otherwise the nearest ancestor of this script that holds the manuscript sources
+    need = (os.path.join('chapters', 'appH-microscopic-proofs.tex'), os.path.join('bib', 'namcg.bib'))
+    cands = [os.environ['NAMCG_REPO']] if os.environ.get('NAMCG_REPO') else []
+    d = here
+    while True:
+        cands.append(d)
+        up = os.path.dirname(d)
+        if up == d: break
+        d = up
+    for c in cands:
+        if all(os.path.isfile(os.path.join(c, n)) for n in need): return c
+    return None
+repo = find_repo()
+if repo is None:
+    print("   SKIPPED, no manuscript found from this location (set NAMCG_REPO to run them): anchor count, label counts, cite counts")
+else:
+    appH = open(os.path.join(repo, 'chapters', 'appH-microscopic-proofs.tex'), encoding='utf-8').read()
+    anchor = '\\section{Problem G: HBEV}'
+    print("   anchor count in appH:", appH.count(anchor))
+    allt = ''
+    for root, _, files in os.walk(os.path.join(repo, 'chapters')):
+        for fn in files:
+            if fn.endswith('.tex'): allt += open(os.path.join(root, fn), encoding='utf-8').read()
+    for lab in re.findall(r'\\ref\{([^}]+)\}', ins):
+        print("   ref", lab, "labels found:", allt.count('\\label{' + lab + '}'))
+    bib = open(os.path.join(repo, 'bib', 'namcg.bib'), encoding='utf-8').read()
+    for keyset in set(re.findall(r'\\cite\{([^}]+)\}', ins)):
+        for key in keyset.split(','):
+            print("   cite", key, "entries:", bib.count('{' + key.strip() + ','))
 print("   new labels in insert:", re.findall(r'\\label\{([^}]+)\}', ins))
 print("   status sentences:", len(re.findall(r'remain open and PROGRAMME-CONDITIONAL', ins)), "; closing line:", ins.rstrip().split('. ')[-1])
 print("   paragraphs:", len([p for p in ins.split('\n\n') if p.strip()]))
