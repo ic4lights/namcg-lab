@@ -1,0 +1,18 @@
+bytes 22821 sha256 eba2c8ed7f120413377176df1da08adf4cd5e4d57458b07561ee5fedbd6fa256 (LF form)
+ASCII True CR 0 BOM False
+paragraph blocks 12
+new labels []
+status sentence count 1
+process-word scan ['round ']
+refs ['ass:gap-psi', 'ass:lorentzian', 'ch:vierbein-emergence', 'eq:Smatrix']
+cites ['Bertotti2003', 'MantaSteinacker2025b', 'Steinacker2023', 'Steinacker2026']
+anchor count 1
+  label ass:gap-psi 1
+  label ass:lorentzian 1
+  label ch:vierbein-emergence 1
+  label eq:Smatrix 1
+  bib Bertotti2003 1
+  bib MantaSteinacker2025b 0
+  bib Steinacker2023 1
+  bib Steinacker2026 1
+key in new_bib_entry.bib: MantaSteinacker2025b
