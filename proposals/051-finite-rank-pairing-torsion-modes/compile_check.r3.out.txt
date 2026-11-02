@@ -1,0 +1,18 @@
+insert 14205 bytes sha256 94b4c128d5d16ffbad412d43aebb3f9566fc7de90758b600564cd9ef70b7dd2e
+bib    647 bytes sha256 77758a19e96b69e91cc20ccf03470739603ba05f6ae7b6bfeb0933fe4a4159f1
+insert after CRLF conversion 14244 bytes; bib after CRLF conversion 670 bytes
+baseline (current working tree):
+  anchor+CRLF count 1 ; anchor+bare LF count 0 ; bare LF in appH before 0
+  exit codes (pdflatex, bibtex, pdflatex, pdflatex) [0, 0, 0, 0] ; 344 pages
+  undefined refs [] ; undefined citations [] ; multiply defined labels []
+  bibtex warnings 0 []
+  in bbl: Hehl2017 False ; Sakai2019 False ; Kibble1961 False ; bibitems 68
+with insert and bib entries:
+  anchor+CRLF count 1 ; anchor+bare LF count 0 ; bare LF in appH before 0
+  bare LF in appH after 0 ; bytes added 14244
+  bare LF in bib after 0
+  exit codes (pdflatex, bibtex, pdflatex, pdflatex) [0, 0, 0, 0] ; 348 pages
+  undefined refs [] ; undefined citations [] ; multiply defined labels []
+  bibtex warnings 0 []
+  in bbl: Hehl2017 True ; Sakai2019 True ; Kibble1961 False ; bibitems 70
+scratch removed: True
