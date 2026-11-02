@@ -178,5 +178,186 @@ def main():
     print('ALL ASSERTIONS PASSED')
 
 
+def gamma_slog(X, sig):
+    """Same operators and weights as gamma_eps with content 'weyl10' and the Euclidean contraction, using slogdet (r2 section)."""
+    d = len(X)
+    P = ad_ops(X)
+    n = P[0].shape[0]
+    P2 = sum(P[a] @ P[a] for a in range(d))
+    comm = {(a, b): P[a] @ P[b] - P[b] @ P[a] for a in range(d) for b in range(d)}
+    Hg = P2 + sig * np.eye(n)
+    HV = np.kron(np.eye(d), Hg).astype(complex)
+    for b in range(d):
+        for a in range(d):
+            HV[b * n:(b + 1) * n, a * n:(a + 1) * n] += -2 * comm[(a, b)]
+    G, chi = gammas(10)
+    vals, vecs = np.linalg.eigh(chi)
+    Pz = vecs[:, vals > 0]
+    HF = np.kron(np.eye(16), Hg).astype(complex)
+    for a in range(d):
+        for b in range(d):
+            if a != b:
+                HF = HF + np.kron(Pz.conj().T @ (0.25 * (G[a] @ G[b] - G[b] @ G[a])) @ Pz, comm[(a, b)])
+    ld = lambda M: np.linalg.slogdet(M)[1]
+    return 0.5 * ld(HV) - ld(Hg) - 0.25 * ld(HF)
+
+
+def gamma_offdiag(X0, X, sig):
+    """The same three operators restricted, for every species, to the index pairs with nonzero difference of the eigenvalues of X0.
+
+    Each restricted operator is still one common operator plus constant spin matrices times one operator, so the species identities
+    apply as before.  This removes the Q = 0 modes and tests where the sigma^-2 comes from.  It is not the standard object, in which
+    the diagonal elements are treated as moduli and no statement is made about it here."""
+    d = len(X)
+    n = X[0].shape[0]
+    N2 = n * n
+    keep = [i * n + j for i in range(n) for j in range(n) if i != j]
+    P = ad_ops(X)
+    P2 = sum(P[a] @ P[a] for a in range(d))
+    comm = {(a, b): P[a] @ P[b] - P[b] @ P[a] for a in range(d) for b in range(d)}
+    Hg = P2 + sig * np.eye(N2)
+    HV = np.kron(np.eye(d), Hg).astype(complex)
+    for b in range(d):
+        for a in range(d):
+            HV[b * N2:(b + 1) * N2, a * N2:(a + 1) * N2] += -2 * comm[(a, b)]
+    G, chi = gammas(10)
+    vals, vecs = np.linalg.eigh(chi)
+    Pz = vecs[:, vals > 0]
+    HF = np.kron(np.eye(16), Hg).astype(complex)
+    for a in range(d):
+        for b in range(d):
+            if a != b:
+                HF = HF + np.kron(Pz.conj().T @ (0.25 * (G[a] @ G[b] - G[b] @ G[a])) @ Pz, comm[(a, b)])
+    kV = [c * N2 + k for c in range(d) for k in keep]
+    kF = [c * N2 + k for c in range(16) for k in keep]
+    ld = lambda M, K: np.linalg.slogdet(M[np.ix_(K, K)])[1]
+    return 0.5 * ld(HV, kV) - ld(Hg, keep) - 0.25 * ld(HF, kF)
+
+
+def gamma_mp(X, sig, dps=60):
+    """The same trace in mpmath at dps digits, as a roundoff check of gamma_slog at one point."""
+    import mpmath as mp
+    mp.mp.dps = dps
+    d = len(X)
+    P = ad_ops(X)
+    n = P[0].shape[0]
+    P2 = sum(P[a] @ P[a] for a in range(d))
+    comm = {(a, b): P[a] @ P[b] - P[b] @ P[a] for a in range(d) for b in range(d)}
+    Hg = P2 + 0j * P2
+    HV = np.kron(np.eye(d), Hg).astype(complex)
+    for b in range(d):
+        for a in range(d):
+            HV[b * n:(b + 1) * n, a * n:(a + 1) * n] += -2 * comm[(a, b)]
+    G, chi = gammas(10)
+    vals, vecs = np.linalg.eigh(chi)
+    Pz = vecs[:, vals > 0]
+    HF = np.kron(np.eye(16), Hg).astype(complex)
+    for a in range(d):
+        for b in range(d):
+            if a != b:
+                HF = HF + np.kron(Pz.conj().T @ (0.25 * (G[a] @ G[b] - G[b] @ G[a])) @ Pz, comm[(a, b)])
+
+    def ldm(M):
+        A = mp.matrix(M.shape[0], M.shape[1])
+        for i, j in zip(*np.nonzero(M)):
+            A[int(i), int(j)] = mp.mpc(float(M[i, j].real), float(M[i, j].imag))
+        for i in range(M.shape[0]):
+            A[i, i] += mp.mpf(float(sig))
+        return mp.log(abs(mp.det(A)))
+    return 0.5 * ldm(HV) - ldm(Hg) - mp.mpf(1) / 4 * ldm(HF)
+
+
+def draw_gatekeeper_data():
+    """The draws of the review's own script: seed 52, N=3, ten diagonal matrices, then ten Hermitian matrices."""
+    rng = np.random.default_rng(52)
+    n = 3
+    X0 = [np.diag(rng.normal(size=n)).astype(complex) for _ in range(10)]
+    A = []
+    for _ in range(10):
+        a = rng.normal(size=(n, n)) + 1j * rng.normal(size=(n, n))
+        A.append((a + a.conj().T) / 2)
+    return X0, A
+
+
+def draw_s1_data():
+    """The draws of main(): seed 52001, X0 diagonal in four directions.  Independent of the review's data."""
+    rng = np.random.default_rng(52001)
+    X0 = [(np.diag(rng.normal(size=3)) * 2.0).astype(complex) for _ in range(4)] + [np.zeros((3, 3), dtype=complex) for _ in range(6)]
+    A = [rand_herm(rng, 3) for _ in range(10)]
+    return X0, A
+
+
+def dG(X0, A, t, sig, base=None):
+    b = gamma_slog(X0, sig) if base is None else base
+    return gamma_slog([x + t * a for x, a in zip(X0, A)], sig) - b
+
+
+def r2_section():
+    print()
+    print('R2 SECTION: dependence on the regulator, for R1 of the review.  Euclidean contraction, common shift sigma, Q = 0 modes included.')
+    Xg, Ag = draw_gatekeeper_data()
+    Xs, As = draw_s1_data()
+    print('consistency gamma_slog vs gamma_eps at t=0.1, sigma=0.3:', gamma_slog([x + 0.1 * a for x, a in zip(Xs, As)], 0.3), gamma_eps([x + 0.1 * a for x, a in zip(Xs, As)], [1] * 10, 0.3, 'weyl10').real)
+    print()
+    print('A. Table of the review: seed 52, amplitudes halving from 0.32.  dGamma and successive log2 slopes.')
+    amps = [.32, .16, .08, .04, .02, .01, .005]
+    for sig in (1.0, 0.3, 1e-2, 1e-4):
+        base = gamma_slog(Xg, sig)
+        v = [dG(Xg, Ag, t, sig, base) for t in amps]
+        sl = [np.log(abs(v[i] / v[i + 1])) / np.log(2) for i in range(len(v) - 1)]
+        print('  sigma=%-7g vals %s' % (sig, ' '.join('%.2e' % x for x in v)))
+        print('  %s slopes %s ; dGamma/t^4 at t=0.005: %.3e' % (' ' * 13, ' '.join('%.2f' % x for x in sl), v[-1] / amps[-1]**4))
+    print()
+    for name, X0, A in (('seed 52 (review data)', Xg, Ag), ('seed 52001 (s1 data)', Xs, As)):
+        print('B. %s: coefficient C = dGamma/t^4 at small x = t/sigma^(1/2), x = 0.03, and its local exponent in sigma.' % name)
+        prev = None
+        for sig in (1.0, 0.3, 0.1, 0.03, 0.01, 1e-3, 1e-4, 1e-5):
+            t = 0.03 * sig**0.5
+            base = gamma_slog(X0, sig)
+            c = dG(X0, A, t, sig, base) / t**4
+            c2 = dG(X0, A, t / 2, sig, base) / (t / 2)**4
+            ex = '' if prev is None else 'local exponent %+.3f' % (np.log(abs(c / prev[1])) / np.log(sig / prev[0]))
+            assert prev is None or abs(np.log(abs(c / prev[1])) / np.log(sig / prev[0]) + 2) < 0.1
+            print('  sigma=%-7g t=%.3e C=%.4e C(t/2)=%.4e  C*sigma^2=%.4e  %s' % (sig, t, c, c2, c * sig**2, ex))
+            prev = (sig, c)
+        print('C. %s: local slope d ln|dGamma| / d ln t against x = t/sigma^(1/2).' % name)
+        xs = [0.003, 0.01, 0.03, 0.1, 0.3, 1.0, 3.0, 10.0, 30.0]
+        print('  sigma     ' + ' '.join('x=%-6g' % x for x in xs))
+        for sig in (1e-2, 1e-3, 1e-4, 1e-5, 1e-6):
+            base = gamma_slog(X0, sig)
+            row = []
+            for x in xs:
+                t = x * sig**0.5
+                row.append(np.log(abs(dG(X0, A, t * 2**0.25, sig, base) / dG(X0, A, t * 2**-0.25, sig, base))) / np.log(2**0.5))
+            print('  %-9g ' % sig + ' '.join('%-8.2f' % r for r in row))
+            assert abs(row[0] - 4) < 0.02 and abs(row[1] - 4) < 0.05 and max(abs(r) for r in row[5:]) < 1.3
+        print('D. %s: dGamma at fixed x across sigma (collapse onto a function of x alone when sigma and t are small against Q^2 and Q).' % name)
+        for x in (0.1, 0.3, 1.0, 3.0):
+            print('  x=%-4g ' % x + ' '.join('sigma=%g: %.4e' % (sig, dG(X0, A, x * sig**0.5, sig)) for sig in (1e-3, 1e-4, 1e-5, 1e-6)))
+    Aoff = [a - np.diag(np.diag(a)) for a in Ag]
+    print('E. Off-diagonal A only, seed 52: slopes as for table A.')
+    for sig in (1e-2, 1e-4):
+        base = gamma_slog(Xg, sig)
+        am = [.08, .04, .02, .01, .005, .0025]
+        v = [dG(Xg, Aoff, t, sig, base) for t in am]
+        print('  sigma=%-7g vals %s slopes %s' % (sig, ' '.join('%.2e' % x for x in v), ' '.join('%.2f' % (np.log(abs(v[i] / v[i + 1])) / np.log(2)) for i in range(len(v) - 1))))
+    print('F. Roundoff check at 60 digits, seed 52: sigma=1e-4, t=3e-4 (x=0.03) and t=1e-3 (x=0.1).')
+    for t in (3e-4, 1e-3):
+        sig = 1e-4
+        Xp = [x + t * a for x, a in zip(Xg, Ag)]
+        m = gamma_mp(Xp, sig) - gamma_mp(Xg, sig)
+        print('  t=%g: slogdet %.10e ; mpmath %s' % (t, dG(Xg, Ag, t, sig), str(m)[:18]))
+    print('G. Same data with the Q = 0 modes removed from every species: coefficient dGamma/t^4 at fixed t, and exponents in t.')
+    for name, X0, A in (('seed 52', Xg, Ag), ('seed 52001', Xs, As)):
+        for sig in (1.0, 0.3, 1e-2, 1e-4, 1e-6, 1e-8):
+            base = gamma_offdiag(X0, X0, sig)
+            v = [gamma_offdiag(X0, [x + t * a for x, a in zip(X0, A)], sig) - base for t in (0.08, 0.04, 0.02)]
+            sl = [np.log(abs(v[i] / v[i + 1])) / np.log(2) for i in range(2)]
+            print('  %-10s sigma=%-7g dGamma/t^4 at t=0.02: %.4e ; slopes %.3f %.3f' % (name, sig, v[-1] / 0.02**4, sl[0], sl[1]))
+            assert abs(sl[1] - 4) < 0.15
+    print('R2 SECTION DONE')
+
+
 if __name__ == '__main__':
     main()
+    r2_section()

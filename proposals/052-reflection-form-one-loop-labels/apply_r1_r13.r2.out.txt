@@ -1,0 +1,16 @@
+R1 old   95 bytes, new  547 bytes; count in r1 1, count at its turn 1
+R2 old   78 bytes, new  106 bytes; count in r1 1, count at its turn 1
+R3 old  164 bytes, new  178 bytes; count in r1 1, count at its turn 1
+R4 old  189 bytes, new  241 bytes; count in r1 1, count at its turn 1
+R5 old  253 bytes, new  421 bytes; count in r1 1, count at its turn 1
+R6 old  175 bytes, new  397 bytes; count in r1 1, count at its turn 1
+R7 old  168 bytes, new  211 bytes; count in r1 1, count at its turn 1
+R8 old   96 bytes, new  115 bytes; count in r1 1, count at its turn 1
+R9 old   51 bytes, new  342 bytes; count in r1 1, count at its turn 1
+R10 old   73 bytes, new  364 bytes; count in r1 1, count at its turn 1
+R11 old   73 bytes, new  156 bytes; count in r1 1, count at its turn 1
+R12 old  103 bytes, new  395 bytes; count in r1 1, count at its turn 1
+R13 old   64 bytes, new  308 bytes; count in r1 1, count at its turn 1
+insert result 16413 bytes; sha256 4bacb6ee304e94af190d3bd88647dbed5d48bb6368551004030c227436692838
+bib result 2198 bytes; sha256 81584d933ad25611bcf741b3f6913f31ab678b004f8f0ccd6f477eeff3d08cdc
+WRITTEN: appH_insert.r1.tex, new_bib_entries.r1.bib, appH_insert.tex, new_bib_entries.bib
