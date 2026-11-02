@@ -1,0 +1,26 @@
+(a) third algebra, Jacobi True
+    ad_0^2 = P True
+    ad_1^2 = -P True
+    ad_2^2 = 0 True
+    ad_3^2 = 0 True
+    ad_0 = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+    ad_1 = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, -1], [0, 0, 1, 0]]
+    sum_a h_a ad_a^2 = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, h0 - h1, 0], [0, 0, 0, h0 - h1]]
+    delta solves: True
+    eta, time on E0 solves: False
+    eta, time on E1 solves: False
+    eta, time on E2 solves: True
+    eta, time on E3 solves: True
+(b) X1=iE2, X2=iE3, X3=-iE0, X4=iE1 against A_{4,12} as printed
+    [X1,X2] = [0, 0, 0, 0] expected [0, 0, 0, 0] True
+    [X1,X3] = [0, 0, -1, 0] expected [0, 0, -1, 0] True
+    [X1,X4] = [0, 0, 0, 1] expected [0, 0, 0, 1] True
+    [X2,X3] = [0, 0, 0, -1] expected [0, 0, 0, -1] True
+    [X2,X4] = [0, 0, -1, 0] expected [0, 0, -1, 0] True
+    [X3,X4] = [0, 0, 0, 0] expected [0, 0, 0, 0] True
+(c) first algebra, Jacobi True
+    [E0-E3,E_b] = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+    [J,E1], [J,E2], [J,E0-E3], [E1,E2] = [0, 0, 1, 0] [0, -1, 0, 0] [0, 0, 0, 0] [0, 0, 0, 0]
+    eta(J,J) = 0 ; eta(E0-E3,E0-E3) = 0
+    sum_a eta_aa ad_a^2 = 0: True
+ALL ASSERTIONS PASSED
