@@ -1,0 +1,17 @@
+N = 36
+1a. U X_a U^-1 = theta_a^c X_c: ok
+1b. quartic action S[X0+A], S[X0+RA]: 23.102777634736043 23.102777634736047
+1c. dim of End(H)^2 = 2592 ; trace of R = 0.0 ; multiplicities +1, -1: 1296.0 1296.0
+2. G_gh =
+ [[10.73831634  0.        ]
+ [ 0.         10.73831634]] 
+   reflected pairing =
+ [[-10.73831634   0.        ]
+ [  0.          10.73831634]] 
+   theta G =
+ [[-10.73831634   0.        ]
+ [  0.          10.73831634]]
+   q=(0,1): HS(O_0, R O_0) / HS(O_0,O_0) = -1.0 ; HS(O_1, R O_1) / HS(O_1,O_1) = 1.0
+2b. reflected pairing / norm, fibre probes: odd -1.0 , even 1.0
+3. no fibre: quadratic form 185.73105459328715 185.7310545932872 ; cubic term -107.0578830015463 -42.263311991050365 ; quartic term 972.9238333064221 728.4805790128523
+ALL ASSERTIONS PASSED
