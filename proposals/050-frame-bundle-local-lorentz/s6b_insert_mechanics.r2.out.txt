@@ -1,0 +1,38 @@
+insert bytes 18152 sha256 819f40a624e4f7a87c177253be13f23dc97d0861921230bf1835c421ec2987f9
+r1 copy bytes 14623 sha256 408a9d28fff6308559036268e399c018c0eb98cf383b48171ef449012c024c7c
+bib bytes 2035 sha256 7f05cb9d40570ffc1f57f753476538a280cea26e2924aad3070c67e0ddebb42e CR 0
+ASCII True CR 0 BOM False ends with blank line True
+paragraph blocks 8
+new labels []
+status sentence count 1
+process-word scan with context {'round ': ['on the background and brea', '. On a background where th']}
+residual forms: {'\\Phi': 0, '\\sigma\\ell': 0, '\\eta\\cdot': 0, '\\varsigma': 3, '\\mathsf F': 6, '\\tilde\\zeta': 3}
+anchor + CRLF count 1 ; anchor + bare LF count 0 ; anchor count 1
+anchor at line 1346 ; preceding bytes b'omposition}, and leaves Problems~B, C, D, F\r\nand~G open.\r\n\r\n'
+  label ass:frame-lock 1
+  label ass:local-lorentz 1
+  label ass:lorentzian 1
+  label ass:nondeg 1
+  label ch:vierbein-emergence 1
+  label def:matrix-coords 1
+  label eq:LUV-def 1
+  label eq:NC 1
+  label eq:Smatrix 1
+  label eq:Smicro 1
+  label eq:dressed-omega 1
+  label sec:status-F 1
+  label sec:status-N 1
+keys in new_bib_entries.bib: ['HanadaKawaiKimura2006', 'HoKawaiSteinacker2025', 'FurutaHanadaKawaiKimura2007', 'HanadaKawaiKimura2006b', 'Hanada2006', 'AsanoKawaiTsuchiya2012']
+  key absent from bib/namcg.bib: HanadaKawaiKimura2006 0
+  key absent from bib/namcg.bib: HoKawaiSteinacker2025 0
+  key absent from bib/namcg.bib: FurutaHanadaKawaiKimura2007 0
+  key absent from bib/namcg.bib: HanadaKawaiKimura2006b 0
+  key absent from bib/namcg.bib: Hanada2006 0
+  key absent from bib/namcg.bib: AsanoKawaiTsuchiya2012 0
+  cite AsanoKawaiTsuchiya2012 in namcg.bib 0 in new file 1
+  cite FurutaHanadaKawaiKimura2007 in namcg.bib 0 in new file 1
+  cite Hanada2006 in namcg.bib 0 in new file 1
+  cite HanadaKawaiKimura2006 in namcg.bib 0 in new file 1
+  cite HanadaKawaiKimura2006b in namcg.bib 0 in new file 1
+  cite HoKawaiSteinacker2025 in namcg.bib 0 in new file 1
+  cite Steinacker2019NoGhost in namcg.bib 1 in new file 0

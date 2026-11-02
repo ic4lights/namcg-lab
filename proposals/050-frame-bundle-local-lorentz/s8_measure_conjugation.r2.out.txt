@@ -1,0 +1,29 @@
+d=2 part A, all of e, its first jet, w and the fibre coordinate symbolic: div_mu V_a = T_ac^c: True
+d=2 part 0: u in the group True; right fields divergence free True; left fields divergence free True; dA formula gives du = u X True
+d=2 part A: det e = 25/9 at the point, entries off the diagonal nonzero True; symbolic first jets 8 and connection values 2: div_mu V_a = T_ac^c for all a: True; with the opposite sign: False
+   elapsed 1 s
+d=3 part 0: u in the group True; right fields divergence free True; left fields divergence free True; dA formula gives du = u X True
+d=3 part A: det e = -35/18 at the point, entries off the diagonal nonzero True; symbolic first jets 27 and connection values 9: div_mu V_a = T_ac^c for all a: True; with the opposite sign: False
+   elapsed 2 s
+d=4 part 0: u in the group True; right fields divergence free True; left fields divergence free True; dA formula gives du = u X True
+d=4 part A: det e = 91 at the point, entries off the diagonal nonzero True; symbolic first jets 64 and connection values 24: div_mu V_a = T_ac^c for all a: True; with the opposite sign: False
+   elapsed 21 s
+d=3 part C: f L_a g + g L_a f is a total divergence in the reference measure, so L_a is formally anti-symmetric: True
+   S_cd: no y part, no divergence, [S_cd,V_a] = eta_ad V_c - eta_ac V_d on all coordinates: True
+   [xi + (1/2) div xi, L_a] = W + (1/2) div_ref W with W = [xi, V_a], so the diffeomorphism generator of the reference picture stays in the class: True
+   elapsed 32 s
+d=3 part B: det e at the point = 753840539/22588608
+   t_a = (1/2) div_mu V_a = (1/2) T_ac^c at the point: True
+   pair (0,1): order-zero part of [D_a,D_b] + T^c D_c, picture mu = 38492572515901465697/3490435213688086272, reference = 38492572515901465697/3490435213688086272
+   pair (0,2): order-zero part of [D_a,D_b] + T^c D_c, picture mu = 3609244469957748917/872608803422021568, reference = 3609244469957748917/872608803422021568
+   pair (1,2): order-zero part of [D_a,D_b] + T^c D_c, picture mu = 51385769746834209839/3490435213688086272, reference = 51385769746834209839/3490435213688086272
+   same order-zero coefficient in both pictures, with the same T: True; full comparison on 3 pairs; nonzero at T != 0: True
+   the difference of the two, V_a delta_b - V_b delta_a + T_ab^c delta_c with delta_a = (1/2) V_a ln|det e|, vanishes on all 3 pairs: True
+   elapsed 64 s
+d=4 part B: det e at the point = 5375561759459/119538913536
+   t_a = (1/2) div_mu V_a = (1/2) T_ac^c at the point: True
+   pair (0,1): order-zero part of [D_a,D_b] + T^c D_c, picture mu = -965262345843740839793099/20295565016589326056320, reference = -965262345843740839793099/20295565016589326056320
+   same order-zero coefficient in both pictures, with the same T: True; full comparison on 1 pairs; nonzero at T != 0: True
+   the all-pairs difference test is not run at this d, for run time
+   elapsed 576 s
+ALL ASSERTIONS PASSED
