@@ -1,0 +1,8 @@
+A  box(e^{iqy} J) = (K.q.q) e^{iqy} J and box(e^{iqy} R) = (K.q.q) e^{iqy} R + c i (K q lam)^c e^{iqy} d_c, three generators: failures 0 ; c = {-2}
+B  Q.Q - (k + (1-Lam)p)^2 at an exact point: 0
+C  max |E[(1/2){f,C}] - (1/2){E[f],C}| = 1.07e-14 (floating point)
+D  [left E_a4, right E_AB] = 0 on sampled generators: failures 0
+E  [D_a,D_b] f^a versus f_b at an exact SO(4,1) point: ratios [3, 3, 3, 3]
+   [D^a,[D_a,D_b]] / D_b on a test function, b = 0: -3
+   [D^a,[D_a,D_b]] / D_b on a test function, b = 1: -3
+ALL ASSERTIONS PASSED

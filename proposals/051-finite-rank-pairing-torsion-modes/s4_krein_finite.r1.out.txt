@@ -1,0 +1,10 @@
+a  || J M - (J M)^dagger || / ||M|| = 2.40e-17
+b  commuting: M diagonal: off-diagonal norm 0.00e+00; eigenvalues vs Q^2: 0.00e+00; ||M-M^dagger|| = 0.00e+00
+c  ad F_0i = 0: ||M - M^dagger|| / ||M|| = 3.24e-17; max |Im eigenvalue| = 1.31e-14
+d  generic: ||M - M^dagger|| / ||M|| = 0.663; max |Im eigenvalue| = 8.4504
+e  first t on the grid with a complex pair (threshold 1e-6): 0.009000000000000001
+   just below t=0.007900  smallest gap 2.222e-02  |<v,v>_J|/<v,v>_HS = 4.597e-01, 4.598e-01
+   closer     t=0.008890  smallest gap 2.287e-03  |<v,v>_J|/<v,v>_HS = 4.729e-02, 4.729e-02
+   closest    t=0.008900  smallest gap 2.000e-06  |<v,v>_J|/<v,v>_HS = 2.126e-09, 2.126e-09
+f  quadratic part: direct -41.28974299, (1/2) eta Tr(A E A) -41.28975221, difference 9.22e-06
+ALL ASSERTIONS PASSED
