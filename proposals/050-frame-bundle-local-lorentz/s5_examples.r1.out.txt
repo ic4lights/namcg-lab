@@ -1,0 +1,19 @@
+# (a) regular representation of so(4,1)
+ [T^a,[T_a,T_b]] = -3 T_b residual 0
+ [M_cd,T_a] is a Lorentz rotation of the index a: yes
+ (g M_cd)^A_4 = 0 residual 0 ; eta^{ab} g^A_a g^B_b = eta^{AB} - Y^A Y^B residual 4.440892098500626e-16 ; Y.Y = 0.9999999999999998
+# (b) spinor identity
+ [X,gamma^c] + gamma^d w^c_d residual 2.220446049250313e-16
+ gamma^d v_d^c = rho gamma^c rho^{-1} residual 1.7209438938332283e-11
+# (c) curvature as a map on bivectors, exact
+ Schwarzschild r=8/3 (M=1), cos(theta)=3/5: rank 6 of 6; nonzero entries [27/512, 27/256]
+ Schwarzschild r=25/4 (M=1), cos(theta)=5/13: rank 6 of 6; nonzero entries [64/15625, 128/15625]
+ Ricci-flat pp-wave: rank 2 of 6
+ Kasner (-1/3,2/3,2/3): rank 6 of 6
+# (d) null Kaluza-Klein wave with five matrices
+ torsion-free checks 0 0 ; Ric(5) flat components nonzero: {(0, 0): -c0 - f0**2/2, (0, 1): -c0 - f0**2/2, (1, 1): -c0 - f0**2/2}
+ Ric(4) nonzero: {(0, 0): -c0, (0, 1): -c0, (1, 1): -c0}
+ F = f0 e^2 ^ (e^0 + e^1), so (1/2) F_0c F_0^c = f0^2/2 = Ric(4)_00 exactly when c0 = -f0^2/2
+ Ric(5) at c0=-f0^2/2: Matrix([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]])
+# (e) central Theta on the flat bundle: a_a = -(1/2) Theta_ab (u^{-1} y)^b
+ D_a a_b - D_b a_a - Theta_ab = True ; note D_a acts through u_a^c d_c only, and u is held fixed by the flat D_a

@@ -1,0 +1,25 @@
+bytes 14623 sha256 408a9d28fff6308559036268e399c018c0eb98cf383b48171ef449012c024c7c (LF form)
+ASCII True CR 0 BOM False
+paragraph blocks 8
+new labels []
+status sentence count 1
+process-word scan ['round ']
+refs ['ass:frame-lock', 'ass:local-lorentz', 'ass:lorentzian', 'ass:nondeg', 'ch:vierbein-emergence', 'def:matrix-coords', 'eq:LUV-def', 'eq:NC', 'eq:Smatrix', 'eq:Smicro', 'eq:dressed-omega', 'sec:status-F', 'sec:status-N']
+cites ['HanadaKawaiKimura2006', 'HoKawaiSteinacker2025']
+anchor count 1
+  label ass:frame-lock 1
+  label ass:local-lorentz 1
+  label ass:lorentzian 1
+  label ass:nondeg 1
+  label ch:vierbein-emergence 1
+  label def:matrix-coords 1
+  label eq:LUV-def 1
+  label eq:NC 1
+  label eq:Smatrix 1
+  label eq:Smicro 1
+  label eq:dressed-omega 1
+  label sec:status-F 1
+  label sec:status-N 1
+  bib HanadaKawaiKimura2006 0
+  bib HoKawaiSteinacker2025 0
+keys in new_bib_entries.bib: ['HanadaKawaiKimura2006', 'HoKawaiSteinacker2025']

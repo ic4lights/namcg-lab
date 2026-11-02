@@ -1,0 +1,39 @@
+# (a) relation of M^{mu nu} to T and y at random points of the orbit (eps^{0123}=+1)
+ sign sigma found: {1} samples 18 max residual 5.186961971048731e-13
+ |n|^2 := T.T ell^2/(-y.y) over samples: min, max 0.9999999999999954 1.000000000000682 ; ell^2 0.9999999999999925 1.0000000000006821
+# (b) bracket identities on the realisation
+ {T^a,y^mu} - s eta m max residual 3.631592696271126e-17  s = -1.0
+ {T^a,T^b} - s M^{ab} max residual 2.220446049250313e-16
+ {y^a,y^b} + s M^{ab} max residual 2.220446049250313e-16
+# (c) exact: the bivectors lam(xi) at rational base points
+ (y0,y4)=(5,3) ell=4: dim W=3, antisym True, dim(W+[W,W])=6, xi=e_1: boost entry lam^(01)=3/5, rotation entry lam^(23)=4/5, ratio rotation/boost=4/3
+ (y0,y4)=(13,5) ell=12: dim W=3, antisym True, dim(W+[W,W])=6, xi=e_1: boost entry lam^(01)=5/13, rotation entry lam^(23)=12/13, ratio rotation/boost=12/5
+ (y0,y4)=(5,4) ell=3: dim W=3, antisym True, dim(W+[W,W])=6, xi=e_1: boost entry lam^(01)=4/5, rotation entry lam^(23)=3/5, ratio rotation/boost=3/4
+ (y0,y4)=(25,7) ell=24: dim W=3, antisym True, dim(W+[W,W])=6, xi=e_1: boost entry lam^(01)=7/25, rotation entry lam^(23)=24/25, ratio rotation/boost=24/7
+ at y4=0 (frame degenerate there): dim(W+[W,W]) = 3
+# (d) selection rule on the fibre
+ J=1: norm of {Lambda,T^a} per fibre level L=0..6, each a, divided by the largest entry
+[[0.       0.266601 0.       0.       0.       0.       0.      ]
+ [0.       0.488066 0.       0.       0.       0.       0.      ]
+ [0.       1.       0.       0.       0.       0.       0.      ]
+ [0.       0.321184 0.       0.       0.       0.       0.      ]]
+ J=2: norm of {Lambda,T^a} per fibre level L=0..6, each a, divided by the largest entry
+[[0.       0.       0.472866 0.       0.       0.       0.      ]
+ [0.       0.       0.731718 0.       0.       0.       0.      ]
+ [0.       0.       1.       0.       0.       0.       0.      ]
+ [0.       0.       0.511513 0.       0.       0.       0.      ]]
+ J=3: norm of {Lambda,T^a} per fibre level L=0..6, each a, divided by the largest entry
+[[0.       0.       0.       0.612905 0.       0.       0.      ]
+ [0.       0.       0.       0.909185 0.       0.       0.      ]
+ [0.       0.       0.       1.       0.       0.       0.      ]
+ [0.       0.       0.       0.635884 0.       0.       0.      ]]
+ J=4: norm of {Lambda,T^a} per fibre level L=0..6, each a, divided by the largest entry
+[[0.       0.       0.       0.       0.685684 0.       0.      ]
+ [0.       0.       0.       0.       1.       0.       0.      ]
+ [0.       0.       0.       0.       0.973903 0.       0.      ]
+ [0.       0.       0.       0.       0.695729 0.       0.      ]]
+# (e) algebraic against derivative part: T^j rotates at rate ell/y0 per unit xi, the derivative term has m|q| per unit xi
+ (y0,y4)=(5,3), ell=4: derivative/rotation at |q| ell = 1 is m y0/ell^2 = 0.9375 = sinh(tau)cosh(tau) with sinh tau = m/ell
+ (y0,y4)=(13,5), ell=12: derivative/rotation at |q| ell = 1 is m y0/ell^2 = 0.4514 = sinh(tau)cosh(tau) with sinh tau = m/ell
+ (y0,y4)=(5,4), ell=3: derivative/rotation at |q| ell = 1 is m y0/ell^2 = 2.2222 = sinh(tau)cosh(tau) with sinh tau = m/ell
+ (y0,y4)=(25,7), ell=24: derivative/rotation at |q| ell = 1 is m y0/ell^2 = 0.3038 = sinh(tau)cosh(tau) with sinh tau = m/ell
