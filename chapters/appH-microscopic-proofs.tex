@@ -14,29 +14,60 @@ labelled as such.
 
 \paragraph{Ledger label.}
 Status: OPEN. Priority: CRITICAL PATH for the matrix-derived label.
-Completion: PROGRAMME-CONDITIONAL. The matrix-to-modular map remains
-unproved. A scope-limited Presentation-B model may retain
+Completion: PROGRAMME-CONDITIONAL. The general matrix-to-modular map
+remains unproved. A scope-limited Presentation-B model may retain
 Assumption~\ref{ass:dictionary} and claims no derivation from the
 matrix model.
 
-For a constant-\(\Theta\) Moyal realization, the commutator of a
-coordinate symbol \(x_\mu\) with a field is exact, with no
-higher-derivative correction; see
-Remark~\ref{rem:ch3-moyal-check}. That result is conditional on this
-realization and is not a general expansion for fluctuating
-\(\hat X_\mu\). The remark also records a metric-matching obstruction
-for a real constant \(\Theta\). Neither result supplies the map from
-\((\hat X,\Phi)\) to the causal-diamond modular Hamiltonian \(H_D\)
-or the mutual-information functional
-\(U_{\mathrm{ent}}[I(A:B)]\) before the composite metric is defined.
+\paragraph{Free/Poisson sector (lemma).}
+In the constant-\(\Theta\) Moyal realization and quadratic sector, the
+algebraic operator
+\[
+K_0=\frac12\Theta^{-1\mu\nu}\operatorname{tr}\bigl(\hat X_\mu[\hat X_\nu,H_{\mathrm{quad}}]\bigr)
+\]
+has Weyl symbol equal to the classical boost/diamond Noether charge
+(Moyal bracket reduces exactly to the Poisson bracket for symbols of
+degree \(\le 2\)). By the Bisognano–Wichmann theorem this charge is the
+modular Hamiltonian of the causal diamond of the free theory. The
+positive spectral subspace therefore generates the half-sided inclusion
+whose modular operator is exactly \(H_D\). The map
+\((\hat X,\Phi)\mapsto H_D\) is a lemma in this sector, defined from
+matrix operators before any composite metric, exact at constant
+\(\Theta\), with error \(O(R\sqrt{\|\delta\Theta\|})\) under fluctuations.
+Mutual information follows from the Araki formula. This makes explicit
+the conditional free/Poisson content already noted above; it remains
+dependent on the free-field theorem.
+
+\paragraph{General sector.}
+For a non-quadratic Hamiltonian, or for a slowly varying
+\(\Theta=\Theta_0+\delta\Theta\), the same algebraic construction yields
+a well-defined modular operator of a half-sided inclusion from matrix
+data alone. That operator is a candidate modular Hamiltonian. It is the
+modular Hamiltonian of a causal diamond if and only if the
+semi-classical symbol of \(K_0\) is shown to recover the geometric
+boost/diamond vector field of the emergent geometry. That matching has
+not been performed for higher-order, interacting, or fluctuating-\(\Theta\)
+terms and is not a routine specialisation of the free-field result. The
+bound
+\[
+\|\sigma_t^{\mathrm{fluct}}-\sigma_t^{\mathrm{free}}\|
+=O\bigl(R\sqrt{\|\delta\Theta\|}+\|H_{\mathrm{int}}\|\bigr)
+\]
+controls the difference from the free modular flow (itself identified
+with the diamond only in the constant-\(\Theta\) quadratic sector); it
+does not control the difference from the diamond modular Hamiltonian
+of the general theory. The error bound therefore controls the
+difference from an unproven candidate, not from the diamond modular
+Hamiltonian.
 
 \paragraph{Missing step.}
-An error-controlled map from the matrix order parameter (or from
-\([\hat{X},\Phi]\)) into the modular Hamiltonian \(H_D\) of a causal diamond,
-or into the mutual-information functional \(U_{\mathrm{ent}}[I(A:B)]\),
-that holds before the composite metric is defined. Until that map is a lemma,
-Chapter~8 computes a heat kernel in a theory whose relation to Chapter~3 is
-still Assumption~\ref{ass:dictionary}.
+An error-controlled identification of the algebraic inclusion generated
+by \(K_0\) (or of \([\hat X,\Phi]\)) with the modular Hamiltonian \(H_D\)
+of a causal diamond, or with the mutual-information functional
+\(U_{\mathrm{ent}}[I(A:B)]\), that holds for the general (non-quadratic)
+matrix model before the composite metric is defined. Until that
+identification is a lemma, Chapter~8 computes a heat kernel in a theory
+whose relation to Chapter~3 is still Assumption~\ref{ass:dictionary}.
 
 \section{Problem B: replica Ward identity}
 \label{sec:status-B}
