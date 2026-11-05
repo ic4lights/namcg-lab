@@ -1,6 +1,6 @@
 SME-SCOUT: 7 routes | TOP: F/N:closed helicity-two level-one two-point function (tree form + induced form), poles and residues, against Steinacker 2601.08031 Eqs. 4.41-4.46; F/C:Newtonian channel (helicity 0 + trace/dilaton at q.y=0), where the 047 forms appear to give the opposite sign to c_T^TT at late times; D1:level-one gauge parameters and the Lorentz generators of 2601.08031 App. A.2-A.3, read against Hanada-Kawai-Kimura | EMERGENCE-RISK: low
 
-Date: 2026-11-01. Branch remote/claude. Scout after integration 45 (ledger through 047).
+Date: 2026-11-01. Branch working. Scout after integration 45 (ledger through 047).
 
 ## 0. Bottom line
 

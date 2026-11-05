@@ -1,6 +1,6 @@
 SME-SCOUT: 7 routes | TOP: E:which regulated integral, finite-N limit-order lemma for the Lorentzian integral against the Euclidean model; D1/selection:semi-classical self-consistency test of the commuting-fibre and CP^{1,2} classes using the 2605.13294 criterion; A:matrix-built subregion projector and edge charge (Frenkel, Fliss et al.) on a NAMCG background | EMERGENCE-RISK: low
 
-Date: 2026-11-02. Branch remote/claude. Scout after integration 50 (ledger through 052). Advice only. No label change is proposed.
+Date: 2026-11-02. Branch working. Scout after integration 50 (ledger through 052). Advice only. No label change is proposed.
 
 ## 0. Bottom line
 
