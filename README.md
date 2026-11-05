@@ -3,10 +3,10 @@
 Official repository for **Non-Abelian Matrix-Condensate Geometrogenesis (NAMCG)**.
 
 NAMCG is a research programme that attempts to derive an emergent Lorentzian metric, massless transverse-traceless spin-2 modes, and a covariantly conserved entropic stress from a microscopic matrix-valued order parameter \(\Phi^I_A\). The composite metric is defined by
-\[
+$$
 e^A_\mu \equiv \langle \partial_\mu \Phi^I_A \rangle, \qquad
 g_{\mu\nu} = \eta_{AB}\, e^A_\mu e^B_\nu.
-\]
+$$
 The programme is organised as a single derivation chain; many steps remain open (see Appendix H of the monograph).
 
 > **Read the monograph:** [NAMCG monograph (namcg-book7.pdf)](namcg-book7.pdf)
