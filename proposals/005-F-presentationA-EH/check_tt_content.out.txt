@@ -1,0 +1,28 @@
+eigenvalues (with multiplicity): {-117/16: 1, -39/16: 2}
+lambda = -117/16 mult 1 nullspace dim (full space, includes gauge q): 2
+   vec [4/17, 7/68, 1, 0]   tr h = 0   p^a h_ac = [423/34, 423/17, 1269/136, 2115/136]   rho1 = 117/68
+   vec [1/17, 23/68, 0, 1]   tr h = 0   p^a h_ac = [705/34, 705/17, 2115/136, 3525/136]   rho1 = 195/68
+lambda = -39/16 mult 2 nullspace dim (full space, includes gauge q): 3
+   vec [-2, 1, 0, 0]   tr h = 0   p^a h_ac = [-272, 136, 25/2, -15/2]   rho1 = 0
+   vec [-3, 0, 1, 0]   tr h = 0   p^a h_ac = [-431, 4, 101/4, 6]   rho1 = 0
+   vec [-5, 0, 0, 1]   tr h = 0   p^a h_ac = [-673, -16, 40, 45/4]   rho1 = 0
+TT-projection test (value of FP form vs -1/4*rho0*p2*|h_TT|^2/2):
+  lam= -117/16 vec [4/17, 7/68, 1, 0]  FP(h) = -1930149/9248   -1/4*p2*|hTT|^2/2 = -643383/2312   ratio-diff = 643383/9248
+  lam= -117/16 vec [1/17, 23/68, 0, 1]  FP(h) = -5361525/9248   -1/4*p2*|hTT|^2/2 = -1787175/2312   ratio-diff = 1787175/9248
+  lam= -39/16 vec [-2, 1, 0, 0]  FP(h) = -3315   -1/4*p2*|hTT|^2/2 = -3315   ratio-diff = 0
+  lam= -39/16 vec [-3, 0, 1, 0]  FP(h) = -27183/4   -1/4*p2*|hTT|^2/2 = -27183/4   ratio-diff = 0
+  lam= -39/16 vec [-5, 0, 0, 1]  FP(h) = -66495/4   -1/4*p2*|hTT|^2/2 = -66495/4   ratio-diff = 0
+eigenvalues (with multiplicity): {-93/16: 1, -31/16: 2}
+lambda = -93/16 mult 1 nullspace dim (full space, includes gauge q): 2
+   vec [-7/68, -1/17, 1, 0]   tr h = 0   p^a h_ac = [-417/17, -417/34, 1251/136, 2085/136]   rho1 = 93/68
+   vec [-23/68, 4/17, 0, 1]   tr h = 0   p^a h_ac = [-695/17, -695/34, 2085/136, 3475/136]   rho1 = 155/68
+lambda = -31/16 mult 2 nullspace dim (full space, includes gauge q): 3
+   vec [-1/2, 1, 0, 0]   tr h = 0   p^a h_ac = [-68, -136, 15/4, -9/4]   rho1 = 0
+   vec [-3/2, 0, 1, 0]   tr h = 0   p^a h_ac = [-220, -23, 6, 69/4]   rho1 = 0
+   vec [-5/2, 0, 0, 1]   tr h = 0   p^a h_ac = [-344, 7, 35/4, 59/2]   rho1 = 0
+TT-projection test (value of FP form vs -1/4*rho0*p2*|h_TT|^2/2):
+  lam= -93/16 vec [-7/68, -1/17, 1, 0]  FP(h) = -1202211/9248   -1/4*p2*|hTT|^2/2 = -400737/2312   ratio-diff = 400737/9248
+  lam= -93/16 vec [-23/68, 4/17, 0, 1]  FP(h) = -3339475/9248   -1/4*p2*|hTT|^2/2 = -3339475/6936   ratio-diff = 3339475/27744
+  lam= -31/16 vec [-1/2, 1, 0, 0]  FP(h) = -1581/4   -1/4*p2*|hTT|^2/2 = -1581/4   ratio-diff = 0
+  lam= -31/16 vec [-3/2, 0, 1, 0]  FP(h) = 4743/4   -1/4*p2*|hTT|^2/2 = 4743/4   ratio-diff = 0
+  lam= -31/16 vec [-5/2, 0, 0, 1]  FP(h) = 11501/4   -1/4*p2*|hTT|^2/2 = 11501/4   ratio-diff = 0

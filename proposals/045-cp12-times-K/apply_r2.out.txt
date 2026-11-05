@@ -1,0 +1,13 @@
+R1: old string occurrences = 1
+R2: old string occurrences = 1
+R3: old string occurrences = 1
+R4: old string occurrences = 1
+R5: old string occurrences = 1
+R6a: old string occurrences = 1
+R6b: old string occurrences = 1
+R6c: old string occurrences = 1
+R7: old string occurrences = 1
+R8: old string occurrences = 1
+r2 bytes 8485; TAB 0; CR 0; non-ASCII 0; control (non-LF) 0
+brace balance 0; \( - \) 0; \[ - \] 0
+\paragraph 1; \label 0

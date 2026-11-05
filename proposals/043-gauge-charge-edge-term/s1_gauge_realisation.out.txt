@@ -1,0 +1,12 @@
+[Euclidean rotation] (a) L_xi omega=0, L_xi A=0: True; (b) d eps = iota_xi omega: True; (c) zeta = xi at 5 random points (max err 0): True
+   (d) eps, d eps = 0 on Sigma: True; Hess eps|Sigma = B^T omega: True; symmetric and nonzero: True
+   Hess eps on Sigma (rows 1,2): [[2*x3*x4/3 - 4*x4/3 + 3/2, 0, 0, 0], [0, 2*x3*x4/3 - 4*x4/3 + 3/2, 0, 0]]
+   (e) xi^a = B^a_b x^b (rigid eta-rotation in the matrix chart): True
+[Lorentzian boost] (a) L_xi omega=0, L_xi A=0: True; (b) d eps = iota_xi omega: True; (c) zeta = xi at 5 random points (max err 0): True
+   (d) eps, d eps = 0 on Sigma: True; Hess eps|Sigma = B^T omega: True; symmetric and nonzero: True
+   Hess eps on Sigma (rows 1,2): [[-2*x3**2 - 2*x3/3 - 6*x4**2 - 7/2, 0, 0, 0], [0, 2*x3**2 + 2*x3/3 + 6*x4**2 + 7/2, 0, 0]]
+   (e) xi^a = B^a_b x^b (rigid eta-rotation in the matrix chart): True
+(f) da^mu = {lam, x^mu} gives dA = d lam on A_nu = a^mu omega_mu_nu (U(1) at linear order): True
+(g) [Euclidean] Komar density of sqrt(G)R_G on Sigma for the gauge field zeta = xi: Q^12 = 8, nonzero: True
+(g) [Lorentzian] Komar density of sqrt(G)R_G on Sigma for the gauge field zeta = xi: Q^12 = 8, nonzero: True
+ALL CHECKS PASSED

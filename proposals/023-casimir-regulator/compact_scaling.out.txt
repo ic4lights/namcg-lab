@@ -1,0 +1,4 @@
+A=8 total=108900 negative=5690 frac=5.225e-02
+A=16 total=3755844 negative=64021 frac=1.705e-02  local exponents: neg ~ A^3.49, total ~ A^5.11
+A=32 total=171348100 negative=879930 frac=5.135e-03  local exponents: neg ~ A^3.78, total ~ A^5.51
+A=48 total=1734722500 negative=4315762 frac=2.488e-03  local exponents: neg ~ A^3.92, total ~ A^5.71

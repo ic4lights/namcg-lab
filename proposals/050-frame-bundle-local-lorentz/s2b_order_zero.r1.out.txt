@@ -1,0 +1,1 @@
+order-zero formula DD^a Phi_ab - T_ab^c Phi^a_c: True; D-part formula with W present: True; max |order-zero coefficient| 168.4

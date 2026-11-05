@@ -1,0 +1,10 @@
+== SD  K=(W,Rsig) (-1, 0)  P (0, 1)  R_ijij (2, -1)  tau12 (-2, 1)
+ metric part 3 Phi_W : c_a/10 - c_b/15  ; at c=(1,0): 1/10
+ gap(c_a,c_b) = (3*N_s*c_a - 2*N_s*c_b - 3*N_s + 18*c_a*n_D - 54*c_a - 22*c_b*n_D + 56*c_b - 48*n_D + 114)/30
+ gap at (1,0) : 2 - n_D  [033 completed gap 2 - nD]
+ coefficient of N_tot : c_a/10 - c_b/15 - 1/10 ; coefficient of kappa_X (at fixed N_tot): -2*c_a + 2*c_b + 4
+== ASD  K=(W,Rsig) (-1, 0)  P (0, 1)  R_ijij (2, -1)  tau12 (-2, 1)
+ metric part 3 Phi_W : c_a/10 - c_b/15  ; at c=(1,0): 1/10
+ gap(c_a,c_b) = (3*N_s*c_a - 2*N_s*c_b - 3*N_s + 18*c_a*n_D - 54*c_a + 38*c_b*n_D - 64*c_b - 48*n_D + 114)/30
+ gap at (1,0) : 2 - n_D  [033 completed gap 2 - nD]
+ coefficient of N_tot : c_a/10 - c_b/15 - 1/10 ; coefficient of kappa_X (at fixed N_tot): -2*c_a - 2*c_b + 4

@@ -1,0 +1,63 @@
+Consistency: hbar = fibre average of delta gamma: True
+L1 + L2 - (SC2 - SC1) = 0
+  EH   = d_p*k**6*l**2*(d_p*l**2 - 2*d_q*m**2)/(9*m**4)
+  IX1  = k**6*(2*d_p**2*l**4 + d_q**2*m**4)/(9*m**4)
+  IX2  = k**6*(8*d_p**2*l**4 - 2*d_p**2*l**2*m**2 - 2*d_q**2*l**2*m**2 + 3*d_q**2*m**4)/(15*m**4)
+  SC1  = -k**6*(8*d_p**2*l**4 - 4*d_p*d_q*l**2*m**2 + 3*d_q**2*m**4)/(216*m**4)
+  SC2  = -k**6*(24*d_p**2*l**4 - 2*d_p**2*l**2*m**2 - 8*d_p*d_q*l**2*m**2 - 2*d_q**2*l**2*m**2 + 9*d_q**2*m**4)/(360*m**4)
+  L1   = -k**6*(16*d_p**2*l**4 - 3*d_p**2*l**2*m**2 - 2*d_p*d_q*l**2*m**2 - 3*d_q**2*l**2*m**2 + 6*d_q**2*m**4)/(540*m**4)
+  L2   = 0
+
+Closed-form check of IX2, SC2 with G = diag(a,a,b):
+   IX2 residual: 0
+   SC2 residual: 0
+
+Total block (S_E = D^T F D, basis d_q, d_p), general weights:
+   F[0,0] = k**6*(2*T1*l**2 - 4*T1*m**2 - 6*T2*l**2 + 4*T2*m**2 + 5*V0*m**2 - 2*V1*l**2 + 4*V1*m**2)/(11520*pi**2*m**2)
+   F[0,1] = k**6*l**2*(5*T0 + T1 - 5*V0 - V1)/(17280*pi**2*m**2)
+   F[1,1] = -k**6*l**2*(5*T0*l**2 + 16*T1*l**2 - 3*T1*m**2 - 21*T2*l**2 + 9*T2*m**2 - 20*V0*l**2 - 16*V1*l**2 + 3*V1*m**2)/(17280*pi**2*m**4)
+   tree part: F_qq = tree q^2 b/3, F_pp = 2 tree q^2 a/3 (time component has the indefinite sign of alpha^0)
+
+hbar images: d/d d_q: [[2*k**2*m**3/3, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]] 
+             d/d d_p: [[0, 0, 0, 0], [0, 2*k**2*l**2*m/3, 0, 0], [0, 0, 2*k**2*l**2*m/3, 0], [0, 0, 0, 0]]
+   J[S1] = [[T00*k**2*m**3/3], [2*T00*k**2*l**2*m/3]]
+   J[S2] = [[2*T00*k**2*m**3/3], [0]]
+
+Equal weights (V_i=V, T_i=T, W3=V-T), no tree: closed response
+   F_eq = [[-k**6*(4*T*l**2 + 2*V*l**2 - 9*V*m**2)/(11520*pi**2*m**2), k**6*l**2*(T - V)/(2880*pi**2*m**2)], [k**6*l**2*(T - V)/(2880*pi**2*m**2), k**6*l**2*(-2*T*m**2 + 12*V*l**2 - V*m**2)/(5760*pi**2*m**4)]]
+   c_TT (equal weights) = T/5 + 2*V/5  check: 0
+   S1: G_stat/G_TT (level one, equal weights) = 2*(T + 2*V)*(2*T*s2**2 + 8*T*s2 + 8*T + V*s2**2 - 38*V*s2 + 4*V)/(3*V*(6*T*s2**2 - 8*T*s2 + 16*T + 3*V*s2**2 - 34*V*s2 + 8*V))
+       V=T: 2*(s2**2 - 10*s2 + 4)/((s2 - 4)*(3*s2 - 2)) ; late s->oo, V=T: 2/3 ; late s->oo, V general: 2*(T + 2*V)/(9*V)
+       V=T: zeros of the numerator in s^2: [0.417424305044160, 9.58257569495584]  zeros of the denominator: [0.666666666666667, 4.00000000000000]
+         s^2=9/16     ratio(V=T)=-2.436364
+         s^2=1        ratio(V=T)=3.333333
+         s^2=3        ratio(V=T)=4.857143
+         s^2=5        ratio(V=T)=-3.230769
+         s^2=9        ratio(V=T)=-0.080000
+         s^2=10       ratio(V=T)=0.047619
+         s^2=100      ratio(V=T)=0.629474
+         s^2=10000    ratio(V=T)=0.666311
+   S2: G_stat/G_TT (level one, equal weights) = 8*s2*(T + 2*V)*(2*T*s2 + V*s2 - 12*V)/(3*V*(6*T*s2**2 - 8*T*s2 + 16*T + 3*V*s2**2 - 34*V*s2 + 8*V))
+       V=T: 8*s2/(3*s2 - 2) ; late s->oo, V=T: 8/3 ; late s->oo, V general: 8*(T + 2*V)/(9*V)
+       V=T: zeros of the numerator in s^2: [0]  zeros of the denominator: [0.666666666666667]
+         s^2=9/16     ratio(V=T)=-14.400000
+         s^2=1        ratio(V=T)=8.000000
+         s^2=3        ratio(V=T)=3.428571
+         s^2=5        ratio(V=T)=3.076923
+         s^2=9        ratio(V=T)=2.880000
+         s^2=10       ratio(V=T)=2.857143
+         s^2=100      ratio(V=T)=2.684564
+         s^2=10000    ratio(V=T)=2.666844
+
+Solution direction, V=T, S1: spatial/time amplitudes of hbar and PPN-type ratio, level one
+   gamma_level-one(S1, V=T) = delta g^{11}/delta g^{00} = s2*(s2 - 4)/(s2**2 - 10*s2 + 4)  ; late: 1
+
+Sign of the helicity-zero eigenvalue and of the source channel, weights V_i,T_i generic: the two are different quantities
+   F_qq (no tree), general weights, at s->oo per l^2 -> 0: -k**6*(4*T1 - 4*T2 - 5*V0 - 4*V1)/(11520*pi**2)
+   F_pp (no tree), general weights, leading in l^2: k**6*(T1 - 3*T2 - V1)/(5760*pi**2*m**2)
+   F_qp (no tree), general weights, leading in l^2: k**6*(5*T0 + T1 - 5*V0 - V1)/(17280*pi**2*m**2)
+
+General weights, late limit l -> 0 at fixed V_i, T_i: G_stat/G_TT at level one
+   S1: limit = -(5*T0 - 14*T1 + 21*T2 + 10*V0 + 14*V1)/(6*(4*T1 - 4*T2 - 5*V0 - 4*V1)) ; minus predicted = 0
+   S2: limit = -2*(5*T0 - 14*T1 + 21*T2 + 10*V0 + 14*V1)/(3*(4*T1 - 4*T2 - 5*V0 - 4*V1)) ; minus predicted = 0
+   sum check with equal weights S1: 2(2V+T)/(9V): 0

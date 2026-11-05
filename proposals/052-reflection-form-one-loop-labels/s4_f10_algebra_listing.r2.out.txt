@@ -1,0 +1,21 @@
+(a) A_{4,12} equals the third algebra under X1->E2, X2->E3, X3->-E0, X4->E1: True
+A_{4,12}, printed basis : Jacobi True ; delta solves True
+   time generator index 0 : eta solves True
+   time generator index 1 : eta solves True
+   time generator index 2 : eta solves False
+   time generator index 3 : eta solves False
+   trace ad_a = [0, 0, -2, 0]
+third algebra of relaxation (iv), printed basis : Jacobi True ; delta solves True
+   time generator index 0 : eta solves False
+   time generator index 1 : eta solves False
+   time generator index 2 : eta solves True
+   time generator index 3 : eta solves True
+   trace ad_a = [2, 0, 0, 0]
+second algebra of relaxation (iv), printed basis : Jacobi True ; delta solves False
+   time generator index 0 : eta solves True
+   time generator index 1 : eta solves True
+   time generator index 2 : eta solves False
+   time generator index 3 : eta solves False
+   trace ad_a = [2, 0, 0, 0]
+(d) [U,E2], [U,E3], [V,E2], [V,E3], [U,V] = [0, 0, 1, 0] [0, 0, 0, 0] [0, 0, 0, 0] [0, 0, 0, 1] [0, 0, 0, 0]
+ALL ASSERTIONS PASSED

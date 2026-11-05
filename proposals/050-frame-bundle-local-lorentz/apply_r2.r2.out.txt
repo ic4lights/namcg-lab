@@ -1,0 +1,32 @@
+review-r1.md bytes 37371 sha256 a209f393c2c4e00ea3791ba51ef19ed1ac5e67dd9588b17cab130c0bfbab9214 CR 0
+R1: old count in r1 bytes 1; at its turn 1; length 35 -> 38
+R2: old count in r1 bytes 1; at its turn 1; length 57 -> 60
+R3: old count in r1 bytes 1; at its turn 1; length 54 -> 57
+R4: old count in r1 bytes 1; at its turn 1; length 54 -> 78
+R5: old count in r1 bytes 1; at its turn 1; length 75 -> 96
+R6: old count in r1 bytes 1; at its turn 1; length 160 -> 241
+R7: old count in r1 bytes 1; at its turn 1; length 51 -> 51
+R8: old count in r1 bytes 1; at its turn 1; length 56 -> 61
+R9: old count in r1 bytes 1; at its turn 1; length 188 -> 283
+R10: old count in r1 bytes 1; at its turn 1; length 70 -> 237
+R11: old count in r1 bytes 1; at its turn 1; length 131 -> 741
+R12: old count in r1 bytes 1; at its turn 1; length 83 -> 170
+R13: old count in r1 bytes 1; at its turn 1; length 54 -> 96
+R14: old count in r1 bytes 1; at its turn 1; length 110 -> 179
+R15: old count in r1 bytes 1; at its turn 1; length 89 -> 169
+R16: old count in r1 bytes 1; at its turn 1; length 176 -> 489
+R17: old count in r1 bytes 1; at its turn 1; length 61 -> 71
+R18: old count in r1 bytes 1; at its turn 1; length 74 -> 84
+R19: old count in r1 bytes 1; at its turn 1; length 36 -> 149
+R20: old count in r1 bytes 1; at its turn 1; length 19 -> 24
+R21: old count in r1 bytes 1; at its turn 1; length 304 -> 613
+R22: old count in r1 bytes 1; at its turn 1; length 23 -> 28
+R23: old count in r1 bytes 1; at its turn 1; length 97 -> 365
+R24: old count in r1 bytes 1; at its turn 1; length 179 -> 820
+R25: old count in r1 bytes 1; at its turn 1; length 93 -> 152
+R26: old count in r1 bytes 1; at its turn 1; length 54 -> 146
+R27: old count in r1 bytes 1; at its turn 1; length 459 -> 873
+result bytes 18152 sha256 819f40a624e4f7a87c177253be13f23dc97d0861921230bf1835c421ec2987f9 CR 0
+bib keys read ['FurutaHanadaKawaiKimura2007', 'HanadaKawaiKimura2006b', 'Hanada2006', 'AsanoKawaiTsuchiya2012']
+bib result bytes 2035 sha256 7f05cb9d40570ffc1f57f753476538a280cea26e2924aad3070c67e0ddebb42e CR 0
+WRITTEN: appH_insert.r1.tex (r1 bytes), appH_insert.tex (r2), new_bib_entries.bib (r2)

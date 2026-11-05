@@ -1,0 +1,5 @@
+sample 17
+sample 18
+sample 19
+rank dOmega 6  rank dR 6
+rank [dR | dOmega] = 11  (equal to rank dR iff dOmega is a linear image of dR)

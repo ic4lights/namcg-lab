@@ -1,0 +1,43 @@
+1  appH-microscopic-proofs.tex: \section{Problem G: HBEV}...
+1  ch08-heat-kernel.tex: The justification is the derivative expansion:...
+1  ch08-heat-kernel.tex: \begin{proposition}[Scaffold replacement]...
+1  ch08-heat-kernel.tex: Self-consistently substituting the emergent metric is therefore valid ...
+1  ch08-heat-kernel.tex: Integrate \(\eta\) at one loop on a slowly varying emergent background...
+1  ch08-heat-kernel.tex: \item \textbf{Scaffold error.} Expand Proposition~\ref{prop:scaffold} ...
+1  ch04-vierbein-emergence.tex: Write one sentence stating when it is legitimate to replace \(g^{(0)}\...
+1  appG-sector-entropy.tex: For a Laplace-type fluctuation operator the heat-kernel expansion on t...
+1  appB-modular.tex: In Presentation~B the cover is a branched cover of the auxiliary manif...
+1  ch05-lorentz-decomposition.tex: On a Minkowski condensate the mixing terms that survive after gauge fi...
+1  ch03-matrix-action.tex: The auxiliary metric is a scaffold for writing derivatives and heat ke...
+1 eq:Smicro
+1 eq:V
+1 ass:aux-metric
+1 eq:W-again
+1 eq:s-limits
+1 eq:appA-a0
+1 eq:appA-a2
+1 eq:universal-R
+1 eq:repairII-trace
+1 eq:Z-sigma
+1 lem:msigma
+1 eq:D-both
+1 eq:g-from-e
+1 eq:vev-is-frame
+1 eq:FP-gauge
+1 eq:FP
+1 thm:mT
+1 sec:status-D
+1 sec:status-F
+1 eq:O-eta
+1 thm:Geff
+1 eq:Geff-structure
+1 app:status
+1 ch:vierbein-emergence
+1 ch:heat-kernel
+1 ch:agenda
+1 eq:W-expand
+1 sec:ch8-which-g
+1 rem:ch3-varying-theta
+0 ass:emergent-op (new; must be 0 now)
+0 rem:ch8-scaffold-vs-emergent (new; must be 0 now)
+PROBLEMS: 0

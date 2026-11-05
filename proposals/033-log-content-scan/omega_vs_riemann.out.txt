@@ -1,0 +1,10 @@
+same Theta(0): True
+frame conv (0,) sign 1 transpose False : (Omega - R_frame) independent of 2nd jet at 3 components -> [False, False, False]
+frame conv (0,) sign 1 transpose True : (Omega - R_frame) independent of 2nd jet at 3 components -> [False, False, False]
+frame conv (0,) sign -1 transpose False : (Omega - R_frame) independent of 2nd jet at 3 components -> [False, False, False]
+frame conv (0,) sign -1 transpose True : (Omega - R_frame) independent of 2nd jet at 3 components -> [False, False, False]
+frame conv (1,) sign 1 transpose False : (Omega - R_frame) independent of 2nd jet at 3 components -> [False, False, False]
+frame conv (1,) sign 1 transpose True : (Omega - R_frame) independent of 2nd jet at 3 components -> [False, False, False]
+frame conv (1,) sign -1 transpose False : (Omega - R_frame) independent of 2nd jet at 3 components -> [False, False, False]
+frame conv (1,) sign -1 transpose True : (Omega - R_frame) independent of 2nd jet at 3 components -> [False, False, False]
+Omega depends on 2nd jet: True

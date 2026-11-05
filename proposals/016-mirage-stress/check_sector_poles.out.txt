@@ -1,0 +1,10 @@
+det(B - lam A) on D-space (9x9): -g**6*lam**3*q2**9*xi**3*(2*g - lam)**2*(g - lam + xi)**2*(2*g*lam - 8*g*xi + lam**2)
+generalised eigenvalues lambda (with multiplicity): {-g - sqrt(g**2 + 8*g*xi): 1, -g + sqrt(g**2 + 8*g*xi): 1, g + xi: 2, 2*g: 2, 0: 3}
+det(Lam A + w B): -Lam**3*g**6*q2**9*xi**3*(Lam + 2*g*w)**2*(Lam + g*w + w*xi)**2*(-Lam**2 + 2*Lam*g*w + 8*g*w**2*xi)
+014 cross-check: lambda/q^2 = [-1 - sqrt(14)*I/2, -1 + sqrt(14)*I/2, 0, 7/16, 2]  (014: 0 x3, 2 x2, 7/16 x2, -1 +- i sqrt(14)/2)
+Lc matrix eigenvalues (units 1/q^2):
+   1/(2*g)  mult 2
+   (g - sqrt(g*(g + 8*xi)))/(8*g*xi)  mult 1
+   (g + sqrt(g*(g + 8*xi)))/(8*g*xi)  mult 1
+   1/(g + xi)  mult 2
+-> (w + Lam Lc) eigenvalues: w + Lam*(above);  zeros give the poles of the sourced response.

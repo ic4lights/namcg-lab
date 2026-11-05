@@ -1,0 +1,5 @@
+(1) R_G^(1) + 2 box_G0 delta ln rho = 0
+(2) R[g_rho]^(1) / (rho0 box_G0 delta ln rho) = 1    (g_rho inverse metric is rho0 G0^{-1})
+    => rho0 R[g_rho]^(1) - rho0^2 box_G0 dlnrho =  0
+    ratio  R[g_rho]^(1) * (1/rho0) / R_G^(1)  [with R[g_rho] in the g_rho-units]: -1/2
+(3) E_s^(1) = -1/2 box dlnrho ; E_s^(1) - R_G^(1)/4 = 0

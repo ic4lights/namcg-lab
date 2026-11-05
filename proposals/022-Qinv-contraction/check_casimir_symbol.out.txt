@@ -1,0 +1,2 @@
+Casimir C_{so(4,2)} base symbol  = c * g^{-1}: max rel. deviation 1.9096922262380707e-12 ; c/ell^2 range -2.0000000000000075 -1.999999999999996 ; signature of K6: {(4, 0): 30}
+Box_{P5} base symbol = c5 * g^{-1}: max rel. deviation 3.5647588223110713e-12 ; c5/ell^2 range 0.9999999999999964 1.0000000000000047

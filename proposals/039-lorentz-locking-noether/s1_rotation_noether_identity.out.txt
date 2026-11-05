@@ -1,0 +1,20 @@
+d=3 eta=(1, 1, 1): delta(sqrtG L)/eps numeric 12.9193777713  vs P.ell 12.9193777753  diff 4.05e-09
+  singular values: [16.53655871  7.53623781  0.24284501  0.          0.        ]
+  null space dimension: 2
+  residual of null space against span{N, W^2}: 7.38e-16
+  |violation| of X=T^2 alone: 15.1994 | of N: 3.12e-15 | of W^2: 0.00e+00
+d=3 eta=(-1, 1, 1): delta(sqrtG L)/eps numeric 2.6153901022  vs P.ell 2.6153901170  diff 1.48e-08
+  singular values: [13.042522    5.020983    0.29969286  0.          0.        ]
+  null space dimension: 2
+  residual of null space against span{N, W^2}: 4.78e-15
+  |violation| of X=T^2 alone: 12.6952 | of N: 2.83e-15 | of W^2: 0.00e+00
+d=4 eta=(1, 1, 1, 1): delta(sqrtG L)/eps numeric 28.6218469018  vs P.ell 28.6218469041  diff 2.29e-09
+  singular values: [31.56068429 23.29113591  0.84925734  0.          0.        ]
+  null space dimension: 2
+  residual of null space against span{N, W^2}: 5.27e-16
+  |violation| of X=T^2 alone: 30.7607 | of N: 8.63e-15 | of W^2: 0.00e+00
+d=4 eta=(-1, 1, 1, 1): delta(sqrtG L)/eps numeric -42.3387396867  vs P.ell -42.3387396795  diff 7.18e-09
+  singular values: [29.22409421 22.94391816  0.87959182  0.          0.        ]
+  null space dimension: 2
+  residual of null space against span{N, W^2}: 5.73e-16
+  |violation| of X=T^2 alone: 25.0891 | of N: 6.05e-15 | of W^2: 0.00e+00

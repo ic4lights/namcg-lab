@@ -1,0 +1,36 @@
+bg sector kappa n | lam^4 eigenvalues (sorted)            | prediction (TT, third)            | a0 third mode
+A dirac      0.0000 16 | TT  0.333331 third -0.000002 | pred TT  0.333333 third  0.000000 | a0 third 0.477236 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A ghostc     0.5000 16 | TT -0.378749 third -0.462082 | pred TT -0.378751 third -0.462084 | a0 third 0.119304 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A ghostc     1.0000 16 | TT -1.389997 third -1.473330 | pred TT -1.390004 third -1.473338 | a0 third 0.119295 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A ghostc     2.0000 16 | TT -5.434987 third -5.518321 | pred TT -5.435017 third -5.518351 | a0 third 0.119255 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A scalar     0.0000 12 | TT -0.041667 third -0.125000 | pred TT -0.041667 third -0.125000 | a0 third 0.119308 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A scalar     0.0000 16 | TT -0.041667 third -0.125000 | pred TT -0.041667 third -0.125000 | a0 third 0.119308 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A vector    -0.5000 20 | TT  0.847211 third  0.402770 | pred TT  0.847222 third  0.402778 | a0 third 0.410962 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A vector    -1.0000 20 | TT  0.854150 third  0.374996 | pred TT  0.854167 third  0.375000 | a0 third 0.387760 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A vector    -2.0000 20 | TT  0.860809 third  0.361091 | pred TT  0.861111 third  0.361111 | a0 third 0.371199 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A vector     0.0000 20 | TT  0.833328 third  0.499995 | pred TT  0.833333 third  0.500000 | a0 third 0.477240 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A vector     0.5000 20 | TT  0.791669 third  1.125004 | pred TT  0.791667 third  1.125000 | a0 third 0.835153 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A vector     0.6667 20 | TT  0.750837 third  2.251150 | pred TT  0.750000 third  2.250000 | a0 third 1.431648 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A vectorc    0.5000 16 | TT  1.507531 third  1.174198 | pred TT  1.507502 third  1.174169 | a0 third 0.477194 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A vectorc    1.0000 16 | TT  3.530139 third  3.196806 | pred TT  3.530009 third  3.196675 | a0 third 0.477056 (x(3+al^2)/4 rel. kappa=0 value if vector)
+A vectorc    2.0000 16 | TT  11.620571 third  11.287238 | pred TT  11.620035 third  11.286702 | a0 third 0.476504 (x(3+al^2)/4 rel. kappa=0 value if vector)
+B dirac      0.0000 16 | TT  0.333332 third -0.000002 | pred TT  0.333333 third  0.000000 | a0 third 0.511426 (x(3+al^2)/4 rel. kappa=0 value if vector)
+B ghostc     1.0000 16 | TT -1.005759 third -1.089092 | pred TT -1.005763 third -1.089096 | a0 third 0.127848 (x(3+al^2)/4 rel. kappa=0 value if vector)
+B vector    -1.0000 18 | TT  0.854148 third  0.374832 | pred TT  0.854167 third  0.375000 | a0 third 0.415558 (x(3+al^2)/4 rel. kappa=0 value if vector)
+B vector     0.0000 18 | TT  0.833330 third  0.499997 | pred TT  0.833333 third  0.500000 | a0 third 0.511429 (x(3+al^2)/4 rel. kappa=0 value if vector)
+B vector     0.5000 18 | TT  0.791668 third  1.125014 | pred TT  0.791667 third  1.125000 | a0 third 0.894995 (x(3+al^2)/4 rel. kappa=0 value if vector)
+B vectorc    1.0000 16 | TT  2.761590 third  2.428257 | pred TT  2.761525 third  2.428192 | a0 third 0.511329 (x(3+al^2)/4 rel. kappa=0 value if vector)
+
+a_0 check (lam^2 third mode, vector sector): ratio to the kappa=0 value of the same background vs (3+alpha^2)/4
+  A kappa= -0.5000 alpha= 0.6667: ratio 0.86112   (3+alpha^2)/4 = 0.86111
+  A kappa= -1.0000 alpha= 0.5000: ratio 0.81250   (3+alpha^2)/4 = 0.81250
+  A kappa= -2.0000 alpha= 0.3333: ratio 0.77780   (3+alpha^2)/4 = 0.77778
+  A kappa=  0.0000 alpha= 1.0000: ratio 1.00000   (3+alpha^2)/4 = 1.00000
+  A kappa=  0.5000 alpha= 2.0000: ratio 1.74996   (3+alpha^2)/4 = 1.75000
+  A kappa=  0.6667 alpha= 3.0000: ratio 2.99985   (3+alpha^2)/4 = 3.00000
+  B kappa= -1.0000 alpha= 0.5000: ratio 0.81254   (3+alpha^2)/4 = 0.81250
+  B kappa=  0.0000 alpha= 1.0000: ratio 1.00000   (3+alpha^2)/4 = 1.00000
+  B kappa=  0.5000 alpha= 2.0000: ratio 1.74999   (3+alpha^2)/4 = 1.75000
+
+fit e_TT(alpha) = c0 + c1 alpha + c2 alpha^2  : [ 8.74551934e-01 -4.08750278e-02 -2.85040581e-04]  (closed form: 0.875, -1/24, 0)
+fit e_3(alpha)  = c0 + c1 alpha + c2 alpha^2  : [ 0.37497596 -0.1249702   0.24999207]  (closed form: 1/2+1/8-1/4 = 0.375, -1/8, 1/4)

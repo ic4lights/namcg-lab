@@ -1,0 +1,4 @@
+(a) O_s f - (-D^2 f + E f) at a random point: 8.19e-16
+(a) sqrt|G|(R_G/6 - E) - rho R[g_rho]/6 at a random point: 2.22e-16  (values -0.297445, -0.297445)
+(b) Euclid: tr B_sigma = 0.0e+00;  tr(B_s B^s) = -75.16042508,  -X = -75.16042508
+(b) Lorentz: tr B_sigma = 0.0e+00;  tr(B_s B^s) = -2.04884978,  -X = -2.04884978

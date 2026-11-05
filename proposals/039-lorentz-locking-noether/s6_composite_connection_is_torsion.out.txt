@@ -1,0 +1,6 @@
+eta=(1, 1, 1, 1) seed=1: |B_s,an + T_s,mn e_a^m e_n^n|/|B| = 5.60e-16;  tr B_s = 3.9e-16
+eta=(1, 1, 1, 1) seed=2: |B_s,an + T_s,mn e_a^m e_n^n|/|B| = 3.60e-16;  tr B_s = 1.2e-16
+eta=(1, 1, 1, 1) seed=3: |B_s,an + T_s,mn e_a^m e_n^n|/|B| = 4.80e-16;  tr B_s = 4.9e-16
+eta=(-1, 1, 1, 1) seed=1: |B_s,an + T_s,mn e_a^m e_n^n|/|B| = 3.63e-16;  tr B_s = 5.4e-16
+eta=(-1, 1, 1, 1) seed=2: |B_s,an + T_s,mn e_a^m e_n^n|/|B| = 3.51e-16;  tr B_s = 1.3e-16
+eta=(-1, 1, 1, 1) seed=3: |B_s,an + T_s,mn e_a^m e_n^n|/|B| = 4.46e-16;  tr B_s = 4.9e-16

@@ -1,0 +1,16 @@
+Part 1: content of R1
+  form (15/4)a^2 - a c + 2c^2, matrix [[15/4, -1/2], [-1/2, 2]]
+  leading minor 15/4 > 0; determinant 29/4 > 0; eigenvalues [23/8 - sqrt(65)/8, sqrt(65)/8 + 23/8]
+  completed square: (15*a**2 - 4*a*c + 8*c**2)/4 difference from form 0
+  bracket times D^3 minus the form at a = vartheta D, c = c_J: 0
+  bracket from the proper-time integral of the printed average, residual: 0
+  at J = 0 (c_J = 0) the bracket is 15*vartheta**2/(4*D) ; form 15*D**2*vartheta**2/4 > 0 since a = vartheta D > 0
+  discriminant of the form in a, at c_J = 0: 0 (so the old reason fails at J = 0; the new one does not use it)
+Part 2: application
+review states 22821 bytes, sha256 eba2c8ed7f120413377176df1da08adf4cd5e4d57458b07561ee5fedbd6fa256
+source appH_insert.r3.tex 22769 bytes on disk, CR 0
+source sha256 b19b4c9890f65a15f33ec0fb21bc5af957ad2e56617335ec3e7f3ff7d47e43e3 matches r3
+R1: old occurs 1; old 99 chars, new 151 chars
+result 22821 bytes, sha256 eba2c8ed7f120413377176df1da08adf4cd5e4d57458b07561ee5fedbd6fa256
+matches the review's byte count and sha256
+wrote appH_insert.tex; ASCII True CR 0 BOM False

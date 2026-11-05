@@ -1,0 +1,19 @@
+  zz = r.x[:4] + 1j*r.x[4:]; zz = zz*np.sqrt(n/np.real(zz.conj() @ H @ zz))
+point | a=y4/l | ||4T||_F | |kappa|+|kappa'| | ratio non-invariant/invariant | eigenvalues of Hermitian part of T (rel. to ||T||)
+  0 | 1.118 | 2.109e-02 | 6.723e-03 | 3.138 | [-0.278 -0.204 -0.165]
+  1 | 0.543 | 2.465e-03 | 1.310e-03 | 1.882 | [-0.544 -0.217 -0.142]
+  2 | 1.752 | 2.904e-03 | 9.680e-04 | 3.000 | [-0.355 -0.149 -0.038]
+  3 | 9.012 | 1.113e-07 | 6.278e-09 | 17.738 | [-0.425 -0.104 -0.005]
+  4 | 0.574 | 2.922e-01 | 5.588e-02 | 5.229 | [-0.605 -0.086 -0.018]
+  5 | 0.659 | 3.215e-03 | 1.660e-04 | 19.366 | [-0.63  -0.024 -0.001]
+  6 | 0.238 | 2.269e-02 | 6.956e-04 | 32.624 | [-0.721 -0.014 -0.   ]
+  7 | 7.603 | 1.834e-08 | 9.902e-11 | 185.222 | [-0.324 -0.003 -0.   ]
+
+Dependence of L(q)=<lambda^2> (up to the common prefactor) on the direction of q at fixed eta-norm q.q=+1 and fixed point (y^i=0): scan over q.yhat
+  boost 0.00 : q.q=1.000  q_mu y^mu=-0.0000   <lambda^2> = (-0.628976+0.52017j)
+  boost 0.20 : q.q=1.000  q_mu y^mu=-0.1510   <lambda^2> = (-0.640268+0.537619j)
+  boost 0.40 : q.q=1.000  q_mu y^mu=-0.3081   <lambda^2> = (-0.675975+0.592793j)
+  boost 0.60 : q.q=1.000  q_mu y^mu=-0.4776   <lambda^2> = (-0.741887+0.69464j)
+  boost 0.80 : q.q=1.000  q_mu y^mu=-0.6662   <lambda^2> = (-0.848691+0.859674j)
+  boost 1.00 : q.q=1.000  q_mu y^mu=-0.8816   <lambda^2> = (-1.013704+1.114653j)
+  boost 1.20 : q.q=1.000  q_mu y^mu=-1.1323   <lambda^2> = (-1.263683+1.500921j)

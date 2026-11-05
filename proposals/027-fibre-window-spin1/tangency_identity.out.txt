@@ -1,0 +1,1 @@
+max deviations over 60 points: |c-1/2| 6.72e-15 | spread of a_k 4.42e-13 | rel. dev. of c/a from ell^2/y4^2 9.66e-14 | |sv1-sv2| 9.30e-12 | | |w|^2-1-ell^2/y4^2 | 7.95e-10 | time component of image(w) (relative) 7.12e-15

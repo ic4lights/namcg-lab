@@ -1,7 +1,7 @@
 ---
 description: Autonomous researcher -> gatekeeper -> integrator loop until a milestone or stop condition; then write a digest and stop for the author.
 argument-hint: "[target problem or connected target set | auto] [--items N] [--rounds N]"
-model: qwen-coder-chunked:latest
+model: opus
 ---
 
 You are the **orchestrator**. Arguments: `$ARGUMENTS` (defaults: target `auto`, `--items 1`, `--rounds 4`).
@@ -16,7 +16,7 @@ tool, one at a time, each with a self-contained prompt (they have no shared memo
 The author has asked for autonomous work toward the NAMCG **infrared derivation** and the **full-GR
 (matrix-derived) derivation**. This directive overrides the stop and contact rules below and in `MILESTONE.md`
 where they conflict. The `CLAUDE.md` hard rules still hold: no autonomous status, priority or completion-label
-change; no push or merge; work only on the fixed branch `local/gpu`; and only gatekeeper-`ACCEPT`ed text
+change; no push or merge; work only on the working branch; and only gatekeeper-`ACCEPT`ed text
 reaches `chapters/`.
 
 **SME scouting and consultation (author directive, 2026-10-15).**
@@ -38,9 +38,9 @@ reaches `chapters/`.
 
   Then branch on the final verdict as usual.
 
-**Working branch (author directive, 2026-10-15).** All work happens on the single fixed branch `local/gpu`, so the
+**Working branch (author directive, 2026-10-15).** All work happens on the single working branch, so the
 author can follow it in VS Code. It replaces the per-run `auto/<YYYYMMDD-HHMM>` branches. Wherever this file or
-`CLAUDE.md` says `local/gpu`, read `local/gpu`. The author merges `local/gpu` into `main`.
+`CLAUDE.md` says working branch, read working branch. The author merges working branch into `main`.
 
 1. **Contact the author only for a breakthrough.** That means a gatekeeper verdict of `ACCEPT` whose `FLAGS`
    contain `BREAKTHROUGH`: a noteworthy advance, such as deriving a critical-path step from the matrix theory, or a
@@ -86,10 +86,10 @@ author can follow it in VS Code. It replaces the per-run `auto/<YYYYMMDD-HHMM>` 
 
 ## 0. Pre-flight & Unmerged Proposals
 
-1. `git branch --show-current`. If it is already `local/gpu`, continue on it. Otherwise:
-   - If `local/gpu` exists, switch to it with `git checkout local/gpu`. If it is behind `main`, stop and ask
+1. `git branch --show-current`. If it is already working branch, continue on it. Otherwise:
+   - If working branch exists, switch to it with `git checkout working`. If it is behind `main`, stop and ask
      the author to update it; never rebase or reset it.
-   - If it does not exist, create it from the current branch with `git checkout -b local/gpu`.
+   - If it does not exist, create it from the current branch with `git checkout -b working`.
 2. `git status --porcelain` must show nothing except uncommitted changes in `chapters/` and `bib/` and untracked
    `proposals/` folders. Integrated manuscript changes are left uncommitted for the author to review in VS Code (see
    "Manuscript changes are not committed" below). Anything else dirty means stop: the author must commit or stash

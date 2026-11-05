@@ -1,0 +1,22 @@
+F supported on 10 dims:
+  order 0 : tr_V M^k = +10.000000 ; tr_16 S^k = +16.000000+0.000000j ; Q10 coefficient (x k!) = +0.000000e+00
+  order 1 : tr_V M^k = +0.000000 ; tr_16 S^k = +0.000000+0.000000j ; Q10 coefficient (x k!) = +0.000000e+00
+  order 2 : tr_V M^k = -121.724801 ; tr_16 S^k = -243.449603+0.000000j ; Q10 coefficient (x k!) = +0.000000e+00
+  order 3 : tr_V M^k = +0.000000 ; tr_16 S^k = -0.000000+0.000000j ; Q10 coefficient (x k!) = +1.413872e-15
+  order 4 : tr_V M^k = +2953.855433 ; tr_16 S^k = +8158.840036+0.000000j ; Q10 coefficient (x k!) = -1.125565e+03
+  V4 = -4 trM^4 + (trM^2)^2 = 3001.505561 ;  Q10 order-4 numerator / V4 = -0.375000
+F supported on 4 dims:
+  order 0 : tr_V M^k = +10.000000 ; tr_16 S^k = +16.000000+0.000000j ; Q10 coefficient (x k!) = +0.000000e+00
+  order 1 : tr_V M^k = +0.000000 ; tr_16 S^k = +0.000000+0.000000j ; Q10 coefficient (x k!) = +0.000000e+00
+  order 2 : tr_V M^k = -9.764532 ; tr_16 S^k = -19.529064+0.000000j ; Q10 coefficient (x k!) = +1.776357e-15
+  order 3 : tr_V M^k = -0.000000 ; tr_16 S^k = +0.000000+0.000000j ; Q10 coefficient (x k!) = -3.032013e-17
+  order 4 : tr_V M^k = +47.644961 ; tr_16 S^k = +23.864605+0.000000j ; Q10 coefficient (x k!) = +3.571266e+01
+  V4 = -4 trM^4 + (trM^2)^2 = -95.233757 ;  Q10 order-4 numerator / V4 = -0.375000
+(ratio constant over random F => alpha^4 term is proportional to V4 for any F)
+  ratio (10D, random 0): -0.37500000
+  ratio (10D, random 1): -0.37500000
+  ratio (10D, random 2): -0.37500000
+--- 4D-supported F, closed form (x=a phi1, y=a phi2; eigenvalues +-i phi) ---
+t**4*(x**4 - 2*x**2*y**2 + y**4)/16
+order-4 coefficient factorised: (x - y)**2*(x + y)**2/16
+general n_D: order 0: 8 - 4*n_D  order 2: (n_D - 2)*(x**2 + y**2)/2  order 4: -(n_D*x**4 + 6*n_D*x**2*y**2 + n_D*y**4 - 8*x**4 - 8*y**4)/96

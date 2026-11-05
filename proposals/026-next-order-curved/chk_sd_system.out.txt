@@ -1,0 +1,5 @@
+SD  : div b = 0 ; d_4 b - curl b residual = [0, 0, 0]
+ASD : div b = 0 ; d_4 b + curl b residual = [0, 0, 0]
+G^{mn} - delta/rho (rho=|b|^2, since Theta = -b.eta/|b|^2 => G^{mn} = delta/|b|^2): True
+min over random of Theta^{mn}Theta^{mn}/|Pf Theta| (i.e. rho |Theta|^2) = 4.0310110195972575  (>= 4)
+SD value: 4.0

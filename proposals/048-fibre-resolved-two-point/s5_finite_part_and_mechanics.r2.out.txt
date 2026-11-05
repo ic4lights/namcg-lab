@@ -1,0 +1,30 @@
+(A) EH2 of hhat = h - (1/2) eta t, g-background eta/m^2, cometric perturbations lowered with G; h transverse to q
+   EH(hhat) = -(q^2/(8 m^6)) (h.h - t^2/2) exactly at the sampled draws: True
+
+(B) K(tau): I = (1/4) rho0^2 [1 + (rho-1) K], K = finite part of <((c^2 + r(1-c^2))/(r(1-c^2) - c^2))^2>
+   s^2=1        K closed = -0.188387 ; regulated eps=1e-3: -0.189220 ; eps=1e-4: -0.188471
+   s^2=9        K closed = 0.329528 ; regulated eps=1e-3: 0.325819 ; eps=1e-4: 0.329157
+   s^2=100      K closed = 0.922096 ; regulated eps=1e-3: 0.906907 ; eps=1e-4: 0.920563
+   s^2=10000    K closed = 0.999200 ; regulated eps=1e-3: 0.952229 ; eps=1e-4: 0.989221
+
+(C) potentials, general rho, S1: hbar = hbar_0 + delta, units m=k=1, A=1:  hbar_0^{00} = f/2, hbar_0^{11} = -(1+f)/4;
+    delta^{mu nu} = -(rho-1) < ((u.v)^2 + v.v/2) v^mu v^nu/(v.v)^2 > (alpha = -(1/2)[J/v.v + (rho-1)(J.v)v/(v.v)^2], J = Xv)
+   rho=0.75 (s^2, hhat^00, hhat^11, ratio): [(100.0, -0.19231, -0.1862, 0.96825), (10000.0, -0.18697, -0.1872, 1.00123), (1000000.0, -0.18667, -0.18674, 1.00036)] ; expected hhat^00 -> -rho/4 = -0.1875
+   rho=1.25 (s^2, hhat^00, hhat^11, ratio): [(100.0, -0.30753, -0.30385, 0.98802), (10000.0, -0.31149, -0.31192, 1.0014), (1000000.0, -0.31079, -0.31084, 1.00017)] ; expected hhat^00 -> -rho/4 = -0.3125
+
+(D) S_E = rho_M (gamma dphi dphi + M^2 e^{2 delta} phi^2)/2 with delta = t/(4 m^2), t = eta_mu nu hbar^{mu nu}:
+    source of hbar^{mu nu} per rho_M: dphi dphi/2 + (M^2 phi^2) eta_mu nu/(4 m^2).  For dust the two terms are in the ratio u u : eta/2 after normalising eta/m^2 -> G; hence X = T - eta tr T/2 for dust.
+    delta = delta phi of the merged paragraph, phi = (1/2) ln(rho/sqrt|g|): delta phi = t/(4 m^2).
+
+(E) insert mechanics
+   bytes 16390 ASCII True CR count 0 BOM False
+   anchor count in appH: 1
+   ref ch:vierbein-emergence labels found: 1
+   ref ass:lorentzian labels found: 1
+   cite KumarSteinacker2023 entries: 1
+   cite Steinacker2026 entries: 1
+   cite Steinacker2026 entries: 1
+   new labels in insert: []
+   status sentences: 1 ; closing line: Problems~C, F and~N remain open and PROGRAMME-CONDITIONAL.
+   paragraphs: 9
+   process-language scan: []

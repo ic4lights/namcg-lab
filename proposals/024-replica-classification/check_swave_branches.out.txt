@@ -1,0 +1,13 @@
+nu=0.0  finite-part constants (X-sequence) ['-0.00078851588', '-0.00039424408', '-0.00019712031']  Richardson ['2.7725377e-8', '3.4651644e-9']   expected -nu/2=0.0
+nu=0.25  finite-part constants (X-sequence) ['-0.12559139', '-0.12529568', '-0.12514784']  Richardson ['-0.12499998', '-0.125']   expected -nu/2=-0.125
+nu=0.5  finite-part constants (X-sequence) ['-0.25', '-0.25', '-0.25']  Richardson ['-0.25', '-0.25']   expected -nu/2=-0.25
+nu=0.75  finite-part constants (X-sequence) ['-0.37401437', '-0.3745072', '-0.3747536']  Richardson ['-0.37500003', '-0.375']   expected -nu/2=-0.375
+branch F n= 0.999999  entropy coefficient per component (units of the scalar value 1/6 -> compare): -0.08333366667
+branch F n= 1.000001  entropy coefficient per component (units of the scalar value 1/6 -> compare): 0.416666
+branch LS n= 0.999999  entropy coefficient per component (units of the scalar value 1/6 -> compare): 0.4166673333
+branch LS n= 1.000001  entropy coefficient per component (units of the scalar value 1/6 -> compare): -0.083333
+contact formula 1/6-Q, Q=1/4: -0.0833333333333333333333333333333    other branch 1/6+1/4: 0.416666666666666666666666666667
+K=1000  partial sum / (lam^2/2) - ln K = 0.57472332
+K=10000  partial sum / (lam^2/2) - ln K = 0.57427341
+K=100000  partial sum / (lam^2/2) - ln K = 0.57422841
+check O(e^{f/2}u) = e^{f/2}(-Box u + E_s u): True

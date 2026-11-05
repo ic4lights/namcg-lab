@@ -1,0 +1,23 @@
+A. G theta = P^2 eta in the rest frame and after a boost (ch,sh)=(5/4,3/4); boosted G has G_00 = 17*P**2/8 , G_03 = -15*P**2/8
+   anisotropic moments diag(3,1,1,1): G theta = [-3, 1, 1, 1] not a multiple of eta
+   any positive G: G_00 >= 0 and G_11 >= 0, so G is never a nonzero multiple of eta itself (merged statement).
+B. pairs [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)]  kappa diag [-1, -1, -1, 1, 1, 1]
+C. q = [1, 0, 0, 1] {'sig_eta': (3, 1, 0), 'sig_kappa': (3, 3, 0), 'ker_t': 3, 'sig_t': (2, 0, 1), 'rank': 3, 'ker_l': 3, 'sig_l': (1, 0, 2), 'image_dim': 3}
+C. q = [5, 3, 0, 4] {'sig_eta': (3, 1, 0), 'sig_kappa': (3, 3, 0), 'ker_t': 3, 'sig_t': (2, 0, 1), 'rank': 3, 'ker_l': 3, 'sig_l': (1, 0, 2), 'image_dim': 3}
+C. q = [13, 3, 4, 12] {'sig_eta': (3, 1, 0), 'sig_kappa': (3, 3, 0), 'ker_t': 3, 'sig_t': (2, 0, 1), 'rank': 3, 'ker_l': 3, 'sig_l': (1, 0, 2), 'image_dim': 3}
+   count on 2 polarisations x (4 + 6) labels: positive 12 , negative 8 , total 20
+   restricted: positive 6 , null 6 , removed by the constraints 8
+   odd number of time indices among h_i^mu, omega_i^{cd}: h_i^0 (2) + omega_i^{0j} (6) = 8
+   rank of lam -> q_c lam^{cd} at non-null q: 3 ; so the bivector constraint leaves 3 parameters of six at each momentum
+   example: e1 = x2 (0^1), e2 = x3 (1^2): div e1 = [0, 0, 0, 0] , div e2 = [0, 0, 0, 0] , div [e1,e2] = [-x3, 0, 0, 0]
+D. min eigenvalue of the reflected kernel: D 6.009849613250998e-07 , <F12 F12> 4.090789129757362e-06 ; relative to max 2.2052385110778492e-06 1.5650958913381414e-06
+   with a theta-odd label the reflected kernel is minus this: max eigenvalue of -D -6.009849613250998e-07  <= 0; min -0.2725260593382971  < 0
+E. null rotation algebra [E_0+E_3, E_1] = E_2, [E_0+E_3, E_2] = -E_1 : eta^{ac} ad_a ad_c = zero ; dim of stabiliser of f in so(3,1) = 1
+E. same algebra, Euclidean contraction : eta^{ac} ad_a ad_c = [0, 0, 0, 0, 0, -1/2, 0, 0, 0, 0, -1/2, 0, 0, 0, 0, 0] ; dim of stabiliser of f in so(3,1) = 1
+   (the equation fails for the Euclidean contraction when the result above is not zero)
+E. solvable algebra with commuting ad_0 = 1, ad_1 = diag(1,-1) on (E_2,E_3) : eta^{ac} ad_a ad_c = zero ; dim of stabiliser of f in so(3,1) = 0
+E. solvable algebra with ad_0 = 1, ad_1 = rotation on (E_2,E_3), Euclidean contraction : eta^{ac} ad_a ad_c = zero ; dim of stabiliser of f in so(3,1) = 1
+E. same, Lorentzian contraction : eta^{ac} ad_a ad_c = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, -2] ; dim of stabiliser of f in so(3,1) = 1
+E. frame e_0 = d_t, e_i = (alpha-t) d_i, Lorentzian contraction: [e^a,[e_a,e_b]] = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+E. frame e_0 = d_t, e_i = (alpha-t) d_i, Euclidean contraction: [e^a,[e_a,e_b]] = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+ALL ASSERTIONS PASSED

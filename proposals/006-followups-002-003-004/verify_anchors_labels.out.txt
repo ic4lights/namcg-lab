@@ -1,0 +1,17 @@
+1 appK-endomorphism.tex a_1=\operatorname{tr}(E)-\frac16 R\,\dim.
+1 appK-endomorphism.tex On a Laplace-type operator \(\Delta=-D^\mu D_\mu+E\) the fir
+1 appK-endomorphism.tex The first non-vanishing correction linear in the laboratory 
+1 ch17-agenda.tex function has no propagating Ostrogradsky ghost for \(p<\LUV\
+1 appH-microscopic-proofs.tex function has no propagating Ostrogradsky ghost for \(p<\LUV\
+1 ch16-falsifiers.tex \ref{ass:laplace} & setup & infrared operator is Laplace typ
+1 ch16-falsifiers.tex and frame existence is part of Problem~D1. An assumption may
+1 ch16-falsifiers.tex The Euclidean curvature coefficient obeys the conditional, t
+1 eq:appA-a1
+1 eq:stelle
+1 eq:W4
+1 ch:ultraviolet
+1 sec:status-N
+1 app:seeley-dewitt
+1 thm:Geff
+1 ass:emergent-op
+1 ass:laplace

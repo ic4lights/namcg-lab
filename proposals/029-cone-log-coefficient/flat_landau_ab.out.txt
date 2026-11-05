@@ -1,0 +1,8 @@
+C1(a) = a*(a - 1)/2  expected (a^2-a)/2: True
+T1/B = -a*(a - 1)*(2*a - 1)/6  expected -B3(a)/3: True
+flag a>0: const a  lin -a**2  expected a, -a^2
+reg a=-b: C1 b*(b - 1)/2  lin b*(b - 1)*(2*b - 1)/6
+flag a<0: const b  lin b**2  expected b, +b^2
+[(1, 0, 0), (2, 1/8, 1/8), (3, 2/9, 2/9), (4, 5/16, 5/16), (5, 2/5, 2/5)]
+dS2/dn at 1 = 1/6
+sum_k sigma*flag*(-a|a|) = -S2 (attractive-channel assignment sigma*a>0 is an input checked by hand, not derived here): (N, tot, -S2) [(2, -1/8, -1/8), (3, -2/9, -2/9), (4, -5/16, -5/16), (5, -2/5, -2/5)]

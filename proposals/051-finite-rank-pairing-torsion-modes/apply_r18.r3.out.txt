@@ -1,0 +1,11 @@
+review-r2.md: old 137 bytes, new 194 bytes, delta 57
+old: This is exact on a Gaussian \(w\) for one boost and for one rotation on its covering line (\(\varkappa=-\sqrt2\sigma P\) for the Gaussian
+new: The entries of this compression are evaluated exactly on a Gaussian \(w\) for one boost and for one rotation on its covering line (\(\varkappa=-\sqrt2\sigma P\,(1+O(\sigma^2))\) for the Gaussian
+current insert 14148 bytes sha256 b6ccbf5f8cbd2848413c3c1fddb7a6c112e52c103262c307d593c5cb45ef86dd CR 0
+self-test, mutated old string: count 0 , refused True
+old string count in insert: 1
+new string count in result: 1
+result 14205 bytes sha256 94b4c128d5d16ffbad412d43aebb3f9566fc7de90758b600564cd9ef70b7dd2e
+ascii True CR 0 BOM False
+kept appH_insert.r2.tex sha256 b6ccbf5f8cbd2848413c3c1fddb7a6c112e52c103262c307d593c5cb45ef86dd
+wrote appH_insert.tex sha256 94b4c128d5d16ffbad412d43aebb3f9566fc7de90758b600564cd9ef70b7dd2e

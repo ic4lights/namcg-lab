@@ -1,0 +1,8 @@
+component type | n->1^- (frac part branch) | n->1^+
+scalar: 1/6 | 1/6
+vector comp (rotated): -1/3 | 2/3
+spinor comp (antiperiodic polar frame): -1/12 | 5/12
+scalar value 1/6;  ratio to scalar (n<1 branch):
+  scalar: 1
+  vector comp (rotated): -2
+  spinor comp (antiperiodic polar frame): -1/2

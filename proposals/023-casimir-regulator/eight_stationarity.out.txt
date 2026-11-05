@@ -1,0 +1,4 @@
+s=+1  c_T(lam)= {lam - 3}  c_y(lam)= {3*lam - 1}
+      common bilinear coefficient requires c_T=c_y at lam = [-1] ; there c = [-4]
+s=-1  c_T(lam)= {lam - 3}  c_y(lam)= {3*lam - 1}
+      common bilinear coefficient requires c_T=c_y at lam = [-1] ; there c = [-4]

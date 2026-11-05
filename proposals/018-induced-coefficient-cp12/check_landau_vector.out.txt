@@ -1,0 +1,5 @@
+f1=1.0 f2=1.0  scalar lowest:[2. 4. 4. 6.]  (expected f1+f2=2.00)  vector lowest:[0. 0. 2. 2. 2. 2.]  (E_min=-|f1-f2|=-0.00)
+f1=1.0 f2=3.0  scalar lowest:[ 4.  6.  8. 10.]  (expected f1+f2=4.00)  vector lowest:[-2.  0.  2.  2.  4.  4.]  (E_min=-|f1-f2|=-2.00)
+f1=0.3 f2=2.0  scalar lowest:[2.3 2.9 3.5 4.1]  (expected f1+f2=2.30)  vector lowest:[-1.7 -1.1 -0.5  0.1  0.7  1.3]  (E_min=-|f1-f2|=-1.70)
+bosonic weight (vector+ghost+n extra scalars) x Landau density factor, series in s: -f1**2*n*s**2/6 + 11*f1**2*s**2/3 - f2**2*n*s**2/6 + 11*f2**2*s**2/3 + n + 2
+coeff s^2: -(f1**2 + f2**2)*(n - 22)/6  expected (22-n)/6*(f1^2+f2^2): True

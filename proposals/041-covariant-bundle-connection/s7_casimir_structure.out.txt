@@ -1,0 +1,12 @@
+test (1): Box - (C41 - C31) on random polynomials
+   residual: 0
+   residual: 0
+   residual: 0
+test (2a): [H, J_tot] = 0 ?  sign of R: +1, Zeeman sign +1: ((0, 1), [4*M13*M25 - 8*M14 + 4*M15*M23 + 12*M15])
+test (2a): [H, J_tot] = 0 ?  sign of R: +1, Zeeman sign -1: ((0, 1), [-4*M13*M25 + 8*M14 - 4*M15*M23 - 12*M15])
+test (2a): [H, J_tot] = 0 ?  sign of R: -1, Zeeman sign +1: invariant
+test (2a): [H, J_tot] = 0 ?  sign of R: -1, Zeeman sign -1: invariant
+test (2b): fit  H eps = alpha*(-C41 eps) + beta*C31_tot eps + gamma*eps  (upper-index components), sgn(R) = -1
+   C_V (vector rep Casimir) = -3 * identity
+   Zeeman sign +1: solution []
+   Zeeman sign -1: solution [{al: 1, be: 1, ga: 3}]

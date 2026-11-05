@@ -1,0 +1,17 @@
+== SD
+ rank of [(W, Rsig) over 8 modes] = 2  ; R values {0}
+ R_ii       (W,Rsig) = (1, -1)  ; R_ijij = (2, -1)
+ DW edge density -R_Sigma: (W,Rsig) = (0, -1)
+ Hodge contact -(R_Sigma - R_ii): (W,Rsig) = (1, -2)  [W coefficient is carried by the R_ii part]
+ max |Hessian of tr Theta^2|, |Hessian of Pf| on 6 fresh modes: 0
+== ASD
+ rank of [(W, Rsig) over 8 modes] = 2  ; R values {0}
+ R_ii       (W,Rsig) = (1, -1)  ; R_ijij = (2, -1)
+ DW edge density -R_Sigma: (W,Rsig) = (0, -1)
+ Hodge contact -(R_Sigma - R_ii): (W,Rsig) = (1, -2)  [W coefficient is carried by the R_ii part]
+ max |Hessian of tr Theta^2|, |Hessian of Pf| on 6 fresh modes: 0
+
+(5) edge Sigma-potential: density -(R_Sigma + 6 E_Sigma); with E_Sigma = alpha R_ii + beta R_ijij (R=0), W,Rsig coefficients (R_ii=W-Rsig, R_ijij=2W-Rsig):
+  W coefficient = -6*alpha - 12*beta  ; Rsig coefficient = 6*alpha + 6*beta - 1
+  for W coefficient -2 kappa_X: alpha + 2 beta = kappa_X/3 (content-dependent: kappa_X = 1 - n_D/2)
+  a single vector edge field (weight 1, n_D-independent) can match 2 kappa_X = 2 - n_D for all n_D only if alpha+2beta = (1 - n_D/2)/3 varies with n_D: impossible for a constant.

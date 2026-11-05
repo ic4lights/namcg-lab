@@ -1,0 +1,7 @@
+300 random spectra: max relative difference, contour integral vs (Re,Im) formula: 8.231505211965648e-11
+isotropic c=1.00 a=1.000: formula (1+1j)  closed form Re = 2/(a+c) = 1.0000000000
+isotropic c=2.00 a=5.000: formula (0.2857142857+0.1807015806j)  closed form Re = 2/(a+c) = 0.2857142857
+isotropic c=0.50 a=3.000: formula (0.5714285714+0.2332847374j)  closed form Re = 2/(a+c) = 0.5714285714
+isotropic c=0.50 a=0.727: formula (1.6298590172+1.3515682136j)  closed form Re = 2/(a+c) = 1.6298590172
+4000 spectra: Re<=0: 0  Im<=0: 0
+crude lower bound Re M >= (2/c) prod (1+a_k/c)^(-1/2) holds in 200 of 200

@@ -1,0 +1,8 @@
+== SD e = [[0, 1, 0, 0], [-1, 0, 0, 0], [0, 0, 0, 1], [0, 0, -1, 0]]
+  identity : (<Om,R>/C2, <Om,Om>/C2, ell(Om)+R_ijij) values [(0, -4, 0)]
+  e Om e^-1 : (<Om,R>/C2, <Om,Om>/C2, ell(Om)+R_ijij) values [(-2, -4, 0)]
+  e^-1 Om e : (<Om,R>/C2, <Om,Om>/C2, ell(Om)+R_ijij) values [(-2, -4, 0)]
+== ASD e = [[0, 1, 0, 0], [-1, 0, 0, 0], [0, 0, 0, -1], [0, 0, 1, 0]]
+  identity : (<Om,R>/C2, <Om,Om>/C2, ell(Om)+R_ijij) values [(0, -4, 0)]
+  e Om e^-1 : (<Om,R>/C2, <Om,Om>/C2, ell(Om)+R_ijij) values [(-2, -4, 0)]
+  e^-1 Om e : (<Om,R>/C2, <Om,Om>/C2, ell(Om)+R_ijij) values [(-2, -4, 0)]

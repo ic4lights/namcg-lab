@@ -1,0 +1,21 @@
+== SD  Theta-bar=(eta^3)^-1  (6 delta-rho=0 modes)
+ kappa_J values: {-1/3}  R values {0}  Euler {0}  tau+Rj {0}
+ replica per : alpha_W = Ns/10 - 2*nD/5 + 1/5  alpha_Rsig = -Ns/30 + 2*nD/15 - 1/15  residuals on other modes: {0}
+ replica fs : alpha_W = Ns/10 + 3*nD/5 + 1/5  alpha_Rsig = -Ns/30 - 11*nD/30 - 1/15  residuals on other modes: {0}
+ replica comp : alpha_W = Ns/10 + 3*nD/5 - 9/5  alpha_Rsig = -Ns/30 - 11*nD/30 + 14/15  residuals on other modes: {0}
+ T side kappa_C^T = Ns/120 + 2*nD/15 - 19/60  ; 12 kappa_C^T = Ns/10 + 8*nD/5 - 19/5
+  gap( per ) = alpha_W - 12 kappa_C^T = 4 - 2*nD  = -2*(nD - 2) ; zero at nD = [2]
+  gap( fs ) = alpha_W - 12 kappa_C^T = 4 - nD  = 4 - nD ; zero at nD = [4]
+  gap( comp ) = alpha_W - 12 kappa_C^T = 2 - nD  = 2 - nD ; zero at nD = [2]
+== ASD Theta-bar=(etabar^3)^-1  (6 delta-rho=0 modes)
+ kappa_J values: {-1/3}  R values {0}  Euler {0}  tau+Rj {0}
+ replica per : alpha_W = Ns/10 - 2*nD/5 + 1/5  alpha_Rsig = -Ns/30 + 2*nD/15 - 1/15  residuals on other modes: {0}
+ replica fs : alpha_W = Ns/10 + 3*nD/5 + 1/5  alpha_Rsig = -Ns/30 - 11*nD/30 - 1/15  residuals on other modes: {0}
+ replica comp : alpha_W = Ns/10 + 3*nD/5 - 9/5  alpha_Rsig = -Ns/30 - 11*nD/30 + 14/15  residuals on other modes: {0}
+ T side kappa_C^T = Ns/120 + 2*nD/15 - 19/60  ; 12 kappa_C^T = Ns/10 + 8*nD/5 - 19/5
+  gap( per ) = alpha_W - 12 kappa_C^T = 4 - 2*nD  = -2*(nD - 2) ; zero at nD = [2]
+  gap( fs ) = alpha_W - 12 kappa_C^T = 4 - nD  = 4 - nD ; zero at nD = [4]
+  gap( comp ) = alpha_W - 12 kappa_C^T = 2 - nD  = 2 - nD ; zero at nD = [2]
+
+Lambda^2 gaps of appH (c_A - c_T, c_T = Ntot/6 - 4b): periodic 4-2nD = 4b ; antiperiodic fixed-state 4 - nD ; smooth/completed c_A^sm - c_T = -Ntot/4 + 4b
+ check: 4 - 2*nD 4 - nD -Ns/4 - nD + 7/2

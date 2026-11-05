@@ -1,0 +1,2 @@
+s=-1: ranks {(4, 2)}; min eig h = 1.270e-01 (>0); worst opposite-chirality fraction = 7.94e-14; worst 1 - f2/f1 = 1.59e-13; chirality signs seen: {1, -1}
+s=+1: ranks {(4, 2)}; min eig h = 1.264e-01 (>0); worst opposite-chirality fraction = 2.23e-12; worst 1 - f2/f1 = 4.47e-12; chirality signs seen: {1, -1}

@@ -1,0 +1,1 @@
+K=45 samples, first jet fixed: rank dR = 20, rank dOmega = 33, rank joint = 33, dOmega a fixed linear image of dR: False

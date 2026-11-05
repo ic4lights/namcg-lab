@@ -1,5 +1,6 @@
 # Proposal 037-comparator-first-law, round 2
 
+<<<<<<< HEAD
 ## Result
 Bounded, conditional result; Problem B and A stay open.
 1. The comparator $12\kappa_C^T$ (=$-4\kappa_X$ for $\operatorname{tr}\Omega^2$) is not selected by any first law available for the composite connection. It is the entropy of a metric functional that agrees with $\operatorname{tr}\Omega^2$ on every sampled mode. The two functionals have different polarisations (e_extension.py), so the 12-mode quadratic form does not fix the cross term with the replica direction, which lies outside the modes. The value $12\kappa_C^T$ is **not shown to be** the entropy of $\operatorname{tr}\Omega^2$.
@@ -50,17 +51,65 @@ Literature. Verified (arXiv page and/or Crossref): Jacobson-Mohd 1507.01054, PRD
 
 ## Proposed changes
 File `chapters/appH-microscopic-proofs.tex`. Insert the block below (identical to the corrected `appH_insert.tex`) immediately before `\section{Problem C: conformal mode and Cassini}` (occurs once), after the 036 block ending "Problem~B stays open and PROGRAMME-CONDITIONAL.", followed by one blank line. Nothing is replaced. No $\label$ or $\ref$ added; new $\cite$ keys JacobsonMohd2015 and FrolovFursaev1997 (absent from `bib/namcg.bib` at time of check). The block has 0 TABs, is ASCII, LF (integrator converts to CRLF).
+=======
+## Changelog (r1 -> r2; only wording and scope of the LaTeX block change)
+- F1 (corrected-snippet item 2): the dictionary paragraph is rewritten in terms of E(alpha_v, alpha_f), the coefficient of W in the cross term sum_i kappa_i tr(H_i Omega_12). The Noether value is E(1,1). The "gaps vanish" sentence is deleted. The residuals against E(1,1) are kept. The statement that the comparator equals E(2,2) is limited to the coefficient of W.
+- F2 and F4 (item 1): the first-law sentence now carries the auxiliary-independent-connection hypothesis and states that the charge of the constraint term is not computed. The toy is described as a check of field equations, and the multiplier sign is dropped ("fixes lambda in terms of D(dL/dOmega)").
+- F3 (item 3): "on every sampled mode" and "is not shown to be the entropy of tr Omega^2".
+- F5: Frolov-Fursaev wording is now an explicit analogy with the non-minimally coupled scalar Noether term.
+- Item 4: the closing "do not derive" list now includes the charge of the constraint term of the composite connection.
+- Nothing else in the LaTeX changed (line diff of appH_insert_r1.tex against appH_insert.tex touches only these sentences).
+- Body: the "artefact" framing is reduced to the revised insert (comparator not forced; Noether value under the auxiliary reading gives residuals 2-n_D, 2, 0). The avenue list is replaced by the gatekeeper's ranked list.
+- A corrupted-escape defect (\alpha turned into a BEL byte) arose while editing and was fixed; the final file has 0 TAB, 0 CR, only printable ASCII and LF, and compiles.
+
+## Result
+Bounded, conditional result; Problems B and A stay open.
+1. The metric-universal comparator 12 kappa_C^T (-4 kappa_X for tr Omega^2) is not forced. It is the entropy of a metric functional that agrees with tr Omega^2 on every sampled mode, and the two functionals have different polarisations (e_extension.py). The mode values do not fix the cross term with the replica direction, and the comparator is not shown to be the entropy of tr Omega^2.
+2. The composite constraint b = F[Theta] is covariant only under the rotation acting on the chart and the matrix indices together (c_equivariance.py). The only flow vanishing on Sigma is the normal-plane rotation, acting on the fibre by J_12. Under the auxiliary-independent-connection reading (the 035 hypothesis) the Lorentz-Lie pairing is kappa tr(J_12 Omega_12), coefficient -2 kappa_X of W, equal to the metric cross-term rule applied to the Levi-Civita part of Omega. The charge of the constraint term is not computed. The multiplier toy (f_multiplier_toy.py) checks field equations only.
+3. Dictionary (b_dictionary.py): E(alpha_v, alpha_f) = Ntot/10 - 2 alpha_v + n_D alpha_f. The Noether value is E(1,1). The periodic, fixed-state and completed replicas have the W-coefficients E(0,0), E(0,1), E(1,1) (an identity at their own holonomy). The comparator equals E(2,2), a statement about the coefficient of W only. Residuals against E(1,1): 2-n_D, 2, 0.
+4. Consequence: with the Noether value under the auxiliary reading, the completed replica has no W residual and the fixed-state replica has the content-independent residual 2, the vector holonomy omitted by integer-n gluing (by analogy with the Frolov-Fursaev Noether term for non-minimally coupled scalars). Agreement for the completed replica is an identity between cross terms of the same a_2; the Dirac entry is a partial independent check.
+5. The Lambda^2 analogue (G_T vs G_A, rho^2 X), the holonomy selected by the matrix state and the constraint-term charge are not derived.
+
+## Target and status
+Problem B and A. Appendix H: B "Status: OPEN. Priority: CRITICAL PATH. Completion: PROGRAMME-CONDITIONAL"; A "OPEN, CRITICAL PATH for the matrix-derived label". Chapter 17 requires A, B, C, D1, E, F, G-derived, N; no discrepancy. Original target of B: derive stationarity and the area term from the microscopic dynamics. PROGRAMME-CONDITIONAL; closes nothing.
+
+## Source reading
+Digest + targeted reads: Problem B ledger section (in full), 036 review-r2, SME scout 20261018, 033 outputs, and review-r1 of this package in full. Not a full scan.
+
+## Research and reasoning
+Setting: 033 modes (delta rho = 0 plane waves about constant (A)SD Theta-bar), totally geodesic Sigma, first order in 1-n, Euclidean section. Derivations and checks are as in round 1:
+(a) a_decomposition.py, a2_frame_variants.py: <Om,Om> = 2<R,R>, ell_J12(Om) = ell_J12(R); under the coframe identification Om = R + N with <N,R> = 0, <N,N> = <R,R>, ell_J12(N) = 0 (with the identity identification <Om,R> = 0).
+(b) e_extension.py: Q_1 = tr Omega^2/12 and Q_2 = -C^2/3 agree on sampled single modes; B_1 differs from B_2 on pairs of modes and on generic closed jets.
+(c) c_equivariance.py, f_multiplier_toy.py: as in Result 2. The gatekeeper notes the constraint term F contains dTheta and delta_xi Theta contains d xi, non-zero on Sigma, so its charge is open.
+(d) b_dictionary.py: as in Result 3 (outputs re-run by the gatekeeper identical).
+Literature (verified in r1 and by the gatekeeper): Jacobson-Mohd 1507.01054 (PRD 92, 124010); Frolov-Fursaev hep-th/9703178 (PRD 56, 2212). 2012.14892 is Elgood, Ortin, Pereniguez (JHEP 05 (2021) 110), not cited.
+
+## Claim classification
+- Decomposition, non-uniqueness, equivariance, dictionary arithmetic: established on sampled jets within the stated hypotheses.
+- Noether value -2 kappa_X: conditional (auxiliary-independent-connection reading, equivariant tie, delta content with no N-part, constraint-term charge not computed).
+- Agreement of a replica with E at its own holonomy: identity.
+- Selection of alpha_v: conjecture.
+- Lambda^2 analogue: unresolved.
+
+## Proposed changes
+File chapters/appH-microscopic-proofs.tex: insert the block below (identical to appH_insert.tex) immediately before `\section{Problem C: conformal mode and Cassini}`, after the 036 block ending "Problem~B stays open and PROGRAMME-CONDITIONAL." followed by one blank line. The anchor occurs once (re-checked in a copy of the working tree). Nothing replaced. No \label or \ref. New \cite keys JacobsonMohd2015 and FrolovFursaev1997 (BibTeX in r1, unchanged, Crossref-verified; absent from bib/namcg.bib). The file has 5616 bytes, 0 TAB, 0 CR, only printable ASCII plus LF, balanced braces and \( \). Compile check in a scratch copy outside the repo with the block and both bib entries: 303 pages, 0 undefined or multiply-defined references.
+>>>>>>> 6aa44906d327974b9752bb22fa0d451b5d5a3618
 
 ```latex
 \paragraph{Comparator for the entropy of the bundle curvature and the holonomy dictionary (conditional; not closure).}
 Keep the setting of the preceding paragraph: the modes with \(\delta\rho=0\) about a constant self-dual or anti-self-dual \(\bar\Theta\), a totally geodesic \(\Sigma\), cross terms at first order in \(1-n\), and the weights \(\kappa_X=1-\tfrac12n_D\) (vector \(1\), each Dirac field \(-\tfrac12\)). Write \(\mathcal J=\mathcal J_{12}\) for the generator of the rotation of the normal plane, \(\alpha_v\mathcal J\) for the holonomy around \(\Sigma\) of the vector bundle connection and \(\alpha_f\mathcal J\) for that of each Dirac fibre (\(\mathcal J\to\tfrac12\gamma^{12}\)).
 
+<<<<<<< HEAD
 \emph{The comparator is an extension.} The functionals \(\tfrac1{12}\operatorname{tr}\Omega^2\) and \(-\tfrac13C^2\) have the same value on every sampled mode (exact arithmetic, both chiralities), but their polarisations differ on pairs of modes with different wave vectors and between a mode and a generic closed second jet (exact arithmetic). The entropy at first order in the amplitude is the cross term of the quadratic form with the direction of the replica, which lies outside the modes, so the quadratic form on the modes does not fix it. The value \(12\kappa_C^T\) is the entropy of the metric functional with the same value on every sampled mode, is not shown to be the entropy of \(\operatorname{tr}\Omega^2\). Under the identification of the matrix index with the tangent index through the coframe \(e=\bar\omega\), \(\Omega^v=R\oplus N\) on the modes, with \(R\) the Levi-Civita curvature, \(\langle N,R\rangle=0\), \(\langle N,N\rangle=\langle R,R\rangle\) and \(\operatorname{tr}(\mathcal J N_{12})=0\); the holonomy generator pairs with \(R\) only (without that identification \(\langle\Omega^v,R\rangle=0\), while the values \(\langle\Omega^v,\Omega^v\rangle=2\langle R,R\rangle\) and \(\operatorname{tr}(\mathcal J\Omega_{12})\) are unchanged).
+=======
+\emph{The comparator is an extension.} The functionals \(\tfrac1{12}\operatorname{tr}\Omega^2\) and \(-\tfrac13C^2\) have the same value on every sampled mode (exact arithmetic, both chiralities), but their polarisations differ on pairs of modes with different wave vectors and between a mode and a generic closed second jet (exact arithmetic). The entropy at first order in the amplitude is the cross term of the quadratic form with the direction of the replica, which lies outside the modes, so the quadratic form on the modes does not fix it. The value \(12\kappa_C^T\) is the entropy of the metric functional with the same value on every sampled mode; it is not shown to be the entropy of \(\operatorname{tr}\Omega^2\). Under the identification of the matrix index with the tangent index through the coframe \(e=\bar\omega\), \(\Omega^v=R\oplus N\) on the modes, with \(R\) the Levi-Civita curvature, \(\langle N,R\rangle=0\), \(\langle N,N\rangle=\langle R,R\rangle\) and \(\operatorname{tr}(\mathcal J N_{12})=0\); the holonomy generator pairs with \(R\) only (without that identification \(\langle\Omega^v,R\rangle=0\), while the values \(\langle\Omega^v,\Omega^v\rangle=2\langle R,R\rangle\) and \(\operatorname{tr}(\mathcal J\Omega_{12})\) are unchanged).
+>>>>>>> 6aa44906d327974b9752bb22fa0d451b5d5a3618
 
 \emph{The composite constraint.} For \(b_\sigma=G_{\sigma\tau}\Theta^{\rho\tau}\partial_\rho\Theta\) the transformation law of a one-form valued in the adjoint holds under the rotation acting on the chart and on the matrix indices together, and fails under a rotation of the chart alone, of the matrix indices alone, under a non-orthogonal diagonal linear map and under a non-linear change of chart (exact check at a point, Euclidean section). The flow generated by the rotation of the normal plane therefore acts on the fibre through \(\mathcal J\), and no generator \(\mathcal J_{34}\) enters the pairing, since the corresponding rotation does not vanish on \(\Sigma\). Introducing a multiplier \(\lambda\) for \(\omega-F[\Theta]\) fixes \(\lambda\) in terms of \(D(\partial L/\partial\Omega)\) and reproduces the Euler--Lagrange expression of the composite Lagrangian (a check of the field equations in a one-dimensional toy, not of a charge). A first law of the form of the Lorentz--diffeomorphism Noether charge~\cite{JacobsonMohd2015} can be formed only with this tie. If the connection is treated as an auxiliary independent field on which the Lagrangian depends through its curvature, it gives the density \(\kappa\,\operatorname{tr}(H\Omega_{12})\) with \(H=\mathcal J\); the charge of the constraint term is not computed. A covariance under general diffeomorphisms of the chart is not available for \(b\).
 
 \emph{Dictionary.} Let \(E(\alpha_v,\alpha_f)\) be the coefficient of \(W\) in the cross term \(\sum_i\kappa_i\operatorname{tr}(H_i\Omega_{12})\) with the holonomy \(H=\alpha_v\mathcal J\) on the vector bundle and \(H=\alpha_f\mathcal J\) on each Dirac fibre. It is \(N_{\mathrm{tot}}/10-2\alpha_v+n_D\alpha_f\), because \(\operatorname{tr}(\mathcal J\Omega_{12})\) has coefficient \(-2\) of \(W\). The Noether value of the preceding paragraph is \(E(1,1)\). The periodic, fixed-state and completed replicas have the coefficients of \(W\) of \(E\) at \((\alpha_v,\alpha_f)=(0,0)\), \((0,1)\), \((1,1)\) for all \((N_s,n_D)\) (exact arithmetic on six modes of each chirality), so their agreement with \(E\) at their own holonomy is an identity. The comparator \(12\kappa_C^T\) equals \(E(2,2)\); this is a statement about the coefficient of \(W\) and not about a holonomy of the bundle. Relative to \(E(1,1)\) the residuals of the periodic, fixed-state and completed replicas are \(2-n_D\), \(2\), \(0\). For the periodic and completed replicas this agreement is the identity between two cross terms of the same \(a_2\) with the same deltas. The Dirac entry is a check: the index weight \(-\tfrac12\) of the heat coefficient and the spin term of the Landau--Aharonov--Bohm spectrum agree. The residual \(2\) of the fixed-state replica is the vector holonomy that integer-\(n\) gluing omits, a contact of the type \(S_{\mathrm{BH}}=S_{\mathrm{ent}}-Q\), by analogy with the Noether-charge term for non-minimally coupled scalars of~\cite{FrolovFursaev1997}.
 
+<<<<<<< HEAD
 These statements are for the modes, replica and hypotheses of the preceding paragraphs, the Euclidean section and the coefficient of \(W\) only. They do not derive the holonomy selected by the matrix state, the continuation in \(n\) of the spin-complete replica (not analytic at \(n=1\) in the ledger above), the Euler coefficient, the logarithmic order off these modes, a first law at order \(\Lambda_{\mathrm{UV}}^2\) (where \(\rho^2X\) has no bundle curvature and the gap of the normalisation paragraph is not addressed), the charge of the constraint term of the composite connection, or a value or sign of \(G_{\mathrm{eff}}\). Problem~B stays open and PROGRAMME-CONDITIONAL.
 ```
 
@@ -107,6 +156,23 @@ Run from the proposal folder with `python` (not `-I`, local imports). Outputs ar
 
 ## Milestone assessment
 Candidate important bounded result, not a breakthrough claim: the Weyl gap $2\kappa_X$ of 033 is removed as a comparator artefact for the spin-complete replica, and the physical residual is relocated to the vector spin contact. It covers one coefficient on 12 modes, the matching is partly an identity, and the holonomy selection and the $\Lambda^2$ gap ($G_T$ vs $G_A$) remain open. The gatekeeper decides.
+=======
+These statements are for the modes, replica and hypotheses of the preceding paragraphs, the Euclidean section and the coefficient of \(W\) only. They do not derive the holonomy selected by the matrix state, the continuation in \(n\) of the spin-complete replica (not analytic at \(n=1\) in the ledger above), the charge of the constraint term of the composite connection, the Euler coefficient, the logarithmic order off these modes, a first law at order \(\Lambda_{\mathrm{UV}}^2\) (where \(\rho^2X\) has no bundle curvature and the gap of the normalisation paragraph is not addressed), or a value or sign of \(G_{\mathrm{eff}}\). Problem~B stays open and PROGRAMME-CONDITIONAL.
+```
+
+BibTeX: unchanged from round 1 (JacobsonMohd2015: PRD 92, 124010, doi 10.1103/PhysRevD.92.124010, arXiv 1507.01054; FrolovFursaev1997: PRD 56, 2212-2225, doi 10.1103/PhysRevD.56.2212, arXiv hep-th/9703178). The integrator takes the two entries from `proposal-r1.md`.
+
+## Verification scripts
+As in round 1 (a_decomposition.py, a2_frame_variants.py, b_dictionary.py, c_equivariance.py, e_extension.py, f_multiplier_toy.py, with modes_lib.py, lib.py, lin_lib.py and saved *.out.txt). Run with `python`, not `-I`. `appH_insert_r1.tex` keeps the round-1 block for diffing. No script changed in r2.
+
+## Decisions Taken
+- Applied the gatekeeper's snippet items 1-4 verbatim and F5 as specified; the F4 sign issue is settled by dropping the sign.
+- Kept the residuals and the Dirac check, deleted the vanishing-gap sentence, because it matched the replica to itself.
+- Replaced the body framing "comparator artefact" by "comparator not forced; residuals 2-n_D, 2, 0 under the auxiliary reading".
+
+## Milestone assessment
+Routine to bounded conditional sharpening. No breakthrough claim: one coefficient on sampled modes, central agreement an identity, Lambda^2 identification untouched. The gatekeeper recorded no milestone.
+>>>>>>> 6aa44906d327974b9752bb22fa0d451b5d5a3618
 
 ## Status-label recommendation
 None. B and A remain OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL.
@@ -115,6 +181,7 @@ None. B and A remain OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL.
 None.
 
 ## Remaining open step
+<<<<<<< HEAD
 Ranked open avenues:
 1. Derive from the matrix state whether the modular flow rotates the vector index ($\alpha_v$): the vector spin contact / edge sector (Kabat, Donnelly-Wall), including the non-analyticity at $n=1$.
 2. $\Lambda^2$ analogue: entropy of $\rho^2X$ (no bundle curvature). Sketch only, not verified: a first-derivative frame-dependent Lagrangian has a diffeomorphism-only Noether charge proportional to $\xi$, vanishing on $\Sigma$, and the Iyer-Wald ambiguity proportional to the derivative of $\xi$ is not fixed without local Lorentz covariance (D1). Test via the TEGR identity $R=-(T^2/4+TT/2-V^2)-2\operatorname{div}V$.
@@ -128,3 +195,18 @@ Ranked open avenues:
 - "$12\kappa_C^T = \text{holonomy } 2\mathcal{J}$" is a $W$-coefficient statement, not a physical holonomy.
 - The coframe identification is used only for the orthogonality claim.
 - The scratch copy for the compile check is in the session scratchpad, outside the repo.
+=======
+Ranked open avenues (gatekeeper's list):
+1. The Lambda^2-order analogue: the entropy of the first-derivative rho^2 X term in an Iyer-Wald treatment with Theta fundamental (Problem D lift); it decides G_T versus G_A.
+2. The charge of the multiplier or constraint term, to settle whether -2 kappa_X is the composite-theory Noether value; it could change the answer.
+3. Whether the replica deforms the non-Levi-Civita part N: off-diagonal profiles with J_34 circulation and a regular Sigma metric; the exact cone heat trace with holonomy.
+4. Selection of alpha_v from the modular flow; the n > 1 branch and the non-analyticity at n = 1.
+5. Non-geodesic Sigma (Dong/Camps K^2 terms) and the Euler coefficient.
+
+## Special instructions for the gatekeeper
+- The block differs from r1 only in the sentences listed in the changelog; diff `appH_insert_r1.tex` against `appH_insert.tex`.
+- Check that no sentence now says or implies that a gap vanishes by matching the replica's own holonomy.
+- The Noether density is stated only under the auxiliary-independent-connection reading, with the constraint-term charge explicitly not computed.
+- Equivariance is tested in the Euclidean section only.
+- Scratch compile copy is in the session scratchpad, outside the repo.
+>>>>>>> 6aa44906d327974b9752bb22fa0d451b5d5a3618

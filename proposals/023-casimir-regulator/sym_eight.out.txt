@@ -1,0 +1,5 @@
+signature (n+, n-, n0) of the contraction form on the 6-dim tangent space at 40 random points:
+  T only (eta)           {(3, 1, 2): 40}
+  T eta + y eta          {(4, 0, 2): 40}
+  T eta + y (-eta)       {(3, 3, 0): 40}
+  T delta + y delta      {(6, 0, 0): 40}

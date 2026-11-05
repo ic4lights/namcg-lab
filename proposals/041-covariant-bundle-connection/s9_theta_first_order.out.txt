@@ -1,0 +1,15 @@
+eta=(1, 1, 1, 1): |delta theta~ on u=q| = 8.7e-12; delta ln rho vs p.u: ratio = [1. 1. 1. 1.]  (should be constant)
+   rank[d ln rho; d theta~] = 2 (of 2): d theta~ is independent of d ln rho on the 4-dim u-space
+   d theta~ / (p) componentwise ratio: [ 0.25892034  0.70501154  0.0982739  -0.26230976]
+eta=(1, 1, 1, 1): |delta theta~ on u=q| = 2.2e-10; delta ln rho vs p.u: ratio = [1. 1. 1. 1.]  (should be constant)
+   rank[d ln rho; d theta~] = 2 (of 2): d theta~ is independent of d ln rho on the 4-dim u-space
+   d theta~ / (p) componentwise ratio: [ 4.68154060e-01 -6.52065796e+00  2.78056802e-01  1.43747864e-03]
+eta=(-1, 1, 1, 1): |delta theta~ on u=q| = 2.1e-10; delta ln rho vs p.u: ratio = [1. 1. 1. 1.]  (should be constant)
+   rank[d ln rho; d theta~] = 2 (of 2): d theta~ is independent of d ln rho on the 4-dim u-space
+   d theta~ / (p) componentwise ratio: [0.08979081 0.24337986 0.46471824 0.6683624 ]
+eta=(-1, 1, 1, 1): |delta theta~ on u=q| = 2.0e-11; delta ln rho vs p.u: ratio = [1. 1. 1. 1.]  (should be constant)
+   rank[d ln rho; d theta~] = 2 (of 2): d theta~ is independent of d ln rho on the 4-dim u-space
+   d theta~ / (p) componentwise ratio: [-0.18142656 -1.27465715  2.51296978 -0.460614  ]
+eta=(-1, 1, 1, 1): |delta theta~ on u=q| = 6.7e-11; delta ln rho vs p.u: ratio = [1. 1. 1. 1.]  (should be constant)
+   rank[d ln rho; d theta~] = 2 (of 2): d theta~ is independent of d ln rho on the 4-dim u-space
+   d theta~ / (p) componentwise ratio: [-0.06003168  0.63966267  1.10784741  0.28009857]

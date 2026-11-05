@@ -1,0 +1,8 @@
+[Euclid] f has Riemann symmetries incl. first Bianchi: True
+[Euclid] (i) Euler-Lagrange derivative = -2 d_a d_c f^(a b c d) (sym): True
+[Euclid] (ii) d_b Q^(ab) = 2 xi_c E^(ac) identically: True
+[Euclid]      on Sigma Q = -2 f^(abcd) d_c xi_d: True; nonzero there: True
+[Lorentz] f has Riemann symmetries incl. first Bianchi: True
+[Lorentz] (i) Euler-Lagrange derivative = -2 d_a d_c f^(a b c d) (sym): True
+[Lorentz] (ii) d_b Q^(ab) = 2 xi_c E^(ac) identically: True
+[Lorentz]      on Sigma Q = -2 f^(abcd) d_c xi_d: True; nonzero there: True

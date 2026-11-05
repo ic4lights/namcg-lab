@@ -1,0 +1,7 @@
+sig 1.0  |Bh q| 0.0  |Bx q| 0.0
+  eigvals of x^-1 h (expect -1/4,-1/4,-3/4): [-0.75 -0.25 -0.25]
+  eigvals of x^-1 r : [-5.13694314e-18  1.39957577e-17  5.00000000e-01]  (third eigenvalue 1/2: 1 = (-4)(-3/4) + beta/2 gives beta = -4)
+sig -1.0  |Bh q| 0.0  |Bx q| 0.0
+  eigvals of x^-1 h (expect -1/4,-1/4,-3/4): [-0.75 -0.25 -0.25]
+  eigvals of x^-1 r : [-4.16333634e-17  2.11554366e-18  5.00000000e-01]  (third eigenvalue 1/2: 1 = (-4)(-3/4) + beta/2 gives beta = -4)
+fixed (-4,-4): cubic |X - alpha h - beta r| / |X| = 0.31667376370101324

@@ -1,0 +1,44 @@
+C:\Users\redgi\Projects\namcg-lab\proposals\032-landau-resummation\engine.py:83: RuntimeWarning: overflow encountered in exp
+  ph = np.exp(-1j * kup @ Phi @ kappa)
+C:\Users\redgi\Projects\namcg-lab\proposals\032-landau-resummation\engine.py:84: RuntimeWarning: invalid value encountered in scalar multiply
+  pref = ph * np.exp(0.5 * l @ G @ l)
+C:\Users\redgi\Projects\namcg-lab\proposals\032-landau-resummation\engine.py:84: RuntimeWarning: overflow encountered in exp
+  pref = ph * np.exp(0.5 * l @ G @ l)
+C:\Users\redgi\Projects\namcg-lab\proposals\032-landau-resummation\engine.py:101: RuntimeWarning: invalid value encountered in scalar multiply
+  acc += wu * (1 - u) * pref * val
+A = -0.5598454428538744  UV log coefficient c = A/(16 pi^2) = -0.0035452626829202078
+
+=== (a,b)=(0.700,1.300)  a/b=0.538  theta*=arctan(a/b)=0.494
+   rho=0.001  s*T2_EH = (-0.00354526+0j)   (UV limit c = -3.5453e-03)   |T2_EH| = 3.545e+00
+   rho=0.01   s*T2_EH = (-0.00354532+1.6e-07j)   (UV limit c = -3.5453e-03)   |T2_EH| = 3.545e-01
+   rho=0.05   s*T2_EH = (-0.0035468+3.94e-06j)   (UV limit c = -3.5453e-03)   |T2_EH| = 7.094e-02
+   rho=0.5    s*T2_EH = (-0.00369969+0.00039368j)   (UV limit c = -3.5453e-03)   |T2_EH| = 7.441e-03
+   rho=2      s*T2_EH = (-0.00677328+0.01041164j)   (UV limit c = -3.5453e-03)   |T2_EH| = 6.210e-03
+   rho=6      s*T2_EH = (0.00105986-0.00322925j)   (UV limit c = -3.5453e-03)   |T2_EH| = 5.665e-04
+   rho=12     s*T2_EH = (nan+nanj)   (UV limit c = -3.5453e-03)   |T2_EH| = nan
+   frame 0: Fin_EH = (nan+nanj)
+Traceback (most recent call last):
+  File "C:\Users\redgi\Projects\namcg-lab\proposals\032-landau-resummation\s6_resummed_sector.py", line 68, in <module>
+    fin, tail = finite_part(F, kappa, m, np.zeros(4), c, a, b)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\Projects\namcg-lab\proposals\032-landau-resummation\s6_resummed_sector.py", line 44, in finite_part
+    tail += w * (hi - lo) / 2 * k2(F, kappa, m, n, r * ph) * ph
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\Projects\namcg-lab\proposals\032-landau-resummation\s6_resummed_sector.py", line 15, in k2
+    vals = [second_order(F, l * kappa, m, n, s, nquad=20) for l in LAM]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\Projects\namcg-lab\proposals\032-landau-resummation\s6_resummed_sector.py", line 15, in <listcomp>
+    vals = [second_order(F, l * kappa, m, n, s, nquad=20) for l in LAM]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\Projects\namcg-lab\proposals\032-landau-resummation\engine.py", line 73, in second_order
+    G, Ms, Ph = G_and_M(F, s, taus)
+                ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\Projects\namcg-lab\proposals\032-landau-resummation\engine.py", line 34, in G_and_M
+    G = -1j * F @ M.T @ np.linalg.inv(np.eye(4) - M.T)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\numpy\linalg\_linalg.py", line 647, in inv
+    ainv = _umath_linalg.inv(a, signature=signature)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\numpy\linalg\_linalg.py", line 144, in _raise_linalgerror_singular
+    raise LinAlgError("Singular matrix")
+numpy.linalg.LinAlgError: Singular matrix

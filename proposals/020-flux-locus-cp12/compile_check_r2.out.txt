@@ -1,0 +1,8 @@
+anchor unique, 018 block precedes, block equals proposal block, bib entry added
+pdflatex rc 0
+bibtex rc 0
+pdflatex rc 0
+pdflatex rc 0
+errors: 0  undefined: 0  multiply: 0  double subscript: 0
+['Output written on namcg-book7.pdf (268 pages, 1993854 bytes).']
+Troost2000 undefined citation: False

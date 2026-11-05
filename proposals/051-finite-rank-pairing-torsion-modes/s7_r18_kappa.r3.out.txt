@@ -1,0 +1,28 @@
+--- boost(0,2)
+A  v = [0, 0, -2, 0] , |v|^2 = 4
+A  (Q2(t)-Q2(-t))/2 minus sinh(t) v.p = 0
+B  kappa by direct integration = -sqrt(2)*P*sigma*exp(sigma**2/4)
+B  kappa - predicted = 0
+C  kappa / (-sqrt2 sigma P) = sigma**2/4 + 1 + O(sigma^4)
+D  sigma=0.1 quadrature -0.1417753519 closed form -0.1417753519 bare leading term -0.1414213562
+D  sigma=0.05 quadrature -0.07075488611 closed form -0.07075488611 bare leading term -0.07071067812
+D  sigma=0.01 quadrature -0.01414248918 closed form -0.01414248918 bare leading term -0.01414213562
+--- rotation(1,2)
+A  v = [0, 0, 2, 0] , |v|^2 = 4
+A  (Q2(t)-Q2(-t))/2 minus sin(t) v.p = 0
+B  kappa by direct integration = -sqrt(2)*P*sigma*exp(-sigma**2/4)
+B  kappa - predicted = 0
+C  kappa / (-sqrt2 sigma P) = 1 - sigma**2/4 + O(sigma^4)
+D  sigma=0.1 quadrature -0.1410682444 closed form -0.1410682444 bare leading term -0.1414213562
+D  sigma=0.05 quadrature -0.07066649775 closed form -0.07066649775 bare leading term -0.07071067812
+D  sigma=0.01 quadrature -0.01414178207 closed form -0.01414178207 bare leading term -0.01414213562
+--- comparison with the printed values of s3 (r1 output), P = 1
+  boost    sigma=1/10   s3 -1.417754e-01 closed form -0.1417754
+  boost    sigma=1/100  s3 -1.414249e-02 closed form -0.01414249
+  boost    sigma=1/1000 s3 -1.414214e-03 closed form -0.001414214
+  rotation sigma=1/10   s3 -1.410682e-01 closed form -0.1410682
+  rotation sigma=1/100  s3 -1.414178e-02 closed form -0.01414178
+  rotation sigma=1/1000 s3 -1.414213e-03 closed form -0.001414213
+--- the bytes of R18 state the form that was checked
+  new string of R18 contains the (1+O(sigma^2)) form and "The entries of this compression"
+ALL ASSERTIONS PASSED

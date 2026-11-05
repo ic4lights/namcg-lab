@@ -1,0 +1,5 @@
+s=+1: eigenvalues of H_V on degree-1 vector polynomials (noncompact, mu^2=+4): {np.float64(-8.0): np.int64(1), np.float64(-4.0): np.int64(5), np.float64(-2.0): np.int64(20), np.float64(2.0): np.int64(14), np.float64(4.0): np.int64(35)}
+s=-1: eigenvalues of H_V on degree-1 vector polynomials (noncompact, mu^2=+4): {np.float64(-8.0): np.int64(1), np.float64(-4.0): np.int64(5), np.float64(-2.0): np.int64(20), np.float64(2.0): np.int64(14), np.float64(4.0): np.int64(35)}
+
+Weyl check C6(k,k,0) - C5(k+1,k) + C5(1,0) for k=0..12: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+dim so(5) (k+1,k) = (2k+1)(2k+3)(2k+5)/3 for k=1..4: [35, 105, 231, 429] ; cumulative: [ 35 140 371 800]

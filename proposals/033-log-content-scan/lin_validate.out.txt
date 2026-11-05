@@ -1,0 +1,4 @@
+validate R  jets: 0.0003133333333333333  linear: 0.0003133333333333333  (sign convention of tau: jets trJOm_v)
+validate Rii  jets: 0.000205  linear: 0.000205  (sign convention of tau: jets trJOm_v)
+validate Rijij  jets: 0.00013  linear: 0.00013  (sign convention of tau: jets trJOm_v)
+validate trJOm_v  jets: -0.00013  linear: -0.00013  (sign convention of tau: jets trJOm_v)

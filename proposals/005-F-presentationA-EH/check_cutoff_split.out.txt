@@ -1,0 +1,8 @@
+trace of h1 (should be 0): 0
+rho0*L_FP(h1) : char poly of (M - lam M_Max) on the quotient: -19881*(16*lam + 39)**3/1024    [p^2_eta = 39 , rho0 = 1/2 ]
+rho1*R1 : char poly of (M - lam M_Max) on the quotient: -19881*lam**2*(8*lam + 39)/2    [p^2_eta = 39 , rho0 = 1/2 ]
+sum = (rho R)^(2) : char poly of (M - lam M_Max) on the quotient: -19881*(16*lam + 39)**2*(16*lam + 117)/1024    [p^2_eta = 39 , rho0 = 1/2 ]
+trace of h1 (should be 0): 0
+rho0*L_FP(h1) : char poly of (M - lam M_Max) on the quotient: 25*(4*lam - 1)**3/64    [p^2_eta = -1 , rho0 = 1 ]
+rho1*R1 : char poly of (M - lam M_Max) on the quotient: 25*lam**2*(2*lam - 1)/2    [p^2_eta = -1 , rho0 = 1 ]
+sum = (rho R)^(2) : char poly of (M - lam M_Max) on the quotient: 25*(4*lam - 3)*(4*lam - 1)**2/64    [p^2_eta = -1 , rho0 = 1 ]

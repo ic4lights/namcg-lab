@@ -1,0 +1,15 @@
+smallest singular values of the H-equation: [2.828427 2.828427 0.      ]
+smallest singular values of the H-equation: [2.828427 2.828427 0.      ]  eigenvalues of H: [-1. -1.  1.  1.]
+(1) {M^AB,M^CD} / (Lie-structure expression): min -1.000000 max -1.000000 over 150 samples
+    constant s = -1.0
+(2) max |E^{a mu} - s eta^{a mu} M^{45}| = 8.88e-16 ;  max |K^{mu nu} - (M^{45})^2 eta^{mu nu}| = 5.33e-15
+(3) rank of the 15x15 Poisson matrix of the generators: 6
+    rank of {x^mu, M^AB} (4 x 15): 4
+(4) x_a x^a (a=0..4) at n=1, 10 samples: [-0.25 -0.25 -0.25 -0.25 -0.25 -0.25 -0.25 -0.25 -0.25 -0.25]
+    n = 0.5: x_a x^a = -0.06250000
+    n = 2.0: x_a x^a = -1.00000000
+(5) local coordinates: x^0..x^3 and generators [(0, 1), (0, 2)]  rank of their Poisson rows: 6
+    6x6 operator tensor K_L^{ij} = eta_ab {T^a,f^i}{T^b,f^j}: rank 4
+    its 4x4 base block equals (M^45)^2 eta^{-1}: True
+(6) point with x^a ~ (x0,0,0,0,0): residual 2.0284330281812227e-24  x^a = [-0.5 -0.  -0.  -0.   0. ]
+    fibre average of M^{AB} over the SO(4) orbit (max |entry| outside the M^{a5} block): 0.0041490578910119945   M^{a5} block (x^a): [-0.5  0.  -0.  -0.  -0. ]  unaveraged x^a: [-0.5 -0.  -0.  -0.   0. ]

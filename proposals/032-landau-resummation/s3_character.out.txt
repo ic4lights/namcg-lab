@@ -1,0 +1,22 @@
+(1) species identity: (-3.4438e-41 + 6.1881e-42j)
+(2) growth rate of |C| along rays (a=0.70, b=1.30, th*=0.4939):
+   th=0.0000 : measured d ln|C|/d rho =  0.6963 ;  |a cos th - b sin th| = 0.7000
+   th=0.2000 : measured d ln|C|/d rho =  0.4277 ;  |a cos th - b sin th| = 0.4278
+   th=0.4939 : measured d ln|C|/d rho = -0.3300 ;  |a cos th - b sin th| = 0.0000
+   th=0.8000 : measured d ln|C|/d rho =  0.4448 ;  |a cos th - b sin th| = 0.4449
+   th=1.2000 : measured d ln|C|/d rho =  0.9580 ;  |a cos th - b sin th| = 0.9580
+(3) asymptotic form ratio C / [(ab/pi^2) sinh^2(s(a-ib)/2)] at rho=25, th=0.6, 1.0:
+   th=0.6 ratio = (1.0 + 2.146399406e-13j)
+   th=1.0 ratio = (0.9999999976 - 5.658273892e-9j)
+(4) integral I4 = int_{ray} ds/s C(s) on th* (UV: integrand ~ s (f_e^2+f_m^2)^2 finite), with tail truncation test
+   R= 20  I4 = (-0.164478048 - 0.03329902628j)
+   R= 40  I4 = (-0.1944975606 - 0.03329902628j)
+   R= 80  I4 = (-0.2272960947 - 0.03329902628j)
+   asymptotic oscillation: |C| at rho=20,40,80,160 on th*: ['0.0604052', '0.0833258', '0.0320876', '0.0836828']
+   same integrand on th=0.2 (should blow up):  ['1.67039', '119.806', '622186.0']
+(5) leaf values: f_e/f_m = 1/sinh(tau) (028 kernel-plane closed form) -> th* = arctan(1/sinh tau):
+   tau=0.2  |y^4|/l = 0.201  f_e/f_m = 4.967  th* = 1.3721 rad
+   tau=0.5  |y^4|/l = 0.521  f_e/f_m = 1.919  th* = 1.0904 rad
+   tau=1.0  |y^4|/l = 1.175  f_e/f_m = 0.851  th* = 0.7050 rad
+   tau=1.5  |y^4|/l = 2.129  f_e/f_m = 0.470  th* = 0.4391 rad
+   tau=3.0  |y^4|/l = 10.018  f_e/f_m = 0.100  th* = 0.0995 rad

@@ -1,0 +1,14 @@
+TT  = {aS: 1, aV: 2/3, aq: 1}  (V^2, S^2, q^2 coefficients)
+TT' = {bS: -1, bV: 1/3, bq: 1/2}
+calT= {tS: -1/4, tV: -2/3, tq: 1/2}
+
+R-coefficient r of X = TT when one of {V^2,S^2,q^2} is eliminated using R = -calT - 2 div V:
+  eliminate q^2 (keep R,V^2,S^2): r = -2 ; S^2 coefficient = 3/2 ; V^2 coefficient = 2
+  eliminate S^2 (keep R,V^2,q^2): r = 4
+  eliminate V^2 (keep R,S^2,q^2): r = 1
+  R-free presentation (keep V^2,S^2,q^2), TT itself: r = 0
+
+Part B: random two-jets of a closed omega (Euclidean)
+ jet 0 {'R': 399127/144, 'TT': 215749/6, 'TTp': 174055/72, 'V2': 277829/36, 'S2': 1120439/108, 'ok_V_is_dlnrho': True, 'ok_R_identity': True, 'ok_Es_identity': True, 'ok_sqrtG': True, 'ok_ledger_X_identity': True, 'resid_iv': 0}
+ jet 1 {'R': 7890731/472392, 'TT': 6730091/39366, 'TTp': 1789225/59049, 'V2': 2285447/118098, 'S2': 13033373/354294, 'ok_V_is_dlnrho': True, 'ok_R_identity': True, 'ok_Es_identity': True, 'ok_sqrtG': True, 'ok_ledger_X_identity': True, 'resid_iv': 0}
+ jet 2 {'R': 50980115/384, 'TT': 2395879/8, 'TTp': 5289225/64, 'V2': 5515361/64, 'S2': 4294291/96, 'ok_V_is_dlnrho': True, 'ok_R_identity': True, 'ok_Es_identity': True, 'ok_sqrtG': True, 'ok_ledger_X_identity': True, 'resid_iv': 0}

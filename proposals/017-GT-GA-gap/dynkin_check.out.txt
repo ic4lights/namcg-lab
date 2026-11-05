@@ -1,0 +1,4 @@
+vector: tr B^2 / |N|^2 = -1.0000000000000002
+Dirac 4: tr B^2 / |N|^2 = -0.5000000000000001
+10D spinor (32) restricted to so(4): tr B^2 / |N|^2 = -4.000000000000001  -> 16-dim Weyl half = -2.0000000000000004
+b contribution = w * (-tr B^2/|N|^2):  vector (w=+1): 1.0 ; Dirac (w=-1): -0.5 ; 16-real MW (w=-1/2): -1.0000000000000002

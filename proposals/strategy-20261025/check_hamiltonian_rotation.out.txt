@@ -1,0 +1,9 @@
+[constant span] iota_xi omega = d eps: True; eps = a*(-x1**2 - x2**2)/2
+   {eps, X^a} - xi^a = [0, 0, 0, 0]  (or + xi: [-2*x2, 2*x1, 0, 0])
+   eps and d eps on Sigma: [0, 0, 0, 0, 0]
+[cone family f(u)=1+u+u^2/3] iota_xi omega = d eps: True; eps = x1**6/18 + x1**4*x2**2/6 + x1**4/4 + x1**2*x2**4/6 + x1**2*x2**2/2 + x1**2/2 + x2**6/18 + x2**4/4 + x2**2/2
+   {eps, X^a} - xi^a = [0, 0, 0, 0]  (or + xi: [-2*x2, 2*x1, 0, 0])
+   eps and d eps on Sigma: [0, 0, 0, 0, 0]
+[cone family f(u)=exp(u)] iota_xi omega = d eps: True; eps = exp(x1**2 + x2**2)/2 - 1/2
+   {eps, X^a} - xi^a = [0, 0, 0, 0]  (or + xi: [-2*x2, 2*x1, 0, 0])
+   eps and d eps on Sigma: [0, 0, 0, 0, 0]

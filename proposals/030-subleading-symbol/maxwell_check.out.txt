@@ -1,0 +1,6 @@
+trial 0: K(1e5) = (4.6138118e-6 + 1.253072e-10j) ; Maxwell prediction = (4.6138118e-6 + 1.4301837e-10j) ; ratio = (1.0 - 3.8387283e-6j) ; G = 1.0936 ; K(alpha=kappa)/K(alpha) = (8.4914e-11 + 4.8498e-16j)
+trial 1: K(1e5) = (-1.2912333e-6 + 1.7421784e-11j) ; Maxwell prediction = (-1.2912333e-6 + 4.9289113e-12j) ; ratio = (1.0 - 9.675147e-6j) ; G = -23.4375 ; K(alpha=kappa)/K(alpha) = (-3.3051e-10 - 1.5127e-15j)
+trial 2: K(1e5) = (-3.9610525e-9 - 6.0921116e-13j) ; Maxwell prediction = (-3.9610525e-9 + 4.8399635e-14j) ; ratio = (1.0 + 0.00016601921j) ; G = -136.0768 ; K(alpha=kappa)/K(alpha) = (-6.1181e-7 + 1.0764e-10j)
+trial 3: K(1e5) = (-1.044501e-9 - 9.2415129e-16j) ; Maxwell prediction = (-1.044501e-9 + 1.8224496e-15j) ; ratio = (1.0 + 2.6295818e-6j) ; G = -117.2753 ; K(alpha=kappa)/K(alpha) = (-6.5611e-10 + 8.0213e-15j)
+trial 4: K(1e5) = (4.1866493e-7 - 1.2553245e-11j) ; Maxwell prediction = (4.1866493e-7 + 1.6853602e-12j) ; ratio = (1.0 - 3.4009549e-5j) ; G = 1.0708 ; K(alpha=kappa)/K(alpha) = (3.2588e-9 + 1.0295e-13j)
+trial 5: K(1e5) = (-7.0379461e-5 - 1.1724494e-7j) ; Maxwell prediction = (-7.0379601e-5 - 8.1109594e-9j) ; ratio = (0.99999819 + 0.0015506482j) ; G = -0.0042 ; K(alpha=kappa)/K(alpha) = (-1.7556e-8 + 1.9631e-11j)

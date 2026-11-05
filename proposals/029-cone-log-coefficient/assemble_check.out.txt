@@ -1,0 +1,5 @@
+cB'= -2*pi/3  dB'= pi/45   -> S_B = (1/24pi)(R/6-E) - Q/(720pi): 1 -1
+scalar sphere lnLambda coeff = -1/90  (expect -1/90)
+Dirac sphere (input a=11/360):  -11/90
+24pi S = 4*R/3 + 2*Rii - 2*Rj - T + 2*W + 3*Xp/2 - 12*e
+conformally flat, e=R/6: -T + 3*Xp/2   (=3/2 Xp - T)

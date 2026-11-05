@@ -1,0 +1,6 @@
+pt 0: rank H4=4 H5=4 (H4+H5)=6 (H4+vert)=6 (H5+vert)=6
+pt 1: rank H4=4 H5=4 (H4+H5)=6 (H4+vert)=6 (H5+vert)=6
+pt 2: rank H4=4 H5=4 (H4+H5)=6 (H4+vert)=6 (H5+vert)=6
+pt 3: rank H4=4 H5=4 (H4+H5)=6 (H4+vert)=6 (H5+vert)=6
+pt 4: rank H4=4 H5=4 (H4+H5)=6 (H4+vert)=6 (H5+vert)=6
+pt 5: rank H4=4 H5=4 (H4+H5)=6 (H4+vert)=6 (H5+vert)=6

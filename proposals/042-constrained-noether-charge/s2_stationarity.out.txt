@@ -1,0 +1,38 @@
+== Euclid, rotation of (x0,x1) ==
+L_xi eta = 0: True
+[constant, span{e01,e23}]
+   tensorial L_xi omega = 0: True
+   L_xi e (1,1 tensor) = 0: True;  L_xi G = 0: True
+   internal-index L_xi e - B e = 0: True;  internal L_xi e = 0: False
+   [e, B] = 0 at Sigma: True
+[cone family Theta^01=1/f(r), Theta^23=1]
+   tensorial L_xi omega = 0: True
+   L_xi e (1,1 tensor) = 0: True;  L_xi G = 0: True
+   internal-index L_xi e - B e = 0: True;  internal L_xi e = 0: False
+   [e, B] = 0 at Sigma: True
+[generic constant omega]
+   tensorial L_xi omega = 0: False
+   L_xi e (1,1 tensor) = 0: False;  L_xi G = 0: False
+   internal-index L_xi e - B e = 0: False;  internal L_xi e = 0: False
+   [e, B] = 0 at Sigma: False
+matrix coordinates: L_xi X^a - B^a_b X^b = 0: True, L_xi X = 0: False
+B (eta-lowered) antisymmetric: True
+== Lorentz, boost of (x0,x1) ==
+L_xi eta = 0: True
+[constant, span{e01,e23}]
+   tensorial L_xi omega = 0: True
+   L_xi e (1,1 tensor) = 0: True;  L_xi G = 0: True
+   internal-index L_xi e - B e = 0: True;  internal L_xi e = 0: False
+   [e, B] = 0 at Sigma: True
+[cone family Theta^01=1/f(r), Theta^23=1]
+   tensorial L_xi omega = 0: True
+   L_xi e (1,1 tensor) = 0: True;  L_xi G = 0: True
+   internal-index L_xi e - B e = 0: True;  internal L_xi e = 0: False
+   [e, B] = 0 at Sigma: True
+[generic constant omega]
+   tensorial L_xi omega = 0: False
+   L_xi e (1,1 tensor) = 0: False;  L_xi G = 0: False
+   internal-index L_xi e - B e = 0: False;  internal L_xi e = 0: False
+   [e, B] = 0 at Sigma: False
+matrix coordinates: L_xi X^a - B^a_b X^b = 0: True, L_xi X = 0: False
+B (eta-lowered) antisymmetric: True

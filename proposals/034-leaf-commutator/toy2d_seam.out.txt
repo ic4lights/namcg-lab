@@ -1,0 +1,4 @@
+c0=0.0 placement=seam: Theta*T2/Theta = 0.08621909 -2.26e-02j
+c0=0.0 placement=left: Theta*T2/Theta = 0.09117006 +5.06e-02j
+c0=0.7 placement=seam: Theta*T2/Theta = 0.08392739 -2.26e-02j
+c0=0.7 placement=left: Theta*T2/Theta = 0.08887836 +5.06e-02j

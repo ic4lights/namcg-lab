@@ -1,0 +1,35 @@
+=== (A) cone constants per two-component block (heat-trace constant of Tr_n - n Tr_1, units A/(4 pi s)) ===
+odd n = 1..15: AP = (n^2-1)/(12 n), P = -2 AP = (1/6)(1/n - n)  (scalar-like) : OK
+d/dn at n=1:  AP = 1/6   P = -1/3   AP/P = -1/2
+contact term derivative per block = 2Q;  (AP - P)' = 1/2  => Q = 1/4 (per component; Lichnerowicz R/4)
+only F'(1) enters S = (1-n d_n)F|_{n=1} when F(1)=0:  (1 - n d_n)(AP_n) = -1/6  ; -F'(1) = -1/6
+
+=== (B) bookkeeping ===
+c_T          = N_s/6 + 4*n_D/3 - 11/3
+c_A unrot    = N_s/6 - 2*n_D/3 + 1/3  gap = 4 - 2*n_D
+c_A AP       = N_s/6 + n_D/3 + 1/3  gap = 4 - n_D
+c_A smooth   = -N_s/12 + n_D/3 - 1/6  gap = -N_s/4 - n_D + 7/2
+c_A AP + bosonic Q=1/4 contacts - c_A smooth = 0   (identity: the smooth value IS AP + bosonic contacts)
+c_A AP + vector contact -1 = N_s/6 + n_D/3 - 2/3  gap = 3 - n_D
+
+  IKKT (N_s=6, n_D=2): c_T                = 0
+  IKKT (N_s=6, n_D=2): unrot              = 0
+  IKKT (N_s=6, n_D=2): AP                 = 2
+  IKKT (N_s=6, n_D=2): smooth             = 0
+  IKKT (N_s=6, n_D=2): AP+vector contact  = 1
+  W at IKKT = 0 , b = 0
+
+covariant-QFT benchmark (minimally coupled scalars, Dirac with Lichnerowicz, Maxwell with Ricci, ghosts minimal), N=4 SYM content 6 + 2 Dirac + 1 vector:
+  Sum w tr(1/6 - Q) = 1  (equal for induced action and cone entropy with the Kabat contact)
+
+smooth-reading equality c_smooth = c_T  <=> [14 - 4*n_D] (N_s as a function of n_D)
+   n_D=1/2: N_s=12, W=12, c_T=-1, c_smooth=-1
+   n_D=1: N_s=10, W=8, c_T=-2/3, c_smooth=-2/3
+   n_D=2: N_s=6, W=0, c_T=0, c_smooth=0
+   n_D=5/2: N_s=4, W=-4, c_T=1/3, c_smooth=1/3
+   n_D=3: N_s=2, W=-8, c_T=2/3, c_smooth=2/3
+   (D = N_s + 4 = 18 - 4 n_D; the supersymmetric D=6 (n_D=1, N_s=2) is NOT on this line: gap = 2 )
+   (D=4, n_D=1/2, N_s=0: gap = 3 )
+
+sector-resolved gap Delta_s = c_A,s - c_T,s (AP), per field (alpha=1): scalar 0, connection 4, ghost 0, Dirac -1
+   gap with separate cutoffs, n_D=2:  -2*Lambda_f^2 + 4*Lambda_v^2   vanishes iff Lambda_f^2 = 2 Lambda_v^2 (not forced by anything derived)

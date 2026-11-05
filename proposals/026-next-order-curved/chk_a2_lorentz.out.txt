@@ -1,0 +1,3 @@
+seed 0  a1_total = 0  a2_total == (1/2) sqrtG S : True  value 629.6199596593492  G signature (eigen signs): ok
+seed 1  a1_total = 0  a2_total == (1/2) sqrtG S : True  value 617.6044888516341  G signature (eigen signs): ok
+seed 2  a1_total = 0  a2_total == (1/2) sqrtG S : True  value 149470.38107916908  G signature (eigen signs): ok

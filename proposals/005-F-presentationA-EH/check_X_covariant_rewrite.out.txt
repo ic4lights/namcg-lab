@@ -1,0 +1,5 @@
+QUADRATIC (mask eps1 eps2, p2=-p1) fit X = alpha*h + beta*r over 40 random samples
+  alpha, beta = [-4. -4.]  relative residual = 1.347467057474319e-15  column norms [14265.77563683 10467.83037197] 32575.634335687
+CUBIC (mask eps1 eps2 eps3, sum p = 0) fit X = alpha*h + beta*r over 40 random samples
+  alpha, beta = [-3.55474099 -3.19266862]  relative residual = 0.3163329556658201  column norms [382700.66964843 227276.2737753 ] 793580.1699951105
+sanity: max |cubic coefficient of the total derivative d_a(g^{ab} d_b rho)| = 0.0 (must be ~0; typical |C_h| scale 25696.6005583087 )
