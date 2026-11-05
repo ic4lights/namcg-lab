@@ -25,7 +25,7 @@ reaches `chapters/`.
   - after every fifth integration;
   - whenever the author asks.
 
-  Save its reply verbatim to `reports/sme-scout-<YYYYMMDD-HHMM>.md` and commit it. When choosing a target (step a),
+  Save its reply verbatim to `reports/sme-scout-<YYYYMMDD-HHMM>.md` (uncommitted; the author commits it). When choosing a target (step a),
   give the researcher the path of the latest scout report and ask it to weigh the ranked routes there.
 - **Consultation.** If a gatekeeper review carries `FLAGS` containing `SME-CONSULT`:
   1. Task `sme` in mode 2 with the questions from the review's `## SME consultation request`, plus the proposal and
@@ -38,9 +38,13 @@ reaches `chapters/`.
 
   Then branch on the final verdict as usual.
 
-**Working branch (author directive, 2026-10-15).** All work happens on the single working branch, so the
-author can follow it in VS Code. It replaces the per-run `auto/<YYYYMMDD-HHMM>` branches. Wherever this file or
-`CLAUDE.md` says working branch, read working branch. The author merges working branch into `main`.
+**Current branch only — no git writes by agents (author directive, 2026-11-05, supersedes 2026-10-15).** All work
+happens on the branch that is already checked out when the run starts, so the author can follow it in VS Code.
+The orchestrator and every subagent must never create, rename, delete, switch or check out a branch, and never run
+any git write command (`add`, `commit`, `checkout`, `switch`, `branch <name>`, `stash`, `reset`, `restore`, `push`,
+`merge`, `rebase`). Read-only git (`status`, `log`, `diff`, `show`, `rev-parse`, `branch --show-current`) is
+allowed; `scripts/build_check.py` restoring its tracked PDF is the only internal exception. The author makes every
+commit and every merge. Wherever this file says "the branch", read "the branch currently checked out".
 
 1. **Contact the author only for a breakthrough.** That means a gatekeeper verdict of `ACCEPT` whose `FLAGS`
    contain `BREAKTHROUGH`: a noteworthy advance, such as deriving a critical-path step from the matrix theory, or a
@@ -81,15 +85,13 @@ author can follow it in VS Code. It replaces the per-run `auto/<YYYYMMDD-HHMM>` 
    switch to a different critical-path target instead of stopping. After three in a row, write the digest and stop
    quietly. Also stop on a build failure that cannot be reverted cleanly, or on an external limit such as a rate
    limit or session end. In those cases leave the branch clean and the digest current.
-6. **Bookkeeping.** Commit proposals, reviews and ledger entries on the branch after each item, so that progress
-   survives interruptions.
+6. **Bookkeeping.** Write proposals, reviews and ledger entries into the working tree after each item, so that
+   progress survives interruptions. Do not commit them — the author commits everything.
 
 ## 0. Pre-flight & Unmerged Proposals
 
-1. `git branch --show-current`. If it is already working branch, continue on it. Otherwise:
-   - If working branch exists, switch to it with `git checkout working`. If it is behind `main`, stop and ask
-     the author to update it; never rebase or reset it.
-   - If it does not exist, create it from the current branch with `git checkout -b working`.
+1. `git branch --show-current`. Run the whole cycle on that checked-out branch. Never create or switch branches.
+   If the checked-out branch is `main` or `master`, stop and ask the author to check out a working branch first.
 2. `git status --porcelain` must show nothing except uncommitted changes in `chapters/` and `bib/` and untracked
    `proposals/` folders. Integrated manuscript changes are left uncommitted for the author to review in VS Code (see
    "Manuscript changes are not committed" below). Anything else dirty means stop: the author must commit or stash
@@ -159,12 +161,12 @@ change any status, priority, or completion-classification label, and does not cl
 is closed/solved/derived without establishing it for the current scope. If it proposes any label change, treat it
 as `LABEL-CHANGE-PROPOSED` and stop for the author. Confirm the review round equals the proposal round.
 
-**Manuscript changes are not committed (author directive, 2026-10-15).** The integrator edits `chapters/` and
-`bib/` in the working tree, builds and verifies, and does not commit. The author reviews the uncommitted diff in
-VS Code and commits it. As a consequence:
-- Never run `git add` or `git commit` on `chapters/` or `bib/`. Never stash, reset or restore them.
-- When committing proposals, reviews, reports or the ledger, add only those paths explicitly, e.g.
-  `git add proposals/NNN-* reports/ledger.md`. Never use `git add -A`, `git add .` or `git commit -a`.
+**Nothing is committed by agents (author directive, 2026-11-05, supersedes 2026-10-15).** The integrator edits
+`chapters/` and `bib/` in the working tree, builds and verifies, and does not commit; proposals, reviews, reports
+and the ledger are likewise left uncommitted. The author reviews the working-tree changes in VS Code and makes
+every commit. As a consequence:
+- Never run `git add`, `git commit` or any other git write command on any path. Never stash, reset, restore or
+  check out anything.
 - While the manuscript has uncommitted changes, `make_digest.py` reports `dirty-chapters: yes`. Under `CLAUDE.md`
   3(d) that obliges a full scan for any gatekeeper review that relies on the digest. Tell the gatekeeper explicitly
   that the dirty state comes from accepted, build-verified integrations awaiting the author's commit. It may then
@@ -180,7 +182,8 @@ and set `stalled_in_a_row=0`. Pass the refreshed digest status to all later suba
 for the integration build (skips pdflatex if no .tex files changed).
 
 **g. Ledger.** Append one block to `reports/ledger.md`: id, date, problem, claim (one sentence), rounds, final
-verdict, commit hash or "not integrated", what is proved/conditional/open, milestone code (gatekeeper's M-code,
+verdict, "uncommitted (author to commit)" or "not integrated" (never a self-made commit hash), what is
+proved/conditional/open, milestone code (gatekeeper's M-code,
 or the researcher's if the gatekeeper said none and you agree it matches a `MILESTONE.md` trigger, otherwise none).
 
 **h. Milestone check.** If the accepted item has a gatekeeper milestone code M1–M5 (see `MILESTONE.md`), stop the
@@ -206,17 +209,17 @@ the branch, or whenever the author asks to merge or for a pre-merge review. Task
 - the base (`main`, or the merge base);
 - `reports/ledger.md`.
 
-Save its full reply verbatim to `reports/sme-<branch>-<YYYYMMDD-HHMM>.md`, commit it on the branch, and put its first
+Save its full reply verbatim to `reports/sme-<branch>-<YYYYMMDD-HHMM>.md` (uncommitted; the author commits it), and put its first
 line and "Summary for the author" in the digest and in the final message. The SME is advisory. A `HOLD` does not undo
 integrations; it is reported to the author with the smallest fix it names. Contacting the author with a pre-merge SME
 review is allowed under the autonomy directive.
 
 **Digest.** When the loop ends for any reason, write `reports/run-<YYYYMMDD-HHMM>.md` with exactly the contents listed at the
 end of `MILESTONE.md`. Run `git log --oneline $BASE..HEAD`, `git diff --stat $BASE..HEAD`, and
-`git diff --stat -- chapters bib` for the uncommitted manuscript changes awaiting the author. Commit only the digest,
-ledger and proposals (`git add reports proposals; git commit -m "Run digest and proposals"`). Leave `chapters/` and
-`bib/` uncommitted.
+`git diff --stat -- chapters bib` for the uncommitted manuscript changes awaiting the author. Leave the digest,
+ledger, proposals, reviews and reports all uncommitted in the working tree; the author commits everything.
 
-Then **stop**. Final message to the author: the stop reason, the milestone (if any) in two sentences, the branch
-name, the digest path, and the exact commands to review (`git diff <BASE>..HEAD`) and to merge or discard. Do not
-merge, push, or continue researching. Do not start another run on your own.
+Then **stop**. Final message to the author: the stop reason, the milestone (if any) in two sentences, the checked-out
+branch name, the digest path, and the commands to review the uncommitted work (`git status`, `git diff`, plus
+`git log --oneline $BASE..HEAD` for anything already committed) and to commit or discard. Do not commit, merge,
+push, or continue researching. Do not start another run on your own.

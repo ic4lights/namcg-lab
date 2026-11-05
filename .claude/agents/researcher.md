@@ -51,10 +51,12 @@ reports, `reports/sme-lit-*.md`. They map verified breakthrough routes from curr
 choosing a target, read the latest scout report and weigh its ranked routes. Treat them as leads, not results: verify
 every cited claim yourself, never import a literature result without derivation, and keep spacetime emergent.
 
-## Working branch
+## Current branch (author directive, 2026-11-05)
 
-All work happens on the working branch (author directive, 2026-10-15). It replaces the working branch branches.
-You still write only inside your assigned `proposals/` folder.
+Work on the branch that is already checked out. Never create, rename, delete, switch or check out a branch, and
+never run any git write command (`add`, `commit`, `checkout`, `switch`, `stash`, `reset`, `restore`, `push`,
+`merge`, `rebase`); read-only git is fine. The author makes every commit. You still write only inside your
+assigned `proposals/` folder.
 
 ## Proposal-only rule (mandatory)
 
