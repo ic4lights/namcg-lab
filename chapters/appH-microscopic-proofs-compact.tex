@@ -1,0 +1,1337 @@
+\chapter{Status of the Open Problems}
+\label{app:status}
+
+This appendix records the precise status of Problems A--J and N as of the present text.
+It collects standard supporting calculations that are already rigorous, states
+the exact missing step for each problem, and does not convert any open problem
+into a lemma. The research agenda of Chapter~\ref{ch:agenda} remains the
+authoritative list; this appendix is a working ledger. A status of OPEN is
+never paired with an unqualified completion claim; a reduced-scope result is
+labelled as such.
+
+\section{Problem A: matrix-to-modular map}
+\label{sec:status-A}
+
+\paragraph{Detailed derivation 1 (Problem A; conditional result).} \label{ref:detail-0} % [see appH-detailed.tex]
+
+\paragraph{Missing step.}
+An error-controlled map from the matrix order parameter (or from
+\([\hat{X},\Phi]\)) into the modular Hamiltonian \(H_D\) of a causal diamond,
+or into the mutual-information functional \(U_{\mathrm{ent}}[I(A:B)]\),
+that holds before the composite metric is defined. Until that map is a lemma,
+Chapter~8 computes a heat kernel in a theory whose relation to Chapter~3 is
+still Assumption~\ref{ass:dictionary}.
+
+\section{Problem B: replica Ward identity}
+\label{sec:status-B}
+
+\paragraph{Detailed derivation 2 (Problem B; conditional result).} \label{ref:detail-1} % [see appH-detailed.tex]
+
+\paragraph{Missing step.}
+Derive from the microscopic dynamics the entanglement-stationarity
+condition \(\delta S_D=0\) for the allowed fixed-volume variations,
+and establish the area contribution and its relation to the
+\emph{emergent} metric without presupposing that metric or the
+fluctuation split of Chapter~5. For variations of the auxiliary
+scaffold, the replica insertion computes a response to
+\(g^{(0)}_{\mu\nu}\); relating it to the emergent metric still
+requires a specified map between them. Problem~B therefore remains
+open, although the fixed-algebra first-law identity is established.
+
+\paragraph{Detailed derivation 3 (Problem ; conditional result).} \label{ref:detail-2} % [see appH-detailed.tex]
+
+\paragraph{Replica insertion identity (conditional; not closure).}
+Let \(Z_n(\varepsilon)\) be the Euclidean partition function on a
+regulated \(n\)-sheeted cover. Assume the usual path-integral assumptions
+and analytic continuation in \(n\) from integer replica number to a
+neighborhood of \(n=1\). As \(\varepsilon\) varies, hold fixed the
+regulated geometry, branch locus, conical-locus data, and integration
+measure. Include the conical-locus contributions in
+\(S_{E,n}(\varepsilon)\), and define
+\[
+W_n(\varepsilon)=\ln Z_n(\varepsilon)-n\ln Z_1(\varepsilon),
+\qquad
+S_D(\varepsilon)
+=(1-n\partial_n)W_n(\varepsilon)\big|_{n=1},
+\qquad
+\mathcal I_n:=\partial_\varepsilon S_{E,n}.
+\]
+Here \(\mathcal I_n\) is the total action insertion over the whole
+\(n\)-sheeted cover, not an insertion per sheet. Differentiating the
+normalized replica formula and using
+\(\partial_\varepsilon\ln Z_n=-\langle\mathcal I_n\rangle_n\) gives
+\[
+\partial_\varepsilon S_D
+=
+\left.\partial_n\langle\mathcal I_n\rangle_n\right|_{n=1}
+-\langle\mathcal I_1\rangle_1 .
+\]
+Thus \(\partial_\varepsilon S_D=0\) is equivalent, under these
+assumptions, to
+\[
+\left.\partial_n\langle\mathcal I_n\rangle_n\right|_{n=1}
+=\langle\mathcal I_1\rangle_1 .
+\]
+The replica formula alone does not establish this equality. If a
+deformation changes the geometry, branch locus, conical-locus data, or
+integration measure, the corresponding variations must also be included.
+Applying the identity to non-conformal tensor-block variations still
+requires a specified source or background deformation representing that
+block in the replica action, together with the map from the auxiliary
+scaffold \(g^{(0)}\) to the emergent metric and the corresponding area
+variation. Those inputs are not supplied by the displayed microscopic
+action. Problems~B, C, D, F and~G remain open.
+
+\paragraph{Detailed derivation 4 (Problem ; conditional result).} \label{ref:detail-3} % [see appH-detailed.tex]
+
+\paragraph{Normalisation of the tensor kinetic term against the area coefficient (conditional; not closure).}
+Assume Equation~\eqref{eq:first-law-zero} for every small diamond, every unit timelike direction of \(\xi\) and the fixed-volume variations of the tensor block, with the geometry of Equation~\eqref{eq:deltaA-G} in the form of~\cite{Jacobson2016}, in which \(\delta A|_V\) is proportional to \(G^{(1)}_{00}[h]\), and write \(1/(4G_A)\) for the coefficient of \(\delta A\). A symmetric tensor whose contraction with every timelike unit vector vanishes is zero, so the condition is the tensor equation \(G^{(1)}_{\mu\nu}[h]=8\pi G_A\,\delta\langle T^{\mathrm{op}}_{\mu\nu}\rangle[h]\) up to a term proportional to \(\eta_{\mu\nu}\). For a tensor block with the Fierz--Pauli structure of Equation~\eqref{eq:Top-improved} this requires both \(m_T=0\) and \(G_T=G_A\), where \(1/(16\pi G_T)\) is the coefficient with which the quadratic action whose metric response defines \(T^{\mathrm{op}}\) carries the linearised Einstein form. The second condition is not implied by the first, by the identification of the area prefactor with the coefficient of Theorem~\ref{thm:Geff}, or by Proposition~\ref{prop:ward}: it equates the coefficient of the quadratic term of the block with the coefficient of the area term.
+
+In the class of the Poisson-limit paragraphs, about a constant \(\bar\Theta\), the induced \(\LUV^2\) quadratic form on the two modes with \(\delta\rho=0\) is \(-\tfrac{\LUV^2}{32\pi^2}\bar\rho^{2}p_\eta^2\,(1-N_{\mathrm{tot}}/24)\,\mathcal M\), with \(\mathcal M\) the tree-level kernel of Remark~\ref{rem:ch3-trace-quadratic}. A term \(c\,\rho R[g_\rho]\) has eigenvalue \(-c/4\) on these modes, so the form is that of an Einstein term with \(c_T=N_{\mathrm{tot}}/6-4\), whereas the area coefficient above, for the replica of the first paragraph, is \(c_A=N_{\mathrm{tot}}/6\). With a common cutoff \(1/G_T=(N_{\mathrm{tot}}-24)\LUV^2/(12\pi)\) and \(1/G_A=N_{\mathrm{tot}}\LUV^2/(12\pi)\); with the connection sector at its own limit \(\Lambda_{\mathrm{UV},v}\), \(1/G_A-1/G_T=2\Lambda_{\mathrm{UV},v}^2/\pi\), independent of \(N_s\). The difference is the term \(\rho^2X\) of the connection sector, which is bounded on the replica cover and contributes no entropy but contributes to the quadratic form; for scalar content alone \(G_T=G_A\). In this class (Poisson limit, Euclidean section, background Feynman gauge, one loop, \(\LUV^2\) term, the two modes with \(\delta\rho=0\)) and for the replica of the first paragraph, the induced term therefore has the Einstein structure but not the coefficient that \(G_T=G_A\) requires, for every \(N_s\) and every \(\Lambda_{\mathrm{UV},v}>0\).
+
+These statements are for the Poisson-limit operators of the preceding paragraphs at one loop, for the \(\LUV^2\) term, the replica above and the background gauge stated. They do not derive Assumption~\ref{ass:EE}, fixed-volume stationarity of the tensor block, or the identification of \(G\) with the emergent metric (Assumption~\ref{ass:emergent-op}); they do not treat the tree-level term (of lower order in momentum and not of Einstein form), fermions or additional scalars, Moyal corrections at the cutoff, the mixing of \(\Phi\) with \(a^\mu\), edge modes or the interpretation of the ghost-weighted sum as an entropy, or the logarithmic terms; the off-shell quadratic form is gauge dependent; and they give no value or sign of \(G_{\mathrm{eff}}\). Problems~B, C, D, F and~G remain open.
+
+\paragraph{Detailed derivation 5 (Problem ; conditional result).} \label{ref:detail-4} % [see appH-detailed.tex]
+
+\paragraph{Fermionic content and the connection-sector cone in the comparison of \(G_T\) with \(G_A\) (conditional; not closure).}
+The displayed action is bosonic. Add \(n_D\) Dirac fields with action \(\int\rho\,\bar\Psi\gamma^\mu D_\mu\Psi\), the Poisson limit of \(\operatorname{Tr}\bar\Psi\Gamma^\mu[\hat X_\mu,\Psi]\), and the connection gauge \(\alpha=1\); the Yukawa couplings \(\Gamma^i[\hat X_i,\Psi]\) to the \(N_s\) transverse matrices vanish on the background and are dropped. The operator \(\mathcal O_f=-(\gamma^\mu D_\mu)^2=\mathcal O_s-\tfrac12\gamma^{\mu\nu}\{\Theta_{\mu\nu},\cdot\}\) has the form~\eqref{eq:O-eta} on \(G\) with \(\omega_\sigma=-\tfrac12\partial_\sigma\ln\rho\,\mathbb I+\beta_\sigma\), \(\beta^\sigma=\tfrac14\gamma^{\mu\nu}\Theta^{\rho\sigma}\partial_\rho\Theta_{\mu\nu}\), the spinor lift of \(\mathcal B^\sigma\), and \(\operatorname{tr}\beta_\sigma\beta^\sigma=-\tfrac12X\) over four components (the vector value is \(-X\)); it contains no explicit curvature, so \(\sqrt{|G|}\operatorname{tr}(\tfrac16R_G-E_f)=\tfrac46\rho R[g_\rho]+\tfrac12\rho^2X\), with eigenvalues \(\tfrac13,\tfrac13,0\) on the three modes (two backgrounds). The statistical weight is \(-1\) per Dirac field (\(\Gamma=-\tfrac12\ln\det\mathcal O_f\) over four complex components). The coefficient of \(\rho^2X\) of the whole content is therefore \(1-n_D/2\): the weight of a field is its index under the rotation generated by \(\mathcal B_\sigma\), and it vanishes for \(n_D=2\), the sixteen real components of the ten-dimensional maximally supersymmetric matrix model~\cite{IKKT1997} with the Poisson background along four coordinates and \(N_s=6\). No symmetry of the displayed action forces this. For \(n_D\) fields \(c_T=\tfrac{N_s+\alpha-1}6+\tfrac{4n_D}3-\tfrac{11}3\). With the antiperiodic polar-frame condition, which gives the Cartesian-frame components the phase \((-1)^{n+1}\), the area coefficient of a Dirac field is that of two scalar components, \(+\tfrac13\) (Equations~(126)--(127) of~\cite{Solodukhin2011}; the zeta-function evaluation of the twisted cone gives \(-\tfrac12\) times the scalar value per component on the branch \(n<1\)). Then \(c_A=\tfrac{N_s+\alpha+1}6+\tfrac{n_D}3\) and \(c_A-c_T=4-n_D\). This gluing transports the spinor index with the replica rotation; it is not the unrotated pull-back gluing used above for \(a^\mu\). With unrotated periodic gluing of the Cartesian components the area coefficient of a Dirac field is \(-\tfrac23\), equal to its coefficient of \(\rho R[g_\rho]\), and \(c_A-c_T=4-2n_D\), which vanishes at \(n_D=2\) with \(c_T=c_A=0\): an equality of vanishing \(\LUV^2\) coefficients, not a derivation. The \(\rho^2X\) coefficient vanishes at \(n_D=2\); for antiperiodic gluing \(c_A-c_T=2\) there and equality needs \(n_D=4\), where \(\rho^2X\) has coefficient \(-1\). The gluing selected by a quasi-free state with rotational modular flow is stated below. For \(n_D=2\), \(N_s=6\) one has \(N_s+2-4n_D=0\), \(c_T=0\) and \(c_A=2\): the \(\LUV^4\) and \(\LUV^2\) tensor coefficients vanish, and the area coefficient is \(2\) for antiperiodic and \(0\) for periodic gluing.
+
+If the internal index of \(a^\mu\) is rotated with the replica angle, as for a vacuum invariant under the combined rotation, the area coefficient of the connection sector at \(\alpha=1\) is \(-\tfrac13\) on the branch \(n<1\) and \(\tfrac53\) on \(n>1\) instead of \(\tfrac23\); with the ghosts these are \(-\tfrac23\), which is \((D_1(4)-6)/6\) of Equation~(147) of~\cite{Solodukhin2011}, and \(\tfrac43\), instead of \(\tfrac13\); this function of \(n\) is not analytic at \(n=1\), and the gap is \(3-n_D\) or \(5-n_D\). These statements are for the Poisson-limit operators, the \(\LUV^2\) term, one loop, the quadratic form about constant \(\bar\Theta\) on the two modes with \(\delta\rho=0\), the gauge families and the replica prescriptions stated. They do not derive the content, the fermion coupling, the gluing or the rotation of the internal index, which belong to Problem~A, Assumption~\ref{ass:EE} or the modular flow; they do not treat Moyal corrections, gauge functions beyond those stated, \(\Phi\)--\(a\) mixing, or the Kaluza--Klein sector. Problems~B, C, D, F and~G remain open.
+
+\paragraph{Detailed derivation 6 (Problem ; conditional result).} \label{ref:detail-5} % [see appH-detailed.tex]
+
+\paragraph{Spin term, Lichnerowicz contact and the smooth first-order cone in the comparison of \(G_T\) with \(G_A\) (conditional; not closure).}
+Keep the setting of the paragraphs on fermionic content and on fermion replica gluing: Poisson limit, Euclidean section, \(\alpha=1\), the \(\LUV^2\) term, \(N_s\) scalars, the connection with its ghosts and \(n_D\) Dirac fields, \(N_{\mathrm{tot}}=N_s+2-4n_D\), and the coframe \(e^A{}_\mu=\eta^{AB}\omega_{\mu B}\) with torsion \(T\) of the paragraph on the torsion invariant. The \emph{fixed-state replica} is the pulled-back replica of the paragraph on the replica cone coefficient (\(\rho\) regular, cone on \(G\)) with the antiperiodic Dirac gluing of the paragraph on fermion replica gluing. At random two-jets of a closed \(\omega\), the operator \(\mathcal O_f\) of the fermionic-content paragraph satisfies \(\tfrac14\operatorname{tr}E_f=\tfrac14R_G-\tfrac1{16}T_{\lambda\mu\nu}T^{\lambda\mu\nu}+\tfrac18T_{\lambda\mu\nu}T^{\mu\lambda\nu}\), with no further term in the representation by \(R_G\), \(T^2\) and \(TT'\); the scalar identity differs only in the sign of the first torsion term, so that \(Q_f=Q_s=\tfrac14\) in the torsion reading, whereas in the variables \((G,\rho,\partial\Theta)\) one has \(Q_f=0\). The coefficient of \(R_G\) in \(\operatorname{tr}(\tfrac16R_G-E_f)\) is then \(-\tfrac13\) over four components, and with weight \(-1\) it gives \(+\tfrac13\) per Dirac field, the antiperiodic cone value, instead of \(-\tfrac23\). In the normalisation of the paragraph on fermion replica gluing, the \(n\)-derivative at \(n=1\) of the heat-trace constant of a two-component block is \(\tfrac16\) for the antiperiodic gluing with the less singular extension and \(-\tfrac13\) for the unrotated gluing with the componentwise-regular domain; the difference \(\tfrac12=2Q_f\) equals the contact term of \(Q_fR_G\) continued with its conical delta. This is an equality of \(n\)-derivatives at \(n=1\), not an identity in \(n\). The excess \(+1\) per Dirac field of the antiperiodic over the unrotated area coefficient is therefore the Lichnerowicz contact. It is already contained in \(c_A\), it enters the area side only and raises \(c_A\), and adding to it the contact of \(Q_fR_G\), which at the weight \(-1\) shifts \(c_A\) by \(+1\) per Dirac field, would count it twice. For a Dirac field with the Levi-Civita spin connection the black-hole and entanglement entropies coincide~\cite{Kabat1995}; for the torsion reading the corresponding equality (both \(+\tfrac13\) per Dirac field) is the computation above.
+
+\emph{Smooth first-order cone.} For \(\omega=\bar\omega+\epsilon\,\mathrm dA\), with any constant antisymmetric invertible \(\bar\omega\) and any \(A\), one has to first order in \(\epsilon\) \(R_G^{(1)}=-2\Box_{\bar G}\,\delta\ln\rho\) and \(\bar\rho\,R[g_\rho]^{(1)}=-\tfrac12\bar\rho^{\,2}R_G^{(1)}\). These were checked symbolically for a generic \(\bar\omega\) and follow from the Weitzenb\"ock identities of the paragraph on the torsion invariant. A conical deficit \(2\pi(1-n)\) at first order in \(n-1\) of a smooth Poisson structure about constant \(\bar\Theta\) therefore requires \(\ln\rho\) to carry the flux \(\oint\nabla\ln\rho\) through \(\Sigma\), that is a singular \(\rho\); the fixed-state replica is not a limit of smooth Poisson structures at this order. This does not by itself exclude the fixed-state replica as the definition of \(\operatorname{Tr}\rho^n\). For a regularised smooth family the first-order local density of every sector has \(Q=\tfrac14\), the factor \(-\tfrac12\) of the paragraph on the replica cone coefficient then carries no branch dependence, and the area coefficient is \(c_A^{\mathrm{sm}}=-N_{\mathrm{tot}}/12\), the factor \(-\tfrac12\) times the coefficient of \(\rho R[g_\rho]\) in every sector including the Dirac fields, for which it coincides with the antiperiodic value \(+\tfrac13\) without any gluing prescription. The branch issue of the unregularised singular-\(\rho\) cone is not removed. Thus \(c_A^{\mathrm{sm}}\) equals the fixed-state coefficient \(c_A\) plus the bosonic contacts \(-\tfrac14(N_s+2)\), and the two readings differ by the total derivative \(\Box\delta\ln\rho\), that is by the boundary flux of \(\nabla\ln\rho\) through \(\Sigma\).
+
+\emph{Outcome for \(n_D=2\), \(N_s=6\).} Here \(c_T=0\) and \(N_{\mathrm{tot}}=0\). The fixed-state replica gives \(c_A=2\). If the connection sector carries a contact of the Kabat value \(-1\) in these units (the value that takes the vector with its ghosts from \(\tfrac13\) to \(-\tfrac23\)), which for a Maxwell field is the edge-mode term of Donnelly and Wall~\cite{DonnellyWall2016}, then \(c_A=1\). The smooth reading gives \(c_A^{\mathrm{sm}}=0=c_T\), an equality of vanishing coefficients, which holds for every sector-uniform \(Q\) because \(N_{\mathrm{tot}}=0\) and is not a derivation. For fields minimally coupled in the variables \((G,\rho,\partial\Theta)\), the contacts of these types have weight \(+1\) per Dirac field (already contained in \(c_A\)), \(-1\) for the vector and \(0\) for the scalars and ghosts, so within this class they give at most the value \(1\) above; the torsion-reading bosonic contacts \(-\tfrac14(N_s+2)\) are the smooth reading and do not belong to this class. The values \(2\) and \(0\) correspond to a replica in which \(\ln\rho\) carries no flux through \(\Sigma\) and one in which it carries the full deficit; intermediate fluxes are not computed, and which replica the matrix state selects depends on the state and the tip regularisation, which are not derived here. These statements are for the Poisson-limit operators, the \(\LUV^2\) term, one loop, \(\alpha=1\) and the fixed-state and first-order smooth replicas stated; they do not derive the replica, the state, the tip domain or the gluing, do not treat edge modes of the symplectic gauge sector of \(a^\mu\), of the ghosts or of fermions (not examined), the \(\LUV^4\) term for \(N_{\mathrm{tot}}\neq0\), or the next order of either side, and give no value or sign of \(G_{\mathrm{eff}}\). Problems~B, C, D, F and~G remain open.
+
+\paragraph{Detailed derivation 7 (Problem ; conditional result).} \label{ref:detail-6} % [see appH-detailed.tex]
+
+\paragraph{Next order at \(N_s=6\), \(n_D=2\): exact \(\mathfrak J=0\) backgrounds and the surviving quartic (conditional; not closure).}
+Keep the setting of the paragraphs on the gauge parameter and on fermionic content: Poisson limit, Euclidean section \(\eta=\delta\), \(\alpha=1\), one loop, \(N_s=6\) scalars, the connection with its ghosts and \(n_D=2\) Dirac fields, so that \(N_{\mathrm{tot}}=0\) and the weighted coefficient \(\kappa_X\) of \(\rho^2X\) vanishes. The statements below are local, on regions where \(\operatorname{Pf}\omega\ne0\). Write \((b_\sigma)_{\mu\nu}=G_{\sigma\tau}\Theta^{\rho\tau}\partial_\rho\Theta_{\mu\nu}\), the \(\mathfrak{so}(4)\)-valued one-form with \(\omega_\sigma=-\tfrac12\partial_\sigma\ln\rho\,\mathbb I+b_\sigma\) in the vector sector and, through the spinor lift \(\beta_\sigma=\tfrac14\gamma^{\mu\nu}(b_\sigma)_{\mu\nu}\), in the Dirac sector. For every Poisson bivector \(\mathfrak J^\nu=\Box_Gx^\nu-G^{\mu\nu}\partial_\mu\ln\rho\) (exact check at random two-jets), so that \(\mathfrak J=0\) says that the coordinates are harmonic for \(G\) up to the gradient of \(\ln\rho\).
+
+\emph{Backgrounds with \(\mathfrak J=0\).} Up to a constant factor, \(\rho\,\Theta^{\mu\nu}\Theta^{\mu\nu}\) is the Poisson-limit density of the first term of Equation~\eqref{eq:Smatrix}, and \(\rho\,\Theta^{\mu\nu}\Theta^{\mu\nu}\ge4\) pointwise, with equality if and only if \(\Theta\) is self-dual or anti-self-dual. For such \(\Theta\), \(\Theta\Theta^T\) is a multiple of the identity, so \(G^{\mu\nu}=\rho^{-1}\delta^{\mu\nu}\), \(g_\rho=\delta\) and \(\mathfrak J=0\) by the identity above. A self-dual \(\Theta\) is the inverse of a closed self-dual two-form \(\omega=b_i\eta^i\), with \(\eta^i_{ab}=\epsilon_{iab}\), \(\eta^i_{a4}=\delta_{ia}\); closure is \(\operatorname{div}b=0\), \(\partial_4b=-\operatorname{curl}b\), and then \(\rho=|b|^2\), \(G=\rho\,\delta\) is conformally flat with \(R_G\ne0\) in general, while \(\rho R[g_\rho]=0\). Since \(\partial_\rho\Theta^{\mu\nu}\) is then self-dual in \((\mu\nu)\), \(b_\sigma\) takes values in one \(\mathfrak{su}(2)\) factor of \(\mathfrak{so}(4)\); the same holds for anti-self-dual \(\Theta\). An example invariant under the rotations of the \((x^1,x^2)\) plane, which fix the plane \(\{x^1=x^2=0\}\) pointwise, is \(b_1+\mathrm ib_2=-(x^1+\mathrm ix^2)(x^3-\mathrm ix^4)\), \(b_3=1+(x^3)^2-(x^4)^2\) (exact check of closure, invariance, \(\mathfrak J=0\) and \(R_G\ne0\) at sample points; the vector \((b_1,b_2,b_3)\) vanishes on the locus \(x^1=x^2=0\), \((x^4)^2=1+(x^3)^2\), where \(\operatorname{Pf}\omega=0\) and the example is not defined).
+
+Outside this class, let \(\Lambda^i=\eta^i_{\mu\nu}x^\mu\mathrm dx^\nu\), so that \(\Lambda^3=x^1\mathrm dx^2-x^2\mathrm dx^1+x^3\mathrm dx^4-x^4\mathrm dx^3\), and take \(\omega=\mathrm d(h(r)\Lambda^3)\), invariant under the rotations of both coordinate planes. Then \(\mathfrak J\) has only a radial component, proportional to \(2h^2rh''+10h^2h'+4hrh'^2+r^2h'^3\), and \(u=rh'/h\) obeys \(r\,\mathrm du/\mathrm dr=-\tfrac12u(u+2)(u+4)\). The fixed points \(u=0\) and \(u=-4\) are the self-dual and anti-self-dual solutions, \(u=-2\) is degenerate (\(\operatorname{Pf}\omega\propto h^2(u+2)\)), and the other solutions are \(h=c\,(1\pm\sqrt{1-C/r^4})\), \(C\in\mathbb R\) (checked at generic Cartesian points), locally, for \(r^4>C\) when \(C>0\); at \(r^4=C\) the metric \(G\) degenerates. On them \(G=\beta^2[s^{-2}(\mathrm dr^2+e_3^2)+e_1^2+e_2^2]\) with \(\beta=2h\), \(s^2=1-C/r^4\), \(e_i=\Lambda^i/r\), and \(C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma}=\tfrac32u^2(u+4)^2/(hr)^4\), which vanishes only at the two end points.
+
+\emph{Coefficients.} Let \(\mathcal S_4=\operatorname{tr}_V[(b_\sigma b^\sigma)^2]-n_D\operatorname{tr}_D[(\beta_\sigma\beta^\sigma)^2]\), with \(b_\sigma b^\sigma=G^{\sigma\tau}b_\sigma b_\tau\) and traces over the four vector and the four Dirac components. In the variables \((G,\rho,b)\) the endomorphism of every sector is \(E=e\,\mathbb I+X+b_\sigma b^\sigma\), with the same scalar \(e=-\tfrac12\Box_G\ln\rho+\tfrac14|\partial\ln\rho|^2_G\), \(X\) linear in \(b\) and traceless, and the bundle curvature is that of \(b\). The weighted sums of \(\operatorname{tr}\mathbb I\) and of the Dynkin index of \(b\) are \(N_{\mathrm{tot}}=0\) and \(\kappa_X=0\), and \(\mathfrak{so}(4)\) has no cubic invariant. Hence, for every Poisson bivector, the weighted sum of the coefficients \(a_1\) vanishes pointwise and the weighted sum of the coefficients \(a_2\) is \(\tfrac12\mathcal S_4\), up to total derivatives, which vanish by the same sums: no \(R^2\), \(R_{\mu\nu}R^{\mu\nu}\), Riemann-squared, Weyl-squared or Euler term, no \(RE\) term and no term of Einstein--Hilbert type survives (exact rational arithmetic at random two-jets, also for \(\eta=\operatorname{diag}(-1,1,1,1)\); on the self-dual and anti-self-dual backgrounds the weighted sum of \(a_2\) vanishes while the single-sector values do not, and it does so for the backgrounds tested only at \((N_s,n_D)=(6,2)\), with the vector weight \(1\) and the ghost weight \(-2\) fixed in that scan). With \(l^k_\sigma=\tfrac14\eta^k_{\mu\nu}(b_\sigma)_{\mu\nu}\) and \(r^k_\sigma=\tfrac14\bar\eta^k_{\mu\nu}(b_\sigma)_{\mu\nu}\) the self-dual and anti-self-dual parts (\(\bar\eta^k_{ab}=\epsilon_{kab}\), \(\bar\eta^k_{a4}=-\delta_{ka}\)), and \(\mathsf A=G^{\sigma\tau}l_\sigma l_\tau^T\), \(\mathsf B=G^{\sigma\tau}r_\sigma r_\tau^T\), \(\mathsf C=G^{\sigma\tau}l_\sigma r_\tau^T\),
+\[
+  \mathcal S_4=8\operatorname{tr}\mathsf A\,\operatorname{tr}\mathsf B+16\operatorname{tr}(\mathsf C\mathsf C^T)\ \ge0,
+\]
+with equality at a point if and only if \(b_\sigma\) takes values in one \(\mathfrak{su}(2)\) factor there. With one common proper-time limit for all sectors, the coefficient of \(\ln\LUV\) in the induced action at this content is therefore \(\propto\int\rho^2\mathcal S_4\), quartic in \(\partial\Theta\); finite terms of the same order are not controlled. It vanishes on the self-dual and anti-self-dual backgrounds above. On the \(\mathrm d(h\Lambda^3)\) family \(b_\sigma\) was found to be anti-self-dual-valued in every sampled case with \(\mathfrak J=0\), so \(\mathcal S_4=0\) there, as the weighted \(a_2\) computed there confirms (not proved), and it has both parts in the sampled cases with \(\mathfrak J\ne0\). The condition \(\mathfrak J=0\) does not by itself force \(\mathcal S_4=0\): about a constant \(\bar\Theta\), with \(\Theta=(\psi^*\bar\omega)^{-1}\) and \(\psi=x+\epsilon a\), the condition \(\mathfrak J=O(\epsilon^2)\) is the source-free Maxwell equation \(D^\mu(D^\mu a^\nu-D^\nu a^\mu)=0\), \(D^\mu=\bar\Theta^{\mu\rho}\partial_\rho\); for quadratic \(a\) its solutions give constant \(b_\sigma=O(\epsilon)\) with both parts and \(\mathcal S_4>0\) (random solutions for one \(\bar\Theta\); in one example the order \(\epsilon^2\) of \(\mathfrak J=0\) is solved by a cubic correction of \(\psi\)). The convergence of the series, a global background, the domains of the intertwining lemma above and the tip domain are not examined. On backgrounds with \(\mathfrak J=0\) globally the logarithmic coefficient does not depend on \(\alpha\), because the longitudinal sector is a scalar tower with proper time rescaled and the coefficient of \(s^2\) is unchanged.
+
+\emph{Where an Einstein--Hilbert term can enter.} In the massless class every local term of order \(\LUV^0\) has four derivatives. If a sector carries a constant mass, \(\mathcal O_i\to\mathcal O_i+m_i^2\) (a formal shift of the operator: no gauge-invariant mass term and no ghost or longitudinal consistency is asserted), then \(E_i\to E_i+m_i^2\), and the coefficient \(a_2\) of that sector changes by \(-m_i^2a_1^{(i)}+\tfrac12\operatorname{tr}\mathbb I\,m_i^4\) (exact check). The curvature part of the change of the weighted sum is \(-\bigl(\sum_iw_in_im_i^2/6\bigr)\rho R[g_\rho]-\bigl(\sum_iw_i\kappa_im_i^2\bigr)\rho^2X\), where \(n_i\) is the number of components of the sector and \(\kappa_i\) its weight of \(\rho^2X\) (\(1\) for the connection, \(\tfrac12\) per Dirac field, \(0\) otherwise). It vanishes for one common mass, because \(N_{\mathrm{tot}}=0\) and \(\kappa_X=0\), and is nonzero only if bosonic and fermionic masses differ. The inert transverse matrices of this class carry no such scale. In the construction of~\cite{Steinacker2023} the Einstein--Hilbert term is generated by a mixed quartic term with a sum over the Kaluza--Klein modes of fuzzy extra dimensions, and the Newton constant is set by their scale; the class above has no analogue of it.
+
+These statements are for the Poisson-limit operators, the Euclidean section, one loop, \(\alpha=1\), the content \(N_s=6\), \(n_D=2\) with the Yukawa couplings dropped, and the backgrounds named. They compute no logarithmic coefficient of the cone (area) side, so that no comparison of \(G_T\) with \(G_A\) at logarithmic order follows; they do not derive the content, the state, the tip domain or Assumption~\ref{ass:emergent-op}, do not treat Moyal corrections or fuzzy extra dimensions, and give no value or sign of \(G_{\mathrm{eff}}\). Problems~B, C, D, F and~G remain open.
+
+\paragraph{Detailed derivation 8 (Problem ; conditional result).} \label{ref:detail-7} % [see appH-detailed.tex]
+
+\paragraph{Contact terms in the logarithmic coefficient at \(N_s=6\), \(n_D=2\) (conditional; not closure).}
+Keep the setting of the preceding paragraph. To first order in \(1-n\) the surface part of the \(s^0\) heat coefficient of a Laplace-type sector \(-(\nabla^2+E)\) is the cross term of the bulk coefficient \(a_2\) with the conical deltas \(R\to4\pi(1-n)\delta_\Sigma\), \(R_{\mu\nu}\to2\pi(1-n)n_{\mu\nu}\delta_\Sigma\), \(R_{\mu\nu\rho\sigma}\to2\pi(1-n)(n_{\mu\rho}n_{\nu\sigma}-n_{\mu\sigma}n_{\nu\rho})\delta_\Sigma\) (Equations~(55)--(59) of~\cite{Solodukhin2011}) and with any delta \(E_\delta\), \(\Omega_\delta\) of the endomorphism and of the bundle curvature. Without such deltas it reproduces Equation~(70) of~\cite{Solodukhin2011}. For the Hodge operator of a Maxwell field in Feynman gauge with its ghosts, with \(E_\delta\) the Ricci delta and \(\Omega_\delta=2\pi(1-n)\mathcal J\delta_\Sigma\) the Riemann delta (\(\mathcal J\) the rotation of the normal plane), it gives \(S_{\log}=\pi^{-1}[-\tfrac{31}{360}R_\Sigma+\tfrac1{20}W]\), that is the ratios \(62\) and \(12\) of the conformal scalar, and \(-\tfrac{62}{90}\) on a great \(S^2\) of \(S^4\); the contact is \(-(R_\Sigma-R_{ii})/24\pi\), of which \(-R_\Sigma/24\pi\) has, by the form of the term, the density of the edge-mode entropy of~\cite{DonnellyWall2016}. The Dirac weights \(-\tfrac12\) on \(\operatorname{tr}(\tfrac R6-E)\), \(1\) on the \(R_{ii}-2R_{ijij}\) term and the spin term of the preceding paragraph are consistent with the Dirac \(a=11/360\) used above and with \(c\), and with the Weyl-covariant form; given \(a\), \(c\) and Weyl covariance they fix the weights \((-\tfrac12,1,\tfrac12)\), of which \(-\tfrac12\) and \(\tfrac12\) are the values of the preceding paragraph.
+
+For the rotation-invariant self-dual backgrounds with \(\Sigma=\{x^1=x^2=0\}\) and \(g=|\nabla_\Sigma\ln\rho|^2_{g_\Sigma}\), \(g_\Sigma=\rho\,\delta\), one finds at 18 points of random polynomial data (exact rational arithmetic; not proved) \(X'=\tfrac32g\), \(\tau_\Omega=R_\Sigma+\tfrac34g\), so that \(24\pi\sigma_{\log}=\tfrac32g-R_\Sigma\). The coefficient \(\sigma_{\log}\) is a multiple of \(R_\Sigma\) pointwise only where \(g=2R_\Sigma\), as on the example above; for generic members the Euler-density reading does not hold. With all sectors glued periodically and no deltas the coefficient vanishes for every Poisson bivector at \((6,2)\), because \(N_{\mathrm{tot}}=0\) and the weighted \(a_1\) vanishes; the value \(\sigma_{\log}\) is the difference between the antiperiodic and the periodic Dirac gluing.
+
+\emph{Contacts.} On the family \(\Theta^{12}=1/f(x^1,x^2)\), \(\Theta^{34}=1\), with \(\ln f=(n-1)\ln|z|\), the scalar, connection and Dirac data contain \(\tfrac12\Box_0\ln f\) with the same coefficient in every component, so that \(E_\delta=-\pi(1-n)\delta_\Sigma\) uniformly (the contact with \(Q=\tfrac14\) above), and the connection bundle curvature contains \(\Omega_{12,\delta}=2\pi(1-n)\mathcal J\delta_\Sigma\) (symbolic computation). Let \(C_b\) be the logarithmic cross term of \(E_\delta\) on the six scalars, the four components of \(a^\mu\) and the ghosts, and \(C_\Omega=\operatorname{tr}(\mathcal J\Omega^{v}_{12})/24\pi\) that of the connection bundle. Then, in units \(1/24\pi\), \(24\pi\sigma_{\log}+24\pi C_b=-\tau_\Omega\) and \(\operatorname{tr}_V(\mathcal J\Omega^v_{12})=\tau_\Omega\) (the same \(\mathfrak{so}(4)\) connection in both representations: the vector is \((\tfrac12,\tfrac12)\) and the Dirac field \((\tfrac12,0)\oplus(0,\tfrac12)\) under \(\mathfrak{su}(2)\oplus\mathfrak{su}(2)\), with \(\mathcal J\) acting as \(\tfrac12\gamma^{12}\) on spinors), hence \(\sigma_{\log}+C_b+C_\Omega=0\). This was checked at random closed two-forms (not self-dual, \(\mathfrak J\neq0\)) and on the \(\mathfrak J=0\) families above. On the example, \(C_b+C_\Omega=-R_\Sigma/12\pi\), which cancels \(\sigma_{\log}\); \(C_b\) alone gives \(-3R_\Sigma/16\pi\), \(C_\Omega\) alone \(5R_\Sigma/48\pi\). A term of the Herzog--Nishioka type~\cite{HerzogNishioka2016}, applied here by the form of the term to remove \(E_\delta\), leaves \(\sigma_{\log}+C_\Omega=3g/32\pi\ne0\). Replacing the two-dimensional operator of~\cite{DonnellyWall2016} by \(-w^{-1}\operatorname{div}(w\nabla)\), obtained here and not a result of that paper, gives an edge density \(-(4\pi)^{-1}(R_\Sigma/6-\tfrac12\Delta\ln w-\tfrac14|\nabla\ln w|^2)\); for \(w=\rho^{-1}\) (from the Poisson-limit action) \(\sigma_{\log}\) plus it does not vanish. The identification of this edge sector with the symplectic \(U(1)\) and the choice \(w=\rho^{-1}\) are not proved, and axion-type couplings are not treated. The Dirac fields keep the fixed-state antiperiodic gluing, which equals the periodic Dirac value plus the contacts above, and carry no edge mode of their own.
+
+These statements are for the Poisson-limit operators, one loop, \(\alpha=1\), \(N_s=6\), \(n_D=2\), a totally geodesic \(\Sigma\) and cross terms at first order in \(1-n\) (the \(n<1\) branch of the rotated connection index of the paragraph on fermionic content). They assume that the delta content computed on the family \(\Theta^{12}=1/f\), \(\Theta^{34}=1\) (\(E_\delta\) uniform on every bosonic component and \(\Omega_\delta=2\pi(1-n)\mathcal J\delta_\Sigma\)) is the complete delta content for the backgrounds used; with the normal-block distribution of the Ricci-type delta, used in the Maxwell check, the sum does not vanish for \(\mathfrak J\neq0\). The Dirac fields keep the fixed-state antiperiodic gluing, which equals the periodic value plus the contacts above, so the replica is an imported prescription of the type \(S_{\mathrm{BH}}=S_{\mathrm{ent}}-Q\) and not the trace of the \(n\)-th power of one state; the fixed-state replica is not a limit of smooth Poisson structures at first order. The non-delta singular first-order parts of the smooth family, which are of the same order and include the non-analytic dependence on \(|1-n|\) of the rotated connection index, the \(n>1\) branch and the state selected by the matrix model are not treated. The completed coefficient vanishes, as does the coefficient of the induced action of the preceding paragraph on these backgrounds (a Wald-type reading in the variables \((G,\text{torsion})\)); this is an equality of vanishing coefficients, which follows from \(N_{\mathrm{tot}}=0\) and the vanishing weighted Dynkin index and gives no value or sign of \(G_{\mathrm{eff}}\). Problem~B stays open and PROGRAMME-CONDITIONAL.
+
+\paragraph{Detailed derivation 9 (Problem ; conditional result).} \label{ref:detail-8} % [see appH-detailed.tex]
+
+\paragraph{Entropy assigned to the bundle curvature, and the delta content of the Poisson cone (conditional; not closure).}
+Keep the setting of the preceding paragraph: the weighted \(a_2\) density, the plane-wave modes with \(\delta\rho=0\) about a constant self-dual or anti-self-dual \(\bar\Theta\), the completed replica, a totally geodesic \(\Sigma\), cross terms at first order in \(1-n\). The term \(\tfrac{\kappa_X}{12}\operatorname{tr}\Omega^2\) is quadratic in the bundle curvature, so its cross term with a delta \(\Omega_\delta=2\pi(1-n)\,H\,\delta_\Sigma\,\mathrm dx^1\wedge\mathrm dx^2\) is \(\kappa_X\operatorname{tr}(H\Omega_{12})\), with \(H\in\mathfrak{so}(4)\) the holonomy of the bundle connection around \(\Sigma\). If the connection is treated as an auxiliary independent field (a bookkeeping variable, not a metric) whose internal rotations are tied to the normal plane of \(\Sigma\) through a regular frame (Lorentz-Lie Noether charge), the charge density is \(n^{ab}\,\partial L/\partial\Omega^{ab}\), which is this cross term with \(H=\mathcal J_{12}\) and no other generator: it reproduces \(\kappa_X\tau_\Omega\) and not more. If the internal group is not tied to the frame, the charge vanishes at the bifurcation surface for a regular connection with vanishing momentum map, and the term is absent. The first reading assigns the coefficient \(-2\kappa_X\) of \(W\) to \(\kappa_X\operatorname{tr}\Omega^2\) and the second assigns \(0\), against \(-4\kappa_X\) on the \(\delta\rho=0\) modes.
+
+For the diagonal family \(\Theta^{12}=r^{-\epsilon c_a}\), \(\Theta^{34}=r^{-\epsilon c_b}\), \(\epsilon=n-1\), one finds exactly \(H=c_a\mathcal J_{12}+c_b\mathcal J_{34}\), with the Riemann deltas \(R_{1212}=-2\pi\epsilon c_a\), \(R_{a3a3}=R_{a4a4}=-\pi\epsilon c_b\) (symbolic computation). The cone angle of the normal plane fixes \(c_a=1\); \(c_b\neq0\) makes the metric induced on \(\Sigma\) singular at order \(\epsilon\) (read off the delta structure; not separately checked). With all deltas inserted in the cross term of the weighted \(a_2\) (an extension of the cross-term rule beyond the cone, not derived), the gap of the preceding paragraph becomes \(-N_{\mathrm{tot}}c_b/15+2\kappa_X(1+c_b)\) about a self-dual \(\bar\Theta\) and the same expression about an anti-self-dual one with \(\Theta^{34}=-r^{-\epsilon c_b}\), for which \(H=c_a\mathcal J_{12}-c_b\mathcal J_{34}\), and equals \(2\kappa_X\) at \(c_b=0\). The \(\kappa_X\) part vanishes only for a holonomy of chirality opposite to that of \(\bar\Theta\), while the \(N_{\mathrm{tot}}\) part then becomes nonzero, so no content-independent profile removes the gap in this family.
+
+On the 17 sampled points with totally geodesic \(\Sigma\) (exact rational arithmetic; not proved), \(\tau_\Omega=R_\Sigma-2W+\bigl(a_1^{v}-\tfrac12X'\bigr)\), with \(a_1^{v}\) the \(a_1\) density of the vector sector. The coefficient of \(R_\Sigma\) in the basis \((W,R_\Sigma,R,e,X')\) of the fit, in the completed coefficient, is therefore \(\kappa_X-N_{\mathrm{tot}}/30\), the value of the Levi-Civita cross-term rule, and the remainder is a combination of the \(\Lambda^2\)-order densities \(a_1\) and \(X'\) in that basis; no statement is made about their topological character beyond it. These statements are for the diagonal family, the modes and replica stated, and the hypotheses of the preceding paragraphs; they do not derive the holonomy selected by the matrix model, the replica, or a value or sign of \(G_{\mathrm{eff}}\). Problem~B stays open and PROGRAMME-CONDITIONAL.
+
+\paragraph{Detailed derivation 10 (Problem ; conditional result).} \label{ref:detail-9} % [see appH-detailed.tex]
+
+\paragraph{Comparator for the entropy of the bundle curvature and the holonomy dictionary (conditional; not closure).}
+Keep the setting of the preceding paragraph: the modes with \(\delta\rho=0\) about a constant self-dual or anti-self-dual \(\bar\Theta\), a totally geodesic \(\Sigma\), cross terms at first order in \(1-n\), and the weights \(\kappa_X=1-\tfrac12n_D\) (vector \(1\), each Dirac field \(-\tfrac12\)). Write \(\mathcal J=\mathcal J_{12}\) for the generator of the rotation of the normal plane, \(\alpha_v\mathcal J\) for the holonomy around \(\Sigma\) of the vector bundle connection and \(\alpha_f\mathcal J\) for that of each Dirac fibre (\(\mathcal J\to\tfrac12\gamma^{12}\)).
+
+\emph{The comparator is an extension.} The functionals \(\tfrac1{12}\operatorname{tr}\Omega^2\) and \(-\tfrac13C^2\) have the same value on each mode (exact arithmetic, both chiralities), but their polarisations differ on pairs of modes with different wave vectors and between a mode and a generic closed second jet (exact arithmetic). The entropy at first order in the amplitude is the cross term of the quadratic form with the direction of the replica, which lies outside the modes, so the quadratic form on the modes does not fix it. The value \(12\kappa_C^T\) is the entropy of the metric functional with the same value on each mode, not of \(\operatorname{tr}\Omega^2\). Under the identification of the matrix index with the tangent index through the coframe \(e=\bar\omega\), \(\Omega^v=R\oplus N\) on the modes, with \(R\) the Levi-Civita curvature, \(\langle N,R\rangle=0\), \(\langle N,N\rangle=\langle R,R\rangle\) and \(\operatorname{tr}(\mathcal J N_{12})=0\); the holonomy generator pairs with \(R\) only (without that identification \(\langle\Omega^v,R\rangle=0\), while the values \(\langle\Omega^v,\Omega^v\rangle=2\langle R,R\rangle\) and \(\operatorname{tr}(\mathcal J\Omega_{12})\) are unchanged).
+
+\emph{The composite constraint.} For \(b_\sigma=G_{\sigma\tau}\Theta^{\rho\tau}\partial_\rho\Theta\) the transformation law of a one-form valued in the adjoint holds under the rotation acting on the chart and on the matrix indices together, and fails under a rotation of the chart alone, of the matrix indices alone, under a non-orthogonal diagonal linear map and under a non-linear change of chart (exact check at a point, Euclidean section). The flow generated by the rotation of the normal plane therefore acts on the fibre through \(\mathcal J\), and no generator \(\mathcal J_{34}\) enters the pairing, since the corresponding rotation does not vanish on \(\Sigma\). Introducing a multiplier \(\lambda\) for \(\omega-F[\Theta]\) gives \(\lambda=-D(\partial L/\partial\Omega)\) and the Euler--Lagrange expression of the composite Lagrangian (symbolic check in a one-dimensional toy). A first law of the form of the Lorentz--diffeomorphism Noether charge~\cite{JacobsonMohd2015} is available only with this tie, and then gives the density \(\kappa\,\operatorname{tr}(H\Omega_{12})\) with \(H=\mathcal J\); a covariance under general diffeomorphisms of the chart is not available for \(b\).
+
+\emph{Dictionary.} The coefficient of \(W\) of the Noether entropy of the induced action with holonomies \((\alpha_v,\alpha_f)\) is \(N_{\mathrm{tot}}/10-2\alpha_v+n_D\alpha_f\), because \(\operatorname{tr}(\mathcal J\Omega_{12})\) has coefficient \(-2\) of \(W\). The periodic, fixed-state and completed replicas of the preceding paragraphs have the coefficients of \(W\) of this expression at \((\alpha_v,\alpha_f)=(0,0)\), \((0,1)\), \((1,1)\) for all \((N_s,n_D)\) (exact arithmetic on six modes of each chirality). The comparator \(12\kappa_C^T\) is its value at \(\alpha_v=\alpha_f=2\), twice the replica rotation. Relative to the Noether value with the holonomy of the replica the gaps \(4-2n_D\), \(4-n_D\), \(2-n_D\) therefore vanish; relative to the spin-complete value \((1,1)\) the residuals are \(2-n_D\), \(2\), \(0\). For the periodic and completed replicas this agreement is the identity between two cross terms of the same \(a_2\) with the same deltas. The Dirac entry is a check: the index weight \(-\tfrac12\) of the heat coefficient and the spin term of the Landau--Aharonov--Bohm spectrum agree. The residual \(2\) of the fixed-state replica is the vector holonomy that integer-\(n\) gluing omits, a contact of the type \(S_{\mathrm{BH}}=S_{\mathrm{ent}}-Q\)~\cite{FrolovFursaev1997}.
+
+These statements are for the modes, replica and hypotheses of the preceding paragraphs, the Euclidean section and the coefficient of \(W\) only. They do not derive the holonomy selected by the matrix state, the continuation in \(n\) of the spin-complete replica (not analytic at \(n=1\) in the ledger above), the Euler coefficient, the logarithmic order off these modes, a first law at order \(\Lambda_{\mathrm{UV}}^2\) (where \(\rho^2X\) has no bundle curvature and the gap of the normalisation paragraph is not addressed), or a value or sign of \(G_{\mathrm{eff}}\). Problem~B stays open and PROGRAMME-CONDITIONAL.
+
+\section{Problem C: conformal mode and Cassini}
+\label{sec:status-C}
+
+\paragraph{Detailed derivation 11 (Problem C; conditional result).} \label{ref:detail-10} % [see appH-detailed.tex]
+
+\paragraph{Obstruction to the stated Repair I frame.}
+Suppose \(\Lambda(x)\in\mathrm{SO}(3,1)\) and expand about the locked
+configuration,
+\[
+\Lambda=\mathbb I+\Omega+O(\Omega^2),
+\qquad
+\Omega_{\mu\nu}=-\Omega_{\nu\mu}.
+\]
+Then \(\partial_\mu\Omega_{\alpha\beta}\) transforms in
+\(V\otimes\mathfrak{so}(3,1)\), where \(V=(\tfrac12,\tfrac12)\)
+is the Lorentz vector representation. After complexification,
+\[
+\bigl(V\otimes\mathfrak{so}(3,1)\bigr)_{\mathbb C}
+=
+\left(\tfrac32,\tfrac12\right)
+\oplus\left(\tfrac12,\tfrac12\right)
+\oplus\left(\tfrac12,\tfrac32\right)
+\oplus\left(\tfrac12,\tfrac12\right).
+\]
+A vierbein fluctuation transforms in \(V\otimes V\), whose
+complexified decomposition is
+\[
+(V\otimes V)_{\mathbb C}
+=
+(0,0)\oplus(1,0)\oplus(0,1)\oplus(1,1).
+\]
+These representations have no common irreducible summand. Hence
+there is no nonzero Lorentz-equivariant linear map from
+\(\partial_\mu\Omega_{\alpha\beta}\) to a vierbein fluctuation using
+only the locked Lorentz-invariant tensors. Consistently, the displayed
+formula
+\[
+e^A{}_\mu=\left\langle\partial_\mu\Lambda^A{}_I\right\rangle
+\]
+leaves \(I\) uncontracted and does not, as written, define a vierbein.
+
+A simple proposed contraction with a fixed nonzero internal vector
+\(n^I\) does not repair non-degeneracy. If
+\[
+e^A{}_\mu=\partial_\mu\Lambda^A{}_I\,n^I,
+\]
+then Lorentz orthogonality gives
+\[
+(\Lambda n)_A e^A{}_\mu
+=
+(\Lambda n)_A\partial_\mu(\Lambda n)^A
+=
+\frac12\partial_\mu\bigl((\Lambda n)^2\bigr)
+=0.
+\]
+Every column of \(e^A{}_\mu\) therefore lies in the
+three-dimensional subspace orthogonal to \(\Lambda n\), so
+\(\operatorname{rank}(e)\leq 3\). This contraction cannot produce a
+non-degenerate four-dimensional frame.
+
+\paragraph{Detailed derivation 12 (Problem ; conditional result).} \label{ref:detail-11} % [see appH-detailed.tex]
+
+\section{Problem D: local Lorentz}
+\label{sec:status-D}
+
+\paragraph{Detailed derivation 13 (Problem D; conditional result).} \label{ref:detail-12} % [see appH-detailed.tex]
+
+\paragraph{Missing step.}
+Derive \(\mathrm{SO}(3,1)\) from the matrix algebra alone, or state
+that Presentation~A is not ontologically prior (the present text
+does the latter), and derive the effective dynamics of the
+independent diagonal connection or retain it as unresolved field
+content. Generator counting alone does not settle its torsion or
+propagating modes. The locked frame and its non-degeneracy must also be derived rather
+than assumed (Assumptions~\ref{ass:frame-lock} and~\ref{ass:nondeg}).
+Under D2, only explicitly scope-limited
+Presentation-B claims are available; specifying the full operator
+content does not close D or meet the matrix-derived criterion. The
+permitted and unestablished claims, including the consequent
+truncation for Problem~F, are listed in
+Section~\ref{sec:ch17-bearing}.
+
+\paragraph{Detailed derivation 14 (Problem ; conditional result).} \label{ref:detail-13} % [see appH-detailed.tex]
+
+\paragraph{Linear metric content of a real locked block (conditional; not closure).}
+Restrict to a real \(4\times4\) locked block, \(e=\mathbb{I}+M\) with \(M\)
+real, and \(g=e^{T}\eta e\) as in~\eqref{eq:g-from-e}. To first order
+\(\delta g=M^{T}\eta+\eta M\). For real symmetric \(M=H\):
+\(\delta g_{00}=-2H_{00}\), \(\delta g_{ij}=2H_{ij}\), \(\delta g_{0i}=0\).
+For real antisymmetric \(M=K\): \(\delta g_{0i}=-2K_{0i}\),
+\(\delta g_{ij}=0\). On this real slice the three directions \(K_{0i}\)
+change the metric, and the quadratic potential of the preceding Hessian
+paragraph is independent of \(K\). (For complex \(\Phi\) the Hermitian and
+anti-Hermitian parts of that paragraph are not the real symmetric and
+antisymmetric parts used here; the correspondence holds only on the real
+slice.)
+
+Internal transformations that preserve the positive-definite contraction
+in~\eqref{eq:Smicro} are unitary; those that also map real frames to real
+frames are orthogonal; those that further preserve \(\eta_{AB}\) commute with
+\(\eta\). Their Lie algebra is \(\mathfrak{so}(3)\): no boost generator
+survives (at the group level the intersection is
+\(\mathrm{O}(1)\times\mathrm{O}(3)\)). This concerns the internal index only.
+For the tangent index, \(\Phi\mapsto\Phi\Lambda\) sends
+\(\mathrm{Tr}\,\Phi^\dagger\Phi\) to
+\(\mathrm{Tr}\,\Lambda\Lambda^\dagger\Phi^\dagger\Phi\). This equals
+\(\mathrm{Tr}\,\Phi^\dagger\Phi\) for arbitrary \(\Phi\) only if
+\(\Lambda\Lambda^\dagger=\mathbb{I}\); a boost does not satisfy this and
+generically changes the contraction, although it may leave it unchanged for
+particular configurations. Hence the contractions displayed
+in~\eqref{eq:Smicro} and~\eqref{eq:V} are not invariant under local boosts
+as symmetries of the action. Imposing local Lorentz invariance in D2
+(Assumption~\ref{ass:local-lorentz}) therefore requires a completed action,
+with the tangent connection and an invariant contraction, and not merely a
+relabelling of~\eqref{eq:Smicro}. Whether such an action exists, and what its
+spectrum is, is not examined here. Problem~D remains open.
+
+\paragraph{Detailed derivation 15 (Problem ; conditional result).} \label{ref:detail-14} % [see appH-detailed.tex]
+
+\paragraph{A boost-invariant completed action: quadratic test (conditional; not closure).}
+This paragraph tests one candidate structural change, \emph{not} contained
+in~\eqref{eq:Smicro}: replace the positive-definite contractions by
+\(\eta_{IJ}\eta^{AB}\) contractions, so that the kinetic term is
+\(-g^{(0)\mu\nu}\eta_{IJ}\eta^{AB}\,\mathcal{D}_\mu\Phi^I{}_A\,
+\mathcal{D}_\nu\Phi^J{}_B\) with the covariant derivative~\eqref{eq:D-both},
+and the potential is \(\tfrac{\lambda}{4}\mathrm{Tr}(Q-v^2\mathbb{I})^2\) with
+\(Q=\eta^{-1}\Phi^{T}\eta\Phi\); both are invariant under constant
+\(\mathrm{SO}(3,1)\times\mathrm{SO}(3,1)\), with local invariance given by the
+connections. It is introduced only to test whether the opposite-sign modes
+found above can be removed. It would change the definition of the model, and
+nothing here shows that it is derivable from Presentation~A.
+
+About \(\Phi=v(\mathbb{I}+M)\) on the real locked \(4\times4\) block, with
+\(\tilde M=\eta^{-1}M^{T}\eta\), the quadratic potential is
+\(\lambda v^{4}\,\mathrm{K}(M_s)\) for the \(\eta\)-self-adjoint part
+\(M_s=\tfrac12(M+\tilde M)\), where
+\(\mathrm{K}(X)=\eta_{IJ}\eta^{AB}X^I{}_AX^J{}_B\). The ten self-adjoint
+components carry the potential and the six anti-self-adjoint components are
+flat, matching Proposition~\ref{prop:goldstone-count}. Because \(\mathrm{K}\)
+is indefinite, this quadratic form is negative along the three \(0i\)
+self-adjoint directions for \(\lambda>0\): \(\Phi=v\mathbb{I}\) is a stationary
+point but a saddle of this candidate potential, not a stable vacuum, so what
+follows is a quadratic diagnostic about a stationary background and not a
+spectrum about a stable vacuum. The kinetic form has signature \((7,3)\) on the
+self-adjoint block and \((3,3)\) on the anti-self-adjoint block; the two
+blocks do not mix. At the background \(A_\mu=0\), the relative combination
+\(\omega_\mu-iA_\mu\) in the convention of~\eqref{eq:D-both} (equivalently
+\(\omega_\mu-A_\mu\) if \(A_\mu\) is redefined as a real Lie-algebra-valued
+connection) enters algebraically and removes the anti-self-adjoint components
+from the kinetic term, while the diagonal combination does not enter at
+quadratic order. What remains is the self-adjoint block, with seven components
+of one kinetic sign and three (the \(0i\) components) of the opposite sign;
+since kinetic and potential forms coincide on this block, the
+equation-of-motion mass squared is \(\lambda v^2\) in the normalisation of the
+preceding Hessian paragraph for all ten. Since \(\delta g=\eta M+M^{T}\eta\),
+this block is the linearised metric perturbation, and its quadratic action
+contains only \((\partial h_{\mu\nu})^2\) and \(h_{\mu\nu}h^{\mu\nu}\): the
+derivative index is contracted only with \(g^{(0)\mu\nu}\), so no
+\(\partial_\mu h^{\mu\nu}\) structure appears, the mass form is nondegenerate
+on all ten components, and the quadratic action has no linearised
+diffeomorphism invariance. Hence, for this candidate at this order, boost
+invariance is obtained but three opposite-sign modes remain, the potential is
+indefinite, and the quadratic form is not of Fierz--Pauli type (hypothesis~5 of
+Theorem~\ref{thm:mT}). Whether higher-order terms, a kinetic term for
+\(\omega_\mu\), or an induced action change this is not examined. This is a
+bounded no-go for the stated candidate at quadratic order about the flat
+scaffold; it does not exclude other completed actions. Problems~D and~B remain
+open.
+
+\paragraph{Detailed derivation 16 (Problem ; conditional result).} \label{ref:detail-15} % [see appH-detailed.tex]
+
+\paragraph{What linearised diffeomorphism invariance fixes (conditional; not closure).}
+Consider the most general parity-even, Lorentz-invariant quadratic action for
+an unconstrained symmetric \(h_{\mu\nu}\) on a flat background with at most
+two derivatives. Up to integration by parts and overall normalisation, in
+momentum space it has four derivative terms with coefficients
+\(a_1,\dots,a_4\), multiplying \(p^2h_{\mu\nu}h^{\mu\nu}\),
+\(p^\mu h_{\mu\nu}p_\lambda h^{\lambda\nu}\), \(h\,p^\mu p^\nu h_{\mu\nu}\),
+\(p^2h^2\), and two mass terms \(m_1h_{\mu\nu}h^{\mu\nu}+m_2h^2\). Requiring
+invariance under \(\delta h_{\mu\nu}=p_\mu\xi_\nu+p_\nu\xi_\mu\) forces
+\(a_2=-2a_1\), \(a_3=2a_1\), \(a_4=-a_1\) and \(m_1=m_2=0\): the massless
+Fierz--Pauli form for the unconstrained field (a direct symbolic check, used
+as a standard result and not as a new derivation). This classifies the
+unconstrained symmetric-\(h\) action. It is not identified here with the
+trace-constrained tensor block of~\eqref{eq:FP} used in hypothesis~5 of
+Theorem~\ref{thm:mT}; relating the two requires a separate argument that is
+not given. The displayed action~\eqref{eq:Smicro} is not in this class. In the
+\(\eta\)-contracted candidate tested above, the block identified with
+\(\delta g_{\mu\nu}\) has no \(\partial_\mu h^{\mu\nu}\) structure and a
+nonzero mass term. For the displayed action, the real-slice symmetric block
+\(H\) does not span the full \(\delta g_{\mu\nu}\), since \(H_{0i}\) leaves
+the metric unchanged, and no diffeomorphism-invariant quadratic structure
+appears in its Hessian. A covariant
+completion of the action may therefore be a necessary structural ingredient
+for a diffeomorphism-invariant quadratic action, but it is not sufficient for
+Problem~B, which also requires entanglement stationarity, the area
+contribution, and their relation to the emergent metric. Problems~B and~D
+remain open.
+
+\paragraph{Detailed derivation 17 (Problem ; conditional result).} \label{ref:detail-16} % [see appH-detailed.tex]
+
+\paragraph{The matrix-model no-ghost argument and the \(\eta\)-contracted
+candidate (conditional; not closure).}
+In~\cite{Steinacker2019NoGhost} the vector-type fluctuation spaces are
+reported to carry an indefinite inner product of signature \((+++-)\) before
+gauge fixing; the gauge-fixing condition is equivalent to orthogonality to
+the pure-gauge modes, which reduces the space to signature \((++0)\), and the
+quotient by the null gauge mode leaves two positive-norm modes.  The
+negative-norm directions are thus removed by a gauge symmetry whose modes mix
+the derivative index with the field index.  We have not reproduced this.
+
+In the \(\eta\)-contracted candidate tested above, the tangent-index
+connection enters algebraically and removes only the \(\eta\)-anti-self-adjoint
+directions, so the three opposite-sign self-adjoint \(0i\) directions are not
+gauge directions of it.  Shifts of the form
+\(\delta h_{\mu\nu}=\partial_{(\mu}\xi_{\nu)}\) would be one route to
+removing such modes; they are defined only through the identification of
+tangent and coordinate indices of~\eqref{eq:vev-is-frame}, and invariance
+under them is sufficient for, but not shown necessary for, ghost removal.  For
+this candidate at quadratic order, with kinetic part \(a_1(\partial h)^2\) and
+mass form \(\lambda v^{4}\mathrm{K}(M_s)\), the quadratic action does not
+vanish on pure-gauge \(h=\partial\xi\) for generic momentum (checked
+symbolically on a model quadratic form \(a_1k^2\,h\!\cdot\!h+m\,h\!\cdot\!h\);
+it vanishes only on shell, \(a_1k^2+m=0\), which does not test invariance).
+By the lemma above, invariance would require cross terms with the
+Fierz--Pauli ratios and a massless symmetric block, whereas this candidate has
+no such cross terms and the nonzero mass \(\lambda v^2\).  The
+positive-definite kinetic form of the displayed action~\eqref{eq:Smicro} has
+no negative-norm scalar-kinetic directions, but its tensor sector was not
+analysed here, and its real-slice block does not span \(\delta g_{\mu\nu}\),
+as noted above.  Two repairs of the candidate are visible and neither is
+adopted: adding such cross terms and a potential flat along the shift
+directions, or realising the shifts non-linearly with a compensating field.
+Each introduces a new object and hypothesis not derived from the matrix
+action.  This is a bounded statement about the quadratic form of this
+candidate and does not exclude other completions.
+
+\paragraph{Detailed derivation 18 (Problem ; conditional result).} \label{ref:detail-17} % [see appH-detailed.tex]
+
+\paragraph{Integrable frames and indefinite gauge kinetic terms
+(conditional; not closure).}
+Two further routes to a tangent-index shift symmetry for the
+\(\eta\)-contracted candidate tested above are not supplied by the linearised
+quadratic form.  Both statements are bounded to that candidate and to the
+stated class of kinetic terms.
+
+First, suppose the frame is integrable,
+\(\Phi^I{}_\mu=\partial_\mu\phi^I\), where \(\Phi^I{}_\mu\) denotes
+\(\Phi^I{}_A\) converted by the tangent--coordinate identification
+of~\eqref{eq:vev-is-frame}.  The perturbation of its symmetric block is then
+\(h_{\mu\nu}=\partial_{(\mu}\pi_{\nu)}\), and its antisymmetric block is a
+local Lorentz rotation.  The linearised Riemann tensor of any pure-gauge
+perturbation \(h_{\mu\nu}=\partial_{(\mu}\xi_{\nu)}\) on a flat background
+vanishes; this is the standard gauge invariance of the linearised curvature.
+The induced metric of an integrable frame is therefore flat, and invariance
+under the shifts is automatic but carries no linearised gravity.  This does
+not exclude other structures.  A shift symmetry that carries gravity must act
+on a non-integrable \(\Phi\).  Such a \(\Phi\) would be expected to play the
+role of a gauge field for the shifts, with torsion \(\mathcal{D}\Phi\) as its
+field strength, and invariant kinetic terms would be expected to be built from
+torsion and curvature rather than from the displayed contraction of
+\(\partial\Phi\) with the scaffold.  This is a structural expectation
+following from requiring the symmetry, not a derivation and not a property of
+the displayed action.
+
+Second, a quadratic kinetic term for connections of a non-compact tangent
+group built from an invariant bilinear form is indefinite.  For
+\(\mathfrak{so}(3,1)\) the Killing form has signature \((3,3)\), positive on
+the three boosts and negative on the three rotations, and the same holds for
+any nonzero real combination of the Killing form and its dual invariant form
+(the signature was computed numerically in the adjoint basis).  This has the
+same signature as the \((3,3)\) anti-self-adjoint kinetic block found above;
+no identification of the two is claimed.  A Yang--Mills-type term built from
+an invariant form for such a connection therefore carries wrong-sign modes,
+and ghost removal would need other structure, such as first-order terms with
+constraints, which this does not exclude.
+
+What remains is to derive the required kinetic structure and constraint from
+the matrix action without inserting them by hand.  A one-loop effective action
+is reported in~\cite{MantaSteinackerTran2024} to induce a gravitational action
+for a different matrix model; we have not checked its operator against that of
+Chapter~\ref{ch:heat-kernel}, and it is not shown here to supply the symmetry
+or the constraint.  We expect, but have not shown for the present operator,
+that the field strength of the tangent-index connection enters the one-loop
+action at four-derivative order through the \(a_2\) density of
+Chapter~\ref{ch:heat-kernel} (the standard Seeley--DeWitt term
+\(\propto\mathrm{tr}\,\Omega_{\mu\nu}\Omega^{\mu\nu}\)), and that a
+two-derivative torsion-squared term would arise only if torsion appeared in
+the endomorphism \(E\) of~\eqref{eq:O-eta}, which
+Chapter~\ref{ch:heat-kernel} does not specify.  Problems~B, C, D, F and G
+remain open.
+
+\paragraph{Detailed derivation 19 (Problem ; conditional result).} \label{ref:detail-18} % [see appH-detailed.tex]
+
+\paragraph{Tree-level terms plus an assumed induced Fierz--Pauli term:
+quadratic test (conditional; not closure).}
+This paragraph tests which tree-level coefficients are compatible with a
+healthy spin-two sector if an induced Fierz--Pauli term is assumed.  On
+the \(\eta\)-self-adjoint block, Equation~\eqref{eq:g-from-e} gives
+\(\delta g_{\mu\nu}=2(\eta M)_{\mu\nu}\), which is symmetric; write
+\(h_{\mu\nu}\) for a field proportional to \((\eta M)_{\mu\nu}\), the
+normalisation being absorbed into the coefficients below, and identify
+tangent and coordinate indices through Equation~\eqref{eq:vev-is-frame}.
+Take the quadratic form at momentum \(k\) to be
+\(Q=(tk^2+m)\,h_{\mu\nu}h^{\mu\nu}+(t'k^2+m')\,h^2+g\,Q_{\mathrm{FP}}\),
+with \(k^2=\eta^{\mu\nu}k_\mu k_\nu\).  The first two terms are the most
+general tree-level form invariant under the diagonal \(\mathrm{SO}(3,1)\)
+with the derivative index contracted through \(g^{(0)\mu\nu}\) only (the
+trace has an independent coefficient), and \(Q_{\mathrm{FP}}\) is the
+Fierz--Pauli structure with ratios \((1,-2,2,-1)\), indices raised with
+\(\eta\).  The induced term is an assumed input in the form of a
+linearised Einstein--Hilbert term with unspecified coefficient \(g\), in
+the manner of Chapter~\ref{ch:heat-kernel}; its coefficient and sign,
+which depend on Problem~F, are not computed here.  The Lagrangian is
+taken as \(\mp Q\), with the sign chosen so that the spin-two modes are
+healthy; all wrong-sign statements below are relative to the spin-two
+modes.
+
+A symbolic computation (\texttt{sympy}, a check and not a proof) confirms
+that \(Q_{\mathrm{FP}}\) is invariant under \(\delta h=k\xi\) and gives,
+at \(k=(\omega,0,0,q)\), a determinant of the ten-by-ten form with the
+following structure.  If \(t=t'=m=m'=0\), the four components \(h_{0\mu}\)
+are non-dynamical and the form is the massless Fierz--Pauli form.  If
+\(t\neq0\), there are three poles at \(k^2=-m/t\), five spin-two poles at
+\((g+t)k^2+m=0\), and two poles in the scalar sector, so the
+\(h_{0\mu}\) components propagate.  For \(t'=m'=0\), \(g>0\) and
+\(|t|\ll g\), the coefficient matrix of \(\omega^2\) has, at \(t=0\), one
+direction of sign opposite to the spin-two modes (the trace) and four null
+directions; for \(t>0\) the three \(h_{0i}\) directions have a sign opposite
+to the spin-two modes, and for \(t<0\) the \(h_{00}\) direction does.  For
+\(t=t'=0\) and \(m'\neq-m\) there is one additional scalar pole, whose
+sign (ghost or tachyon) is not determined here; it is absent for
+\(m'=-m\), the Fierz--Pauli mass form, leaving only the five spin-two poles
+at \(gk^2+m=0\).  Diagonal invariance alone does not impose \(t=t'=0\) or
+\(m'=-m\).  Within this class and these parameter ranges, therefore, a
+tree-level derivative term on the symmetric block adds propagating
+components that carry directions of sign opposite to the spin-two modes,
+and a tree-level mass leaves no extra scalar pole only at the
+Fierz--Pauli trace ratio.  These are conditions that such a completion
+would place on the tree-level coefficients.  The displayed kinetic term of
+Equation~\eqref{eq:Smicro} is not diagonal-invariant (see the preceding
+paragraphs) and so is not a member of this class.  The vector and ghost
+sectors, the sign and size of \(g\), the continuation and the one-loop
+operator are not treated, so this does not show that an induced route is
+ghost-free, does not identify the block with the tensor sector of
+Chapter~\ref{ch:lorentz-decomposition}, and leaves Problems~B, C, D, F
+and~G open.
+
+\paragraph{Detailed derivation 20 (Problem ; conditional result).} \label{ref:detail-19} % [see appH-detailed.tex]
+
+\section{Problem E: signature}
+\label{sec:status-E}
+
+\paragraph{Detailed derivation 21 (Problem E; conditional result).} \label{ref:detail-20} % [see appH-detailed.tex]
+
+\paragraph{Status.}
+Remains Assumption~\ref{ass:lorentzian}.
+
+\section{Problem F: coefficients \(A,B,C\)}
+\label{sec:status-F}
+
+\paragraph{Detailed derivation 22 (Problem E; conditional result).} \label{ref:detail-21} % [see appH-detailed.tex]
+
+\paragraph{Missing step.}
+Specify the gauge-fixed fluctuation, Goldstone, diffeomorphism-ghost,
+and local-Lorentz-ghost operators and weights; per-sector proper-time
+limits; massive threshold functions if masses are resummed; the
+continuation; and the finite-counterterm scheme. Then evaluate the
+weighted \(a_1\) and curvature-linear \(a_2\) contributions in that
+scheme. Until this is completed, Problem~F remains open, and the
+asserted \(N_{\mathrm{eff}}=+2\) count does not close it.
+
+\paragraph{Detailed derivation 23 (Problem ; conditional result).} \label{ref:detail-22} % [see appH-detailed.tex]
+
+\paragraph{Gauge-group dependence of the scalar block (conditional; not closure).}
+The contraction \(\mathrm{Tr}\,\Phi^\dagger\Phi\) is a positive-definite norm,
+and the potential in~\eqref{eq:V}, being built from it, is invariant under
+constant unitary transformations of the internal index and of the tangent
+index; neither is invariant under non-compact boosts of the tangent index.
+The covariant kinetic term has a
+\emph{local} symmetry only for those transformations for which a connection and
+its transformation law are specified; for the tangent index this requires
+Assumption~\ref{ass:local-lorentz} with \(\omega_\mu\), which is not part
+of~\eqref{eq:Smicro}. Moreover, the compact group \(\mathrm{U}(4)\) has no
+real \(\mathfrak{so}(3,1)\) subalgebra, so choosing
+\(G_{\mathrm{int}}=\mathrm{U}(4)\) is not compatible with the construction of
+Chapter~\ref{ch:lorentz-locking} that requires \(G_{\mathrm{int}}\) to contain
+\(\mathrm{SO}(3,1)\) or its algebra. It defines a different compact-symmetry
+model, whose consequences for Problem~D are not examined here.
+
+For that separate model only, work on the square locked \(4\times4\) block
+about \(\Phi=v\mathbb{I}\) with \(A_\mu\) as an unspecified fluctuation. Write
+\(\delta\Phi=H+K\) as above. Assume (i) the action has no
+\(F_{\mu\nu}F^{\mu\nu}\) term; (ii) \(G_{\mathrm{int}}\subseteq\mathrm{U}(4)\)
+acts with the infinitesimal orbit \(\delta K=\alpha\,v\) for \(\alpha\) in its
+Lie algebra; and (iii) the orbit directions are removed by the gauge
+condition. Then the number of anti-Hermitian directions not tangent to the
+orbit, which have no quadratic potential, is \(16-\dim G_{\mathrm{int}}\); for
+\(\mathrm{U}(4)\) this is zero and for \(\mathrm{SU}(4)\), \(\mathrm{SO}(4)\),
+\(\mathrm{U}(1)\) it is \(4\), \(10\), \(15\) respectively. For
+\(G_{\mathrm{int}}=\mathrm{U}(4)\) the linearized gauge condition \(K=0\) has a
+field-independent Jacobian at the vacuum, and the remaining
+\(\Phi\)--\(\Phi\) block is the sixteen real components of \(H\) with
+\(m^2=\lambda v^2\). This is the scalar Hessian block only: the ghost and
+measure contributions beyond the linearized Jacobian, the ultralocal
+determinant from the nonlinear \(A_\mu\) integral, any induced vector or tensor
+operator, and the weighting of the full sector sum all remain unspecified, and
+the count is not a heat-kernel trace for the Problem~F target. The
+discrepancy with the \(\mathrm{SO}(3,1)\) assumption is recorded, not resolved.
+Problem~F remains open.
+
+\paragraph{Detailed derivation 24 (Problem ; conditional result).} \label{ref:detail-23} % [see appH-detailed.tex]
+
+\paragraph{Mass-resummed curvature threshold for the Hermitian block
+(conditional; not closure).}
+Keep the assumptions of the preceding one-block bookkeeping paragraph:
+sixteen decoupled real components, determinant weight \(w=1\), common
+proper-time limits, and
+\(\mathcal O_H=-\nabla^2+E\), with
+\(E=m^2+Q R_E\), \(m^2=\lambda v^2\), and constant \(m^2\) and \(Q\)
+proportional to the identity. At the retained order assume
+\(\nabla E=0\), and keep only terms linear in \(R_E\), dropping
+curvature-squared invariants and curvature-derivative terms. Retaining
+the mass exponential, the coincident-point heat kernel then contains
+\[
+\operatorname{tr}\langle x|e^{-s\mathcal O_H}|x\rangle
+\supset
+\frac{16}{(4\pi s)^2}e^{-sm^2}
+s\left(\frac16-Q\right)R_E .
+\]
+Thus this block's contribution to \(C_R^E\), in the sign and
+normalization convention of the preceding paragraph, with
+\(s_{\min}=\LUV^{-2}\) and \(s_{\max}=\mu^{-2}\), is
+\[
+-\frac{16}{32\pi^2}\left(\frac16-Q\right)
+J(m^2;s_{\min},s_{\max}),
+\]
+where
+\[
+\begin{aligned}
+J(m^2;s_{\min},s_{\max})
+&:=\int_{s_{\min}}^{s_{\max}}\frac{\mathrm{d}s}{s^2}e^{-m^2s}\\
+&=\frac{e^{-m^2s_{\min}}}{s_{\min}}
+ -\frac{e^{-m^2s_{\max}}}{s_{\max}}
+ -m^2\left[
+ E_1(m^2s_{\min})-E_1(m^2s_{\max})
+ \right],
+\qquad
+E_1(x):=\int_x^\infty\frac{e^{-t}}{t}\,\mathrm{d}t .
+\end{aligned}
+\]
+The \(m\to0\) limit is \(J(0)=\LUV^2-\mu^2\). For
+\(m^2s_{\max}\ll1\),
+\[
+J=\LUV^2-\mu^2
+ -m^2\ln\!\left(\frac{\LUV^2}{\mu^2}\right)
+ +O\!\left(m^4s_{\max}\right).
+\]
+This small-mass expansion gives the earlier truncated expression;
+the resummed \(J\) is the threshold function, and the earlier
+expression is not removed. At this order in curvature, the resummed
+expression includes the mass insertions represented by that
+curvature-linear \(a_2\) term; they must not be added a second time.
+For \(m^2s_{\min}\gg1\), this block's loop contribution is
+exponentially suppressed. The full coefficient still includes the
+scheme-dependent local curvature counterterm of
+Theorem~\ref{thm:Geff}; this block calculation does not specify that
+counterterm or the other sectors, their operators and weights, the
+gauge fixing, or the continuation. Problems~B, C, D, F and~G remain
+open.
+\paragraph{Detailed derivation 25 (Problem ; conditional result).} \label{ref:detail-24} % [see appH-detailed.tex]
+
+\paragraph{Sector sum: a bound from the universal \(a_1\) piece.}
+Fix a common limit pair \(\LUV,\mu\), take \(Q_s=0\), and keep only the
+universal \(a_1\) term of Equation~\eqref{eq:universal-R}; the
+curvature-linear part of \(a_2\), thresholds and counterterms are
+dropped. Assume, as a convention to be checked against the
+continuation of Appendix~\ref{app:seeley-dewitt}, that the Euclidean
+effective action contains
+\(-\tfrac{1}{16\pi G_{\mathrm{eff}}}\int\sqrt g\,R_E\). Then
+\[
+  \frac1{G_{\mathrm{eff}}}
+  =\frac{\mathcal N_0}{12\pi}\,(\LUV^2-\mu^2),
+  \qquad
+  \mathcal N_0=\sum_{s}w_s\operatorname{tr}_{V_s}\mathbb I_s ,
+\]
+that is, \(A=1/(12\pi)\) for this piece alone. This is the
+weighted-trace form of the single-sector formula of
+Section~\ref{sec:ch17-coeff}. Suppose in addition that the induced term
+of the displayed-action time-kinetic paragraph is a linearised
+Einstein--Hilbert term whose coefficient \(g=1/(16\pi G_{\mathrm{eff}})\)
+is the total induced coefficient, so that its window
+\(1/G_{\mathrm{eff}}<8\pi v^2\) holds. At \(\mu\to0\) this gives
+\[
+  0<\mathcal N_0\,\frac{\LUV^2}{v^2}<96\pi^2,
+  \qquad\text{i.e.}\qquad
+  \frac{\LUV}{v}<\pi\sqrt{\frac{96}{\mathcal N_0}} .
+\]
+For \(\mu>0\) the factor \(\LUV^2-\mu^2\) only weakens the bound.
+Positivity of \(G_{\mathrm{eff}}\) requires \(\mathcal N_0>0\) in this
+convention. If \(\LUV\gg v\), the weighted sum must therefore nearly
+cancel. As an illustration only, one unit-weight sixteen-component
+sector would give \(\LUV/v<\pi\sqrt6\approx7.7\). The numerics are
+illustrative, not an evaluation of \(\mathcal N_0\). The unresummed
+truncation also requires \(\lambda v^2\ll\LUV^2\) for the massive
+sectors, which may fail for \(\LUV\) of order \(v\). The sum itself is
+not computed here because the manuscript does not supply: the
+gauge-fixed operators and \(E_s\) for the \(\mathrm K\) and
+\(A_\mu\) sectors (which depend on the \(G_{\mathrm{int}}\) and
+potential choices of Problem~D), the diffeomorphism and local-Lorentz
+ghost operators and weights, the per-sector limits, the thresholds,
+and the continuation convention. Problems~B, C, D, F and~G remain open.
+
+\paragraph{Detailed derivation 26 (Problem ; conditional result).} \label{ref:detail-25} % [see appH-detailed.tex]
+
+\paragraph{Finite-cell check of the ultralocal determinants
+(conditional; not closure).}
+In the compact \(U(4)\) branch and linearized unitary gauge of the
+preceding paragraph, regulate the Euclidean fixed scaffold by finitely
+many cells of Euclidean proper volume \(\Delta V_0\). Use a basis of
+Hermitian generators orthonormal under the trace and Lebesgue measure
+for the four Euclidean orthonormal components of each of the sixteen
+generators. At the vacuum the linearized Faddeev--Popov matrix is
+\(\mathbb I_{16}\) at each cell, so its finite-dimensional determinant
+is one and its contribution \(\operatorname{Tr}\ln\mathbb I_{16}\)
+vanishes in this regulator. The eliminated \(Y\) fields are not
+integrated again.
+
+After continuation, the Euclidean action for the algebraic \(A_\mu\)
+variables is positive in all four orthonormal components. The
+finite-cell Gaussian is
+\[
+  \int\mathrm{d}^{64}A\,
+       \exp\!\left[-v^2\Delta V_0
+          \sum_{a=1}^{16}\sum_{\hat\mu=1}^{4}
+                 (A_{\hat\mu}^{a})^2\right]
+  =\left(\frac{\pi}{v^2\Delta V_0}\right)^{32}.
+\]
+For equal cells its logarithm is
+\(-32N_{\mathrm{cells}}\ln(v^2\Delta V_0/\pi)\), a
+volume-type term with no curvature dependence in this scaffold
+regulator. That absence of curvature dependence is a property of the
+regulator built on the fixed scaffold, not a result about the
+emergent curvature coefficient. The \(A_\mu\) integral is not of
+Laplace type, so \(a_1\) does not apply to it as written. Its local
+contribution depends on the functional-measure normalization; the
+displayed action and heat-kernel cutoff alone do not select that
+normalization. This calculation does not justify assigning these
+ultralocal factors zero in a different measure or regulator, and does
+not determine \(C_R^E\). It is confined to the compact \(U(4)\) branch
+and does not provide the missing \(\mathrm{SO}(3,1)\)-compatible
+sector sum. Problems~B, C, D, F and~G remain open.
+
+\paragraph{Detailed derivation 27 (Problem ; conditional result).} \label{ref:detail-26} % [see appH-detailed.tex]
+
+\paragraph{Scaffold rotations exclude linearized diffeomorphism invariance in a stated class (conditional; not closure).}
+In~\eqref{eq:Smicro} the components of \(\Phi^I{}_A\) are scalars of
+the scaffold: a scaffold index appears only on \(\partial_\mu\) and
+\(A_\mu\), and on \(\omega_\mu\) in the completion~\eqref{eq:D-both}.
+On the flat Euclidean scaffold, rotations \(x\mapsto Rx\),
+\(R\in\mathrm{SO}(4)\), acting on scaffold indices alone are a
+symmetry, and the background \(\bar\Phi=v\mathbb I\),
+\(\bar A_\mu=\bar\omega_\mu=0\) is invariant. Assume that the regulator
+and the gauge fixing preserve this symmetry, as the scaffold
+proper-time regulator above does, and that the composite-metric
+fluctuation \(h_{\mu\nu}\) is a fixed linear function of the components
+of \(\Phi\), for example the one obtained from~\eqref{eq:g-from-e}
+with the identification~\eqref{eq:vev-is-frame}. Then, at any loop
+order, the quadratic part of the effective action in the components of
+\(\Phi\), with the connections set to zero or eliminated at quadratic
+order, has the form
+\(\sum_{a,b}\tilde\varphi_a(-p)F_{ab}(p^2)\tilde\varphi_b(p)\):
+invariance gives \(F_{ab}(Rp)=F_{ab}(p)\), an
+\(\mathrm{SO}(4)\)-invariant function of one vector depends only on
+\(p^2\), and eliminating a connection, whose mixed and diagonal kernels
+have the forms \(p_\mu f(p^2)\) and
+\(\alpha(p^2)\delta_{\mu\nu}+\beta(p^2)p_\mu p_\nu\) with internal
+labels suppressed, preserves this form. Let \(Q_p\) be the reduced form
+on \(h\) obtained by eliminating the remaining components; it is the
+reduced form that inherits any invariance of the full effective action
+under a linearized gauge transformation, and it too depends on \(p\)
+only through \(p^2\). If \(Q_p\) is invariant under
+\(h\mapsto h+p\otimes\xi+\xi\otimes p\) for all \(\xi\), then \(Q_p\)
+annihilates \(p'\otimes\xi+\xi\otimes p'\) for every \(p'\) with
+\(p'^2=p^2\); for \(p\neq0\) these tensors span all symmetric tensors,
+so \(Q_p=0\). The same holds on the traceless block with the
+transformation~\eqref{eq:FP-gauge}. The linearized Einstein--Hilbert
+form and the massless Fierz--Pauli form~\eqref{eq:FP} are invariant
+and nonzero, hence depend on the direction of \(p\); \(Q_p\) cannot
+equal \(c\) times either of them plus a form depending on \(p\) only
+through \(p^2\) unless \(c=0\). A form depending only on \(p^2\) can
+coincide with a gauge-fixed linearized Einstein--Hilbert operator, for
+example the Feynman--de~Donder form
+\(p^2\bigl(h_{\mu\nu}h_{\mu\nu}-\tfrac12h^2\bigr)\), but without the
+gauge symmetry and its ghosts each nondegenerate direction of such a
+form, including directions of opposite sign, is a propagating
+component. This statement holds for a flat scaffold, a regulator and
+gauge fixing that preserve scaffold rotations, a vacuum and background
+invariant under them, and a composite-metric fluctuation that is a
+fixed linear function of the components of \(\Phi\). It does not
+exclude a composite-metric Einstein--Hilbert term in general: a
+regulator or kinetic metric built from \(\Theta^{\mu\nu}\) in
+Presentation~A (Remark~\ref{rem:ch3-varying-theta}), a vacuum or
+background that is not invariant under scaffold rotations, a curved
+scaffold, or a composite metric that is not a fixed linear image of
+\(\Phi\) each relaxes one of these hypotheses and is not covered.
+
+\paragraph{Detailed derivation 28 (Problem ; conditional result).} \label{ref:detail-27} % [see appH-detailed.tex]
+
+\paragraph{Presentation~A in the Poisson limit: the \(\Theta\)-built metric and the connection sector (conditional; not closure).}
+Let \(\Theta^{\mu\nu}(x)\) be a nondegenerate Poisson bivector and
+\(\rho=1/|\operatorname{Pf}\Theta|\), so that
+\(\partial_\mu(\rho\,\Theta^{\mu\nu})=0\). Keep the leading
+semiclassical order only:
+\([\cdot,\cdot]\to i\{\cdot,\cdot\}\) with
+\(\{f,g\}=\Theta^{\mu\nu}\partial_\mu f\,\partial_\nu g\),
+\(\operatorname{Tr}\to\int\mathrm{d}^4x\,\rho\), and matrix-coordinate
+indices contracted with \(\eta\). With
+\(K^{\mu\nu}=\eta_{\alpha\beta}\Theta^{\alpha\mu}\Theta^{\beta\nu}\) and
+\(g_\rho^{\mu\nu}=\rho K^{\mu\nu}\) as in
+Remark~\ref{rem:ch3-varying-theta}, let \(G\) be the metric with
+\(G^{\mu\nu}=K^{\mu\nu}\); then \(G=\rho\,g_\rho\),
+\(|\det g_\rho|=1\) and \(\sqrt{|G|}=\rho^2\). Higher Moyal terms are
+dropped. They are not small at momenta of order \(\LUV\), so the
+coefficients below are those of the Poisson-limit operators within the
+truncated expansion of Theorem~\ref{thm:Geff}. Signs and eigenvalues
+refer to the Euclidean section \(\eta=\delta\); the algebraic identities
+do not depend on the signature.
+
+\emph{Scalar sector.} A real fluctuation whose kinetic term is the
+Poisson limit of \(\operatorname{Tr}[\hat X_\mu,\varphi]^2\) has the
+operator
+\(\mathcal O_s=-\rho^{-1}\partial_\mu(\rho K^{\mu\nu}\partial_\nu\,\cdot\,)\).
+On the metric \(G\) it has the form~\eqref{eq:O-eta}, with
+\(D=\nabla+\omega\), \(\omega_\mu=-\tfrac12\partial_\mu\ln\rho\) and
+\(E=-\tfrac12\Box_G\ln\rho
++\tfrac14G^{\mu\nu}\partial_\mu\ln\rho\,\partial_\nu\ln\rho\).
+Since \(G=\rho\,g_\rho\) in four dimensions,
+\(R_G=\rho^{-1}\bigl[R-3\Box_{g_\rho}\ln\rho
+-\tfrac32|\nabla\ln\rho|^2_{g_\rho}\bigr]\) and
+\(E=\rho^{-1}\bigl[-\tfrac12\Box_{g_\rho}\ln\rho
+-\tfrac14|\nabla\ln\rho|^2_{g_\rho}\bigr]\), so that
+\[
+  \sqrt{|G|}\Bigl(\tfrac16R_G-E\Bigr)=\tfrac16\,\rho\,R[g_\rho]
+\]
+pointwise. For a constant \(\LUV\), one such component contributes
+\(-\tfrac{\LUV^2}{192\pi^2}\int\mathrm{d}^4x\,\rho\,R[g_\rho]\)
+to~\eqref{eq:W-expand}: the coefficient of
+Theorem~\ref{thm:Geff}, multiplying the curvature of the
+\(\Theta\)-built metric \(g_\rho\) with a factor \(\rho\). The
+component is minimally coupled to \(g_\rho\).
+
+\emph{Frame.} Let \(\omega=\Theta^{-1}\), \(\omega_{\mu B}\Theta^{B\nu}
+=\delta_\mu{}^\nu\), and \(e^A{}_\mu=\eta^{AB}\omega_{\mu B}\). Then
+\(G_{\mu\nu}=\eta_{AB}e^A{}_\mu e^B{}_\nu\), which is the
+form~\eqref{eq:g-from-e} of Definition~\ref{def:composite-metric} for
+a coframe with \(\eta_{AB}e^B{}_\mu\) antisymmetric in \((A,\mu)\).
+At the sample points tested the map \(\Theta\mapsto G\) has rank six,
+so that the \(\Theta\)-built metrics form a six-parameter subfamily of
+the metrics, and no pure-gauge perturbation
+\(p_{(\mu}\xi_{\nu)}\) of \(G\) lies in its tangent space. If
+\(\langle\Phi\rangle/v\) of~\eqref{eq:vev-is-frame} were identified with
+this coframe, the operator above would be that of
+Assumption~\ref{ass:emergent-op} for the metric \(G\). This
+identification is not derived.
+
+\emph{Connection sector.} In background gauge with gauge-fixing term
+\(\tfrac12\rho\,(D_\mu a^\mu)^2\), \(D^\mu=\{x^\mu,\cdot\}\), the part of
+\eqref{eq:Smatrix} quadratic in the matrix gauge potential \(a^\mu\)
+is, up to a constant factor,
+\(\int\mathrm{d}^4x\,\rho\,[K^{\rho\sigma}\partial_\rho a_\nu\partial_\sigma a^\nu
+-2a^\mu\{\Theta_{\mu\nu},a^\nu\}]\), the term linear in \(a^\mu\) not
+being assumed to vanish. The ghost operator is
+\(D_\mu D^\mu=-\mathcal O_s\), of weight \(-2\). The operator
+\(\mathcal O_va^\mu=\mathcal O_sa^\mu
+-2\eta^{\mu\alpha}\{\Theta_{\alpha\nu},a^\nu\}\) has the
+form~\eqref{eq:O-eta} on \(G\) with
+\(\omega_\sigma=-\tfrac12\partial_\sigma\ln\rho\,\mathbb I+\mathcal B_\sigma\),
+\((\mathcal B^\sigma)^\mu{}_\nu=\eta^{\mu\alpha}\Theta^{\rho\sigma}
+\partial_\rho\Theta_{\alpha\nu}\), and
+\(E=\nabla_\sigma\omega^\sigma+\omega_\sigma\omega^\sigma\). Then
+\[
+  \sqrt{|G|}\operatorname{tr}\Bigl(\tfrac16R_G-E\Bigr)
+  =\tfrac46\,\rho\,R[g_\rho]+\rho^2X,\qquad
+  X=\eta^{\rho\lambda}\eta_{\mu\alpha}\eta_{\nu\beta}\,
+    \partial_\rho\Theta^{\mu\nu}\,\partial_\lambda\Theta^{\alpha\beta},
+\]
+and with the ghosts the connection sector contributes
+\(\tfrac26\rho R[g_\rho]+\rho^2X\). The derivative index of \(X\) is
+contracted with \(\eta\) and not with \(G\). For
+\(\Theta^{01}=\vartheta_1(x^0,x^1)\), \(\Theta^{23}=\vartheta_2(x^2,x^3)\)
+one finds
+\(X=2K^{\mu\nu}\partial_\mu\ln\rho\,\partial_\nu\ln\rho\); for a
+generic Poisson bivector \(X\) differs from this one expression.
+
+\emph{Quadratic form about constant \(\bar\Theta\).} Let
+\(\Theta=\bar\Theta+\epsilon T\), \(T^{\mu\nu}
+=\bar\Theta^{\mu\rho}\partial_\rho a^\nu-\bar\Theta^{\nu\rho}\partial_\rho a^\mu\),
+\(a^\mu=u^\mu\cos(p\cdot x)\). With \(q^\mu=\bar\Theta^{\mu\rho}p_\rho\),
+the phase-averaged second-order terms of \(\rho R[g_\rho]\) and
+\(\rho^2X\) are quadratic forms on the three-dimensional quotient by
+\(u\propto q\). Relative to the tree-level kernel
+\(M=q^2\eta-qq\) of Remark~\ref{rem:ch3-trace-quadratic}, with
+\(p_\eta^2=\eta^{\mu\nu}p_\mu p_\nu\) and
+\(\bar\rho=1/|\operatorname{Pf}\bar\Theta|\), their Euclidean
+eigenvalues are
+\(\bar\rho^{2}p_\eta^2\) (three modes) for \(\rho^2X\), and
+\(-\tfrac14\bar\rho^{2}p_\eta^2\) (two modes with \(\delta\rho=0\), for
+which the linearized Einstein--Hilbert form of \(\delta g_\rho\) equals
+that of its transverse-traceless part with respect to \(p\) and
+\(\bar g_\rho\)) and \(-\tfrac34\bar\rho^{2}p_\eta^2\) (one mode with
+\(\delta\rho\ne0\)) for \(\rho R[g_\rho]\). Let
+\(N_{\mathrm{tot}}=N_s+2\), where \(N_s\) counts, with statistical
+sign, the real components whose fluctuation operator is
+\(\mathcal O_s\) with the same cutoff; it is an input, not a derived
+count. In the Euclidean section the \(\LUV^2\) quadratic form is
+\(-\tfrac{\LUV^2}{32\pi^2}\bar\rho^{2}p_\eta^2\,
+(1-N_{\mathrm{tot}}/24)\,M\) on the two transverse-traceless-type
+modes and \((1-N_{\mathrm{tot}}/8)\,M\) on the third. The net
+coefficient on the two transverse-traceless-type modes has the sign of
+a positive induced Einstein--Hilbert term only if
+\(N_{\mathrm{tot}}>24\); the Einstein--Hilbert-type piece itself always
+has that sign. For the connection sector alone, \(\rho^2X\) has the
+opposite sign and dominates. This is a statement about the
+Maxwell-kernel coefficient on these modes. Both pieces are multiples of
+\(M\) by functions of \(p_\eta^2\), so they do not move the cone
+\(q^2=0\), and about a constant background they do not fix
+\(G_{\mathrm{eff}}\).
+
+\emph{Beyond quadratic order.} Nondegenerate Poisson bivectors near
+\(\bar\Theta\) are \(\Theta=(\psi^*\bar\omega)^{-1}\),
+\(\bar\omega=\bar\Theta^{-1}\), \(\psi=x+w(x)\). Modulo total
+derivatives, the scalar densities of weight \(\rho\) with two
+derivatives built covariantly from \(g_\rho\) and \(\rho\) are the
+combinations of \(\rho R[g_\rho]\) and
+\(\rho\,g_\rho^{\mu\nu}\partial_\mu\ln\rho\,\partial_\nu\ln\rho\). At
+quadratic order about constant \(\bar\Theta\), \(\rho^2X\) coincides
+with \(-4\rho R[g_\rho]-4\rho\,g_\rho^{\mu\nu}\partial_\mu\ln\rho\,
+\partial_\nu\ln\rho\) for the random backgrounds and both signatures
+sampled. In a numerical test (double precision, \(w\) a sum of three
+plane waves with \(\sum p_j=0\), forty random samples) the cubic
+coefficient of \(\rho^2X\) is not of the form
+\(c_1\rho R[g_\rho]+c_2\rho\,g_\rho^{\mu\nu}\partial_\mu\ln\rho\,
+\partial_\nu\ln\rho\) for any constants (relative residual about
+\(0.3\) for the best fit). So, on this sample, \(\rho^2X\) is not a
+combination of these two covariant densities modulo total derivatives,
+and the quadratic agreement does not extend. Rewritings that use
+further structure, such as the constant \(\eta\), are not tested.
+
+If \(\LUV^2\) is replaced by \(\LUV^2f(\rho)\) (a local proper-time
+cutoff on the diagonal heat kernel), the coefficient of
+\(R[g_\rho]\) becomes \(f(\rho)\rho\); with
+\(\hat g=f\rho\,g_\rho\),
+\(\int f\rho R[g_\rho]=\int\sqrt{\hat g}\,[\hat R
+-\tfrac32\hat g^{\mu\nu}\partial_\mu\ln(f\rho)\partial_\nu\ln(f\rho)]\).
+The factor on the two transverse-traceless-type modes is unchanged, and
+for \(f=\rho^s\) the third becomes \(1-N_{\mathrm{tot}}(2s+3)/24\).
+
+This is a computation for Poisson-limit operators of a bosonic
+four-dimensional matrix gauge sector in a stated gauge, off shell or
+about a constant background. It does not identify \(G\) with the
+emergent metric of Chapter~\ref{ch:vierbein-emergence}, does not
+treat Moyal corrections at the cutoff, fermionic or additional scalar
+fields, the mixing of \(\Phi\) with \(a^\mu\), the locked-block
+diffeomorphism and local-Lorentz ghosts, or the relation of the induced
+term to the tree-level term of~\eqref{eq:Smatrix}, and gives no value or
+sign of \(G_{\mathrm{eff}}\). The kinetic metric and regulator here
+are built from \(\Theta\), and the map \(\Theta\mapsto G\) is nonlinear,
+so the hypotheses of the scaffold-rotation statement above (a flat
+scaffold, a rotation-preserving regulator, an invariant vacuum, and a
+composite-metric fluctuation that is a fixed linear image of \(\Phi\))
+do not apply; no linearized-diffeomorphism invariance is claimed.
+Problems~B, C, D and~F remain open.
+
+\paragraph{Detailed derivation 29 (Problem ; conditional result).} \label{ref:detail-28} % [see appH-detailed.tex]
+
+\paragraph{More than four matrix coordinates in the Poisson limit: linear response (conditional; not closure).}
+Keep Definition~\ref{def:matrix-coords-ext}, the Poisson limit, a four-dimensional symplectic leaf, a real Lorentzian induced tensor \(g\), \(\omega=\theta^{-1}\), \(K=\theta^{T}g\,\theta\) and \(G=K^{-1}\).
+
+\emph{Operator metric versus induced metric.} The relation \(G=c\,g\) is excluded for every \(D\ge4\) by the argument of the preceding paragraph, because only the real four-dimensional leaf and the real Lorentzian \(g\) enter it; for a Euclidean induced \(g\) an orthogonal complex structure gives \(G\propto g\), but then \(G\) is Euclidean.
+
+\emph{Linear response.} In a chart with constant \(\theta\), let \(\delta x^{I}=A^{I}e^{ip\cdot y}\), \(A=\xi^{\mu}\partial_\mu x+\phi_i n^{i}\) with \(n^{i}\) a normal frame and \(\mathrm{II}^{i}_{\mu\nu}=n^{i}\cdot\partial_\mu\partial_\nu x\); a factor \(i\) is absorbed in \(\xi\). To first order \(\delta g=p\circ(g\xi)-2\phi_i\mathrm{II}^{i}\) with \(a\circ b=ab^{T}+ba^{T}\), and \(\delta G=-G\,\theta^{T}\delta g\,\theta\,G\); the Hamiltonian choice \(\xi\propto\theta^{T}p\) gives \(\delta G=p\circ(G\xi)\), a linearised diffeomorphism of \(G\). About a flat brane the transverse amplitudes do not enter at first order, so the rank of the linearised Einstein operator of \(G\) on the image is exactly three for every \(D\), against six conserved sources \(p^{\mu}T_{\mu\nu}=0\). About a background with generic \(\mathrm{II}^{i}\) the rank is at most \(\min(6,D-1)\), because the image contains a gauge direction and lies in the space of conserved tensors; one exact-rational draw for each \(4\le D\le11\) attains this bound, so it is the generic rank by lower semicontinuity, and the same holds when \(K^{\mu\nu}\mathrm{II}^{i}_{\mu\nu}=0\). All six sources are then reachable from \(D=7\). The analysis freezes \(g\), \(\theta\) and \(\mathrm{II}\) at a point and does not impose the Gauss--Codazzi relations. Counting the density scalar as well, the number \(D-1\) of gauge-invariant functions must be at least \(7\), that is \(D\ge8\); this is a necessary count. No field equation of Einstein type for \(G\) is derived.
+
+\emph{Content.} The \(D-4\) transverse coordinates are not covered by Assumption~\ref{ass:locked-block}; they are additional infrared fields unless they are gapped, and if they are gapped and decouple the flat-brane statement above applies. One-loop IKKT calculations on a brane with compact fuzzy extra dimensions report an induced Einstein--Hilbert term with the Newton constant set by the Kaluza--Klein scale~\cite{Steinacker2023}, and modified Einstein equations with extra tensors are reported in~\cite{KumarSteinacker2023,Steinacker2026}. A leaf of dimension greater than four is the hypothesis of the first statement above that such a construction would relax. These results have not been checked against the present operators.
+
+This is a statement for \(D\) matrix coordinates, the Poisson limit, a four-dimensional symplectic leaf, a constant \(\eta_{IJ}\), locally frozen background data and generic \(p\). It does not identify \(G\) or \(g\) with the emergent metric of Chapter~\ref{ch:vierbein-emergence}, does not identify \(\Phi^{I}{}_{A}\) with a tangent-plane frame, does not derive a local Lorentz symmetry, a signature or an extra conserved stress, and gives no value or sign of \(G_{\mathrm{eff}}\) in Equation~\eqref{eq:Geff-structure}. This changes no ledger label; Problem~F remains open.
+
+\paragraph{Detailed derivation 30 (Problem ; conditional result).} \label{ref:detail-29} % [see appH-detailed.tex]
+
+\paragraph{Connection-sector term \(X\) as a torsion invariant (conditional; not closure).}
+Take the setting of the Poisson-limit paragraph on Presentation~A above: four matrix coordinates, a real nondegenerate \(\Theta\) with Jacobi identity, \(\eta=\mathrm{diag}(-1,1,1,1)\) or \(\mathrm{diag}(1,1,1,1)\), \(K^{\mu\nu}=\eta_{\alpha\beta}\Theta^{\alpha\mu}\Theta^{\beta\nu}\), \(G=K^{-1}\), \(\rho=1/|\operatorname{Pf}\Theta|\), \(g_\rho^{\mu\nu}=\rho K^{\mu\nu}\). Let \(\omega=\Theta^{-1}\) (closed), \(e^A{}_\mu=\eta^{AB}\omega_{\mu B}\) so that \(G_{\mu\nu}=\eta_{AB}e^Ae^B\), \(T^{A}{}_{\mu\nu}=\partial_\mu e^A{}_\nu-\partial_\nu e^A{}_\mu\), \(T_{\lambda\mu\nu}=\eta_{AB}e^A{}_\lambda T^B{}_{\mu\nu}\) and \(S_{\lambda\mu\nu}=T_{[\lambda\mu\nu]}\). The matrix indices \(\alpha,\beta,A,B\) are lowered and raised with \(\eta\); coordinate indices, and \(S_{\lambda\mu\nu}S^{\lambda\mu\nu}\), with \(G\). The term \(X\) of the connection sector is \(X=\eta^{\rho\lambda}\eta_{\mu\alpha}\eta_{\nu\beta}\partial_\rho\Theta^{\mu\nu}\partial_\lambda\Theta^{\alpha\beta}\). Since \(\Theta^{T}\eta\,\Theta=G^{-1}\) and \(\partial\Theta=-\Theta(\partial\omega)\Theta\), \(X=G_{\mu\nu}T^{\alpha\beta\mu}T_{\alpha\beta}{}^{\nu}\) with \(T^{\alpha\beta\mu}=\Theta^{\mu\rho}\partial_\rho\Theta^{\alpha\beta}\), and \(X=T_{\lambda\mu\nu}T^{\lambda\mu\nu}\) because \(d\omega=0\) gives \(T^A{}_{\mu\nu}=-\eta^{AB}\partial_B\omega_{\mu\nu}\). Moreover \(\partial_\mu\ln\rho=G^{\lambda\nu}T_{\lambda\mu\nu}\), which follows from \(d\omega=0\) through \(\partial_\sigma\ln\operatorname{Pf}\omega=-\Theta^{\nu\mu}\partial_\mu\omega_{\nu\sigma}\). With the identity for the Weitzenb\"ock connection of the coframe \(e\) (in the present index convention, checked by direct computation) \(R[G]=-\bigl(\tfrac14T_{\lambda\mu\nu}T^{\lambda\mu\nu}+\tfrac12T_{\lambda\mu\nu}T^{\mu\lambda\nu}-V_\mu V^\mu\bigr)-2\nabla_\mu V^\mu\), \(V_\mu=G^{\lambda\nu}T_{\lambda\mu\nu}\), the relation \(S_{\lambda\mu\nu}S^{\lambda\mu\nu}=\tfrac13\bigl(T_{\lambda\mu\nu}T^{\lambda\mu\nu}-2T_{\lambda\mu\nu}T^{\mu\lambda\nu}\bigr)\), and the conformal transformation \(G=\rho\,g_\rho\) with \(\det g_\rho=1\), one finds the exact pointwise identity
+\[
+  \rho^2X=-2\rho R[g_\rho]-\rho\,g_\rho^{\mu\nu}\partial_\mu\ln\rho\,\partial_\nu\ln\rho+\tfrac32\rho^2S_{\lambda\mu\nu}S^{\lambda\mu\nu}+2\partial_\mu\bigl(g_\rho^{\mu\nu}\partial_\nu\rho\bigr).
+\]
+A rewriting using the coframe \(e=\eta^{-1}\omega\) is therefore the squared axial torsion. The identity was also verified in exact rational arithmetic on finite-amplitude generic two-jets of a closed \(\omega\) for both signatures. At quadratic order about constant \(\bar\Theta\), for the perturbations of the Poisson class, the invariants \(\rho R[g_\rho]\), \(\rho\,g_\rho^{\mu\nu}\partial_\mu\ln\rho\,\partial_\nu\ln\rho\) and \(\rho^2S_{\lambda\mu\nu}S^{\lambda\mu\nu}\) are linearly dependent modulo total derivatives, so this decomposition does not alter the net coefficient \(1-N_{\mathrm{tot}}/24\) stated above.
+
+This is a statement for the Poisson-limit operators of the preceding paragraphs. It does not identify \(G\) with the emergent metric of Chapter~\ref{ch:vierbein-emergence}, does not treat Moyal corrections, fermions or other fields, and gives no value or sign of \(G_{\mathrm{eff}}\). This changes no ledger label; Problem~F remains open.
+
+\paragraph{Detailed derivation 31 (Problem ; conditional result).} \label{ref:detail-30} % [see appH-detailed.tex]
+
+\paragraph{Why \(y^\mu=M^{\mu5}/R\) in this class (partial; conditional; not closure).}
+The only \(\mathrm{SO}(3,1)\) vector generators of \(\mathfrak{so}(4,2)\) are \(T^\mu=M^{\mu4}/R\) and \(y^\mu=M^{\mu5}/R\), so take \(u^\mu=\alpha T^\mu+\beta y^\mu\). Let \(\Box=\eta_{ab}\{T^a,\{T^b,\cdot\}\}\) be the Poisson-limit scalar operator. A reduction to an operator on functions of four variables without a fibre average requires that \(\Box\) maps functions of \(u\) to functions of \(u\), that is, that \(K_u^{\mu\nu}=\eta_{ab}\{T^a,u^\mu\}\{T^b,u^\nu\}\) and \(\Box u^\mu\) are functions of \(u\). The Lie--Poisson relations give \(\Box y^\mu=-y^\mu/R^2\), \(\Box T^\mu=-3T^\mu/R^2\) and \(K_u^{\mu\nu}=\alpha^2\eta_{ab}M^{a\mu}M^{b\nu}/R^4+\beta^2m^2\eta^{\mu\nu}\), the cross term cancelling by antisymmetry of \(M^{\mu\nu}\). For \(\alpha=0\) both conditions hold. For \(\alpha\neq0\) the term \(M^{a\mu}M_a{}^{\nu}\) depends on the position on the fibre, and for \(\beta\neq0\) also \(\Box u^\mu=-(3\alpha T^\mu+\beta y^\mu)/R^2\) is not a function of \(u\) (a gradient-rank test at random points of the leaf, using these expressions, confirms both failures; for \(\alpha=\beta\) the \(u^\mu\) are not independent and the test does not apply). Within this family the base functions are therefore \(y^\mu\) up to normalisation. This presupposes the orbit \(\mathbb{CP}^{1,2}\), the matrices \(T^a=M^{a4}/R\) and the Lorentz-vector family; it is a property of the operator \(\Box\), not a consequence of the matrix equations of motion, and it does not show that the physical reduction is the one by \(y^\mu\).
+
+This is a statement for the Poisson limit, the class above, the Lorentz-vector family and generators only; it gives no field equation, no value or sign of \(G_{\mathrm{eff}}\), and does not derive the background, the signature or a coframe from \(\Phi\); in particular it does not bear on Assumption~\ref{ass:EE}. This changes no ledger label; Problem~F remains open.
+
+\paragraph{Detailed derivation 32 (Problem ; conditional result).} \label{ref:detail-31} % [see appH-detailed.tex]
+
+\paragraph{Conjugate-coordinate class: what the tree-level equations of the level-one amplitudes imply for \(\mathcal E[h]\) (conditional; bounded no-go).}
+Keep the setting of the preceding paragraph. Let \(\mathcal E\) be the linearised Einstein operator of \(\eta\), \(h^{\mu\nu}=q_\rho(b^{\nu;\mu\rho}+b^{\mu;\nu\rho})\) and \(s_i^\mu=S_i^{\mu\rho}q_\rho\), so that \(h^{\mu\nu}=\varkappa\sum_i(s_i^\mu c_i^\nu+s_i^\nu c_i^\mu)\). The order count of the preceding paragraphs becomes precise at the leading symbol. In exact rational arithmetic at the base points \((y^0,y^4)=(5,3),(13,5),(5,4)\) in units \(R=1\) the following hold.
+
+\emph{Free equations.} The equations \(q_a\mathcal F_i^{ab}=0\) make \(c_i\) pure gauge for \(q^2\neq0\), so \(h\) is then a divergence-free linearised diffeomorphism and \(\mathcal E[h]=0\). For null \(q\) in Lorenz gauge there are six physical polarisations (three Maxwell fields): three give \(h=0\), and the other three give \(h\) modulo diffeomorphisms spanned by the two transverse-traceless polarisations and one further polarisation with nonzero trace (base points \((5,3)\) and \((13,5)\)). For these solutions \(\mathcal E[h]_{\mu\nu}=\tfrac12q_\mu q_\nu h^\alpha{}_\alpha\), which vanishes on the transverse-traceless polarisations and not on the polarisation with nonzero trace; the longitudinal diffeomorphism is not a symmetry of the class, so this trace is not removed by gauge.
+
+\emph{No local relation.} The map \(c\mapsto\mathcal E[h(c)]\) is cubic in \(q\), and the Maxwell operator \(c\mapsto q^2c^b-q^b\,q\cdot c\) is quadratic. No matrix \(P(q)\) linear in \(q\) satisfies \(\mathcal E[h(c)]=P(q)\cdot(\text{Maxwell operator on }c)\), and none of the ten components of \(\mathcal E[h(c)]\) is divisible by \(q^2\). Hence no local equation \(\mathcal E[h]=P(\partial)J\) follows from the second-order equations \(\partial_a\mathcal F_i^{ab}=J_i^b\) for a source \(J_i\).
+
+\emph{Response to a source.} Take as input a conserved source, \(q_\mu T^{\mu\nu}=0\), coupled to the amplitudes through \(h\), that is \(J_{i\nu}\propto s_i^\mu T_{\mu\nu}\) (gauge invariance of the coupling requires the conservation). Then \(c_i\) is determined up to gauge, \(c_i^\nu\propto J_i^\nu/q^2\), and
+\[
+h^{\mu\nu}=\frac{N}{q^2}\bigl(Q^{\mu\alpha}T_\alpha{}^\nu+Q^{\nu\alpha}T_\alpha{}^\mu\bigr),\qquad
+Q^{\mu\alpha}=\sum_is_i^\mu s_i^\alpha=q_\perp^2P_\perp^{\mu\alpha}-q_\perp^\mu q_\perp^\alpha ,
+\]
+with \(N\) a nonzero constant fixed by the couplings, \(P_\perp\) the projector on \(y^\perp\) and \(q_\perp=P_\perp q\), both restricted to the indices \(0,\dots,3\). Modulo \(q\circ\xi\) this is \(h^{\mu\nu}\simeq N\bigl[2(1+q_\parallel^2/q^2)T^{\mu\nu}+\hat y^\mu\tau^\nu+\tau^\mu\hat y^\nu\bigr]\) with \(\hat y=y/\ell\), \(q_\parallel=q_\mu\hat y^\mu\) and \(\tau^\nu=\hat y_\alpha T^{\alpha\nu}\). The response is homogeneous of degree zero in \(q\): \(h\) is algebraic in \(T\), local for \(q_\parallel=0\), in particular for a static source at a base point with \(y^i=0\), and otherwise carries the factor \(q_\parallel^2/q^2\). Since \(\mathcal E\) is of degree two, \(\mathcal E[h]\) is homogeneous of degree two in \(q\) and is nonzero whenever \(h\) is not a linearised diffeomorphism; it therefore cannot equal a constant multiple of \(T\) (the sampled cases also exclude \(q^2T\)). A relation of second order in \(c\) is zeroth order in \(h\) once the common derivative is removed, whereas \(\mathcal E[h]=T\) is second order in \(h\).
+
+\emph{Induced term.} Suppose a term \((16\pi G_{\mathrm{eff}})^{-1}\int\sqrt{-G}\,R\), reported to arise at one loop in~\cite{Steinacker2023} and not computed here, is added as an input. Its quadratic form in \(h\) has degree two in \(q\) and the tree-level form has degree zero, so the tree-level form dominates at small \(q\), and an Einstein-type response \(h\sim G_{\mathrm{eff}}T/q^2\) can appear only above the scale set by the ratio of the two coefficients, provided that scale lies within \(|q|\ell\gg1\); otherwise the induced form is subdominant throughout the regime of the class. Removing the tree-level term would require a loop contribution to the coefficient of \(\sum_i\mathcal F_i^2\) that cancels it; this is not examined.
+
+This is a statement for the Poisson limit, the stated class, the leading symbol, tree level, the level-one sector coupled to a conserved source through \(h\), and the sheet \(y^4>0\). It does not exclude an Einstein-type equation from the induced term, from subleading orders in \(1/(|q|\ell)\), from other sectors or from the entanglement route of Assumption~\ref{ass:EE}, and it derives no value or sign of \(G_{\mathrm{eff}}\). This changes no ledger label; Problem~F remains open.
+
+\paragraph{Detailed derivation 33 (Problem ; conditional result).} \label{ref:detail-32} % [see appH-detailed.tex]
+
+\paragraph{Conjugate-coordinate class: extra stress and crossover response at the leading symbol (conditional; not closure).}
+Keep the setting and notation of the preceding paragraphs at the base points \(y^i=0\), with \(s_i^\mu=S_i^{\mu\rho}q_\rho\), \(Q^{\mu\nu}=\sum_is_i^\mu s_i^\nu\) and \(G_{ij}=s_i\!\cdot\! s_j\) (four-dimensional contraction). Add as inputs a term \(\tfrac12w\int h^{\mu\nu}\mathcal E_{\mu\nu}[h]\), the quadratic form of an induced Einstein--Hilbert term with \(w=-\zeta^2/(16\pi G_{\mathrm{eff}})\) when \(\delta g=\zeta h\), and a conserved source \(T_{\mu\nu}\) coupled as \(\int h^{\mu\nu}T_{\mu\nu}\); the normalisation of the tree-level term and of the coupling is absorbed in \(w\) and in \(\Lambda\), the coefficient of \(\tfrac12c_i\cdot Mc_i\), \(Mc^\nu=q^2c^\nu-q^\nu q\!\cdot\! c\). Since \(s_i\!\cdot\! q=0\), \(\{s_1,s_2,s_3,q\}\) is a basis for \(q^2\neq0\); \(c_i=D_{ij}s_j+\gamma_iq\) with \(\gamma_i\) the gauge part, \(h=H(c)\) with \(H\) the linear map \(c\mapsto h\), which depends only on the symmetric part \(D^{S}\) of \(D\), the three antisymmetric components of \(D\) are the inert amplitudes, \(c^TMc=q^2\mathrm{tr}(DGD^T)\), and \(G=q_\perp^2\mathbf 1-(y^0/\ell)^2\mathbf k\mathbf k^T\) with \(q_\perp^2=q^2+(q_\mu y^\mu)^2/\ell^2\) and \(\mathbf k=\mathbf q/|\mathbf q|\); its eigenvalues are \(g=q_\perp^2\) (twice) and \(\xi=-\sigma q^2\), \(\sigma=(y^4)^2/\ell^2\), along the spatial \(\mathbf q\). The restriction to \(y^i=0\) only provides these closed forms.
+
+\emph{Extra stress.} The amplitude equations are equivalent to \(H^{T}X=-\Lambda Mc\) with \(X=w\mathcal E[h]-T\). In exact rational arithmetic at \((y^0,y^4)=(5,3),(13,5)\) and several rational \(q\) one finds that \(X\) is symmetric (equivalent to the three inert-amplitude equations), that \(q^\mu X_{\mu\nu}=0\), and that \(X_{\mu\nu}=-\tfrac12\Lambda\sum_i\tilde s^i_\mu(Mc_i)_\nu\) with \(\tilde s^i=\sum_kG^{-1}_{ik}s_k\). The amplitude equations determine \(X\) up to \(q_\mu q_\nu\), which \(H^T\) annihilates; \(q^\mu X_{\mu\nu}=0\) follows from the Bianchi identity of \(\mathcal E\) and the conservation of \(T\), which fixes that term, as the ambiguity of the anharmonicity tensor is fixed in~\cite{KumarSteinacker2023,Steinacker2026}. The closed form \(X=-\tfrac12\Lambda\sum_i\tilde s^i\otimes Mc_i=-\Lambda\mathcal L\mathcal E\) expresses the extra stress through the tree-level equations; it is not an independent derivation of its conservation, and the Einstein part \(w\mathcal E\) is the supplied input.
+
+\emph{Crossover.} The operator \(\mathcal L\) is defined on the six-dimensional span of the symmetrised products \(s_is_j\) and is invertible for \(q^2\neq0\) and \(\xi\neq0\). With \(\mathbb L[Z]=(\eta Q)Z+Z(Q\eta)\) one has \(h_T=\mathbb L[Y]\), \(Y=-2X/(\Lambda q^2)\), and eliminating the amplitudes gives exactly \((w+\Lambda\,\mathcal L)\mathcal E=T\), \(\mathcal L=\tfrac12\mathbb L^{-1}\circ(2-P\,\mathrm{tr})\), where \(P\) projects on \(q^\perp\). The operator \(\mathcal L\) has eigenvalues \(1/(2g)\) (two modes), \(1/(g+\xi)\) (two), \((g\pm\sqrt{g(g+8\xi)})/(8g\xi)\) (one each) and zero on the three inert modes. In the first channel \((1+\varrho/(2q_\perp^2))\mathcal E=T/w\) with \(\varrho=\Lambda/w\) the ratio of the tree-level to the induced coefficient, the form \((1-m^2\Box^{-1})\) with \(\Box\to-q_\perp^2\) and \(m^2=\varrho/2\); \(q_\perp^2=k^2+\sigma\omega^2\) is positive definite in \((\omega,\mathbf k)\), not the form \(q^2\). The result is the supplied Einstein part \(w\mathcal E\) plus a non-local, frame-dependent tree-level correction.
+
+\emph{Roots.} \(\det(\Lambda A+wB)\propto\Lambda^3(q^2)^9(\Lambda+2gw)^2(\Lambda+(g+\xi)w)^2(-\Lambda^2+2\Lambda gw+8gw^2\xi)\), which reproduces the generalised eigenvalues of the tree-plus-induced form at the sampled points. Besides \(q^2=0\) there are roots that depend on the direction of \(q\) through the frame: in the first channel \(\omega^2=-(k^2+\varrho/2)/\sigma\), complex for every \(k\) if \(\varrho>0\) and for \(k^2>-\varrho/2\) if \(\varrho<0\); the helicity-zero roots are complex when \(g+8\xi<0\). The relation is elliptic in \(\omega\) rather than wave-like: for \(\varrho>0\) the first channel has no real-frequency root, and for \(\varrho<0\) real roots exist only for \(k^2<|\varrho|/2\), with \(\omega^2<0\) and growth rate proportional to \(k\) above that. The anisotropy is that of the background direction \(\hat y=y/\ell\), through \(q_\perp^2=q^2+(q\!\cdot\!\hat y)^2\), and \(G\) is indefinite for spacelike \(q\); the anisotropy is \(SO(3,1)\)-covariant if \(y^\mu\) is treated as a vector, and is not an explicit breaking of covariance. The sign of \(\varrho\) is that of \(\Lambda/w\); the sign of the induced coefficient is not determined here. These are roots of the leading-symbol dispersion relation, not shown to be poles of a retarded response (constraints and gauge fixing are not treated). The extra modes reported in~\cite{Steinacker2026} are, as extracted, rotation-isotropic with a reduced velocity from the cosmic frame; they belong to the same family of non-boost-invariant effects, and no match is claimed, since the map between the present \(q_\perp,\xi,\sigma\) and the notation there is not established.
+
+This is a statement for the Poisson limit, the stated class with the bilinear term, the leading symbol, tree level plus the supplied induced form and conserved source, and the base points with \(y^i=0\). It derives no value or sign of \(G_{\mathrm{eff}}\) or of \(\varrho\), no masses or subleading terms, no matrix-derived matter coupling, no new derivation of the conservation of the extra stress, and no identification of \(G\) with the emergent metric of Chapter~\ref{ch:vierbein-emergence}; the comparison with the modified Einstein equation of~\cite{KumarSteinacker2023,Steinacker2026} is structural. This changes no ledger label; Problem~F remains open.
+
+\paragraph{Detailed derivation 34 (Problem ; conditional result).} \label{ref:detail-33} % [see appH-detailed.tex]
+
+\paragraph{Conjugate-coordinate class: where the flux eigenvalues of the Euclidean symbol coincide (conditional; bounded no-go).}
+Keep the setting of the preceding paragraph: Poisson limit, leaf \(\mathbb{CP}^{1,2}\), \(D^a=\{T^a,\cdot\}\), the nilpotent (Landau) leading symbol with centre variable \(\zeta\in\mathbb R^2\), the contraction \(\eta\to\delta\) of the four matrix indices with the Lie--Poisson algebra \(\mathfrak{so}(4,2)\) kept, and the sheet realised by the orbit. Write \(y^a=M^{a5}\), \(y^4=M^{45}\), \(y\cdot y=-\ell^2\), and \(Q^{ab}=(y^4)^2\eta^{ab}+y^ay^b\), the Gram matrix of the fields \(D^a\) in the ambient metric of the hyperboloid; \(Q\) is positive definite with \(\det Q=\ell^2|y^4|^6\). At \(300\) random orbit points, with both centre directions, the matrix \(Q^{-1/2}F_{ab}Q^{-1/2}\), \(F_{ab}=\zeta_kS^{ab}{}_k\), is self-dual or anti-self-dual with respect to \(\delta\) to a relative accuracy of \(10^{-9}\), with the sign equal to \(\operatorname{sign}y^4\); this is the expected statement that the vertical curvature of the horizontal distribution over the constant-curvature base is self-dual for the ambient metric. Hence \(F=Q^{1/2}\omega Q^{1/2}\) with \(\omega\) self-dual, and the plane strengths of \(F\) are \(f_{1,2}=|p|\pm|r|\), with \(p\) and \(r\) the \(\delta\)-self-dual and anti-self-dual parts of \(F\). Let \(a\ge b\) be the eigenvalues of \(Q\) on the plane spanned by the time axis and \(\vec y\), so that \(ab=\ell^2(y^4)^2\) and the remaining eigenvalue is \((y^4)^2\) twice. For \(\zeta\) such that \(\omega\) points along the axis of that plane one finds \(f_2/f_1=\min(\ell,|y^4|)/\max(\ell,|y^4|)\); for \(\omega\) orthogonal to it, \(f_2/f_1=\sqrt{b/a}\); for other directions the ratio lies between these values. The numerical range of \(f_2/f_1\) at the sampled points lies inside this bracket to \(10^{-13}\).
+
+\emph{Consequences.} (i) The vector sector has no negative mode at fixed \(\zeta\) only if \(f_1=f_2\), and a stable point must have this for every \(\zeta\), because the set of \(\zeta\) with \(f_1=f_2\) is a linear subspace of the \(\zeta\)-plane (a line, or the whole plane only if \(F\) is (anti-)self-dual). Conditional on the self-duality statement above, the closed forms give \(f_1=f_2\) for all \(\zeta\) exactly on \(\vec y=0\), \(|y^4|=\ell\), that is on the two-sphere fibres over the points \(y^0=-\sqrt2\,\ell\), \(y^4=\pm\ell\): codimension \(4\) in the six-dimensional leaf (the minimisation of the distance to this set found it, with \(f_2/f_1=1\) to six digits at six points). On the rest of the leaf the lowest vector eigenvalue is \(-|f_1-f_2|<0\) for generic \(\zeta\), and \(|f_1-f_2|/(f_1+f_2)=(\ell-|y^4|)/(\ell+|y^4|)\) on the time axis grows linearly with the distance from the set. (ii) The same holds for the compact real form \(\mathfrak{so}(6)\) with \(\delta\) throughout: there \(f_2/f_1=|y^4|/\ell\) for every \(\zeta\) and every fibre point (checked at \(200\) points, error \(4\cdot10^{-16}\)), equal to \(1\) only over the poles \(\vec y=0\). A compact Euclidean section with the contraction \(\delta_{ab}\) therefore does not replace the instability by zero modes; self-duality holds identically only for the contraction by the position-dependent ambient metric \(Q^{-1}\), which is not a constant contraction of the matrix indices. (iii) Constant additional fluxes \(f_3,\dots\) from transverse matrices change the lowest level to \(\sum_kf_k-2\max_kf_k\) (the Landau levels of the same form, \(2\pi(\sum_i(2m_i+1)f_i\pm2f_k)\), of \cite{Troost2000}, eq.~(35), and the no-tachyon condition of its Section~9, \(f_1\le f_2+\dots+f_n\)); because \(f_1-f_2\) grows linearly in \(|\zeta|\), a \(\zeta\)-independent transverse flux restores stability only for \(|\zeta|\) below a bound set by that flux, that is on a finite fuzzy fibre, not in the Poisson limit. (iv) At the self-dual points the vector density \(\prod_j f_j/(4\pi\sinh sf_j)\) times the Zeeman trace tends to \(f^2/(2\pi^2)\) for \(sf\gg1\), independent of \(s\), so the integral over \(\zeta\) diverges there as well; the proper-time cutoff does not regulate it.
+
+This is a statement for the Poisson limit, the leading symbol, equiregular points, the contraction \(\eta\to\delta\) (or \(\delta\) with \(\mathfrak{so}(6)\)), constant additional fluxes and bosonic content. The self-duality of \(Q^{-1/2}FQ^{-1/2}\) is verified numerically at sampled points and is not proved, so the classification of the set \(f_1=f_2\) is conditional on it. It does not treat a contraction by a position-dependent metric, Moyal terms, fermions, a finite fibre, or other backgrounds for the transverse matrices, and it determines neither the sign nor the size of \(w\). This changes no ledger label; Problem~F remains open.
+
+\paragraph{Detailed derivation 35 (Problem ; conditional result).} \label{ref:detail-34} % [see appH-detailed.tex]
+
+\paragraph{Conjugate-coordinate class: the Casimir of \(\mathfrak{so}(4,2)\) and its combinations as proper-time regulators in the four-matrix class (conditional; bounded no-go and conditional route).}
+Keep the Poisson limit, the leaf \(\mathbb{CP}^{1,2}\) of \(\mathfrak{so}(4,2)\), \(T^a=M^{a4}\), \(D^a=\{T^a,\cdot\}\), \(J^{AB}=\{M^{AB},\cdot\}\), \(\Box=\eta_{ab}D^aD^b\), the vector operator \(H_V\) with \(\mu^2=-3\) and the notation of the preceding paragraphs. Write \(C_{42}\), \(C_{41}\), \(C_{31}\) for \(\tfrac12\eta_{AC}\eta_{BD}J^{AB}J^{CD}\) summed over the indices \(0,\dots,5\), \(0,\dots,4\), \(0,\dots,3\), and \(\sigma(\cdot)\) for the quadratic form \(\sum w\,(\xi\!\cdot\!v)^2\) of the cotangent vector \(\xi\) of an operator \(\sum w\,v^2\) of vector fields \(v\) (the principal symbol is its negative, so that the principal symbol of \(H_V\) is \(\sigma(\Box)\) and that of \(\Delta_\kappa\) below is \(-\sigma(\Delta_\kappa)\)).
+
+\emph{Exact relations.} In the polynomial Poisson algebra, for both signs of the bracket, \(\Box=C_{41}-C_{31}\), \(\mu^2=-3\) and, with \(C_G\) the Casimir of the total \(\mathfrak{so}(3,1)\) action on vector-valued functions (orbital part plus the vector index, the sign of the index action correlated with the sign of the bracket) and \(C_\Sigma\) that of the vector index,
+\[
+H_V=C_G-C_{41}-C_\Sigma+\mu^2 ,
+\]
+the unique solution of the linear fit \(H_V=xC_G+yC_{31}+zC_{41}+wC_{42}+uC_\Sigma+\mu^2\) with \(w=0\). Hence \(C_{42}\) does not occur in \(H_V\), and \(C_{42}-C_{41}=-\sum_{A\le4}\eta_{AA}(J^{A5})^2\). Since \(C_{42}\) is central in \(U(\mathfrak{so}(4,2))\) and \(C_{41}\) commutes with \(\mathfrak{so}(4,1)\), both commute with \(H_V\), with \(\Box\) and with the ghost operator \(-\Box\); a function of \(C_{42}\) and \(C_{41}\) therefore commutes with every operator of the class and no ordering ambiguity arises.
+
+\emph{Symbols.} At \(40\) random orbit points the form \(\sigma(C_{42})\) on the six-dimensional cotangent space has signature \((2,4)\), and so has \(\sigma(C_{41})\). The pencil \(\sigma(C_{41})v=\lambda\,\sigma(C_{42})v\) has the eigenvalues \(\tfrac12\) (four times) and \(1\) (twice) at \(30\) points (deviation \(3\cdot10^{-13}\)); on the four-dimensional eigenspace (the span of the \(dy^C\), \(y^C=M^{C5}\)) \(\sigma(C_{42})\) is negative definite and on the two-dimensional (vertical) eigenspace positive definite. The base symbol \(-2\ell^2g^{-1}\) of the preceding paragraph is the first of these; the fibre carries the opposite sign. Write \(\sigma(C_{42})=-\alpha q_b+\beta q_f\) in this splitting, so that \(\sigma(C_{41})=-\tfrac12\alpha q_b+\beta q_f\). The operators \(C_{41}-C_{42}\) (the five-matrix \(\Box\), purely horizontal) and \(2C_{41}-C_{42}\) (purely vertical) are the two degenerate members of the family
+\[
+\Delta_\kappa=\kappa\,C_{42}-C_{41},\qquad -\sigma(\Delta_\kappa)=\alpha(\kappa-\tfrac12)q_b+\beta(1-\kappa)q_f ,
+\]
+which, as the principal symbol of \(\Delta_\kappa\), is positive definite exactly for \(\tfrac12<\kappa<1\) (checked at \(15\) points for nine values of \(\kappa\)); the value \(\kappa=\tfrac34\) gives \(-\sigma(\Delta_{3/4})=\tfrac14(\alpha q_b+\beta q_f)\), the absolute value of \(\sigma(C_{42})\) in the splitting. The horizontal planes \(\operatorname{span}\{D^a\}\) of the four-matrix class and \(\operatorname{span}\{J^{A5}\}\) of the five-matrix class are different four-planes (their sum has dimension \(6\) at six points).
+
+\emph{Consequences.} (i) No function of \(C_{42}\) alone is an elliptic regulator: the level sets of an indefinite form in the cotangent fibre are non-compact, so \(\int\mathrm d^6\xi\,\chi(\sigma(C_{42})/\LUV^2)\) diverges for every \(\chi\) of compact support, and a cutoff of \(C_{42}\) leaves the null cone \(q_b=\beta q_f/\alpha\) unregulated; this is a statement about the leading symbol. (ii) \(\Delta_\kappa\), \(\tfrac12<\kappa<1\), is built from the matrix data \(M^{AB}\) and the contraction \(\eta_{AB}\) only, commutes with \(H_V\), \(\Box\) and the ghost operator, and has a definite symbol on the whole leaf. For a cutoff function \(\chi\) of compact support, the density \((2\pi)^{-6}\!\int\mathrm d^6\xi\,\chi(-\sigma(\Delta_\kappa)/\LUV^2)\,F(\sigma(\Box))\) is finite at every point for every continuous \(F\) (at the level of the leading symbol); in particular the central variable \(\zeta\) of the preceding paragraphs is confined to a ball \(|\zeta|\lesssim\LUV\), which regulates the \(\zeta\)-integral left divergent there. It is a different regulator from a function of \(\Box_X\), and it uses the generators \(J^{A5}\), which are not in \(U(\mathfrak{so}(4,1)')\); it is an additional element of the regularisation and not derived from the action. (iii) The volume of the window \(\{-\sigma(\Delta_\kappa)\le\LUV^2\}\) is proportional to \(\LUV^6[(\kappa-\tfrac12)^2(1-\kappa)]^{-1}\) (checked against \(\det^{-1/2}\) at five values of \(\kappa\)), so the leading coefficient depends on \(\kappa\) and diverges at both ends of the interval, where the horizontal and the vertical directions respectively are unregulated; no value of \(\kappa\) is singled out by the algebra, and the quadratic coefficient, which is the one an Einstein--Hilbert term needs, is not independent of the choice of \(\kappa\) and \(\chi\) without a further argument. (iv) For the Lorentzian \(\eta\) the form \(\sigma(\Box)\) has signature \((3,1)\) with two null directions, and in the window of \(\Delta_{3/4}\) the generalised eigenvalues of \((\sigma(\Box),-\sigma(\Delta_{3/4}))\) are \(-2\) (at eight points, the same value at each) and three positive values that grow with \((y^4)^2\) (so the negative bound is uniform in position and the positive range is not); the principal symbol \(\sigma(\Box)\) of \(H_V\) is therefore bounded by \(\mp\) a multiple of \(\LUV^2\) on the window but is negative on part of it, so the symbol of \(e^{-sH_V}\) is bounded by \(e^{2s\LUV^2}\) there and the Euclidean proper-time integral at large \(s\) still diverges. The window removes the divergence at large \(\zeta\), not the negative direction: for the Euclidean contraction \(\eta\to\delta\) of the preceding paragraphs the lowest Zeeman level \(-|f_1-f_2|\) is bounded in the window of \(\Delta_{3/4}\) by \(d_*\LUV\) (in the normalisation of the forms above) with \(1.7\le d_*\le5.6\) at six points, linear in the cutoff.
+
+\emph{Compact check.} For the compact form \(\mathfrak{so}(6)\) with \(\delta\), \(X^a=M^{a5}\), \(a=1,\dots,4\), \(m^2=-3\), on the \(N\)-th symmetric power (the matrices \(\operatorname{End}(\mathrm{Sym}^N\mathbb C^4)=\bigoplus_{k\le N}(k,k,0)\) of \(\mathfrak{so}(6)\), so that a cutoff on \(C_{\mathfrak{so}(6)}=2k^2+6k\) is the truncation of the matrix algebra), the gauge-fixed Hessian \(H+G^\dagger G\), \(Ga=\sum_a[X^a,a^a]\), has the spectrum
+\[
+\lambda=c_5(a,b)-c_4(c',d')+3+m^2,
+\]
+with \(c_5(a,b)=a(a+3)+b(b+1)\), \(c_4(c,d)=c(c+2)+d^2\), \(a=k\) the label of \(\mathfrak{so}(6)\), \(0\le b\le a\), \((c,d)\) the \(\mathfrak{so}(4)\) content of \((a,b)\) and \((c',d')\) that of \((c,d)\otimes(1,0)\); this was checked against the numerical spectrum for \(N=1,2,3\) (differences below \(10^{-12}\)). The lowest eigenvalue in the window \(k\le A\) is \(-(A+3)\), the number of negative modes is \(38,124,344,750\) for \(A=1,\dots,4\), and their fraction of the \(4\binom{A+3}{3}^2\) modes falls numerically to \(2.5\cdot10^{-3}\) at \(A=48\) (local exponents \(3.9\) and \(5.7\), approaching \(4\) and \(6\); not proved). The cutoff by the Casimir therefore bounds the negative direction by a quantity growing linearly in the cutoff and removes none of it.
+
+\emph{Eight matrices.} For \(T^a\) and \(y^a=M^{a5}\), \(a=0,\dots,3\), with the contraction \(\eta\) on \(T\) and \(\lambda\eta\) on \(y\), exact stationarity requires the bilinear coefficients \(\lambda-3\) for \(T\) and \(3\lambda-1\) for \(y\), equal only at \(\lambda=-1\) (common value \(-4\)). The contraction form on the tangent space has signature \((3,3)\) at \(\lambda=-1\) and \(-100\le\lambda\le-0.01\) (thirty points each), \((5,1)\) at \(\lambda=0.01,0.1,10\) and is degenerate of rank \(4\) at \(\lambda=1\); the horizontal span has rank \(6\) throughout, so there is no centre variable. A \((5,1)\) induced form with no centre variable thus occurs at the sampled values \(\lambda=0.01,0.1,10\), and requires two independent bilinear coefficients; the Hessian of that set is not examined.
+
+This is a statement for the Poisson limit, one loop, the leading symbol, the four-matrix class with the bilinear term, the regulators that are functions of \(C_{42}\) and \(C_{41}\), and the sampled points; the signatures and the pencil are numerical, the relations in the first paragraph exact. It does not treat fermions, the Moyal terms, a Lorentzian \(i\epsilon\) integral, the identification of the window with any admissibility condition of the fibre, or the subleading symbol, it does not compute the weight-two coefficient or its variation under \(A\), and neither the sign nor the size of \(w\) follows. It identifies no induced metric with the emergent metric of Chapter~\ref{ch:vierbein-emergence} and, since a Euclidean coefficient is not a Lorentzian one, leaves Assumption~\ref{ass:lorentzian} in place (Problem~E). This changes no ledger label; Problem~F remains open.
+
+\paragraph{Detailed derivation 36 (Problem ; conditional result).} \label{ref:detail-35} % [see appH-detailed.tex]
+
+\paragraph{Conjugate-coordinate class: Lorentzian moments in the fibre-bounded cone window, and the vector, ghost and spin terms of the invariant sector (conditional; bounded no-go).}
+Keep the setting and notation of the two preceding paragraphs (Poisson limit, leaf \(\mathbb{CP}^{1,2}\), \(T^a=M^{a4}\), \(\Box\), \(H_V\) with \(\mu^2=-3\), \(C_{42}\), \(C_{41}\), \(C_{31}\), \(\sigma(\cdot)\), \(S^2=2C_{41}-C_{42}\) with symbol \(\beta q_f\), the base symbol \(\alpha q_b\), \(a=\sinh\tau=y^4/\ell\), and the function \(Q(a)\) of the exact invariant sector). At a point of the leaf take coordinates \((u,\zeta)\in\mathbb R^4\times\mathbb R^2\) on the cotangent space with \(|u|^2=\alpha q_b\) and \(|\zeta|^2=\beta q_f\), so that \(-\sigma(C_{42})=|u|^2-|\zeta|^2\), and write \(\mathsf K\) for the form \(\sigma(\Box)\) (rank four, signature \((3,1)\)) in these coordinates, with blocks \(\mathsf K_{uu}\), \(\mathsf K_{u\zeta}\), \(\mathsf K_{\zeta\zeta}\).
+
+\emph{Gaussian windows.} Let \(\lambda_0=-c\) and \(\lambda_1,\lambda_2,\lambda_3\) be positive and \(\mathcal M=\mathrm i\int_0^\infty\mathrm ds\prod_{k=0}^3(1+\mathrm is\lambda_k)^{-1/2}\), the Gaussian average of \((\sigma-\mathrm i0)^{-1}\). Rotating \(s=-\mathrm iu\) (the fourth quadrant contains no singularity) gives \(\mathcal M=\int_0^\infty\mathrm du\,(1-cu-\mathrm i0)^{-1/2}\prod_{k\ge1}(1+\lambda_ku)^{-1/2}\), whose first factor is real for \(u<1/c\) and equals \(\mathrm i(cu-1)^{-1/2}\) for \(u>1/c\). With \(u=(1\mp v^2)/c\),
+\[
+  \operatorname{Re}\mathcal M=\frac2c\int_0^1\!\mathrm dv\prod_{k\ge1}\Bigl(1+\frac{\lambda_k(1-v^2)}c\Bigr)^{-1/2}>0,\qquad
+  \operatorname{Im}\mathcal M=\frac2c\int_0^\infty\!\mathrm dv\prod_{k\ge1}\Bigl(1+\frac{\lambda_k(1+v^2)}c\Bigr)^{-1/2}>0 ,
+\]
+and \(\operatorname{Re}\mathcal M=2/(\lambda+c)\) for \(\lambda_k=\lambda\). The pencil of \(\sigma(\Box)\) with any positive definite window form has one negative, three positive and two zero generalised eigenvalues, so the principal-value mass moment of every Gaussian window of the class is positive; this proves, for Gaussian windows, the positivity that the preceding paragraph found by sampling.
+
+\emph{Geometry of the cone window.} At \(60\) random orbit points (agreement \(10^{-9}\) or better, not proved): the eigenvalues of \(\mathsf K_{uu}\) are \(-\tfrac12\) and \(\tfrac12\sinh^2\tau\) (three times); the Schur complement of \(\mathsf K_{uu}\) in \(\mathsf K\) vanishes, so \(\sigma=Q_L(u+w\zeta)\) with \(Q_L=\mathsf K_{uu}\) and \(w=\mathsf K_{uu}^{-1}\mathsf K_{u\zeta}\); \(w\) is conformal, \(|w\zeta|=\coth\tau\,|\zeta|\), and its image is orthogonal to the time eigenvector of \(Q_L\). In the variable \(\boldsymbol x=u+w\zeta\) the removed region \(|u|<|\zeta|\) is therefore the ball of radius \(r=|\zeta|\) about the spacelike point \(p=w\zeta\), at distance \(r\coth\tau=r\sqrt{1+c/\lambda}\) from the apex \(\boldsymbol x=0\) with \(c=\tfrac12\), \(\lambda=\tfrac12\sinh^2\tau\): the cone \(|u|=|\zeta|\) touches the null cone of \(Q_L\).
+
+\emph{Mass moment in the fibre-bounded cone window.} Let \(\chi\ge0\) be bounded and integrable on \([0,\infty)\) and take the window function \(\chi(|u|^2-|\zeta|^2)\) on \(|\zeta|^2\le Q_f\) and \(|u|\ge|\zeta|\). For a ball of radius \(R\) about \(p\) with \(|p|<R\), polar coordinates about the apex give \(\operatorname{PV}\!\int_{|\boldsymbol x-p|<R}\mathrm d^4\boldsymbol x\,Q_L^{-1}=\tfrac12(R^2-|p|^2)I_0+p^{\mathsf T}\mathsf Np\), where \(I_0=\operatorname{PV}\oint\mathrm d\Omega\,Q_L^{-1}=8\pi^2/\cosh^2\tau\) and \(\mathsf N=\operatorname{PV}\oint\mathrm d\Omega\,nn^{\mathsf T}Q_L^{-1}\), because the remaining term of the exit radius is odd in the direction \(n\) and \(Q_L\) is even (checked against a direct quadrature to \(10^{-4}\)). For spacelike \(p\) with \(|p|\ge R\), quadrature indicates that the same expression continues to hold up to the tangency distance \(R\coth\tau\) (agreement to \(10^{-3}\) in the sampled cases) and departs from it beyond; this is a numerical observation and is not proved here. Under this observation every shell \(r\le|u|\le\sqrt{r^2+\Lambda^2}\) has principal-value moment \(\tfrac12\Lambda^2I_0\), independent of \(p\), and so
+\[
+  \operatorname{Re}\,\mathcal N_W=\tfrac12\,\varrho\,\pi Q_f\,I_0\int_0^\infty\chi(\lambda)\,\mathrm d\lambda>0 ,\qquad
+  \mathcal N_W=\int_W\varrho\,\mathrm d^4u\,\mathrm d^2\zeta\;\chi\,(\sigma-\mathrm i0)^{-1},
+\]
+with \(\varrho>0\) the Jacobian of the coordinates \((u,\zeta)\); the sign of the real part is conditional on the numerical observation, and the real part depends on the cutoff function only through \(\int\chi\) and on the fibre bound only through the area \(\pi Q_f\). The imaginary part is \(\pi\int_W\varrho\,\chi\,\delta(\sigma)\ge0\). Finiteness of \(\mathcal N_W\) is likewise rested on the shell formula: the apex singularity is of order \(|\boldsymbol x|^{-2}\) in four dimensions and integrable, but the window function has a jump at the cone edge when \(\chi(0)\ne0\), and the edge touches the null cone of \(Q_L\) at one point, so finiteness there is not shown independently.
+
+\emph{Zeeman field and electric growth.} The first-order term of \(H_V\) is exactly the Zeeman matrix of the field \(F_{ab}(\xi)=\xi(\mathcal J_{ab})\), linear in the covector \(\xi\); let \(\eta F\) have eigenvalues \(\pm f_e\) (electric pair, factor \(\mathrm e^{\pm2sf_e}\) in \(\mathrm e^{-\mathrm isH_V}\)) and \(\pm\mathrm if_m\) (magnetic pair, phases), so \(f_e^2-f_m^2=-F_{ab}F^{ab}/2=-\sigma(C_{31})(\xi)\). At \(59\) of the \(60\) points (one point is numerically singular in the whitening, a fibre Gram eigenvalue vanishing in double precision), to \(10^{-9}\) except for the maximum over the base plane, which is obtained from \(3000\) sampled directions to \(6\cdot10^{-5}\): on the base plane \(f_m=0\) and \(\max f_e=|u|\cosh\tau/\sqrt2\); on the vertical plane of the pencil \(f_e=|\zeta|\sinh\tau/\sqrt2\), \(f_m=|\zeta|/\sqrt2\) in every direction; on the kernel plane of \(\mathsf K\) (the centre variable of the nilpotent model) \(f_e^2=|\zeta|^2/(2(1+2\sinh^2\tau))\) and \(f_m^2=|\zeta|^2\sinh^2\tau/(2(1+2\sinh^2\tau))\), so that on this plane \(F_{ab}F^{ab}/2\) is negative for \(|y^4|<\ell\), positive for \(|y^4|>\ell\) and changes sign exactly at \(|y^4|=\ell\); this exact threshold replaces the sample-dependent value of the preceding paragraph on that plane (on the vertical plane the signs are opposite). The fibre-driven electric rate \(2f_e\) is \(2s_f\sinh\tau\) with \(\beta q_f=2s_f^2\le2s_{\max}^2\), whereas the base-driven rate grows linearly with \(|u|\); the electric rate is thus bounded by a quantity linear in the base cutoff, whose fibre part is bounded independently of the base cutoff. The logarithm of the determinant of the Zeeman block, \(\ln(\sigma^2-4f_m^2)+\ln(\sigma^2+4f_e^2)\), has only integrable logarithmic singularities, at \(\sigma=\pm2f_m\), at the leading symbol; the growth is a property of the Schwinger representation and is not removed by the fibre bound.
+
+\emph{Vector and ghost sectors of the invariant sector.} The ghost operator is \(-\Box\), the same as the scalar of the preceding paragraph. On fibre-constant vector fields \(A_c(y)\) the cross term \(\eta_{ac}\eta_{bd}\mathcal J^{ab}\Sigma^{cd}\) of \(C_G\) equals \(-2s\mathcal J_{ab}A^b\) exactly (symbolic check), so \(H_V=-\Box-2s\mathcal J_{ab}A^b+\mu^2\) is \(C_G-C_{41}-C_\Sigma+\mu^2\) there. Write the diagonal of \(\mathrm e^{z\Delta_{H^4}+w\Delta_{H^3}}\) as \(D=D_0(1+D_1+\dots)\), with \(D_1\) depending on \(a\) and homogeneous of degree one in \((z,w)=(t-\mathrm is,\mathrm is)\); \(\operatorname{tr}(E+R/6)\) is the first Seeley--DeWitt density of \(\mathrm e^{t\Delta_{H^4}-\mathrm isH_V}\) in the convention that the exponent is \(\Delta+E\), and for one scalar component it equals \(D_1\). For the four components, with the \(4\times4\) matrix connection,
+\[
+  \operatorname{tr}\bigl(E+\tfrac16R\bigr)=4D_1+\frac{6s^2(1+a^2)}{t+\mathrm isa^2}-4\mathrm is\mu^2 ,
+\]
+the spin term being \(2s^2\operatorname{tr}[G\,\sigma(\Delta_{H^3})]=-2s^2\operatorname{tr}[G\,\sigma(C_{31})]\), with \(G\) the inverse of the symbol of the exponent, that is the Zeeman square \(f_e^2-f_m^2\) traced against \(G\). The route reproduces the exact scalar coefficient \(D_1\) to \(120\) digits at three points, and the vector and Dirac traces were verified to the same accuracy; the vector kernel itself was not computed. With \(x=s/t\) and the subtraction at \(x=1\) of the preceding paragraph, the weight-two functions are \(Q_\mu=-\mu^2j(a)\) with \(j(a)=2(1+\mathrm i/a)/(1+a^2)\), and \(Q_{\mathrm{sp}}=-8/(1+a^2)-\mathrm i\,4(3a^2+1)/(a^3(1+a^2))\) for the spin term, so \(\operatorname{Re}[Q_{\mathrm{sp}}+4Q_{\mu}]=16/(1+a^2)\) for \(\mu^2=-3\). For \(n_{\mathrm{ex}}\) further scalars of mass \(\mu_i^2\) the bosonic content has
+\[
+  \operatorname{Re}Q_{\mathrm{bos}}=(2+n_{\mathrm{ex}})\operatorname{Re}Q+\frac{16-2n_{\mathrm{ex}}\mu_i^2}{1+a^2},
+\]
+plus the scale-dependent term proportional to \(2+n_{\mathrm{ex}}\) of the preceding paragraph. The first term is indefinite and the second has the sign of \(8-n_{\mathrm{ex}}\mu_i^2\); the scale-dependent term has the sign of a logarithm. On the full leaf the spin term in a Gaussian window has a large-\(s\) tail \(C\,\mathrm ds/s\) with \(C\) purely imaginary and proportional to \(\sigma(C_{31})\) on the kernel plane, that is to \((1-a^2)/(1+2a^2)\), so its logarithmic coefficient is of indefinite sign on the leaf, and its real part depends on the contour angle.
+
+\emph{Supertrace.} The matrix part of the coefficient is traceless, so it enters only through \(\operatorname{tr}\Sigma^{ab}\Sigma^{cd}\), and the species-independent part \(R/6+E\) is multiplied by the number of components. For the Dirac representation \(\operatorname{tr}\Sigma_D\Sigma_D=\tfrac12\operatorname{tr}\Sigma_V\Sigma_V\) for all index pairs. Supply, as an input not contained in the class, the sixteen real fermion components of the ten-dimensional supersymmetric matrix model with the square of the Dirac operator equal to \(\Box+s\Sigma^{ab}\mathcal J_{ab}\) on each component, no bilinear mass, and \(n_{\mathrm{ex}}=6\), and weight \(-\tfrac12\) per real fermion component. Then the component count \(4+6-2-8\) vanishes, the weighted index \(1-\tfrac12\cdot4\cdot\tfrac12\) vanishes, the Zeeman character is \(4(\cos sf_m-\cosh sf_e)^2=s^4(f_e^2+f_m^2)^2+\dots\) (the order \(s^4\) is a sum of the squares of the two invariants and does not vanish for any non-zero flux in Lorentzian signature), and what remains of the weight-two coefficient in the invariant sector is \(-\bigl(4\mu^2+n_{\mathrm{ex}}\mu_i^2\bigr)j(a)\), the mass supertrace times the mass moment \(j(a)\), with \(\operatorname{Re}j=2/(1+a^2)>0\); no sign of the mass supertrace itself is claimed. The mode-count term and the spin term of the order \(F^2\) both cancel identically; the curvature and connection part of the weight-two term therefore does not by itself carry the Newton coefficient for this content; whether it arises at higher order of the expansion or through the dependence on \(A\) is not computed.
+
+This is a statement for the Poisson limit, one loop, the leading symbol and the invariant sector, the four-matrix class with \(\mu^2=-3\), Gaussian windows and the cone window of the stated form, the sampled points and the supplied fermion content with no bilinear fermion mass and the same window for bosons and fermions. The continuation of the shell identity to spacelike \(p\) with \(|p|\ge R\) is a numerical observation, and the sign of the cone-window moment is conditional on it; the vector kernel and the second variation under \(A\) are not computed; fermions are not part of the class; the Jacobian \(\varrho\) and the Liouville normalisation are not computed as functions of position. It does not treat Moyal terms or a window built from dynamical matrices, it identifies no induced metric with the emergent metric of Chapter~\ref{ch:vierbein-emergence} and, since a Euclidean coefficient is not a Lorentzian one, leaves Assumption~\ref{ass:lorentzian} in place (Problem~E). This changes no ledger label; Problem~F remains open.
+
+\paragraph{Detailed derivation 37 (Problem ; conditional result).} \label{ref:detail-36} % [see appH-detailed.tex]
+
+\paragraph{Conjugate-coordinate class: the next-to-leading symbol of the mass-supertrace term at order \(\epsilon^2\) (conditional; bounded no-go with a conditional Einstein--Hilbert-form limit).}
+Keep the setting of the preceding paragraph and the term \(+M_{\mathrm{str}}\operatorname{Tr}[\chi\,(H_X-\mathrm i0)^{-1}]\), \(H_X=-\Box_X\). Take \(A^a=\epsilon\alpha^a\cos\phi\), \(\phi=q\cdot y\), \(W_a\) the Hamiltonian field of \(T^a\), \(Y=q_\mu\{y^\mu,\cdot\}\), \(\kappa_a=W_a(\phi)\) (so \(Y(\phi)=0\)) and the Gaussian window of \(\Delta_{3/4}\). Terms of fourth order in \(q\) at order \(\epsilon^2\) contain all derivatives on \(A\); they are computed with the first jet of \(T\) frozen and the window symbol constant, since window gradients and \(\partial^2T\) carry fewer powers of \(q\) (derivative counting; the window symbol being constant makes the composition terms with \(\chi\) total derivatives). In this sector \(H_X=\eta^{ab}\Pi_a\Pi_b\), \(\Pi_a=\omega_a-\epsilon\alpha_a\zeta\sin\phi\), \(\omega_a=\xi(W_a)\), \(\zeta=\xi(Y)\), \([\omega_a,\phi]=-\mathrm i\kappa_a\), with \(\zeta\) commuting with everything.
+
+\emph{Symbol and checks.} The weight-two symbol of the resolvent was derived by the left-symbol recursion, expanded to \(\epsilon^2\) and averaged over \(\phi\) (the weight-one terms average to zero). It reproduces (a) the one-dimensional coefficient \(-\tfrac1{12}V'^2\) and the two-dimensional Maxwell coefficient \(-\tfrac1{12}F_{ab}F^{ab}\) to \(10^{-11}\); (b) the leading-symbol Hessian of the preceding paragraph; (c) in the non-degenerate case, with the vector fields divergence free, the Seeley--DeWitt coefficient \(\sqrt{|g|}(R/6-\tfrac14(\nabla\lambda)^2)\), \(\lambda=\ln\sqrt{|g|}\), at second order (Fierz--Pauli form), with relative phase \(\mathrm i\) to \(12\) digits.
+
+\emph{Result in the class.} The integrand \(K(s)\) of the proper time \(s\) is finite at small \(s\) and has at large \(s\) the form \(c_0+c_1/s+O(s^{-2})\), checked at orbit points with random \(q,\alpha\). (i) \(c_0\) is real and is the Maxwell coefficient of the gauge field \(a_b=\epsilon\zeta\alpha_b\sin\phi\) induced by the kernel momenta: \(c_0=\lambda_0\,G(\alpha)\) with \(G=(\kappa\cdot\kappa)(\alpha\cdot\alpha)-(\kappa\cdot\alpha)^2\) (agreement to \(10^{-8}\) or better in the tensor, \(\lambda_0>0\) at all sampled points). It is gauge invariant (\(\alpha\propto\kappa\)), of the sign of \(G\), which is indefinite in Lorentzian signature, and the integral \(\int^{s_{\max}}\mathrm ds\,c_0\) diverges linearly: the first-order mass term has no finite local coefficient at this order, and the derivative expansion is expected to be non-uniform at small \(\xi\) of the non-kernel directions (a mass insertion into the massless non-kernel propagator; not computed). (ii) \(c_1\) is purely imaginary and, for the window of \(\Delta_{3/4}\) at the sampled points, is neither invariant under \(\alpha\to\alpha+\lambda\kappa\) (relative violation \(0.04\)--\(0.6\)) nor of covariant form, and has eigenvalues of both signs. (iii) Let \(V'\) be the vertical tangent space (common kernel of the \(\mathrm dy^\mu\)) and scale by \(f\) the part of the window quadratic form in \(\omega_a\) in the splitting \(\xi\mapsto(\xi(W_a),\xi(v_k))\). As \(f\to0\), \(c_1\to\mathrm i\lambda_1 A\) with \(\lambda_1=|\det\Lambda|^{-1}(4\pi)^{-3}\det(P'_{kk})^{-1/2}>0\) (\(\Lambda\) the matrix of the splitting, \(P'_{kk}\) the vertical block of the window form) and no free parameter; the difference is \(O(f)\) at four orbit points (relative \(8\cdot10^{-4}\), \(1.4\cdot10^{-3}\), \(7\cdot10^{-4}\), \(8\cdot10^{-5}\) at \(f=10^{-3}\)). Here, with the base cometric \(\bar g^{\mu\nu}=\eta^{ab}W_a(y^\mu)W_b(y^\nu)\), \(h^{\mu\nu}\) its first-order change \(-\sin\phi\,(u^\mu v^\nu+v^\mu u^\nu)\), \(u^\mu=\eta^{ab}\alpha_aW_b(y^\mu)\), \(v^\mu=\{\phi,y^\mu\}\) (so \(q\cdot v=0\)) and \(a_\mu=\bar g_{\mu\nu}u^\nu\),
+\[
+A=\tfrac1{24}\Bigl[v^2\bigl((q\cdot a)^2-q^2a^2\bigr)-2q^2(a\cdot v)^2\Bigr],
+\]
+the sum of the Einstein--Hilbert second variation, with the phase-averaged Fierz--Pauli form \(\tfrac16\,\mathrm{FP}[h]=\tfrac1{24}\bigl[v^2\bigl((q\cdot a)^2-q^2a^2\bigr)+q^2(a\cdot v)^2\bigr]\), and the dilaton-gradient term \(-\tfrac18q^2(a\cdot v)^2\) of the Liouville measure. \(A\) is invariant under \(a\to a+\lambda q\) (checked to \(10^{-16}\)), vanishes only on that direction, and is indefinite in general (definite only for \(q\) time-like and \(v\) space-like, where it is positive). (iv) The base two-form \(\theta^{\mu\nu}=\{y^\mu,y^\nu\}=M^{\mu\nu}\) satisfies \(\theta^{\rho\mu}\eta_{\mu\nu}\theta^{\sigma\nu}=c_\theta\eta^{\rho\sigma}+y^\rho y^\sigma-t^\rho t^\sigma\), \(y^\mu=M^{\mu5}\), \(t^\mu=M^{\mu4}\) (to machine precision at six points), with \(c_\theta\) a scalar function of the orbit point, so \(v^2=c_\theta q^2+(q\cdot y)^2-(q\cdot t)^2\) depends on the time-like vector \(y^\mu\) and on the fibre point. After a Haar average over the fibre at a base point with \(y^i=0\), the \(A\)-form (weighted by the Liouville density and \(\lambda_1\)) remains gauge invariant but is not proportional to \(q^2\eta_{ab}-q_aq_b\) (remainder \(0.8\)--\(1\) of its norm), and its covariant part changes by a factor \(2\) between boosts of rapidity \(0\) and \(0.8\) at fixed \(q\cdot q\). The window and the leaf both single out \(y^\mu\), which this check does not separate.
+
+\emph{What is not shown.} The Pauli--Sakharov completion (the term \(M_{\mathrm{str}}\) multiplying the logarithm of the cutoff is accompanied by \(-\sum_iw_id_im_i\ln m_i\) when the masses are kept non-perturbatively) is expected from the Euclidean heat-kernel structure and is not derived for this hypoelliptic operator. The background flux, which cuts off large \(s\) in the full leaf, is not included, so the divergence in (i) is not resolved.
+
+This is a statement for the Poisson limit, one loop, the term linear in the masses, the order \(\epsilon^2q^4\) with the first jet frozen, the supplied content with no bilinear fermion mass, the Gaussian window of \(\Delta_{3/4}\), and numerical sampling; the limit in (iii) is a limit of the window family and not the window of the class. It identifies no induced form with the emergent metric of Chapter~\ref{ch:vierbein-emergence}, makes no Wick-rotation claim, and gives no value or sign of \(G_{\mathrm{eff}}\). This changes no ledger label; Problem~F remains open.
+
+\paragraph{Detailed derivation 38 (Problem ; conditional result).} \label{ref:detail-37} % [see appH-detailed.tex]
+
+\paragraph{Conjugate-coordinate class: the Jacobi commutator of the plane-wave field with the horizontal fields, and the flux-resummed next-to-leading symbol (conditional; bounded no-go; supersession of the preceding Landau model).}
+Keep the setting of the preceding paragraphs: Poisson limit, leaf \(\mathbb{CP}^{1,2}\), \(T^a=M^{a4}\), \(W_a\) the Hamiltonian field of \(T^a\), \(Y=q_\mu\{y^\mu,\cdot\}\), \(\phi=q\cdot y\), \(\kappa_a=W_a(\phi)\), \(A^a=\epsilon\alpha^a\cos\phi\), the nilpotent (leading) symbol with centre flux \([\omega_a,\omega_b]=\mathrm iF_{ab}\), \(\omega_a=-\mathrm iW_a\), and the term \(+M_{\mathrm{str}}\operatorname{Tr}[(H_X-\mathrm i0)^{-1}]\). The Lie--Poisson relations give exactly \(\kappa^a=\sigma M^{45}q^a\) and \([W_a,Y]=\sigma q_a\operatorname{Ham}(y^4)\), \(y^4=M^{45}\), with \(\sigma=\pm1\) the sign convention of the bracket (the second is the Jacobi identity; both checked at random orbit points to \(10^{-14}\)). In the frame \((W_a,Z_k)\), \(Z_k\) a basis of the vertical space, \(Y=y^cW_c+y^kZ_k\) and the field \(V=\operatorname{Ham}(y^4)\) has no vertical component (below \(10^{-14}\) at six sampled points), so \([W_a,Y]\) has no component along the centre. The flux term \(y^cF_{ac}\) is not small and is not parallel to \(\kappa_a\) (the residual of the parallel fit is \(0.7\)--\(1.0\) at the sampled points and directions of the centre variable).
+
+\emph{Consequence for the model of the preceding paragraph.} There the plane-wave coupling was \(\zeta_Y=y^c\omega_c+c\) with a constant charge \(c\), for which \([\omega_a,\zeta_Y]=\mathrm iy^cF_{ac}\ne0\); this commutator is inconsistent with the Jacobi identity at the nilpotent order with frozen coefficients. That model is not invariant under \(\alpha\to\alpha+\lambda\kappa\), the leaf form of \(\delta A^a=\{\Lambda,T^a\}\), at \(F\ne0\) and \(y\ne0\) (relative change \(0.07\)--\(0.16\) of the second-order response in a test, \(10^{-14}\) at \(F=0\)), whereas the Fin values quoted there are values of that model. On the leaf \(Y\) commutes with \(\omega_a\) and with \(\phi\) (\(Y(\phi)=0\)); at the nilpotent order it is a right-invariant field of the nilpotent group, and its diagonal value at the base point is \(P=y^c\omega_c+c\), \(c=y^k\zeta_k\), which stands at the seam of the trace, \(\operatorname{Tr}[\text{chain}\cdot P^2]\), the chain being the ordered product of the left-invariant factors. Because \(P^2\) separates the first and the last propagator, the time-translation reduction \(\int_0^1\mathrm du\,(1-u)\langle V(su)V(0)\rangle\) is not available and the second order is the double Duhamel integral \(-s^2\int_{0<u_2<u_1<1}\langle V(su_1)V(su_2)P^2\rangle\).
+
+\emph{Checks.} In a two-dimensional Euclidean Landau problem in Landau gauge, where the magnetic translation \(K=y_2p_2\) is an exact c-number, this prescription reproduces the second-order density obtained by exact diagonalisation (relative difference \(2\cdot10^{-4}\), real); the prescription with \(P^2\) at the end of a merged propagator does not (complex, \(1.5\%\) off in the real part). The two-dimensional test validates the prescription for a central \(K\); the identification of the leaf field \(Y\) with the seam insertion \(P\) is conditional on the nilpotent order and the frozen first jet. In four dimensions the central model is invariant under \(\alpha\to\alpha+\lambda\kappa\) to \(10^{-14}\) at \(F\ne0\), \(y\ne0\), and equals the model of the preceding paragraph at \(F\to0\) (\(10^{-8}\)). On the leaf, with \(F_{ab}(\zeta)=-S_{ab}{}^k\zeta_k\), \(\zeta\) the centre variable, \(f_e/f_m=\ell/|y^4|\) at three sampled directions of \(\zeta\) at each of five orbit points, the quadratic form of the Fierz--Pauli plus dilaton coefficient \(A\) of the next-to-leading-symbol paragraph equals the closed form in \((\alpha,\kappa,y^c)\) used there (ratio \(1\) to six digits, five orbit points).
+
+\emph{Result in the class.} (i) The coefficient of \(\mathrm ds/s\) is unchanged: \(c=A/16\pi^2\), with \(T_2(s)\,s/c\to1.0000\) as \(s\to0\) at the flux of the leaf, in both the central and the preceding model. The Jacobi commutator therefore does not change, cancel or add to the Einstein--Hilbert-form coefficient \(A\) of the logarithm. (ii) At \(F\ne0\) the integrand decays as \(\mathrm e^{-|s|(f_e\cos\vartheta+f_m\sin\vartheta)}\) on \(s=|s|\mathrm e^{-\mathrm i\vartheta}\), and the finite part \(\mathrm{Fin}=\lim[\int_{s_0}^\infty T_2\,\mathrm ds-c\ln(1/s_0)]\) is a finite complex number for each centre variable. Split by the content of \(P\) into \(y^cy^d\) (tetrad), \(c^2\) (charge) and cross terms, the three parts are separately invariant under \(\alpha\to\alpha+\lambda\kappa\) (\(10^{-7}\) or better). (iii) The tetrad part of Fin, as a quadratic form in \(\alpha\), is not proportional to the form \(A\): the residual of the best proportional fit, in real and imaginary parts, is \(0.54\) and \(0.85\) (centre direction \(0.8\)), \(0.08\) and \(0.48\) (direction \(2.0\)) at one orbit point, and \(0.004\) and \(0.000\) at a second point where \(f_e/f_m\simeq42\); the quotient by \(\kappa\) has eigenvalues of both signs in every case (as has \(A\)). (iv) The form \(A\) is not Lorentz covariant, as shown for the preceding paragraph (it depends on \(y^\mu\) and on the fibre point), and the flux does not alter the coefficient that carries this dependence. In the sampled per-centre-variable forms the tetrad part of the finite remainder is neither proportional to the form \(A\) nor sign-definite; the sign and covariance of the full finite remainder (tetrad, charge and cross parts) and of its window average over the centre variable were not tested, so no finite, covariant, sign-definite Einstein--Hilbert coefficient is obtained here.
+
+\emph{Size of the dropped terms.} The horizontal part of \([W_a,Y]\) (the weight-one term \(-q^av^cW_c\)), the horizontal parts of \([W_a,W_b]\), the gradients of the flux and of \(y^c,y^k\), and the window are not included. The ratio of the norm of the horizontal part of \([W_a,Y]\) to that of \(y^cS_{ac}{}^k\) is \(0.01\)--\(0.5\) at six orbit points (per unit centre variable), so these terms are small only for \(|\zeta|\) large compared with that ratio and for small \(\omega\); this is the regime of the nilpotent approximation, not a bound on the leaf.
+
+This is a statement for the Poisson limit, one loop, the nilpotent (leading) symbol resummed in the flux with the Jacobi-consistent central plane-wave field, the Lorentzian \(\mathrm i\epsilon\) proper time, the \(M_{\mathrm{str}}\) term, and numerical evaluation at sampled orbit points and centre directions. It does not include the vector-mass term with the Zeeman-dressed resolvent at order \(\epsilon^2\) (whose leading growth was found above and is not shown to be altered), the weight-one terms, the window average over the centre variable, the sign and covariance of the full finite remainder, the spectral definition of the vector sector, or non-perturbative masses, and it identifies no induced form with the emergent metric of Chapter~\ref{ch:vierbein-emergence}, makes no Wick-rotation claim, and gives no value or sign of \(G_{\mathrm{eff}}\). This changes no ledger label; Problem~F remains open.
+
+\section{Problem G: HBEV}
+\label{sec:status-G}
+
+\paragraph{Detailed derivation 39 (Problem G; conditional result).} \label{ref:detail-38} % [see appH-detailed.tex]
+
+\paragraph{Status.}
+The mechanism is CLOSED CONDITIONALLY under the stated boundary
+entropy; derivation of the infrared entropy density and stationarity
+from the matrix theory is OPEN. A boundary-model or externally
+justified result is programme-conditional and supports only a
+scope-limited model.
+
+\section{Problem H: modular origin of the interpolating function}
+\label{sec:status-H}
+
+\paragraph{Detailed derivation 40 (Problem H; conditional result).} \label{ref:detail-39} % [see appH-detailed.tex]
+
+\paragraph{Conditional lemma: occupation of one modular ladder.}
+Suppose the relevant reduced state contains one bosonic ladder with
+normalized probabilities
+\[
+p_n=(1-e^{-\Delta k})e^{-n\Delta k},
+\qquad n=0,1,2,\ldots,\qquad \Delta k>0.
+\]
+Then its mean occupation is
+\[
+\langle n\rangle
+=
+\sum_{n=0}^{\infty} n p_n
+=
+\frac{1}{e^{\Delta k}-1},
+\]
+and therefore
+\[
+1+\langle n\rangle
+=
+\frac{1}{1-e^{-\Delta k}}.
+\]
+Thus, if the extra-stress response is exactly \(1+\langle n\rangle\)
+for this single mode, the target interpolator follows if and only if
+\[
+\Delta k(g_{\mathrm N})
+=
+\sqrt{\frac{g_{\mathrm N}}{g_s}}.
+\]
+The quantity to calculate is the modular excitation gap
+\(\Delta k\), not the absolute lowest eigenvalue of \(H_D\), which
+depends on an additive normalization constant.
+
+For a multimode response, the corresponding quantity is instead a
+weighted spectral sum, schematically
+\[
+\mathcal R(g_{\mathrm N})
+=
+\int_{(0,\infty)}
+\frac{d\mu_{g_{\mathrm N}}(\Delta k)}
+     {e^{\Delta k}-1},
+\]
+where \(d\mu_{g_{\mathrm N}}\) includes the mode weights coupling
+to the extra stress. In that case a square-root gap for one mode
+does not by itself establish the target function; the measure and
+its source dependence must also be calculated.
+
+\paragraph{Detailed derivation 41 (Problem ; conditional result).} \label{ref:detail-40} % [see appH-detailed.tex]
+
+\section{Problem I: dynamical origin of the drag}
+\label{sec:status-I}
+
+\paragraph{Detailed derivation 42 (Problem I; conditional result).} \label{ref:detail-41} % [see appH-detailed.tex]
+
+\paragraph{Conditional Kubo formulation.}
+Let \(\mathbf r\) denote the relative separation and
+\(H(\mathbf r)\) a microscopic Hamiltonian. At fixed \(\mathbf r\),
+choose a stationary reference state and define the connected
+generalized-force operator
+\[
+\delta\hat F_i
+=
+-\frac{\partial H}{\partial r_i}
+-\left\langle-\frac{\partial H}{\partial r_i}\right\rangle_{\mathbf r}.
+\]
+For a perturbation
+\(\delta H(t)=-\delta r_j(t)\delta\hat F_j\), define
+\[
+\chi^R_{ij}(t;\mathbf r,\ell_A,\ell_B)
+=
+\frac{i}{\hbar}\theta(t)
+\left\langle[\delta\hat F_i(t),\delta\hat F_j(0)]\right\rangle_{\mathbf r},
+\qquad
+\chi^R_{ij}(\omega)
+=
+\int_{-\infty}^{\infty} e^{i\omega t}
+\chi^R_{ij}(t)\,\mathrm dt .
+\]
+For a reciprocal passive reference state, if the low-frequency
+limit exists, define
+\[
+\Gamma_{ij}(\mathbf r;\ell_A,\ell_B)
+=
+\lim_{\omega\downarrow0}
+\frac{\operatorname{Im}\chi^R_{(ij)}
+(\omega;\mathbf r,\ell_A,\ell_B)}{\omega},
+\qquad
+\chi^R_{(ij)}=\frac{\chi^R_{ij}+\chi^R_{ji}}{2}.
+\]
+Passivity requires this dissipative tensor to be positive
+semidefinite. The corresponding low-frequency force contribution is
+\[
+\delta F_i^{\mathrm{diss}}
+=
+-\Gamma_{ij}(\mathbf r;\ell_A,\ell_B)\dot r_j.
+\]
+This is a conditional response prescription, not a calculation of
+the NAMCG force correlator, its reference state, or its passivity.
+
+If the reference state and environment are rotationally invariant,
+the response at nonzero separation can have distinct longitudinal
+and transverse components,
+\[
+\Gamma_{ij}
+=
+\Gamma_L(d;\ell_A,\ell_B)\hat r_i\hat r_j
++\Gamma_T(d;\ell_A,\ell_B)
+ \bigl(\delta_{ij}-\hat r_i\hat r_j\bigr).
+\]
+A radial response calculation determines only \(\Gamma_L\).
+The isotropic scalar drag used in the laboratory requires
+\(\Gamma_L=\Gamma_T\), or an explicit restriction to radial motion.
+
+For example, the causal response family
+\[
+\chi^R_{ij,\tau}(\omega)
+=
+\frac{\chi_{0,ij}}{1-i\omega\tau},
+\qquad \tau>0,
+\]
+with real symmetric positive-semidefinite \(\chi_{0,ij}\), has a
+pole at \(\omega=-i/\tau\) and satisfies
+\[
+\chi^R_{ij,\tau}(0)=\chi_{0,ij},
+\qquad
+\lim_{\omega\downarrow0}
+\frac{\operatorname{Im}\chi^R_{ij,\tau}(\omega)}{\omega}
+=\tau\chi_{0,ij}.
+\]
+Thus a fixed static susceptibility does not determine the
+low-frequency dissipative coefficient. This example is not a
+NAMCG derivation.
+
+Positivity of mutual information establishes \(I(A:B)\geq0\) for
+each state. It does not establish an ordering between adiabatic
+and non-adiabatic mutual informations, or the sign or separation
+dependence of a dissipative response.
+
+\paragraph{Detailed derivation 43 (Problem ; conditional result).} \label{ref:detail-42} % [see appH-detailed.tex]
+
+\paragraph{Missing step.}
+Specify the microscopic dynamics, stationary reference state, and
+force operators for the finite cores. Compute
+\(\chi^R_{ij}(\omega;\mathbf r,\ell_A,\ell_B)\), justify the
+passivity and low-frequency assumptions, and derive the
+longitudinal and transverse responses. Determine whether they
+reduce to the isotropic \(d^{-4}\) laboratory law and calculate its
+coefficient before estimating \(\eta\) at tidal or LIGO-band scales.
+Problem~I remains open.
+
+\paragraph{Status.}
+Optional, not part of the matrix-derived completion criterion unless
+drag is claimed to be derived or predicted. Its absence does not kill
+the framework within a scope that treats the drag law as
+phenomenological.
+
+\section{Problem J: spherical ECG solutions}
+\label{sec:status-J}
+
+\paragraph{Detailed derivation 44 (Problem J; conditional result).} \label{ref:detail-43} % [see appH-detailed.tex]
+
+\paragraph{Maximally symmetric branch.}
+For \(f=1-kr^2\), the first integral gives
+\[
+\frac{\mathcal F[f]}{r^3}=2k-16\alpha k^3,\qquad
+k-8\alpha k^3=\frac{\Lambda_{\mathrm{eff}}}{3}.
+\]
+This is a conditional background-curvature relation, not a stability
+claim.
+
+\paragraph{Detailed derivation 45 (Problem ; conditional result).} \label{ref:detail-44} % [see appH-detailed.tex]
+
+\paragraph{Status.}
+Conditional on the stated symmetric reduction, the reduced-action
+identities, first integral, regular-centre constraint, maximally
+symmetric curvature relation, and asymptotic tail above have been
+checked for the specified \(\mathcal P\). The cited Einstein-like
+linearized spectrum on maximally symmetric backgrounds is a separate
+result; no nonlinear, sourced, or non-maximally-symmetric stability
+claim follows. Problem~J
+remains open because the reduction's relation to the full field
+equations and the cubic truncation and its matching to the matrix
+theory are not established. A regular massive core still requires a
+specified source, different boundary conditions, or modified
+field equations; the entanglement stress for such a source is not specified.
+
+\section{Problem N: control of the effective expansion}
+\label{sec:status-N}
+
+\paragraph{Detailed derivation 46 (Problem N; conditional result).} \label{ref:detail-45} % [see appH-detailed.tex]
+
+\paragraph{Missing step.}
+Derive from the matrix path integral that the graviton two-point
+function has no propagating Ostrogradsky ghost for \(p<\LUV\), for
+the values of \(\alpha\) and \(G_{\mathrm{eff}}\) computed in Problem~F (here \(\alpha\) is the Weyl-squared coupling
+of~\eqref{eq:stelle}, whose \(C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma}\)
+coefficient is \(-\alpha/2\); with the continuation convention stated
+below, \(c_W=-\alpha/2\) in~\eqref{eq:W4}; it is not any other coupling
+denoted \(\alpha\) in this book), with the region of those values in which it holds stated.
+This is the requirement of item~6 of Chapter~\ref{ch:geometrogenesis}
+and no stronger.
+
+\paragraph{Detailed derivation 47 (Problem ; conditional result).} \label{ref:detail-46} % [see appH-detailed.tex]
+
+\paragraph{Status.}
+Remains Assumption~\ref{ass:EFT-a2}.
+
+\section{What this appendix does not do}
+\label{sec:status-not}
+
+It does not produce an unsuppressed laboratory coupling between a
+controllable external field and \(T_{\mu\nu}^{\mathrm{ent}}\) or
+\(G_{\mathrm{eff}}\). The observational window therefore remains empty.
+It does not alter the chain of Chapter~\ref{ch:falsifiers} or the agenda of
+Chapter~\ref{ch:agenda}.
