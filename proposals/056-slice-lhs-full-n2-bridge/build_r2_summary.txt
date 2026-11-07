@@ -1,0 +1,14 @@
+Out-of-repo build record (proposal 056 r2)
+Copy: C:/Users/redgi/tmp/056_apply_r2 (repo tree copied; insert applied to the COPY ONLY;
+the repository manuscript was not touched).
+Applied copy appH: 542851 B, sha256 185bdcee9ae824e9c7fa7211c4280f56beb7f7210392f336592877f33112e73b,
+CRLF 3212 (matches gatekeeper-predicted pins exactly).
+Passes: pdflatex -interaction=nonstopmode -halt-on-error namcg-book7 (build1.log);
+bibtex namcg-book7 (build_bibtex.log); pdflatex x2 (build2.log, build3.log). latexmk NOT used.
+Final pass (build3.log) scans: 0 "undefined reference/citation", 0 "multiply defined",
+0 "LaTeX Warning"; 35 total case-insensitive "Warning" matches (font/hyphenation class; no
+reference or citation warnings).
+PDF: namcg-book7.pdf, 359 pages.
+Exit codes: all 0.
+Authoritative build evidence remains the integrator's in-repo scripts/build_check.py run.
+(Extracted with read-only Grep on build3.log after the classifier timed out for a shell write.)
