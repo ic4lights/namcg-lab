@@ -1,0 +1,5 @@
+appH: 540605 bytes sha256 e67297cd3066e3f4795ed81875d5075dfec3fe98ba5a8d8feb0bfcb733e134d7  CRLF, bare LF: (3220, 0)
+baseline matches expected: True
+anchor: 61 bytes sha256 a7c774127bc78a19a76b5ab005d0e4e59a3b56b66a3be64b71e38cd13ade26cc  count 1  line 1529
+insert LF: 9324 bytes sha256 ca32f19296b2645a12936ce2732b1c9d092277badcfac16ca53c3710538de5b1 ; CRLF form: 9345 bytes sha256 3b14cca7803034f3e295d297d560d1cb9becdaeab734127f79228a7f5948a945
+result: 549952 bytes sha256 008db280ef2bebae769670a5b8ea498ab1cd6ae9539253b878e615beef83f1c5  CRLF, bare LF: (3242, 0)
