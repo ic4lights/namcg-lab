@@ -25,6 +25,11 @@ def nodes(n, lo, hi):
     x, w = np.polynomial.legendre.leggauss(n)
     return 0.5*(hi-lo)*x+0.5*(hi+lo), 0.5*(hi-lo)*w
 
+def cnodes(pieces):
+    """composite Gauss-Legendre rule; pieces = [(n, lo, hi), ...]"""
+    xs, ws = zip(*[nodes(*p) for p in pieces])
+    return np.concatenate(xs), np.concatenate(ws)
+
 def kummer_coeffs(j):
     n = j+1
     c = []
@@ -52,30 +57,45 @@ class Angles:
         self.x3 = (np.sin(TH)*np.sin(PH)).ravel()**2
         self.w = 8.0*(wth[:, None]*wph[None, :]).ravel()
 
-def a_integral(Q, Cc, D0, zetas, ang):
-    """Q, Cc: lists of 3 arrays (n,), D0: (n,).  Returns array (len(zetas), n)."""
-    q = Q[0][:, None]*ang.x1+Q[1][:, None]*ang.x2+Q[2][:, None]*ang.x3
+def _pre(q, C, D0b, extra=0):
+    lq = np.log(q)
+    return [BIN[j]*D0b**(P-j)*(-C)**j*(0.5*Gam(j+extra+1.5))*np.exp(-(j+extra+1.5)*lq) for j in range(P+1)]
+
+def a_integral(Q, Cc, D0, specs, ang):
+    """Q, Cc: lists of 3 arrays (n,), D0: (n,).  specs: list of
+         ('cos', zeta, shift): int d^3at e^{-sum Q at^2 - shift |at|^2} (D0 - sum C at^2)^4 2cos(zeta |at|)
+         ('mom', n)          : int d^3at e^{-sum Q at^2} (D0 - sum C at^2)^4 2 |at|^{2n}
+       Returns array (len(specs), n)."""
+    q0 = Q[0][:, None]*ang.x1+Q[1][:, None]*ang.x2+Q[2][:, None]*ang.x3
     C = Cc[0][:, None]*ang.x1+Cc[1][:, None]*ang.x2+Cc[2][:, None]*ang.x3
     D0b = D0[:, None]
-    lq = np.log(q)
-    pre = [BIN[j]*D0b**(P-j)*(-C)**j*GJ[j]*np.exp(-(j+1.5)*lq) for j in range(P+1)]
-    Sm = []
-    for m in range(P+2):
-        acc = 0
-        for j in range(P+1):
-            if m < len(KC[j]):
-                acc = acc+KC[j][m]*pre[j]
-        Sm.append(acc)
+    cache = {}
     out = []
-    for zeta in zetas:
-        if zeta == 0:
-            tot = Sm[0]
+    for sp in specs:
+        if sp[0] == 'mom':
+            tot = sum(_pre(q0, C, D0b, extra=sp[1]))
         else:
-            y = zeta**2/(4*q)
-            tot = Sm[P+1]
-            for m in range(P, -1, -1):
-                tot = tot*y+Sm[m]
-            tot = tot*np.exp(-y)
+            zeta, shift = sp[1], sp[2]
+            if shift not in cache:
+                q = q0+shift
+                pre = _pre(q, C, D0b)
+                Sm = []
+                for m in range(P+2):
+                    acc = 0
+                    for j in range(P+1):
+                        if m < len(KC[j]):
+                            acc = acc+KC[j][m]*pre[j]
+                    Sm.append(acc)
+                cache[shift] = (q, Sm)
+            q, Sm = cache[shift]
+            if zeta == 0:
+                tot = Sm[0]
+            else:
+                y = zeta**2/(4*q)
+                tot = Sm[P+1]
+                for m in range(P, -1, -1):
+                    tot = tot*y+Sm[m]
+                tot = tot*np.exp(-y)
         out.append(2.0*(tot@ang.w))
     return np.array(out)
 
@@ -94,8 +114,34 @@ def a_integral_zero_exact(Q, Cc, D0):
         tot = tot+mono
     return 2.0*tot
 
+def adaptive_grid(spieces, zpieces, vmax=32., xband=(-5.0, 5.0), nband=40, xtop=6.0, dens_lo=1.2, nmin=4):
+    """Grid in (s, v, z) with v resolved through x = 2s - v = log(w1 w2), the variable in which the factor
+    exp(i lam e^{4 i beta} e2) oscillates near the flat directions: for each s-node the v-rule is composite in x,
+    dense on xband, coarse below it and cut at x = xtop above it (there e2 >= e^{xtop} and the factor is
+    exponentially small for beta > 0; the cut is only used with beta > 0)."""
+    s, ws = cnodes(spieces); z, wz = cnodes(zpieces)
+    Ss, Vs, Ws = [], [], []
+    for si, wi in zip(s, ws):
+        lo, hi = 2*si-vmax, min(2*si, xtop)
+        if hi <= lo:
+            continue
+        pcs = []
+        a, b = max(lo, xband[0]), min(hi, xband[1])
+        if b > a:
+            pcs.append((max(nmin, int(np.ceil(nband*(b-a)/(xband[1]-xband[0])))), a, b))
+        if xband[0] > lo:
+            e = min(xband[0], hi); pcs.append((max(nmin, int(np.ceil(dens_lo*(e-lo)))), lo, e))
+        if hi > xband[1]:
+            c = max(lo, xband[1]); pcs.append((max(nmin, int(np.ceil(4*(hi-c)))), c, hi))
+        x, wx = cnodes(pcs)
+        Ss.append(np.full(len(x), si)); Vs.append(2*si-x); Ws.append(np.exp(si)*wi*wx)
+    Ss = np.concatenate(Ss); Vs = np.concatenate(Vs); Ws = np.concatenate(Ws)
+    S = np.repeat(Ss, len(z)); V = np.repeat(Vs, len(z)); Wt = np.repeat(Ws, len(z))*np.tile(wz, len(Ss))
+    Zg = np.tile(z, len(Ss))
+    return S, V, Zg, Wt
+
 def _chunk(args):
-    (S, V, Zg, Wt, eps, alpha, beta, zetas, angpar, check_zero) = args
+    (S, V, Zg, Wt, eps, alpha, beta, specs, angpar, check_zero) = args
     ang = Angles(*angpar)
     w1 = np.exp(S); w2 = w1*np.exp(-V); w3 = w2*np.exp(-Zg)
     jac = w2*w3
@@ -109,7 +155,7 @@ def _chunk(args):
     pref = np.exp(-2j*alpha+4j*beta)
     Cc = [pref*w2*w3, pref*w1*w3, pref*w1*w2]
     with np.errstate(over='ignore', invalid='ignore'):
-        A = a_integral(Q, Cc, D0, zetas, ang)
+        A = a_integral(Q, Cc, D0, specs, ang)
     r = A@(dens*ex)
     r0 = np.sum(a_integral_zero_exact(Q, Cc, D0)*dens*ex) if check_zero else 0j
     return r, r0
@@ -123,23 +169,35 @@ def pool(n=None):
     return _POOL
 
 def integrate(kappas, eps, alpha, beta, ns=160, nv=60, nz=60, srange=(-8.0, 13.0), vmax=32., zmax=32.,
-              angpar=(30, 8), chunk=2000, check_zero=False, parallel=True):
-    """Returns (Z2, N) with N[i] = int 2cos(kappa_i sqrt(a.a)/2) x weight on the contour (alpha, beta) and
-    Z2 = int 2 x weight (same rules).  So <Tr e^{i kappa A_0}> = 2 N/Z2.  kappas may be complex."""
-    zetas = [0]+[k*np.exp(-1j*alpha)/2 for k in kappas]
-    s, ws = nodes(ns, *srange); v, wv = nodes(nv, 0.0, vmax); z, wz = nodes(nz, 0.0, zmax)
-    S, V, Zg = np.meshgrid(s, v, z, indexing='ij')
-    Wt = (np.exp(s)*ws)[:, None, None]*wv[None, :, None]*wz[None, None, :]
-    S = S.ravel(); V = V.ravel(); Zg = Zg.ravel(); Wt = Wt.ravel()
-    jobs = [(S[i:i+chunk], V[i:i+chunk], Zg[i:i+chunk], Wt[i:i+chunk], eps, alpha, beta, zetas, angpar, check_zero)
+              angpar=(64, 12), chunk=1500, check_zero=False, parallel=True, extra_specs=(), pieces=None):
+    """Returns (Z2, N[, X][, Z0]) on the contour (alpha, beta):
+         N[i] = int 2cos(kappa_i sqrt(a.a)/2) x weight,  Z2 = int 2 x weight (same rules),
+       so <Tr e^{i kappa A_0}> = 2 N/Z2 (kappas may be complex).  extra_specs are passed to a_integral in
+       Lorentzian-free form: ('cos', zeta, shift) or ('mom', n), with at-variables (see a_integral)."""
+    specs = [('cos', 0, 0)]+[('cos', k*np.exp(-1j*alpha)/2, 0) for k in kappas]+list(extra_specs)
+    if isinstance(pieces, dict):
+        S, V, Zg, Wt = adaptive_grid(**pieces)
+    else:
+        if pieces is None:
+            s, ws = nodes(ns, *srange); v, wv = nodes(nv, 0.0, vmax); z, wz = nodes(nz, 0.0, zmax)
+        else:
+            (s, ws), (v, wv), (z, wz) = (cnodes(p) for p in pieces)
+        S, V, Zg = np.meshgrid(s, v, z, indexing='ij')
+        Wt = (np.exp(s)*ws)[:, None, None]*wv[None, :, None]*wz[None, None, :]
+        S = S.ravel(); V = V.ravel(); Zg = Zg.ravel(); Wt = Wt.ravel()
+    jobs = [(S[i:i+chunk], V[i:i+chunk], Zg[i:i+chunk], Wt[i:i+chunk], eps, alpha, beta, specs, angpar, check_zero)
             for i in range(0, len(S), chunk)]
     outs = pool().map(_chunk, jobs) if parallel else [_chunk(j) for j in jobs]
     res = sum(o[0] for o in outs); r0 = sum(o[1] for o in outs)
     ph = np.exp(1j*(3*d*beta-3*alpha))
     res = res*ph; r0 = r0*ph
+    nk = len(kappas)
+    ret = [res[0], res[1:1+nk]]
+    if extra_specs:
+        ret.append(res[1+nk:])
     if check_zero:
-        return res[0], res[1:], r0
-    return res[0], res[1:]
+        ret.append(r0)
+    return tuple(ret)
 
 def Ru(u):
     return 3*np.pi*u/8, np.pi*u/8
