@@ -1,0 +1,127 @@
+# NAMCG attack plan - strategic decomposition of the OPEN problems for an AI solver.
+# Derived from reports/graph/mission-graph.yaml (same run) and the manuscript passages it cites.
+# The obligations are the manuscript's own stated missing steps (src given per obligation);
+# the ordering/waves/impact numbers are COMPUTED STRATEGY ADVICE, not manuscript content.
+# Statuses are mirrored verbatim from the manifest; no status, priority or classification is changed.
+schema_version: 1
+generated: "2026-11-08T00:40:00+00:00"
+derived_from:
+  manifest: reports/graph/mission-graph.yaml
+  manifest_generated: "2026-11-07T23:55:00+00:00"
+title: "NAMCG attack plan - open problems as solver tasks"
+problems:
+  - id: A.map
+    state: open-critical
+    priority: critical-path
+    depends_on: []
+    outputs: ["dictionary map (derived)"]
+    unlocks: [B.ward, F.coeff]
+    obligations:
+      - {id: A.1, task: "specify Hilbert space, Weyl map, continuum limit of the map", src: "ch17:390-392"}
+      - {id: A.2, task: "error control per Theta order", src: "ch17:390-392"}
+      - {id: A.3, task: "derive [X,Phi] <-> i Theta D Phi; retire ass:dictionary", src: "ch17:385"}
+  - id: B.ward
+    state: open-critical
+    priority: critical-path
+    depends_on: [A.map]
+    outputs: ["tensor-block stationarity"]
+    unlocks: []
+    obligations:
+      - {id: B.1, task: "fixed-volume non-conformal tensor-block variations", src: "ch17:134-137"}
+      - {id: B.2, task: "stationarity of delta S_D with no imported metric", src: "ch17:134-137"}
+  - id: C.scalar
+    state: open-critical
+    priority: critical-path
+    depends_on: []
+    outputs: ["scalar operator, mass, coupling"]
+    unlocks: []
+    obligations:
+      - {id: C.1, task: "operator+mass beyond radial curvature lambda v^2", src: "ch17:139-157"}
+      - {id: C.2, task: "matter coupling + phenomenological test supplied", src: "ch17:139-157"}
+  - id: D1.lorentz
+    state: open-critical
+    priority: critical-path
+    depends_on: []
+    outputs: ["derived SO(3,1); omega,A_mu,B, ghost operators"]
+    unlocks: [F.coeff]
+    obligations:
+      - {id: "D.1", task: "derive local SO(3,1) gauge symmetry from Presentation A", src: "ch17:329-345"}
+      - {id: "D.2", task: "derive the locked frame; do not assume ass:frame-lock", src: "ch17:339-342"}
+      - {id: "D.3", task: "field content: omega, A_mu, B and ghost operators", src: "ch17:329-345"}
+  - id: E.sig
+    state: open-critical
+    priority: critical-path
+    depends_on: []
+    outputs: ["derived Lorentzian signature"]
+    unlocks: []
+    obligations:
+      - {id: E.1, task: "derive (-,+,+,+) of the locked vacuum; drop ass:lorentzian", src: "ch04:322"}
+  - id: F.coeff
+    state: open-critical
+    priority: critical-path
+    depends_on: [A.map, D1.lorentz]
+    outputs: ["A,B,C rationals; G_eff physical; alpha"]
+    unlocks: [N.eft]
+    obligations:
+      - {id: F.1, task: "weighted a1 + curvature-linear a2 on the locked block", src: "ch17:403-412"}
+      - {id: F.2, task: "ghosts and scheme stated; rationals A,B,C", src: "ch17:403-412"}
+      - {id: F.3, task: "physical G_eff value+sign; alpha value", src: "ch08:213-214; ch17:506-510"}
+  - id: G.ent
+    state: open-critical
+    priority: critical-path
+    depends_on: []
+    outputs: ["S_ent^(IR) derived; Lambda_eff from it"]
+    unlocks: [H.nu]
+    obligations:
+      - {id: G.1, task: "derive S_ent^(IR) from matrix theory (not assumed)", src: "ch17:475"}
+      - {id: G.2, task: "Lambda_eff from the derived entropy (criterion item 7)", src: "ch17:723-726"}
+  - id: N.eft
+    state: open-critical
+    priority: critical-path
+    depends_on: [F.coeff]
+    outputs: ["no Ostrogradsky ghost for p < Lambda_UV"]
+    unlocks: []
+    obligations:
+      - {id: N.1, task: "insert alpha from F; state ghost-mass regime", src: "ch17:505-510"}
+      - {id: N.2, task: "no propagating ghost below Lambda_UV", src: "ch09:123-124"}
+  - id: H.nu
+    state: open-optional
+    priority: optional
+    depends_on: [G.ent]
+    outputs: ["nu_sqrt from modular data"]
+    unlocks: []
+    obligations:
+      - {id: H.1, task: "derive stationary kappa_IR (IR boundary surface gravity)", src: "ch17:541-544"}
+      - {id: H.2, task: "produce the Delta k(g_N, kappa_IR) scale", src: "ch17:546-548"}
+      - {id: H.3, task: "adopt the c_star convention (1 vs 1/2pi unresolved)", src: "ch17:560-565"}
+  - id: I.drag
+    state: open-optional
+    priority: optional
+    depends_on: []
+    outputs: ["microscopic drag exponent, rate, Gamma_ij"]
+    unlocks: []
+    obligations:
+      - {id: I.1, task: "derive drag exponent/rate from microscopic theory", src: "ch14:184"}
+  - id: J.ecg
+    state: open-optional
+    priority: optional
+    depends_on: [F.coeff, G.ent]
+    outputs: ["ECG solutions; singularity resolution (target)"]
+    unlocks: []
+    obligations:
+      - {id: J.1, task: "spherical ECG solutions with derived G_eff, Lambda_eff", src: "ch09:222"}
+      - {id: J.2, task: "singularity resolution from the matrix theory", src: "ch09:222"}
+goals:
+  - {id: gr.spin2,    title: "massless spin-2 from matrix theory",  needs: [B.ward, D1.lorentz, E.sig]}
+  - {id: gr.einstein, title: "Einstein dynamics (matrix-derived)",   needs: [C.scalar, E.sig, F.coeff]}
+  - {id: gr.geff,     title: "G_eff not an input",                  needs: [F.coeff]}
+  - {id: gr.hbev,     title: "HBEV: Lambda_eff from derived entropy", needs: [G.ent]}
+  - {id: gr.noghost,  title: "no Ostrogradsky ghost below Lambda_UV", needs: [F.coeff, N.eft]}
+conditional_suppliers:
+  # closed-conditionally items already in the book; usable as inputs but each stays conditional
+  - thm.split
+  - thm.repairII
+  - thm.Geff
+  - thm.locking
+  - thm.conservation
+  - ch15.lab
