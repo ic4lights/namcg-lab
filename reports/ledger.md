@@ -343,3 +343,49 @@
 - Scan: digest + targeted reads. 3(d) is satisfied because the dirty part (055) was read in full; no full scan is claimed.
 - Integration: appH 550508 -> 561466 bytes, sha256 ea5c753b0f01a3a92e426435f747fa464521980f609ab330f4a432868daba1f5. Build PASS 363 pages, 0 undefined. No bib change. Backup: scratch/integrator-backup/056-regulator-inertia/.
 - Integrated count: 54. The next integration is ordinal 55, which is due a gatekeeper full scan and an SME scout. Pending author commit: appH (055 + 056).
+
+## 057-mass-plane-class (Problem E) — integrated 2026-11-07 (uncommitted, author to commit)
+- Route: 056 avenue 1 (fixed gamma > 0). Rounds: 2.
+  - r1 AWRR | M2 | flags none:
+    - F1: (iii) domination conclusion restricted to gamma converging to a finite limit, domination step stated;
+    - F2: gamma <= 0 sentence disambiguated;
+    - F3: closing repeated 056;
+    - F4: hashes.
+  - r2 ACCEPT | M2 | flags none | improving.
+- Result (bounded no-go, M2, non-stopping). Linear colour-blind contours, Definition (A) with mass term or isotropic P, paths with Lambda(0) real, Re M_gamma > 0, Re iS_b <= 0.
+  - Plane-class invariant (every N): on real 2-planes where Re(e^{i phi}h) > 0, arg det lies in an upper set [2phi, pi) or a lower set (-pi, 2phi - pi]; the positive planes form a connected set, so the class is conserved.
+  - The Hermitian contour is upper; every admissible -C_0 contour is lower. So no path joins them, including 056's e^{i pi/8}, e^{-3 pi i/8} contour.
+  - eps -> 0 with gamma/eps -> inf and convergent end points: Im h_inf = -kappa v v^T. At N=2 the eps=0 integrand is not absolutely integrable for any real gamma, so dominated convergence fails for gamma converging to a finite limit.
+  - Order of limits: gamma -> 0 first, or gamma/eps bounded, gives 053's Euclidean values at phases. eps -> 0 at fixed gamma > 0 is undecided. gamma is treated as a supplied deformation.
+- No signature: the classes are fixed by eta and the regulator; ass:lorentzian is retained. Problem E stays OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change. No PRIOR-CLAIM-ERROR.
+- Open avenues (ranked):
+  1. Direct oscillatory or conditionally convergent analysis of lim_{eps->0} I_{eps,gamma} at N=2, fixed gamma > 0.
+  2. Thimbles at fixed eps, gamma > 0.
+  3. Colour-mixing linear maps.
+  4. Anisotropic P of low rank.
+  5. Divergent end-point families or unbounded gamma.
+  6. Semidefinite passages.
+  7. N -> inf first; Definitions (B) and (C).
+- Ordinal-55 FULL SCAN (CLAUDE.md 3(a)): five gatekeeper passes, scan-p1..p5.md, covering appH L1-1100, L1101-2200, L2201-3255, ch01-ch09, and ch10-ch18 + appA-G, appI-L. All 30 manifest files were read in full. Nothing blocks 057.
+- Scan findings for the author (pre-existing, not caused by 054-057):
+  - MAJOR, PRIOR-CLAIM-ERROR candidate: "nu_sqrt(g_gal) ~ 1.1" (ch13:255, ch16:208, appE:48, appE:221). The pass-5 scanner computed ~1.35, using g-dagger in eq:nu-sqrt, which is written with g_s. This undercuts ch16:212-213 / appE:220-222 ("gamma ~ 1.4 not explained"). appI:27 is inconsistent. To be verified and corrected as package 058.
+  - Minor:
+    - eq:nu-efe bracket sign vs the QUMOND uniform-field form (ch13:229-233, appE:253-254), to be verified;
+    - ch12:341-342 small-r limit omits -2Mr^2/r0^3;
+    - appJ:55 undefined L_IR;
+    - appJ:80-81 psi vs sigma tension with ch17:208-209;
+    - ch12:224/398-400 overstatement;
+    - appJ:102-104 "Chapter 3" (should be \ref{ass:lorentzian}, ch04);
+    - ch01:321-323 swapped chapter numbers 16/17;
+    - ch04:330-333 "does derive" overstates;
+    - unqualified m_T = 0 read-offs (ch05, ch07, ch08, ch09);
+    - ch02:289-290 Wick direction reversed;
+    - ch04:311 ass:nondeg scope;
+    - ch09:163-164 index placement;
+    - ch09:231 "two" vs three;
+    - ch18:32-53 omits E, N from the "not obtained" list;
+    - appI:45-46 plain-text citations;
+    - fixed problem lists and hard-coded chapter/theorem numbers throughout;
+    - ch17 vs appH qualifier wording for G and H (no status conflict).
+- Integration: appH 561466 -> 569524 bytes, sha256 9443341b74f991d49fee3b08830dd44da7f9a12245922f52aaa193b0bd607bcd. Build PASS 365 pages, 0 undefined. Backup: scratch/integrator-backup/057-mass-plane-class/.
+- Integrated count: 55. SME scout due now (after the 5th integration since 50). Next 5th-item full scan is due at 60. Pending author commit: appH (055 + 056 + 057).
