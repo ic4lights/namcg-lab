@@ -3,15 +3,16 @@ appH baseline: 579751 b6c505ad16fcc689f32b3bc9975d78049f2bfc2679585149d56209154a
 bib baseline: 26627 acbee1ce97a86bf8c68d1e4aca168f8d20ad7fb0df26b002af3c6338c93e738f match
    CRLF 892 bare LF 0 ends with CRLF: True
 anchor count 1 line 1588
-insert: LF 10284 f2a08fbcd9e5ec46db6a79e43eff0324701e5fef973fd4a97a3c2525069994ee ; CRLF 10304 feb6788dae063047f07c2178d4b4ebccf84fb3e6cb68637a848c05b2ed819dd2
-result appH: 590057 c0e28e0225281b80491cb1365952c0c38bbc362becd23e3fc2f7b6848840b45f CRLF 3300 bare LF 0
+insert: LF 11102 d4d35ace6f76aa370ace725a54bbb23f0e6deb028888dd0c6f694af0198b089b ; CRLF 11122 fdff5088e8b01bb03ac91bcb37563b35eb99a594b24a35daed5f5c49dbef3aa2
+result appH: 590875 94befe3b6d9f6c01c6a30d88010eebce6cac986938e6e882f5bd06b4397485c6 CRLF 3300 bare LF 0
    preceding bytes before insert end with blank line: True
-bib entries: 906 2227428977ea8d8f9c578dfcb246c026e442487743df2af079ff2353495883f8
-result bib: 27535 1a27efb32c924e20f57e12a54674d9f078f716ce5a59b89710719d0ac68cbe37 CRLF 922 bare LF 0
+bib entries: 972 38196621339bdb75e661909b01fb2488b9b0ac61a3d1a677e98a76adf04f6eda
+result bib: 27601 645c93c9bab8486142651b2d8ec0a784431bc248acb815a530bd1747a47d0f67 CRLF 923 bare LF 0
   ref ass:frame-lock labels found: 1
   ref ass:lorentzian labels found: 1
   ref ass:nondeg labels found: 1
   ref ch:vierbein-emergence labels found: 1
+  ref def:matrix-coords-ext labels found: 1
   ref eq:Smatrix labels found: 1
   ref sec:status-D labels found: 1
   ref sec:status-F labels found: 1
