@@ -1,0 +1,32 @@
+colour-blind  t=1 it= 0  constraints=  3000  LP optimum=1.235e-01  fresh pool: min g=-2.013e-02 max g=3.454e-01  [|g| scale 6.61e-01]
+colour-blind  t=1 it= 1  constraints=  3491  LP optimum=1.066e-01  fresh pool: min g=-1.193e-02 max g=3.512e-01  [|g| scale 6.61e-01]
+colour-blind  t=1 it= 2  constraints=  3786  LP optimum=9.816e-02  fresh pool: min g=-1.748e-03 max g=3.300e-01  [|g| scale 6.61e-01]
+colour-blind  t=1 it= 3  constraints=  3835  LP optimum=9.688e-02  fresh pool: min g=-8.546e-04 max g=3.281e-01  [|g| scale 6.61e-01]
+colour-blind  t=1 it= 4  constraints=  3859  LP optimum=9.627e-02  fresh pool: min g=-6.101e-04 max g=3.231e-01  [|g| scale 6.61e-01]
+colour-blind  t=1 it= 5  constraints=  3884  LP optimum=9.564e-02  fresh pool: min g=-1.589e-04 max g=3.264e-01  [|g| scale 6.61e-01]
+colour-blind  t=1 it= 6  constraints=  3903  LP optimum=9.518e-02  fresh pool: min g=-1.507e-04 max g=3.224e-01  [|g| scale 6.61e-01]
+colour-blind  t=1 it= 7  constraints=  3914  LP optimum=9.491e-02  fresh pool: min g=-2.092e-04 max g=3.235e-01  [|g| scale 6.61e-01]
+
+colour-blind  t=2 it= 0  constraints=  3000  LP optimum=9.046e-17  fresh pool: min g=-2.053e-14 max g=2.196e-14  [|g| scale 5.66e-01]
+
+colour-blind  t=5 it= 0  constraints=  3000  LP optimum=9.107e-18  fresh pool: min g=-5.988e-15 max g=4.934e-15  [|g| scale 4.27e-01]
+
+colour-mixing t=1 it= 0  constraints=  4000  LP optimum=1.625e-01  fresh pool: min g=-3.512e-01 max g=1.167e+00  [|g| scale 2.95e+00]
+colour-mixing t=1 it= 1  constraints=  5000  LP optimum=1.394e-01  fresh pool: min g=-2.744e-01 max g=8.800e-01  [|g| scale 2.95e+00]
+colour-mixing t=1 it= 2  constraints=  6000  LP optimum=1.259e-01  fresh pool: min g=-3.348e-01 max g=7.549e-01  [|g| scale 2.95e+00]
+colour-mixing t=1 it= 3  constraints=  7000  LP optimum=1.132e-01  fresh pool: min g=-1.600e-01 max g=7.946e-01  [|g| scale 2.95e+00]
+colour-mixing t=1 it= 4  constraints=  8000  LP optimum=1.030e-01  fresh pool: min g=-1.076e-01 max g=6.558e-01  [|g| scale 2.95e+00]
+colour-mixing t=1 it= 5  constraints=  9000  LP optimum=9.327e-02  fresh pool: min g=-7.371e-02 max g=5.078e-01  [|g| scale 2.95e+00]
+colour-mixing t=1 it= 6  constraints=  9690  LP optimum=8.708e-02  fresh pool: min g=-2.775e-02 max g=4.871e-01  [|g| scale 2.95e+00]
+colour-mixing t=1 it= 7  constraints= 10116  LP optimum=8.349e-02  fresh pool: min g=-2.530e-02 max g=4.673e-01  [|g| scale 2.95e+00]
+
+colour-mixing t=2 it= 0  constraints=  4000  LP optimum=8.545e-11  fresh pool: min g=-3.018e-08 max g=2.698e-08  [|g| scale 2.51e+00]
+colour-mixing t=2 it= 1  constraints=  5000  LP optimum=4.991e-12  fresh pool: min g=-4.530e-09 max g=4.476e-09  [|g| scale 2.51e+00]
+colour-mixing t=2 it= 2  constraints=  5102  LP optimum=3.338e-12  fresh pool: min g=-2.715e-08 max g=2.688e-08  [|g| scale 2.51e+00]
+colour-mixing t=2 it= 3  constraints=  6102  LP optimum=-7.242e-13  fresh pool: min g=-6.048e-11 max g=6.437e-11  [|g| scale 2.51e+00]
+
+colour-mixing t=5 it= 0  constraints=  4000  LP optimum=1.183e-11  fresh pool: min g=-3.073e-09 max g=3.684e-09  [|g| scale 1.79e+00]
+colour-mixing t=5 it= 1  constraints=  4071  LP optimum=4.867e-12  fresh pool: min g=-6.258e-09 max g=4.461e-09  [|g| scale 1.79e+00]
+colour-mixing t=5 it= 2  constraints=  4720  LP optimum=4.236e-11  fresh pool: min g=-1.193e-08 max g=1.075e-08  [|g| scale 1.79e+00]
+colour-mixing t=5 it= 3  constraints=  5720  LP optimum=-3.398e-14  fresh pool: min g=-2.349e-11 max g=1.968e-11  [|g| scale 1.79e+00]
+
