@@ -1,0 +1,29 @@
+@@OLD
+Asymptotically this residual is of order \(20\%\), not the factor
+\(\sim4\) of the isolated map.
+@@NEW
+Asymptotically this residual is of order \(20\%\) in relative velocity,
+\(\sqrt{\nu_{\sqrt{}}(g_{\mathrm{gal}})}-1\approx 0.16\)--\(0.22\) over the
+range above, that is an acceleration boost of about \(1.35\)--\(1.5\),
+not the acceleration factor \(\sim4\) of the isolated map.
+@@END
+@@OLD
+        identity. A null result under the external-field-corrected
+        prediction is the outcome expected once
+        Assumption~\ref{ass:efe} is respected.
+@@NEW
+        identity. A null result under the external-field-corrected
+        prediction constrains the saturated boost of
+        Assumption~\ref{ass:efe}, which exceeds unity.
+@@END
+@@OLD
+included, is compatible with Newtonian gravity and with the
+modest residual enhancement allowed by the coefficient-level
+NAMCG/RAR map under external-field saturation. It supplies no
+@@NEW
+included, is compatible with Newtonian gravity. The controlled
+analyses of Section~\ref{sec:gaia-show} disfavour a residual
+enhancement of the size, of order \(20\%\) in relative velocity, that
+the coefficient-level NAMCG/RAR map gives under external-field
+saturation. It supplies no
+@@END

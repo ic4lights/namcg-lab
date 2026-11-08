@@ -1,0 +1,21 @@
+== ch13-cores-galaxies.tex
+  baseline 16631 bytes sha256 aafba1b0c80ebe21954f9e286516c70928a582f27f84ebf5ba307346484a036a  CRLF, bare LF: (399, 0)
+  edit 1: old count 1 (line 231), new count in baseline 0
+  edit 2: old count 1 (line 254), new count in baseline 0
+  result   17240 bytes sha256 23fc14239605dd258714a3c7fb4e6a5c995347bb2e660cca5942fb792f92fd9a  CRLF, bare LF: (409, 0)
+== ch16-falsifiers.tex
+  baseline 16725 bytes sha256 8ce01e1d5c4f972df14f54098017da865604f1fe7e6a79ad746861e6da210b69  CRLF, bare LF: (361, 0)
+  edit 1: old count 1 (line 208), new count in baseline 0
+  result   16833 bytes sha256 521226a8ee830dd31372c4c36144bad918bdec1af671bece503f9a61faf92ed4  CRLF, bare LF: (362, 0)
+== appE-rar-bridge.tex
+  baseline 13446 bytes sha256 695dd9c2932184775a230317ea036e53383718f2cf0f2548c51ecad73f29c311  CRLF, bare LF: (308, 0)
+  edit 1: old count 1 (line 48), new count in baseline 0
+  edit 2: old count 1 (line 219), new count in baseline 0
+  result   13859 bytes sha256 a0dd0df8189dee98339750b3ed742394617c1e6ef7d8b624b122636f7cf7bd80  CRLF, bare LF: (315, 0)
+== appI-gaia-wide.tex
+  baseline 3855 bytes sha256 91daa222e510cb2fc61e12798ec8f4d0fa8f00bf687fd75f449d742a7d7db988  CRLF, bare LF: (83, 0)
+  edit 1: old count 1 (line 27), new count in baseline 0
+  edit 2: old count 1 (line 66), new count in baseline 0
+  edit 3: old count 1 (line 79), new count in baseline 0
+  result   4154 bytes sha256 b91dc5e480c147466b8e2c5b39c275f0872183c7c0e01a18a70b76b69a15041e  CRLF, bare LF: (87, 0)
+ALL CHECKS PASS
