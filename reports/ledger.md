@@ -552,3 +552,27 @@
   - bib 28049 -> 29360 bytes, sha256 1d280848d1bb597193dc648963f81b9b635afce238aa2467fd13ce792002856d.
   - Build PASS 376 pages, 0 undefined; bibtex run.
 - Integrated count: 60. SME scout due now. Next 5th-item full scan due at 65. Pending author commit: appH and bib (061 + 062).
+
+## SME scout after 60 (2026-11-08): reports/sme-scout-20261108-after60.md
+- Verdict: Problem E has reached diminishing returns against ch17 L718-719, since 059-062 rest on a supplied h_0, gamma, fermion content and family.
+- Ranked routes:
+  1. A Feynman-regulated relative Pfaffian density per unit volume on the doubleton member, with the iε prescription and the trace stated as supplied. This would be the last E package.
+  2. G-derived via the Fliss-Frenkel-Hartnoll-Soni relational area law (2408.05274), on a compact fuzzy factor, with the emergent-metric area made explicit.
+  3. Problem A: Bisognano-Wichmann/diamond correction (appH L30-31); ch17/appH A-definition mismatch.
+  4. Replace gamma with the one-loop potential (low feasibility).
+  5. Finite-N spectral truncation (cross-check).
+- Advisory author question: pause E after R1? The directive gives no contact; the loop follows the scout order.
+
+## 063-ch14-ratio-correction (Problem I, optional; M3 PRIOR-CLAIM-ERROR) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: ordinal-60 full scan, pass 5 (major finding); the SME scout after 60 concurs. Rounds: 1. r1 ACCEPT | M3 | PRIOR-CLAIM-ERROR. Integrated under the author directive (M3 non-stopping).
+- Correction: ch14:243-258 claimed P_ent/P_GW grows with separation d at fixed eta. With eq:Fdiss, ass:drag (eta constant per inspiral), eq:Pent, eq:Peters and a circular orbit, P_ent/P_GW = (5/32)eta/(G^3 M^2 mu), independent of d. The old prefactor was correct; only the d-power was wrong.
+  - A drag ~ d^-n gives a ratio ~ d^(4-n).
+  - At leading order the extra loss is degenerate with a chirp-mass rescaling M -> (1+R)^(3/5) M.
+  - The "Energy identity" exercise (ch14:367-368) is corrected: P_ent/|dU_N/dt| = (5/64)eta/(G^3 M^2 mu); the powers are comparable at eta = (64/5)G^3 M^2 mu.
+- Problem I stays OPEN / OPTIONAL / PROGRAMME-CONDITIONAL. No label change.
+- Gatekeeper minor notes, no action:
+  - optional tightening of "At that order it is degenerate";
+  - ch16:221 "at those separations" now reads as "in that regime";
+  - \mathcal M is reused locally.
+- Integration: ch14 16520 -> 17336 bytes, sha256 b1fefa684669f0315e705061a9efd84c732eca741e687b9f3a88977f2f976dd2. Build PASS 376 pages, 0 undefined. Backup scratch/integrator-backup/063-ch14-ratio-correction/.
+- Integrated count: 61. Next 5th-item full scan due at 65. Pending author commit: appH + bib (061, 062), ch14 (063).
