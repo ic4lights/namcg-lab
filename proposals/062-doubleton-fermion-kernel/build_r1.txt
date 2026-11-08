@@ -1,0 +1,6 @@
+Scratch build (outside the repository, in the session scratchpad: git-tracked files copied via tar, then the patched appH and bib from apply_check.py --out placed over them).
+pdflatex, bibtex, pdflatex, pdflatex: all exit 0.
+Output written on namcg-book7.pdf (376 pages). 'undefined' occurrences in log: 0. 'multiply' occurrences: 0. bibtex warnings: 0.
+New keys present in .bbl: MartinDussaud2019, MackTodorov1969, Todorov2019, FioresiYuncken2024 (MantaSteinacker2025 already present).
+Patched appH sha256 6a8c811d73b28f80077625dd724ae6193d5719ca68a17ac804ed30ddcb8686d6 (606285 B); bib 1d280848d1bb597193dc648963f81b9b635afce238aa2467fd13ce792002856d (29360 B).
+Process note: a first copy command (which began with rm -rf of a scratchpad directory and used git ls-files -z) was denied; it was not retried in that form. A non-destructive copy (mkdir + tar of git ls-files) then ran.
