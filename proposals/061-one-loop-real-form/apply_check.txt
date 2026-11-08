@@ -1,0 +1,16 @@
+appH baseline: 590875 94befe3b6d9f6c01c6a30d88010eebce6cac986938e6e882f5bd06b4397485c6 match
+   CRLF 3300 bare LF 0
+bib baseline: 27601 645c93c9bab8486142651b2d8ec0a784431bc248acb815a530bd1747a47d0f67 match
+   CRLF 923 bare LF 0 ends with CRLF: True
+anchor count 1 line 1609
+insert: LF 8676 a5039fc349eff965bfa144a3ec4d634d7f5e738d6b9e7c7f079ae5747c41f493 ; CRLF 8688 c83a51cdf86036b8fd102a1c8fb4fbf709b760f6c6b20ce4d7ce3fbe2f79f63e
+result appH: 599565 da8be0e378b9d5c03913973089fbdc97a4617942dc4f86d1de79f67a17148a3e CRLF 3313 bare LF 0
+   preceding bytes before insert end with blank line: True
+bib entries: 446 c8a9ce2afc8117eda4bdcfef126e8922d56faed83649208e78199d34a65d5bd9
+result bib: 28049 582f09d5a0bca24e930a8e7c130907f495e738f6d14d89809aac6f7f7e7e1f22 CRLF 937 bare LF 0
+  ref ass:lorentzian labels found: 1
+  new labels in insert: []
+  cite IKKT1997 in bib (after append): 1
+  cite Steinacker2015S4 in bib (after append): 1
+  cite Steinacker2023 in bib (after append): 1
+  duplicate bib keys after append: []
