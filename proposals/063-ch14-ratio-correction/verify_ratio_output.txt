@@ -1,0 +1,13 @@
+P_GW      = 32*G**4*M**3*mu**2/(5*d**5)
+P_ent     = G*M*eta*mu/d**5
+ratio     = 5*eta/(32*G**3*M**2*mu) ; d/dd ratio = 0
+ratio(n)  = 5*d**(4 - n)*eta/(32*G**3*M**2*mu) ; exponent of d = 4 - n
+dim of ratio (c=1, GM~L, G mu~L, eta~L^3): 1
+ddot_Peters = -64*G**3*M**2*mu/(5*d**3)
+dU_N/dt     = -64*G**4*M**3*mu**2/(5*d**5) ; / P_GW = -2
+P_ent/|dU_N/dt| = 5*eta/(64*G**3*M**2*mu)
+eta at P_ent=|dU_N/dt| : [64*G**3*M**2*mu/5]
+eta at P_ent=P_GW      : [32*G**3*M**2*mu/5]
+ddot_ent    = -2*eta/d**3
+fdot / [(96/5) pi^(8/3) (G Mc)^(5/3) f^(11/3)] = R + 1
+=> (1+R) Mc^(5/3) = Mc_eff^(5/3): Mc_eff = (1+R)^(3/5) Mc
