@@ -1,0 +1,12 @@
+appH baseline: 606731 4808ae9ca68ac249a2f01d4e02261da98cabf32b913713f82a0429b0f4c230cf
+bib baseline: 29360 1d280848d1bb597193dc648963f81b9b635afce238aa2467fd13ce792002856d
+anchor occurrences: 1 ; plain Status paragraphs: 6
+anchor line: 1633 (preceded by a blank line)
+insert (LF source): 6728 980cb39011186ee1c861ddfa3455b16c58e401c4010d074af63ea3bc7e83e27d ; as CRLF block: 6758 ef8208249e919f61c4a919e636b69e242aef4489d02d7d44e9fcb28d0efce46c
+result appH: 613489 a0e4ff965eab20014968022aee823b06e573162a92c225b0345bb2257d60ac98 ; CRLF 3353 ; bare LF 0
+ref ass:lorentzian: label occurrences 1
+new labels: []
+cite Steinacker2023: bib entries 1
+bib unchanged (no new entries)
+no process language found
+would-be appH written to C:/Users/redgi/AppData/Local/Temp/claude/3ba14ee056ac155d/15e6827c-2d5a-4852-be36-98ee14883700/scratchpad/apply064a
