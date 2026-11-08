@@ -506,3 +506,49 @@
 - Integration: appH 590875 -> 599923 bytes, sha256 82ab236415a5fbbea02be7ceb6eebc791e560eef4a7e589cb25be2cf9ffa279c; bib 27601 -> 28049 bytes, sha256 582f09d5a0bca24e930a8e7c130907f495e738f6d14d89809aac6f7f7e7e1f22. Build PASS 374 pages, 0 undefined; bibtex run.
 - Process: in r1 the researcher's repo-copy command for a scratch build was denied and was not worked around; the r2 scratch build ran.
 - Integrated count: 59. The next integration is ordinal 60: a gatekeeper full scan is due before it, and an SME scout after it. Pending author commit: appH and bib (061).
+
+## 062-doubleton-fermion-kernel (Problems E, D1) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: 061 avenue 1, decisive per the gatekeeper. Rounds: 2.
+  - r1 AWRR | no milestone | flags none.
+    - F1 (major): the n>0 claim is now conditioned on the unverified identification of H_n as a ladder representation.
+    - F2: J_L sign pairing.
+    - F3: D_± defined through the chiral blocks of Gamma^a; the explicit sigma convention gave the wrong overall sign.
+    - F4: closing sentence repeated 061's.
+    - F5: unitary-dual citation added.
+    - Process: the researcher's first scratch-build command began with an `rm -rf` of a scratchpad directory and was denied. The researcher did not retry it and used a non-destructive copy instead. The gatekeeper ruled this not a workaround.
+  - r2 ACCEPT | no milestone | flags none | improving.
+- Result (PROGRAMME-CONDITIONAL; not a milestone). For the so(4,1) member inside so(4,2), the doubleton member of 060 (W timelike, gamma = 3c > 0, h_0 (9,1), supplied IKKT fermions, N -> inf first):
+  - Premise: the class is HS(H_n) tensor 16, restricted to Spin(4,1)-smooth vectors.
+  - Within that class, Gamma^a[T_a, .] has no normalisable kernel: unconditionally for n = 0, and for n > 0 given the ladder identification.
+  - Mechanism: c^{-1} D_- D_+ = C5 - C4 - 2X, with X = sigma.J_L and 4J_L^2 = C4 +- 2iP. A kernel vector would need P = 0 and 1 + C4 = (A+1)^2 >= 0, which on the principal series forces p = 0. HS(H_n) restricted to Spin(3,1) lies in a multiple of the regular representation (Wigner-Mackey argument plus the compact U(1) null-pair stabiliser), and the Plancherel measure has no atoms (Fioresi-Yuncken Thm 7.1), so psi = 0.
+  - Stated limits: in B(H) the kernel contains 1 tensor chi; no bounded inverse; the N = inf Pfaffian is undefined; the one-loop separation is not established.
+- E and D stay OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change. No PRIOR-CLAIM-ERROR.
+- Open avenues (ranked):
+  1. Whether 0 is in the continuous spectrum of D_±, and an N = inf Pfaffian that is defined and non-zero (decisive).
+  2. Finite-N truncations of so(4,1).
+  3. Products with K.
+  4. The n>0 ladder identification.
+  5. Complementary and discrete series.
+  6. Non-smooth vectors.
+  7. The B(H) kernel.
+- Bib: MartinDussaud2019, FioresiYuncken2024, MackTodorov1969 (Crossref only) and Todorov2019.
+- Ordinal-60 FULL SCAN (CLAUDE.md 3(a)): five gatekeeper passes, scan-p1..p5.md in the 062 folder; all 30 manifest files read in full; nothing blocks 062.
+- Scan findings for the author (pre-existing):
+  - MAJOR, PRIOR-CLAIM-ERROR candidate (optional Problem I): ch14:243-253 claims the ratio P_ent/P_GW grows with separation d. For a circular orbit both scale as d^{-5}, so the ratio is d-independent. Exercise ch14:366-368 inherits this. Queued as package 063.
+  - Minor, 058 residue:
+    - eq:efe-sat quotes (ch13, ch16, appE, appI) lack a direction qualifier;
+    - appE:260 and appI:26 overstate the QUMOND match.
+  - Minor:
+    - "divergenceless entanglement stress" (appF:94, appJ:118, ch18:6) vs thm:conservation;
+    - appB:186-189 referent count;
+    - appD:14 plain-text citation;
+    - appJ "not obtained" list omits A and N;
+    - ch06:405-406, 454-457 unqualified m_T = 0;
+    - ch09:179 "claims the first list";
+    - ch06:68 "Appendix~\ref{sec:status-A}".
+  - All ordinal-55 minor items persist except those resolved by 058.
+- Integration:
+  - appH 599923 -> 606731 bytes, sha256 4808ae9ca68ac249a2f01d4e02261da98cabf32b913713f82a0429b0f4c230cf.
+  - bib 28049 -> 29360 bytes, sha256 1d280848d1bb597193dc648963f81b9b635afce238aa2467fd13ce792002856d.
+  - Build PASS 376 pages, 0 undefined; bibtex run.
+- Integrated count: 60. SME scout due now. Next 5th-item full scan due at 65. Pending author commit: appH and bib (061 + 062).
