@@ -1,6 +1,6 @@
 brace depth at end 0 negative seen False
-inline math opens 118 closes 118
+inline math opens 125 closes 125
 display opens 0 closes 0
-macros: ['Gamma', 'Lambda', 'bar', 'bigoplus', 'binom', 'cdot', 'cite', 'cong', 'ell', 'emph', 'epsilon', 'eta', 'gamma', 'ge', 'infty', 'int', 'le', 'mathbb', 'mathcal', 'mathfrak', 'mathrm', 'mathsf', 'neq', 'operatorname', 'paragraph', 'pi', 'pm', 'psi', 'ref', 'sqrt', 'supset', 'tfrac', 'to', 'vec']
+macros: ['Gamma', 'Lambda', 'bar', 'bigoplus', 'binom', 'cdot', 'cite', 'cong', 'emph', 'epsilon', 'eta', 'gamma', 'ge', 'infty', 'int', 'le', 'mathbb', 'mathcal', 'mathfrak', 'mathrm', 'neq', 'operatorname', 'paragraph', 'pi', 'pm', 'psi', 'ref', 'sqrt', 'supset', 'tfrac', 'to', 'vec']
 paragraphs (blank-line separated): 6
-words: 1176
+words: 1221
