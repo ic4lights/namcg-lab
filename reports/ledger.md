@@ -441,3 +441,36 @@
   - Backup: scratch/integrator-backup/059-signature-scan/.
 - Author question (carried from the scout): can premises like P1 and P2 ever count toward "derived" for E? The researcher and gatekeeper both read: no.
 - Integrated count: 57. Next 5th-item full scan due at 60. Pending author commit: appH (055-057, 059), bib (059), ch13, ch16, appE, appI (058).
+
+## Author commit 484cf37 (2026-11-08): manuscript changes of 055-059 committed by the author (appH, bib, ch13, ch16, appE, appI).
+
+## 060-semiclassical-signature-domains (Problems E, D1) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: SME scout R2 (after 50 and after 55), the first-ranked open avenue after 059. Rounds: 2.
+  - r1 AWRR | M2 | flags none.
+    - M1: gamma was used for both the mass and the kinetic tensor; the tensor is now \mathsf K.
+    - M2: the finite-N no-go was argued via so(4,2), but the T^a span only so(eta|{a,c0}) = so(4,1); argued through that subalgebra.
+    - m1-m7: ell definition; Gaussian Delta_T and empty Minkowski window; w is a supplied momentum scale; late-tau constant "of order g_YM" (2605 Eq. 64 is low by a factor of 2); c > 0 in base coordinates; "conjugate-coordinate backgrounds"; bib note (v2 equation numbers).
+  - r2 ACCEPT | M2 | flags none | improving. R1 was applied at "point, gamma has", a wrong search string in the review, accepted by the gatekeeper. The optional "same mechanism" wording was adopted.
+- Result (bounded no-go plus conditional sharpening, M2, non-stopping):
+  - Criterion of 2605.13294 v2 (proposed, tree level), read from source. The first-order class (050-052) at the flat point: Delta_T = 0 and the criterion fails. Gaussian width-sigma ratios are g/2sigma^2 (Euclidean) and 2^{-3/4}g/sigma^2 (eta). The window needs a supplied width, and w is a supplied momentum scale.
+  - Gram lemma (Euclidean contraction never gives a Lorentzian K) and Sylvester lemma (sig K = sig h_0|_W for a fibre-independent rank-4 frame).
+  - CP^{1,2} class (045-049, conjugate coordinates): E = +-m eta. The EOM with isotropic mass holds iff H = L^T h_0 L = c eta, with gamma = 3c eta^{c0c0}. Under h_0 (9,1) (059's P1 and P2): c > 0, W timelike, K Lorentzian on m != 0 and zero at the bounce.
+  - No selection: the so(6) twin solves the same equation at the same sign of gamma, with positive definite K. The T^a span so(4,1), which is non-compact, so there is no finite-N Hermitian solution and the Lorentzian member exists only for N -> inf at fixed gamma > 0.
+  - Base coordinates (the 1709.10480 mechanism): the fibre average diag(m^2, (2l^2 - m^2)/3) is Euclidean for 0 < m^2 < 2l^2 and Lorentzian with reversed sign above.
+  - Coupling: rho_M ~ 1/|m|; g^2 ~ |m|^{-3} (conjugate) and |2l^2 - m^2|^{-3/2} (base).
+- E and D (D1) stay OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No signature or frame is derived. No label change.
+- Open avenues (ranked):
+  1. One-loop (IKKT content) comparison of the so(4,2) and so(6) members at N -> inf, fixed gamma > 0. This is the only route here by which the integral itself could select the real form.
+  2. N -> inf first in Definition (A), fixed gamma > 0: is the conjugate background a saddle?
+  3. Curved first-order members.
+  4. Approximate finite-N truncations of non-compact five-index subalgebras.
+  5. Near-bounce fluctuations.
+  6. Anisotropic or non-Lie backgrounds; an alternative criterion.
+- Bib: Steinacker2026Weak (with a v2 note), Steinacker2018BB (DOI) and LiaoMaeta2025, all read from source.
+- Scan: digest + targeted reads; 3(b)/(c) not triggered.
+- Integration:
+  - appH 579751 -> 590875 bytes, sha256 94befe3b6d9f6c01c6a30d88010eebce6cac986938e6e882f5bd06b4397485c6.
+  - bib 26627 -> 27601 bytes, sha256 645c93c9bab8486142651b2d8ec0a784431bc248acb815a530bd1747a47d0f67.
+  - Build PASS 371 pages, 0 undefined; bibtex run.
+- Side remark for the author: 2605.13294 v2 Eq. (64) appears low by a factor of 2 (imaginary part 2 pi^2, not pi^2); the gatekeeper confirmed this.
+- Integrated count: 58. Next 5th-item full scan due at 60. Pending author commit: appH and bib (060).
