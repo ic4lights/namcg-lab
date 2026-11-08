@@ -1,0 +1,6 @@
+appH: 561466 bytes sha256 ea5c753b0f01a3a92e426435f747fa464521980f609ab330f4a432868daba1f5  CRLF, bare LF: (3255, 0)
+baseline matches expected: True
+anchor: 61 bytes sha256 a7c774127bc78a19a76b5ab005d0e4e59a3b56b66a3be64b71e38cd13ade26cc  count 1  line 1564
+insert LF: 7714 bytes sha256 f7fbbade4567d6843f13fe50f06ccb457cc78ac230863e1505b0bdb8f074af82 ; CRLF form: 7724 bytes sha256 aa8fa08b3402bfe2b98542a6e1ab9367b2e799bf29bd0b6d4d758d9f454962a3
+result: 569192 bytes sha256 e97ec8301e67d8e7f05d207d9425ce2a2ad723694e6488adda436dc6cb9c07f0  CRLF, bare LF: (3266, 0)
+wrote C:\Users\redgi\AppData\Local\Temp\claude\3ba14ee056ac155d\15e6827c-2d5a-4852-be36-98ee14883700\scratchpad\appH_057_result_v2.tex

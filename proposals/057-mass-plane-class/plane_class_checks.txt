@@ -1,0 +1,34 @@
+== A: identity and Z-positivity ==
+admissible samples 357 max |identity residual| 8.88e-16 min eig R'|_Z 1.851e-02 (>0); n_+(R') >= 8 in all
+== B: Theta at eta and h_* ==
+phi=0.3: eta: 372 positive planes of 400, Theta range [0.600000000,0.600000000] vs 2phi=0.600000000; classes ['U']
+   h_*: R' not positive (phi <= pi/4, Lambda_* not admissible)
+phi=0.7: eta: 380 positive planes of 400, Theta range [1.400000000,1.400000000] vs 2phi=1.400000000; classes ['U']
+   h_*: R' not positive (phi <= pi/4, Lambda_* not admissible)
+phi=1.0: eta: 380 positive planes of 400, Theta range [2.000000000,2.000000000] vs 2phi=2.000000000; classes ['U']
+   h_*: Theta range [-2.712388980,-2.712388980] vs 2phi-3pi/2=-2.712388980, 2phi-pi=-1.141592654; class L
+phi=1.4: eta: 367 positive planes of 400, Theta range [2.800000000,2.800000000] vs 2phi=2.800000000; classes ['U']
+   h_*: Theta range [-1.912388980,-1.912388980] vs 2phi-3pi/2=-1.912388980, 2phi-pi=-0.341592654; class L
+== C: admissibility of Lambda_* ==
+eps=0.1, gamma'=0.2: min eig Re M_g = +0.070711; (gamma'-eps)/sqrt2 = +0.070711
+eps=0.2, gamma'=0.1: min eig Re M_g = -0.070711; (gamma'-eps)/sqrt2 = -0.070711
+eps=0.1, gamma'=0.1001: min eig Re M_g = +0.000071; (gamma'-eps)/sqrt2 = +0.000071
+eps=0.1, gamma'=0.0999: min eig Re M_g = -0.000071; (gamma'-eps)/sqrt2 = -0.000071
+eps=0.01, gamma'=1.0: min eig Re M_g = +0.700036; (gamma'-eps)/sqrt2 = +0.700036
+h(Lambda_*) = -e^{i pi/4} 1 : True
+== D: one class on the positive planes of D-members ==
+D-members tested 28 of 80 candidates: every sampled R'-positive plane in a single class, no gap values
+== E: -C_0 members with n_-(R') <= 1 have class L ==
+admissible -C_0 samples 1125 : each has an R'-positive coordinate pair with beta in (0,pi/2) and Theta <= 2phi-pi; first 300 (with a real congruence T): all sampled positive planes L
+== F: random walks from R_u, u = 0.3 eps/gamma' (joined to Lambda = 1 inside the class) ==
+eps=0.1, gamma'=0.5, bias=0.0: accepted 135/150, classes seen ['U'], |h - h_*| at end 5.663 (|eta - h_*| = 5.596)
+eps=0.1, gamma'=0.5, bias=0.02: accepted 3/150, classes seen ['U'], |h - h_*| at end 5.565 (|eta - h_*| = 5.596)
+eps=0.05, gamma'=1.0, bias=0.02: accepted 0/150, classes seen [], |h - h_*| at end 5.614 (|eta - h_*| = 5.596)
+== G: isotropic P identity ==
+max residual 5.40e-15
+== H: eps -> 0 on R_u at fixed gamma' ==
+eps=0.1: largest admissible u on R_u = 0.0423000, u*gamma'/eps = 0.4230 (limit 4/(3 pi) = 0.4244)
+eps=0.01: largest admissible u on R_u = 0.0042430, u*gamma'/eps = 0.4243 (limit 4/(3 pi) = 0.4244)
+eps=0.001: largest admissible u on R_u = 0.0004240, u*gamma'/eps = 0.4240 (limit 4/(3 pi) = 0.4244)
+eps=0.0001: largest admissible u on R_u = 0.0000420, u*gamma'/eps = 0.4200 (limit 4/(3 pi) = 0.4244)
+limit contour as eps -> 0: u -> 0, h_0 = eta, Im h_0 = 0, Re iS_b = 0 on all real X
