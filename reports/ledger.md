@@ -389,3 +389,24 @@
     - ch17 vs appH qualifier wording for G and H (no status conflict).
 - Integration: appH 561466 -> 569524 bytes, sha256 9443341b74f991d49fee3b08830dd44da7f9a12245922f52aaa193b0bd607bcd. Build PASS 365 pages, 0 undefined. Backup: scratch/integrator-backup/057-mass-plane-class/.
 - Integrated count: 55. SME scout due now (after the 5th integration since 50). Next 5th-item full scan is due at 60. Pending author commit: appH (055 + 056 + 057).
+
+## 058-efe-saturation-value (Problem H, optional; M3 PRIOR-CLAIM-ERROR) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: ordinal-55 full scan, pass 5, item 4, corroborated by the SME scout after 55. Rounds: 2.
+  - r1 AWRR | M3 | PRIOR-CLAIM-ERROR. F1: the appE baryonic-vs-observed g_ext wording, with the RAR-at-the-Sun condition. F2: the anisotropy sentence now names eq:efe-sat. F3 (optional, "comparable to") adopted. F4 is out of scope.
+  - r2 ACCEPT | M3 | PRIOR-CLAIM-ERROR | improving.
+  - Integrated under the author directive: M3 is non-stopping and the correction is integrated after ACCEPT.
+- Corrections (merged text was false):
+  - "nu_sqrt(g_gal) ~ 1.1" corrected to ~1.35 under eq:nu-sqrt at the manuscript's own inputs (g_gal = 2.2e-10, g_s = g-dagger = 1.20e-10; nu = 1.348). Sites: ch13, ch16, appE x2. Only the standard-MOND interpolator, which the manuscript does not use, gives ~1.11.
+  - eq:nu-efe bracket sign reversed to the 1D QUMOND law g = nu(tot)g_N + [nu(tot) - nu(ext)]g_ext (Famaey-McGaugh 2012 Eq. 60, checked against the arXiv text by the gatekeeper). eq:efe-sat is unchanged. Anisotropy: corrected algebraic form ~1.03 along g_ext; 3D QUMOND transverse ~1.19.
+  - Dependent false or unsupported claims removed: "gamma ~ 1.4 not explained by that saturation" (now "comparable to"; coefficient-level agreement, not a derivation); "compatible with ass:efe" (ch16); appI "null result ... expected"; appI Status "compatible with the modest residual" (which also contradicted appI L44-46).
+  - appI "20%" clarified as a velocity excess (0.16-0.22).
+- Problem H stays OPEN / OPTIONAL / PROGRAMME-CONDITIONAL. No label change. Bounded negative: ass:efe's saturated value is disfavoured by the controlled Gaia analyses, under premises (i)-(vi).
+- Scan: CLAUDE.md 3(c) applies (an equation inside an assumption, plus an appI Status sentence). The gatekeeper ruled it satisfied by the ordinal-55 full scan record, unchanged target hashes, and a dependency grep over all chapters. No new full scan is claimed.
+- Integration:
+  - ch13 16631 -> 17259 (66afb3c5...4eda)
+  - ch16 16725 -> 16832 (49529f71...c565)
+  - appE 13446 -> 13921 (854cc10a...6dd8)
+  - appI 3855 -> 4154 (b91dc5e4...041e)
+  - Build PASS 365 pages, 0 undefined; bibtex run. Cites FamaeyMcGaugh2012 and Chae2023WideBinaries were already in bib/. Backup: scratch/integrator-backup/058-efe-saturation-value/.
+- Author items: g_gal = 2.2e-10 and appI's (1.5-2.2)e-10 have no source in the repo. Hard-coded "Theorem~7.3", "Appendix~D" and "Assumption~E.1" remain in ch16/appE. build_check.py does not run bibtex.
+- Integrated count: 56. Pending author commit: appH (055-057), ch13, ch16, appE, appI (058).
