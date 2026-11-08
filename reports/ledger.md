@@ -410,3 +410,34 @@
   - Build PASS 365 pages, 0 undefined; bibtex run. Cites FamaeyMcGaugh2012 and Chae2023WideBinaries were already in bib/. Backup: scratch/integrator-backup/058-efe-saturation-value/.
 - Author items: g_gal = 2.2e-10 and appI's (1.5-2.2)e-10 have no source in the repo. Hard-coded "Theorem~7.3", "Appendix~D" and "Assumption~E.1" remain in ch16/appE. build_check.py does not run bibtex.
 - Integrated count: 56. Pending author commit: appH (055-057), ch13, ch16, appE, appI (058).
+
+## 059-signature-scan (Problem E) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: SME scout after 55, R1. Rounds: 2.
+  - r1 AWRR | M2 | flags none. Required fixes:
+    - F1 (major): the pull-back sentence had called the induced tensor "the composite metric", which in this manuscript is the emergent metric. It now says neither signature is derived.
+    - F2: Kontsevich-Segal analogy, third difference added (no real form in C; positive definite forms lie only on its boundary).
+    - F3: e_j defined.
+    - F4: sharpness via negatives, recorded in the proposal only.
+  - r2 ACCEPT | M2 | flags none | improving.
+- Result (bounded no-go plus conditional sharpening, M2, non-stopping). eta in S_b replaced by a real h_0 of signature (10-t, t), Definition (A).
+  - Rigidity lemma, exact at every N: if Im det(h|_E) >= 0 on every real 2-plane and Re h is invertible with >= 2 positive and >= 2 negative eigenvalues, then h is real. The real points of cl(C) are exactly t in {0, 1, 9, 10}.
+  - For 2 <= t <= 8: linear colour-blind paths with Re iS_b <= 0 keep h real, for any regulator and any mass term. Single contours with Re M > 0 and P^{-1}h_0 = +-c have real h. Nothing is damped, the eps=0 integrand is non-integrable, and 053's domination is unavailable.
+  - The Majorana-Weyl condition s - t = 0 mod 8 gives t in {1, 5, 9} (Van Proeyen hep-th/9910030), and the IKKT fermion is one MW spinor (IKKT1997). Both were verified from the sources.
+  - Under P1 (damped linear representation, imposed) and P2 (supplied MW content), h_0 = +-T^T eta T. This concerns the target contraction only.
+- Witten comparison: the -(1 -+ i eps) branches correspond to h vs h-bar, while the C_0 / -C_0 split is h -> -h. This corrects the scout's "almost word for word" analogy; there is no Feynman / anti-Feynman reading of -C_0.
+- No signature of the induced tensor or of the composite metric is derived, and ass:lorentzian is not discharged. Problem E stays OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change.
+- Open avenues (ranked):
+  1. Signature of the induced or composite metric on a selected background (scout R2, D1/E).
+  2. Existence of lim eps->0 for 2 <= t <= 8 without domination, at N=2.
+  3. Colour-mixing maps beyond first order (proposal only).
+  4. Thimbles.
+  5. P2 alternatives, and N -> inf first.
+- Bib: KontsevichSegal2021, Witten2021ComplexMetrics and VanProeyen1999 appended. arXiv records were checked, and no journal-ref is invented.
+- Scan: digest + targeted reads; 3(b)/(c) not triggered, 3(d) met.
+- Integration:
+  - appH 569524 -> 579751 bytes, sha256 b6c505ad16fcc689f32b3bc9975d78049f2bfc2679585149d56209154a7e5a8a.
+  - bib 25976 -> 26627 bytes, sha256 acbee1ce97a86bf8c68d1e4aca168f8d20ad7fb0df26b002af3c6338c93e738f.
+  - Build PASS 367 pages, 0 undefined; bibtex run.
+  - Backup: scratch/integrator-backup/059-signature-scan/.
+- Author question (carried from the scout): can premises like P1 and P2 ever count toward "derived" for E? The researcher and gatekeeper both read: no.
+- Integrated count: 57. Next 5th-item full scan due at 60. Pending author commit: appH (055-057, 059), bib (059), ch13, ch16, appE, appI (058).
