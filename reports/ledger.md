@@ -321,3 +321,25 @@
 - Integration: appH 540605 -> 550508 bytes, sha256 01a3bf55a888ea30f4f3182358877b4ba6db5ac6237f2b7fff7e06093277d7a9. Build PASS, 361 pages, 0 undefined. No bib change. Backup scratch/integrator-backup/055-index-mixing-contours/.
 - Process: the researcher's deletion of scratch build copies in the session scratchpad was denied; the copies were left in place and the denial was not worked around.
 - Integrated count: 53. Next 5th-item full scan is due at 55. Pending author commit: appH (055).
+
+## 056-regulator-inertia (Problem E) — integrated 2026-11-07 (uncommitted, author to commit)
+- Route: 055 avenue 1, paths leaving cl(C) toward -C_0. Rounds: 2. r1 AWRR | M2 | flags none: F1 M redefined as the mass form, now M_gamma; F2 closing scope (isotropic P with a mass term not claimed); F3 "do not reach" narrowed to absolutely integrable end contours; F4 ambiguous "first paragraph"; F5 closing repeated 055. r2 ACCEPT | M2 | flags none | improving.
+- Result (bounded no-go, M2, non-stopping):
+  - (i) Inertia lemma, exact at every N: Re h = Re M - 2aa^T + 2bb^T and hv = -Mv. With Re M >= 0, Re h has at most one negative eigenvalue and is not positive definite; with Re M > 0, Re h has eta's inertia. So -C_0 and Euclidean linear contours are excluded contour by contour, for Definition (A), for isotropic P, and for Definition (A) with gamma <= 0.
+  - The lemma fails for fixed gamma > 0, shown by an exact admissible -C_0 contour; this establishes admissibility only.
+  - (ii) N=2: absolute convergence of I_eps[1] forces Re M >= 0 (bound R^{-19}e^{c eps R^2}), so every damped, absolutely convergent linear contour lies in C_0.
+  - (iii) N=2: for any positive definite P, R(h) = c_E e^{i pi/4} h^{-1} on C_0. By the sign argument, the end points of regulator-decaying paths lie in C_0.
+  - (iv) A -> iA: the -C_0 real-timelike value is the mode at imaginary momentum, a different object.
+- No signature: eta is carried over by the regulator but not selected. ass:lorentzian is retained. Problem E stays OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change. No PRIOR-CLAIM-ERROR.
+- Not established: pointwise exclusion for anisotropic P (numerical conjecture only, kept out of the insert); N >= 3 necessity; anything about gamma > 0 beyond admissibility.
+- Open avenues (ranked):
+  1. Fixed gamma > 0: connectivity of D n GL(10,C) from eta to the -C_0 contour e^{i pi/8}, e^{-3pi i/8}, and the eps -> 0 limit there.
+  2. Thimbles at real causal k, N=2.
+  3. Conditionally convergent representations, or a direct oscillatory analysis.
+  4. Colour-mixing linear maps.
+  5. N >= 3 versions of (ii) and (iii).
+  6. Anisotropic pointwise exclusion.
+  7. N -> inf first; Definitions (B), (C).
+- Scan: digest + targeted reads. 3(d) is satisfied because the dirty part (055) was read in full; no full scan is claimed.
+- Integration: appH 550508 -> 561466 bytes, sha256 ea5c753b0f01a3a92e426435f747fa464521980f609ab330f4a432868daba1f5. Build PASS 363 pages, 0 undefined. No bib change. Backup: scratch/integrator-backup/056-regulator-inertia/.
+- Integrated count: 54. The next integration is ordinal 55, which is due a gatekeeper full scan and an SME scout. Pending author commit: appH (055 + 056).
