@@ -1,0 +1,16 @@
+degrees of associator in eps: [(4,), (3,), (2,)]
+(2a) non-Poisson bivector: order-Theta^2 associator coefficient nonzero: True
+(2b) all 8 terms of c2 are pure first-derivative trilinears: True
+
+(1) [Theta,Theta]^123 / eps^2 = a(x3)*Derivative(b(x2), x2)  (nonzero generically)
+
+(3) Alt(order-Theta^2 associator) == ([Theta,Theta]^123/eps^2) * det(df,dg,dh) exactly: True
+
+(4a) constant bivector: order-Theta^2 associator coefficient vanishes: True
+(4b) Poisson single-component variable bivector: order-Theta^2 associator coefficient vanishes: True
+
+ALL CHECKS:
+(1) Schouten [Theta,Theta]^123 nonzero for two-component bivector: True
+(2) non-Poisson Theta^2 associator nonzero and purely first-derivative: True
+(3) Alt(Theta^2 associator) = [Theta,Theta] contraction exactly: True
+(4) constant bivector and Poisson variable bivector: Theta^2 associator vanishes: True

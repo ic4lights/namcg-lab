@@ -1,0 +1,7 @@
+(1) 2D bivector automatically Poisson: cyclic Schouten contraction identically 0: True (no independent [Theta,Theta]^abc component exists in dimension 2)
+(2) order-Theta^2 associator coefficient nonzero for generic w(x1,x2): True
+    number of terms in c2: 4
+(3) antisymmetrized Theta^2 associator vanishes in 2D (dimension): True
+(4) control, constant w: order-Theta^2 coefficient vanishes: True
+
+ALL CHECKS: True
