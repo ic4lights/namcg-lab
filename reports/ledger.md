@@ -301,3 +301,23 @@
 - Integration: appH 532576 -> 540605 bytes, sha256 e67297cd3066e3f4795ed81875d5075dfec3fe98ba5a8d8feb0bfcb733e134d7, inserted before the Problem E Status paragraph. Build PASS 359 pages, 0 undefined/multiply defined, diff --check clean. No bib change. Backup scratch/integrator-backup/054-lorentzian-fourier-observables/.
 - Author notes: pre-existing appJ L103-104 says ass:lorentzian is "stated in Chapter 3" (it is stated in ch04; ch03 L196 only retains it). Researcher's request to list its own processes was denied and not worked around.
 - Integrated count: 52. Next 5th-item full scan is due at 55. Pending author commit: appH (054).
+
+## 055-index-mixing-contours (Problem E) — integrated 2026-11-07 (uncommitted, author to commit)
+- Route: 054 avenue 2 (index-mixing contours), taken as the first step of avenue 1. Rounds: 2. r1 AWRR | M2 | flags none (F1 major: V normalisation off by factor 2, V = 2W/W(h,0); F2 major: closing value statement needed the h in C_0 qualifier, false on -C_0; F3: -C_0 contours do reach real timelike k (example A_0=X_0, A_i=e^{2pi i/3}X_i) but are not joined to the Hermitian contour; F4 sector inference; F5 repeated closing clause; F6 T^{-T}q; F7 piecewise C^1). r2 ACCEPT | M2 | flags none | improving.
+- Result: linear contours A = Lambda X, Lambda in GL(10,C), Definition (A), gamma=0, eps->0 first at fixed N. With h = Lambda^T eta Lambda, damping holds iff (P), an equivalence at N=2 and an implication at N>=3. Normal form C = C_0 u (-C_0) (n>=3). No path within cl(C) joins C_0 and -C_0, and eta lies in cl(C_0) only.
+- No-go (every N): for h in C_0 with a bounded mode, k.k lies in (-pi, pi/2), the 054 sector, so real causal k != 0 is unreachable.
+- At N=2: on C_0, V = F_E(e^{i pi/4} q^T h^{-1} q). For every real spacelike k, including boosted k, the pointwise eps->0 limit exists and equals F_E(e^{i pi/4} k.k); it depends only on k.k although the regulator breaks boosts.
+- -C_0 contours reach real timelike k with value F_E(e^{i pi/4} kappa^2), disconnected from the Hermitian contour in cl(C).
+- No signature is derived: eta is an input to S_b, and ass:lorentzian is retained. Problem E stays OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change. No PRIOR-CLAIM-ERROR.
+- Open avenues (ranked):
+  1. Paths keeping Re iS_b <= 0 but leaving cl(C) (real h of any signature has Re iS_b = 0): a regulator-admissible path from the Hermitian contour to -C_0. This is the sharpest open question.
+  2. Non-linear (thimble) contours at real causal k, N=2.
+  3. Direct oscillatory analysis of the real timelike or null pointwise limit at N=2.
+  4. N->inf first.
+  5. N>=3 for (iv) and (v).
+  6. gamma != 0, and Definitions (B) and (C).
+  7. OS positivity.
+- Scan: digest + targeted reads. The gatekeeper ruled that 3(b) is not triggered, because M2 is non-stopping and no milestone digest is due; no full scan is claimed. The ordinal-55 full scan is still due.
+- Integration: appH 540605 -> 550508 bytes, sha256 01a3bf55a888ea30f4f3182358877b4ba6db5ac6237f2b7fff7e06093277d7a9. Build PASS, 361 pages, 0 undefined. No bib change. Backup scratch/integrator-backup/055-index-mixing-contours/.
+- Process: the researcher's deletion of scratch build copies in the session scratchpad was denied; the copies were left in place and the denial was not worked around.
+- Integrated count: 53. Next 5th-item full scan is due at 55. Pending author commit: appH (055).
