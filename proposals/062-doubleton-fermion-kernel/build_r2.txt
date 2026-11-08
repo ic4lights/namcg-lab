@@ -1,0 +1,5 @@
+Scratch build r2 (outside the repository, fresh scratchpad directory b062r2; no deletion used): git-tracked files copied via tar, then patched appH and bib from apply_check.py --out placed over them.
+pdflatex, bibtex, pdflatex, pdflatex: all exit 0.
+Output written on namcg-book7.pdf (376 pages). 'undefined' occurrences in log: 0. 'multiply' occurrences: 0. bibtex warnings: 0.
+Keys in .bbl: MartinDussaud2019, FioresiYuncken2024, MackTodorov1969, Todorov2019, MantaSteinacker2025 (1 each).
+Patched appH sha256 4808ae9ca68ac249a2f01d4e02261da98cabf32b913713f82a0429b0f4c230cf (606731 B); bib 1d280848d1bb597193dc648963f81b9b635afce238aa2467fd13ce792002856d (29360 B).

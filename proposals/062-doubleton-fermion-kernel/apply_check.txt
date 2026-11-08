@@ -3,8 +3,8 @@ appH baseline: 599923 82ab236415a5fbbea02be7ceb6eebc791e560eef4a7e589cb25be2cf9f
 bib baseline: 28049 582f09d5a0bca24e930a8e7c130907f495e738f6d14d89809aac6f7f7e7e1f22 match
    CRLF 937 bare LF 0 ends with CRLF: True
 anchor count 1 line 1622
-insert: LF 6350 8f7c27f5ce2c385e63ee4504d93f9d92bf37dff9aa415edff3851e89915d8902 ; CRLF 6360 7a72491236322ed5a83a5a9b0a726974a7886c21cd3b26e3af6cd3369b60e275
-result appH: 606285 6a8c811d73b28f80077625dd724ae6193d5719ca68a17ac804ed30ddcb8686d6 CRLF 3324 bare LF 0
+insert: LF 6796 fb02c31be84910bad2ae252f9cef8aed4c6d4c5e3c4db4f297919d4dc99fd933 ; CRLF 6806 28ae2f90bc6bc3224e274df41cc1cb7d429307c89eccb3acb03c1df6459bf13b
+result appH: 606731 4808ae9ca68ac249a2f01d4e02261da98cabf32b913713f82a0429b0f4c230cf CRLF 3324 bare LF 0
    preceding bytes before insert end with blank line: True
 bib entries: 1309 aad7ac24a7d50bb3fe4b3f482f0a850f7fc4dc3b88398719add37294fc692996
 result bib: 29360 1d280848d1bb597193dc648963f81b9b635afce238aa2467fd13ce792002856d CRLF 980 bare LF 0
