@@ -474,3 +474,35 @@
   - Build PASS 371 pages, 0 undefined; bibtex run.
 - Side remark for the author: 2605.13294 v2 Eq. (64) appears low by a factor of 2 (imaginary part 2 pi^2, not pi^2); the gatekeeper confirmed this.
 - Integrated count: 58. Next 5th-item full scan due at 60. Pending author commit: appH and bib (060).
+
+## Author commit 276c04b (2026-11-08): 060 manuscript changes committed by the author.
+
+## 061-one-loop-real-form (Problems E, D1) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: 060 avenue 1, a one-loop real-form comparison at fixed gamma > 0 with supplied IKKT fermions. Rounds: 2.
+  - r1 AWRR | M2 | RESEARCHER-DECISION.
+    - F1 (major): the base-coordinate member needs gamma = -3c < 0 (merged 060), so it is not a gamma > 0 solution.
+    - F2: name the two K forms in the regulator sentence.
+    - F3: stability claim restricted to the moduli.
+    - F4: traceless counts, with a cross-reference to the Section F compact check.
+    - F5 (optional): Spin(5).
+  - The researcher took option (a), recorded under Decisions Taken.
+  - r2 ACCEPT | M2 | flags none | improving.
+- Result (bounded no-go, M2, non-stopping). Setting: Definition (A), h_0 of signature (9,1), supplied massless MW fermions, supplied gamma > 0, the 060 Lie-generator family.
+  - Compact-member one-loop operators: bosons c(C5 - C4^tot), transverse +-c(C5 - C4 - 3), ghost c(C5 - C4), fermion square c(C5 - C4^tot + 3/2). Species weight 5 - 4 - 1 = 0.
+  - Fermion zero modes: the top so(4) component of each so(5) component, with spin j_L + 1/2, where C4^tot = C5 + 3/2. That gives a kernel of at least 32 per adjoint copy for every non-trivial finite-dimensional representation, reducible ones included.
+  - So Pf M = 0 at every non-zero finite-N member. This persists for compact unitary Spin(5) representations at N = inf and with a transverse factor K.
+  - Kernel count for V_n: (4/3)n(n+4)(n^2+4n+7), i.e. 80 and 304. Fuzzy-S^4 zero modes of the same type: Steinacker 1510.05779.
+  - Negative modes affect only the phase. The bosonic per-volume comparison depends on the regulator; Definition (A) supplies no cut-off at N = inf.
+  - Conditional: at gamma > 0 only so(5) (W spacelike) and so(4,1) (W timelike, N = inf only) remain. If the so(4,1) fermion forms are non-degenerate, the supplied fermions separate those members from the compact ones. The Lorentzian kinetic tensor is then fixed by the supplied gamma sign, h_0 and fermions; it is not derived and not the emergent metric.
+- E and D stay OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change. No PRIOR-CLAIM-ERROR.
+- Open avenues (ranked):
+  1. DECISIVE: the normalisable kernel of the fermion form for the so(4,1) inside so(4,2) doubleton member at gamma > 0.
+  2. Approximate finite-N truncations of so(4,1).
+  3. Fermion mass or a SUSY-preserving deformation (supplied).
+  4. A derived N = inf cut-off.
+  5. The g/gamma order of the compact contribution.
+  6. Comparison across the gamma < 0 base member.
+- Bib: Steinacker2015S4 (1510.05779; JHEP 12 (2015) 115 via DOI).
+- Integration: appH 590875 -> 599923 bytes, sha256 82ab236415a5fbbea02be7ceb6eebc791e560eef4a7e589cb25be2cf9ffa279c; bib 27601 -> 28049 bytes, sha256 582f09d5a0bca24e930a8e7c130907f495e738f6d14d89809aac6f7f7e7e1f22. Build PASS 374 pages, 0 undefined; bibtex run.
+- Process: in r1 the researcher's repo-copy command for a scratch build was denied and was not worked around; the r2 scratch build ran.
+- Integrated count: 59. The next integration is ordinal 60: a gatekeeper full scan is due before it, and an SME scout after it. Pending author commit: appH and bib (061).
