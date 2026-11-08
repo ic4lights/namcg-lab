@@ -10,7 +10,7 @@
         A quality-controlled Gaia sample consistent with Newton
         constrains the isolated reading and the saturated value
         of Assumption~\ref{ass:efe}.
-        A surviving \(\gamma\approx 1.4\) is of the size of that
+        A surviving \(\gamma\approx 1.4\) is comparable to that
         saturated value; it would be a coefficient-level agreement
         with Assumption~\ref{ass:efe}, not a derivation.
 @@END

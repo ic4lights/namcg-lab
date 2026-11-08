@@ -2,16 +2,16 @@
   baseline 16631 bytes sha256 aafba1b0c80ebe21954f9e286516c70928a582f27f84ebf5ba307346484a036a  CRLF, bare LF: (399, 0)
   edit 1: old count 1 (line 231), new count in baseline 0
   edit 2: old count 1 (line 254), new count in baseline 0
-  result   17240 bytes sha256 23fc14239605dd258714a3c7fb4e6a5c995347bb2e660cca5942fb792f92fd9a  CRLF, bare LF: (409, 0)
+  result   17259 bytes sha256 66afb3c5a872d615324b0c4e869373048734f22241935d89a4d05e195a344eda  CRLF, bare LF: (409, 0)
 == ch16-falsifiers.tex
   baseline 16725 bytes sha256 8ce01e1d5c4f972df14f54098017da865604f1fe7e6a79ad746861e6da210b69  CRLF, bare LF: (361, 0)
   edit 1: old count 1 (line 208), new count in baseline 0
-  result   16833 bytes sha256 521226a8ee830dd31372c4c36144bad918bdec1af671bece503f9a61faf92ed4  CRLF, bare LF: (362, 0)
+  result   16832 bytes sha256 49529f7146e71e285e47b711c54eb7925e5b6a64b655151af55a21e42f3dc565  CRLF, bare LF: (362, 0)
 == appE-rar-bridge.tex
   baseline 13446 bytes sha256 695dd9c2932184775a230317ea036e53383718f2cf0f2548c51ecad73f29c311  CRLF, bare LF: (308, 0)
   edit 1: old count 1 (line 48), new count in baseline 0
   edit 2: old count 1 (line 219), new count in baseline 0
-  result   13859 bytes sha256 a0dd0df8189dee98339750b3ed742394617c1e6ef7d8b624b122636f7cf7bd80  CRLF, bare LF: (315, 0)
+  result   13921 bytes sha256 854cc10a0e0363e25d6f79e7a5a40c222697398bc9bce6d535c977341e3e6dd8  CRLF, bare LF: (315, 0)
 == appI-gaia-wide.tex
   baseline 3855 bytes sha256 91daa222e510cb2fc61e12798ec8f4d0fa8f00bf687fd75f449d742a7d7db988  CRLF, bare LF: (83, 0)
   edit 1: old count 1 (line 27), new count in baseline 0

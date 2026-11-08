@@ -2,9 +2,9 @@
 \approx 1.8\,g_{\dagger}\), so \(\nu_{\sqrt{}}(g_{\mathrm{gal}})\approx 1.1\).
 @@NEW
 \approx 1.8\,g_{\dagger}\), so \(\nu_{\sqrt{}}(g_{\mathrm{gal}})\approx 1.35\).
-If \(g_{\mathrm{ext}}\) is instead read as the baryonic Newtonian field
-obtained by inverting~\eqref{eq:appE-RAR} at
-\(g_{\mathrm{obs}}=v_{\odot}^{2}/R_{0}\), then
+Assumption~\ref{ass:efe} takes \(g_{\mathrm{ext}}\) to be baryonic,
+whereas \(v_{\odot}^{2}/R_{0}\) is the observed field. If~\eqref{eq:appE-RAR}
+holds at the Sun, inverting it at \(g_{\mathrm{obs}}=v_{\odot}^{2}/R_{0}\) gives
 \(g_{\mathrm{ext}}\approx 1.5\times 10^{-10}\,\mathrm{m\,s^{-2}}\) and
 \(\nu_{\sqrt{}}(g_{\mathrm{ext}})\approx 1.5\).
 @@END
@@ -17,7 +17,7 @@ residual, if real, is still open.
 Newton constrains the isolated reading and the saturated value
 \(\nu_{\sqrt{}}(g_{\mathrm{gal}})\approx 1.35\), not Theorem~7.3.
 A reported \(\gamma\approx 1.4\)~\cite{Chae2023WideBinaries} that
-survives quality cuts is of the size of that saturated value; it would
+survives quality cuts is comparable to that saturated value; it would
 be a coefficient-level agreement, not a derivation of
 Assumption~\ref{ass:efe}.
 @@END

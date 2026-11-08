@@ -13,7 +13,7 @@ wide binaries. A null Gaia result constrains the isolated
 reading of Appendix~\ref{app:empirical}, not \(m_T=0\).
 @@NEW
 already satisfies \(g_{\mathrm{gal}}>g_\dagger\), so
-\(\nu_{\sqrt{}}(g_{\mathrm{gal}})\approx 1.35\). The saturated boost
+\(\nu_{\sqrt{}}(g_{\mathrm{gal}})\approx 1.35\). The saturated boost~\eqref{eq:efe-sat}
 is anisotropic at order
 \(L_{\mathrm{e}}=\mathrm{d}\ln\nu_{\sqrt{}}/\mathrm{d}\ln g\approx -0.24\)
 at \(g=g_{\mathrm{gal}}\): the algebraic form~\eqref{eq:nu-efe} gives
