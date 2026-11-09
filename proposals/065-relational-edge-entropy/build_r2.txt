@@ -1,0 +1,4 @@
+r2 scratch build outside the repository (/c/Users/redgi/AppData/Local/Temp/claude/3ba14ee056ac155d/15e6827c-2d5a-4852-be36-98ee14883700/scratchpad/build065r2): fresh copy of namcg-book7.tex, chapters, bib, figs, frontmatter, images; appH and bib replaced by the apply_check would-be files (appH c2dac013..., bib 28fdd7f8...).
+pdflatex, bibtex, pdflatex, pdflatex (-interaction=nonstopmode -halt-on-error): all exit 0.
+Output written on namcg-book7.pdf (380 pages, 2822392 bytes).
+undefined: 0; multiply defined: 0; Overfull hboxes: 24 (baseline 24, 378 pages); bibtex warnings: 0; new key in .bbl: 1
