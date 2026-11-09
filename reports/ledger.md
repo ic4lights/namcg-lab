@@ -576,3 +576,39 @@
   - \mathcal M is reused locally.
 - Integration: ch14 16520 -> 17336 bytes, sha256 b1fefa684669f0315e705061a9efd84c732eca741e687b9f3a88977f2f976dd2. Build PASS 376 pages, 0 undefined. Backup scratch/integrator-backup/063-ch14-ratio-correction/.
 - Integrated count: 61. Next 5th-item full scan due at 65. Pending author commit: appH + bib (061, 062), ch14 (063).
+
+## Author commit 9680d08 (2026-11-08): 061-063 manuscript changes committed by the author (appH, bib, ch14); it also picked up 064's early s1-s4 scripts.
+
+## 064-relative-pfaffian-density (Problems E, D1) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: SME scout after 60, R1; also 062's decisive avenue. Planned as the last E package of the run per the scout. Rounds: 2.
+  - r1 AWRR | no milestone.
+    - F1 (major): "normal semifinite trace on B(M_kp)" made the integrability hypothesis vacuous when C5 has continuous spectrum. It is now a weight on the von Neumann algebra of C5.
+    - F2 (major): the Pf_rel-level claims were overstated. They are now restricted to the fermionic term on bounded label sets; the limit is by Vitali's theorem; the reference term needs a bounded density; summability over k is open.
+    - F3: large-p divergence condition stated.
+    - F4: s is an integer.
+    - F5 (proposal only): "0 is in the spectrum" withdrawn.
+  - r2 ACCEPT | no milestone | improving.
+- Result (PROGRAMME-CONDITIONAL; routine).
+  - Definition: log Pf_rel = 1/4 tau[tr log(D^2 - i eps) - 16 log(Box - i eps)], with the fermion i eps prescription supplied, as in Steinacker 2303.08012 Eq. 4.16 (Eq. 4.15 regulates the bosons only; verified from source).
+  - Established, all exact:
+    - D^2 = Box - Sigma^psi F; the relative split is gamma-independent.
+    - Fibre eigenvalues lambda = c(C5 + 2 - k(k+-1) + p^2 -+ ip), with weights 1 +- 1/z.
+    - The zero set equals 062's kernel condition.
+    - Gap: |lambda| >= c/4 on C5 <= -9/4.
+    - C5 = s(s+1) - 9/4 - nu^2, s an integer.
+    - Compact members: |Pf_rel| ~ eps^{K/4} -> 0.
+    - Large-label term -2C4/A^2.
+    - The modulus depends on the log branch.
+  - Conditional (supplied tau as a weight on C5, i eps, principal branch): the fermionic term converges locally on bounded label sets. The reference term converges only if the weight has a bounded density.
+  - Open: summability over k; the UV / per-unit-volume trace at given time; bosons and ghosts at O(gamma); any non-zero value; the signature itself.
+- E and D stay OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change.
+- Open avenues (ranked):
+  1. Decomposition of HS(H_n) under Spin(4,1), starting with n = 0: whether C5 has continuous spectrum on M_kp.
+  2. A per-unit-volume trace.
+  3. Summability over k.
+  4. Bosons and ghosts at O(gamma), with a derived cut-off.
+  5. A Fuglede-Kadison comparison.
+- Process: the gatekeeper's re-run of apply_check.py overwrote one path line in the committed apply_check.txt. The orchestrator restored it with git restore.
+- Repo note for the author: *.out.txt is git-ignored, so the s*.out.txt outputs of 060-064 exist on disk only.
+- Integration: appH 606731 -> 614579 bytes, sha256 7d15a3f287a59df1de78163f75eb1a18fe1ca894479889e1bbbbadae1ea5f85b. Build PASS, 378 pages, 0 undefined. No bib change.
+- Integrated count: 62. Next 5th-item full scan due at 65. Pending author commit: appH (064). Per the SME scout, E work now pauses; next is G-derived (scout R2).
