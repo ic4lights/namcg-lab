@@ -1,0 +1,6 @@
+m=0.00 max|eps|= 17.83  NN profile rel.dev from conformal parabola= 0.058  weight of |i-j|>=2 terms= 0.017
+   NN/beta_hop: [1.005 1.015 1.029 1.045 1.056 1.058 1.056 1.045 1.029 1.015 1.005]
+m=0.20 max|eps|= 21.21  NN profile rel.dev from conformal parabola= 0.268  weight of |i-j|>=2 terms= 0.071
+   NN/beta_hop: [1.07  1.143 1.198 1.235 1.259 1.268 1.259 1.235 1.198 1.143 1.07 ]
+m=0.50 max|eps|= 26.54  NN profile rel.dev from conformal parabola= 0.440  weight of |i-j|>=2 terms= 0.063
+   NN/beta_hop: [1.031 1.131 1.24  1.341 1.414 1.44  1.414 1.341 1.24  1.131 1.031]
