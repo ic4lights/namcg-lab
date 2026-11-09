@@ -1,0 +1,15 @@
+r4 scratch build: fresh dir scratchpad/build066r4 (copy outside repo, no stale aux/bbl/log), patched appH+bib from out066r4; pdflatex -> bibtex -> pdflatex -> pdflatex
+c5bf9be4f7c9b51218be4000dcdd5273ebf3cfa3e125d0a5fe90299e443075b3 *chapters/appH-microscopic-proofs.tex
+4315a89553cb97405af89604f1e43c9e5e0237fa5b7be0439431d042677a6060 *bib/namcg.bib
+p1 0
+bib 0
+0
+p2 0
+p3 0
+undefined/multiply lines:
+0
+86:\bibitem[Hislop and Longo(1982)]{HislopLongo1982}
+2103:Output written on namcg-book7.pdf (380 pages, 2826610 bytes).
+
+[exited with code 0]
+Legend: first two lines = hashes of patched files in build; p1/p2/p3 pdflatex exits; bib = bibtex exit; following count = bibtex 'Warning' lines; count of undefined|multiply lines in final log.
