@@ -647,3 +647,21 @@
 - Bib: FlissFrenkelHartnollSoni2025 (Crossref-checked).
 - Integration: appH 614579 -> 624232 bytes, sha256 c2dac013f275fed851d53e8086bc3eceef717c5b607b10c09ae7541c43558b5c; bib 29360 -> 29781 bytes, sha256 28fdd7f8cb62b2ad23da3cc05d819a0b750f7fdec096511fca60ab02135ea64d. Build PASS, 380 pages, 0 undefined; bibtex run.
 - Integrated count: 63. Next 5th-item full scan due at 65. Pending author commit: appH (064, 065) and bib (065).
+
+## 066-bw-diamond-scope-correction (Problem A; M3 PRIOR-CLAIM-ERROR) — STALLED 2026-11-09 (not integrated)
+- Route: SME scouts after 55/60, R3(i)/R4(i). Rounds: 4 (default cap).
+  - r1 AWRR | M3 | PRIOR-CLAIM-ERROR, RESEARCHER-DECISION | first.
+  - r2 AWRR | M3 | improving.
+  - r3 AWRR | M3 | flat.
+  - r4 AWRR | M3 | flat.
+- Stop rule (MILESTONE.md): two consecutive flat reviews (r3, r4) at the round-4 cap mean no extension, so the item is recorded as STALLED. stalled_in_a_row = 1.
+- Confirmed error, not yet corrected in the manuscript:
+  - appH L30-31 ("By the Bisognano-Wichmann theorem this charge is the modular Hamiltonian of the causal diamond of the free theory") is false. BW is the wedge theorem, valid for any mass. The geometric diamond modular group is Hislop-Longo (CMP 84 (1982) 71), for the free massless scalar only. The lemma's quadratic sector contains the massive radial mode m_sigma.
+  - The bounds O(R sqrt||dTheta||) at L36 and L54 are underived and uncited, and R is undefined. All of this came in with author commit 6aa4490.
+- Further gaps found and marked in the r4 text: the K_0 Weyl-symbol identification is not derived (H_quad is defined nowhere; the Moyal-element reading gives a dilatation weighting (i/2)x.d h, not a boost); the half-sided-inclusion step and the required cyclic separating state are not derived; the General-sector "if and only if" sentence is stale.
+- Why it stalled: each round closed its findings, but the gatekeeper found further sentences made stale by the corrections. These came from its own r2 snippet and from sentences it had missed earlier.
+  - The researcher found S1 and S2 independently.
+  - The gatekeeper's r4 states: "Problem A has now been fully re-read, and I find nothing further. If r5 applies exactly S1 and S2, I will issue a plain ACCEPT conditional on the full scan." The item is mechanically one step from ACCEPT: apply S1 and S2 (review-r4 Corrected snippet) to the r4 text (proposal-r4 / apply_check_066_r4.py, appH result c5bf9be4...).
+  - A full scan is required before integration (3(b) and 3(c)).
+- For the author: decide whether to authorise r5. Separately, ch17 defines Problem A as the IR dictionary while appH frames it as a "matrix-to-modular map", which is a scope decision for the author.
+- Integrated count unchanged: 63. Pending author commit: appH (064, 065), bib (065).
