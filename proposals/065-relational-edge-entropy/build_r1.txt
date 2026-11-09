@@ -1,0 +1,8 @@
+Scratch build outside the repository (/c/Users/redgi/AppData/Local/Temp/claude/3ba14ee056ac155d/15e6827c-2d5a-4852-be36-98ee14883700/scratchpad/build065b), fresh copy of namcg-book7.tex, chapters, bib, figs, frontmatter, images; appH and bib replaced by the apply_check would-be files (appH sha256 c44095d5..., bib sha256 28fdd7f8...).
+Sequence: pdflatex, bibtex, pdflatex, pdflatex (-interaction=nonstopmode -halt-on-error); all exit 0.
+Output written on namcg-book7.pdf (380 pages, 2820631 bytes).
+undefined (refs/citations) in final log: 0
+multiply defined in final log: 0
+Overfull hboxes: 24 (baseline build of the working tree: 24)
+baseline: Output written on namcg-book7.pdf (378 pages, 2802090 bytes).
+bibtex warnings: 0; FlissFrenkelHartnollSoni2025 entries in .bbl: 1
