@@ -1,0 +1,8 @@
+65c65
+< \(\mu^2=4\sin^2(p_1/2)+4\sin^2(p_2/2)\) evaluates to \(0.048959\) (direct
+---
+> \(\mu^2=4\sin^2(p_1/2)+4\sin^2(p_2/2)\) evaluates to \(0.048728\) (direct
+68c68
+< route, a \(1.183\) percent agreement. Since the interval carries two cuts, the
+---
+> route, a \(1.665\) percent agreement. Since the interval carries two cuts, the

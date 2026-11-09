@@ -1,0 +1,68 @@
+\paragraph{Bounded obstruction: the replica density on Presentation-A data.}
+The entropy density of Assumption~\ref{ass:Sent-density} is evaluated in
+Section~\ref{sec:ch6-replica} through the replica formula~\eqref{eq:replica}:
+\(\Tr\rho_D^n\) as a path integral on an \(n\)-sheeted cover of \(M\) branched
+over the edge \(B\) of \(\partial M\). Restricted to Presentation~A, the
+regularized trace over \(\mathcal H\) with cutoff~\eqref{eq:LUV-def} and matrix
+coordinates~\eqref{eq:NC}, this object is undefined: the data supply neither a
+manifold \(M\), nor a hypersurface \(\partial M\), nor a tubular neighbourhood,
+nor a branched cover, nor a factorization of the trace over a region. The
+boundary \(\partial M\) of the emergent spacetime is available only through the
+infrared dictionary of Assumption~\ref{ass:dictionary}; the non-factorization
+of region algebras in matrix models is established independently in the BFSS
+setting in~\cite{Anous2020}. Two exits remain. (i) A Presentation-A cut:
+spectral projections of the coordinate operators (Definition~\ref{def:rhoD})
+define a one-particle cut, and for quadratic fluctuations \(\Tr\rho_D^n\) is
+defined by Fock factorization over the restricted one-particle space; the
+output is a functional of the quadratic kernel of the action and of the cut
+projector, not a cover path integral and not a diffeomorphism scalar, and
+reducing it to the local form~\eqref{eq:Sent-exp} requires a dictionary-type
+identification of the cut with \(\partial M\), which is not derived.
+(ii) Presentation~B with the dictionary, in which case any use of
+\eqref{eq:Sent-exp} in \eqref{eq:Leff} inherits Assumption~\ref{ass:dictionary}
+and cannot discharge the matrix-derived completion criterion while that
+assumption is retained. The matrix-derived route through
+Assumption~\ref{ass:Sent-density} therefore depends on Problem~A, and a
+derivation chain recorded without this dependency is incomplete. A sharp
+spectral cut of a quadratic kernel gives a strict area law
+\(S=\sigma\Lambda_{\mathrm{UV}}^2 A_{\mathrm{cut}}\) of mass dimension two;
+the density form \(\alpha_0\Lambda_{\mathrm{UV}}^3\) of \eqref{eq:Sent-exp} is
+recovered from it only for a tube of width \(w=\Theta^{1/2}=\Lambda_{\mathrm{UV}}^{-1}\)
+in the convention of \eqref{eq:LUV-def}, so the localization scale of
+Assumption~\ref{ass:Sent-density} is forced by the cut rather than derived, and
+in the thin-tube limit \(w\to0\) the density diverges as
+\(\sigma\Lambda_{\mathrm{UV}}^2/w\).
+
+\paragraph{Free benchmark in the constant-\(\Theta\) sector.}
+For quadratic fluctuations about a constant \(\Theta\) background, with the
+cubic term and the matter action in \eqref{eq:Smatrix} dropped, each transverse
+Fourier mode \(p_\perp\) gives a one-dimensional half-line problem cut by the
+spectrum of one coordinate operator. The ground-state covariance \((C,D)\) of
+each one-dimensional problem, restricted to the half-line, has a restricted
+symplectic spectrum \(\nu_k\ge\tfrac12\) (a kernel that does not couple across
+the cut contributes only \(\nu_k=\tfrac12\) and no entropy), and
+\(S_{\mathrm{cut}}=\sum_k[(\nu_k+\tfrac12)\ln(\nu_k+\tfrac12)-(\nu_k-\tfrac12)\ln(\nu_k-\tfrac12)]\).
+Numerically, in lattice units with \(\Lambda_{\mathrm{UV}}=\pi\): the massless
+half-line entropy obeys \(s_1(N)=\tfrac16\ln N+0.2315(3)\), the coefficient
+\(\tfrac16\) agreeing with the central-charge value for one free massless
+field; a mode of mass \(\mu\) contributes \(s_1(\mu)\lesssim\tfrac\pi2 e^{-\mu}\);
+and the slab coefficient
+\(\sigma=(2\pi)^{-2}\int_{\mathrm{BZ}^2}d^2p_\perp\,s_1(\mu(p_\perp))\)
+evaluates to \(\sigma=0.0096\pm0.0003\). With \(w=\Theta^{1/2}\) this fixes
+\(\alpha_0\) in \eqref{eq:Sent-exp} to \(\sigma\) at the free level;
+\(\alpha_1\) and \(\alpha_2\) are not computed. These are conditional
+benchmark values in a quadratic truncation of \eqref{eq:Smatrix}; they do not
+derive Assumption~\ref{ass:Sent-density}, and Problem~G remains open.
+
+\paragraph{Missing step.}
+Closing the matrix-derived criterion for Problem~G requires, beyond the
+present note: (i) a derivation, not a retained dictionary, of the
+identification between a Presentation-A boundary cut and \(\partial M\) under
+which the cut entropy becomes the local density \eqref{eq:Sent-exp}; (ii) the
+interacting condensate sector of \eqref{eq:Smatrix}, the cubic term, matter
+and non-Gaussian ground-state correlations, which carry the \(\alpha_1\) and
+\(\alpha_2\) structures; (iii) a derivation of the stationarity
+condition~\eqref{eq:bdy-EE} of Assumption~\ref{ass:bdy-EE}; and (iv) the
+mass-dimension-one boundary-to-bulk conversion recorded in the dimensional
+status remark of Chapter~\ref{ch:hbev}, without which \eqref{eq:Leff} stays
+schematic.

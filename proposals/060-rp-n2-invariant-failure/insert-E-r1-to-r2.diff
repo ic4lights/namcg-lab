@@ -1,0 +1,18 @@
+--- insert-E.tex (r1)
++++ insert-E.tex (r2)
+@@ -36,13 +36,8 @@
+ positivity of~\cite{OsterwalderSchrader1973,OsterwalderSchrader1975} on the
+ invariant polynomial algebra: the failure sits on manifestly gauge-invariant
+ bilinear and cubic singlets, not only on the translation labels of
+-Section~\ref{sec:status-D}. Any unital \(*\)-subalgebra on which
+-\(\langle\cdot,\cdot\rangle_\theta\) is nonnegative contains no nonzero
+-\(\theta\)-odd element, since such an element would have negative square, so every
+-reflection-positive test algebra for these measures lies in the \(\theta\)-even
+-invariant algebra, and every invariant mixing time and space under \(\theta\) is
+-excluded from any reconstruction from these measures. On the continuation side
+-\(\operatorname{Tr}A_0A_i\) restricted to \(\mathcal R_1\) is
++Section~\ref{sec:status-D}. Any unital \(*\)-subalgebra closed under \(\theta\) on which \(\langle\cdot,\cdot\rangle_\theta\) is nonnegative contains no nonzero \(\theta\)-odd element, since such an element would have negative square, so every \(\theta\)-stable reflection-positive test algebra for these measures lies in the \(\theta\)-even invariant algebra, and every invariant mixing time and space under \(\theta\) is excluded from any reconstruction from these measures. On the
++continuation side \(\operatorname{Tr}A_0A_i\) restricted to \(\mathcal R_1\) is
+ \(-\frac{\mathrm i}2\sum_a\tilde A^a_0\tilde A^a_i\) in the Pfaffian variables
+ \((-\mathrm i\tilde A_0,\tilde A_i)\) and \(\frac{\mathrm e^{-\pi\mathrm
+ i/4}}2\sum_a\tilde A^a_0\tilde A^a_i\) on the observable contour, still
