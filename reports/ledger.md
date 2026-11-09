@@ -612,3 +612,38 @@
 - Repo note for the author: *.out.txt is git-ignored, so the s*.out.txt outputs of 060-064 exist on disk only.
 - Integration: appH 606731 -> 614579 bytes, sha256 7d15a3f287a59df1de78163f75eb1a18fe1ca894479889e1bbbbadae1ea5f85b. Build PASS, 378 pages, 0 undefined. No bib change.
 - Integrated count: 62. Next 5th-item full scan due at 65. Pending author commit: appH (064). Per the SME scout, E work now pauses; next is G-derived (scout R2).
+
+## 065-relational-edge-entropy (Problem G-derived; the first G-derived package) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: SME scout after 60, R2 (Fliss-Frenkel-Hartnoll-Soni 2408.05274, SciPost Phys. 18, 171). Rounds: 2.
+  - r1 AWRR | no milestone. Major findings:
+    - F1: the flow angle uses the symbol of n.J;
+    - F2: the two-cap union holds for coaxial caps only;
+    - F3: non-additivity holds at fixed frame only, the two-sided factor is not computed, and the counterterm claim is narrowed.
+  - r1 minor findings: F4 frame subgroup is an input; F5 "positive and integrable"; F6 <l^2> = 4s^2 W; F7 "squared norm", "polynomial diagram".
+  - r2 ACCEPT | no milestone | improving.
+- Result (bounded conditional no-go on a compact internal fuzzy factor).
+  - Exact at finite N:
+    - edge datum norm = 1/2 Tr(Theta Box Theta);
+    - X = AJ cap block of rank one, s^2 = 1/4 M(N-M)(sigma1^2 + sigma2^2);
+    - Poisson limit P <= 2 sqrt2 pi s, with equality iff round, so the "target-space area" law is a round-sphere coincidence;
+    - rank-one charge spectrum, with the coaxial two-cap union;
+    - d log dim / d log M -> |mu|.
+  - Scalar-proxy numerics reproduce the paper's Eq. (3.14) coefficient. The e^{-S/2} state changes the l_c power.
+  - Supplied inputs: the state (the paper's ground state needs an external time, which is excluded), l_c, and the frame subgroup.
+  - Conditional on the imported FFHS saddle: log d_mu is not of the form of ass:Sent-density. Causes: sector mismatch (internal factor, not dM), rank dependence, and fixed-frame non-additivity.
+  - The map s -> g_{mu nu} is missing (A, D1).
+- G stays OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL. No label change. The no-go does not touch the replica route of ass:Sent-density.
+- Open avenues:
+  1. A spacetime-block subsystem (4D region x fibre).
+  2. A within-core state via OS reconstruction on fibre modes.
+  3. An alternative subsystem algebra, or first-law / mutual-information tests.
+  4. A stationary squashed background.
+  5. Tie l_c and p to scales of the integral.
+  6. The 2303.08012 vacuum term.
+- Author items:
+  - sec:status-G has no "Missing step" paragraph, and the ch12 dimensional gap in eq:Leff is not recorded in appH G or the ch17 G-derived item. Fixing this needs a status-passage edit plus a full scan, so it belongs in a later package.
+- Process:
+  - The researcher accidentally ran a stale scratchpad script that overwrote 2 lines of the committed proposals/055-index-mixing-contours/proposal-r2.md. The researcher reported it without fixing it, and the orchestrator restored it with git restore.
+- Bib: FlissFrenkelHartnollSoni2025 (Crossref-checked).
+- Integration: appH 614579 -> 624232 bytes, sha256 c2dac013f275fed851d53e8086bc3eceef717c5b607b10c09ae7541c43558b5c; bib 29360 -> 29781 bytes, sha256 28fdd7f8cb62b2ad23da3cc05d819a0b750f7fdec096511fca60ab02135ea64d. Build PASS, 380 pages, 0 undefined; bibtex run.
+- Integrated count: 63. Next 5th-item full scan due at 65. Pending author commit: appH (064, 065) and bib (065).
