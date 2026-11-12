@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Two pdflatex passes, reference check, PDF restore, whitespace check.
+"""Three pdflatex passes with bibtex after the first, reference check, PDF restore, whitespace check.
 
 Exit code 0 only if everything is clean. Run from anywhere; operates on the repository root.
 
@@ -53,7 +53,7 @@ if fast_mode and is_fast_skip_allowed():
     print("BUILD_CHECK PASS pages=0 (skipped)")
     sys.exit(0)
 
-for i in (1, 2):
+for i in (1, 2, 3):
     p = run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error", "namcg-book7.tex"], timeout=900)
     m = re.search(r"Output written on .*?\((\d+) pages", p.stdout)
     if p.returncode != 0 or not m:
@@ -63,10 +63,24 @@ for i in (1, 2):
         break
     pages = m.group(1)
     print("pass %d OK, %s pages" % (i, pages))
+    if i == 1:
+        b = run(["bibtex", "namcg-book7"])
+        bwarn = [l for l in (b.stdout + "\n" + b.stderr).splitlines() if l.lower().startswith("warning")]
+        print("bibtex %s, %d warnings" % ("OK" if b.returncode == 0 else "FAILED", len(bwarn)))
+        for l in bwarn[:5]:
+            print("  " + l)
+        if b.returncode != 0:
+            print((b.stdout + "\n" + b.stderr)[:2000])
+            ok = False
+            break
 
 log = (root / "namcg-book7.log").read_text(errors="replace") if (root / "namcg-book7.log").exists() else ""
 bad = [l for l in log.splitlines()
-       if re.search(r"undefined references|Reference `.*' on page .* undefined|multiply[- ]defined|There were undefined", l)]
+       if re.search(r"undefined references|Citation `.*' on page .* undefined"
+                    r"|Reference `.*' on page .* undefined|multiply[- ]defined|There were undefined", l)]
+ucit = len(re.findall(r"Citation `.*' on page .* undefined", log))
+uref = len(re.findall(r"Reference `.*' on page .* undefined", log))
+print("undefined citations: %d, undefined references: %d" % (ucit, uref))
 print("undefined/multiply-defined warnings: %d" % len(bad))
 for l in bad[:10]:
     print("  " + l)
