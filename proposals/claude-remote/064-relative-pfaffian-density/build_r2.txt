@@ -1,0 +1,7 @@
+Scratch build of 064 r2 in /c/Users/redgi/AppData/Local/Temp/claude/3ba14ee056ac155d/15e6827c-2d5a-4852-be36-98ee14883700/scratchpad/build064r2 (copy of namcg-book7.tex, chapters/, bib/, figs/, frontmatter/, images; appH replaced by the r2 apply_check result sha256 7d15a3f2...f85b)
+sequence: pdflatex, bibtex, pdflatex, pdflatex (-interaction=nonstopmode -halt-on-error): exit codes 0 0 0 0
+Output written on namcg-book7.pdf (378 pages, 2802090 bytes).
+undefined references/citations in final log: 0
+multiply defined: 0
+bibtex warnings: 0
+Steinacker2023 in .bbl: 1

@@ -1,0 +1,8 @@
+r1 insert: 9934 bytes sha256 ac95c6691538edc112fbe03006481b729a4c79ae6a75dbcd1e2666b2e43e9680  matches r1: True
+F1 before: old 1 new 0
+F1 after:  old 0 new 1
+F2 before: old 1 new 0
+F2 after:  old 0 new 1
+F3 before: old 1 new 0
+F3 after:  old 0 new 1
+r2 insert: 10213 bytes sha256 ae4e617fc9d6a3c6e476006d413915ab6abeca825dc385050ac9876faa252845

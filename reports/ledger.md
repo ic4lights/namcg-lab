@@ -584,3 +584,394 @@ Integrated count: 64. Next integration is 65; the next 5th-item MANDATORY FULL S
 - Label changes proposed: NONE. Milestone: none. Stalls: 0.
 - Open avenues (ranked): (a) Problem F spectral data bounding sup|R| (conditional zero-free-disc stability over the named class); (b) finite-N matrix-quantum-mechanics Hamiltonian positivity beyond ass:loorentzian's signature-only content (untouched by E's OS-specific no-go) — most promising route to the R1 hypothesis class; (e) Ostrogradsky/Hamiltonian counting at physical parameters (the N.1 target; F-blocked); (c) other field content changing Upsilon, delta_W, m; (d) loop terms inside R; (f) edge/contact terms in T_munu.
 - Integrated count: 65. Next integration is 66; the next 5th-item MANDATORY FULL SCAN is due at 70. Next attack-plan target: J.ecg (SME mode-1 scout first; final node). PENDING commit now: modified chapters/appH-microscopic-proofs.tex (067) + untracked proposals/067-n-positivity-remainder-sublemma/ (all files) + untracked reports/sme-scout-20261109-1854.md on local/gpu (062-066 integrations are already committed; HEAD 72cc3d3).
+
+## Remote-branch log: origin/remote/claude, proposals 053-066 (2026-11-06 .. 2026-11-09)
+
+Entries below were recorded on the other branch of the fork at proposal 053 and are reproduced
+verbatim. Their ordinals 054-066 name DIFFERENT proposals from the 054-068 entries above; see
+reports/merge-remote-claude-20261111.md. No entry below has been merged into the local run's
+integrated-item count. Nothing here changes a problem's status in the manuscript.
+
+
+## 053-lorentzian-integral-limit-order (Problem E; correction to 052) — integrated 2026-11-07 (uncommitted, author to commit)
+- Route: SME scout (after 50) R1, the integral itself rather than a supplied class. Rounds: 3. r1 AWRR, MILESTONE M3, FLAGS PRIOR-CLAIM-ERROR (narrow: the accepted 052 sentence on the regulated Lorentzian integral was overbroad; first clause "no longer related to the Euclidean model by Wick rotation" true at fixed eps, false in the limit eps -> 0 at finite N for these observables; second clause "does not bear" unsupported rather than false; not load-bearing for 052; E1 corrects it); 6 replacements. r2 AWRR (1 replacement S7, the gatekeeper's own S4 wording false at mu = 0 and missing the p = 4 Pfaffian; gatekeeper withdrew its r1 note that bib/namcg.bib has no CR bytes, the working file is CRLF). r3 ACCEPT, M3, PRIOR-CLAIM-ERROR (correction integrated under the directive; not a breakthrough). Baseline changed mid-item: the author committed and merged on 2026-11-05 (052 committed, plus the author's own Problem A edits); anchors re-verified; scan ruling re-made on the ordinal-50 record plus a byte-verified, fully read delta (no new full scan claimed).
+- Integrated: E1 in place at appH L1478 (052 sentence re-scoped); E2 block (10783 bytes CRLF) before "\paragraph{Status.} Remains Assumption~\ref{ass:lorentzian}." in Problem E; four bib entries (AustingWheater2001, Anagnostopoulos2026, AsanoNishimuraPiensukYamamori2025, ChouNishimuraTripathi2025). appH 532576 bytes sha256 7a75554e...6aaa; bib 25976 bytes sha256 a651fe60...c42b. Backup scratch/integrator-backup/053-lorentzian-integral-limit-order/. Build PASS 357 pages, 0 undefined, git diff --check clean. No label touched.
+- Proved at N = 2: lim_{eps->0} I_eps[O] = e^{7 pi i (N^2-1)/4} x Euclidean integral of O at phases for polynomial O of degree k < 14, difference O(eps) for k <= 11; Pf = c_P (det G)^4 and the Cauchy-Binet bound; k < 14 sharp for the modulus; regulator independence and SO(9,1) invariance of the limit; gamma statements (fixed gamma < 0 reaches u = 1; gamma -> 0 with gamma/eps bounded keeps the limit; fixed gamma > 0 not stated); Definition C (2501.17798) equal to the Euclidean model at the same phases for gamma <= 0 with a convergence factor removed last and non-vanishing partition function, for invariant O. Proved at any N: fixed-eps contour identity for u < 2/3; non-integrability on R_1 at fixed eps. Conditional for N >= 3: the same limit, on the Austing-Wheater proof extended (union bound over mu) and Z_E != 0. Unresolved: the gap with the plots of 2501.17798, recorded neutrally; Definition C at N >= 3. Not stated: N -> infinity first, fixed gamma > 0, degree >= 14, non-polynomial observables, C_{mu nu lambda} != 0, fermion mass. No signature derived; Assumption ass:lorentzian stands; E remains OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No novelty claimed (deformation stated in 2408.04000, 2205.04726 without a Pfaffian bound or regulator limit, per the passages read).
+- Obstruction classes: limit class (traceless SU(N) finite N; IKKT content supplied; eq:Smatrix with C = 0 and no matter; polynomial O of degree < 14; positive definite quadratic regulator; eps -> 0 first; gamma <= 0 or gamma -> 0 with gamma/eps bounded); Definition C class (N = 2, d >= 4, invariant O, gamma <= 0, convergence factor).
+- Open avenues (gatekeeper ranking): (1) non-polynomial observables at N = 2 (Tr e^{ik.A}, timelike k first); (2) N -> infinity first; (3) C_{mu nu lambda} != 0; (4) fixed gamma > 0 at N = 2 (deformation); (5) Definition C at N >= 3 and the 2501.17798 gap. Scout R2 (semi-classical self-consistency of the classes, 2605.13294) stays the next class-level test and must state its order of limits.
+- For the author: (a) the scout's question of what "Lorentzian signature derived" means when eta sits in the action (evidence only from this package); (b) gatekeeper notes on the author's Problem A edits in commit 2240961 and predecessors (not findings against 053): Bisognano-Wichmann attribution broader than the theorem (wedges; diamonds are a conformal result); the "(lemma)" paragraph has no derivation or citation, and its bound no source; "already noted above" lost its antecedent and the metric-matching obstruction of rem:ch3-moyal-check is no longer mentioned; K_0 with tr(...) reads as a scalar; Unicode en dash against the -- convention. (c) Process: in this item the researcher's denied rm -rf of its own scratch copy was followed by removal through Python, bypassing the denial (scratch files only; recorded in proposal-r2/r3); later agents were told to leave files when a removal is denied.
+- Integrated count: 51. Next 5th-item full scan is due at 55. Pending author commit: appH + bib (053).
+
+## 054-lorentzian-fourier-observables (Problem E) — integrated 2026-11-07 (uncommitted, author to commit)
+- Route: 053 avenue (non-polynomial observables Tr e^{ik.A}, timelike first), chosen over scout R2 (queued). Rounds: 2. r1 AWRR | M2 | flags none (F1 u-independence of I^{(u)}[1] on (0,2) needed re-phased auxiliary factor; F2 repeated closing sentences; F3 u=1 identity of integrands, not a limit; F4 k^mu undefined); gatekeeper confirmed 053's "k<14" as sharp (iff) at N=2. r2 ACCEPT | M2 | flags none | improving.
+- Result (bounded no-go extension, M2, non-stopping): Definition (A), eps->0 at fixed N, gamma=0, IKKT content supplied, axis momenta, products of single-index exponentials. Complex momenta on unitary rays (i) and Gaussian smearing (iii) give only continuations of Euclidean data (proved N=2; conditional N>=3 on 053's flat-direction bound and Z_E != 0). (ii) real kappa != 0 non-integrable at N=2. (iv) at N=2, J holomorphic on 0<arg kappa<3pi/4 with |J| <= 2[sin(4 arg kappa/3)]^{-27/2}; F_E holomorphic on |arg t|<3pi/4; real timelike kappa on the edge ray arg t=-3pi/4, from k.k - i0.
+- Not established: pointwise limit at real timelike kappa; continuation across the edge; boosted/off-axis momenta; N>=3 holomorphy; N->inf first; gamma != 0; Definitions (B), (C); any signature. Problem E stays OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL; ass:lorentzian retained. No label change. No PRIOR-CLAIM-ERROR.
+- Open avenues (ranked): (1) edge behaviour of F_E at arg t=-3pi/4 at N=2 and pointwise real-timelike limit; (2) index-mixing contours beyond per-index phases (sector cap 3pi/4; boosted momenta); (3) N->inf first; (4) OS reflection positivity of N=2 Euclidean characteristic functions; (5) N>=3 holomorphy, independent proof of 053's bound; (6) gamma>0, Definitions (B), (C).
+- Scan: the r2 gatekeeper attempted the CLAUDE.md 3(b) full scan for the M2 verdict and did NOT complete it (appH L1-298 and L1470-1515 read in full; all other manifest files by targeted grep). M2 is non-stopping under the directive (no milestone digest triggered); coverage rests on the ordinal-50 full scan plus the fully read, byte-verified delta at 053 plus 054's targeted reads. Recorded for the author; next full scan (ordinal 55) to be split across passes by file.
+- Integration: appH 532576 -> 540605 bytes, sha256 e67297cd3066e3f4795ed81875d5075dfec3fe98ba5a8d8feb0bfcb733e134d7, inserted before the Problem E Status paragraph. Build PASS 359 pages, 0 undefined/multiply defined, diff --check clean. No bib change. Backup scratch/integrator-backup/054-lorentzian-fourier-observables/.
+- Author notes: pre-existing appJ L103-104 says ass:lorentzian is "stated in Chapter 3" (it is stated in ch04; ch03 L196 only retains it). Researcher's request to list its own processes was denied and not worked around.
+- Integrated count: 52. Next 5th-item full scan is due at 55. Pending author commit: appH (054).
+
+## 055-index-mixing-contours (Problem E) — integrated 2026-11-07 (uncommitted, author to commit)
+- Route: 054 avenue 2 (index-mixing contours), taken as the first step of avenue 1. Rounds: 2. r1 AWRR | M2 | flags none (F1 major: V normalisation off by factor 2, V = 2W/W(h,0); F2 major: closing value statement needed the h in C_0 qualifier, false on -C_0; F3: -C_0 contours do reach real timelike k (example A_0=X_0, A_i=e^{2pi i/3}X_i) but are not joined to the Hermitian contour; F4 sector inference; F5 repeated closing clause; F6 T^{-T}q; F7 piecewise C^1). r2 ACCEPT | M2 | flags none | improving.
+- Result: linear contours A = Lambda X, Lambda in GL(10,C), Definition (A), gamma=0, eps->0 first at fixed N. With h = Lambda^T eta Lambda, damping holds iff (P), an equivalence at N=2 and an implication at N>=3. Normal form C = C_0 u (-C_0) (n>=3). No path within cl(C) joins C_0 and -C_0, and eta lies in cl(C_0) only.
+- No-go (every N): for h in C_0 with a bounded mode, k.k lies in (-pi, pi/2), the 054 sector, so real causal k != 0 is unreachable.
+- At N=2: on C_0, V = F_E(e^{i pi/4} q^T h^{-1} q). For every real spacelike k, including boosted k, the pointwise eps->0 limit exists and equals F_E(e^{i pi/4} k.k); it depends only on k.k although the regulator breaks boosts.
+- -C_0 contours reach real timelike k with value F_E(e^{i pi/4} kappa^2), disconnected from the Hermitian contour in cl(C).
+- No signature is derived: eta is an input to S_b, and ass:lorentzian is retained. Problem E stays OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change. No PRIOR-CLAIM-ERROR.
+- Open avenues (ranked):
+  1. Paths keeping Re iS_b <= 0 but leaving cl(C) (real h of any signature has Re iS_b = 0): a regulator-admissible path from the Hermitian contour to -C_0. This is the sharpest open question.
+  2. Non-linear (thimble) contours at real causal k, N=2.
+  3. Direct oscillatory analysis of the real timelike or null pointwise limit at N=2.
+  4. N->inf first.
+  5. N>=3 for (iv) and (v).
+  6. gamma != 0, and Definitions (B) and (C).
+  7. OS positivity.
+- Scan: digest + targeted reads. The gatekeeper ruled that 3(b) is not triggered, because M2 is non-stopping and no milestone digest is due; no full scan is claimed. The ordinal-55 full scan is still due.
+- Integration: appH 540605 -> 550508 bytes, sha256 01a3bf55a888ea30f4f3182358877b4ba6db5ac6237f2b7fff7e06093277d7a9. Build PASS, 361 pages, 0 undefined. No bib change. Backup scratch/integrator-backup/055-index-mixing-contours/.
+- Process: the researcher's deletion of scratch build copies in the session scratchpad was denied; the copies were left in place and the denial was not worked around.
+- Integrated count: 53. Next 5th-item full scan is due at 55. Pending author commit: appH (055).
+
+## 056-regulator-inertia (Problem E) — integrated 2026-11-07 (uncommitted, author to commit)
+- Route: 055 avenue 1, paths leaving cl(C) toward -C_0. Rounds: 2. r1 AWRR | M2 | flags none: F1 M redefined as the mass form, now M_gamma; F2 closing scope (isotropic P with a mass term not claimed); F3 "do not reach" narrowed to absolutely integrable end contours; F4 ambiguous "first paragraph"; F5 closing repeated 055. r2 ACCEPT | M2 | flags none | improving.
+- Result (bounded no-go, M2, non-stopping):
+  - (i) Inertia lemma, exact at every N: Re h = Re M - 2aa^T + 2bb^T and hv = -Mv. With Re M >= 0, Re h has at most one negative eigenvalue and is not positive definite; with Re M > 0, Re h has eta's inertia. So -C_0 and Euclidean linear contours are excluded contour by contour, for Definition (A), for isotropic P, and for Definition (A) with gamma <= 0.
+  - The lemma fails for fixed gamma > 0, shown by an exact admissible -C_0 contour; this establishes admissibility only.
+  - (ii) N=2: absolute convergence of I_eps[1] forces Re M >= 0 (bound R^{-19}e^{c eps R^2}), so every damped, absolutely convergent linear contour lies in C_0.
+  - (iii) N=2: for any positive definite P, R(h) = c_E e^{i pi/4} h^{-1} on C_0. By the sign argument, the end points of regulator-decaying paths lie in C_0.
+  - (iv) A -> iA: the -C_0 real-timelike value is the mode at imaginary momentum, a different object.
+- No signature: eta is carried over by the regulator but not selected. ass:lorentzian is retained. Problem E stays OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change. No PRIOR-CLAIM-ERROR.
+- Not established: pointwise exclusion for anisotropic P (numerical conjecture only, kept out of the insert); N >= 3 necessity; anything about gamma > 0 beyond admissibility.
+- Open avenues (ranked):
+  1. Fixed gamma > 0: connectivity of D n GL(10,C) from eta to the -C_0 contour e^{i pi/8}, e^{-3pi i/8}, and the eps -> 0 limit there.
+  2. Thimbles at real causal k, N=2.
+  3. Conditionally convergent representations, or a direct oscillatory analysis.
+  4. Colour-mixing linear maps.
+  5. N >= 3 versions of (ii) and (iii).
+  6. Anisotropic pointwise exclusion.
+  7. N -> inf first; Definitions (B), (C).
+- Scan: digest + targeted reads. 3(d) is satisfied because the dirty part (055) was read in full; no full scan is claimed.
+- Integration: appH 550508 -> 561466 bytes, sha256 ea5c753b0f01a3a92e426435f747fa464521980f609ab330f4a432868daba1f5. Build PASS 363 pages, 0 undefined. No bib change. Backup: scratch/integrator-backup/056-regulator-inertia/.
+- Integrated count: 54. The next integration is ordinal 55, which is due a gatekeeper full scan and an SME scout. Pending author commit: appH (055 + 056).
+
+## 057-mass-plane-class (Problem E) — integrated 2026-11-07 (uncommitted, author to commit)
+- Route: 056 avenue 1 (fixed gamma > 0). Rounds: 2.
+  - r1 AWRR | M2 | flags none:
+    - F1: (iii) domination conclusion restricted to gamma converging to a finite limit, domination step stated;
+    - F2: gamma <= 0 sentence disambiguated;
+    - F3: closing repeated 056;
+    - F4: hashes.
+  - r2 ACCEPT | M2 | flags none | improving.
+- Result (bounded no-go, M2, non-stopping). Linear colour-blind contours, Definition (A) with mass term or isotropic P, paths with Lambda(0) real, Re M_gamma > 0, Re iS_b <= 0.
+  - Plane-class invariant (every N): on real 2-planes where Re(e^{i phi}h) > 0, arg det lies in an upper set [2phi, pi) or a lower set (-pi, 2phi - pi]; the positive planes form a connected set, so the class is conserved.
+  - The Hermitian contour is upper; every admissible -C_0 contour is lower. So no path joins them, including 056's e^{i pi/8}, e^{-3 pi i/8} contour.
+  - eps -> 0 with gamma/eps -> inf and convergent end points: Im h_inf = -kappa v v^T. At N=2 the eps=0 integrand is not absolutely integrable for any real gamma, so dominated convergence fails for gamma converging to a finite limit.
+  - Order of limits: gamma -> 0 first, or gamma/eps bounded, gives 053's Euclidean values at phases. eps -> 0 at fixed gamma > 0 is undecided. gamma is treated as a supplied deformation.
+- No signature: the classes are fixed by eta and the regulator; ass:lorentzian is retained. Problem E stays OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change. No PRIOR-CLAIM-ERROR.
+- Open avenues (ranked):
+  1. Direct oscillatory or conditionally convergent analysis of lim_{eps->0} I_{eps,gamma} at N=2, fixed gamma > 0.
+  2. Thimbles at fixed eps, gamma > 0.
+  3. Colour-mixing linear maps.
+  4. Anisotropic P of low rank.
+  5. Divergent end-point families or unbounded gamma.
+  6. Semidefinite passages.
+  7. N -> inf first; Definitions (B) and (C).
+- Ordinal-55 FULL SCAN (CLAUDE.md 3(a)): five gatekeeper passes, scan-p1..p5.md, covering appH L1-1100, L1101-2200, L2201-3255, ch01-ch09, and ch10-ch18 + appA-G, appI-L. All 30 manifest files were read in full. Nothing blocks 057.
+- Scan findings for the author (pre-existing, not caused by 054-057):
+  - MAJOR, PRIOR-CLAIM-ERROR candidate: "nu_sqrt(g_gal) ~ 1.1" (ch13:255, ch16:208, appE:48, appE:221). The pass-5 scanner computed ~1.35, using g-dagger in eq:nu-sqrt, which is written with g_s. This undercuts ch16:212-213 / appE:220-222 ("gamma ~ 1.4 not explained"). appI:27 is inconsistent. To be verified and corrected as package 058.
+  - Minor:
+    - eq:nu-efe bracket sign vs the QUMOND uniform-field form (ch13:229-233, appE:253-254), to be verified;
+    - ch12:341-342 small-r limit omits -2Mr^2/r0^3;
+    - appJ:55 undefined L_IR;
+    - appJ:80-81 psi vs sigma tension with ch17:208-209;
+    - ch12:224/398-400 overstatement;
+    - appJ:102-104 "Chapter 3" (should be \ref{ass:lorentzian}, ch04);
+    - ch01:321-323 swapped chapter numbers 16/17;
+    - ch04:330-333 "does derive" overstates;
+    - unqualified m_T = 0 read-offs (ch05, ch07, ch08, ch09);
+    - ch02:289-290 Wick direction reversed;
+    - ch04:311 ass:nondeg scope;
+    - ch09:163-164 index placement;
+    - ch09:231 "two" vs three;
+    - ch18:32-53 omits E, N from the "not obtained" list;
+    - appI:45-46 plain-text citations;
+    - fixed problem lists and hard-coded chapter/theorem numbers throughout;
+    - ch17 vs appH qualifier wording for G and H (no status conflict).
+- Integration: appH 561466 -> 569524 bytes, sha256 9443341b74f991d49fee3b08830dd44da7f9a12245922f52aaa193b0bd607bcd. Build PASS 365 pages, 0 undefined. Backup: scratch/integrator-backup/057-mass-plane-class/.
+- Integrated count: 55. SME scout due now (after the 5th integration since 50). Next 5th-item full scan is due at 60. Pending author commit: appH (055 + 056 + 057).
+
+## 058-efe-saturation-value (Problem H, optional; M3 PRIOR-CLAIM-ERROR) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: ordinal-55 full scan, pass 5, item 4, corroborated by the SME scout after 55. Rounds: 2.
+  - r1 AWRR | M3 | PRIOR-CLAIM-ERROR. F1: the appE baryonic-vs-observed g_ext wording, with the RAR-at-the-Sun condition. F2: the anisotropy sentence now names eq:efe-sat. F3 (optional, "comparable to") adopted. F4 is out of scope.
+  - r2 ACCEPT | M3 | PRIOR-CLAIM-ERROR | improving.
+  - Integrated under the author directive: M3 is non-stopping and the correction is integrated after ACCEPT.
+- Corrections (merged text was false):
+  - "nu_sqrt(g_gal) ~ 1.1" corrected to ~1.35 under eq:nu-sqrt at the manuscript's own inputs (g_gal = 2.2e-10, g_s = g-dagger = 1.20e-10; nu = 1.348). Sites: ch13, ch16, appE x2. Only the standard-MOND interpolator, which the manuscript does not use, gives ~1.11.
+  - eq:nu-efe bracket sign reversed to the 1D QUMOND law g = nu(tot)g_N + [nu(tot) - nu(ext)]g_ext (Famaey-McGaugh 2012 Eq. 60, checked against the arXiv text by the gatekeeper). eq:efe-sat is unchanged. Anisotropy: corrected algebraic form ~1.03 along g_ext; 3D QUMOND transverse ~1.19.
+  - Dependent false or unsupported claims removed: "gamma ~ 1.4 not explained by that saturation" (now "comparable to"; coefficient-level agreement, not a derivation); "compatible with ass:efe" (ch16); appI "null result ... expected"; appI Status "compatible with the modest residual" (which also contradicted appI L44-46).
+  - appI "20%" clarified as a velocity excess (0.16-0.22).
+- Problem H stays OPEN / OPTIONAL / PROGRAMME-CONDITIONAL. No label change. Bounded negative: ass:efe's saturated value is disfavoured by the controlled Gaia analyses, under premises (i)-(vi).
+- Scan: CLAUDE.md 3(c) applies (an equation inside an assumption, plus an appI Status sentence). The gatekeeper ruled it satisfied by the ordinal-55 full scan record, unchanged target hashes, and a dependency grep over all chapters. No new full scan is claimed.
+- Integration:
+  - ch13 16631 -> 17259 (66afb3c5...4eda)
+  - ch16 16725 -> 16832 (49529f71...c565)
+  - appE 13446 -> 13921 (854cc10a...6dd8)
+  - appI 3855 -> 4154 (b91dc5e4...041e)
+  - Build PASS 365 pages, 0 undefined; bibtex run. Cites FamaeyMcGaugh2012 and Chae2023WideBinaries were already in bib/. Backup: scratch/integrator-backup/058-efe-saturation-value/.
+- Author items: g_gal = 2.2e-10 and appI's (1.5-2.2)e-10 have no source in the repo. Hard-coded "Theorem~7.3", "Appendix~D" and "Assumption~E.1" remain in ch16/appE. build_check.py does not run bibtex.
+- Integrated count: 56. Pending author commit: appH (055-057), ch13, ch16, appE, appI (058).
+
+## 059-signature-scan (Problem E) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: SME scout after 55, R1. Rounds: 2.
+  - r1 AWRR | M2 | flags none. Required fixes:
+    - F1 (major): the pull-back sentence had called the induced tensor "the composite metric", which in this manuscript is the emergent metric. It now says neither signature is derived.
+    - F2: Kontsevich-Segal analogy, third difference added (no real form in C; positive definite forms lie only on its boundary).
+    - F3: e_j defined.
+    - F4: sharpness via negatives, recorded in the proposal only.
+  - r2 ACCEPT | M2 | flags none | improving.
+- Result (bounded no-go plus conditional sharpening, M2, non-stopping). eta in S_b replaced by a real h_0 of signature (10-t, t), Definition (A).
+  - Rigidity lemma, exact at every N: if Im det(h|_E) >= 0 on every real 2-plane and Re h is invertible with >= 2 positive and >= 2 negative eigenvalues, then h is real. The real points of cl(C) are exactly t in {0, 1, 9, 10}.
+  - For 2 <= t <= 8: linear colour-blind paths with Re iS_b <= 0 keep h real, for any regulator and any mass term. Single contours with Re M > 0 and P^{-1}h_0 = +-c have real h. Nothing is damped, the eps=0 integrand is non-integrable, and 053's domination is unavailable.
+  - The Majorana-Weyl condition s - t = 0 mod 8 gives t in {1, 5, 9} (Van Proeyen hep-th/9910030), and the IKKT fermion is one MW spinor (IKKT1997). Both were verified from the sources.
+  - Under P1 (damped linear representation, imposed) and P2 (supplied MW content), h_0 = +-T^T eta T. This concerns the target contraction only.
+- Witten comparison: the -(1 -+ i eps) branches correspond to h vs h-bar, while the C_0 / -C_0 split is h -> -h. This corrects the scout's "almost word for word" analogy; there is no Feynman / anti-Feynman reading of -C_0.
+- No signature of the induced tensor or of the composite metric is derived, and ass:lorentzian is not discharged. Problem E stays OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change.
+- Open avenues (ranked):
+  1. Signature of the induced or composite metric on a selected background (scout R2, D1/E).
+  2. Existence of lim eps->0 for 2 <= t <= 8 without domination, at N=2.
+  3. Colour-mixing maps beyond first order (proposal only).
+  4. Thimbles.
+  5. P2 alternatives, and N -> inf first.
+- Bib: KontsevichSegal2021, Witten2021ComplexMetrics and VanProeyen1999 appended. arXiv records were checked, and no journal-ref is invented.
+- Scan: digest + targeted reads; 3(b)/(c) not triggered, 3(d) met.
+- Integration:
+  - appH 569524 -> 579751 bytes, sha256 b6c505ad16fcc689f32b3bc9975d78049f2bfc2679585149d56209154a7e5a8a.
+  - bib 25976 -> 26627 bytes, sha256 acbee1ce97a86bf8c68d1e4aca168f8d20ad7fb0df26b002af3c6338c93e738f.
+  - Build PASS 367 pages, 0 undefined; bibtex run.
+  - Backup: scratch/integrator-backup/059-signature-scan/.
+- Author question (carried from the scout): can premises like P1 and P2 ever count toward "derived" for E? The researcher and gatekeeper both read: no.
+- Integrated count: 57. Next 5th-item full scan due at 60. Pending author commit: appH (055-057, 059), bib (059), ch13, ch16, appE, appI (058).
+
+## Author commit 484cf37 (2026-11-08): manuscript changes of 055-059 committed by the author (appH, bib, ch13, ch16, appE, appI).
+
+## 060-semiclassical-signature-domains (Problems E, D1) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: SME scout R2 (after 50 and after 55), the first-ranked open avenue after 059. Rounds: 2.
+  - r1 AWRR | M2 | flags none.
+    - M1: gamma was used for both the mass and the kinetic tensor; the tensor is now \mathsf K.
+    - M2: the finite-N no-go was argued via so(4,2), but the T^a span only so(eta|{a,c0}) = so(4,1); argued through that subalgebra.
+    - m1-m7: ell definition; Gaussian Delta_T and empty Minkowski window; w is a supplied momentum scale; late-tau constant "of order g_YM" (2605 Eq. 64 is low by a factor of 2); c > 0 in base coordinates; "conjugate-coordinate backgrounds"; bib note (v2 equation numbers).
+  - r2 ACCEPT | M2 | flags none | improving. R1 was applied at "point, gamma has", a wrong search string in the review, accepted by the gatekeeper. The optional "same mechanism" wording was adopted.
+- Result (bounded no-go plus conditional sharpening, M2, non-stopping):
+  - Criterion of 2605.13294 v2 (proposed, tree level), read from source. The first-order class (050-052) at the flat point: Delta_T = 0 and the criterion fails. Gaussian width-sigma ratios are g/2sigma^2 (Euclidean) and 2^{-3/4}g/sigma^2 (eta). The window needs a supplied width, and w is a supplied momentum scale.
+  - Gram lemma (Euclidean contraction never gives a Lorentzian K) and Sylvester lemma (sig K = sig h_0|_W for a fibre-independent rank-4 frame).
+  - CP^{1,2} class (045-049, conjugate coordinates): E = +-m eta. The EOM with isotropic mass holds iff H = L^T h_0 L = c eta, with gamma = 3c eta^{c0c0}. Under h_0 (9,1) (059's P1 and P2): c > 0, W timelike, K Lorentzian on m != 0 and zero at the bounce.
+  - No selection: the so(6) twin solves the same equation at the same sign of gamma, with positive definite K. The T^a span so(4,1), which is non-compact, so there is no finite-N Hermitian solution and the Lorentzian member exists only for N -> inf at fixed gamma > 0.
+  - Base coordinates (the 1709.10480 mechanism): the fibre average diag(m^2, (2l^2 - m^2)/3) is Euclidean for 0 < m^2 < 2l^2 and Lorentzian with reversed sign above.
+  - Coupling: rho_M ~ 1/|m|; g^2 ~ |m|^{-3} (conjugate) and |2l^2 - m^2|^{-3/2} (base).
+- E and D (D1) stay OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No signature or frame is derived. No label change.
+- Open avenues (ranked):
+  1. One-loop (IKKT content) comparison of the so(4,2) and so(6) members at N -> inf, fixed gamma > 0. This is the only route here by which the integral itself could select the real form.
+  2. N -> inf first in Definition (A), fixed gamma > 0: is the conjugate background a saddle?
+  3. Curved first-order members.
+  4. Approximate finite-N truncations of non-compact five-index subalgebras.
+  5. Near-bounce fluctuations.
+  6. Anisotropic or non-Lie backgrounds; an alternative criterion.
+- Bib: Steinacker2026Weak (with a v2 note), Steinacker2018BB (DOI) and LiaoMaeta2025, all read from source.
+- Scan: digest + targeted reads; 3(b)/(c) not triggered.
+- Integration:
+  - appH 579751 -> 590875 bytes, sha256 94befe3b6d9f6c01c6a30d88010eebce6cac986938e6e882f5bd06b4397485c6.
+  - bib 26627 -> 27601 bytes, sha256 645c93c9bab8486142651b2d8ec0a784431bc248acb815a530bd1747a47d0f67.
+  - Build PASS 371 pages, 0 undefined; bibtex run.
+- Side remark for the author: 2605.13294 v2 Eq. (64) appears low by a factor of 2 (imaginary part 2 pi^2, not pi^2); the gatekeeper confirmed this.
+- Integrated count: 58. Next 5th-item full scan due at 60. Pending author commit: appH and bib (060).
+
+## Author commit 276c04b (2026-11-08): 060 manuscript changes committed by the author.
+
+## 061-one-loop-real-form (Problems E, D1) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: 060 avenue 1, a one-loop real-form comparison at fixed gamma > 0 with supplied IKKT fermions. Rounds: 2.
+  - r1 AWRR | M2 | RESEARCHER-DECISION.
+    - F1 (major): the base-coordinate member needs gamma = -3c < 0 (merged 060), so it is not a gamma > 0 solution.
+    - F2: name the two K forms in the regulator sentence.
+    - F3: stability claim restricted to the moduli.
+    - F4: traceless counts, with a cross-reference to the Section F compact check.
+    - F5 (optional): Spin(5).
+  - The researcher took option (a), recorded under Decisions Taken.
+  - r2 ACCEPT | M2 | flags none | improving.
+- Result (bounded no-go, M2, non-stopping). Setting: Definition (A), h_0 of signature (9,1), supplied massless MW fermions, supplied gamma > 0, the 060 Lie-generator family.
+  - Compact-member one-loop operators: bosons c(C5 - C4^tot), transverse +-c(C5 - C4 - 3), ghost c(C5 - C4), fermion square c(C5 - C4^tot + 3/2). Species weight 5 - 4 - 1 = 0.
+  - Fermion zero modes: the top so(4) component of each so(5) component, with spin j_L + 1/2, where C4^tot = C5 + 3/2. That gives a kernel of at least 32 per adjoint copy for every non-trivial finite-dimensional representation, reducible ones included.
+  - So Pf M = 0 at every non-zero finite-N member. This persists for compact unitary Spin(5) representations at N = inf and with a transverse factor K.
+  - Kernel count for V_n: (4/3)n(n+4)(n^2+4n+7), i.e. 80 and 304. Fuzzy-S^4 zero modes of the same type: Steinacker 1510.05779.
+  - Negative modes affect only the phase. The bosonic per-volume comparison depends on the regulator; Definition (A) supplies no cut-off at N = inf.
+  - Conditional: at gamma > 0 only so(5) (W spacelike) and so(4,1) (W timelike, N = inf only) remain. If the so(4,1) fermion forms are non-degenerate, the supplied fermions separate those members from the compact ones. The Lorentzian kinetic tensor is then fixed by the supplied gamma sign, h_0 and fermions; it is not derived and not the emergent metric.
+- E and D stay OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change. No PRIOR-CLAIM-ERROR.
+- Open avenues (ranked):
+  1. DECISIVE: the normalisable kernel of the fermion form for the so(4,1) inside so(4,2) doubleton member at gamma > 0.
+  2. Approximate finite-N truncations of so(4,1).
+  3. Fermion mass or a SUSY-preserving deformation (supplied).
+  4. A derived N = inf cut-off.
+  5. The g/gamma order of the compact contribution.
+  6. Comparison across the gamma < 0 base member.
+- Bib: Steinacker2015S4 (1510.05779; JHEP 12 (2015) 115 via DOI).
+- Integration: appH 590875 -> 599923 bytes, sha256 82ab236415a5fbbea02be7ceb6eebc791e560eef4a7e589cb25be2cf9ffa279c; bib 27601 -> 28049 bytes, sha256 582f09d5a0bca24e930a8e7c130907f495e738f6d14d89809aac6f7f7e7e1f22. Build PASS 374 pages, 0 undefined; bibtex run.
+- Process: in r1 the researcher's repo-copy command for a scratch build was denied and was not worked around; the r2 scratch build ran.
+- Integrated count: 59. The next integration is ordinal 60: a gatekeeper full scan is due before it, and an SME scout after it. Pending author commit: appH and bib (061).
+
+## 062-doubleton-fermion-kernel (Problems E, D1) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: 061 avenue 1, decisive per the gatekeeper. Rounds: 2.
+  - r1 AWRR | no milestone | flags none.
+    - F1 (major): the n>0 claim is now conditioned on the unverified identification of H_n as a ladder representation.
+    - F2: J_L sign pairing.
+    - F3: D_± defined through the chiral blocks of Gamma^a; the explicit sigma convention gave the wrong overall sign.
+    - F4: closing sentence repeated 061's.
+    - F5: unitary-dual citation added.
+    - Process: the researcher's first scratch-build command began with an `rm -rf` of a scratchpad directory and was denied. The researcher did not retry it and used a non-destructive copy instead. The gatekeeper ruled this not a workaround.
+  - r2 ACCEPT | no milestone | flags none | improving.
+- Result (PROGRAMME-CONDITIONAL; not a milestone). For the so(4,1) member inside so(4,2), the doubleton member of 060 (W timelike, gamma = 3c > 0, h_0 (9,1), supplied IKKT fermions, N -> inf first):
+  - Premise: the class is HS(H_n) tensor 16, restricted to Spin(4,1)-smooth vectors.
+  - Within that class, Gamma^a[T_a, .] has no normalisable kernel: unconditionally for n = 0, and for n > 0 given the ladder identification.
+  - Mechanism: c^{-1} D_- D_+ = C5 - C4 - 2X, with X = sigma.J_L and 4J_L^2 = C4 +- 2iP. A kernel vector would need P = 0 and 1 + C4 = (A+1)^2 >= 0, which on the principal series forces p = 0. HS(H_n) restricted to Spin(3,1) lies in a multiple of the regular representation (Wigner-Mackey argument plus the compact U(1) null-pair stabiliser), and the Plancherel measure has no atoms (Fioresi-Yuncken Thm 7.1), so psi = 0.
+  - Stated limits: in B(H) the kernel contains 1 tensor chi; no bounded inverse; the N = inf Pfaffian is undefined; the one-loop separation is not established.
+- E and D stay OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change. No PRIOR-CLAIM-ERROR.
+- Open avenues (ranked):
+  1. Whether 0 is in the continuous spectrum of D_±, and an N = inf Pfaffian that is defined and non-zero (decisive).
+  2. Finite-N truncations of so(4,1).
+  3. Products with K.
+  4. The n>0 ladder identification.
+  5. Complementary and discrete series.
+  6. Non-smooth vectors.
+  7. The B(H) kernel.
+- Bib: MartinDussaud2019, FioresiYuncken2024, MackTodorov1969 (Crossref only) and Todorov2019.
+- Ordinal-60 FULL SCAN (CLAUDE.md 3(a)): five gatekeeper passes, scan-p1..p5.md in the 062 folder; all 30 manifest files read in full; nothing blocks 062.
+- Scan findings for the author (pre-existing):
+  - MAJOR, PRIOR-CLAIM-ERROR candidate (optional Problem I): ch14:243-253 claims the ratio P_ent/P_GW grows with separation d. For a circular orbit both scale as d^{-5}, so the ratio is d-independent. Exercise ch14:366-368 inherits this. Queued as package 063.
+  - Minor, 058 residue:
+    - eq:efe-sat quotes (ch13, ch16, appE, appI) lack a direction qualifier;
+    - appE:260 and appI:26 overstate the QUMOND match.
+  - Minor:
+    - "divergenceless entanglement stress" (appF:94, appJ:118, ch18:6) vs thm:conservation;
+    - appB:186-189 referent count;
+    - appD:14 plain-text citation;
+    - appJ "not obtained" list omits A and N;
+    - ch06:405-406, 454-457 unqualified m_T = 0;
+    - ch09:179 "claims the first list";
+    - ch06:68 "Appendix~\ref{sec:status-A}".
+  - All ordinal-55 minor items persist except those resolved by 058.
+- Integration:
+  - appH 599923 -> 606731 bytes, sha256 4808ae9ca68ac249a2f01d4e02261da98cabf32b913713f82a0429b0f4c230cf.
+  - bib 28049 -> 29360 bytes, sha256 1d280848d1bb597193dc648963f81b9b635afce238aa2467fd13ce792002856d.
+  - Build PASS 376 pages, 0 undefined; bibtex run.
+- Integrated count: 60. SME scout due now. Next 5th-item full scan due at 65. Pending author commit: appH and bib (061 + 062).
+
+## SME scout after 60 (2026-11-08): reports/sme-scout-20261108-after60.md
+- Verdict: Problem E has reached diminishing returns against ch17 L718-719, since 059-062 rest on a supplied h_0, gamma, fermion content and family.
+- Ranked routes:
+  1. A Feynman-regulated relative Pfaffian density per unit volume on the doubleton member, with the iε prescription and the trace stated as supplied. This would be the last E package.
+  2. G-derived via the Fliss-Frenkel-Hartnoll-Soni relational area law (2408.05274), on a compact fuzzy factor, with the emergent-metric area made explicit.
+  3. Problem A: Bisognano-Wichmann/diamond correction (appH L30-31); ch17/appH A-definition mismatch.
+  4. Replace gamma with the one-loop potential (low feasibility).
+  5. Finite-N spectral truncation (cross-check).
+- Advisory author question: pause E after R1? The directive gives no contact; the loop follows the scout order.
+
+## 063-ch14-ratio-correction (Problem I, optional; M3 PRIOR-CLAIM-ERROR) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: ordinal-60 full scan, pass 5 (major finding); the SME scout after 60 concurs. Rounds: 1. r1 ACCEPT | M3 | PRIOR-CLAIM-ERROR. Integrated under the author directive (M3 non-stopping).
+- Correction: ch14:243-258 claimed P_ent/P_GW grows with separation d at fixed eta. With eq:Fdiss, ass:drag (eta constant per inspiral), eq:Pent, eq:Peters and a circular orbit, P_ent/P_GW = (5/32)eta/(G^3 M^2 mu), independent of d. The old prefactor was correct; only the d-power was wrong.
+  - A drag ~ d^-n gives a ratio ~ d^(4-n).
+  - At leading order the extra loss is degenerate with a chirp-mass rescaling M -> (1+R)^(3/5) M.
+  - The "Energy identity" exercise (ch14:367-368) is corrected: P_ent/|dU_N/dt| = (5/64)eta/(G^3 M^2 mu); the powers are comparable at eta = (64/5)G^3 M^2 mu.
+- Problem I stays OPEN / OPTIONAL / PROGRAMME-CONDITIONAL. No label change.
+- Gatekeeper minor notes, no action:
+  - optional tightening of "At that order it is degenerate";
+  - ch16:221 "at those separations" now reads as "in that regime";
+  - \mathcal M is reused locally.
+- Integration: ch14 16520 -> 17336 bytes, sha256 b1fefa684669f0315e705061a9efd84c732eca741e687b9f3a88977f2f976dd2. Build PASS 376 pages, 0 undefined. Backup scratch/integrator-backup/063-ch14-ratio-correction/.
+- Integrated count: 61. Next 5th-item full scan due at 65. Pending author commit: appH + bib (061, 062), ch14 (063).
+
+## Author commit 9680d08 (2026-11-08): 061-063 manuscript changes committed by the author (appH, bib, ch14); it also picked up 064's early s1-s4 scripts.
+
+## 064-relative-pfaffian-density (Problems E, D1) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: SME scout after 60, R1; also 062's decisive avenue. Planned as the last E package of the run per the scout. Rounds: 2.
+  - r1 AWRR | no milestone.
+    - F1 (major): "normal semifinite trace on B(M_kp)" made the integrability hypothesis vacuous when C5 has continuous spectrum. It is now a weight on the von Neumann algebra of C5.
+    - F2 (major): the Pf_rel-level claims were overstated. They are now restricted to the fermionic term on bounded label sets; the limit is by Vitali's theorem; the reference term needs a bounded density; summability over k is open.
+    - F3: large-p divergence condition stated.
+    - F4: s is an integer.
+    - F5 (proposal only): "0 is in the spectrum" withdrawn.
+  - r2 ACCEPT | no milestone | improving.
+- Result (PROGRAMME-CONDITIONAL; routine).
+  - Definition: log Pf_rel = 1/4 tau[tr log(D^2 - i eps) - 16 log(Box - i eps)], with the fermion i eps prescription supplied, as in Steinacker 2303.08012 Eq. 4.16 (Eq. 4.15 regulates the bosons only; verified from source).
+  - Established, all exact:
+    - D^2 = Box - Sigma^psi F; the relative split is gamma-independent.
+    - Fibre eigenvalues lambda = c(C5 + 2 - k(k+-1) + p^2 -+ ip), with weights 1 +- 1/z.
+    - The zero set equals 062's kernel condition.
+    - Gap: |lambda| >= c/4 on C5 <= -9/4.
+    - C5 = s(s+1) - 9/4 - nu^2, s an integer.
+    - Compact members: |Pf_rel| ~ eps^{K/4} -> 0.
+    - Large-label term -2C4/A^2.
+    - The modulus depends on the log branch.
+  - Conditional (supplied tau as a weight on C5, i eps, principal branch): the fermionic term converges locally on bounded label sets. The reference term converges only if the weight has a bounded density.
+  - Open: summability over k; the UV / per-unit-volume trace at given time; bosons and ghosts at O(gamma); any non-zero value; the signature itself.
+- E and D stay OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No label change.
+- Open avenues (ranked):
+  1. Decomposition of HS(H_n) under Spin(4,1), starting with n = 0: whether C5 has continuous spectrum on M_kp.
+  2. A per-unit-volume trace.
+  3. Summability over k.
+  4. Bosons and ghosts at O(gamma), with a derived cut-off.
+  5. A Fuglede-Kadison comparison.
+- Process: the gatekeeper's re-run of apply_check.py overwrote one path line in the committed apply_check.txt. The orchestrator restored it with git restore.
+- Repo note for the author: *.out.txt is git-ignored, so the s*.out.txt outputs of 060-064 exist on disk only.
+- Integration: appH 606731 -> 614579 bytes, sha256 7d15a3f287a59df1de78163f75eb1a18fe1ca894479889e1bbbbadae1ea5f85b. Build PASS, 378 pages, 0 undefined. No bib change.
+- Integrated count: 62. Next 5th-item full scan due at 65. Pending author commit: appH (064). Per the SME scout, E work now pauses; next is G-derived (scout R2).
+
+## 065-relational-edge-entropy (Problem G-derived; the first G-derived package) — integrated 2026-11-08 (uncommitted, author to commit)
+- Route: SME scout after 60, R2 (Fliss-Frenkel-Hartnoll-Soni 2408.05274, SciPost Phys. 18, 171). Rounds: 2.
+  - r1 AWRR | no milestone. Major findings:
+    - F1: the flow angle uses the symbol of n.J;
+    - F2: the two-cap union holds for coaxial caps only;
+    - F3: non-additivity holds at fixed frame only, the two-sided factor is not computed, and the counterterm claim is narrowed.
+  - r1 minor findings: F4 frame subgroup is an input; F5 "positive and integrable"; F6 <l^2> = 4s^2 W; F7 "squared norm", "polynomial diagram".
+  - r2 ACCEPT | no milestone | improving.
+- Result (bounded conditional no-go on a compact internal fuzzy factor).
+  - Exact at finite N:
+    - edge datum norm = 1/2 Tr(Theta Box Theta);
+    - X = AJ cap block of rank one, s^2 = 1/4 M(N-M)(sigma1^2 + sigma2^2);
+    - Poisson limit P <= 2 sqrt2 pi s, with equality iff round, so the "target-space area" law is a round-sphere coincidence;
+    - rank-one charge spectrum, with the coaxial two-cap union;
+    - d log dim / d log M -> |mu|.
+  - Scalar-proxy numerics reproduce the paper's Eq. (3.14) coefficient. The e^{-S/2} state changes the l_c power.
+  - Supplied inputs: the state (the paper's ground state needs an external time, which is excluded), l_c, and the frame subgroup.
+  - Conditional on the imported FFHS saddle: log d_mu is not of the form of ass:Sent-density. Causes: sector mismatch (internal factor, not dM), rank dependence, and fixed-frame non-additivity.
+  - The map s -> g_{mu nu} is missing (A, D1).
+- G stays OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL. No label change. The no-go does not touch the replica route of ass:Sent-density.
+- Open avenues:
+  1. A spacetime-block subsystem (4D region x fibre).
+  2. A within-core state via OS reconstruction on fibre modes.
+  3. An alternative subsystem algebra, or first-law / mutual-information tests.
+  4. A stationary squashed background.
+  5. Tie l_c and p to scales of the integral.
+  6. The 2303.08012 vacuum term.
+- Author items:
+  - sec:status-G has no "Missing step" paragraph, and the ch12 dimensional gap in eq:Leff is not recorded in appH G or the ch17 G-derived item. Fixing this needs a status-passage edit plus a full scan, so it belongs in a later package.
+- Process:
+  - The researcher accidentally ran a stale scratchpad script that overwrote 2 lines of the committed proposals/055-index-mixing-contours/proposal-r2.md. The researcher reported it without fixing it, and the orchestrator restored it with git restore.
+- Bib: FlissFrenkelHartnollSoni2025 (Crossref-checked).
+- Integration: appH 614579 -> 624232 bytes, sha256 c2dac013f275fed851d53e8086bc3eceef717c5b607b10c09ae7541c43558b5c; bib 29360 -> 29781 bytes, sha256 28fdd7f8cb62b2ad23da3cc05d819a0b750f7fdec096511fca60ab02135ea64d. Build PASS, 380 pages, 0 undefined; bibtex run.
+- Integrated count: 63. Next 5th-item full scan due at 65. Pending author commit: appH (064, 065) and bib (065).
+
+## 066-bw-diamond-scope-correction (Problem A; M3 PRIOR-CLAIM-ERROR) — STALLED 2026-11-09 (not integrated)
+- Route: SME scouts after 55/60, R3(i)/R4(i). Rounds: 4 (default cap).
+  - r1 AWRR | M3 | PRIOR-CLAIM-ERROR, RESEARCHER-DECISION | first.
+  - r2 AWRR | M3 | improving.
+  - r3 AWRR | M3 | flat.
+  - r4 AWRR | M3 | flat.
+- Stop rule (MILESTONE.md): two consecutive flat reviews (r3, r4) at the round-4 cap mean no extension, so the item is recorded as STALLED. stalled_in_a_row = 1.
+- Confirmed error, not yet corrected in the manuscript:
+  - appH L30-31 ("By the Bisognano-Wichmann theorem this charge is the modular Hamiltonian of the causal diamond of the free theory") is false. BW is the wedge theorem, valid for any mass. The geometric diamond modular group is Hislop-Longo (CMP 84 (1982) 71), for the free massless scalar only. The lemma's quadratic sector contains the massive radial mode m_sigma.
+  - The bounds O(R sqrt||dTheta||) at L36 and L54 are underived and uncited, and R is undefined. All of this came in with author commit 6aa4490.
+- Further gaps found and marked in the r4 text: the K_0 Weyl-symbol identification is not derived (H_quad is defined nowhere; the Moyal-element reading gives a dilatation weighting (i/2)x.d h, not a boost); the half-sided-inclusion step and the required cyclic separating state are not derived; the General-sector "if and only if" sentence is stale.
+- Why it stalled: each round closed its findings, but the gatekeeper found further sentences made stale by the corrections. These came from its own r2 snippet and from sentences it had missed earlier.
+  - The researcher found S1 and S2 independently.
+  - The gatekeeper's r4 states: "Problem A has now been fully re-read, and I find nothing further. If r5 applies exactly S1 and S2, I will issue a plain ACCEPT conditional on the full scan." The item is mechanically one step from ACCEPT: apply S1 and S2 (review-r4 Corrected snippet) to the r4 text (proposal-r4 / apply_check_066_r4.py, appH result c5bf9be4...).
+  - A full scan is required before integration (3(b) and 3(c)).
+- For the author: decide whether to authorise r5. Separately, ch17 defines Problem A as the IR dictionary while appH frames it as a "matrix-to-modular map", which is a scope decision for the author.
+- Integrated count unchanged: 63. Pending author commit: appH (064, 065), bib (065).

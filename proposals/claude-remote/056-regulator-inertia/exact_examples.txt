@@ -1,0 +1,10 @@
+1. h - (M - 2 l l^T) = 0: True
+   Re h - (Re M - 2aa^T + 2bb^T) = 0: True
+   h L^{-1} e0 + M L^{-1} e0 = L^T (eta + 1) e0 = 0: True
+2. (eps + i g) h - (M_eff - 2 eps l l^T) = 0: True
+3. Re Lambda^T P Lambda = Matrix([[9/25, 1, 1, 1, 1, 1, 1, 1, 1, 1]])  offdiag real part zero: True
+   Re h = Matrix([[-39/25, 4, -1, 1, 1, 1, 1, 1, 1, 1]])  offdiag real part zero: True
+4. h + e^{i pi/4} 1 = 0: True
+   Re M_eff[0,0] = sqrt(2)*(epsilon + g)/2 ; Re M_eff[1,1] = sqrt(2)*(-epsilon + g)/2
+   h_00 h_11 = I ; h_11 h_22 = I
+5. i^(8(N^2-1)) = 1 ; i^4 = 1

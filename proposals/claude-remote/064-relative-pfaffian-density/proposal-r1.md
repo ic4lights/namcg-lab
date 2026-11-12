@@ -1,0 +1,256 @@
+# Proposal 064-relative-pfaffian-density, round 1
+
+## Result
+
+The package defines a relative fermion determinant density, Pf_rel, on the so(4,1) ⊂ so(4,2) doubleton member and evaluates it as far as its fibre structure, its zero set and its local integrability. The setting is the one of 060/061/062:
+- W timelike, γ = 3c > 0, h₀ of signature (9,1);
+- supplied IKKT fermions;
+- N → ∞ first, then ε → 0;
+- the class HS(H_n) ⊗ 16.
+
+Pf_rel is defined with a supplied trace τ, the Feynman prescription of Steinacker 2303.08012 Eq. (4.16) on the squared fermion operator, the principal branch, and the spinor trace taken first.
+
+**Established (exact, given the 062 class).**
+1. **Fibre formula (sub-lemma 1).** On the joint spectrum of (C5, C4, P), with Spin(3,1) labels (k, p), k an integer and z = k + ip (z̄ for the other chirality):
+   - c⁻¹D₋D₊ has exactly two eigenvalues, λ₁,₂/c = C5 + 2 − k(k±1) + p² ∓ ip;
+   - the spinor-trace weights are w₁,₂ = 1 ± 1/z, and w₁ + w₂ = 2.
+   - So D₋D₊ depends only on (k, p) and C5. The "remaining invariant" enters only through the distribution of C5 on the Spin(3,1) multiplicity space, i.e. through the trace τ.
+   - Check: the formula reproduces the full spectrum, with multiplicities, of D² on finite-dimensional representations of the real form (n = 1, 2) to 1e-13.
+2. **Zero set and determinant class near 0 (sub-lemma 2).**
+   - Im λ₁,₂ = ∓cp exactly. So λ vanishes only at p = 0 and C5 = k(k±1) − 2, which is exactly 062's kernel condition B = P = 0.
+   - The modulus is bounded below: |λ − iε| ≥ |cp ± ε|.
+   - Assume (H-τ): τ = ∫dm(k,p) ω_{k,p}, with ω_{k,p} giving finite weight to spectral projections of C5 on bounded intervals, locally uniformly. Then log|λ| is integrable on every bounded set of labels, uniformly in ε, and ε → 0 exists there by dominated convergence.
+   - So the zero set does **not** force Pf_rel = 0 and gives no local infrared divergence. This is 062's open question "is 0 in the continuous spectrum, and is it harmful?", answered in the integrability sense:
+     - yes, 0 is in the spectrum (for C5 ≥ −2);
+     - the logarithm is locally integrable.
+3. **Gap.**
+   - On the spectral subspace C5 ≤ −9/4, |λ| ≥ c/4 uniformly. This subspace contains the unitary spherical principal series of Spin(4,1): there λ₁ = c[(p − i/2)² − ν²] for k = 0.
+   - For −9/4 < C5 < −2 the bound is c|C5 + 2|.
+   - On the principal series (s, ν), C5 = s(s+1) − 9/4 − ν². So zeros occur only in the s ≥ 1 sectors.
+4. **Compact comparison (sub-lemma 3).**
+   - The same formula with real z puts zero eigenvalues exactly on 061's top components, with multiplicity (m1+m2+2)(m1−m2+1) per chiral block.
+   - This gives K = (4/3)n(n+4)(n²+4n+7) on the 16 components, and □ has no kernel on traceless matrices.
+   - Hence |Pf_rel(ε)| ∝ ε^{K/4} → 0, verified numerically with exponents 20 and 76 for n = 1, 2.
+   - In noncompact labels the compact zeros sit at imaginary ν and p, outside the unitary principal series.
+
+**Not established.**
+- No finite non-zero density per unit volume has been found, and no IR divergence either.
+- **Global near-zero measure.** The τ-measure of {|λ| < δ} is finite iff the weights of C5 near k(k±1) − 2 at small p, multiplied by the Plancherel density, are summable over k. This is a higher-spin-content condition on HS(H_n) and is not computed.
+- **Large labels.** The first order of Σᵢwᵢ log(λᵢ/cA) in 1/A cancels. The second order is (1 − z²)/A², which sums over chiralities to −2C4/A². So the fermion term alone has no cancellation.
+- **Fixed C5.** At fixed C5 and k the Plancherel-weighted integrand tends to the constant 2. The trace at fixed C5, which is time-integrated, therefore diverges linearly in a p cut-off. A trace per unit volume at given time is not built.
+- **Prescription dependence.** The modulus depends on the branch, because Im w ≠ 0. The phase is the reference iε.
+
+**Classification:** PROGRAMME-CONDITIONAL sub-lemmas. **Milestone:** routine. E and D1 stay OPEN.
+
+## Target and status
+
+- **Problem E (appH sec:status-E, verbatim):** "Status: OPEN. Priority: CRITICAL PATH for the matrix-derived label. Completion: PROGRAMME-CONDITIONAL. A scope retaining Assumption~\ref{ass:lorentzian} gives up the claim of emergent or matrix-derived Lorentzian signature."
+- **ch17 L394–399:** "OPEN; CRITICAL PATH for the matrix-derived label".
+  - The completion item (L718–719) reads "Lorentzian signature is derived rather than retained".
+  - L739–742: an item met only by imposed premises or inputs gives at most a scope-limited model.
+  - No discrepancy with appH.
+- **D1 (bearing only):** ch17 L330–343 and L712–717; appH D is OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL. No frame claim is made here.
+- **Critical-path set (ch17 L700–735, re-derived):** A, B, C, D1, E, F, G-derived, N. H, I and J are optional. This matches the ledger.
+- **Original target:** a Lorentzian signature derived from the matrix theory.
+- **Route:**
+  - SME scout after 60, R1;
+  - 062 avenue 1 (decisive): "whether 0 is in the continuous spectrum of D_±, and an N = ∞ Pfaffian that is defined and non-zero".
+- **Dependencies:**
+  - 062: the class, the identity c⁻¹D₋D₊ = C5 − C4 − 2X, and the temperedness of HS(H_n) restricted to Spin(3,1) (n = 0 unconditional; n > 0 via the ladder identification);
+  - 061: compact zero modes and the O(γ) spoiling term;
+  - 060: the family and γ = 3c;
+  - 059: h₀ (9,1) under P1 and P2.
+- **Classification:** PROGRAMME-CONDITIONAL, not DERIVED.
+
+## Source reading
+
+- **Mode:** digest + targeted reads.
+  - `make_digest.py --check`: DIGEST CURRENT.
+  - The digest header shows `dirty-chapters: yes`. At task start the uncommitted files were appH and bib (061, 062) and ch14 (063), as the orchestrator stated. During the run the author committed 9680d08.
+  - The appH hash is unchanged (4808ae9c…30cf), as is bib (1d280848…856d).
+- **Discrepancy flag:** CLAUDE.md 3(d) asks for a full scan when `dirty-chapters: yes`. The orchestrator ruled that no full scan is due (the integration ordinal would be 62). I followed the orchestrator and did **not** do a full scan.
+- **Read in full:**
+  - appH: Problem E header L1482–1493; the 060 block L1588–1607; the 061 block L1609–1620; the 062 block L1622–1631; Status L1633–1634; the Definition (A) paragraph L1495;
+  - ch17: L330–345, L390–400, L700–745;
+  - ch04: L314–336 (ass:lorentzian);
+  - reports/sme-scout-20261108-after60.md (whole);
+  - 062 review-r2, 062 proposal-r1 (research part) and the 062 s1 script;
+  - ledger L447–580 (060–063 and the scout entry).
+- **Labels used:** ass:lorentzian (one occurrence, ch04:322). No new labels.
+- **Cite used:** Steinacker2023 (bib L121, existing). No new bib entries.
+
+## Research and reasoning
+
+### 0. Definition and premises
+- **Steinacker 2303.08012 v1** (verified from the PDF page image, printed p. 15):
+  - Eq. (4.15) gives S → S + iεTr Σ(T^a)²;
+  - Eq. (4.16) gives Γ_1loop = (i/2)Tr[log(□ − iε − Σ^(A)F) − ½log(□ − iε − Σ^(ψ)_ab[F^ab,·]) − 2log(□ − iε)];
+  - Eq. (4.17) gives F^ab = i[T^a,T^b], Σ^(ψ)_ab = (i/4)[Γ_a,Γ_b].
+- **The fermion operator.** Expanding the square gives (Γ^a adT_a)² = η^{ab}adT_a adT_b + ¼[Γ^a,Γ^b] ad[T_a,T_b]. With [T_a,T_b] = −iF_ab this equals □ − Σ^(ψ)_ab[F^ab,·]. So the fermion log in (4.16) is log(D² − iε).
+- **The iε in the fermion log is a prescription.** Eq. (4.15) regulates the bosonic matrices; NAMCG's Definition (A) does the same. I take it as supplied, as the brief requires.
+- **Exact split.** With e^{iΓ}, the fermion factor is exp(¼Tr₁₆ log(D² − iε)). The counting 10 − ½·16 − 2 = 0 makes the split into relative terms exact:
+  - log Pf_rel = ¼τ[tr₁₆ log(D² − iε) − 16 log(□ − iε)].
+- **Trace (supplied).**
+  - By 062, HS(H_n)|Spin(3,1) ⊂ ∞λ, so HS = ∫π_{k,p} ⊗ M_{k,p} dm(k,p) over the unitary principal series.
+  - k is an integer, because −1 ∈ SL(2,C) acts trivially in the adjoint action.
+  - C5 commutes with Spin(3,1), so it acts on the M_{k,p}.
+  - τ = ∫dm ω_{k,p}, with ω normal semifinite traces. The spinor trace is taken first.
+- **γ order.** D² and □ are both linear in c = γ/3. So log(cλ̂ − iε) − log(câ − iε) depends only on ε/c, and the fermion term is γ-independent for ε → 0.
+  - The full one-loop γ-dependence enters through the bosonic mass terms (061: γTr(K + iε)⁻¹), which are kept separate here.
+
+### 1. Fibre formula
+- X = σ·J_L with J_L² = (z² − 1)/4 scalar on π_{k,p}, from 062: 4J_L² = C4 ± 2iP = (k ± ip)² − 1. So X² + X − (z² − 1)/4 = 0, with roots x₁ = (z − 1)/2 and x₂ = −(z + 1)/2. These are distinct for z ≠ 0, which is a null set.
+- On smooth vectors f(X) := α + βX (Lagrange interpolation). The partial trace tr_{C²}(α + βσ·J_L) = 2α, since the diagonal blocks of σ·J_L are ±J_L³.
+  - Hence 2α = w₁f(x₁) + w₂f(x₂), with w₁ = (z + 1)/z and w₂ = (z − 1)/z.
+  - Checked against a finite-dimensional partial trace for j = ½, 1, 5/2 (s1).
+- λᵢ = c(A − 2xᵢ) = c(A + 1 ∓ z). With A = C5 − k² + p² + 1 this gives the formula in the Result (s1, exact).
+- **Compact limit.** z = 2j_L + 1, so the wᵢ are dimension ratios. s2 compares the predicted multiset with the eigenvalues of the chiral block of D² on C² ⊗ End(V_n) for n = 1, 2: deviation 5e-15 / 6e-14.
+
+### 2. Zero set, integrability, ε-limit
+- **Zero set.** Im λ₁,₂ = ∓cp; at p = 0 the real part vanishes iff C5 = k(k±1) − 2.
+  - This is identical to 062's B = 1 + C4 − (A+1)² = 0, P = 0 (s1(5)).
+- **Integrability.**
+  - |λ − iε| ≥ |cp ± ε|, and ∫_{|p|<1} |log|cp ± ε|| dp is bounded uniformly in ε.
+  - The Plancherel density (Fioresi–Yuncken Thm 7.1, as cited by 062: ½|μ + iλ|²) is bounded on bounded sets and comparable to |z|². So |wᵢ|·density ≤ (|z| + 1)|z| is bounded.
+  - arg is bounded by π, and the upper bounds on |λ| are finite on bounded label sets.
+  - Under (H-τ), dominated convergence then gives local integrability and the ε → 0 limit.
+- **Numerics (s3):**
+  - box around the zero (C5, k, p) = (0, 1, 0), uniform density in C5: I(ε) → 2.279597;
+  - atom in C5 at the zero value: 2.089870;
+  - the relative log summed over both chiralities converges as ε → 0 (Re 10.198; Im = 4π∫_{A<0} weight = 20.1062, purely the reference phase);
+  - the fermionic imaginary parts cancel between conjugate chiralities a.e., with the principal branch.
+- **Gap (s1(6), s3(a)).**
+  - |λ/c|² = (R + p²)² + p², with R = C5 + 2 − k(k±1). Its minimum over p is −R − ¼ if R ≤ −½, and R² otherwise.
+  - For integer k, k(k±1) ≥ 0, so C5 ≤ −9/4 ⇒ R ≤ −¼ ⇒ |λ/c| ≥ ¼.
+  - Spherical case: |λ₁/c|² = ((p−ν)² + ¼)((p+ν)² + ¼).
+- **Casimir values.**
+  - Principal series (s, ν) of Spin(4,1): from the infinitesimal character (iν, s + ½), with ρ = (3/2, ½), C5 = s(s+1) − 9/4 − ν².
+  - Check: it continues to 061's compact m1(m1+3) + m2(m2+1) at s = m2, ν = i(m1 + 3/2) (s1(7)).
+  - The sign and normalisation are checked directly on the hyperboloid (s4): 4 on the vector; −(9/4 + ν²) on horospherical waves; C4 = −(1 + p²) on H³ waves, matching Martin-Dussaud Eq. (297) at k = 0.
+  - The ν-formula is used only for the sentence "zeros need s ≥ 1". The gap statement is in terms of C5 alone.
+
+### 3. Compact members
+- s1(8): for m1 ≤ 12, zeros appear only at (k1,k2) = (m1,m2) in λ₁. Summing 8(m1+m2+2)(m1−m2+1) over (m1,m2) ≠ (0,0) gives (4/3)n(n+4)(n²+4n+7) for n ≤ 20.
+- s2(b): log|Pf_rel(ε)| has slope K/4 = 20 (n = 1) and 76 (n = 2) against log ε, and min □ = 1 on traceless matrices.
+- So the compact Pf_rel vanishes like a power of ε. In the doubleton class it is bounded locally.
+- **Caveat (061).** Beyond one loop the compact zero modes are absorbed by Yukawa vertices. A vanishing one-loop factor therefore does not remove the compact members from the integral.
+
+### 4. Large labels and the volume problem
+- **Series (s1(4)).** The coefficients in t = 1/A are:
+  - t¹: 0;
+  - t²: 1 − z²;
+  - t³: −(4/3)(1 − z²);
+  - t⁴: (1 − z²)(z² + 3)/2.
+- Summed over chiralities, the t² coefficient is −2C4. This is the structure of the n = 2 term tr(□⁻¹Σ^ψF)² in (4.16). In Steinacker it cancels against the bosons by maximal SUSY; the fermion term alone does not cancel.
+- **Fixed C5 (s3(d)).** At fixed (C5, k), (k² + p²)·2Re F → 2.
+  - So the Spin(3,1)-Plancherel trace at fixed C5 diverges linearly in p.
+  - **Heuristic, not derived:** in the spherical/H⁴ picture, large p at fixed C5 corresponds to large |x⁴| (late or early time), so this is at least partly the time-volume.
+  - A per-unit-volume trace at given time needs the branching kernel at that time. It is not constructed.
+- **Branch (s3(e)).** Changing the branch on {p < 0, Re λ₁ < 0} changes 2Re F by 4πp/|z|². So |Pf_rel| depends on the branch, which is part of the supplied prescription.
+
+### Literature
+- **Verified from source (PDF text and page image, this session):**
+  - Steinacker 2303.08012 v1, Eqs. (4.14)–(4.18), p. 15–16;
+  - Manta–Steinacker 2502.02498, Eqs. (1)–(10) and §2.1–2.2: H₀ irreducible under SO(4,1), with quadratic Casimir −2 (used only in a proposal-only remark below).
+- **Relied on via the 062 verification, not re-read:**
+  - Fioresi–Yuncken Thm 7.1;
+  - Martin-Dussaud Eq. (297).
+- **Standard and not independently verified from a source:**
+  - the infinitesimal-character formula for Casimirs of principal series (cross-checked by s1(7) and s4).
+- **Proposal-only remark, not in the insert and not verified:**
+  - Casimir −2 together with the SO(4)-invariant lowest state suggests that H₀|Spin(4,1) is the spherical complementary series at μ = ½.
+  - Its coefficient decay would then put HS(H₀) inside ∞λ_{Spin(4,1)}, which would exclude complementary series of Spin(4,1) from the C5 spectrum.
+  - Not used.
+
+## Claim classification
+- Eq. (4.16) structure, and D² = □ − Σ^ψF: **established** (verified source plus algebra).
+- The iε in the fermion log, the branch and τ: **input / prescription**.
+- Fibre formula, weights and eigenvalues: **established** (exact algebra; finite-dimensional check).
+- Zero set ⊂ {p = 0, C5 = k(k±1) − 2}: **established**, given 062's temperedness (n = 0) or the ladder identification (n > 0: **conditional**).
+- Local determinant class and the ε → 0 limit under (H-τ): **conditional** (on H-τ).
+- Gap |λ| ≥ c/4 on C5 ≤ −9/4: **established**.
+- C5 = s(s+1) − 9/4 − ν² on principal series: **established (standard)**, cross-checked.
+- Compact Pf_rel ∝ ε^{K/4}: **established** (exact counting; numerical exponents).
+- Global finiteness, the UV / volume behaviour, a per-unit-volume density, and a non-zero value: **unresolved**.
+- "Large p at fixed C5 = late time": **conjecture / heuristic** (proposal only).
+- Signature and frame: **not derived**.
+
+## Proposed changes
+
+**File:** `chapters/appH-microscopic-proofs.tex`.
+
+**Insertion point:**
+- Insert a new paragraph (file `appH_insert.tex`, LF source; the integrator converts it to CRLF) **immediately before** the unique two-line anchor:
+  ```
+  \paragraph{Status.}
+  Remains Assumption~\ref{ass:lorentzian}.
+  ```
+  This anchor occurs once, at line 1633. The plain `\paragraph{Status.}` occurs 6 times.
+- The insert is followed by a blank line. It goes after the 062 block, which ends "…and Problem~E stays open with Assumption~\ref{ass:lorentzian} retained." and is followed by a blank line.
+- Nothing is removed or replaced.
+
+**Insert (verbatim content of `appH_insert.tex`):**
+- One `\paragraph` and two displayed equations. Cites: Steinacker2023. Ref: ass:lorentzian.
+- "Preceding paragraph" means the 062 block; "preceding paragraph but one" means the 061 block.
+- See the file for the exact text. It is not reproduced here, to avoid divergence; the gatekeeper should review the file itself (sha256 980cb390…e27d, 6728 B LF).
+
+**Result (apply_check.txt):**
+- appH: 606731 → 613489 B, sha256 a0e4ff965eab20014968022aee823b06e573162a92c225b0345bb2257d60ac98;
+- 3353 CRLF, 0 bare LF;
+- bib unchanged (29360 B, 1d280848…856d);
+- no new labels.
+
+**Stale passages elsewhere:** none.
+- The 062 block's sentence "Whether zero lies in its continuous spectrum, how the Pfaffian at N=∞ is then defined, and whether it vanishes are not decided" remains accurate as a statement of that paragraph. The new paragraph sharpens it without contradicting it, so it is kept.
+
+**Bib:** no new entries.
+
+## Verification scripts
+- `s1_fibre_algebra.py` / `.out.txt`: roots, weights, partial trace, eigenvalues, series coefficients, the zero set compared with 062, the gap, the Casimir continuation, and the compact zero modes and counts.
+- `s2_finite_dim_spectrum.py` / `.out.txt`: the full chiral-block spectrum for n = 1, 2 against the prediction; the compact Pf_rel(ε) exponents 20 and 76.
+- `s3_integrability_numerics.py` / `.out.txt`: gap scan; local integrals and the ε-limit near a zero (continuous and atomic C5); the relative log over chiralities with the reference phase; large-p behaviour; branch dependence.
+- `s4_casimir_sign_check.py` / `.out.txt`: Casimir sign and normalisation on H⁴ / H³.
+- `apply_check.py` / `apply_check.txt`: baselines, anchor, hashes, labels, cites, and a process-language check. It writes only to the directory given as argument (scratchpad).
+- `build_r1.txt`: the scratch build.
+
+## Decisions Taken
+- **The "remaining invariant" is C5, not the null-pair product.**
+  - D₋D₊ is a function of (C5, k, p) and the spinor. The null-pair scalar product does not occur in it.
+  - Its role is absorbed into ω_{k,p}, the distribution of C5 on the multiplicity space.
+  - Rejected: parametrising by the null-pair product, which would need the unknown action of C5 on L²(s).
+- **Sub-case settled:** local determinant class for all tempered labels, plus the gap on C5 ≤ −9/4, rather than the full HS(H_n) Spin(4,1) decomposition, which is deferred. This is the largest part provable without the unknown multiplicity data.
+- **Prescription:**
+  - spinor trace first, principal branch, Feynman iε on both logs as in (4.16), all stated as supplied;
+  - the Fuglede–Kadison determinant (log|D|) is rejected, because it is not the object in (4.16).
+- **Fermion term kept separate from the bosonic one;** its γ-independence is stated. Combining with the bosons is deferred, because 061 shows that the O(γ) term is regulator-dependent.
+- **No bib entry for representation-theory standards;** the infinitesimal-character formula is cross-checked by s1(7) and s4 instead.
+
+## Milestone assessment
+Routine. This finishes the 062 decisive question in the integrability sense and makes 061's conditional separation sharper at the zero-set level. It is still conditional on a supplied trace and prescription, no finite density is obtained, and h₀, γ, the fermions and the family remain supplied. Not a breakthrough, not a no-go, and no prior-claim error.
+
+## Status-label recommendation
+Critical-path set: A, B, C, D1, E, F, G-derived, N. No label change. E and D stay OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL.
+
+## Author decision needed
+None. Advisory, following the scout: after this package, the E thread (053–064) is at diminishing returns against ch17 L718–719.
+
+## Remaining open step
+Ranked open avenues:
+1. A trace per unit volume at given time: the branching kernel of C5 at fixed (k,p) as a function of time. It is computable for the spherical sector via the H⁴ radial ODE.
+2. The summability over k of the near-zero weights, i.e. the higher-spin content of HS(H_n) under Spin(4,1).
+3. Adding the bosons and ghosts at O(γ), with a stated cut-off.
+4. The ladder identification for n > 0, or the complementary-series route for HS(H₀) (proposal-only remark).
+5. Products with K.
+6. A branch-independent definition, for example via |D| (Fuglede–Kadison), with a comparison to (4.16).
+7. The signature still needs h₀, γ and the fermions to be derived (ch17 L718).
+
+## Special instructions for the gatekeeper
+- Re-derive λ₁,₂ and the wᵢ, and confirm that the partial-trace prescription is stated as supplied.
+- Check that Im λ = ∓cp is used only with real C5 and real p, which are tempered labels.
+- **Do not let the insert assert:**
+  - a finite or non-zero Pf_rel;
+  - a one-loop separation;
+  - any signature selection.
+- Check that the "Plancherel density vanishes to second order at z = 0" wording is supported by Fioresi–Yuncken's ½|μ + iλ|².
+- "Preceding paragraph but one" refers to the 061 block; confirm that the ordering is 060, 061, 062, new.
+- Re-run s1–s4 and apply_check.

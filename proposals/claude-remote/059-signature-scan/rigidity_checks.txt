@@ -1,0 +1,18 @@
+PASS A Im det(r+is) = tr(adj(r)s)
+PASS B S_b = c*sum of 2-minors, one constant c>0: c = 0.250000000000, spread 6.5e-16
+PASS B fast contraction equals explicit sum
+PASS B S_b(-h0) = S_b(h0): max rel err 0.0e+00
+PASS B su(2) block at N=3 gives the N=2 value: max rel err 0.0e+00
+PASS B real h => S_b real at N=3 (general X): max |Im|/|S| 6.0e-17
+PASS C rigidity certificate gives Im det < 0 for every S != 0 (t=2..8): 2800 trials, cases {1: 1270, 2: 130, 3: 700, 4: 700}, max (Im det)/|S| = -4.303e-04
+PASS D t=1: R_u (u=0.3) satisfies the closed condition with Im h != 0: min sampled Im det = 7.288e-02
+PASS D t=0: e^{0.2 i} delta satisfies it with Im h != 0: min sampled Im det = 5.416e-02
+PASS E C_0 elements: Re h has >= 9 positive eigenvalues: minimum count 9
+PASS F Re M > 0 ==> Re h has the inertia (10-t, t) of h0: 167 admissible contours over t=0..10
+PASS G -(1-i e) time entry: damped for e^{iS_b}: min Im det 1.323e-02
+PASS G complex conjugate: Im det < 0 somewhere (damps e^{-iS_b} instead): min Im det -1.425e-01
+PASS G -h: Re(-h) has 9 negative eigenvalues (class -C_0, adjacent to -eta)
+PASS H MW in d=10 exactly for t in {1,5,9}, i.e. s-t = 0 mod 8: MW t = [1, 5, 9]
+PASS H intersection with t in {0,1,9,10}
+PASS I per-index phases: every small nonzero perturbation violates the closed condition (t=2..8)
+ALL PASS

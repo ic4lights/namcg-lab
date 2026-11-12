@@ -1,0 +1,6 @@
+[x0,x1]_* = I*theta
+integrand        = I*c0*x0**2 + I*c1*x0*x1 + I*c2*x1**2 + I*c3*x0/2 + I*c4*x1/2
+(i/2) x.d h      = I*c0*x0**2 + I*c1*x0*x1 + I*c2*x1**2 + I*c3*x0/2 + I*c4*x1/2
+difference       = 0
+boost weighting  = -2*c0*x0*x1 + c1*x0**2 - c1*x1**2 + 2*c2*x0*x1 - c3*x1 + c4*x0
+integrand proportional to boost weighting for generic h? False
