@@ -975,3 +975,16 @@ integrated-item count. Nothing here changes a problem's status in the manuscript
   - A full scan is required before integration (3(b) and 3(c)).
 - For the author: decide whether to authorise r5. Separately, ch17 defines Problem A as the IR dictionary while appH frames it as a "matrix-to-modular map", which is a scope decision for the author.
 - Integrated count unchanged: 63. Pending author commit: appH (064, 065), bib (065).
+
+## 069-ch10-duplicate-bookkeeping-removal (no Problem; redundancy sweep, author-requested) — integrated 2026-11-12 (uncommitted, author to commit)
+- Author request: gatekeeper analysis of recent .tex merges for redundancy; confirm removals with peer agents. Branch auto/20261112-1535.
+- Sweep findings (orchestrator scan + independent gatekeeper audit of recent merges 7eaca1b, 651b1d7, 72cc3d3, c7b9fa7, bcb016f):
+  - appH-detailed / appH-microscopic-proofs-compact orphan files: ALREADY author-deleted at 1de50f3 (2026-11-05, ledger 425); deletion clean, zero dangling labels.
+  - ch10 331-367 duplicate of ch05 324-360 (intro+tabular byte-identical; heading/closings paraphrases): REMOVED (this package).
+  - Seeley-DeWitt a1 caveat at ch10:291-303, ch17:352-361, appH:680-689 (Problem D section, not G), plus shorter ch09:309-314: KEEP all (per-context status passages).
+  - Removal audits: 7eaca1b ch14 rewrite re-derived exact (5/32, d^-5, d^{4-n}, (1+r)^{3/5}; old "ratio grows" claim dimensionally inconsistent); 651b1d7 caveat superset at appH:3710-3724; bcb016f/c7b9fa7 Bearing paragraph superset. No content lost. FamaeyMcGaugh2012 exact half-factor equation: not independently verified.
+- Rounds: r1 researcher -> gatekeeper ACCEPT (review-r1.md; minor checklist correction: post-E1 ref{sec:ch5-count} grep = 4 lines in 3 files). Integrator aborted once on an undocumented out-of-zone working-tree change (scripts/extract_detailed.py deletion); orchestrator committed it (4177632, author-approved tooling hygiene: script regenerated the author-deleted appH variants, zero repo references) and resumed the integrator.
+- Integrated text: E1 ch10:232-235 pointer paragraph (keeps frame/metric-sector scoping + no-full-theory-count caveat + ef{sec:ch5-count}); E2 deleted the duplicate section incl. dead label sec:ch10-table (0 incoming refs; renumbering invisible: no cleveref, no literal 10.x, sec:ch10-not/exercises/bridge unreferenced). Diff: ch10 only, +5/-41.
+- Build: BUILD_CHECK PASS, 398 pages, 0 undefined/multiply-defined. Post-greps verified by integrator and orchestrator.
+- Note: tracked namcg-book7.pdf at HEAD is stale vs sources (pdfinfo 301p vs build 398p) — pre-existing, not introduced here.
+- Ledger discrepancy (rule 1): last recorded Integrated count is 63 (064/065 era); merges c7b9fa7..d8585c4 (2026-11-11, commits "2") and local proposals 060R-068R have no ledger entries, and ledger/proposal numbering schemes (local NNN vs claude-remote NNN) collide. Author: reconcile ledger before next cycle. Integrated count not incremented by this orchestrator pending that reconciliation; this package is the 1 integrated item of the 2026-11-12 sweep.
