@@ -1,0 +1,22 @@
+appH-microscopic-proofs.tex baseline bytes=688007 sha256=382389a4345a1c554fd4d7c2a6621c7eca3f0d84e357aefdecf668658bdeed46 match_current_baseline=True
+  r4-era for the record: baseline c2dac013f275fed851d53e8086bc3eceef717c5b607b10c09ae7541c43558b5c 624232 B; r4 result c5bf9be4f7c9b51218be4000dcdd5273ebf3cfa3e125d0a5fe90299e443075b3 625774 B
+  [direct] F0: OLD before=1 NEW before=0 NEW after=1 | OLD at line 28 | ok
+  [direct] F1: OLD before=1 NEW before=0 NEW after=1 | OLD at line 31 | ok
+  [direct] F2: OLD before=1 NEW before=0 NEW after=1 | OLD at line 51 | ok
+  [direct] F3: OLD before=1 NEW before=0 NEW after=1 | OLD at line 67 | ok
+  [direct] F4: OLD before=1 NEW before=0 NEW after=1 | OLD at line 73 | ok
+  [direct] F5: OLD before=1 NEW before=0 NEW after=1 | OLD at line 77 | ok
+  [direct] F6: OLD before=1 NEW before=0 NEW after=1 | OLD at line 71 | ok
+  [direct] F7: OLD before=1 NEW before=0 NEW after=1 | OLD at line 54 | ok
+  [direct] F9: OLD before=1 NEW before=0 NEW after=1 | OLD at line 61 | ok
+  [direct] F10: OLD before=1 NEW before=0 NEW after=1 | OLD at line 65 | ok
+  [direct] S1 (review-r4): OLD before=1 NEW before=0 NEW after=1 | OLD at line 40 | ok
+  [direct] S2 (review-r4): OLD before=1 NEW before=0 NEW after=1 | OLD at line 71 | ok
+  r5 result bytes=689657 sha256=2cd28354af3486f5934b0f01674804746a8f90fddf648798ae16ed38d535b255 CRLF=3763 LF=3763 bareLF=0 BOM=False
+  cite count HislopLongo1982 = 1
+  cite count BisognanoWichmann1976 = 1
+namcg.bib baseline bytes=36133 sha256=bd0d8a80cf616587d06bdfafeed199539c9af75d4f89e102472836e11583cc35 match_current_baseline=True
+  r4-era for the record: baseline 28fdd7f8cb62b2ad23da3cc05d819a0b750f7fdec096511fca60ab02135ea64d 29781 B; r4 result 4315a89553cb97405af89604f1e43c9e5e0237fa5b7be0439431d042677a6060 30159 B
+  [direct] F8: OLD before=1 NEW before=0 NEW after=1 | OLD at line 267 | ok
+  r5 result bytes=36511 sha256=36931b9313266d619003b6a42af882dda2ab825d22551055cd124eb1527e2761 CRLF=1209 LF=1209 bareLF=0 BOM=False
+ALL CHECKS PASS

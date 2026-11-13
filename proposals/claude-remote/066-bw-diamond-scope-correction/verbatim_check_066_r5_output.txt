@@ -1,0 +1,7 @@
+S1_OLD: verbatim match to review-r4 snippet = True
+S1_NEW: verbatim match to review-r4 snippet = True
+S2_OLD: verbatim match to review-r4 snippet = True
+S2_NEW: verbatim match to review-r4 snippet = True
+S1_OLD == junction of F1 NEW lines: True
+S2_OLD == F10 NEW last line + baseline lines: True
+VERBATIM CHECK PASS

@@ -1,0 +1,14 @@
+r5 scratch build: fresh dir /tmp/tmp.91s1uqsQHn/build066r5 (mktemp, outside repo; no stale aux/bbl/log; only namcg-book7.tex, frontmatter/*.tex, chapters/*.tex, bib/, figs/ copied), patched appH+bib from /tmp/tmp.npxgfcsoBE/out066r5; pdflatex -> bibtex -> pdflatex -> pdflatex (-interaction=nonstopmode -halt-on-error)
+2cd28354af3486f5934b0f01674804746a8f90fddf648798ae16ed38d535b255 *chapters/appH-microscopic-proofs.tex
+36931b9313266d619003b6a42af882dda2ab825d22551055cd124eb1527e2761 *bib/namcg.bib
+p1 0
+bib 0
+0 (bibtex 'Warning' lines)
+p2 0
+p3 0
+count of 'undefined' lines in final log: 0
+count of 'multiply' (case-insensitive) lines in final log: 0
+86:\bibitem[Hislop and Longo(1982)]{HislopLongo1982}
+2085:Output written on namcg-book7.pdf (398 pages, 2950713 bytes).
+Note: 398 pages matches the current manuscript (053-056/069 integrations added pages since the 380 of the r4 era), not the r4-era 380.
+Build copy left in place (no rm -rf), msys temp; Windows-side path via cygpath.
