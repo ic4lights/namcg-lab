@@ -8,8 +8,9 @@ You are the **orchestrator**. Arguments: `$ARGUMENTS` (defaults: target `auto`, 
 Read `CLAUDE.md` and `MILESTONE.md` first. Obey every hard rule there. You coordinate; you do not do mathematics
 yourself, you do not edit `chapters/` (only the integrator does), and you never change status labels.
 
-Subagents cannot spawn subagents, so you call `researcher`, `fundamentality`, `gatekeeper` and `integrator` directly
-with the Task tool, each with a self-contained prompt (they have no shared memory). Pass file paths, not summaries.
+Subagents cannot spawn subagents, so you call `researcher`, `fundamentality`, `gatekeeper`, `integrator` and the
+advisory agents `sme`, `mission-graph` and `vector-miner` directly with the Task tool, each with a self-contained
+prompt (they have no shared memory). Pass file paths, not summaries.
 You may have **at most 2 active agents at any time: yourself (main) plus one subagent** (author directive,
 2026-11-14, amending 2026-11-13). Dispatch subagents one at a time and wait for each before starting the next -
 never two agents on the same proposal, never two writers on `chapters/`/`bib/`, and the integrator always runs
@@ -41,6 +42,32 @@ reaches `chapters/`.
      verdict as `review-rK-provisional.md`.
 
   Then branch on the final verdict as usual.
+
+**Mission-graph and vector-miner in the loop (author directive, 2026-11-14).** The two remaining advisory agents are
+now part of the cycle. They never originate manuscript mathematics, never change any status, priority or
+completion label, and their outputs are leads and maps, never progress on any problem (CLAUDE rules 4, 6, 8).
+Constraints:
+- Dispatch them only between pipeline stages (after an integration or a verdict, never concurrent with a pipeline
+  agent; the main + 1 subagent cap still holds). One at a time, like every other dispatch.
+- They never count toward `--items` or `--rounds`, and a failed advisory pass never stalls or stops the loop.
+- On rate limit or budget pressure, skip pending advisory dispatches first; only the pipeline itself can stop a run.
+- Their writes (`reports/graph/`, `reports/vector/`, `scratch/vector/`) are uncommitted, like everything else.
+
+Cadence:
+- **`mission-graph`** (full procedure in its agent definition): task it (i) at the start of a run, after pre-flight
+  and before target choice, whenever `reports/graph/mission-graph.yaml` is missing or predates the latest ledger
+  entry; (ii) after every fifth integration, together with the SME scout; and (iii) at the end of the run, before
+  writing the digest, if any item was integrated since the last refresh. Give the researcher the manifest and PNG
+  paths at step (a): use open/blocked nodes and the `gaps:` list for target choice. Paste its machine-readable
+  `GRAPH: ...` first line into the run digest. If the refresh fails, note it in the digest and continue.
+- **`vector-miner`** (state which modes apply, per its definition): task it (i) at the start of a run in mode 1
+  (external query mining on the current top gaps), or mode 5 (deep dig) when the target set is already named; and
+  (ii) after every fifth integration in mode 6 (congruence mining) against the results integrated since the last
+  pass. Save each reply verbatim as `reports/vector/vector-mining-<mode>-<YYYYMMDD-HHMM>.md`. Give the report path
+  to the researcher at step (b) as triage only: vector proximity is semantic similarity, not a derivation, and no
+  proposal may cite it as one. An actionable finding (a citation completion, a `notation-collision` hazard, a
+  `conjecture-candidate`) becomes a follow-up proposal through the normal researcher -> gatekeeper -> integrator
+  pipeline; the mining report itself is never integrated and changes no status.
 
 **Current branch only — no git writes by agents (author directive, 2026-11-05, supersedes 2026-10-15).** All work
 happens on the branch that is already checked out when the run starts, so the author can follow it in VS Code.
@@ -127,7 +154,8 @@ Repeat until a stop condition in `MILESTONE.md` or the budget is reached:
 
 **a. Choose the target/package.** If the argument names a problem or connected target set, use it. Otherwise ask
 the researcher to choose using the current Chapter 17 completion criterion and Appendix H (not a remembered
-problem list). Prefer a consequential unresolved step or a coherent bundle of related steps that materially
+problem list). Pass it the latest SME scout report, the mission-graph manifest and PNG (open/blocked nodes and the
+`gaps:` list), and the latest `reports/vector/` report (triage only - never a derivation aid) to inform the choice. Prefer a consequential unresolved step or a coherent bundle of related steps that materially
 advances the stated scope. Do not create multiple small items merely to use the budget, combine unrelated targets
 only to reduce PR count, or repeat a route recorded as REJECTED/stalled in the ledger. `--items` defaults to one
 accepted proposal package per run; increase it only when the author requests multiple packages.
@@ -229,7 +257,7 @@ integrations; it is reported to the author with the smallest fix it names. Conta
 review is allowed under the autonomy directive.
 
 **Digest.** When the loop ends for any reason, write `reports/run-<YYYYMMDD-HHMM>.md` with exactly the contents listed at the
-end of `MILESTONE.md`. Run `git log --oneline $BASE..HEAD`, `git diff --stat $BASE..HEAD`, and
+end of `MILESTONE.md`, plus the latest `GRAPH: ...` summary line from the mission-graph if it ran during the run. Run `git log --oneline $BASE..HEAD`, `git diff --stat $BASE..HEAD`, and
 `git diff --stat -- chapters bib` for the uncommitted manuscript changes awaiting the author. Leave the digest,
 ledger, proposals, reviews and reports all uncommitted in the working tree; the author commits everything.
 
