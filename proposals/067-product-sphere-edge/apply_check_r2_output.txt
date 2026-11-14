@@ -1,0 +1,17 @@
+appH baseline: 624232 c2dac013f275fed851d53e8086bc3eceef717c5b607b10c09ae7541c43558b5c
+anchor occurrences: 1
+anchor line 2894 ; insertion after line 2894
+insert (LF source): 13248 f0fa634cbae16d6c41366f72a8c4e3f834b26fbe31d37532204eb513b6c014ee ; CRLF block: 13276 4f67487069c0cd4a22ede3a916f81b486b875b210048d11e474315ef40dc5fc5
+result appH: 637508 bd0616ecccb2f2ce6b7ff8cb4fc61864ad9a9b8f9df0e8e208363832f69eed7c ; CRLF 3405 ; bare LF 0
+ref ass:Sent-density: label occurrences 1
+ref ass:bdy-EE: label occurrences 1
+ref ass:dictionary: label occurrences 1
+ref def:HBEV: label occurrences 1
+ref def:matrix-coords-ext: label occurrences 1
+ref eq:g-from-e: label occurrences 1
+new labels: []
+cite FlissFrenkelHartnollSoni2025: entries in bib 1
+math delimiters and braces balanced: 311 inline, 3 display
+no process language found
+status sentences (PROGRAMME-CONDITIONAL) in insert: 1
+APPLY CHECK PASS

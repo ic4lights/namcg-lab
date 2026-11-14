@@ -1,0 +1,15 @@
+Part 0  cap x whole sphere N=7 M1=3: rank 7 (N=7), nonzero eigenvalues of E: 7, all = s1^2; T - N s1, offdiag, A2-dependence: max dev 7.1e-15
+Part 1  cap x whole sphere M1=2    offdiag(D)=3.0e-15  |<YY^+> - diag(Et)|=4.0e-14  <Tr YY^+>=956.16289  Re<Tr Y^2>/<Tr YY^+>=+0.0000
+        uniform row sum on the edge: |D_vv - W| = 7.1e-15, |Et_u - s1^2 W| = 8.5e-14  (W = 11.784524)
+Part 1  product block 3 x 4        offdiag(D)=2.7e-15  |<YY^+> - diag(Et)|=3.5e-14  <Tr YY^+>=848.93165  Re<Tr Y^2>/<Tr YY^+>=-0.0000
+Part 1  half-plane b/a=0.62        offdiag(D)=3.6e-15  |<YY^+> - diag(Et)|=1.1e-13  <Tr YY^+>=1326.30343  Re<Tr Y^2>/<Tr YY^+>=-0.0000
+Part 1  two corner blocks          offdiag(D)=3.1e-15  |<YY^+> - diag(Et)|=2.9e-14  <Tr YY^+>=635.39597  Re<Tr Y^2>/<Tr YY^+>=+0.0498
+Part 2  cap x whole sphere     M=12 r= 6  |spec(Q)_nonzero - spec(reduced)| = 2.8e-14 ; 4 Im Tr Y = Tr Q = +36.22 (unconstrained momenta)
+Part 2  product block 3 x 4    M=12 r= 6  |spec(Q)_nonzero - spec(reduced)| = 2.8e-14 ; 4 Im Tr Y = Tr Q = -17.97 (unconstrained momenta)
+Part 2  half-plane             M=17 r= 6  |spec(Q)_nonzero - spec(reduced)| = 6.4e-14 ; 4 Im Tr Y = Tr Q = +45.57 (unconstrained momenta)
+Part 3  cap x whole sphere, N=16 M1=8 (M=128, r=16), round, f = (l1/2) 1[l1<=lc1] 1[l2<=lc2], 60 samples
+    lc1= 3 lc2= 3  <TrYY^+>/(N s1^2 W)=0.9812  W_perp/W=0.6509  <sum pos Q>/(2 N s1 sqrt W)=0.8537  <2 sum sv(C_perp)>/(2 N s1 sqrt W_perp)=0.9130  <sum pos Q>/<2 sum sv(C_perp)>=1.1590  #pos=16.0  cv(rows)=0.584
+    lc1= 8 lc2= 3  <TrYY^+>/(N s1^2 W)=0.9994  W_perp/W=0.8937  <sum pos Q>/(2 N s1 sqrt W)=0.9438  <2 sum sv(C_perp)>/(2 N s1 sqrt W_perp)=0.9797  <sum pos Q>/<2 sum sv(C_perp)>=1.0191  #pos=16.0  cv(rows)=0.298
+    lc1=15 lc2= 3  <TrYY^+>/(N s1^2 W)=0.9811  W_perp/W=0.8825  <sum pos Q>/(2 N s1 sqrt W)=0.9346  <2 sum sv(C_perp)>/(2 N s1 sqrt W_perp)=0.9727  <sum pos Q>/<2 sum sv(C_perp)>=1.0228  #pos=16.0  cv(rows)=0.301
+    lc1=15 lc2= 8  <TrYY^+>/(N s1^2 W)=1.0011  W_perp/W=0.8825  <sum pos Q>/(2 N s1 sqrt W)=0.9512  <2 sum sv(C_perp)>/(2 N s1 sqrt W_perp)=0.9822  <sum pos Q>/<2 sum sv(C_perp)>=1.0309  #pos=16.0  cv(rows)=0.310
+PASS e3

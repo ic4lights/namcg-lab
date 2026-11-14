@@ -1,0 +1,18 @@
+appH baseline: 624232 c2dac013f275fed851d53e8086bc3eceef717c5b607b10c09ae7541c43558b5c
+anchor occurrences: 1
+anchor line 2894 ; insertion after line 2894
+insert (LF source): 10606 4ee4d8920f7bd8c5e4cbb9516036cf175cf8fdee9c6bb2d96e82cbe8a5b6bb52 ; CRLF block: 10634 341c2442546fb3bff9578d2aca8baf14e4af69a58d24699509458b9a6f0e33bd
+result appH: 634866 e098f9812e0058f6133f17f83866e2bd039769d9ca74849c3ba1c9c7f5e14d1a ; CRLF 3405 ; bare LF 0
+ref ass:Sent-density: label occurrences 1
+ref ass:bdy-EE: label occurrences 1
+ref ass:dictionary: label occurrences 1
+ref def:HBEV: label occurrences 1
+ref def:matrix-coords-ext: label occurrences 1
+ref eq:g-from-e: label occurrences 1
+new labels: []
+cite FlissFrenkelHartnollSoni2025: entries in bib 1
+math delimiters and braces balanced: 209 inline, 3 display
+no process language found
+status sentences (PROGRAMME-CONDITIONAL) in insert: 1
+would-be appH written to C:\Users\redgi\AppData\Local\Temp\claude\3ba14ee056ac155d\8445fbac-1820-4671-b227-7d272a39e1df\scratchpad\build067r1\out
+APPLY CHECK PASS

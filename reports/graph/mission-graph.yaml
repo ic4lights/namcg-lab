@@ -1,0 +1,496 @@
+schema_version: 2
+generated: "2026-11-14T00:00:00"
+title: "NAMCG mission graph - active state"
+active_label: "Programme"
+sources:
+  agenda: {file: chapters/ch17-agenda.tex, done_section: "sec:ch17-done"}
+  ledger: {file: chapters/appH-microscopic-proofs.tex}
+  digest: {status: current}
+layers:
+  - {id: qm,    title: "Quantum-mechanical / matrix foundation"}
+  - {id: namcg, title: "NAMCG derivations (critical path + optional)"}
+  - {id: ir,    title: "Infrared derivation (scope-limited Presentation-B)", transient: true, applicable: true}
+  - {id: gr,    title: "Full GR (matrix-derived)"}
+nodes:
+  # ---------------- qm ----------------
+  - id: qm.Smatrix
+    layer: qm
+    title: "Matrix action (Presentation A)"
+    state: foundation
+    priority: n/a
+    status_quoted: "-"
+    evidence: input
+    math:
+      - {label: "eq:Smatrix", tex: "S_matrix = -(1/4g_YM^2) Tr[X^mu,X^nu][X_mu,X_nu] + cubic C-term + S_matter", src: "chapters/ch03-matrix-action.tex:143"}
+    symbols_in: []
+    symbols_out: ["X_mu"]
+    notes: "Declared microscopic input; bosonic quartic term plus cubic C_{mu nu lambda} coupling."
+  - id: qm.Smicro
+    layer: qm
+    title: "Microscopic condensate action (Presentation B)"
+    state: foundation
+    priority: n/a
+    status_quoted: "-"
+    evidence: input
+    math:
+      - {label: "eq:Smicro", tex: "S_micro = int d^4x sqrt(-g0) Tr(-g0^{mu nu}(D_mu Phi)^+ D_nu Phi - V(Phi^+ Phi))", src: "chapters/ch03-matrix-action.tex:221"}
+      - {label: "eq:V", tex: "V = (lambda/4) Tr(Phi^+ Phi - v^2 I)^2", src: "chapters/ch03-matrix-action.tex:241"}
+    symbols_in: []
+    symbols_out: ["S_micro", "Phi", "A_mu", "lambda", "v"]
+    notes: "Used for the heat-kernel analysis; its link to qm.Smatrix is Assumption dictionary (open Problem A)."
+  # ---------------- namcg: critical path ----------------
+  - id: A.map
+    layer: namcg
+    title: "Problem A: infrared dictionary / matrix-to-modular map"
+    state: open-critical
+    priority: critical-path
+    status_quoted: "Status: OPEN. Priority: CRITICAL PATH for the matrix-derived label. Completion: PROGRAMME-CONDITIONAL. The general matrix-to-modular map remains unproved."
+    evidence: open
+    math:
+      - {label: "eq:dict-again", tex: "[X_mu, Phi] <-> i Theta_{mu nu} D^nu Phi (+ higher derivatives)", src: "chapters/ch17-agenda.tex:385"}
+    symbols_in: ["X_mu", "S_micro", "Theta_{mu nu}", "ass:dictionary", "Weyl map, Hilbert space, continuum limit"]
+    symbols_out: ["dictionary"]
+    notes: "Open step: specify Hilbert space, Weyl map, continuum limit and error at each order in Theta (ch17:390-392). Ch17 frames A as the IR dictionary; appH:12 titles it matrix-to-modular map (see discrepancies)."
+  - id: B.EE
+    layer: namcg
+    title: "Problem B: entanglement equilibrium (replica Ward identity)"
+    state: open-critical
+    priority: critical-path
+    status_quoted: "Status: OPEN. Priority: CRITICAL PATH. Completion: PROGRAMME-CONDITIONAL. The first-law identity is established, but the stationarity condition for the tensor block is not derived."
+    evidence: open
+    math:
+      - {label: "eq:EE", tex: "delta S_D = 0 at fixed volume", src: "chapters/ch06-entanglement-equilibrium.tex:77"}
+    symbols_in: ["S_micro", "dictionary", "ass:EE", "g0 -> g map"]
+    symbols_out: ["delta S_D = 0"]
+    notes: "Conformal-only derivation is a sub-case and leaves B OPEN (ch17:136-137)."
+  - id: C.conformal
+    layer: namcg
+    title: "Problem C: conformal mode"
+    state: open-critical
+    priority: critical-path
+    status_quoted: "Status: OPEN. Priority: CRITICAL PATH. Completion: PROGRAMME-CONDITIONAL. A scalar-tensor result is a reduced-scope outcome only when its operator, coupling and phenomenological test are supplied"
+    evidence: open
+    math:
+      - {label: "eq:msigma", tex: "m_sigma^2 = lambda v^2 (radial potential curvature only)", src: "chapters/ch17-agenda.tex:180"}
+      - {label: "eq:Z-sigma", tex: "Z = 2N(1 - 3 M_P^2/(N v^2)), M_P^2 = 1/(8 pi G_eff)", src: "chapters/ch17-agenda.tex:246"}
+    symbols_in: ["Phi", "lambda", "v", "G_eff", "e^A_mu", "ass:gap-psi"]
+    symbols_out: ["m_psi", "scalar coupling"]
+    notes: "Physical scalar operator, mixing with T_{mu nu}, non-minimal and matter couplings not derived (ch17:269-271)."
+  - id: D1.lorentz
+    layer: namcg
+    title: "Problem D (D1): local Lorentz symmetry derived from matrix algebra"
+    state: open-critical
+    priority: critical-path
+    status_quoted: "Status: OPEN. Priority: CRITICAL PATH. Completion: PROGRAMME-CONDITIONAL."
+    evidence: open
+    math:
+      - {label: "eq:g-from-e", tex: "g_{mu nu} = eta_AB e^A_mu e^B_nu", src: "chapters/ch04-vierbein-emergence.tex:161"}
+    symbols_in: ["Phi", "A_mu", "eta_AB", "ass:frame-lock", "ass:nondeg", "ass:local-lorentz"]
+    symbols_out: ["e^A_mu", "ghost operators"]
+    notes: "Closure needs omega, A_mu, B and ghost operators specified and the locked frame derived (ch17:337-342, 712-717). D2 does not close D."
+  - id: E.signature
+    layer: namcg
+    title: "Problem E: Lorentzian signature"
+    state: open-critical
+    priority: critical-path
+    status_quoted: "Status: OPEN. Priority: CRITICAL PATH for the matrix-derived label. Completion: PROGRAMME-CONDITIONAL."
+    evidence: open
+    math:
+      - {label: "ass:lorentzian", tex: "eta_AB = diag(-1,+1,+1,+1) (retained as assumption)", src: "chapters/ch04-vierbein-emergence.tex:322"}
+    symbols_in: ["X_mu", "ass:lorentzian"]
+    symbols_out: ["eta_AB"]
+    notes: "Euclidean positivity and formal Wick rotation do not select Lorentzian signature (ch17:397-399)."
+  - id: F.coeffs
+    layer: namcg
+    title: "Problem F: coefficients A, B, C and G_eff"
+    state: open-critical
+    priority: critical-path
+    status_quoted: "Status: OPEN. Priority: CRITICAL PATH. Completion: PROGRAMME-CONDITIONAL. Reduced-scope result: treating G_eff as an input leaves F OPEN and does not satisfy the matrix-derived criterion."
+    evidence: open
+    math:
+      - {label: "eq:Geff-thm", tex: "C_R^E = -sum_s w_s A_{1,R,s}(L_s^2-mu_s^2)/32pi^2 - ... + c_R(S)", src: "chapters/ch08-heat-kernel.tex:193"}
+    symbols_in: ["Phi", "e^A_mu", "ghost operators", "F operator data"]
+    symbols_out: ["A,B,C", "G_eff", "alpha"]
+    notes: "Values A=1/pi, B=8pi/3, C=0 are not established (ch17:467)."
+  - id: G.bdy
+    layer: namcg
+    title: "Problem G: infrared boundary entropy (G-derived)"
+    state: open-critical
+    priority: critical-path
+    status_quoted: "Status: OPEN. Priority: CRITICAL PATH. Completion: PROGRAMME-CONDITIONAL. Reduced-scope results: G-model and G-external support at most a scope-limited model; G remains OPEN"
+    evidence: open
+    math:
+      - {label: "eq:Leff", tex: "Lambda_eff/(8 pi G_eff) = <S_ent^(IR)> - T_bdy^(IR)", src: "chapters/ch12-hbev.tex:215"}
+    symbols_in: ["G_eff", "S_ent^(IR)", "ass:Sent-density", "ass:bdy-EE"]
+    symbols_out: ["Lambda_eff"]
+    notes: "Mechanism CLOSED CONDITIONALLY, derivation OPEN (ch17:475; appH sec:status-G Status paragraph)."
+  - id: N.expansion
+    layer: namcg
+    title: "Problem N: control of the effective expansion"
+    state: open-critical
+    priority: critical-path
+    status_quoted: "Status: OPEN. Priority: CRITICAL PATH for the matrix-derived label. Completion: PROGRAMME-CONDITIONAL."
+    evidence: open
+    math:
+      - {label: "eq:stelle", tex: "S_Stelle = int sqrt(-g)(R/16piG - (alpha/2) C^2 + (beta/2) R^2)", src: "chapters/ch09-ultraviolet.tex:111"}
+    symbols_in: ["alpha", "G_eff", "ass:EFT-a2"]
+    symbols_out: ["no-ghost region"]
+    notes: "Target: no propagating Ostrogradsky ghost for p < L_UV, derived from the matrix path integral and not from Stelle's action (ch17:503-510)."
+  # ---------------- namcg: optional ----------------
+  - id: H.interp
+    layer: namcg
+    title: "Problem H: interpolating function (modular origin)"
+    state: open-optional
+    priority: optional
+    status_quoted: "Status: OPEN. Priority: OPTIONAL within the phenomenological scope. Completion: PROGRAMME-CONDITIONAL."
+    evidence: open
+    math:
+      - {label: "eq:nu-target", tex: "nu(g_N) = 1/(1 - exp(-sqrt(g_N/g_s)))", src: "chapters/ch17-agenda.tex:528"}
+    symbols_in: ["Lambda_eff", "kappa_IR", "ass:sqrt-mod"]
+    symbols_out: ["nu_sqrt"]
+    notes: "kappa_IR (stationary boundary surface gravity) is not defined in Chapter 12 (ch17:541-544)."
+  - id: I.drag
+    layer: namcg
+    title: "Problem I: dynamical origin of the drag"
+    state: open-optional
+    priority: optional
+    status_quoted: "Status: OPEN. Priority: OPTIONAL falsifiable phenomenological extension; prerequisite only if drag is claimed as derived or predicted. Completion: PROGRAMME-CONDITIONAL."
+    evidence: input
+    math:
+      - {label: "eq:Fdiss", tex: "F_diss = -eta mu v / d^4 (working law)", src: "chapters/ch14-dissipation.tex:187"}
+    symbols_in: ["ass:drag"]
+    symbols_out: ["Gamma_ij"]
+    notes: "Optional unless drag is claimed derived."
+  - id: J.ECG
+    layer: namcg
+    title: "Problem J: spherical ECG solutions"
+    state: open-optional
+    priority: optional
+    status_quoted: "Status: OPEN. Priority: OPTIONAL within the stated ECG model. Completion: PROGRAMME-CONDITIONAL."
+    evidence: conditional
+    math:
+      - {label: "eq:ECG", tex: "P = 12 R_a^c_b^d R_c^e_d^f R_e^a_f^b + R_ab^cd R_cd^ef R_ef^ab - 12 R_abcd R^ac R^bd + 8 R_a^b R_b^c R_c^a", src: "chapters/ch09-ultraviolet.tex:212"}
+    symbols_in: ["ass:ECG", "Lambda_eff"]
+    symbols_out: ["regular core"]
+    notes: "Claim given up: singularity resolution derived from the matrix theory (ch17:598-600)."
+  # ---------------- namcg: closed conditionally ----------------
+  - id: cc.metric
+    layer: namcg
+    title: "Composite metric from a non-degenerate frame (Repair II)"
+    state: closed-conditionally
+    priority: n/a
+    status_quoted: "closed as arguments from named hypotheses to named conclusions"
+    evidence: conditional
+    math:
+      - {label: "def:composite-metric", tex: "g_{mu nu} = eta_AB e^A_mu e^B_nu", src: "chapters/ch04-vierbein-emergence.tex:156"}
+    symbols_in: ["e^A_mu"]
+    symbols_out: ["g_{mu nu}"]
+    notes: "ch17:28-32. The Repair I formula of def:vierbein is not a constructed frame (Problem C)."
+  - id: thm.mT
+    layer: namcg
+    title: "m_T = 0 from entanglement equilibrium plus Fierz-Pauli"
+    state: closed-conditionally
+    priority: n/a
+    status_quoted: "closed as arguments from named hypotheses to named conclusions"
+    evidence: conditional
+    math:
+      - {label: "thm:mT", tex: "tensor mass gap m_T = 0", src: "chapters/ch07-massless-tensor.tex:276"}
+    symbols_in: ["ass:EE", "ass:dictionary", "ass:nondeg", "ass:lorentzian"]
+    symbols_out: ["m_T = 0"]
+    notes: "Assumption EE is its physical engine (ch17:125)."
+  - id: thm.Geff
+    layer: namcg
+    title: "Truncated heat-kernel coefficient map"
+    state: closed-conditionally
+    priority: n/a
+    status_quoted: "closed as arguments from named hypotheses to named conclusions"
+    evidence: conditional
+    math:
+      - {label: "thm:Geff", tex: "C_R^E from specified operators, weights, limits, scheme", src: "chapters/ch08-heat-kernel.tex:187"}
+    symbols_in: ["Phi"]
+    symbols_out: ["C_R^E map"]
+    notes: "Operators, weights and scheme are hypotheses of the theorem; physical G_eff remains open in Problem F (ch17:36-38)."
+  - id: thm.locking
+    layer: namcg
+    title: "Lorentz locking in unitary gauge"
+    state: closed-conditionally
+    priority: n/a
+    status_quoted: "closed as arguments from named hypotheses to named conclusions"
+    evidence: conditional
+    math:
+      - {label: "thm:locking", tex: "six Goldstone orbit variables removable in unitary gauge", src: "chapters/ch10-lorentz-locking.tex:178"}
+    symbols_in: ["ass:frame-lock", "ass:local-lorentz", "ass:nondeg"]
+    symbols_out: ["unitary-gauge frame"]
+    notes: "Makes no claim about the full propagating spectrum."
+  - id: thm.conservation
+    layer: namcg
+    title: "Conservation of the total stress"
+    state: closed-conditionally
+    priority: n/a
+    status_quoted: "closed as arguments from named hypotheses to named conclusions"
+    evidence: conditional
+    math:
+      - {label: "eq:cons-thm", tex: "nabla^mu T_{mu nu}^total = 0", src: "chapters/ch11-conservation.tex:128"}
+    symbols_in: []
+    symbols_out: ["nabla T = 0"]
+    notes: "Hypotheses: S_IR diffeomorphism scalar incl. S_ent[g]; field equation eq:EFE-total; matter and condensate on shell (ch11:116-124)."
+  - id: thm.Leff
+    layer: namcg
+    title: "Replacement of a bulk quartic by an infrared boundary datum"
+    state: closed-conditionally
+    priority: n/a
+    status_quoted: "closed as arguments from named hypotheses to named conclusions"
+    evidence: conditional
+    math:
+      - {label: "thm:Leff", tex: "G_{mu nu} + Lambda_eff g_{mu nu} = 8 pi G_eff T", src: "chapters/ch12-hbev.tex:203"}
+    symbols_in: ["ass:Sent-density", "ass:bdy-EE"]
+    symbols_out: ["Lambda_eff relation"]
+    notes: "Hypotheses are Assumptions Sent-density and bdy-EE (ch12:203-206)."
+  # ---------------- ir ----------------
+  - id: ir.D2
+    layer: ir
+    title: "D2: local Lorentz imposed (reduced scope of D)"
+    state: open-critical
+    priority: critical-path
+    status_quoted: "Reduced-scope result: D2, imposed local Lorentz symmetry, supports only a scope-limited Presentation-B model; D remains OPEN and the matrix-derived criterion is unmet."
+    evidence: input
+    math:
+      - {label: "ass:local-lorentz", tex: "SO(3,1) imposed on Smicro via spin connection", src: "chapters/ch10-lorentz-locking.tex:56"}
+    symbols_in: ["ass:local-lorentz"]
+    symbols_out: ["D2 truncation"]
+    notes: "Does not close D; no full matrix-derived spectrum (ch17:343-345, 366-370)."
+  - id: ir.Gmodel
+    layer: ir
+    title: "G-model / G-external (reduced scope of G)"
+    state: open-critical
+    priority: critical-path
+    status_quoted: "Reduced-scope results: G-model and G-external support at most a scope-limited model; G remains OPEN and neither satisfies the matrix-derived criterion."
+    evidence: input
+    math:
+      - {label: "eq:Leff", tex: "Lambda_eff from supplied boundary entropy", src: "chapters/ch12-hbev.tex:215"}
+    symbols_in: ["ass:Sent-density", "ass:bdy-EE"]
+    symbols_out: ["Lambda_eff (model)"]
+    notes: "G-model/G-external are PROGRAMME-CONDITIONAL and do not satisfy the criterion (ch17:482-491)."
+  # ---------------- gr goals ----------------
+  - id: gr.A
+    layer: gr
+    title: "Item A: dictionary derived"
+    state: goal
+    priority: n/a
+    status_quoted: "Assumption dictionary is derived, or the chains of the other items are re-derived without invoking it."
+    evidence: open
+    math:
+      - {label: "eq:dictionary", tex: "[X_mu,Phi] <-> i Theta D Phi derived", src: "chapters/ch03-matrix-action.tex:352"}
+    symbols_in: ["dictionary"]
+    symbols_out: ["item A"]
+    notes: "ch17:701-703"
+  - id: gr.B
+    layer: gr
+    title: "Item B: Assumption EE is a lemma"
+    state: goal
+    priority: n/a
+    status_quoted: "Problem B is a lemma: Assumption EE is no longer an assumption, fixed-volume variations include the non-conformal tensor block"
+    evidence: open
+    math:
+      - {label: "eq:EE", tex: "delta S_D = 0 derived", src: "chapters/ch06-entanglement-equilibrium.tex:77"}
+    symbols_in: ["delta S_D = 0"]
+    symbols_out: ["item B"]
+    notes: "ch17:704-707"
+  - id: gr.C
+    layer: gr
+    title: "Item C: scalar operator and coupling computed"
+    state: goal
+    priority: n/a
+    status_quoted: "Problem C has a computed scalar operator, coupling, and phenomenological comparison"
+    evidence: open
+    math:
+      - {label: "eq:Z-sigma", tex: "pole mass and coupling vs Cassini", src: "chapters/ch17-agenda.tex:246"}
+    symbols_in: ["m_psi", "scalar coupling"]
+    symbols_out: ["item C"]
+    notes: "ch17:708-711"
+  - id: gr.D1
+    layer: gr
+    title: "Item D1: SO(3,1) gauge symmetry derived"
+    state: goal
+    priority: n/a
+    status_quoted: "Problem D1: an SO(3,1) gauge symmetry is derived from the matrix algebra and condensate"
+    evidence: open
+    math:
+      - {label: "eq:g-from-e", tex: "locked non-degenerate frame derived", src: "chapters/ch04-vierbein-emergence.tex:161"}
+    symbols_in: ["e^A_mu", "ghost operators"]
+    symbols_out: ["item D1"]
+    notes: "ch17:712-717"
+  - id: gr.E
+    layer: gr
+    title: "Item E: Lorentzian signature derived"
+    state: goal
+    priority: n/a
+    status_quoted: "Problem E: Lorentzian signature is derived rather than retained"
+    evidence: open
+    math:
+      - {label: "ass:lorentzian", tex: "eta_AB = diag(-1,+1,+1,+1) derived", src: "chapters/ch04-vierbein-emergence.tex:322"}
+    symbols_in: ["eta_AB"]
+    symbols_out: ["item E"]
+    notes: "ch17:718-719"
+  - id: gr.F
+    layer: gr
+    title: "Item F: A, B, C and G_eff computed"
+    state: goal
+    priority: n/a
+    status_quoted: "Problem F has A,B,C and the sign/scheme dependence of G_eff computed from the specified operators; G_eff is not an input."
+    evidence: open
+    math:
+      - {label: "eq:W-EH", tex: "W_L contains (1/16 pi G_eff) int sqrt(-g) R", src: "chapters/ch08-heat-kernel.tex:210"}
+    symbols_in: ["A,B,C", "G_eff"]
+    symbols_out: ["item F"]
+    notes: "ch17:720-722"
+  - id: gr.G
+    layer: gr
+    title: "Item G-derived: entropy density and Lambda_eff derived"
+    state: goal
+    priority: n/a
+    status_quoted: "Problem G-derived: the infrared boundary entropy density and stationarity relation are derived from the matrix theory"
+    evidence: open
+    math:
+      - {label: "eq:Leff", tex: "Lambda_eff/(8 pi G_eff) = <S_ent^(IR)> - T_bdy^(IR)", src: "chapters/ch12-hbev.tex:215"}
+    symbols_in: ["Lambda_eff"]
+    symbols_out: ["item G"]
+    notes: "ch17:723-726. G-model and G-external do not meet this item."
+  - id: gr.N
+    layer: gr
+    title: "Item N: no Ostrogradsky ghost for p < L_UV"
+    state: goal
+    priority: n/a
+    status_quoted: "Problem N: Assumption EFT-a2 is discharged; there is no propagating Ostrogradsky ghost for p < L_UV in the derived graviton two-point function"
+    evidence: open
+    math:
+      - {label: "eq:W4", tex: "W_4 = int sqrt(-g)(c_W C^2 + c_R R^2 + c_GB E_GB)", src: "chapters/ch09-ultraviolet.tex:62"}
+    symbols_in: ["no-ghost region"]
+    symbols_out: ["item N"]
+    notes: "ch17:727-731"
+  - id: gr.complete
+    layer: gr
+    title: "Completed infrared derivation (matrix-derived)"
+    state: goal
+    priority: n/a
+    status_quoted: "Completed infrared derivation (matrix-derived)"
+    evidence: open
+    math:
+      - {label: "sec:ch17-done", tex: "all of A, B, C, D1, E, F, G-derived, N DERIVED", src: "chapters/ch17-agenda.tex:693"}
+    symbols_in: ["item A", "item B", "item C", "item D1", "item E", "item F", "item G", "item N"]
+    symbols_out: []
+    notes: "Applies only if all eight critical-path items are DERIVED (ch17:693-698)."
+edges:
+  - {from: qm.Smatrix, to: A.map, kind: required, symbols: ["X_mu"], bridge: "The dictionary relates the matrices X_mu of the matrix action to Phi via [X,Phi] <-> i Theta D Phi", src: "chapters/ch17-agenda.tex:383"}
+  - {from: qm.Smatrix, to: E.signature, kind: required, symbols: ["X_mu"], bridge: "E asks whether the Euclidean matrix action yields Lorentzian signature; positivity and Wick rotation of the matrix integral do not select it", src: "chapters/ch17-agenda.tex:397"}
+  - {from: qm.Smicro, to: A.map, kind: required, symbols: ["S_micro"], bridge: "Dictionary is required to generate the kinetic term of S_micro from the commutator term of S_matrix (matching condition, not established)", src: "chapters/ch03-matrix-action.tex:358"}
+  - {from: A.map, to: B.EE, kind: required, symbols: ["dictionary"], bridge: "B: derive delta S_D = 0 from S_micro, or from S_matrix after Problem A", src: "chapters/ch17-agenda.tex:126"}
+  - {from: qm.Smicro, to: B.EE, kind: required, symbols: ["S_micro"], bridge: "B target is a Ward identity of the microscopic action eq:Smicro", src: "chapters/ch17-agenda.tex:126"}
+  - {from: B.EE, to: thm.mT, kind: supports, symbols: [], bridge: "Assumption EE is the physical engine of thm:mT; B aims to discharge it (not a bridge of an existing symbol)", src: "chapters/ch17-agenda.tex:125"}
+  - {from: qm.Smicro, to: C.conformal, kind: required, symbols: ["Phi", "lambda", "v"], bridge: "Polar field Phi=(v+sigma)Lambda and potential V give m_sigma^2 = lambda v^2", src: "chapters/ch17-agenda.tex:161"}
+  - {from: D1.lorentz, to: C.conformal, kind: required, symbols: ["e^A_mu"], bridge: "C computes the scalar operator on the locked vacuum in a constructed frame", src: "chapters/ch17-agenda.tex:144"}
+  - {from: F.coeffs, to: C.conformal, kind: required, symbols: ["G_eff"], bridge: "v/M_P requires G_eff, tying Problem C to Problem F", src: "chapters/ch17-agenda.tex:267"}
+  - {from: qm.Smicro, to: D1.lorentz, kind: required, symbols: ["Phi", "A_mu"], bridge: "D1: derive SO(3,1) gauge symmetry from the matrix algebra and condensate; omega, A_mu, B and ghost operators specified", src: "chapters/ch17-agenda.tex:712"}
+  - {from: E.signature, to: D1.lorentz, kind: required, symbols: ["eta_AB"], bridge: "Chapter 10 shows local SO(3,1) arises given eta_AB", src: "chapters/ch04-vierbein-emergence.tex:322"}
+  - {from: thm.locking, to: D1.lorentz, kind: supports, symbols: [], bridge: "Conditional unitary-gauge locking under frame-lock, local-lorentz and nondeg assumptions that D1 must derive", src: "chapters/ch10-lorentz-locking.tex:178"}
+  - {from: D1.lorentz, to: cc.metric, kind: conditional, symbols: ["e^A_mu"], bridge: "Composite metric is defined from a non-degenerate frame (Repair II) or supplied assumption", src: "chapters/ch04-vierbein-emergence.tex:156"}
+  - {from: D1.lorentz, to: F.coeffs, kind: required, symbols: ["e^A_mu", "ghost operators"], bridge: "F requires diffeomorphism and local-Lorentz ghost operators on the locked block", src: "chapters/ch17-agenda.tex:407"}
+  - {from: qm.Smicro, to: F.coeffs, kind: required, symbols: ["Phi"], bridge: "Quadratic Phi-Phi Hessian of eq:Smicro at A_mu=0 is an input to the F operators", src: "chapters/ch17-agenda.tex:468"}
+  - {from: qm.Smicro, to: thm.Geff, kind: required, symbols: ["Phi"], bridge: "Heat-kernel identity applies to the fluctuation operators of S_micro", src: "chapters/ch08-heat-kernel.tex:187"}
+  - {from: thm.Geff, to: F.coeffs, kind: supports, symbols: [], bridge: "Conditional heat-kernel identity does not compute the physical coupling", src: "chapters/ch17-agenda.tex:36"}
+  - {from: ir.D2, to: F.coeffs, kind: supports, symbols: [], bridge: "Under D2, Problem F applies only to a stated frame/metric truncation", src: "chapters/ch17-agenda.tex:368"}
+  - {from: F.coeffs, to: N.expansion, kind: required, symbols: ["alpha", "G_eff"], bridge: "N target holds for the values of alpha and G_eff computed in Problem F", src: "chapters/ch17-agenda.tex:505"}
+  - {from: F.coeffs, to: G.bdy, kind: required, symbols: ["G_eff"], bridge: "Lambda_eff/(8 pi G_eff) in eq:Leff contains G_eff", src: "chapters/ch12-hbev.tex:215"}
+  - {from: thm.Leff, to: G.bdy, kind: required, symbols: [], bridge: "Mechanism closed conditionally; G asks for Lambda_eff from eq:Leff with derived inputs", src: "chapters/ch17-agenda.tex:476"}
+  - {from: ir.Gmodel, to: G.bdy, kind: supports, symbols: [], bridge: "G-model / G-external give at most a scope-limited model", src: "chapters/ch17-agenda.tex:482"}
+  - {from: G.bdy, to: H.interp, kind: required, symbols: ["Lambda_eff"], bridge: "Chapter 12 supplies Lambda_eff for the replica boundary", src: "chapters/ch17-agenda.tex:541"}
+  - {from: G.bdy, to: J.ECG, kind: conditional, symbols: ["Lambda_eff"], bridge: "Reduced first integral includes Lambda_eff", src: "chapters/ch17-agenda.tex:605"}
+  - {from: A.map, to: gr.A, kind: required, symbols: ["dictionary"], bridge: "Criterion item 1", src: "chapters/ch17-agenda.tex:701"}
+  - {from: B.EE, to: gr.B, kind: required, symbols: ["delta S_D = 0"], bridge: "Criterion item 2", src: "chapters/ch17-agenda.tex:704"}
+  - {from: C.conformal, to: gr.C, kind: required, symbols: ["m_psi", "scalar coupling"], bridge: "Criterion item 3", src: "chapters/ch17-agenda.tex:708"}
+  - {from: D1.lorentz, to: gr.D1, kind: required, symbols: ["e^A_mu", "ghost operators"], bridge: "Criterion item 4", src: "chapters/ch17-agenda.tex:712"}
+  - {from: E.signature, to: gr.E, kind: required, symbols: ["eta_AB"], bridge: "Criterion item 5", src: "chapters/ch17-agenda.tex:718"}
+  - {from: F.coeffs, to: gr.F, kind: required, symbols: ["A,B,C", "G_eff"], bridge: "Criterion item 6", src: "chapters/ch17-agenda.tex:720"}
+  - {from: G.bdy, to: gr.G, kind: required, symbols: ["Lambda_eff"], bridge: "Criterion item 7", src: "chapters/ch17-agenda.tex:723"}
+  - {from: N.expansion, to: gr.N, kind: required, symbols: ["no-ghost region"], bridge: "Criterion item 8", src: "chapters/ch17-agenda.tex:727"}
+  - {from: gr.A, to: gr.complete, kind: required, symbols: ["item A"], bridge: "All eight items must be DERIVED", src: "chapters/ch17-agenda.tex:693"}
+  - {from: gr.B, to: gr.complete, kind: required, symbols: ["item B"], bridge: "All eight items must be DERIVED", src: "chapters/ch17-agenda.tex:693"}
+  - {from: gr.C, to: gr.complete, kind: required, symbols: ["item C"], bridge: "All eight items must be DERIVED", src: "chapters/ch17-agenda.tex:693"}
+  - {from: gr.D1, to: gr.complete, kind: required, symbols: ["item D1"], bridge: "All eight items must be DERIVED", src: "chapters/ch17-agenda.tex:693"}
+  - {from: gr.E, to: gr.complete, kind: required, symbols: ["item E"], bridge: "All eight items must be DERIVED", src: "chapters/ch17-agenda.tex:693"}
+  - {from: gr.F, to: gr.complete, kind: required, symbols: ["item F"], bridge: "All eight items must be DERIVED", src: "chapters/ch17-agenda.tex:693"}
+  - {from: gr.G, to: gr.complete, kind: required, symbols: ["item G"], bridge: "All eight items must be DERIVED", src: "chapters/ch17-agenda.tex:693"}
+  - {from: gr.N, to: gr.complete, kind: required, symbols: ["item N"], bridge: "All eight items must be DERIVED", src: "chapters/ch17-agenda.tex:693"}
+inputs:
+  - {symbol: "ass:dictionary", kind: assumption, src: "chapters/ch03-matrix-action.tex:346", used_by: [A.map, thm.mT]}
+  - {symbol: "Theta_{mu nu}", kind: input, src: "chapters/ch03-matrix-action.tex:352", used_by: [A.map]}
+  - {symbol: "ass:EE", kind: assumption, src: "chapters/ch06-entanglement-equilibrium.tex:71", used_by: [B.EE, thm.mT]}
+  - {symbol: "ass:gap-psi", kind: assumption, src: "chapters/ch07-massless-tensor.tex:411", used_by: [C.conformal]}
+  - {symbol: "ass:frame-lock", kind: assumption, src: "chapters/ch03-matrix-action.tex:265", used_by: [D1.lorentz, thm.locking]}
+  - {symbol: "ass:nondeg", kind: assumption, src: "chapters/ch04-vierbein-emergence.tex:171", used_by: [D1.lorentz, thm.mT, thm.locking]}
+  - {symbol: "ass:local-lorentz", kind: assumption, src: "chapters/ch10-lorentz-locking.tex:56", used_by: [D1.lorentz, thm.locking, ir.D2]}
+  - {symbol: "ass:lorentzian", kind: assumption, src: "chapters/ch04-vierbein-emergence.tex:322", used_by: [E.signature, thm.mT]}
+  - {symbol: "ass:Sent-density", kind: assumption, src: "chapters/ch12-hbev.tex:139", used_by: [G.bdy, thm.Leff, ir.Gmodel]}
+  - {symbol: "ass:bdy-EE", kind: assumption, src: "chapters/ch12-hbev.tex:185", used_by: [G.bdy, thm.Leff, ir.Gmodel]}
+  - {symbol: "ass:EFT-a2", kind: assumption, src: "chapters/ch09-ultraviolet.tex:141", used_by: [N.expansion]}
+  - {symbol: "ass:sqrt-mod", kind: phenomenological, src: "chapters/appE-rar-bridge.tex:160", used_by: [H.interp]}
+  - {symbol: "ass:drag", kind: phenomenological, src: "chapters/ch14-dissipation.tex:184", used_by: [I.drag]}
+  - {symbol: "ass:ECG", kind: assumption, src: "chapters/ch09-ultraviolet.tex:275", used_by: [J.ECG]}
+gaps:
+  - {symbol: "Weyl map, Hilbert space, continuum limit", blocks: [A.map], note: "Problem A: a derivation must specify the Hilbert space, Weyl map, continuum limit and error at each order in Theta (ch17:390-392); the general matrix-to-modular map remains unproved (appH:16-18)."}
+  - {symbol: "g0 -> g map", blocks: [B.EE], note: "B closure requires a specified map g^(0) -> g with no use of an already-existing metric (ch17:134-137); ledger 066 also records the map s -> g_{mu nu} as missing (A, D1)."}
+  - {symbol: "F operator data", blocks: [F.coeffs], note: "Gauge-fixed Hessians, determinant weights, radial threshold, finite counterterms and continuation convention are not specified (ch17:457-467; appH Problem F Missing step)."}
+  - {symbol: "S_ent^(IR)", blocks: [G.bdy], note: "Entropy density and boundary stationarity not derived from the matrix theory; Assumptions Sent-density and bdy-EE not discharged (ch17:488-495; appH:2894 no-go paragraph)."}
+  - {symbol: "kappa_IR", blocks: [H.interp], note: "Chapter 12 supplies Lambda_eff but defines no stationary boundary geometry or surface gravity kappa_IR (ch17:541-544)."}
+render_math:
+  symbols:
+    "X_mu": {math: '$\hat{X}_\mu$', note: "matrices of eq:Smatrix"}
+    "S_micro": {math: '$S_{\rm micro}$', note: "eq:Smicro"}
+    "Phi": {math: '$\Phi$', note: "condensate field"}
+    "A_mu": {math: '$A_\mu$', note: "gauge field of eq:Smicro"}
+    "lambda": {math: '$\lambda$', note: "eq:V"}
+    "v": {math: '$v$', note: "eq:V vacuum scale"}
+  premises:
+    "ass:dictionary": {math: '$[\hat X_\mu,\Phi]\leftrightarrow i\Theta_{\mu\nu}D^\nu\Phi$'}
+    "Theta_{mu nu}": {math: '$\Theta_{\mu\nu}$'}
+    "ass:EE": {math: '$\delta S_D=0$'}
+    "ass:gap-psi": {math: '$m_\psi\sim\sqrt{\lambda}\,v$'}
+    "ass:frame-lock": {math: '$\langle\Phi^I{}_A\rangle=v\delta^I{}_A$'}
+    "ass:nondeg": {math: '$\det e^A{}_\mu\neq0$'}
+    "ass:local-lorentz": {note: "local SO(3,1) imposed"}
+    "ass:lorentzian": {math: '$\eta_{AB}={\rm diag}(-1,1,1,1)$'}
+    "ass:Sent-density": {note: "local entropy density S_ent(h,phi)"}
+    "ass:bdy-EE": {math: '$h_{ij}\pi^{ij}=0$'}
+    "ass:EFT-a2": {note: "4-derivative terms = EFT vertices"}
+    "ass:sqrt-mod": {note: "square-root modular response"}
+    "ass:drag": {math: '$F=-\eta\mu v/d^4$'}
+    "ass:ECG": {note: "cubic completion"}
+  displays:
+    "A.map": {label: "eq:dict-again", math: '$[\hat X_\mu,\Phi]\leftrightarrow i\Theta_{\mu\nu}D^\nu\Phi$'}
+    "B.EE": {label: "eq:EE", math: '$\delta S_D=0$', note: "fixed volume"}
+    "C.conformal": {label: "eq:msigma", math: '$m_\sigma^2=\lambda v^2$', note: "potential curvature only"}
+    "D1.lorentz": {label: "eq:g-from-e", math: '$g_{\mu\nu}=\eta_{AB}e^A_\mu e^B_\nu$'}
+    "E.signature": {label: "ass:lorentzian", math: '$\eta_{AB}={\rm diag}(-1,1,1,1)$', note: "retained"}
+    "F.coeffs": {label: "eq:W-EH", math: '$\frac{1}{16\pi G_{\rm eff}}\int\sqrt{-g}\,R$', note: "A,B,C not computed"}
+    "G.bdy": {label: "eq:Leff", math: '$\frac{\Lambda_{\rm eff}}{8\pi G_{\rm eff}}=\langle S_{\rm ent}^{\rm IR}\rangle-T_{\rm bdy}$'}
+    "N.expansion": {label: "eq:W4", math: '$c_WC^2+c_RR^2+c_{GB}E_{GB}$', note: "no Ostrogradsky ghost for p<L_UV"}
+    "H.interp": {label: "eq:nu-target", math: '$\nu=\frac{1}{1-e^{-\sqrt{g_N/g_s}}}$'}
+    "I.drag": {label: "eq:Fdiss", math: '$F=-\eta\mu v/d^4$', note: "working law"}
+    "J.ECG": {label: "eq:S-ECG", math: '$S_{\rm ECG}$ cubic invariant $\mathcal{P}$', note: "eq:ECG"}
+    "cc.metric": {label: "def:composite-metric", math: '$g_{\mu\nu}=\eta_{AB}e^A_\mu e^B_\nu$'}
+    "thm.mT": {label: "thm:mT", math: '$m_T=0$'}
+    "thm.Geff": {label: "eq:Geff-thm", math: '$C_R^E=-\sum_s \frac{w_s\mathcal{A}_{1,R,s}}{32\pi^2}(\Lambda_s^2-\mu_s^2)+\ldots$'}
+    "thm.locking": {label: "thm:locking", math: '$\omega_{AB}$ removable (unitary gauge)'}
+    "thm.conservation": {label: "eq:cons-thm", math: '$\nabla^\mu T^{\rm total}_{\mu\nu}=0$'}
+    "thm.Leff": {label: "eq:EFE-Leff", math: '$G_{\mu\nu}+\Lambda_{\rm eff}g_{\mu\nu}=8\pi G_{\rm eff}T_{\mu\nu}$'}
+    "ir.D2": {label: "ass:local-lorentz", math: '$SO(3,1)$ imposed', note: "D stays OPEN"}
+    "ir.Gmodel": {label: "eq:Leff", math: '$\Lambda_{\rm eff}$ from supplied $S_{\rm ent}$', note: "G stays OPEN"}
+    "gr.A": {label: "eq:dictionary", math: '$[\hat X_\mu,\Phi]\leftrightarrow i\Theta D\Phi$ derived'}
+    "gr.B": {label: "eq:EE", math: '$\delta S_D=0$ a lemma'}
+    "gr.C": {label: "eq:Z-sigma", math: '$m_\psi,\ {\rm coupling}$'}
+    "gr.D1": {label: "eq:g-from-e", math: '$SO(3,1)$ derived'}
+    "gr.E": {label: "ass:lorentzian", math: '$\eta_{AB}$ derived'}
+    "gr.F": {label: "eq:W-EH", math: '$A,B,C,\ G_{\rm eff}$'}
+    "gr.G": {label: "eq:Leff", math: '$\Lambda_{\rm eff}$ derived'}
+    "gr.N": {label: "eq:W4", math: 'no ghost, $p<\Lambda_{UV}$'}
+    "gr.complete": {label: "sec:ch17-done", math: 'matrix-derived IR'}

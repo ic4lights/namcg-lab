@@ -1,0 +1,5 @@
+r2 scratch build outside the repository (session scratchpad, folder build067r2): fresh copy of namcg-book7.tex, chapters, bib, figs, frontmatter, images; appH replaced by the apply_check_r2 would-be file (637508 bytes, sha256 bd0616ecccb2f2ce6b7ff8cb4fc61864ad9a9b8f9df0e8e208363832f69eed7c). No bib change.
+pdflatex, bibtex, pdflatex, pdflatex (-interaction=nonstopmode -halt-on-error): all exit 0.
+Output written on namcg-book7.pdf (384 pages, 2847689 bytes).
+undefined references/citations: 0; multiply defined: 0; Overfull hboxes: 24 (same count as the r1 and 065 build records; none in the inserted lines).
+Note: a first r2 draft with the lists of pairs set as single inline formulas gave one extra overfull hbox (96 pt, Dimension paragraph, would-be lines 2917-2918); the lists were split into separate inline formulas, which removed it. The file checked and built is the final appH_insert_r2.tex (13248 bytes, sha256 f0fa634cbae16d6c41366f72a8c4e3f834b26fbe31d37532204eb513b6c014ee).

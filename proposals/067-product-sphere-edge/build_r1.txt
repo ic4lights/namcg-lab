@@ -1,0 +1,4 @@
+r1 scratch build outside the repository (session scratchpad, folder build067r1): fresh copy of namcg-book7.tex, chapters, bib, figs, frontmatter, images; appH replaced by the apply_check would-be file (634866 bytes, sha256 e098f9812e0058f6133f17f83866e2bd039769d9ca74849c3ba1c9c7f5e14d1a). No bib change.
+pdflatex, bibtex, pdflatex, pdflatex (-interaction=nonstopmode -halt-on-error): all exit 0.
+Output written on namcg-book7.pdf (384 pages, 2843754 bytes).
+undefined references/citations: 0; multiply defined: 0; Overfull hboxes: 24 (same count as the 065 build record).
