@@ -22,7 +22,7 @@ Subagent definitions live in `.claude/agents/`. The human author is the only par
    - The gatekeeper never originates research or replacement derivations. It reviews, re-derives what it needs
      to verify, and issues a verdict. It is read-only.
    - Only the integrator edits `chapters/`, and only with text that has a gatekeeper `ACCEPT` for exactly that text.
-5. **Nothing reaches `main` autonomously.** All work happens on a branch `auto/<YYYYMMDD-HHMM>`. No push, no merge,
+5. **Nothing reaches `main` autonomously.** All work happens on currently checked out working branch. No push, no merge,
    no force operations, no rewriting of history. The author merges.
 6. **Evidence over elegance.** Do not accept a result because it is neat or because another agent accepted it.
    Classify claims as: established identity/derivation; conditional result; phenomenological input;
