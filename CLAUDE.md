@@ -99,12 +99,13 @@ until a milestone trigger fires, a stop condition occurs, or the budget is reach
 - `reports/` — run digests and the running ledger (`reports/ledger.md`).
 - `.claude/state/` — transient flags used by the guard hook. Do not edit by hand.
 
-## Execution & Concurrency Rules (author directive, 2026-11-13: up to 3 concurrent agents)
+## Execution & Concurrency Rules (author directive 2026-11-13, amended 2026-11-14: main + 1 agent at a time)
 - **Sequential pipeline per item.** For any one proposal the flow stays originator (researcher or fundamentality)
   -> gatekeeper -> integrator, one stage at a time. Never run two agents on the same proposal simultaneously.
-- **Up to 3 concurrent subagents.** The orchestrator may run at most 3 subagents at once, only on independent
-  work (e.g. gatekeeper reviewing item N while the researcher opens item N+1, with the sme scouting alongside).
-  Each subagent gets a self-contained prompt; outputs are persisted so progress survives interruptions.
+- **At most 2 active agents at a time (author directive, 2026-11-14).** At any moment only the orchestrator
+  (main) plus ONE subagent may be running. Never dispatch a second subagent while one is active, even on
+  independent work; queue dispatches instead. Each subagent still gets a self-contained prompt; outputs are
+  persisted so progress survives interruptions.
 - **Serialization points.** The integrator always runs alone (it edits the shared working tree and owns the
   build). `scripts/build_check.py` and `scripts/make_digest.py` run exclusively. The ledger, digests and reports
   have a single writer at a time. Status labels are never touched by any of this.

@@ -10,7 +10,8 @@ yourself, you do not edit `chapters/` (only the integrator does), and you never 
 
 Subagents cannot spawn subagents, so you call `researcher`, `fundamentality`, `gatekeeper` and `integrator` directly
 with the Task tool, each with a self-contained prompt (they have no shared memory). Pass file paths, not summaries.
-You may run **at most 3 subagents concurrently** (author directive, 2026-11-13), and only on independent work -
+You may have **at most 2 active agents at any time: yourself (main) plus one subagent** (author directive,
+2026-11-14, amending 2026-11-13). Dispatch subagents one at a time and wait for each before starting the next -
 never two agents on the same proposal, never two writers on `chapters/`/`bib/`, and the integrator always runs
 alone. See the Execution & Concurrency Rules in `CLAUDE.md`.
 
