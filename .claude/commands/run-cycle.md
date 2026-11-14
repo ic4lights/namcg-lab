@@ -8,8 +8,11 @@ You are the **orchestrator**. Arguments: `$ARGUMENTS` (defaults: target `auto`, 
 Read `CLAUDE.md` and `MILESTONE.md` first. Obey every hard rule there. You coordinate; you do not do mathematics
 yourself, you do not edit `chapters/` (only the integrator does), and you never change status labels.
 
-Subagents cannot spawn subagents, so you call `researcher`, `gatekeeper` and `integrator` directly with the Task
-tool, one at a time, each with a self-contained prompt (they have no shared memory). Pass file paths, not summaries.
+Subagents cannot spawn subagents, so you call `researcher`, `fundamentality`, `gatekeeper` and `integrator` directly
+with the Task tool, each with a self-contained prompt (they have no shared memory). Pass file paths, not summaries.
+You may run **at most 3 subagents concurrently** (author directive, 2026-11-13), and only on independent work -
+never two agents on the same proposal, never two writers on `chapters/`/`bib/`, and the integrator always runs
+alone. See the Execution & Concurrency Rules in `CLAUDE.md`.
 
 ## Author directive (2026-10-14): autonomous mode
 
@@ -75,6 +78,7 @@ commit and every merge. Wherever this file says "the branch", read "the branch c
 
      Have the researcher develop it as a normal proposal (with a full scan, since it changes a definition), and
      integrate it after `ACCEPT`. Record it in the ledger and digest as an author-pre-approved structural change.
+     (`fundamentality`-originated core changes do not take this route: they stop for the author per step (a).)
    - **`AUTHOR-DECISION`:** if the decision changes no status, priority or completion label and keeps spacetime
      emergent, the researcher resolves it in a "Decisions Taken" section, favouring the infrared / full-GR
      derivation. That covers scope, core-assumption and structural choices. Queue it for the author only if it
@@ -102,7 +106,9 @@ commit and every merge. Wherever this file says "the branch", read "the branch c
 4. Record `BASE=$(git rev-parse HEAD)`, the chapter manifest count, and run `python scripts/build_check.py --fast`
    to confirm the baseline builds (skips pdflatex if no .tex files changed). Run `python scripts/make_digest.py`
    (compact by default; produces ~10KB digest vs ~52KB full), then verify it with
-   `python scripts/make_digest.py --check` (`DIGEST CURRENT`). Ensure `.claude/state/allow_chapters` does not exist.
+   `python scripts/make_digest.py --check` (`DIGEST CURRENT`). `.claude/state/allow_chapters` is kept permanently by
+   the author (author directive, 2026-11-08); do not create or delete it — if it is missing, note that the
+   integrator will abort and the author must restore it.
 5. Initialise counters: `accepted=0`, `stalled_in_a_row=0`.
 
 **Digest mode decision (optimized rescans).**
@@ -124,6 +130,12 @@ problem list). Prefer a consequential unresolved step or a coherent bundle of re
 advances the stated scope. Do not create multiple small items merely to use the budget, combine unrelated targets
 only to reduce PR count, or repeat a route recorded as REJECTED/stalled in the ledger. `--items` defaults to one
 accepted proposal package per run; increase it only when the author requests multiple packages.
+When the package targets the NAMCG core itself - a definition, assumption, scope statement, or a redaction/negation
+of a core aspect - task `fundamentality` instead of `researcher`. Its packages carry the `STRUCTURAL - author only`
+flag and trigger the rule 3(c) full scan: review them, but do not integrate one until the author has approved that
+exact structural decision (the author may extend the 2026-10-14 pre-approval envelope to this agent; until then
+every fundamentality package stops for the author). Researcher-originated structural packages that fall inside the
+M5 envelope below keep following that envelope as before.
 
 **b. Researcher execution (Round K).** 
 - If starting a new item, create `proposals/NNN-slug/` and set `K=1`. 
@@ -174,8 +186,9 @@ every commit. As a consequence:
   `CLAUDE.md` requires.
 - In the ledger, record "uncommitted (author to commit)" and the integrator's backup path instead of a commit hash.
 
-**f. Integrate.** Create `.claude/state/allow_chapters`, Task `integrator` with the proposal path, review path,
-branch and current digest status, then ensure the flag file is removed. If it reports a build failure or anchor
+**f. Integrate.** Task `integrator` with the proposal path, review path,
+branch and current digest status (the guard flag `.claude/state/allow_chapters` is author-kept; never create or
+delete it — the integrator verifies it and aborts if missing). If it reports a build failure or anchor
 mismatch: ledger entry `INTEGRATION-FAILED`, stop the run. Else increment `accepted`, rebuild the digest with
 `python scripts/make_digest.py` (compact by default), verify `python scripts/make_digest.py --check` prints `DIGEST CURRENT`,
 and set `stalled_in_a_row=0`. Pass the refreshed digest status to all later subagents. Use `python scripts/build_check.py --fast`

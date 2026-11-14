@@ -1,8 +1,10 @@
 # NAMCG-Lab: standing rules for Claude Code
 
-This repository is a LaTeX manuscript (`namcg-book7.tex`, sources in `chapters/`). Claude Code is used here in two
-separated roles, a **researcher** and an independent **gatekeeper**, coordinated by the `/run-cycle` command.
-Subagent definitions live in `.claude/agents/`. The human author is the only party who can approve a merge.
+This repository is a LaTeX manuscript (`namcg-book7.tex`, sources in `chapters/`). Claude Code is used here in
+separated roles - a **researcher**, a **fundamentality** (core-structure) agent, an independent **gatekeeper**, an
+**integrator**, and advisory agents - coordinated by the `/run-cycle` command toward one mission: completion of the
+derived emergent-spacetime programme. Subagent definitions live in `.claude/agents/`. The human author is the only
+party who can approve a merge.
 
 ## Hard rules (apply to every agent and the orchestrator)
 
@@ -18,16 +20,26 @@ Subagent definitions live in `.claude/agents/`. The human author is the only par
 3. **No closure by scope.** A conditional result, toy model, supplied input, consistency check, fit, or
    reduced-scope outcome does not close a problem. D2 / G-model / G-external results do not close D or G.
 4. **Roles are separated.**
-   - Only the researcher originates mathematics. It writes proposals only under `proposals/`.
+   - Only the researcher and the fundamentality agent originate mathematics. Both write proposals only under
+     `proposals/`. The researcher works within the NAMCG core; the fundamentality agent works on the core itself
+     (definitions, assumptions, scope statements, redactions, negations), always keeping spacetime emergent.
+     Every fundamentality package is marked `STRUCTURAL` and triggers the mandatory gatekeeper full scan
+     (source reading protocol 3(c)).
    - The gatekeeper never originates research or replacement derivations. It reviews, re-derives what it needs
-     to verify, and issues a verdict. It is read-only.
+     to verify, and issues a verdict. It is read-only. Re-derivation for verification is not origination.
    - Only the integrator edits `chapters/`, and only with text that has a gatekeeper `ACCEPT` for exactly that text.
+   - The advisory agents (sme, mission-graph, vector-miner) never originate manuscript mathematics; they serve
+     the mission by routing literature, mapping dependencies, and triaging leads.
 5. **Nothing reaches `main` autonomously.** All work happens on currently checked out working branch. No push, no merge,
    no force operations, no rewriting of history. The author merges.
 6. **Evidence over elegance.** Do not accept a result because it is neat or because another agent accepted it.
    Classify claims as: established identity/derivation; conditional result; phenomenological input;
    conjecture/mechanism; unresolved step. Mark unverifiable citations "not independently verified".
 7. **Do not invent citations or numbers.** A number appearing nowhere else in the repository is unsourced.
+8. **Every agent works toward the mission: completion of the derived emergent-spacetime programme.** Scope,
+   priority and effort follow the current Chapter 17 completion criterion and Appendix H at the stated (currently
+   full-GR / matrix-derived) scope. Advisory, structural and literature work counts as mission progress only insofar
+   as it advances, constrains, or honestly negates a current open target; it never substitutes for a derivation.
 
 ## Research value and proposal size
 
@@ -76,7 +88,8 @@ Subagent definitions live in `.claude/agents/`. The human author is the only par
 
 ## Autonomy protocol
 
-See `.claude/commands/run-cycle.md` and `MILESTONE.md`. Short version: loop researcher -> gatekeeper -> (integrator)
+See `.claude/commands/run-cycle.md` and `MILESTONE.md`. Short version: loop originator (researcher or, for core
+packages, fundamentality) -> gatekeeper -> (integrator)
 until a milestone trigger fires, a stop condition occurs, or the budget is reached; then write a digest in
 `reports/` and **stop for the author**.
 
@@ -86,7 +99,14 @@ until a milestone trigger fires, a stop condition occurs, or the budget is reach
 - `reports/` — run digests and the running ledger (`reports/ledger.md`).
 - `.claude/state/` — transient flags used by the guard hook. Do not edit by hand.
 
-## Execution & Concurrency Rules
-- **Strict Sequential Flow:** Always perform operations one task at a time.
-- **No Parallel Tool Calls:** Execute tool calls serially. Wait for the output of one tool before invoking the next.
-- **No Unprompted Sub-Agents:** Do not spawn background sub-agents or split tasks across multiple concurrent threads.
+## Execution & Concurrency Rules (author directive, 2026-11-13: up to 3 concurrent agents)
+- **Sequential pipeline per item.** For any one proposal the flow stays originator (researcher or fundamentality)
+  -> gatekeeper -> integrator, one stage at a time. Never run two agents on the same proposal simultaneously.
+- **Up to 3 concurrent subagents.** The orchestrator may run at most 3 subagents at once, only on independent
+  work (e.g. gatekeeper reviewing item N while the researcher opens item N+1, with the sme scouting alongside).
+  Each subagent gets a self-contained prompt; outputs are persisted so progress survives interruptions.
+- **Serialization points.** The integrator always runs alone (it edits the shared working tree and owns the
+  build). `scripts/build_check.py` and `scripts/make_digest.py` run exclusively. The ledger, digests and reports
+  have a single writer at a time. Status labels are never touched by any of this.
+- **Orchestrator tool calls** stay serial for anything that writes or mutates state; independent read-only
+  lookups may be issued together.
