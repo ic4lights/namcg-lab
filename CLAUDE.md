@@ -99,15 +99,22 @@ until a milestone trigger fires, a stop condition occurs, or the budget is reach
 - `reports/` — run digests and the running ledger (`reports/ledger.md`).
 - `.claude/state/` — transient flags used by the guard hook. Do not edit by hand.
 
-## Execution & Concurrency Rules (author directive 2026-11-13, amended 2026-11-14: main + 1 agent at a time)
+## Execution & Concurrency Rules (author directive 2026-11-13, amended 2026-11-14: parallel fan-out permitted)
 - **Sequential pipeline per item.** For any one proposal the flow stays originator (researcher or fundamentality)
-  -> gatekeeper -> integrator, one stage at a time. Never run two agents on the same proposal simultaneously.
-- **At most 2 active agents at a time (author directive, 2026-11-14).** At any moment only the orchestrator
-  (main) plus ONE subagent may be running. Never dispatch a second subagent while one is active, even on
-  independent work; queue dispatches instead. Each subagent still gets a self-contained prompt; outputs are
-  persisted so progress survives interruptions.
+  -> gatekeeper -> integrator, one stage at a time. Never run two agents on the same proposal simultaneously -
+  each stage consumes the previous stage's output.
+- **Parallel fan-out across items (author directive, 2026-11-14, removing the same-day main + 1 cap).** The
+  orchestrator may run as many subagents at once as the goal needs: several proposal chains, advisory passes and
+  read-only lookups concurrently, to shorten wall-clock while keeping accuracy. Issue independent dispatches
+  together. Each subagent still gets a self-contained prompt; outputs are persisted so progress survives
+  interruptions.
+- **Disjoint work.** Each parallel chain gets its own `proposals/NNN-slug/` folder and a target whose manuscript
+  passages do not overlap another active chain's. Never run two chains on the same Appendix H problem or the same
+  manuscript passage at once; serialize chains that would collide.
 - **Serialization points.** The integrator always runs alone (it edits the shared working tree and owns the
-  build). `scripts/build_check.py` and `scripts/make_digest.py` run exclusively. The ledger, digests and reports
+  build) and re-verifies anchors against the current tree, because another chain's integration may have moved the
+  text a proposal was anchored to. `scripts/build_check.py` and `scripts/make_digest.py` run exclusively; refresh
+  the digest after every integration before re-tasking agents that rely on it. The ledger, digests and reports
   have a single writer at a time. Status labels are never touched by any of this.
 - **Orchestrator tool calls** stay serial for anything that writes or mutates state; independent read-only
   lookups may be issued together.

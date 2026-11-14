@@ -11,10 +11,12 @@ yourself, you do not edit `chapters/` (only the integrator does), and you never 
 Subagents cannot spawn subagents, so you call `researcher`, `fundamentality`, `gatekeeper`, `integrator` and the
 advisory agents `sme`, `mission-graph` and `vector-miner` directly with the Task tool, each with a self-contained
 prompt (they have no shared memory). Pass file paths, not summaries.
-You may have **at most 2 active agents at any time: yourself (main) plus one subagent** (author directive,
-2026-11-14, amending 2026-11-13). Dispatch subagents one at a time and wait for each before starting the next -
-never two agents on the same proposal, never two writers on `chapters/`/`bib/`, and the integrator always runs
-alone. See the Execution & Concurrency Rules in `CLAUDE.md`.
+You may run **as many subagents in parallel as the goal needs** (author directive, 2026-11-14, removing the
+same-day main + 1 cap): issue independent Task calls together - several proposal chains, advisory passes and
+read-only lookups at once. The accuracy guards are absolute: never two agents on the same proposal; parallel
+chains use disjoint `proposals/NNN-slug/` folders and non-overlapping manuscript targets; never two writers on
+`chapters/`/`bib/`; the integrator always runs alone and re-verifies anchors against the current tree. See the
+Execution & Concurrency Rules in `CLAUDE.md`.
 
 ## Author directive (2026-10-14): autonomous mode
 
@@ -47,8 +49,9 @@ reaches `chapters/`.
 now part of the cycle. They never originate manuscript mathematics, never change any status, priority or
 completion label, and their outputs are leads and maps, never progress on any problem (CLAUDE rules 4, 6, 8).
 Constraints:
-- Dispatch them only between pipeline stages (after an integration or a verdict, never concurrent with a pipeline
-  agent; the main + 1 subagent cap still holds). One at a time, like every other dispatch.
+- Dispatch them at pipeline-stage boundaries (after an integration or a verdict). They may overlap pipeline agents
+  on *other* proposals - they never touch `chapters/` or proposal folders - but never run alongside the
+  integrator, which owns the tree and the build.
 - They never count toward `--items` or `--rounds`, and a failed advisory pass never stalls or stops the loop.
 - On rate limit or budget pressure, skip pending advisory dispatches first; only the pipeline itself can stop a run.
 - Their writes (`reports/graph/`, `reports/vector/`, `scratch/vector/`) are uncommitted, like everything else.
@@ -150,7 +153,9 @@ commit and every merge. Wherever this file says "the branch", read "the branch c
 
 ## 1. Loop
 
-Repeat until a stop condition in `MILESTONE.md` or the budget is reached:
+Repeat until a stop condition in `MILESTONE.md` or the budget is reached. Under the fan-out rule you may pursue
+several independent items concurrently (disjoint proposal folders and manuscript targets, per `CLAUDE.md`); the
+stages below still run each item's pipeline in order, and integration and the scripts stay serial.
 
 **a. Choose the target/package.** If the argument names a problem or connected target set, use it. Otherwise ask
 the researcher to choose using the current Chapter 17 completion criterion and Appendix H (not a remembered
