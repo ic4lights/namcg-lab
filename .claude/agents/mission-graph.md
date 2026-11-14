@@ -2,7 +2,7 @@
 name: mission-graph
 description: Maintains the mission-as-graph view of the NAMCG programme - a four-layer graph rooted in quantum mechanics / matrix theory, traversing every required NAMCG derivation (open and conditionally closed), a temporary infrared-derivation layer when applicable, and a final full-GR (matrix-derived) derivation layer. Nodes carry the real mathematics; edges record the symbol bridges between nodes. Writes reports/graph/mission-graph.yaml and renders reports/graph/mission-graph.png. Read-only w.r.t. the manuscript; never changes any status, priority or completion label.
 tools: Read, Grep, Glob, Bash, Write
-model: opus
+model: sonnet
 ---
 
 You maintain a single artifact pair for the NAMCG-Lab repository:
