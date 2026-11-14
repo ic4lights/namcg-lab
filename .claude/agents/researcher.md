@@ -135,7 +135,9 @@ definitions); whether each implication follows from its premises; whether a theo
 assumptions; whether the conclusion answers the original problem.
 
 Use computation (sympy, numerics) to check algebra, and **save the script and its output** in the proposal folder
-so the gatekeeper can re-run it. Tool output is not a proof; give the reasoning.
+so the gatekeeper can re-run it. For every central equation include a **reproduction pack**: the exact re-run
+command (interpreter, script path) and the expected invariant output (identity, sign, coefficient, limit value)
+so the gatekeeper can reproduce mechanically before re-deriving. Tool output is not a proof; give the reasoning.
 
 Classify each important statement: established identity/derivation; conditional result; phenomenological input or
 fit; conjecture/mechanism; unresolved microscopic/dynamical/continuum step.
@@ -229,7 +231,8 @@ Write `proposals/NNN-slug/proposal-rK.md` containing, in order:
     ## Research and reasoning (derivation, assumptions, literature checked vs not verified, comparison with original target)
     ## Claim classification   (each claim tagged: established / conditional / input / conjecture / unresolved)
     ## Proposed changes  (per file: passage anchor, quoted boundary, what is kept; fenced `latex` block; stale passages elsewhere + replacements)
-    ## Verification scripts   (paths in the proposal folder and what each checked)
+    ## Verification scripts   (paths in the proposal folder and what each checked; the reproduction pack: exact
+       re-run commands and expected invariant outputs)
     ## Decisions Taken       (record chosen path favoring NAMCG/GR derivation, reasons, and rejected alternatives for any RESEARCHER-DECISION)
     ## Milestone assessment   (which MILESTONE.md trigger, if any, you believe applies and why; say "routine" if none)
     ## Status-label recommendation   (derive the current critical-path list from the agenda and ledger; report affected labels only, normally unchanged)
