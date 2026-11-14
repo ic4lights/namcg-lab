@@ -45,8 +45,9 @@ pending review material and must be preserved byte for byte.
 3. **Encoding.** `.tex` files use CRLF: normalize inserted text to `\r\n`. Write UTF-8 without BOM. Edit with a
    method that preserves the rest of the file byte for byte: read the file as text with `\r\n` preserved, do a
    `Replace` guarded by an anchor-count check, and write it back.
-4. **Guard flag.** Create `.claude/state/allow_chapters` only for the editing step, and delete it when done, also on
-   failure.
+4. **Guard flag.** `.claude/state/allow_chapters` is kept permanently by the author (author directive,
+   2026-11-08). Never create or delete it. Verify it exists before editing; if it is missing, abort and report -
+   do not self-authorize.
 5. **Build.** If the package adds or uses citations, run `pdflatex -interaction=nonstopmode namcg-book7.tex` and then
    `bibtex namcg-book7` first. Then run `python scripts/build_check.py`. It must report: two passes OK, 0
    undefined/multiply-defined references, PDF restored, `git diff --check` clean. Report the page count. Make sure

@@ -8,8 +8,13 @@ You are the **orchestrator**. Arguments: `$ARGUMENTS` (defaults: target `auto`, 
 Read `CLAUDE.md` and `MILESTONE.md` first. Obey every hard rule there. You coordinate; you do not do mathematics
 yourself, you do not edit `chapters/` (only the integrator does), and you never change status labels.
 
-Subagents cannot spawn subagents, so you call `researcher`, `gatekeeper` and `integrator` directly with the Task
-tool, one at a time, each with a self-contained prompt (they have no shared memory). Pass file paths, not summaries.
+Subagents cannot spawn subagents, so you call `researcher`, `fundamentality`, `gatekeeper`, `integrator` and the
+advisory agents `sme`, `mission-graph` and `vector-miner` directly with the Task tool, each with a self-contained
+prompt (they have no shared memory). Pass file paths, not summaries.
+You may have **at most 2 active agents at any time: yourself (main) plus one subagent** (author directive,
+2026-11-14, amending 2026-11-13). Dispatch subagents one at a time and wait for each before starting the next -
+never two agents on the same proposal, never two writers on `chapters/`/`bib/`, and the integrator always runs
+alone. See the Execution & Concurrency Rules in `CLAUDE.md`.
 
 ## Author directive (2026-10-14): autonomous mode
 
@@ -37,6 +42,32 @@ reaches `chapters/`.
      verdict as `review-rK-provisional.md`.
 
   Then branch on the final verdict as usual.
+
+**Mission-graph and vector-miner in the loop (author directive, 2026-11-14).** The two remaining advisory agents are
+now part of the cycle. They never originate manuscript mathematics, never change any status, priority or
+completion label, and their outputs are leads and maps, never progress on any problem (CLAUDE rules 4, 6, 8).
+Constraints:
+- Dispatch them only between pipeline stages (after an integration or a verdict, never concurrent with a pipeline
+  agent; the main + 1 subagent cap still holds). One at a time, like every other dispatch.
+- They never count toward `--items` or `--rounds`, and a failed advisory pass never stalls or stops the loop.
+- On rate limit or budget pressure, skip pending advisory dispatches first; only the pipeline itself can stop a run.
+- Their writes (`reports/graph/`, `reports/vector/`, `scratch/vector/`) are uncommitted, like everything else.
+
+Cadence:
+- **`mission-graph`** (full procedure in its agent definition): task it (i) at the start of a run, after pre-flight
+  and before target choice, whenever `reports/graph/mission-graph.yaml` is missing or predates the latest ledger
+  entry; (ii) after every fifth integration, together with the SME scout; and (iii) at the end of the run, before
+  writing the digest, if any item was integrated since the last refresh. Give the researcher the manifest and PNG
+  paths at step (a): use open/blocked nodes and the `gaps:` list for target choice. Paste its machine-readable
+  `GRAPH: ...` first line into the run digest. If the refresh fails, note it in the digest and continue.
+- **`vector-miner`** (state which modes apply, per its definition): task it (i) at the start of a run in mode 1
+  (external query mining on the current top gaps), or mode 5 (deep dig) when the target set is already named; and
+  (ii) after every fifth integration in mode 6 (congruence mining) against the results integrated since the last
+  pass. Save each reply verbatim as `reports/vector/vector-mining-<mode>-<YYYYMMDD-HHMM>.md`. Give the report path
+  to the researcher at step (b) as triage only: vector proximity is semantic similarity, not a derivation, and no
+  proposal may cite it as one. An actionable finding (a citation completion, a `notation-collision` hazard, a
+  `conjecture-candidate`) becomes a follow-up proposal through the normal researcher -> gatekeeper -> integrator
+  pipeline; the mining report itself is never integrated and changes no status.
 
 **Current branch only — no git writes by agents (author directive, 2026-11-05, supersedes 2026-10-15).** All work
 happens on the branch that is already checked out when the run starts, so the author can follow it in VS Code.
@@ -75,6 +106,7 @@ commit and every merge. Wherever this file says "the branch", read "the branch c
 
      Have the researcher develop it as a normal proposal (with a full scan, since it changes a definition), and
      integrate it after `ACCEPT`. Record it in the ledger and digest as an author-pre-approved structural change.
+     (`fundamentality`-originated core changes do not take this route: they stop for the author per step (a).)
    - **`AUTHOR-DECISION`:** if the decision changes no status, priority or completion label and keeps spacetime
      emergent, the researcher resolves it in a "Decisions Taken" section, favouring the infrared / full-GR
      derivation. That covers scope, core-assumption and structural choices. Queue it for the author only if it
@@ -102,7 +134,9 @@ commit and every merge. Wherever this file says "the branch", read "the branch c
 4. Record `BASE=$(git rev-parse HEAD)`, the chapter manifest count, and run `python scripts/build_check.py --fast`
    to confirm the baseline builds (skips pdflatex if no .tex files changed). Run `python scripts/make_digest.py`
    (compact by default; produces ~10KB digest vs ~52KB full), then verify it with
-   `python scripts/make_digest.py --check` (`DIGEST CURRENT`). Ensure `.claude/state/allow_chapters` does not exist.
+   `python scripts/make_digest.py --check` (`DIGEST CURRENT`). `.claude/state/allow_chapters` is kept permanently by
+   the author (author directive, 2026-11-08); do not create or delete it — if it is missing, note that the
+   integrator will abort and the author must restore it.
 5. Initialise counters: `accepted=0`, `stalled_in_a_row=0`.
 
 **Digest mode decision (optimized rescans).**
@@ -120,10 +154,17 @@ Repeat until a stop condition in `MILESTONE.md` or the budget is reached:
 
 **a. Choose the target/package.** If the argument names a problem or connected target set, use it. Otherwise ask
 the researcher to choose using the current Chapter 17 completion criterion and Appendix H (not a remembered
-problem list). Prefer a consequential unresolved step or a coherent bundle of related steps that materially
+problem list). Pass it the latest SME scout report, the mission-graph manifest and PNG (open/blocked nodes and the
+`gaps:` list), and the latest `reports/vector/` report (triage only - never a derivation aid) to inform the choice. Prefer a consequential unresolved step or a coherent bundle of related steps that materially
 advances the stated scope. Do not create multiple small items merely to use the budget, combine unrelated targets
 only to reduce PR count, or repeat a route recorded as REJECTED/stalled in the ledger. `--items` defaults to one
 accepted proposal package per run; increase it only when the author requests multiple packages.
+When the package targets the NAMCG core itself - a definition, assumption, scope statement, or a redaction/negation
+of a core aspect - task `fundamentality` instead of `researcher`. Its packages carry the `STRUCTURAL - author only`
+flag and trigger the rule 3(c) full scan: review them, but do not integrate one until the author has approved that
+exact structural decision (the author may extend the 2026-10-14 pre-approval envelope to this agent; until then
+every fundamentality package stops for the author). Researcher-originated structural packages that fall inside the
+M5 envelope below keep following that envelope as before.
 
 **b. Researcher execution (Round K).** 
 - If starting a new item, create `proposals/NNN-slug/` and set `K=1`. 
@@ -174,8 +215,9 @@ every commit. As a consequence:
   `CLAUDE.md` requires.
 - In the ledger, record "uncommitted (author to commit)" and the integrator's backup path instead of a commit hash.
 
-**f. Integrate.** Create `.claude/state/allow_chapters`, Task `integrator` with the proposal path, review path,
-branch and current digest status, then ensure the flag file is removed. If it reports a build failure or anchor
+**f. Integrate.** Task `integrator` with the proposal path, review path,
+branch and current digest status (the guard flag `.claude/state/allow_chapters` is author-kept; never create or
+delete it — the integrator verifies it and aborts if missing). If it reports a build failure or anchor
 mismatch: ledger entry `INTEGRATION-FAILED`, stop the run. Else increment `accepted`, rebuild the digest with
 `python scripts/make_digest.py` (compact by default), verify `python scripts/make_digest.py --check` prints `DIGEST CURRENT`,
 and set `stalled_in_a_row=0`. Pass the refreshed digest status to all later subagents. Use `python scripts/build_check.py --fast`
@@ -215,7 +257,7 @@ integrations; it is reported to the author with the smallest fix it names. Conta
 review is allowed under the autonomy directive.
 
 **Digest.** When the loop ends for any reason, write `reports/run-<YYYYMMDD-HHMM>.md` with exactly the contents listed at the
-end of `MILESTONE.md`. Run `git log --oneline $BASE..HEAD`, `git diff --stat $BASE..HEAD`, and
+end of `MILESTONE.md`, plus the latest `GRAPH: ...` summary line from the mission-graph if it ran during the run. Run `git log --oneline $BASE..HEAD`, `git diff --stat $BASE..HEAD`, and
 `git diff --stat -- chapters bib` for the uncommitted manuscript changes awaiting the author. Leave the digest,
 ledger, proposals, reviews and reports all uncommitted in the working tree; the author commits everything.
 

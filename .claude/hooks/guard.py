@@ -42,7 +42,7 @@ def branch():
         return ""
 
 
-ALLOWED_ALWAYS = ("proposals/", "scratch/", "reports/", ".claude/state/")
+ALLOWED_ALWAYS = ("scripts/", "proposals/", "scratch/", "reports/", ".claude/state/")
 CHAPTERS_FLAG = os.path.join(root, ".claude", "state", "allow_chapters")
 PROTECTED = ("agents/", ".claude/agents/", ".claude/hooks/", ".claude/commands/", ".claude/settings",
              "CLAUDE.md", "MILESTONE.md", "bib/", "code/", "figs/", "frontmatter/", "namcg-book7.tex")
