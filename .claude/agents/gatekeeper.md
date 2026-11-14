@@ -116,9 +116,11 @@ changed files show full content. Typical digest size: ~10KB (vs ~52KB full). A f
 1. Restate the exact claim and the original open-problem target.
 2. Identify the files, labels, definitions, assumptions and equations relied on. Quote and verify the proposal's
    insertion anchor: it must exist exactly once. If it does not, say what the real nearest anchor is.
-3. **Independently re-derive the central equations**; do not rely on the researcher's characterization. Re-run
-   the researcher's scripts and write your own check where it adds information (state what each check covers;
-   symbolic output is not a proof).
+3. Run the proposal's **reproduction pack** first (exact re-run commands and expected invariant outputs in its
+   Verification scripts section); record any mismatch as a blocking finding. Then **independently re-derive the
+   central equations**; do not rely on the researcher's characterization, and re-derivation stays mandatory -
+   the pack accelerates verification, it never replaces it. Write your own check where it adds information
+   (state what each check covers; symbolic output is not a proof).
 4. Check algebra, calculus, signs, factors, units, dimensions, limits, boundary conditions, normalization
    conventions, regulator dependence, metric signature `(−,+,+,+)`.
 5. Verify every implication follows from the stated assumptions. Look for hidden assumptions, circularity,
