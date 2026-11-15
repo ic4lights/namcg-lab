@@ -1,0 +1,41 @@
+== flat
+  Jacobi defect 0.0e+00; background B1, B2 residual 0.0e+00 0.0e+00; |Rbar| 0.0e+00
+  T_abc T^abc = 0.0 ; trace T_ac^c = [0. 0. 0. 0.] ; eta-derivations (commutant Lorentz labels): 6
+  character directions [0, 1, 2, 3] ; rank M(0) (non-derivative coefficient) = 0
+  q = [ 0.034  1.36   1.225 -0.51 ] : rank M = 30 of 40, rank gauge = 10, |M G| = 2.2e-16, kernel = gauge directions: True
+  q = [-0.298 -0.527  0.57  -0.056] : rank M = 30 of 40, rank gauge = 10, |M G| = 1.1e-16, kernel = gauge directions: True
+  q = [ 0.747 -1.847  1.567 -0.096] : rank M = 30 of 40, rank gauge = 10, |M G| = 2.3e-16, kernel = gauge directions: True
+== null-rotation, left-invariant gauge
+  Jacobi defect 0.0e+00; background B1, B2 residual 0.0e+00 0.0e+00; |Rbar| 0.0e+00
+  T_abc T^abc = 0.0 ; trace T_ac^c = [0. 0. 0. 0.] ; eta-derivations (commutant Lorentz labels): 1
+  character directions [0, 3] ; rank M(0) (non-derivative coefficient) = 4
+  q = [ 0.68   0.     0.    -0.137] : rank M = 30 of 40, rank gauge = 10, |M G| = 2.8e-17, kernel = gauge directions: True
+  q = [-0.379  0.     0.     0.463] : rank M = 30 of 40, rank gauge = 10, |M G| = 2.8e-17, kernel = gauge directions: True
+  q = [ 0.825  0.     0.    -0.203] : rank M = 30 of 40, rank gauge = 10, |M G| = 3.1e-17, kernel = gauge directions: True
+== null-rotation, constant-connection gauge
+  Jacobi defect 0.0e+00; background B1, B2 residual 0.0e+00 0.0e+00; |Rbar| 0.0e+00
+  T_abc T^abc = 0.0 ; trace T_ac^c = [0. 0. 0. 0.] ; eta-derivations (commutant Lorentz labels): n/a in this gauge
+  character directions [0, 1, 2, 3] ; rank M(0) (non-derivative coefficient) = 12
+  q = [-0.153  0.686 -0.87  -1.514] : rank M = 30 of 40, rank gauge = 10, |M G| = 4.4e-16, kernel = gauge directions: True
+  q = [ 0.395 -0.671 -1.92  -0.814] : rank M = 30 of 40, rank gauge = 10, |M G| = 8.9e-16, kernel = gauge directions: True
+  q = [-0.468 -1.193 -1.492  0.037] : rank M = 30 of 40, rank gauge = 10, |M G| = 5.3e-16, kernel = gauge directions: True
+== Heisenberg
+  Jacobi defect 0.0e+00; background B1, B2 residual 0.0e+00 0.0e+00; |Rbar| 0.0e+00
+  T_abc T^abc = 2.0 ; trace T_ac^c = [0. 0. 0. 0.] ; eta-derivations (commutant Lorentz labels): 1
+  character directions [0, 1, 3] ; rank M(0) (non-derivative coefficient) = 4
+  q = [ 0.897 -0.233  0.    -0.744] : rank M = 30 of 40, rank gauge = 10, |M G| = 1.1e-16, kernel = gauge directions: True
+  q = [ 0.385  0.717  0.    -0.3  ] : rank M = 30 of 40, rank gauge = 10, |M G| = 1.1e-16, kernel = gauge directions: True
+  q = [ 0.545  1.043  0.    -0.207] : rank M = 30 of 40, rank gauge = 10, |M G| = 1.3e-16, kernel = gauge directions: True
+== second algebra
+  Jacobi defect 0.0e+00; background B1, B2 residual 0.0e+00 0.0e+00; |Rbar| 0.0e+00
+  T_abc T^abc = 0.0 ; trace T_ac^c = [-2.  0.  0.  0.] ; eta-derivations (commutant Lorentz labels): 0
+  character directions [0, 1] ; rank M(0) (non-derivative coefficient) = 6
+  q = [-0.814  0.348  0.     0.   ] : rank M = 30 of 40, rank gauge = 10, |M G| = 2.6e-16, kernel = gauge directions: True
+  q = [0.248 1.099 0.    0.   ] : rank M = 30 of 40, rank gauge = 10, |M G| = 3.0e-16, kernel = gauge directions: True
+  q = [-1.285 -0.662  0.     0.   ] : rank M = 30 of 40, rank gauge = 10, |M G| = 3.9e-16, kernel = gauge directions: True
+== null rotation: max |T(left-invariant gauge) - T(flat frame, w_a^{12} = -k_a/2)| = 0.0
+== Heisenberg, oscillator modes: representation defect below top level 1.6e-15
+   |M G| for gauge parameters on levels <= N-5: 2.7e-15
+== delta contraction, null-rotation, left-invariant gauge : background residual 5.0e-01 0.0e+00
+== delta contraction, Heisenberg : background residual 0.0e+00 0.0e+00
+== delta contraction, second algebra : background residual 2.0e+00 0.0e+00

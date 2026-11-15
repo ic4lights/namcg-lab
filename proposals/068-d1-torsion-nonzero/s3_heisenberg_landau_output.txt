@@ -1,0 +1,60 @@
+== A. fields (h, w), contraction eta; s = +1.  Prediction: levels 2j+1, j = -1, 0, 1, ...
+  p = 0.30 kappa = 1.00: generic rank 190 of 240; roots 224
+     (s q_0^2 - p^2)/(kappa p) =  -1.000 +0.000i   x  20
+     (s q_0^2 - p^2)/(kappa p) =   1.000 -0.000i   x  20
+     (s q_0^2 - p^2)/(kappa p) =   3.000 +0.000i   x  40
+     (s q_0^2 - p^2)/(kappa p) =   5.000 +0.000i   x  40   (level reaches the column cut; count incomplete)
+     (s q_0^2 - p^2)/(kappa p) =   7.000 -0.000i   x  40   (level reaches the column cut; count incomplete)
+     (s q_0^2 - p^2)/(kappa p) =   9.000 +0.000i   x  40   (level reaches the column cut; count incomplete)
+     (s q_0^2 - p^2)/(kappa p) =  11.000 -0.000i   x  24   (level reaches the column cut; count incomplete)
+  p = 2.00 kappa = 1.00: generic rank 190 of 240; roots 224
+     (s q_0^2 - p^2)/(kappa p) =  -1.000 -0.000i   x  20
+     (s q_0^2 - p^2)/(kappa p) =   1.000 +0.000i   x  20
+     (s q_0^2 - p^2)/(kappa p) =   3.000 +0.000i   x  40
+     (s q_0^2 - p^2)/(kappa p) =   5.000 -0.000i   x  40   (level reaches the column cut; count incomplete)
+     (s q_0^2 - p^2)/(kappa p) =   7.000 -0.000i   x  40   (level reaches the column cut; count incomplete)
+     (s q_0^2 - p^2)/(kappa p) =   9.000 +0.000i   x  40   (level reaches the column cut; count incomplete)
+     (s q_0^2 - p^2)/(kappa p) =  11.000 -0.000i   x  24   (level reaches the column cut; count incomplete)
+  p = 0.30 kappa = 0.50: generic rank 190 of 240; roots 224
+     (s q_0^2 - p^2)/(kappa p) =  -1.000 -0.000i   x  20
+     (s q_0^2 - p^2)/(kappa p) =   1.000 +0.000i   x  20
+     (s q_0^2 - p^2)/(kappa p) =   3.000 +0.000i   x  40
+     (s q_0^2 - p^2)/(kappa p) =   5.000 -0.000i   x  40
+     (s q_0^2 - p^2)/(kappa p) =   7.000 +0.000i   x  40   (level reaches the column cut; count incomplete)
+     (s q_0^2 - p^2)/(kappa p) =   9.000 -0.000i   x  40   (level reaches the column cut; count incomplete)
+     (s q_0^2 - p^2)/(kappa p) =  11.000 -0.000i   x  24   (level reaches the column cut; count incomplete)
+== B. order-zero field A_a, contraction eta.  By hand: q_0^2 = p^2 + kappa p (2n+1 -+ 2)
+  p = 0.30 kappa = 1.00: generic rank 19 of 24 (one gauge parameter per level)
+     (s q_0^2 - p^2)/(kappa p) =  -1.000 +0.000i   x   2
+     (s q_0^2 - p^2)/(kappa p) =   1.000 +0.000i   x   2
+     (s q_0^2 - p^2)/(kappa p) =   3.000 +0.000i   x   4
+     (s q_0^2 - p^2)/(kappa p) =   5.000 -0.000i   x   4
+     (s q_0^2 - p^2)/(kappa p) =   7.000 -0.000i   x   4
+     (s q_0^2 - p^2)/(kappa p) =   9.000 -0.000i   x   4
+     (s q_0^2 - p^2)/(kappa p) =  11.000 -0.000i   x   4
+  p = 2.00 kappa = 1.00: generic rank 19 of 24 (one gauge parameter per level)
+     (s q_0^2 - p^2)/(kappa p) =  -1.000 +0.000i   x   2
+     (s q_0^2 - p^2)/(kappa p) =   1.000 +0.000i   x   2
+     (s q_0^2 - p^2)/(kappa p) =   3.000 -0.000i   x   4
+     (s q_0^2 - p^2)/(kappa p) =   5.000 -0.000i   x   4
+     (s q_0^2 - p^2)/(kappa p) =   7.000 +0.000i   x   4
+     (s q_0^2 - p^2)/(kappa p) =   9.000 +0.000i   x   4
+     (s q_0^2 - p^2)/(kappa p) =  11.000 -0.000i   x   4
+== growth rate of the lowest level: q_0^2 = p (p - kappa) < 0 for 0 < p < kappa; minimum -kappa^2/4 at p = kappa/2
+== C. contraction delta; s = -1: a real root q_0 is a zero of the Euclidean operator
+  p = 0.30 kappa = 1.00: generic rank 190 of 240; roots 224
+     (s q_0^2 - p^2)/(kappa p) =  -1.000 -0.000i   x  20
+     (s q_0^2 - p^2)/(kappa p) =   1.000 +0.000i   x  20
+     (s q_0^2 - p^2)/(kappa p) =   3.000 +0.000i   x  40
+     (s q_0^2 - p^2)/(kappa p) =   5.000 +0.000i   x  40   (level reaches the column cut; count incomplete)
+     (s q_0^2 - p^2)/(kappa p) =   7.000 +0.000i   x  40   (level reaches the column cut; count incomplete)
+     (s q_0^2 - p^2)/(kappa p) =   9.000 +0.000i   x  40   (level reaches the column cut; count incomplete)
+     (s q_0^2 - p^2)/(kappa p) =  11.000 -0.000i   x  24   (level reaches the column cut; count incomplete)
+  p = 0.30 kappa = 1.00: generic rank 19 of 24 (one gauge parameter per level)
+     (s q_0^2 - p^2)/(kappa p) =  -1.000 +0.000i   x   2
+     (s q_0^2 - p^2)/(kappa p) =   1.000 -0.000i   x   2
+     (s q_0^2 - p^2)/(kappa p) =   3.000 -0.000i   x   4
+     (s q_0^2 - p^2)/(kappa p) =   5.000 -0.000i   x   4
+     (s q_0^2 - p^2)/(kappa p) =   7.000 -0.000i   x   4
+     (s q_0^2 - p^2)/(kappa p) =   9.000 +0.000i   x   4
+     (s q_0^2 - p^2)/(kappa p) =  11.000 +0.000i   x   4

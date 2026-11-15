@@ -1,0 +1,14 @@
+baseline appH: 624232 c2dac013f275fed851d53e8086bc3eceef717c5b607b10c09ae7541c43558b5c
+anchor occurrences: 1
+CRLF only: True
+ref sec:status-F labels: 1
+cite DonnellyWall2016 bib entries: 1
+cite Steinacker2023 bib entries: 1
+refs in insert: ['sec:status-F', 'sec:status-F'] ; new labels in insert: []
+\LUV used/defined elsewhere: True
+brace/inline/display/env balance: 0 0 0 0
+process words: []
+insert lies in sec:status-B: True
+insert adds no ledger-label line: True
+result appH: 634051 14ff1ce0452cce82efe0b93aaaf1b91d19dad59ae72998186b27a7bfb3a16dba
+APPLY CHECK PASS
