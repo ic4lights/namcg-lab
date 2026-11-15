@@ -40,8 +40,8 @@ warrant a label change, put it in a separated "Status-label recommendation" sect
    and its emergence classification (emergence-preserving / emergence-critical / candidate-for-redaction).
    The register is a working artifact under `proposals/`, not manuscript text.
 3. High-level skim is for navigation only: digest + section headings + status passages across all chapters, plus
-   `reports/ledger.md`, the `proposals/` tree (titles and verdicts), `reports/graph/mission-graph.yaml` and the
-   latest `reports/sme-*.md` when present. Never assert verification of skimmed content. Any claim about a
+   `reports/ledger.md`, the `proposals/` tree (titles and verdicts), `reports/graph/mission-graph.yaml` (frozen
+   2026-11-15; background only, never current) and the latest `reports/sme-*.md` when present. Never assert verification of skimmed content. Any claim about a
    specific core aspect requires reading that passage, its dependencies, and every downstream use in full, and
    your Source reading section must state exactly what was read in full vs skimmed.
 
