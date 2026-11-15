@@ -3454,8 +3454,8 @@ Euler--Lagrange operators, including all higher-derivative terms, are
 Variations are taken with the fields and the derivatives required by
 the order of \(L\) fixed at the endpoints (or with compact support);
 otherwise the associated boundary terms must be retained. For the
-specified \(\mathcal P\), these reduced equations have been checked
-symbolically:
+specified \(\mathcal P\), the displayed reduced one-dimensional
+system is:
 \[
 \left.\mathcal E_f\right|_{N=1}\equiv0,\qquad
 \left.\mathcal E_N\right|_{N=1}
@@ -3463,8 +3463,7 @@ symbolically:
 \left[2r(1-f)+3\kappa\mathcal B[f]
 -\frac23\Lambda_{\mathrm{eff}}r^3\right].
 \]
-Thus \(N=1\) is a consistent vacuum branch of the reduced equations,
-and, with \(\alpha=-\kappa\), the lapse equation has first integral
+Conditional on the displayed identities, \(N=1\) is a branch of that one-dimensional system and, with \(\alpha=-\kappa\), the lapse equation has first integral
 \[
 \mathcal F[f]-\frac23\Lambda_{\mathrm{eff}}r^3=4M,\qquad
 \mathcal F[f]=2r(1-f)-3\alpha\,\mathcal B[f],
@@ -3508,6 +3507,45 @@ integration constant, for any \(\Lambda_{\mathrm{eff}}\). For
 as the ADM mass. For nonzero \(\Lambda_{\mathrm{eff}}\), its
 interpretation is not automatically the ADM mass.
 
+\paragraph{Reduction-consistency audit of the displayed identities.}
+A symbolic evaluation of the same reduced action with \(\mathcal P\) the
+invariant \eqref{eq:ECG}, written under the index reading in which each
+cubic factor \(R^a{}_{cbd}\) is the bivector map \(g^{cp}g^{dq}R_{apbq}\)
+(under this reading the two cubic chain terms of \eqref{eq:ECG} coincide
+as full index sums; a slot-shifted reading of the mixed factor is a
+different scalar and does not coincide), and with the Riemann convention
+above (\(R>0\) on spheres, checked on the unit two-sphere), gives the
+following bounded results. First, \(\left.\mathcal E_f\right|_{N=1}\)
+vanishes identically for \(\kappa=0\) but not for \(\kappa\ne0\): on this
+reading \(N=1\) is not an exact consistent truncation of the reduced
+system for a general profile, while on the slice \(f=1-kr^2\) one has
+\(\left.\mathcal E_f\right|_{N=1}=0\) for every \(k\). Second, the
+displayed identity for \(\left.\mathcal E_N\right|_{N=1}\) is not
+reproduced: already for \(\kappa=\Lambda_{\mathrm{eff}}=0\) the reduced
+operator is \(2-2f-4rf'-r^2f''\), which differs from
+\(\mathrm d[2r(1-f)]/\mathrm dr\) by \(-\mathrm d[r^2f']/\mathrm dr\),
+and the residual
+\(\left.\mathcal E_N\right|_{N=1}-\mathrm d[2r(1-f)-\tfrac23\Lambda_{\mathrm{eff}}r^3]/\mathrm dr\)
+is not a total \(\mathrm d/\mathrm dr\) of any local functional of \(f\)
+(Helmholtz criterion), for any overall normalisation of \(\mathcal P\).
+The displayed first-integral passage is internally consistent:
+\(\mathcal B[1-kr^2]=(16/3)k^3r^3\) and
+\(\mathcal B[1+c_2r^2]=-(16/3)c_2^3r^3\) reproduce the recorded
+\(k-8\alpha k^3=\Lambda_{\mathrm{eff}}/3\) and the recorded tail
+coefficients, so the discrepancy is localised in the cubic invariant and
+the truncation ansatz, not in the first-integral arithmetic. The slice
+\(N=1\), \(f=1-kr^2\) used in these evaluations is not constant curvature
+for this ansatz: \(\mathrm{Ric}_{\theta\theta}-(R/4)g_{\theta\theta}=kr^2/2\)
+there; on it \(R=6k\) and the invariant evaluates to \(216k^3\), so the
+lapse operator carries the cubic term \(216\kappa k^3\) against the
+recorded \(48\kappa k^3\), while on the constant-curvature slice
+\(N=\sqrt{1-kr^2}\), \(f=1-kr^2\) one has \(R=12k\) and invariant
+\(192k^3\). Not established: whether the intended density differs from
+\eqref{eq:ECG} as written, or whether a different static-spherical
+parametrisation was used; on the reading above the displayed identities
+then hold as the one-dimensional system recorded here rather than as
+consequences of \eqref{eq:S-ECG}.
+
 \paragraph{Maximally symmetric branch.}
 For \(f=1-kr^2\), the first integral gives
 \[
@@ -3537,10 +3575,11 @@ correction. For \(M>0\), its magnitude defines the characteristic
 scale \(r_*\sim|\alpha M|^{1/5}\); it is not a core scale.
 
 \paragraph{Status.}
-Conditional on the stated symmetric reduction, the reduced-action
-identities, first integral, regular-centre constraint, maximally
-symmetric curvature relation, and asymptotic tail above have been
-checked for the specified \(\mathcal P\). The cited Einstein-like
+Conditional on the stated symmetric reduction, the first-integral
+arithmetic, regular-centre constraint, maximally symmetric curvature
+relation, and asymptotic tail above are internally consistent for the
+displayed one-dimensional system, and a symbolic re-evaluation of the
+reduced-action identities for \(\mathcal P\) as written in~\eqref{eq:ECG} does not reproduce them. The cited Einstein-like
 linearized spectrum on maximally symmetric backgrounds is a separate
 result; no nonlinear, sourced, or non-maximally-symmetric stability
 claim follows. Problem~J
