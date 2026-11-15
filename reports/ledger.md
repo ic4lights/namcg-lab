@@ -684,3 +684,19 @@
 - G.spacetime-block (065 avenue 1: region of the non-compact/Lorentzian leaf x fibre) remains UNTRIED; 067 is a compact proxy.
 - Open avenues (review-r2, ranked): spacetime-block subsystem; depth-cancelling mutual-information combinations; frame average / non-toric projectors; within-core state; fixed-volume partition function; subleading orders / alternative algebra / 2303.08012 vacuum term.
 - Accepted text: proposals/067-product-sphere-edge/appH_insert_r2.tex (sha256 f0fa634c...), after appH L2894; expected result 637508 B, sha256 bd0616ec.... Would be integrated item 64; the 5th-item full scan falls due at 65.
+
+## 068-d1-torsion-nonzero (Problem D1) — IN PROGRESS, interrupted 2026-11-15 (not integrated)
+- Chain 2 top edge D1.torsion-T-nonzero. Round 1 not finished: scripts s1-s4 (backgrounds, spectrum, Heisenberg/Landau, forms) exist; no proposal-r1.md. Adversary test targets F3-F5, F10 pass to the resumed researcher.
+
+## 069-f-nonderivative-sector (Problem F, carries C and N; M3 PRIOR-CLAIM-ERROR) — r1 AWRR 2026-11-15, r2 interrupted (not integrated)
+- r1 AWRR | M3 | PRIOR-CLAIM-ERROR | first. Upheld: adversary F7 (cubic term vs def:matrix-coords-ext). With the cubic Hessian on K = S^2_N the K-vector operator is chi^2(L^2 - kappa S.L), kappa = 2 - c/chi; the 049 statements at appH L2810, L2824, L2844 (and L2846) hold only for the c = mu = 0 operators and the L2848 scope sentence does not say so. Bounded no-go: for c != 0 at large N, no point has V = T without a negative mode (class: K = S^2_N, bosonic cubic term only, Feynman gauge, one loop, Poisson limit on M).
+- Required for r2: F1 exact incomplete-gamma evaluation (GK values 41.1, 659; no zero at 0.926), F2 beta_K relation conditional on the uncomputed W_R response, F3 qualify "not a stationary point", F4-F8 minor.
+- Full scan (3(b)) owed at the ACCEPT round. Per the autonomy directive M3 does not stop the loop; integrate the correction after a plain ACCEPT.
+- Open avenues: rotating K; completed stabiliser (fermion bilinear, masses); regulator from the matrices of M; W_R response; other K; higher loops at r_c = 1.
+
+## 070-b-content-class (Problem B) — r1 AWRR 2026-11-15, r2 interrupted (not integrated)
+- r1 AWRR | none | none | first. Adversary F9 upheld as arithmetic: c_A - c_T = 4 kappa_X + n_D, (c_A - 1) - c_W(-1) = n_D/2; "3 kappa_X remains" holds at n_D = 0 only; at IKKT content (6,2) the comparison is 0 = 0 (or 2 != 0 for the fixed-state replica). No appH statement is false (L400-429 are scoped n_D = 0); the defect is the frontier edge B.matrix-state-edge-sector, which must be recorded as "n_D = 0 only; 0 = 0 at IKKT content". Do not open "B.kk-spectral-sums": the product class is already computed at appH L2673-2848.
+- Required for r2: M1 (replace "not examined" by the L2673-2694 statement with caveats), M2 (name the Tr rho^n hypotheses), m1-m5. r2 files partly written (appH_insert_r2.tex, apply_check_r2) when interrupted; no proposal-r2.md yet.
+- The ordinal-65 full scan is owed on the post-067 tree before a plain ACCEPT.
+
+## Run stop 2026-11-15 — external limit (Fable model limit, resets 2026-11-21 12:00 America/New_York). Digest: reports/run-20261115-1325.md. Integrated this run: 0 (067 accepted; integration blocked by missing .claude/state/allow_chapters).
