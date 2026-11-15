@@ -28,7 +28,7 @@ party who can approve a merge.
    - The gatekeeper never originates research or replacement derivations. It reviews, re-derives what it needs
      to verify, and issues a verdict. It is read-only. Re-derivation for verification is not origination.
    - Only the integrator edits `chapters/`, and only with text that has a gatekeeper `ACCEPT` for exactly that text.
-   - The advisory agents (sme, mission-graph, vector-miner, pathfinder, adversary) never originate manuscript
+   - The advisory agents (sme, pathfinder, adversary; vector-miner on demand) never originate manuscript
      mathematics; they serve the mission by routing literature, mapping dependencies, planning target order,
      stress-testing plans and integrated results, and triaging leads.
 5. **Nothing reaches `main` autonomously.** All work happens on currently checked out working branch. No push, no merge,

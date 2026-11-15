@@ -9,7 +9,8 @@ Read `CLAUDE.md` and `MILESTONE.md` first. Obey every hard rule there. You coord
 yourself, you do not edit `chapters/` (only the integrator does), and you never change status labels.
 
 Subagents cannot spawn subagents, so you call `researcher`, `fundamentality`, `gatekeeper`, `integrator` and the
-advisory agents `sme`, `mission-graph`, `vector-miner`, `pathfinder` and `adversary` directly with the Task tool, each with a self-contained
+advisory agents `sme`, `pathfinder` and `adversary` directly with the Task tool (`vector-miner` only on the
+on-demand basis in the roster directive below), each with a self-contained
 prompt (they have no shared memory). Pass file paths, not summaries.
 You may run **as many subagents in parallel as the goal needs** (author directive, 2026-11-14, removing the
 same-day main + 1 cap): issue independent Task calls together - several proposal chains, advisory passes and
@@ -45,49 +46,54 @@ reaches `chapters/`.
 
   Then branch on the final verdict as usual.
 
-**Mission-graph and vector-miner in the loop (author directive, 2026-11-14).** The two remaining advisory agents are
-now part of the cycle. They never originate manuscript mathematics, never change any status, priority or
-completion label, and their outputs are leads and maps, never progress on any problem (CLAUDE rules 4, 6, 8).
-Constraints:
-- Dispatch them at pipeline-stage boundaries (after an integration or a verdict). They may overlap pipeline agents
+**Advisory roster after the 2026-11-15 cost optimization (author directive, 2026-11-15; supersedes the 2026-11-14
+mission-graph / vector-miner cadence).** The in-cycle advisory agents are now `sme` (scouting and consultation,
+as above), `pathfinder` and `adversary` (minimised below). Containment rules for every advisory agent, in-cycle or
+on-demand:
+- Dispatch at pipeline-stage boundaries (after an integration or a verdict). They may overlap pipeline agents
   on *other* proposals - they never touch `chapters/` or proposal folders - but never run alongside the
   integrator, which owns the tree and the build.
 - They never count toward `--items` or `--rounds`, and a failed advisory pass never stalls or stops the loop.
 - On rate limit or budget pressure, skip pending advisory dispatches first; only the pipeline itself can stop a run.
-- Their writes (`reports/graph/`, `reports/vector/`, `scratch/vector/`) are uncommitted, like everything else.
+- Their writes (`reports/graph/`, `reports/vector/`, `reports/adversary/`, `scratch/vector/`) are uncommitted,
+  like everything else.
+- None of them originates manuscript mathematics, changes any status, priority or completion label, or counts as
+  progress on any problem (CLAUDE rules 4, 6, 8).
 
-Cadence:
-- **`mission-graph`** (full procedure in its agent definition): task it (i) at the start of a run, after pre-flight
-  and before target choice, whenever `reports/graph/mission-graph.yaml` is missing or predates the latest ledger
-  entry; (ii) after every fifth integration, together with the SME scout; and (iii) at the end of the run, before
-  writing the digest, if any item was integrated since the last refresh. Give the researcher the manifest and PNG
-  paths at step (a): use open/blocked nodes and the `gaps:` list for target choice. Paste its machine-readable
-  `GRAPH: ...` first line into the run digest. If the refresh fails, note it in the digest and continue.
-- **`vector-miner`** (state which modes apply, per its definition): task it (i) at the start of a run in mode 1
-  (external query mining on the current top gaps), or mode 5 (deep dig) when the target set is already named; and
-  (ii) after every fifth integration in mode 6 (congruence mining) against the results integrated since the last
-  pass. Save each reply verbatim as `reports/vector/vector-mining-<mode>-<YYYYMMDD-HHMM>.md`. Give the report path
-  to the researcher at step (b) as triage only: vector proximity is semantic similarity, not a derivation, and no
-  proposal may cite it as one. An actionable finding (a citation completion, a `notation-collision` hazard, a
-  `conjecture-candidate`) becomes a follow-up proposal through the normal researcher -> gatekeeper -> integrator
-  pipeline; the mining report itself is never integrated and changes no status.
+- **`mission-graph` is retired from the loop (2026-11-15).** Its agent definition is archived at
+  `archive/agents/mission-graph.md`; never dispatch it and never refresh the map.
+  `reports/graph/mission-graph.yaml` and its PNG are frozen background from 2026-11-07/08 by design - stale is
+  the expected state - and are not passed to subagents as current. The pathfinder frontier now carries the live
+  gap list (each gap with its own manuscript `src`), with Appendix H missing-step paragraphs as the fallback.
+  The author may render the picture on demand outside the pipeline (`scripts/render_mission_graph.py`).
+- **`vector-miner` is on-demand only (2026-11-15).** Removed from every cadence. Task it only when the researcher
+  is stuck on a named gap, in mode 1 (external query mining) or mode 5 (deep dig) scoped to that gap; not mode 6.
+  Save each reply verbatim as `reports/vector/vector-mining-<mode>-<YYYYMMDD-HHMM>.md`. Its output stays triage
+  for the researcher: vector proximity is semantic similarity, not a derivation, and no proposal may cite it as
+  one. An actionable finding (a citation completion, a `notation-collision` hazard, a `conjecture-candidate`)
+  becomes a follow-up proposal through the normal researcher -> gatekeeper -> integrator pipeline; the mining
+  report itself is never integrated and changes no status.
 
 **Pathfinder and adversary in the loop (author directive, 2026-11-14).** Two further advisory agents (full
 definitions in their agent files), same containment as the others: never counted toward `--items` or `--rounds`,
 skipped first under rate/budget pressure, outputs are plans, maps and warnings that integrate nothing and change
 no status.
-- **`pathfinder`** maintains the attack plan `reports/graph/frontier.yaml` on top of the mission-graph map: the
-  attempt-graph of candidate attack edges per gap (prior attempts with proposal refs and verdicts, bounded no-gos
-  with their hypothesis classes, stalls), ranked closable edges, and a partition of the frontier into disjoint
-  chains. Task it after every mission-graph refresh and before target choice, after every integration (diff
-  update), and at the end of the run. Use its chain partition at step (a) to choose disjoint parallel targets -
-  the `CLAUDE.md` disjoint-work rule is then enforced from the frontier, not from memory. Paste its `FRONTIER:
-  ...` first line into the run digest. If it fails, choose targets from the mission-graph `gaps:` list as before
-  and note it.
+- **`pathfinder`** maintains the attack plan `reports/graph/frontier.yaml` - the live gap/attack record since the
+  mission-graph agent was retired 2026-11-15: the attempt-graph of candidate attack edges per gap (prior attempts
+  with proposal refs and verdicts, bounded no-gos with their hypothesis classes, stalls), ranked closable edges,
+  and a partition of the frontier into disjoint chains. Task it before target choice at the start of a run
+  (rebuild/refresh `frontier.yaml` from the current sources; take live gaps from the Appendix H missing-step
+  paragraphs with `src` - the frozen mission-graph map is background only), after every integration (diff update),
+  and at the end of a run that integrated at least one item. Use its chain partition at step (a) to choose
+  disjoint parallel targets - the `CLAUDE.md` disjoint-work rule is then enforced from the frontier, not from
+  memory. Paste its `FRONTIER: ...` first line into the run digest. If it fails, choose targets from the current
+  Appendix H missing-step paragraphs directly and note it.
 - **`adversary`** attacks the plan and the joint body of results, not proposal texts (mode P pre-mortem, mode C
   assumption-collision scan, mode B counterexample probes; it never proposes fixes). Task it in mode P after the
-  frontier exists and before chains start, and in modes C/B after every fifth integration or before a milestone
-  verdict. Save each reply verbatim as `reports/adversary/adversary-<mode>-<YYYYMMDD-HHMM>.md`. Route findings:
+  frontier exists and before chains start, but only when the run fans out to two or more chains; modes C/B only
+  before a milestone verdict, not on a five-integration cadence (cost trim, 2026-11-15). If two consecutive runs
+  produce no actionable finding, suspend adversary dispatches and note it for the author. Save each reply verbatim
+  as `reports/adversary/adversary-<mode>-<YYYYMMDD-HHMM>.md`. Route findings:
   a `PLAN-HAZARD` becomes a named test target in the next gatekeeper dispatch for that chain and in the
   researcher's next-round instructions; `ASSUMPTION-COLLISION` and `CLAIM-ERROR-CANDIDATE` become follow-up
   proposals through the normal researcher -> gatekeeper -> integrator pipeline (the gatekeeper re-derives first;
@@ -182,10 +188,11 @@ stages below still run each item's pipeline in order, and integration and the sc
 
 **a. Choose the target/package.** If the argument names a problem or connected target set, use it. Otherwise ask
 the researcher to choose using the current Chapter 17 completion criterion and Appendix H (not a remembered
-problem list). Pass it the latest SME scout report, the mission-graph manifest and PNG (open/blocked nodes and the
-`gaps:` list), the pathfinder frontier `reports/graph/frontier.yaml` (ranked closable edges and the chain
-partition - when running parallel chains, take each chain's target from a different frontier chain), and the
-latest `reports/vector/` report (triage only - never a derivation aid) to inform the choice. Prefer a consequential unresolved step or a coherent bundle of related steps that materially
+problem list). Pass it the latest SME scout report and the pathfinder frontier `reports/graph/frontier.yaml`
+(gap list with `src`, ranked closable edges and the chain partition - when running parallel chains, take each
+chain's target from a different frontier chain; its `lead_for_researcher` lines carry the SME/vector/adversary
+leads). If an on-demand `reports/vector/` report exists from the current run, pass it too as triage only - never
+a derivation aid - to inform the choice. Prefer a consequential unresolved step or a coherent bundle of related steps that materially
 advances the stated scope. Do not create multiple small items merely to use the budget, combine unrelated targets
 only to reduce PR count, or repeat a route recorded as REJECTED/stalled in the ledger. `--items` defaults to one
 accepted proposal package per run; increase it only when the author requests multiple packages.
@@ -287,8 +294,7 @@ integrations; it is reported to the author with the smallest fix it names. Conta
 review is allowed under the autonomy directive.
 
 **Digest.** When the loop ends for any reason, write `reports/run-<YYYYMMDD-HHMM>.md` with exactly the contents listed at the
-end of `MILESTONE.md`, plus the latest `GRAPH: ...` summary line from the mission-graph and the `FRONTIER: ...`
-line from the pathfinder, if they ran during the run. Run `git log --oneline $BASE..HEAD`, `git diff --stat $BASE..HEAD`, and
+end of `MILESTONE.md`, plus the `FRONTIER: ...` line from the pathfinder, if it ran during the run. Run `git log --oneline $BASE..HEAD`, `git diff --stat $BASE..HEAD`, and
 `git diff --stat -- chapters bib` for the uncommitted manuscript changes awaiting the author. Leave the digest,
 ledger, proposals, reviews and reports all uncommitted in the working tree; the author commits everything.
 
