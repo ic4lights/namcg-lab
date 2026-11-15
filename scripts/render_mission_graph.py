@@ -1,820 +1,460 @@
-#!/usr/bin/env python3
-"""Render the NAMCG mission graph manifest (YAML) to a PNG.
+#!/usr/bin/env python
+"""Render reports/graph/mission-graph.yaml (schema v2) as a fully linked decision map.
 
-Usage:
-    python scripts/render_mission_graph.py [manifest.yaml] [out.png]
-
-Defaults:
-    manifest: reports/graph/mission-graph.yaml
-    output:   reports/graph/mission-graph.png
-
-Layout (neural-network style, schema v2 - math everywhere):
-    col 0     QM input symbols as mathtext (circles, from qm nodes' symbols_out
-              + render_math.symbols; manuscript-stated values shown where they exist)
-    col 1     premises as mathtext (diamonds, render_math.premises)
-    middle    namcg + ir derivation stages drawn AS their central manuscript
-              formula (render_math.displays), one column per dependency depth
-              (longest-path layering); red dashed border + "BLOCKED" tag when a
-              gap or an open required upstream starves them; amber dashed +
-              "+open-input" when only conditional upgrade paths are open
-    last      the GR criterion outputs as mathtext (goal circles; red dashed
-              ring + "BLOCKED - <reason>" when gaps or blocked layers feed them)
-
-Blocking is computed from the manifest: a node is blocked if it appears in a
-gaps: entry, consumes a gap symbol, or receives a required edge from an open or
-blocked node (fixed point). Values/units appear only where the manuscript
-states a number (render_math vsrc); nothing is invented.
-
-Edges carry no text (that is what made an earlier render unreadable); the
-symbol bridge for every edge stays in the YAML. Node state is shown by fill
-color AND a compact text tag, so state never rests on color alone.
-
-This script only draws what the manifest says and reports validation warnings;
-it never invents nodes, edges or statuses.
+Decision-map rule: NOTHING floats - every artifact in the manifest is wired into
+the flow.
+ - qm foundation nodes: boxes at the left emitting their symbols_out as circles
+   (grey "emits" links); circles carry the kind-styled edges into consumers.
+ - premises (assumptions/inputs): diamonds wired (purple dotted) to every node
+   listed in their used_by.
+ - gaps: red MISSING-TARGET nodes placed just upstream of what they block, with
+   red dash-dot edges into exactly the targets named in the manifest.
+ - namcg/ir problems and conditional theorems: stage columns at minimal
+   derivation depth (required/conditional edges only, cycle-guarded topological
+   longest path, compacted); each stage header says what the column accomplishes
+   and why it sits there.
+ - gr criterion items: rightmost column; gr.complete (if present) one further.
+Blocked propagation: a node is BLOCKED if named in gaps, a gap symbol is in its
+symbols_in, or a required edge comes from an open/blocked node (fixed point);
++open-input if only conditional edges come from open/blocked sources. supports
+edges never block and never add derivation depth.
+Usage: render_mission_graph.py MANIFEST.yaml OUT.png
 """
-
-import os
-import re
-import sys
-import textwrap
-
-try:
-    import yaml
-except ImportError:
-    sys.stderr.write("PyYAML is required: python -m pip install pyyaml\n")
-    sys.exit(2)
-
+import sys, textwrap
+import yaml
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Circle, RegularPolygon
-from matplotlib.lines import Line2D
+from matplotlib.patches import FancyBboxPatch, Circle, Polygon
 
-DEFAULT_MANIFEST = os.path.join("reports", "graph", "mission-graph.yaml")
-DEFAULT_OUT = os.path.join("reports", "graph", "mission-graph.png")
-
-SURFACE = "#fcfcfb"
-INK = "#0b0b0b"
-SEC = "#52514e"
-MUTED = "#898781"
-GRID = "#c3c2b7"
-
-# derivation node state -> (fill, ink, compact tag, legend label)
-STATE_STYLE = {
-    "foundation":           ("#e1e0d9", INK, "FOUND",     "foundation node"),
-    "derived":              ("#0ca30c", "#ffffff", "DERIVED", "closed: DERIVED"),
-    "closed-conditionally": ("#2a78d6", "#ffffff", "COND",  "closed conditionally"),
-    "open-critical":        ("#d03b3b", "#ffffff", "OPEN CP", "open - critical path"),
-    "open-optional":        ("#ec835a", INK, "OPEN OPT", "open - optional"),
-    "goal":                 ("#fcfcfb", INK, "GOAL",     "GR criterion output (not yet met)"),
-}
-EDGE_STYLE = {
-    "required":    ("solid",        SEC,    1.15),
-    "conditional": ((0, (1.5, 1.8)), MUTED, 1.0),
-    "supports":    ((0, (5, 3)),    MUTED,  0.9),
-    "gap":         ((0, (6, 3)),    "#d03b3b", 1.7),
-}
-
-NODE_W = 3.6
-NODE_H = 1.24
-CIRCLE_R = 0.30
-BLOCK_COLOR = "#d03b3b"
-UPGRADE_COLOR = "#fab219"
-DPI = 200
+OPEN_STATES = {"open-critical", "open-optional", "goal"}
+COL = {"foundation": "#dfe8f5", "open-critical": "#fde2e2", "open-optional": "#fff2cc",
+       "closed-conditionally": "#e2f2e2", "derived": "#b8e6b8", "goal": "#eeeeee"}
+KIND = {"required": ("#1f2937", "-", 1.5, 0.80), "conditional": ("#b36b00", "--", 1.2, 0.75),
+        "supports": ("#8a8a8a", ":", 1.0, 0.60)}
+PREM_C, GAP_C = "#6a1b9a", "#cc0000"
+BW, BH, XS, YS = 3.0, 1.5, 4.3, 1.95
+XQ, XC, XP, XG = 0.0, 0.8, 1.3, 1.75  # qm boxes, circles, premises, gap strip (x units of XS)
 
 
-def label_bg(t):
-    """Knock a surface-colored halo behind free-floating text so wires that
-    pass near it never run through the glyphs."""
-    t.set_bbox(dict(facecolor=SURFACE, edgecolor="none", pad=0.5, alpha=0.85))
-    return t
+def main(inp, out):
+    m = yaml.safe_load(open(inp, encoding="utf-8"))
+    nodes = {n["id"]: n for n in m["nodes"]}
+    edges = m["edges"]
+    gaps = m.get("gaps", [])
+    gapsyms = {g["symbol"]: g for g in gaps}
+    prem = m.get("inputs", [])
+    rm = m.get("render_math", {})
+    disp = rm.get("displays", {})
+    order = {n["id"]: k for k, n in enumerate(m["nodes"])}
 
-
-def base_name(sym):
-    """Display form: drop a trailing parenthetical qualifier."""
-    return re.sub(r"\s*\([^()]*\)\s*$", "", str(sym)).strip()
-
-
-def one_line(text, width=34):
-    s = " ".join(str(text).split())
-    if len(s) > width:
-        s = s[: width - 1] + "…"
-    return s
-
-
-class Graph:
-    def __init__(self, manifest):
-        self.warnings = []
-        self.nodes = {n["id"]: n for n in manifest.get("nodes") or []}
-        self.edges = manifest.get("edges") or []
-        self.inputs = manifest.get("inputs") or []
-        self.gaps = manifest.get("gaps") or []
-        self.manifest = manifest
-        rm = manifest.get("render_math") or {}
-        self.sym_math = rm.get("symbols") or {}    # symbol name -> {math,note,value,vsrc}
-        self.prem_math = rm.get("premises") or {}  # premise symbol -> {math,note}
-        self.disp = rm.get("displays") or {}       # node id -> {label,math,math2,note,value,vsrc}
-        self.circles = {}     # input-symbol circles: id -> dict(label, full, group, math...)
-        self.diamonds = {}    # premise nodes: id -> dict(label, math, note)
-        self.goals = {}       # gr node id -> dict(label, math, note, label_name, blocked)
-        self.blocked = set()      # node ids starved by gaps / open upstream (fixed point)
-        self.reason = {}          # node id -> list of human-readable block reasons
-        self.upgrade = set()      # node ids reachable only by conditional edges from open/blocked
-        self.up_reason = {}
-        self.deriv = [nid for nid, n in self.nodes.items()
-                      if n.get("layer") in ("namcg", "ir")]
-        self.links = []       # (a, b, kind) between drawn node ids
-        self.back_edges = set()
-        self._build()
-
-    def _qm_circles(self):
-        for nid, n in self.nodes.items():
-            if n.get("layer") != "qm":
+    # ---- blocking propagation (fixed point)
+    blocked, openinput = {}, {}
+    for g in gaps:
+        for b in g["blocks"]:
+            blocked.setdefault(b, []).append("gap: " + g["symbol"])
+    for n in nodes.values():
+        for s in n["symbols_in"]:
+            if s in gapsyms and "gap: " + s not in blocked.get(n["id"], []):
+                blocked.setdefault(n["id"], []).append("gap: " + s)
+    ch = True
+    while ch:
+        ch = False
+        for e in edges:
+            if e["kind"] not in ("required", "conditional"):
                 continue
-            for k, sym in enumerate(n.get("symbols_out") or []):
-                cid = "%s#sym%d" % (nid, k)
-                m = self.sym_math.get(str(sym))
-                if m is None:
-                    for key, val in self.sym_math.items():
-                        if base_name(key) == base_name(sym):
-                            m = val
-                            break
-                m = m or {}
-                self.circles[cid] = {"label": base_name(sym), "full": sym, "group": nid,
-                                     "math": m.get("math", ""), "note": m.get("note", ""),
-                                     "value": m.get("value", ""), "vsrc": m.get("vsrc", "")}
-
-    def _build(self):
-        self._qm_circles()
-        for i, inp in enumerate(self.inputs):
-            sym = str(inp.get("symbol", "?"))
-            m = self.prem_math.get(sym) or self.prem_math.get(base_name(sym)) or {}
-            self.diamonds["inp#%d" % i] = {"label": base_name(sym),
-                                           "math": m.get("math", ""), "note": m.get("note", "")}
-        for nid, n in self.nodes.items():
-            if n.get("layer") == "gr":
-                d = self.disp.get(nid) or {}
-                self.goals[nid] = {"label": one_line(n.get("title", nid), 30),
-                                   "math": d.get("math", ""), "note": d.get("note", ""),
-                                   "label_name": d.get("label", ""), "blocked": False}
-        # links
-        for e in self.edges:
-            f, t, kind = e.get("from"), e.get("to"), e.get("kind", "required")
-            if f not in self.nodes and t not in self.nodes:
-                self.warnings.append("edge with unknown endpoints: %r->%r" % (f, t))
+            f, t = nodes[e["from"]], nodes[e["to"]]
+            if t["layer"] == "qm" or f["layer"] == "qm":
                 continue
-            if kind not in EDGE_STYLE:
-                self.warnings.append("edge %s->%s has unknown kind %r" % (f, t, kind))
-                kind = "required"
-            if f.startswith("qm."):
-                matched = self._match_qm_circles(f, e.get("symbols") or [])
-                if not matched:
-                    self.warnings.append("edge %s->%s: no input symbol matched its symbols list; "
-                                         "attaching all symbols of %s" % (f, t, f))
-                    matched = [c for c in self.circles if self.circles[c]["group"] == f]
-                tgt = t if t in self.nodes else None
-                for c in matched:
-                    if tgt in self.goals:
-                        self.links.append((c, tgt, kind))
-                    elif tgt in self.deriv:
-                        self.links.append((c, tgt, kind))
-                    else:
-                        self.warnings.append("edge target unknown: %r" % t)
-            elif t.startswith("gr."):
-                if f in self.deriv or f in self.circles:
-                    self.links.append((f, t, kind))
-                else:
-                    self.warnings.append("edge %s->%s: source unknown" % (f, t))
+            src_open = f["state"] in OPEN_STATES or f["id"] in blocked
+            if not src_open or t["state"] == "foundation":
+                continue
+            if e["kind"] == "required":
+                tag = "upstream " + f["id"]
+                if tag not in blocked.setdefault(t["id"], []):
+                    blocked[t["id"]].append(tag)
+                    ch = True
             else:
-                if f in self.deriv and t in self.deriv:
-                    self.links.append((f, t, kind))
-                else:
-                    self.warnings.append("edge %s->%s: endpoints not derivations" % (f, t))
-        # premise diamonds -> users
-        for i, inp in enumerate(self.inputs):
-            did = "inp#%d" % i
-            for user in inp.get("used_by") or []:
-                if user in self.deriv or user in self.goals:
-                    self.links.append((did, user, "conditional"))
-                elif user.startswith("qm."):
-                    for c in [c for c in self.circles if self.circles[c]["group"] == user]:
-                        self.links.append((did, c, "conditional"))
-                else:
-                    self.warnings.append("input used_by unknown node: %r" % user)
-        # isolated qm symbols: note (drawn, labelled unused)
-        used = set(b for _, b, _ in self.links)
-        self.unused_symbols = [c for c in self.circles if c not in used and c not in
-                               set(a for a, _, _ in self.links)]
-        self._compute_blocked()
-        self._layer()
+                if t["id"] not in blocked and f["id"] not in openinput.get(t["id"], []):
+                    openinput.setdefault(t["id"], []).append(f["id"])
 
-    def _compute_blocked(self):
-        """Blocked = the node needs something the graph does not supply.
-        (1) named in gaps.blocks, or a gap symbol feeds its symbols_in;
-        (2) a REQUIRED link from an open or blocked node (fixed point);
-        supports/conditional links never propagate blocking - an open problem
-        target is simply unsupplied. Conditional feeders instead mark the
-        target 'upgrade': the only path into it runs through something still open."""
-        self.open_set = set(nid for nid, n in self.nodes.items()
-                            if str(n.get("state", "")).startswith("open"))
-        self.reason = {nid: [] for nid in self.nodes}
-        self.up_reason = {nid: [] for nid in self.nodes}
-        gap_syms = [(base_name(gp.get("symbol", "?")), set(gp.get("blocks") or []))
-                    for gp in self.gaps]
-        for nid, n in self.nodes.items():
-            for gsym, blocks in gap_syms:
-                if nid in blocks:
-                    self.reason[nid].append("gap: " + gsym)
-                elif any(base_name(s) == gsym for s in (n.get("symbols_in") or [])):
-                    self.reason[nid].append("gap input: " + gsym)
-        self.blocked = set(nid for nid in self.nodes if self.reason[nid])
-        changed = True
-        while changed:
-            changed = False
-            for a, b, kind in self.links:
-                if kind != "required" or b not in self.nodes or b in self.blocked:
-                    continue
-                if a in self.open_set or a in self.blocked:
-                    self.blocked.add(b)
-                    self.reason[b].append("unmet input from " + a)
-                    changed = True
-        for a, b, kind in self.links:
-            if kind != "conditional" or b not in self.nodes or b in self.blocked:
-                continue
-            if a in self.open_set or a in self.blocked:
-                self.upgrade.add(b)
-                self.up_reason[b].append("only path runs through open " + a)
-        for nid in self.goals:
-            self.goals[nid]["blocked"] = nid in self.blocked
+    # ---- layering of namcg + ir: required/conditional only; Kahn topological
+    # order so mid-layer cycles cannot inflate ranks; compacted to stages.
+    mid = [n for n in nodes.values() if n["layer"] in ("namcg", "ir")]
+    midids = {n["id"] for n in mid}
+    dedges = [(e["from"], e["to"]) for e in edges
+              if e["kind"] in ("required", "conditional") and e["from"] in midids and e["to"] in midids]
+    adj, indeg = {i: [] for i in midids}, {i: 0 for i in midids}
+    for f, t in dedges:
+        adj[f].append(t)
+        indeg[t] += 1
+    ind, ready = dict(indeg), sorted([i for i in midids if indeg[i] == 0], key=lambda i: order[i])
+    topo = []
+    while ready:
+        i = ready.pop(0)
+        topo.append(i)
+        for t in sorted(adj[i], key=lambda j: order[j]):
+            ind[t] -= 1
+            if ind[t] == 0:
+                ready.append(t)
+        ready.sort(key=lambda j: order[j])
+    seen = set()
+    for i in sorted(midids, key=lambda i: order[i]):
+        if i not in seen:
+            topo.append(i)
+            seen.add(i)
+    rank = {i: 0 for i in midids}
+    for i in topo:
+        for t in adj[i]:
+            rank[t] = max(rank[t], rank[i] + 1)
+    dense = {v: k for k, v in enumerate(sorted(set(rank.values())))}
+    layer = {i: dense[rank[i]] for i in midids}
+    nmid = max(layer.values()) + 1
 
-    def _match_qm_circles(self, qm_id, symbol_strings):
-        out = []
-        for s in symbol_strings:
-            head = s.split("->")[0].strip()
-            for cid, c in self.circles.items():
-                if c["group"] != qm_id:
-                    continue
-                if head.startswith(c["label"]) or c["label"] in s:
-                    out.append(cid)
-        seen, ded = set(), []
-        for cid in out:
-            if cid not in seen:
-                seen.add(cid)
-                ded.append(cid)
-        return ded
-
-    def _layer(self):
-        """Longest-path layering over derivation nodes; cycle back-edges recorded."""
-        preds = {n: [] for n in self.deriv}
-        succs = {n: [] for n in self.deriv}
-        for a, b, k in self.links:
-            if a in self.deriv and b in self.deriv:
-                preds[b].append(a)
-                succs[a].append(b)
-        layer = {}
-        state = {n: 0 for n in self.deriv}  # 0 unvisited, 1 in stack, 2 done
-
-        def resolve(n):
-            if state[n] == 2:
-                return layer[n]
-            if state[n] == 1:  # cycle: drop the back edge for layering
-                state[n] = 2
-                layer[n] = 1
-                return 1
-            state[n] = 1
-            best = 1
-            for p in preds[n]:
-                pl = resolve(p)
-                best = max(best, pl + 1)
-            state[n] = 2
-            layer[n] = best
-            return best
-
-        for n in self.deriv:
-            resolve(n)
-        # Depth is anchored by the nodes that actually feed the GR output
-        # column ("terminal"). Optional side branches that reach no goal are
-        # pulled back to the last terminal stage so they do not trail past the
-        # outputs as one-node tail columns.
-        succ_all = {}
-        for a, b, k in self.links:
-            succ_all.setdefault(a, []).append(b)
-        goal_ids = set(self.goals)
-        terminal = set()
-        stack = [n for n in self.deriv if any(b in goal_ids for b in succ_all.get(n, []))]
-        terminal.update(stack)
-        while stack:
-            n = stack.pop()
-            for a, b, k in self.links:
-                if b == n and a in self.deriv and a not in terminal:
-                    terminal.add(a)
-                    stack.append(a)
-        maxterm = max([layer[n] for n in terminal], default=1)
-        for n in self.deriv:
-            if n in terminal:
-                continue
-            tl = max([layer[p] for p in preds[n] if p in terminal], default=0)
-            layer[n] = max(min(layer[n], maxterm), tl + 1)
-        self.terminal = terminal
-        self.layer = layer
-        self.n_hidden = max(layer.values()) if layer else 0
-        self.succs = succs
-        self.preds = preds
-
-    def columns(self):
-        """Ordered columns: [circles], [diamonds], hidden cols 1..n, [goals]."""
-        cols = []
-        cols.append(list(self.circles.keys()))
-        cols.append(list(self.diamonds.keys()))
-        hidden = [[] for _ in range(self.n_hidden)]
-        for nid in self.deriv:
-            hidden[self.layer[nid] - 1].append(nid)
-        # barycenter ordering: two forward sweeps, one backward
-        def index_map(col):
-            return {nid: i for i, nid in enumerate(col)}
-        idx = {}
-        for c in cols + hidden:
-            for i, nid in enumerate(c):
-                idx[nid] = i
-        for sweep in range(3):
-            for h in hidden:
-                def key(nid):
-                    ps = [idx[p] for p in self.preds[nid] if p in idx]
-                    return sum(ps) / len(ps) if ps else idx.get(nid, 0)
-                h.sort(key=key)
-                for i, nid in enumerate(h):
-                    idx[nid] = i
-            for h in reversed(hidden):
-                def key(nid):
-                    ss = [idx[s] for s in self.succs[nid] if s in idx]
-                    return sum(ss) / len(ss) if ss else idx.get(nid, 0)
-                h.sort(key=key)
-                for i, nid in enumerate(h):
-                    idx[nid] = i
-        cols.extend(hidden)
-        cols.append(list(self.goals.keys()))
-        # order the input columns by the (weighted) position of their targets,
-        # so most wires run horizontally instead of fanning across rows
-        def source_key(nid):
-            ts = [idx[b] for a2, b, k in self.links if a2 == nid and b in idx]
-            return sum(ts) / len(ts) if ts else 0.0
-        for col in (cols[0], cols[1]):
-            col.sort(key=source_key)
-            for i, nid in enumerate(col):
-                idx[nid] = i
-        return cols
-
-    def node_label(self, nid):
-        if nid in self.circles:
-            return ("circle", self.circles[nid]["label"])
-        if nid in self.diamonds:
-            return ("diamond", self.diamonds[nid])
-        if nid in self.goals:
-            return ("goal", self.goals[nid]["label"])
-        n = self.nodes[nid]
-        tag = STATE_STYLE.get(n.get("state"), ("", "", "?", ""))[2]
-        return ("rect", one_line(n.get("title", nid), 30), nid, tag)
-
-
-def _fit_text(t, max_w_px, renderer, min_fs=4.5):
-    """Shrink a text artist until it fits a width budget (display px)."""
-    fs = t.get_fontsize()
-    start = fs
-    while fs > min_fs:
-        e = t.get_window_extent(renderer)
-        if e.width <= max_w_px:
-            break
-        fs = max(min_fs, fs * max_w_px / max(1.0, e.width) - 0.1)
-        t.set_fontsize(fs)
-    if fs < start - 0.05 and fs < 5.8:
-        sys.stderr.write("FITWARN: %r shrunk %.1f -> %.1f pt\n"
-                         % (t.get_text()[:30], start, fs))
-    return t
-
-
-def _overflow(texts, patches, rect_nodes, renderer):
-    """Hard check: every text of a boxed node must sit >= 80% inside its box."""
-    out = []
-    pmap = {o: _bb(p, renderer) for o, p in patches}
-    for owner, t in texts:
-        if owner not in rect_nodes:
+    # ---- columns: stages 2..nmid+1, gr next, gaps just upstream of first target
+    gr = [n for n in nodes.values() if n["layer"] == "gr"]
+    gridids = {n["id"] for n in gr}
+    gcol = {}  # node id -> x column (in XS units)
+    for i in midids:
+        gcol[i] = 2 + layer[i]
+    G = nmid + 2
+    gritems = [n["id"] for n in gr if n["id"] != "gr.complete"]
+    final = "gr.complete" if "gr.complete" in nodes else None
+    for i in gritems:
+        gcol[i] = G
+    if final is not None:
+        gcol[final] = G + 1
+    gapids = {}
+    gapedge = []
+    for g in gaps:
+        gid = "gap:" + g["symbol"]
+        tg = [b for b in g["blocks"] if b in gcol]
+        if not tg:
             continue
-        bb, pbb = _bb(t, renderer), pmap.get(owner)
-        if pbb is None or _area(bb) == 0:
-            continue
-        if _inter(bb, pbb) < 0.80 * _area(bb):
-            out.append("BOX-OVERFLOW  text %r of %s escapes its box"
-                       % (t.get_text()[:24], owner))
-    return out
+        c = min(gcol[b] for b in tg) - 1
+        gcol[gid] = c if c >= 2 else XG
+        gapids[gid] = g
+        for b in tg:
+            gapedge.append((gid, b))
 
-
-def _bb(o, renderer):
-    e = o.get_window_extent(renderer)
-    return (e.x0, e.y0, e.x1, e.y1)
-
-
-def _area(b):
-    return max(0.0, b[2] - b[0]) * max(0.0, b[3] - b[1])
-
-
-def _inter(a, b):
-    x0, x1 = max(a[0], b[0]), min(a[2], b[2])
-    y0, y1 = max(a[1], b[1]), min(a[3], b[3])
-    if x1 <= x0 or y1 <= y0:
-        return 0.0
-    return (x1 - x0) * (y1 - y0)
-
-
-def _collisions(texts, patches, arrows, renderer):
-    """Geometric overlap check on the drawn canvas (display coordinates)."""
-    out = []
-    tb = [(owner, t.get_text(), _bb(t, renderer)) for owner, t in texts]
-    pb = [(owner, _bb(p, renderer)) for owner, p in patches]
-    for i in range(len(tb)):
-        for j in range(i + 1, len(tb)):
-            if tb[i][0] == tb[j][0] or (tb[i][0] == "chrome" and tb[j][0] == "chrome"):
-                continue
-            ia = _inter(tb[i][2], tb[j][2])
-            amin = min(_area(tb[i][2]), _area(tb[j][2]))
-            if amin > 0 and ia > 0.30 * amin:
-                out.append("TEXT-TEXT  %r x %r  (%r / %r)"
-                           % (tb[i][0], tb[j][0], tb[i][1][:24], tb[j][1][:24]))
-    for owner, txt, bb in tb:
-        for powner, pbb in pb:
-            if powner == owner:
-                continue
-            if _inter(bb, pbb) > 0.30 * _area(bb):
-                out.append("TEXT-NODE  label %r of %s overlaps node %s"
-                           % (txt[:24], owner, powner))
-    for i in range(len(pb)):
-        for j in range(i + 1, len(pb)):
-            if pb[i][0] == pb[j][0]:
-                continue
-            ia = _inter(pb[i][1], pb[j][1])
-            if ia > 0.10 * min(_area(pb[i][1]), _area(pb[j][1])):
-                out.append("NODE-NODE  %s x %s" % (pb[i][0], pb[j][0]))
-    # arrows through foreign labels / node interiors: sample the actual curve
-    for a, b, p in arrows:
-        try:
-            verts = p.get_path().transformed(p.get_transform()).vertices
-        except Exception:
-            continue
-        for powner, pbb in pb:
-            if powner in (a, b):
-                continue
-            hits = sum(1 for vx, vy in verts
-                       if pbb[0] + 2 <= vx <= pbb[2] - 2 and pbb[1] + 2 <= vy <= pbb[3] - 2)
-            if hits >= 2:
-                out.append("ARROW-NODE  link %s->%s passes through node %s" % (a, b, powner))
-        for owner, txt, bb in tb:
-            if owner in ("chrome", a, b):
-                continue
-            m = 2.0
-            hit = any(bb[0] - m <= vx <= bb[2] + m and bb[1] - m <= vy <= bb[3] + m
-                      for vx, vy in verts)
-            if hit:
-                out.append("ARROW-LABEL  link %s->%s crosses label of %s (%s)"
-                           % (a, b, owner, txt[:24]))
-    return out
-
-
-def draw(manifest, out_path):
-    g = Graph(manifest)
-    cols = g.columns()
-    col_kind = (["sym"] + ["premise"] + ["hidden"] * g.n_hidden + ["goal"])
-    col_w = []
-    for k in col_kind:
-        col_w.append({"sym": 3.4, "premise": 3.6, "hidden": NODE_W + 0.9, "goal": 6.2}[k])
-
-    # layout: y slots per column; circles hug their column edge so the mathtext
-    # label has the whole column width to sit in
-    SLOT = {"sym": 0.9, "premise": 1.15, "hidden": NODE_H + 0.65, "goal": 1.5}
+    # ---- vertical ordering: barycentre sweeps over stage/gap/gr columns
+    cols = {}
+    for i, c in gcol.items():
+        cols.setdefault(c, []).append(i)
+    for c in cols:
+        cols[c].sort(key=lambda i: order.get(i, 999))
+    maxr = max(len(v) for v in cols.values())
     pos = {}
-    x = 0.0
-    col_x = []
-    maxh = 0.0
-    for col, kind, w in zip(cols, col_kind, col_w):
-        span = len(col) * SLOT[kind]
-        maxh = max(maxh, span)
-        col_x.append(x + w / 2.0)
-        if kind == "sym":
-            cx = x + CIRCLE_R + 0.18
-        elif kind == "goal":
-            cx = x + w - (CIRCLE_R + 0.10) - 0.10
+    adjc = {i: set() for i in gcol}
+    for f, t in dedges:
+        adjc[f].add(t)
+        adjc[t].add(f)
+    for e in edges:  # supports edges also help ordering (no depth, but keep neighbours close)
+        f, t = e["from"], e["to"]
+        if f in adjc and t in adjc:
+            adjc[f].add(t)
+            adjc[t].add(f)
+    for f, t in gapedge:
+        adjc[f].add(t)
+        adjc[t].add(f)
+
+    def place():  # each column centred on the same vertical mid-line
+        for c, ids in cols.items():
+            top = (maxr - 1) / 2.0 * YS
+            start = top - (len(ids) - 1) / 2.0 * YS
+            for r, i in enumerate(ids):
+                pos[i] = (c * XS, start - r * YS)
+
+    for it in range(8):
+        place()
+        keys = sorted(cols, reverse=(it % 2 == 1))
+        for c in keys:
+            ids = cols[c]
+
+            def bary(i):
+                ys = [pos[j][1] for j in adjc[i] if abs(pos[j][0] - pos[i][0]) > 0.5]
+                return sum(ys) / len(ys) if ys else pos[i][1]
+            ids.sort(key=lambda i: (bary(i), order.get(i, 999)))
+    place()
+
+    # ---- qm boxes, symbol circles (emitted by qm boxes), premise diamonds
+    qmids = [n["id"] for n in m["nodes"] if n["layer"] == "qm"]
+    qsyms = [(s, nid) for nid in qmids for s in nodes[nid]["symbols_out"]]
+    ytop_col = max(pos[i][1] for i in gcol)
+    ybot_col = min(pos[i][1] for i in gcol)
+    span = (ytop_col - ybot_col) + BH
+    for r, i in enumerate(qmids):  # qm boxes centred vertically
+        pos[i] = (XQ * XS, (len(qmids) - 1) / 2.0 * 3.1 - r * 3.1)
+    cons = {}  # circle -> consumers
+    for e in edges:
+        f, t = e["from"], e["to"]
+        if nodes[f]["layer"] == "qm":
+            for s in e["symbols"]:
+                key = s.split(" -> ")[0].strip()
+                if key in nodes[f]["symbols_out"]:
+                    cons.setdefault(("sym", key), []).append(t)
+    def cir_bary(key):
+        ys = [pos[c][1] for c in cons.get(key, []) if c in pos and nodes[c]["layer"] != "qm"]
+        return sum(ys) / len(ys) if ys else 0
+    qsyms.sort(key=lambda so: cir_bary(("sym", so[0])))
+    for k, (s, nid) in enumerate(qsyms):
+        y = ytop_col + BH / 2 - k * span / max(1, len(qsyms) - 1)
+        pos["sym:" + s] = (XC * XS, y)
+    pcons = {}
+    for i in prem:
+        pcons[i["symbol"]] = [u for u in i["used_by"] if u in nodes]
+    premlist = sorted(prem, key=lambda i: (sum(pos[u][1] for u in pcons[i["symbol"]] if u in pos) /
+                                           max(1, len([u for u in pcons[i["symbol"]] if u in pos]))
+                                           if any(u in pos for u in pcons[i["symbol"]]) else 0,
+                                           i["symbol"]))
+    for k, i in enumerate(premlist):
+        y = ytop_col + BH / 2 - k * span / max(1, len(prem) - 1)
+        pos["pre:" + i["symbol"]] = (XP * XS, y)
+
+    # ---- figure
+    last = (G + 1) if final is not None else G
+    xmin, xmax = -3.0, last * XS + BW / 2 + 1.2
+    ymin = min(pos[i][1] for i in pos) - BH / 2 - 1.6
+    ymax = max(pos[i][1] for i in pos) + BH / 2 + 3.4
+    fig_w, fig_h = (xmax - xmin) * 0.60, (ymax - ymin) * 0.63
+    fig, ax = plt.subplots(figsize=(fig_w, fig_h), dpi=110)
+    ax.set_aspect("auto")
+    renderer = fig.canvas.get_renderer()
+    warns = {"hard": 0, "soft": 0}
+    boxes = {}
+    for i in set(gcol) | set(qmids):
+        x, y = pos[i]
+        boxes[i] = (x - BW / 2, y - BH / 2, x + BW / 2, y + BH / 2)
+
+    def seg_hits(p, q, r):
+        x0, y0, x1, y1 = r
+        for k in range(1, 14):
+            t = k / 14
+            x = p[0] + (q[0] - p[0]) * t
+            y = p[1] + (q[1] - p[1]) * t
+            if x0 + .06 < x < x1 - .06 and y0 + .06 < y < y1 - .06:
+                return True
+        return False
+
+    def anchor(i, ox):
+        x, y = pos[i]
+        if i in boxes:
+            return (x + BW / 2, y) if ox > x else (x - BW / 2, y)
+        return (x + 0.45, y) if ox > x else (x - 0.45, y)
+
+    def curve(p0, p1):
+        dx = (p1[0] - p0[0]) * 0.42
+        c0, c1 = (p0[0] + dx, p0[1]), (p1[0] - dx, p1[1])
+        pts = []
+        for k in range(25):
+            t = k / 24.0
+            mt = 1 - t
+            x = mt**3 * p0[0] + 3 * mt**2 * t * c0[0] + 3 * mt * t**2 * c1[0] + t**3 * p1[0]
+            y = mt**3 * p0[1] + 3 * mt**2 * t * c0[1] + 3 * mt * t**2 * c1[1] + t**3 * p1[1]
+            pts.append((x, y))
+        return pts
+
+    side_n, ncurves = {}, [0]
+
+    def fit_math(t, i):
+        fs = 8.0
+        while True:
+            t.set_fontsize(fs)
+            bb = t.get_window_extent(renderer=renderer).transformed(ax.transData.inverted())
+            if (bb.width <= BW - 0.12 and bb.height <= BH * 0.42) or fs <= 4.5:
+                break
+            fs -= 0.5
+        if bb.width > BW - 0.12 or bb.height > BH * 0.42:
+            warns["hard"] += 1
+            print("WARN BOX-OVERFLOW (math clamped at 4.5pt)", i)
+
+    def wire(a, b, color, ls, lw, alpha, z=1):
+        ox, oy = pos[b]
+        same = abs(pos[a][0] - ox) < 0.6 and (a in boxes and b in boxes)
+        if same:  # same column: route as a side loop on the right
+            k = (pos[a][1] + oy) / 2
+            n = side_n.get(round(k, 2), 0)
+            side_n[round(k, 2)] = n + 1
+            xr = pos[a][0] + BW / 2
+            off = 0.5 + 0.22 * (n % 3)
+            p0, p3 = (xr, pos[a][1]), (xr, oy)
+            c0, c1 = (xr + off * 1.7, pos[a][1]), (xr + off * 1.7, oy)
+            pts = []
+            for j in range(25):
+                t = j / 24.0
+                mt = 1 - t
+                pts.append((mt**3 * p0[0] + 3 * mt**2 * t * c0[0] + 3 * mt * t**2 * c1[0] + t**3 * p0[0],
+                            mt**3 * p0[1] + 3 * mt**2 * t * c0[1] + 3 * mt * t**2 * c1[1] + t**3 * p3[1]))
         else:
-            cx = x + w / 2.0
-        y = span / 2.0
-        for nid in col:
-            pos[nid] = (cx, y)
-            y -= SLOT[kind]
-        x += w
-    # every column is centered about y = 0 (span/2 down to -span/2)
-    top = maxh / 2.0 + 1.6
-    bottom = -maxh / 2.0 - 2.3
-    x_hi = x + 0.8
-    y_hi = top + 1.5
+            pa = anchor(a, ox)
+            pb = anchor(b, pos[a][0])
+            pts = curve(pa, pb)
+        ncurves[0] += 1
+        xs_, ys_ = zip(*pts)
+        ax.plot(xs_, ys_, color=color, ls=ls, lw=lw, alpha=alpha, zorder=z)
+        ax.annotate("", xy=pts[-1], xytext=pts[-2], zorder=z,
+                    arrowprops=dict(arrowstyle="-|>", color=color, ls="solid", lw=lw,
+                                    shrinkA=0, shrinkB=0, alpha=min(1, alpha + 0.2)))
+        for u, v in zip(pts[:-1], pts[1:]):
+            for j, r in boxes.items():
+                if j not in (a, b) and seg_hits(u, v, r):
+                    warns["hard"] += 1
+                    print("WARN wire-through-node", a, "->", b, "via", j)
 
-    # figure size follows the data aspect exactly, so set_aspect("equal")
-    # fills the figure instead of letterboxing it
-    xr = x_hi + 0.8
-    yr = (y_hi + 0.8) - bottom
-    fig_w = min(20.0, max(14.0, yr * 1.05))
-    fig_h = fig_w * yr / xr
-    fig, ax = plt.subplots(figsize=(fig_w, fig_h))
-    fig.patch.set_facecolor(SURFACE)
-    ax.set_facecolor(SURFACE)
-    ppu = fig_w * DPI / xr          # display pixels per layout unit
+    # ---- wires: qm box -> circles -> consumers; premises -> consumers; gaps -> blocks
+    for nid in qmids:
+        for s in nodes[nid]["symbols_out"]:
+            wire(nid, "sym:" + s, "#557799", "-", 0.9, 0.65)
+    for e in edges:
+        f, t = e["from"], e["to"]
+        color, ls, lw, al = KIND[e["kind"]]
+        if nodes[f]["layer"] == "qm":
+            for s in e["symbols"]:
+                key = s.split(" -> ")[0].strip()
+                if key in nodes[f]["symbols_out"]:
+                    wire("sym:" + key, t, color, ls, lw, al)
+        else:
+            wire(f, t, color, ls, lw, al)
+    for i in prem:
+        for u in pcons[i["symbol"]]:
+            wire("pre:" + i["symbol"], u, PREM_C, ":", 0.9, 0.5)
+    for gid, t in gapedge:
+        wire(gid, t, GAP_C, "-.", 1.6, 0.85)
 
-    texts, patches, arrows, fit = [], [], [], []
-    rect_nodes = set()             # nodes whose own texts must stay inside their box
+    # ---- QM foundation boxes
+    for nid in qmids:
+        n = nodes[nid]
+        x0, y0, x1, y1 = boxes[nid]
+        ax.add_patch(FancyBboxPatch((x0, y0), BW, BH, boxstyle="round,pad=0.02,rounding_size=0.1",
+                                    fc=COL["foundation"], ec="#3a5a7a", lw=1.4, zorder=3))
+        ax.text(x0 + 0.08, y1 - 0.06, "FOUNDATION (QM)", fontsize=5.8, va="top", color="#3a5a7a", zorder=4)
+        ax.text(x0 + 0.08, y1 - 0.25, "\n".join(textwrap.wrap(n["title"], 34)[:3]), fontsize=6.3,
+                va="top", weight="bold", zorder=4)
+        t = ax.text((x0 + x1) / 2, y0 + BH * 0.30, n["math"][0]["tex"], fontsize=7.5, ha="center",
+                    va="center", zorder=4)
+        fit_math(t, i=nid)
 
-    # column headers
-    names = [u"QM input symbols (ℏ=c=1)", "assumed premises"] + \
-            ["derivation stage %d" % (i + 1) for i in range(g.n_hidden)] + \
-            ["GR outputs"]
-    for cx, name in zip(col_x, names):
-        texts.append(("chrome", label_bg(ax.text(cx, top - 0.35, name, ha="center", va="top",
-                                                 fontsize=9, fontweight="bold", color=INK))))
+    # ---- circles (symbols emitted by the QM boxes)
+    for s, nid in qsyms:
+        x, y = pos["sym:" + s]
+        ax.add_patch(Circle((x, y), 0.45, fc=COL["foundation"], ec="#3a5a7a", lw=1.0, zorder=3))
+        sm = rm.get("symbols", {}).get(s, {})
+        ax.text(x, y, sm.get("math", s), ha="center", va="center", fontsize=8.5, zorder=4)
+        ax.text(x, y - 0.58, textwrap.shorten(s, 26), ha="center", va="top", fontsize=5, color="#3a5a7a",
+                zorder=4, bbox=dict(boxstyle="square,pad=0.12", fc="white", ec="none", alpha=0.7))
 
-    # edges
-    colidx = {nid: i for i, c in enumerate(cols) for nid in c}
-    kinds_seen = set()
-    for i, (a, b, kind) in enumerate(g.links):
-        if a not in pos or b not in pos:
+    # ---- premise diamonds (wired into the flow)
+    for i in prem:
+        x, y = pos["pre:" + i["symbol"]]
+        ax.add_patch(Polygon([(x - 0.5, y), (x, y + 0.45), (x + 0.5, y), (x, y - 0.45)],
+                             fc="#f3e5f5", ec=PREM_C, lw=1.2, zorder=3))
+        pm = rm.get("premises", {}).get(i["symbol"], {})
+        halo = dict(boxstyle="square,pad=0.12", fc="white", ec="none", alpha=0.75)
+        ax.text(x - 0.65, y + 0.10, i["symbol"], fontsize=5.8, va="bottom", ha="right",
+                color=PREM_C, weight="bold", zorder=4, bbox=halo)
+        ax.text(x - 0.65, y - 0.06, textwrap.shorten(pm.get("math", pm.get("note", i["kind"])), 30),
+                fontsize=5.2, va="top", ha="right", color="#555", zorder=4, bbox=halo)
+
+    # ---- gap nodes: missing targets, wired into what they block
+    for gid, g in gapids.items():
+        x, y = pos[gid]
+        x0, y0, x1, y1 = boxes[gid]
+        ax.add_patch(FancyBboxPatch((x0, y0), BW, BH, boxstyle="round,pad=0.02,rounding_size=0.1",
+                                    fc="#fdeaea", ec=GAP_C, lw=1.6, ls="--", zorder=3))
+        ax.text(x0 + 0.08, y1 - 0.06, "MISSING TARGET (gap)", fontsize=5.8, va="top", color=GAP_C, zorder=4)
+        ax.text(x0 + 0.08, y1 - 0.25, "\n".join(textwrap.wrap(g["symbol"], 30)[:2]), fontsize=6.3,
+                va="top", weight="bold", color="#8b0000", zorder=4)
+        ax.text(x0 + 0.08, y0 + 0.42, "\n".join(textwrap.wrap(g.get("note", ""), 44)[:3]), fontsize=4.9,
+                va="bottom", color="#666", zorder=4)
+
+    # ---- derivation / GR boxes (gap boxes drawn above)
+    for i in gcol:
+        if i in gapids:
             continue
-        ls, color, lw = EDGE_STYLE[kind]
-        kinds_seen.add(kind)
-        ax_, ay = pos[a]
-        bx, by = pos[b]
-        same_col = colidx.get(a) == colidx.get(b)
-        if same_col:
-            # side chain inside one stage: route on the left of the column
-            ax_ = ax_ - (NODE_W / 2.0 - 0.15 if a in g.nodes else CIRCLE_R + 0.02)
-            bx = bx - (NODE_W / 2.0 + 0.05 if b in g.nodes else CIRCLE_R + 0.02)
-        else:
-            # trim to node boundaries
-            if a in g.circles or a in g.diamonds:
-                ax_ += CIRCLE_R + 0.02
-            elif a in g.goals:
-                ax_ -= CIRCLE_R + 0.20
-            else:
-                ax_ += NODE_W / 2.0 - 0.15
-            if b in g.circles or b in g.diamonds:
-                bx -= CIRCLE_R + 0.02
-            elif b in g.goals:
-                bx -= CIRCLE_R + 0.20
-            else:
-                bx -= NODE_W / 2.0 + 0.05
-        span = colidx.get(b, 0) - colidx.get(a, 0)
-        spread = ((i % 5) - 2) * 0.05
-        if same_col:
-            rad = -0.5 if ay >= by else 0.5
-        elif bx > ax_:
-            # adjacent columns: gentle arc; skipping columns: arc harder so the
-            # wire bends around the intermediate stage instead of through it
-            rad = (0.07 + 0.12 * max(0, span - 1)) + spread
-        else:
-            rad = 0.35
-        arrow = FancyArrowPatch((ax_, ay), (bx, by), arrowstyle="-|>",
-                                mutation_scale=8, linestyle=ls, color=color,
-                                linewidth=lw, alpha=0.75,
-                                connectionstyle="arc3,rad=%.3f" % rad,
-                                shrinkA=1, shrinkB=1)
-        ax.add_patch(arrow)
-        arrows.append((a, b, arrow))
+        n = nodes[i]
+        x0, y0, x1, y1 = boxes[i]
+        bl = i in blocked
+        oi = i in openinput
+        ec = GAP_C if bl else ("#e69500" if oi else "#333333")
+        ax.add_patch(FancyBboxPatch((x0, y0), BW, BH, boxstyle="round,pad=0.02,rounding_size=0.1",
+                                    fc=COL[n["state"]], ec=ec, lw=2.0 if (bl or oi) else 1.0,
+                                    ls="--" if bl else "-", zorder=3))
+        tag = n["state"].upper() + (" | BLOCKED" if bl else (" | +open-input" if oi else ""))
+        ax.text(x0 + 0.08, y1 - 0.06, tag, fontsize=5.8, va="top", color="#8b0000" if bl else "#333", zorder=4)
+        ax.text(x0 + 0.08, y1 - 0.25, "\n".join(textwrap.wrap(n["title"], 34)[:3]), fontsize=6.3,
+                va="top", weight="bold", zorder=4)
+        d = disp.get(i, {})
+        t = ax.text((x0 + x1) / 2, y0 + BH * 0.26, d.get("math", ""), fontsize=8, ha="center", va="center", zorder=4)
+        fit_math(t, i)
+        ax.text(x1 - 0.06, y0 + 0.04, d.get("label", ""), fontsize=5.2, ha="right", va="bottom",
+                color="#1a237e", zorder=4)
+        if bl:
+            why = "; ".join(blocked[i])
+            ax.text(x0 + 0.08, y0 + 0.16, "BLOCKED: " + textwrap.shorten(why, 52), fontsize=4.8,
+                    va="bottom", color=GAP_C, zorder=4)
 
-    # nodes - every label is the node's own mathtext where the manifest has one
-    states_seen = set()
-    for nid, (cx, cy) in pos.items():
-        spec = g.node_label(nid)
-        if spec[0] == "circle":
-            c = g.circles[nid]
-            p = Circle((cx, cy), CIRCLE_R, facecolor="#e1e0d9", edgecolor=SEC, linewidth=0.9)
-            ax.add_patch(p)
-            patches.append((nid, p))
-            extra = c["value"] or c["note"]
-            t = label_bg(ax.text(cx + CIRCLE_R + 0.12, cy + (0.13 if extra else 0.0),
-                                 c["math"] or c["label"], ha="left", va="center",
-                                 fontsize=7.8, color=INK))
-            texts.append((nid, t)); fit.append((t, 2.6 * ppu))
-            if extra:
-                t2 = label_bg(ax.text(cx + CIRCLE_R + 0.12, cy - 0.19, extra, ha="left",
-                                      va="center", fontsize=5.2, color=MUTED))
-                texts.append((nid, t2)); fit.append((t2, 2.6 * ppu))
-            if nid in g.unused_symbols:
-                texts.append((nid, label_bg(ax.text(cx - CIRCLE_R - 0.12, cy, "unused",
-                                                    ha="right", va="center", fontsize=5.8,
-                                                    color=MUTED, style="italic"))))
-        elif spec[0] == "diamond":
-            d = g.diamonds[nid]
-            p = RegularPolygon((cx, cy), numVertices=4, radius=CIRCLE_R,
-                               orientation=0.785398, facecolor="#f0efec",
-                               edgecolor=SEC, linewidth=0.8)
-            ax.add_patch(p)
-            patches.append((nid, p))
-            t = label_bg(ax.text(cx + CIRCLE_R + 0.10, cy + (0.12 if d["note"] else 0.0),
-                                 d["math"] or d["label"], ha="left", va="center",
-                                 fontsize=6.8, color=SEC))
-            texts.append((nid, t)); fit.append((t, 2.9 * ppu))
-            if d["note"]:
-                t2 = label_bg(ax.text(cx + CIRCLE_R + 0.10, cy - 0.16, d["note"], ha="left",
-                                      va="center", fontsize=5.6, color=MUTED))
-                texts.append((nid, t2)); fit.append((t2, 2.9 * ppu))
-        elif spec[0] == "goal":
-            gd = g.goals[nid]
-            blocked = gd["blocked"]
-            p = Circle((cx, cy), CIRCLE_R + 0.10, facecolor=SURFACE,
-                       edgecolor=BLOCK_COLOR if blocked else SEC,
-                       linewidth=1.6 if blocked else 1.1, linestyle=(0, (3, 2)))
-            ax.add_patch(p)
-            patches.append((nid, p))
-            tx = cx - (CIRCLE_R + 0.10) - 0.20
-            wmax = (col_w[-1] - 1.3) * ppu
-            t1 = label_bg(ax.text(tx, cy + 0.46, spec[1], ha="right", va="center",
-                                  fontsize=5.8, color=SEC))
-            texts.append((nid, t1)); fit.append((t1, wmax))
-            if gd["math"]:
-                t2 = label_bg(ax.text(tx, cy + 0.06, gd["math"], ha="right", va="center",
-                                      fontsize=7.0, color=INK))
-                texts.append((nid, t2)); fit.append((t2, wmax))
-            if gd["label_name"]:
-                t3 = label_bg(ax.text(tx, cy - 0.30, gd["label_name"], ha="right", va="center",
-                                      fontsize=5.2, color=MUTED))
-                texts.append((nid, t3)); fit.append((t3, wmax))
-            if blocked:
-                why = "; ".join(g.reason.get(nid, ["?"]))
-                st = "\n".join(textwrap.wrap(one_line(why, 100), 44))
-                t4 = label_bg(ax.text(tx, cy - 0.60, st, ha="right", va="center",
-                                      fontsize=5.6, color=BLOCK_COLOR))
-                texts.append((nid, t4)); fit.append((t4, wmax))
-        else:
-            _, title, _, tag = spec
-            n = g.nodes[nid]
-            st = n.get("state", "open-critical")
-            fill, ink, compact, legend = STATE_STYLE.get(st, STATE_STYLE["open-critical"])
-            states_seen.add(st)
-            d = g.disp.get(nid) or {}
-            blocked_vis = (nid in g.blocked) and not st.startswith("open")
-            upg = (nid in g.upgrade) and not st.startswith("open")
-            edge, els, elw = INK, "solid", 0.8
-            if upg:
-                edge, els, elw = UPGRADE_COLOR, (0, (2, 2)), 1.1
-            if blocked_vis:
-                edge, els, elw = BLOCK_COLOR, (0, (4, 2)), 1.4
-            p = FancyBboxPatch((cx - NODE_W / 2.0, cy - NODE_H / 2.0), NODE_W, NODE_H,
-                               boxstyle="round,pad=0.05,rounding_size=0.10",
-                               facecolor=fill, edgecolor=edge, linestyle=els, linewidth=elw)
-            ax.add_patch(p)
-            patches.append((nid, p))
-            rect_nodes.add(nid)
-            texts.append((nid, ax.text(cx - NODE_W / 2.0 + 0.12, cy + NODE_H / 2.0 - 0.10,
-                                       nid, ha="left", va="top", fontsize=6.4, family="monospace",
-                                       fontweight="bold", color=ink)))
-            if d.get("label"):
-                texts.append((nid, ax.text(cx + NODE_W / 2.0 - 0.12, cy + NODE_H / 2.0 - 0.10,
-                                           d["label"], ha="right", va="top", fontsize=5.4,
-                                           color=ink, alpha=0.85)))
-            rows = []
-            if d.get("math"):
-                rows.append((d["math"], 6.4))
-            if not rows:
-                rows.append((one_line(title, 34), 5.8))
-            if d.get("math2"):
-                rows.append((d["math2"], 6.2))
-            if d.get("value"):
-                rows.append((d["value"], 5.9))
-            elif d.get("note"):
-                rows.append((d["note"], 5.4))
-            k = len(rows)
-            for i, (s, fsz) in enumerate(rows):
-                yy = 0.0 if k == 1 else 0.24 - i * 0.48 / (k - 1)
-                t = ax.text(cx, cy + yy, s, ha="center", va="center", fontsize=fsz, color=ink)
-                texts.append((nid, t)); fit.append((t, (NODE_W - 0.24) * ppu))
-            tagline = compact
-            if blocked_vis:
-                tagline += "  +BLOCKED"
-            elif upg:
-                tagline += "  +open-input"
-            texts.append((nid, ax.text(cx, cy - NODE_H / 2.0 + 0.10, tagline, ha="center",
-                                       va="bottom", fontsize=5.7, color=ink, alpha=0.92)))
+    # ---- column headers
+    ROLE = {"A.map": "A dictionary", "B.ward": "B Ward identity", "C.scalar": "C conformal mode",
+            "D1.lorentz": "D1 local Lorentz", "E.sig": "E signature", "F.coeff": "F G_eff coefficients",
+            "G.ent": "G boundary entropy", "H.nu": "H nu (optional)", "I.drag": "I drag (optional)",
+            "J.ecg": "J ECG (optional)", "N.eft": "N EFT/ghost control", "ch15.lab": "Ch15 laboratory",
+            "ir.leff": "IR Lambda_eff (thm:Leff)", "thm.split": "delta-Phi split",
+            "thm.locking": "Lorentz locking", "thm.repairII": "composite-metric repair",
+            "thm.mT": "m_T = 0", "thm.Geff": "G_eff truncated", "thm.conservation": "stress conservation"}
+    NAMED = {
+        tuple(sorted(["A.map", "D1.lorentz", "E.sig", "G.ent", "H.nu", "I.drag", "N.eft",
+                      "ch15.lab", "thm.locking", "thm.split"])):
+            "starting points: the critical targets A, D1, E, G, N fed only by QM symbols and "
+            "premises, plus the conditional theorems and optional problems that start here",
+        tuple(sorted(["B.ward", "thm.repairII"])):
+            "prerequisites closed first: B (Ward identity, after A) and the composite-metric "
+            "repair (after Lorentz locking)",
+        tuple(sorted(["C.scalar", "thm.Geff", "thm.mT"])):
+            "conditional-theorem core: C (conformal mode), m_T = 0 and the truncated G_eff "
+            "identity, each needing a stage-1 closure in place",
+        tuple(sorted(["F.coeff", "ir.leff"])):
+            "the couplings: physical G_eff coefficients (F) and the IR boundary datum "
+            "Lambda_eff, downstream of the G_eff identity and the repair",
+        tuple(sorted(["J.ecg", "thm.conservation"])):
+            "consistency and optional extension: conservation of the total stress, and the "
+            "ECG solution family",
+    }
+    hd = {XQ: "QM foundation", XC: "symbols (emitted)", XP: "premises: every diamond is wired to the nodes that depend on it",
+          XG: "missing targets: each red node blocks exactly what the manifest names"}
+    for l in range(nmid):
+        c = 2 + l
+        ids = [i for i in cols[c] if i in midids]
+        name = NAMED.get(tuple(sorted(ids)),
+                         ", ".join(ROLE.get(i, i) for i in sorted(ids, key=lambda i: order[i])))
+        ps = sorted({layer[f] for (f, tt) in dedges if tt in cols[c] and f in midids and layer[f] < l})
+        why = ("no upstream stage: fed only by QM symbols and premises"
+               if not ps else "needs stage " + (", ".join(str(p + 1) for p in ps)))
+        hd[c] = "stage %d: %s (%s)" % (l + 1, name, why)
+    hd[G] = "GR criterion items (the Chapter 17 targets every stage feeds)"
+    if final is not None:
+        hd[G + 1] = "final label"
+    ytop = max(pos[i][1] for i in pos) + BH / 2 + 1.8
+    for c, t in hd.items():
+        ax.text(c * XS, ytop, "\n".join(textwrap.wrap(t, 40)), ha="center", va="top",
+                fontsize=7.5, weight="bold", color="#444")
 
-    # shrink any label wider than its allotted band, before measuring collisions
-    fig.canvas.draw()
-    R0 = fig.canvas.get_renderer()
-    for t, wpx in fit:
-        _fit_text(t, wpx, R0)
-
-    # title
-    title = manifest.get("title", "NAMCG mission graph")
-    gen = manifest.get("generated", "")
-    active = manifest.get("active_label", "")
-    bits = [title]
-    if active:
-        bits.append("programme: %s" % active)
-    if gen:
-        bits.append("generated %s" % gen)
-    texts.append(("chrome", ax.text(-0.8, y_hi + 0.35, "   |   ".join(str(b) for b in bits),
-                                    ha="left", va="top", fontsize=11, fontweight="bold",
-                                    color=INK)))
-
-    counts = {}
-    for nid in g.deriv:
-        st = g.nodes[nid].get("state", "?")
-        counts[st] = counts.get(st, 0) + 1
-    counts_txt = ", ".join("%s: %d" % (s, c) for s, c in sorted(counts.items()))
-    lay_bl = [n for n in g.deriv if n in g.blocked and
-              not str(g.nodes[n].get("state", "")).startswith("open")]
-    goals_bl = [n for n in g.goals if g.goals[n]["blocked"]]
-    up_l = [n for n in g.deriv if n in g.upgrade
-            and not str(g.nodes[n].get("state", "")).startswith("open")]
-    texts.append(("chrome", ax.text(-0.4, bottom + 2.05,
-                                    "derivation nodes %d   input symbols %d   premises %d   "
-                                    "edges %d   gaps %d   GR outputs %d   [%s]"
-                                    % (len(g.deriv), len(g.circles), len(g.diamonds),
-                                       len(g.links), len(g.gaps), len(g.goals), counts_txt),
-                                    ha="left", va="top", fontsize=7.2, color=MUTED)))
-    texts.append(("chrome", ax.text(-0.4, bottom + 1.84,
-                                    "blocked (gap or unmet upstream): layers %d %s   outputs %d/%d"
-                                    "   conditional-only: %s"
-                                    % (len(lay_bl), ",".join(lay_bl) or "-", len(goals_bl),
-                                       len(g.goals), ",".join(up_l) or "-"),
-                                    ha="left", va="top", fontsize=7.0, color=BLOCK_COLOR)))
-    for i, gp in enumerate((manifest.get("gaps") or [])[:6]):
-        texts.append(("chrome", ax.text(-0.4, bottom + 1.56 - i * 0.28,
-                                        "GAP  %s   blocks %s%s" % (
-                                            gp.get("symbol", "?"),
-                                            ",".join(gp.get("blocks", []) or ["?"]),
-                                            ("   - " + gp.get("note")) if gp.get("note") else ""),
-                                        ha="left", va="top", fontsize=6.4, color="#d03b3b")))
-    vals = ["%s: %s  [%s]" % (nid, d["value"], d.get("vsrc", "no src"))
-            for nid, d in sorted(g.disp.items()) if d.get("value")]
-    if vals:
-        texts.append(("chrome", ax.text(-0.4, bottom + 1.56 - 6 * 0.28 - 0.16,
-                                        "stated values (manuscript): " + "   |   ".join(vals),
-                                        ha="left", va="top", fontsize=6.2, color=SEC)))
-
-    # legend
-    handles = []
-    for st in [s for s in STATE_STYLE if s in states_seen]:
-        fill, ink, compact, legend = STATE_STYLE[st]
-        handles.append(Line2D([0], [0], marker="s", linestyle="", markersize=9,
-                              markerfacecolor=fill, markeredgecolor=INK, label=legend))
-    handles.append(Line2D([0], [0], marker="o", linestyle="", markersize=9,
-                          markerfacecolor="#e1e0d9", markeredgecolor=SEC,
-                          label="QM input symbol"))
-    handles.append(Line2D([0], [0], marker="D", linestyle="", markersize=7,
-                          markerfacecolor="#f0efec", markeredgecolor=SEC,
-                          label="assumed premise"))
-    handles.append(Line2D([0], [0], marker="o", linestyle="", markersize=10,
-                          markerfacecolor=SURFACE, markeredgecolor=SEC,
-                          label="GR output (dashed = not met; red = gap-blocked)"))
-    if lay_bl or goals_bl:
-        handles.append(Line2D([0], [0], linestyle=(0, (4, 2)), color=BLOCK_COLOR,
-                              linewidth=1.5, label="BLOCKED: gap symbol or unmet open input"))
-    if up_l:
-        handles.append(Line2D([0], [0], linestyle=(0, (2, 2)), color=UPGRADE_COLOR,
-                              linewidth=1.4, label="+open-input: only path runs through an open node"))
-    for kind in [k for k in EDGE_STYLE if k in kinds_seen]:
-        ls, color, lw = EDGE_STYLE[kind]
-        handles.append(Line2D([0], [0], linestyle=ls, color=color, linewidth=lw,
-                              label="link: %s" % kind))
-    ax.legend(handles=handles, loc="lower right", fontsize=6.8, framealpha=1.0,
-              facecolor=SURFACE, edgecolor=GRID)
-
-    ax.set_xlim(-0.8, x_hi)
-    ax.set_ylim(bottom, y_hi + 0.8)
-    ax.set_aspect("equal")
+    ax.set_xlim(xmin, xmax)
+    ax.set_ylim(ymin, ytop + 0.4)
     ax.axis("off")
-    fig.tight_layout()
-    fig.savefig(out_path, dpi=DPI, facecolor=SURFACE)
-    R = fig.canvas.get_renderer()
-    collisions = _collisions(texts, patches, arrows, R) + _overflow(texts, patches, rect_nodes, R)
-    plt.close(fig)
-    return g.warnings, len(g.deriv), len(g.links), len(g.gaps), collisions
-
-
-def main():
-    manifest_path = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_MANIFEST
-    out_path = sys.argv[2] if len(sys.argv) > 2 else DEFAULT_OUT
-    if not os.path.exists(manifest_path):
-        sys.stderr.write("manifest not found: %s\n" % manifest_path)
-        return 2
-    with open(manifest_path, "r", encoding="utf-8") as fh:
-        manifest = yaml.safe_load(fh)
-    os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
-    warnings, n_nodes, n_edges, n_gaps, collisions = draw(manifest, out_path)
-    for w in warnings:
-        sys.stderr.write("WARNING: %s\n" % w)
-    hard = [c for c in collisions if not c.startswith("ARROW-LABEL")]
-    soft = [c for c in collisions if c.startswith("ARROW-LABEL")]
-    for c in collisions:
-        sys.stderr.write("COLLISION: %s\n" % c)
-    print("RENDERED %s | NODES %d | EDGES %d | GAPS %d | WARNINGS %d | COLLISIONS %d "
-          "(hard %d, arrow-bbox %d)"
-          % (out_path, n_nodes, n_edges, n_gaps, len(warnings), len(collisions),
-             len(hard), len(soft)))
-    return 0 if not warnings and not hard else 1
+    nopen = sum(1 for n in m["nodes"] if n["state"].startswith("open"))
+    ax.set_title("%s  (label: %s; %d nodes, %d open, %d gaps, %d blocked; every artifact wired)" %
+                 (m["title"], m["active_label"], len(nodes), nopen, len(gaps), len(blocked)), fontsize=11)
+    leg = ("Edges: solid dark = required (blocks if source open); dashed amber = conditional; dotted grey = supports "
+           "(helps, never blocks, never adds depth); purple dotted = node depends on premise; red dash-dot = gap blocks "
+           "target; thin blue = QM box emits symbol. Boxes: state fill; red dashed border = BLOCKED (gap or required "
+           "open/blocked upstream); amber border = +open-input. Stage = minimal derivation depth from QM inputs. "
+           "No numerical values are drawn (the manuscript states none for these symbols).")
+    fig.text(0.01, 0.004, leg, fontsize=6.5)
+    fig.savefig(out, bbox_inches="tight")
+    print("RENDERED %s NODES %d EDGES %d BLOCKED %d CURVES %d WARNINGS %d (hard %d, soft %d)" %
+          (out, len(nodes), len(edges), len(blocked), ncurves[0],
+           warns["hard"] + warns["soft"], warns["hard"], warns["soft"]))
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main(sys.argv[1], sys.argv[2])
