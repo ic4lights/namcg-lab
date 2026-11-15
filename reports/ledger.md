@@ -665,3 +665,22 @@
   - A full scan is required before integration (3(b) and 3(c)).
 - For the author: decide whether to authorise r5. Separately, ch17 defines Problem A as the IR dictionary while appH frames it as a "matrix-to-modular map", which is a scope decision for the author.
 - Integrated count unchanged: 63. Pending author commit: appH (064, 065), bib (065).
+
+## Run 2026-11-14 (orchestrator, /run-cycle auto) — start-of-run advisory passes
+- SME scout: reports/sme-scout-20261114-1206.md (7 routes; top A: wedge-level rescoping via warped convolution; G: spacetime-block via symbol map; G: Jacobson-Visser fixed volume).
+- Mission graph (first build): reports/graph/mission-graph.yaml + .png. GRAPH: created | LAYERS: qm,namcg,ir,gr | NODES: 30 (open 13, cond 6, derived 0) | EDGES: 40 | GAPS: 5. The agent wrote a new renderer scripts/render_mission_graph.py (untracked; the intended one was missing) — author to review.
+- Frontier (first build): reports/graph/frontier.yaml. FRONTIER: gaps 9 | closable 21 | chains 4 | blocked 5. Chains: G (067), D1 (068), F (069), B (070); A held (066 awaiting author), E paused.
+- Vector mining mode 1: reports/vector/vector-mining-1-20261114-1219.md (triage only). The miner installed sentence-transformers/torch into .venv.
+- Adversary mode P: reports/adversary/adversary-P-20261114-1705.md (10 findings: 4 PLAN-HAZARD, 3 ASSUMPTION-COLLISION, 3 NO-GO-APPLIES). Routed: F1 to the 067 gatekeeper; F3-F5 to 068; F6-F7 to 069; F8 blocks B.matrix-state-edge-sector as stated, so 070 takes the F9 content-class collision instead; F10 to all chains.
+- Pre-flight note: .claude/state/allow_chapters is MISSING; the integrator would abort. Accepted packages are held for integration until the author restores it.
+
+## 067-product-sphere-edge (Problem G-derived) — ACCEPTED 2026-11-14, NOT YET INTEGRATED (guard flag .claude/state/allow_chapters missing)
+- Route: 065 follow-up, scout R3. Rounds: 2.
+  - r1 AWRR | none | none | first: F1 (Dimension range claim false as worded), F2 (local-sum reading tested only on cap x sphere), F3 (block still a region of a compact positive-contraction factor; edge is not dM), F4-F6 minor.
+  - r2 ACCEPT | none | none | improving. Adversary F1 checked: no sentence reads the edge as dM or as the 065 avenue-1 relaxation.
+- Result (bounded conditional, compact proxy): on S^2_N x S^2_N with positive contraction and toric blocks at fixed frame, exact edge-operator lemma (rank = number of edge sites; closed forms), the trace norm T is the 3-volume in gamma~ = (sqrt g/rho)^{2/3} K^{-1} only for axis-aligned edges; box count follows T (cap x sphere, N = 8-16) and a local sum on sampled half-planes; log d_mu keeps a depth dependence log(M/(r+l)) and is non-additive at fixed M. The 065 "single row" cause is removed; rank dependence, fixed frame, supplied state and compactness persist.
+- No-go class: compact internal factor S^2_N x S^2_N with positive contraction; toric blocks at one fixed frame; Gaussian proxy momenta; FFHS block algebra at leading order. The replica route of ass:Sent-density is untouched.
+- G stays OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL. No label change. Milestone: none.
+- G.spacetime-block (065 avenue 1: region of the non-compact/Lorentzian leaf x fibre) remains UNTRIED; 067 is a compact proxy.
+- Open avenues (review-r2, ranked): spacetime-block subsystem; depth-cancelling mutual-information combinations; frame average / non-toric projectors; within-core state; fixed-volume partition function; subleading orders / alternative algebra / 2303.08012 vacuum term.
+- Accepted text: proposals/067-product-sphere-edge/appH_insert_r2.tex (sha256 f0fa634c...), after appH L2894; expected result 637508 B, sha256 bd0616ec.... Would be integrated item 64; the 5th-item full scan falls due at 65.

@@ -34,7 +34,7 @@ def jet_theta():
             for j in range(i+1, 4):
                 w0[i, j] = rnd(); w0[j, i] = -w0[i, j]
         if w0.det() != 0: break
-    mons = [m for m in sp.itermonomials(x, 3) if sp.Poly(m, *x).total_degree() in (2, 3)]
+    mons = sorted([m for m in sp.itermonomials(x, 3) if sp.Poly(m, *x).total_degree() in (2, 3)], key=sp.default_sort_key)
     A = [sum(rnd()*m for m in random.sample(mons, 7)) for _ in range(4)]
     dA = sp.Matrix(4, 4, lambda i, j: sp.diff(A[j], x[i]) - sp.diff(A[i], x[j]))
     def part(M, d):
@@ -45,7 +45,7 @@ def jet_theta():
     T = T0 - T0*w1*T0 - T0*w2*T0 + T0*w1*T0*w1*T0
     return T.applyfunc(sp.expand)
 
-def at0(e): return sp.nsimplify(sp.sympify(e).subs({v: 0 for v in x}))
+def at0(e): return sp.simplify(sp.sympify(e).subs({v: 0 for v in x}))
 
 def endo(T, lin):
     """lin[rho] = fibre matrix (k x k) added to the scalar first-order coefficient. Returns E (manuscript sign) at 0."""
@@ -82,7 +82,7 @@ def endo(T, lin):
     for n in range(4):
         for m in range(4):
             EV -= Gi0[n, m]*(dw(m, n) + W[n]*W[m] - sum((W[s]*Gam(s, n, m) for s in range(4)), sp.zeros(k, k)))
-    return (-EV).applyfunc(sp.nsimplify)
+    return (-EV).applyfunc(sp.expand)
 
 def scalar_e(T):
     Ginv = (T.T*T).applyfunc(sp.expand)
