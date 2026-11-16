@@ -4,8 +4,9 @@ sha256 and byte size of every file in this folder (manifest.md itself excluded).
 
 | file | bytes | sha256 |
 |---|---|---|
-| insert-r1.tex | 3175 | e06aa9529f3530737daba961209b791bdf8be5ca284fc0bef15f79ad830e0f05 |
+| insert-r1.tex | 3255 | 6801fc391a0435bc4e4ff405be30eeabc99e5b1373ebedb9e0c2efc43c2b53c5 |
 | proposal-r1.md | 25330 | 34ee2505fb5b71a02b0bfd7611aa2a24cec343bdf05853388282cef67430f816 |
+| proposal-r2.md | 16385 | 754624362ecafb16e84eab8898f14a0eb4ee661917c48f45cbc8f77566dac8dc |
 | r1_moment_decomposition.out | 1236 | 5b978bd092e5e46d6428d8f9a9ceb0ff2503f06bcb16db13fbebfede1888d942 |
 | r1_moment_decomposition.py | 5866 | 070a465212048c4a56e98a4a363f863ecd859aa83baa2ff8bbd0b47c281a8404 |
 | r1_moment_decomposition.repro.out | 1236 | 5b978bd092e5e46d6428d8f9a9ceb0ff2503f06bcb16db13fbebfede1888d942 |
@@ -30,6 +31,7 @@ sha256 and byte size of every file in this folder (manifest.md itself excluded).
 | r8_uq_boxmin.out | 2438 | 2243f6420e52ae5b612d2818f3bc8db3fcea00585dfb397a44219b5003440534 |
 | r8_uq_boxmin.py | 6210 | 7990ae853a039eda8f8f9a048d29406465bfad3606cb755b464a2b75748f9cd0 |
 | r8_uq_boxmin.repro.out | 2438 | 2243f6420e52ae5b612d2818f3bc8db3fcea00585dfb397a44219b5003440534 |
+| review-r1.md | 16855 | e4b89a65d6b088ebb82b9104a94dd701efd71883d33ba2a9ce43dcd4987d967c |
 | s1_frame_edge_data.out | 919 | aa9da1343bc0f6f509c96a8d8fcf0742ce8c0ac7c491998cbb12d9ed425d4a9b |
 | s1_frame_edge_data.py | 5491 | 9d3e55446604ca39818afd17c16b4086c82c31cc634fcf3dfede297597cf1f20 |
 | s1_frame_edge_data.repro.out | 919 | aa9da1343bc0f6f509c96a8d8fcf0742ce8c0ac7c491998cbb12d9ed425d4a9b |
@@ -39,10 +41,11 @@ sha256 and byte size of every file in this folder (manifest.md itself excluded).
 | s3_frame_stacked.out | 1922 | e42b0b5c72a22f99e91854fe653f41968993a68f3844d0fa9886c74443ebb072 |
 | s3_frame_stacked.py | 5241 | a5c7c51a202692b66587b3a3b202eaedc86e6b1a249d9a9b6d0d9169eed4d987 |
 | s3_frame_stacked.repro.out | 1922 | e42b0b5c72a22f99e91854fe653f41968993a68f3844d0fa9886c74443ebb072 |
-| simulate_apply.out | 1171 | 4f0b631a6e88ebf6328b41e7560dfc2cc24dc0dbb3968f76cc9f8f56253ae71f |
+| simulate_apply.out | 1171 | 8f7a3e82d561c5ddb3f51524840e56e858aea15627e5bb7389ab630ad99f2271 |
 | simulate_apply.py | 4235 | a350ac0dd3c0ff69f0cb77c4628232c8d3dc03c3042d9433dc4590baf8069e54 |
-| simulate_apply.repro.out | 1171 | 4f0b631a6e88ebf6328b41e7560dfc2cc24dc0dbb3968f76cc9f8f56253ae71f |
+| simulate_apply.repro.out | 1171 | 8f7a3e82d561c5ddb3f51524840e56e858aea15627e5bb7389ab630ad99f2271 |
 
 Re-run all scripts as: python -I proposals/075-g-edge-frameavg/<name>.py  (from the repository root).
-Each *.out matches its *.repro.out byte-for-byte on fresh runs (cmp-verified 2026-11-16).
+Each *.out matches its *.repro.out byte-for-byte on fresh runs (cmp-verified 2026-11-16, r2 regenerate for
+insert-r1.tex / simulate_apply.out / simulate_apply.repro.out; all other files unchanged since r1).
 
