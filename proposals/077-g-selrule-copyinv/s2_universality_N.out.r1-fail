@@ -1,0 +1,27 @@
+(a) coincident copies, iid momenta: N, D median, T_2 median, events
+    N=  50  D=0.2986  T_2=0.1027
+    N= 100  D=0.2120  T_2=0.0484
+    N= 200  D=0.1415  T_2=0.0223
+    N= 400  D=0.1176  T_2=0.0143
+    log-log slopes: D -0.461 (expect ~ -0.5), U_2 -0.965 (expect ~ -1)
+(a-control) copy-tempered (1, 1.6) on the same coincident geometry:
+    N= 120  D=0.4147  T_2=0.2226
+    N= 240  D=0.4113  T_2=0.2126
+    N= 480  D=0.3946  T_2=0.2003
+    control slopes: D -0.036, T_2 -0.076 (expect ~0)
+(b) N=400, q, D median, T_2 median:
+    q= 2  D=0.0992  U_2=T_2-1=0.0138
+    q= 3  D=0.1363  U_2=T_2-1=0.0132
+    q= 4  D=0.1517  U_2=T_2-1=0.0140
+    q= 5  D=0.1683  U_2=T_2-1=0.0156
+    q= 6  D=0.1641  U_2=T_2-1=0.0139
+    q= 8  D=0.1880  U_2=T_2-1=0.0156
+    q=10  D=0.1869  U_2=T_2-1=0.0149
+    q=13  D=0.1902  U_2=T_2-1=0.0160
+    q=16  D=0.1994  U_2=T_2-1=0.0151
+all checks inside thresholds: False
+Traceback (most recent call last):
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\077-g-selrule-copyinv\s2_universality_N.py", line 167, in <module>
+    assert ok
+           ^^
+AssertionError

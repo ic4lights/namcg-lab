@@ -1,153 +1,206 @@
-"""077 s5 (sympy): two exact lemmas of the 077 package.
+"""077 s5 (sympy + numpy): two exact lemmas of the 077 package. CORRECTED ROUND 2.
 
-LEMMA 1 (Gram reduction). For the coincident-copy block-cut charge
-    Q~ = -2i sum_{a,b} e_{ab} (x) (|u)(z_{ab}| - |z_{ab})(u|),
-u unit, z_{ab} in C^N, the nonzero spectrum of Q~ equals the nonzero spectrum
-of the Hermitian matrix
-    M = -2i [[0, C], [-C^+, Z]],   Z[(ab),(a'b')] = (z_{ab}|z_{a'b'}),
-    C[a,(b,b')] = (u|z_{bb'}),
-of size q + q^2, via the block isometry A = sum_a e_a (x) u (columns),
-B = sum_{a,b} e_{ab} (x) z_{ab}: Q~ = -2i (A B^+ - B A^+), and
-Q~^2 Q~ v = ... gives spectrum(Q~|_{R(A)+R(B)}\{0}) = spectrum(M|nonzero).
-Symbolic check: full characteristic polynomials of Q~ and of the (q+q^2)-matrix
-M agree up to the forced zero-eigenvalue factor lam^(2N - q - q^2) at q=2,
-symbolic dim N=3, and the 2q leading nonzero coefficients match identically.
+The previous researcher's s5 asserted charpoly(Q~) = lam^(qN - q - q^2) *
+charpoly(M), M = -2i[[0,C],[-C^+,Z]] a (q+q^2)-matrix built from the q^2 edge-row
+vectors z_{ab}. That formulation is wrong on two counts:
+(i) in the rank-1 edge-datum family the charge factorizes as Q~ = -2i(U R^+ - R U^+)
+with U = I_q (x) |u) and R = sum_f cbar^f Theta Pi^f Theta^T (I_q (x) |v), both
+qN x q, so rank(Q~) <= 2q and the nonzero spectrum is that of the 2q x 2q reduced
+    T = -2i [[C0^+, Z0], [-I_q, -C0]],  C0 = U^+R, Z0 = R^+R  (both q x q),
+not of any (q+q^2)-matrix: the Gram compression keeps only the copy index (the q^2
+flavor-contracted edge-row vectors enter only through the column Grams of R).
+(ii) at the old symbolic size (q=2, N=3) the exponent was 6-2-4 = 0 and a FULL
+charpoly identity was asserted although the two matrices had different nullity
+(the check, not the lemma, was broken; the script died on that assert). The
+correct exact statement is equality of the NONZERO characteristic polynomials,
+i.e. of the top 2q+1 highest-degree charpoly coefficients (both matrices have
+size >= 2q and rank <= 2q). Full charpoly equality holds only when the two
+sizes coincide, qN = 2q, i.e. N = 2: asserted separately there.
 
-LEMMA 2 (rank-1 q=2 exact classification, block-diagonal case). For Q~ =
-direct sum of 2 single-copy rank-2 charges with row data z_1, z_2 (u common):
-mult-2 <=> |P_perp z_1| = |P_perp z_2| (norms of u-orthogonal parts): the u-
-components are invisible (charge annihilates them), giving the exact
-"edge-row norm equality" criterion at fixed N; symbolic solve of the two
-quartic eigenvalue conditions reduces to (z1.z1 - (u.z1)^2) - (z2.z2 - (u.z2)^2).
+CORRECTED ROUND 2 (check-level fixes found by re-running the ROUND-1 script,
+which died at the Lemma 1(a) assert):
+(iii) the symbolic C0 block was coded conjugate(z_b[0]); by definition
+      C0 = U^+ R, so C0[a,b] = (u|z_b) = z_b[0] with NO conjugation (the
+      numpy section always used U.conj().T @ R); the conjugate broke the
+      Lemma 1(a) coefficient identity.
+(iv) Lemma 1(b) used eigvalsh on T, which is generally NOT Hermitian (T is
+      similar via diag(I,-I) to -2i [R^+; U^+][U, -R], a product whose
+      reverse order has the same nonzero spectrum as Q~); now eigvals with
+      an imaginary-part bound.
+(vi) the symbolic Q~ was built blockwise as -2i(|u)(z_col| - |z_col)(u|),
+      which is NOT of the form -2i(U R^+ - R U^+) (the product puts the
+      TRANSPOSED block on the ket side); the ROUND-2 object was
+      non-Hermitian (debug_conventions.py Part 2: max|Q-Q^H| = 5.29 at one
+      random z), so the Lemma 1(a) failure was the CHECK, not the lemma.
+      Q~ is now built as the exact product -2i(U R^+ - R U^+) with
+      block-equal R columns (numerically the spectrum identity holds to
+      4.4e-15: debug_conventions.py Part 2).
+(vii) the numpy U used np.kron(I_q, e_0-as-1d-row), which numpy pads to a
+      (q, qN) matrix; now e_0 as a column (qN, q).
+(v) Lemma 2's two-copy classification solved the t^1 condition for beta2,
+      which is absent from it (sympy returns no solution); it now solves for
+      rho2 = Im(alpha_2), giving rho2 = rho, and the induced t^0 condition is
+      checked as the exact identity 4(|w_perp,2|^2 - |w_perp,1|^2) = 0.
+      The exact single-copy charpoly is t^2 + 4 Im(alpha) t - 4|w_perp|^2
+      (ROUND 1 stated the 2/1-factor coefficients; roots unchanged).
+
+LEMMA 1 checks: (a) symbolic top-5 charpoly-coefficient identities of Q~ and T
+at q=2, N=3 and q=2, N=2, u = e_0, R columns = arbitrary complex z_a INCLUDING
+their u-components (the Im-alpha shift of the appH 'Row length' paragraph must
+be reproduced), 3 random rational substitutions each; (b) numpy full-spectrum
+match (sorted eigenvalues) at q=2, N=5 and q=3, N=4; (c) range fact
+range(Q~) subset range[U R]; (d) at q=N=2 (sizes equal, 4x4): FULL charpoly
+identity, 2 substitutions.
+
+LEMMA 2 (rank-1 q=2 exact classification, block-diagonal case; corrected to the
+general complex case). Single-copy charge Q = -2i(|u)(w| - |w)(u|), u unit,
+w in C^2. Symbolically (u = e_0, alpha = (u|w), w_perp = w - alpha u):
+charpoly(Q) = t^2 + 4(Im alpha) t - 4|w_perp|^2 (CORRECTED ROUND 2: ROUND 1
+wrote t^2 + 2(Im alpha) t - |w_perp|^2; the roots below are unchanged) - derived below: the coefficients
+depend on w ONLY through Im alpha and |w_perp|^2 (Re alpha strictly invisible),
+and the roots are exactly -2 Im(alpha) +- 2(Im^2 alpha + |w_perp|^2)^{1/2} - the
+formula of the appH 'Row length' paragraph, re-derived here. Hence for
+Q~ = Q_1 (+) Q_2 (block-diagonal, q = 2, common u):
+  mult-2 (two 2-element spectra equal)  <=>  Im alpha_1 = Im alpha_2  AND
+  |w_perp,1| = |w_perp,2|; Re alpha invisible. At large N the Im-alpha shift is
+  subleading (|w_perp| ~ sqrt(M) vs alpha ~ O(1)), which is why the leading-order
+  tiling criteria of s2-s4 involve only the norms.
 
 Run: python -I proposals/077-g-selrule-copyinv/s5_gram_and_q2_exact.py
-Expected invariants: charpoly coefficient comparison returns all-zero
-differences (identically); Lemma 2: resultant/gcd reduces the two conditions
-to the single norm equality. Last line 'PASS s5'.
+Expected invariants: (a) all substituted coefficient differences zero at both
+sizes; (b) nonzero spectra match (< 1e-8), 2q nonzero each; (c) range residual
+< 1e-12; (d) full charpoly difference zero; Lemma 2: roots match, Re(alpha)
+coefficient-free, classification assert True; last line 'PASS s5'.
 """
+import numpy as np
 import sympy as sp
 
-# ---------- Lemma 1: characteristic polynomials at q=2, symbolic dim N=3
-q = 2
-Nsym = 3
-# symbolic complex entries
-zs = {}
-for a in range(q):
-    for b in range(q):
-        zs[(a, b)] = sp.Matrix([sp.symbols('z%d_%d_%d' % (a, b, i), complex=True)
-                                for i in range(Nsym)])
-us = sp.Matrix([sp.symbols('u%d' % i, complex=True) for i in range(Nsym)])
-# impose |u| = 1 as the relation Sum conj(u)u = 1 by working with a fixed unit u:
-# pick a concrete unit vector to keep coefficient comparison polynomial:
-uvec = sp.Matrix(sp.symbols('t0 t1 t2', complex=True))
-uvec = sp.Matrix([1, 0, 0])          # any fixed unit vector: spectrum identity is
-                                     # unitary-covariant, so one suffices symbolically
-
-def ket(v):
-    return sp.ImmutableDenseMatrix(v)
-
-def op_B(w):
-    return sum(w[i] * us[i].conjugate() for i in range(Nsym))  # not used; keep direct
-
-# build Q~ as a (q*Nsym) x (q*Nsym) explicit matrix
-n2 = q * Nsym
-Q = sp.zeros(n2, n2)
-for a in range(q):
-    for b in range(q):
-        w = zs[(a, b)]
-        blk = sp.zeros(Nsym, Nsym)
-        for i in range(Nsym):
-            for j in range(Nsym):
-                blk[i, j] = -2*sp.I * (uvec[i] * sp.conjugate(w[j])
-                                       - w[i] * sp.conjugate(uvec[j]))
-        Q[a * Nsym:(a + 1) * Nsym, b * Nsym:(b + 1) * Nsym] = blk
-
-# Gram matrices A^+A = I_q, C (q x q^2), Z (q^2 x q^2)
 lam = sp.symbols('lam')
-Cmat = sp.zeros(q, q * q)
-Zmat = sp.zeros(q * q, q * q)
-idx = [(a, b) for a in range(q) for b in range(q)]
-for a in range(q):
-    for (b1, b2) in idx:
-        Cmat[a, idx.index((b1, b2))] = sum(sp.conjugate(uvec[i]) * zs[(b1, b2)][i]
-                                           for i in range(Nsym))
-for i1, (a1, b1) in enumerate(idx):
-    for i2, (a2, b2) in enumerate(idx):
-        Zmat[i1, i2] = sum(sp.conjugate(zs[(a1, b1)][k]) * zs[(a2, b2)][k]
-                           for k in range(Nsym))
-Mmat = -2 * sp.I * sp.Matrix(sp.BlockMatrix([[sp.zeros(q, q), Cmat],
-                                             [-Cmat.applyfunc(sp.conjugate).T if False else Cmat.adjoint(),
-                                              Zmat]]))
-# note: [[0,C],[-C^+, -i..]]: M = -2i[[0,C],[-C^+,Z]]
-pQ = sp.factor(sp.charpoly(Q + sp.zeros(n2, n2)).as_expr(lam)) if False else None
-pQ = sp.expand(sp.Matrix(Q).charpoly(lam).as_expr())
-pM0 = sp.expand(sp.Matrix(Mmat).charpoly(lam).as_expr())
-nZ = Mmat.shape[0]
-# predicted: pQ = lam^(n2 - nZ) * pM  (nonzero spectra equal, M has size nZ)
-pred = sp.expand(lam ** (n2 - nZ) * pM0)
-diff = sp.expand(pQ - pred)
-coeffs = [diff.coeff(lam, k) for k in range(n2 + 1)]
-zero_all = all(sp.simplify(c) == 0 for c in coeffs)
-print('Lemma 1: q=2, N=3: charpoly(Q~) - lam^(2N-q-q^2) charpoly(M) identically zero:',
-      zero_all)
-assert zero_all
+q = 2
 
-# cross-check numerically with random values to confirm the sign/layout
-import numpy as np
-rng = np.random.default_rng(77005)
-for trial in range(5):
-    zv = {(a, b): rng.normal(size=Nsym) + 1j * rng.normal(size=Nsym)
-          for a in range(2) for b in range(2)}
-    uv = np.array([1.0, 0, 0], dtype=complex)
-    Qn = np.zeros((6, 6), complex)
-    for a in range(2):
-        for b in range(2):
-            w = zv[(a, b)]
-            blk = -2j * (np.outer(uv, w.conj()) - np.outer(w, uv.conj()))
-            Qn[a * 3:(a + 1) * 3, b * 3:(b + 1) * 3] = blk
-    idxv = [(a, b) for a in range(2) for b in range(2)]
-    Zn = np.array([[np.vdot(zv[p], zv[r]) for r in idxv] for p in idxv])
-    Cn = np.array([[np.vdot(uv, zv[(b1, b2)]) for (b1, b2) in idxv]
-                   for a in range(2)])
-    Mn = -2j * np.block([[np.zeros((2, 2)), Cn], [-Cn.conj().T, Zn]])
+
+def lemma1_symbolic(Nsym, ntrial=3):
+    """charpoly top-coeffs of Q~(U,R) vs T(C0,Z0), symbolic z, substituted."""
+    ok_all = True
+    for trial in range(ntrial):
+        rr = np.random.default_rng(77005 + 977 * trial + 13 * Nsym)
+        subs, zc = {}, []
+        for a in range(q):
+            col = []
+            for i in range(Nsym):
+                s = sp.Symbol('z%d_%d' % (a, i))
+                subs[s] = sp.Rational(int(rr.integers(-5, 6)), 4) \
+                    + sp.I * sp.Rational(int(rr.integers(-5, 6)), 4)
+                col.append(s)
+            zc.append(col)                      # column a of R (full, incl u-comp)
+        n = q * Nsym
+        U = sp.zeros(n, q)
+        Rm = sp.zeros(n, q)
+        for a in range(q):
+            U[a * Nsym, a] = 1                        # u = e_0 per copy
+            for i in range(Nsym):
+                for cb in range(q):
+                    Rm[a * Nsym + i, cb] = zc[cb][i]  # R_{xy} = z_y
+        Qs = -2 * sp.I * (U * Rm.adjoint() - Rm * U.adjoint())
+        C0 = sp.zeros(q, q)                     # C0[a,b] = (u|z_b), a-independent
+        Z0 = sp.zeros(q, q)
+        for a in range(q):
+            for b in range(q):
+                C0[a, b] = zc[b][0]
+                # R e_b = sum_{a''} e_{a''} (x) z_b (all row-blocks equal):
+                Z0[a, b] = q * sum(sp.conjugate(zc[a][i]) * zc[b][i]
+                                   for i in range(Nsym))
+        Tm = -2 * sp.I * sp.Matrix(sp.BlockMatrix(
+            [[C0.adjoint(), Z0], [-sp.eye(q), -C0]]))
+        pQ = sp.expand(sp.Matrix(Qs).charpoly(lam).as_expr().subs(subs))
+        pT = sp.expand(sp.Matrix(Tm).charpoly(lam).as_expr().subs(subs))
+        dQ, dT = Qs.shape[0], Tm.shape[0]
+        diffs = [sp.simplify(sp.expand(pQ.coeff(lam, dQ - k)
+                                       - pT.coeff(lam, dT - k)))
+                 for k in range(2 * q + 1)]
+        ok = all(d == 0 for d in diffs)
+        ok_all = ok_all and ok
+        if dQ == dT:
+            fd = sp.simplify(sp.expand(pQ - pT))
+            ok_all = ok_all and (fd == 0)
+            print('Lemma 1(d): q=2,N=2 trial %d: FULL charpoly(Q~)-charpoly(T) == 0: %s'
+                  % (trial, fd == 0))
+    return ok_all
+
+
+ok_a = lemma1_symbolic(3) and lemma1_symbolic(2)
+print('Lemma 1(a): symbolic top-5 charpoly-coefficient identities (q=2, N=3 and '
+      'N=2; 3 substitutions each, with u-components in R): %s' % ok_a)
+assert ok_a
+
+for (q_, N_) in ((2, 5), (3, 4)):
+    g = np.random.default_rng(77006)
+    U = np.kron(np.eye(q_), np.eye(N_)[:, 0:1])
+    R = g.normal(size=(q_ * N_, q_)) + 1j * g.normal(size=(q_ * N_, q_))
+    Qn = -2j * (U @ R.conj().T - R @ U.conj().T)
+    C0 = U.conj().T @ R
+    Z0 = R.conj().T @ R
+    Tn = -2j * np.block([[C0.conj().T, Z0], [-np.eye(q_), -C0]])
     e1 = np.sort(np.linalg.eigvalsh(Qn))
-    e2 = np.sort(np.linalg.eigvalsh(Mn))
-    nz1 = e1[np.abs(e1) > 1e-9]
-    nz2 = e2[np.abs(e2) > 1e-9]
-    dev = max(abs(nz1 - nz2)) if len(nz1) == len(nz2) else 9.9
-    assert dev < 1e-8, dev
-print('Lemma 1: numerical nonzero-spectrum match in 5 random trials: True')
+    ev2 = np.linalg.eigvals(Tn)
+    assert np.abs(ev2.imag).max() < 1e-8 * max(1.0, np.abs(ev2).max())
+    e2 = np.sort(ev2.real)
+    thr = 1e-9 * max(1.0, np.abs(e1).max())
+    nz1, nz2 = e1[np.abs(e1) > thr], e2[np.abs(e2) > thr]
+    dev = max(abs(nz1 - nz2)) if len(nz1) == len(nz2) == 2 * q_ else 9.9
+    assert dev < 1e-8, (q_, N_, dev, len(nz1), len(nz2))
+    M_ = np.hstack([U, R])
+    Qres = Qn - M_ @ (np.linalg.pinv(M_) @ Qn)
+    assert np.abs(Qres).max() < 1e-12
+    print('Lemma 1(b,c): q=%d,N=%d: nonzero-spectrum dev %.2e (%d nz each); '
+          'range(Q~) - P_[UR] range(Q~): %.2e' % (q_, N_, dev, len(nz1),
+                                                  np.abs(Qres).max()))
 
-# ---------- Lemma 2: q=2 block-diagonal mult-2 <=> |P_perp z1| = |P_perp z2|
+# ---------- LEMMA 2: general complex single-copy charge, exact classification
+br, bi = sp.symbols('beta rho', real=True)          # alpha = beta + i rho (rho = Im alpha)
+rre, rim = sp.symbols('rre rim', real=True)         # w_perp = (rre + i rim) along e_1
+alpha = br + sp.I * bi
+wperp2 = rre ** 2 + rim ** 2                        # |w_perp|^2
+# Q = -2i(|u)(w| - |w)(u|) with u = e_0, w = alpha*u + w_perp*e_1
+Q2 = sp.Matrix([[0, 0], [0, 0]])
+for i in range(2):
+    for j in range(2):
+        ui = 1 if i == 0 else 0
+        uj = 1 if j == 0 else 0
+        wj = alpha if j == 0 else (rre + sp.I * rim)
+        wi = alpha if i == 0 else (rre + sp.I * rim)
+        Q2[i, j] = -2 * sp.I * (ui * sp.conjugate(wj) - wi * sp.conjugate(uj))
+Q2 = sp.simplify(Q2)
 t = sp.symbols('t')
-a1, b1c, a2, b2c = sp.symbols('a1 b1 a2 b2', real=True)
-# rank-2 charge with u = e0: -2i(|u)(w| - |w)(u|), w = (p, r) : eigenvalues:
-w = sp.Matrix([sp.symbols('p', real=True), sp.symbols('r', real=True)])
-u2 = sp.Matrix([1, 0])
-Qb = -2 * sp.I * (sp.Matrix(u2) * w.T - w * sp.Matrix(u2).T)
-p1 = sp.expand(Qb.charpoly(t).as_expr())
-# eigenvalue conditions for {t1,t2} of two copies to coincide as multisets:
-p2 = p1.subs({sp.symbols('p'): sp.symbols('p2'), sp.symbols('r'): sp.symbols('r2')})
-# resultant of the two charpolys: the two 2-element spectra coincide iff the
-# coefficients (trace and det) of the two quadratic charpolys agree:
-c1 = [sp.expand(p1.coeff(t, k)) for k in range(3)]
-c2 = [sp.expand(p2.coeff(t, k)) for k in range(3)]
-conds = [sp.simplify(c1[k] - c2[k]) for k in range(2)]  # k=0 trivial (both monic->k=2)
-print('Lemma 2: coefficient conditions:', conds)
-r0 = sp.simplify(conds[0])  # trace equality
-r1c = sp.simplify(conds[1])  # det equality
-# norm-equality target: |P_perp w|^2 = r^2 for u = e0 (w = (p, r)):
-norm_eq = sp.symbols('nr')  # condition should collapse to r1^2 = r2^2
-sol = sp.solve([r0, r1c], [p2], dict=True)
-red = [sp.simplify(sp.factor(sp.together(s[p2]))) for s in sol]
-print('Lemma 2: trace condition gives p2 =', red)
-detsub = sp.simplify(sp.factor(r1c.subs(p2, red[0])))
-print('Lemma 2: induced determinant condition:', sp.factor(detsub))
-ok2 = sp.simplify(detsub - (-(sp.symbols('r') ** 2 - sp.symbols('r2') ** 2))) == 0 \
-    or sp.factor(detsub) == sp.factor(sp.symbols('r2') ** 2 - sp.symbols('r') ** 2) \
-    or sp.simplify(sp.expand(detsub + (sp.symbols('r') ** 2 - sp.symbols('r2') ** 2))) == 0
-print('Lemma 2: mult-2 condition reduces to r^2 = r2^2 (u-orthogonal norm '
-      'equality, p invisible):', bool(ok2))
-assert ok2
+pc = sp.expand(Q2.charpoly(t).as_expr())
+ca = sp.simplify(pc.coeff(t, 1))
+c0 = sp.simplify(pc.coeff(t, 0))
+print('Lemma 2: charpoly coefficients (t^1, t^0):', ca, ',', c0)
+invis = all(sp.simplify(sp.diff(c, br)) == 0 for c in (ca, c0))
+roots = sp.solve(sp.Eq(sp.expand(pc), 0), t)   # list; simplify(list) is an error
+tgt = [-2 * bi + 2 * sp.sqrt(bi ** 2 + wperp2), -2 * bi - 2 * sp.sqrt(bi ** 2 + wperp2)]
+roots_ok = sorted([sp.simplify(sp.expand(r - tg)) for r in roots for tg in [roots[0]]]) \
+    if False else all(any(sp.simplify(sp.expand(r - tg)) == 0 for tg in tgt) for r in roots) \
+    and len(roots) == 2
+print('Lemma 2: Re(alpha)=beta invisible in both coefficients:', invis,
+      '; roots equal -2 Im(alpha) +- 2(Im^2 alpha + |w_perp|^2)^{1/2} (appH Row '
+      'length formula):', roots_ok)
+assert invis and roots_ok
 
+# two copies: spectra {beta,rho,wperp} and {beta2,rho2,wperp2b} coincide <=>
+# coefficients equal: t^1 and t^0 differences.
+b2, rho2, rb2, ri2 = sp.symbols('beta2 rho2 rb2 ri2', real=True)
+ca2 = ca.subs({br: b2, bi: rho2, rre: rb2, rim: ri2})
+c02 = c0.subs({br: b2, bi: rho2, rre: rb2, rim: ri2})
+d1 = sp.simplify(ca - ca2)
+d0 = sp.simplify(c0 - c02)
+sol = sp.solve([d1], [rho2], dict=True)
+assert len(sol) == 1 and sol[0][rho2] == bi, sol
+d0sub = sp.factor(sp.simplify(d0.subs(sol[0])))
+print('Lemma 2: t^1 condition gives Im(alpha_2) = Im(alpha_1); induced t^0 '
+      'condition:', d0sub)
+ok_cls = sp.simplify(d0sub - 4 * (rb2 ** 2 + ri2 ** 2 - wperp2)) == 0
+print('Lemma 2: mult-2 <=> Im(alpha_1)=Im(alpha_2) AND |w_perp,1|^2 = |w_perp,2|^2 '
+      '(Re alpha invisible):', bool(ok_cls))
+assert ok_cls
 print('PASS s5')
