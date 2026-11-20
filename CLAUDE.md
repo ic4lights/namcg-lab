@@ -52,6 +52,15 @@ party who can approve a merge.
 - Respect the context and evidence boundary: stop at a coherent point when further work risks losing derivation
   details, source provenance, caveats, or cross-file consequences. Record the remaining work for a later package
   rather than compressing or guessing. Package size never substitutes for mathematical significance or rigor.
+- **Derivation-first dispatch priority (author directive 2026-11-20).** Positive results that derive a current
+  missing step or supply a derivation-grade input one consumes outrank everything else. A package whose headline
+  is extending an accepted bounded no-go to a new class, or sharpening a statistic of an object the integrated
+  text itself records as carrying no data for the target, is deprioritized however close or elegant it is.
+  Negative results are still reported honestly whenever they arise (rule 6) and count as progress only when they
+  genuinely redirect a target (rule 8). Where the current sources state that one critical-path problem's
+  completion depends on another problem's missing step, attack the upstream gating problem before running
+  further edges on the dependent problem. Re-derive the gating relations from the current Appendix H and
+  Chapter 17 passages on every task; frontier records of them are pointers with src, never authority.
 
 ## Manuscript conventions
 

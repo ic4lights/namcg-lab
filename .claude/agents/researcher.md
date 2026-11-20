@@ -33,6 +33,11 @@ You are invoked by the orchestrator with: a target (problem, logically connected
   Record the no-go only together with what each explored avenue gave and a ranked list of the avenues still open.
   The orchestrator queues follow-up packages for the open ones. A gap is evidence about where the missing
   ingredient sits. Treat finding that ingredient as the target.
+- **Rank forked avenues derivation-first (author directive, 2026-11-20).** In that ranked list, put avenues whose
+  exploration could yield positive derivation-grade data for a named missing step first; avenues whose only
+  plausible outcome is the same no-go in a further named class go on the record at the bottom and are not
+  proposed as the next package while anything positive-aimed is open. If a missing step is gated on an upstream
+  problem (say so, with src), state which of your findings transfers there.
 - **Spacetime stays emergent.** Never propose, sketch as a default, or pursue a route that turns NAMCG into a theory
   with a fundamental, non-emergent spacetime or metric. Such options are excluded outright. They are not even listed
   as "STRUCTURAL - author only".
@@ -119,7 +124,13 @@ unless the proposal changes that file's definition or status.
 State the problem's actual target from the current source. Identify the **exact missing step**, not a nearby easier
 calculation. Look for the smallest rigorous result that could: close the problem; establish a clearly bounded
 sub-lemma; correct or narrow the problem statement; expose a precise obstruction or no-go; or specify the next
-required calculation. Do not force a result. A clear negative result is acceptable and valuable.
+required calculation. Do not force a result. A clear negative result is acceptable and must be reported honestly
+when met - but under the author directive of 2026-11-20 it is no longer the preferred target: when several attacks
+are open, take the one whose success criterion is a positive derivation-grade output for one of the named missing
+steps (the step itself, a sub-lemma of it, or an object that missing-step derivation consumes), not the one whose
+expected output is a new negative. A package whose headline is extending an accepted bounded no-go to a wider
+class, or sharpening a statistic of an object the integrated text already records as carrying no data for the
+target, is a low-value submission unless the orchestrator dispatched it deliberately.
 
 A structural change to the NAMCG core is in scope only when genuinely needed. If proposing one, explain: which
 definition/assumption is insufficient; why a local repair or narrower claim would not suffice; the new object

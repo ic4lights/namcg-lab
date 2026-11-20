@@ -69,17 +69,30 @@ State discipline:
 
 ## Ranking and chain partition
 
-Rank attack edges by, in order:
-1. **Closeness** - fewest `missing_inputs` relative to what `available_from` supplies.
-2. **Evidence** - prior attempts with `PROGRESS: improving`; named relaxations of bounded no-gos ranked by the
-   review that granted them.
-3. **Cost** - targeted-read packages before ones that force a full scan; conditional-sharpening vs derivation size.
-4. **Lead pointers** from SME/vector/adversary reports (a pointer raises rank; it never substitutes for 1-3).
+Rank attack edges by, in order. Criteria 1-2 (author directive 2026-11-20, derivation-first) are the heads and
+are never overridden by 3-6:
+1. **Missing-step adjacency** - edges that attack a named missing step of the target problem directly, or supply
+   an object a named missing-step derivation consumes, rank above edges attacking sub-problems one or more hops
+   away. An edge whose only possible outcome extends an accepted bounded no-go to a wider class, or refines a
+   statistic of an object the integrated text itself records as carrying no target data (the "identifies no ...",
+   "closes nothing" passages), ranks below every untried positive-aimed edge and below every improving
+   positive-aimed attempt, whatever its closeness.
+2. **Dependency gating** - when the current manuscript states that one critical-path problem's completion depends
+   on a missing step of another problem (grep the Missing step and bounded-obstruction passages; record the
+   relation on both gaps with src), rank the upstream gating problem's edges above further edges on the dependent
+   problem. Dependent-problem edges stay on the frontier, ranked - never deleted.
+3. **Closeness** - fewest `missing_inputs` relative to what `available_from` supplies.
+4. **Evidence** - prior attempts with `PROGRESS: improving`; named relaxations of bounded no-gos ranked by the
+   review that granted them, subject to 1: a relaxation whose expected outcome is only the same no-go in a wider
+   class ranks last.
+5. **Cost** - targeted-read packages before ones that force a full scan; conditional-sharpening vs derivation size.
+6. **Lead pointers** from SME/vector/adversary reports (a pointer raises rank; it never substitutes for 3-5).
 
 Partition the top edges into up to N disjoint chains for parallel dispatch (the orchestrator names N; default:
 one chain per open critical-path problem). Disjointness is hard (CLAUDE Execution & Concurrency Rules): two
 chains never share an Appendix H problem or manuscript passage. Edges that would collide go into the SAME chain,
-ordered by rank.
+ordered by rank. Where ranking rule 2 (dependency gating) applies, the gating problem's chain takes the dispatch
+slots first; the dependent problem's chain runs only what rule 2 leaves above the rest of the frontier.
 
 ## Procedure
 
