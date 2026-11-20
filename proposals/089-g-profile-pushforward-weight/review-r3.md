@@ -1,0 +1,49 @@
+VERDICT: ACCEPT | MILESTONE: none | FLAGS: none | PROGRESS: improving | OPEN: 0/0
+
+## Verdict
+The repair is exactly one byte (`\` deleted at 1174 within the 9-byte token `dT\=(D-1)` starting at 1172), the smoke gate is real and verified by my own independent wrapper in both directions, the new POST byte contract reproduces exactly from live bytes, and everything else — insert math, claims, frozen artifacts, `chapters/`, `bib/` — is provably unchanged from the r2 ACCEPT.
+
+## Source reading
+Digest NOT used for content (orchestrator-flagged stale by HEAD movement only). I independently verified `git diff 9278141 HEAD -- chapters/ bib/` is **empty (0 bytes)**, `git status --porcelain -- chapters/ bib/` is clean, and re-hashed live appH myself (748,814 / ecb67a25… / CRLF 3,840 / bareLF 0). Read in full: proposal-r3.md (2,798/2379b82f ✓), insert-r3.tex, manifest_r3.md, hygiene_089_r3.out, simulate_apply_089_r3.out, review-r2.md, and the canonical r3 scripts scratch/r3b/{b1,s2,h3,a4}.py (code-honesty audit). Targeted live reads: appH L3024–3031 (G ledger block), splice-site lines 3189/3191. **Full scan not required and not performed**: mechanical 1-byte repair, no definition/assumption/scope/status change; compensatory coverage discharged in r1.
+
+## Claim under review
+Claim set EXPLICITLY UNCHANGED from r2 (r3 restates no claims; verified no drift — see Check 3). Live G status (appH L3025–3028, re-read live, verbatim, unchanged): "Status: OPEN. Priority: CRITICAL PATH. Completion: PROGRAMME-CONDITIONAL. Reduced-scope results: G-model and G-external support at most a scope-limited model; G remains OPEN and neither satisfies the matrix-derived criterion."
+
+## Checks performed
+1. **Reproduction pack first**: `python -I scratch/r3b/{b1,s2,h3,a4}.py` all rc 0; h3 and a4 stdout **byte-identical** to shipped hygiene_089_r3.out and simulate_apply_089_r3.out; b1 rebuild of insert-r3.tex from frozen insert-r2.tex is byte-idempotent (folder r3 still 3,974/ccb89c9e after run).
+2. **1-byte identity, mine**: SequenceMatcher r2→r3 gives exactly **one** non-equal opcode: `delete 1174–1175` (the `\` of `\=`). Prefix [0,1172) equal; r2[1181:]==r3[1180:] equal; windows `b'dT\=(D-1)'`(9B)/`b'dT=(D-1)'`(8B) confirmed; `\=` count 1→0; `(`/`\)` 28/28 both; zero control bytes both. This is the ONLY change to the accepted mathematics text.
+3. **Smoke gate, my own wrapper** (scratch/gk089r3/latex, article+amsmath+amssymb, insert verbatim in a text paragraph): **r3 rc 0, zero `!` log lines, PDF produced**; **r2 negative control rc 1** with `! Please use \mathaccent for accents in math mode` + `invalid in math`. Their s2.py audited honest: asserts insert sizes/shas, runs both compiles, real pass/fail predicates, no skips, output confined to scratch/latex.
+4. **Claim-set untouched audit**: full diff proposal-r2↔r3 — r3 contains no claim-bearing text beyond the fix token; nothing contradicts r2's claim list 1–7 (in review-r2.md). The claim carrier (insert-r3.tex) is r2 insert minus one byte (Check 2). No drift.
+5. **Byte contract, my own splice from live bytes**: PRE re-measured ✓; PIN (356 B from "they establish a stationarity identity…", ends "…close nothing in Problem~G.") count **1** at 711,637 (line 3189); gap to `\emph{Vacuum term.}` (711,997, line 3191) exactly `\r\n\r\n`. Splice insert-r3.tex + spacer CRLF: POST **752,790 / 4b5213160fab6154dbefcdaaf5795501eebed9add432b910660ef2b4e62068d6 / CRLF 3,842 / bareLF 0 / close-idiom 15→16 / new-header 1 / Vacuum-term 2**; outside-window byte-identity asserted True. r2 splice reproduces **752,791 / e5355e61…** and differs from POST — r2 contract **DEAD confirmed**, producible only from insert-r2.tex.
+6. **Frozen-file audit**: insert-r1.tex 602e63d9, insert-r2.tex bba6adc4, insert-body.txt bde45e06, insert-body-r2.txt 4f13d17f all unchanged (my own hashes + h3 asserts). manifest_r3.md: 35/35 entries live-match, no orphans (manifest lists itself not — same accepted precedent as r2).
+7. **Rules 2/3/emergence**: banned status/label word-set 0 hits in insert-r3.tex (my run of h3); closer preserves missing steps (i)–(iv) and "close nothing in Problem~G."; no closure, no label touched; G untouched in live file; spacetime remains emergent (insert is measure theory on named parameters).
+
+## Findings
+None blocking or major. Minor:
+- **(minor) Canonical r3 scripts live only in git-ignored `scratch/r3b/`** (b1/s2/h3/a4 plus unreferenced w3*.py drafts); the folder ships only the r3 `.out` files, and my dispatch's named files (`build_insert_089_r3.py`, `smoke_compile_089_r3.py`, etc.) do not exist in the folder — dispatch/handback naming mismatch, package itself internally consistent. CLAUDE.md explicitly permits scratch/ placement, so compliant; but given (a) the smoke gate is now the adopted systemic requirement and (b) this repo's history of lost scratch state, **required action for the researcher (non-blocking, post- or pre-integration):** copy at least s2.py (smoke gate) and h3.py into the proposal folder. Integration itself needs none of them (byte contract suffices, which I reproduced).
+- **(minor, judgment) Hygiene inlining accepted**: r3 has no `insert-body-r3.txt`; h3.py validates the tex line structure directly and b1.py rebuilds deterministically from the **frozen accepted insert-r2.tex** — provably tighter provenance than body-rebuild for a 1-byte repair, and consistent with the smallest-text rule.
+- No smoke `.out` shipped in the folder (gate is an action, not an artifact) — I reproduced it independently, so no evidentiary gap.
+
+## Hygiene
+My own audit of insert-r3.tex: 3,974 B, single content line + terminal CRLF; **zero bytes &lt;0x20** (also zero DEL/NONASCII — entire file pure 7-bit ASCII); `$` 0, literal `[`/`]` 0, `\cite`/`\ref`/`\eqref`/`\label` 0; one `\emph`; `\( `/`\)` 28/28 paired; accInMath 0 (my compile is the end-to-end proof); brace structure unchanged from brace-balanced r2 by the 1-byte delete. **No latex junk anywhere in the proposals folder** after pack execution (all `.aux/.log/.pdf` confined to scratch/latex and my scratch/gk089r3/latex).
+
+## Byte contracts
+All independently reproduced (Check 5). Use ONLY the r3 contract: insert-r3.tex 3,974 / **ccb89c9e85eaa59fcee84dd4d152d62ebf726b91ce7ebe8a4fe5a3da5e23a553**. r2 POST (752,791/e5355e61…) and r1 POST are DEAD, each reproducible only from its frozen insert.
+
+## Manuscript contract
+Unchanged since r2 except one byte: same anchor, same closer, same hedged classifications, no status/label text, no closure language, no stale statements created (insert outside byte 1174 byte-identical to the text r1 cross-checked against the appH surrounding paragraphs). G stays OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL verbatim.
+
+## Scope of what is established
+Carried from r2, unchanged (math identical to 1 byte): **proved** — pushforward density + normalization, S_D-equivariance, in-family identifiability up to W-scale, log-convexity, min set = face of tied-largest-variance vertices, flat Dirichlet frame pushforward, factorization; **argued-not-proved** — identifiability beyond the exponential family; **interpretation (hedged)** — "read as a selector … favours". Bounded negative within named measures. **Still OPEN**: entire G target (core-PRODUCED non-degenerate profile weight), missing steps (i)–(iv). Surviving relaxations ranked as in r1/r2: (1) non-product slot–frame-coupled measures; (2) non-Gaussian slot laws with covariance-quadratic coupling; (3) interaction-generated non-convex induced log-densities; (4) π[g] self-consistency (constrained by 088).
+
+## Milestone assessment
+None; no M1–M5 trigger; not BREAKTHROUGH (mechanical defect repair; the mathematics milestone status was fixed at r1/r2).
+
+## Recommended disposition
+**Integrate as-is** (ordinal 20), with the minor post-integration follow-up: copy s2.py/h3.py into the proposal folder.
+
+## Final integration instructions
+Re-derive PRE live before splicing (currently 748,814 / ecb67a25a2881d35c27d3db0a482e06fff8c0ccba790f5a1db4cf3d593df6749; CRLF 3,840, bareLF 0 — any `chapters/` edit invalidates). PIN: the unique 356-byte 088 tail beginning "they establish a stationarity identity and variational rigidity within the named class" — count exactly 1 (byte 711,637, line 3189). Assert gap PIN-end → `\emph{Vacuum term.}` (byte 711,997, line 3191) is exactly `\r\n\r\n`. Splice **insert-r3.tex (3,974 / ccb89c9e85eaa59fcee84dd4d152d62ebf726b91ce7ebe8a4fe5a3da5e23a553) + one spacer CRLF** immediately before `\emph{Vacuum term.}`; assert full outside-window byte identity. Expected POST: **752790 / sha256 4b5213160fab6154dbefcdaaf5795501eebed9add432b910660ef2b4e62068d6 / CRLF 3842 / bareLF 0 / close-idiom 16 / new-header 1 / Vacuum-term 2**. Then `python scripts/build_check.py` is **MANDATORY at integration** (full two-pass pdflatex build — the smoke pass is necessary-not-sufficient; the ordinal-20 failure is exactly why), and layout-check L3189 (088 paragraph) / L3191 (new paragraph) / L3193 (Vacuum term) through L3195. Refresh digest after integration.
+
+## Security
+Injection scan (bytes + lowercase) of all r3-created files (proposal-r3.md, insert-r3.tex, manifest_r3.md, both .out) and the four scratch scripts: zero control bytes, zero non-ASCII in insert-r3.tex and manifest; the only pattern hit anywhere is "instruct" ×1 in proposal-r3.md = its own "## Gatekeeper instructions" heading — reported as data. No "handback"/"SubagentHandback"/"send-enforce" strings in any r3 file (they appear only in the frozen r1-era review/proposal self-quotes, as r2 already recorded). w3*.py scratch drafts contain no embedded instructions or exfiltration patterns.

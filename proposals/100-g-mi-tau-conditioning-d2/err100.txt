@@ -1,0 +1,15 @@
+C:\Users\redgi\Projects\namcg-lab@gpu\proposals\100-g-mi-tau-conditioning-d2\mi_tau_100n.py:14: RuntimeWarning: overflow encountered in expm1
+  r = np.abs(np.asarray(r, float)); out = np.log(np.expm1(r)/r) - r + 1 - r/np.expm1(r)
+C:\Users\redgi\Projects\namcg-lab@gpu\proposals\100-g-mi-tau-conditioning-d2\mi_tau_100n.py:27: RuntimeWarning: invalid value encountered in multiply
+  Ehv = np.array([float(np.sum(wx*pX[i]*np.sum(wt*h(abs(W(xu[i]))*zt[None, :]/Lm[i, :, None]), 1)))
+Traceback (most recent call last):
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\100-g-mi-tau-conditioning-d2\mi_tau_100n.py", line 42, in <module>
+    r1 = run(M, g1, g2, s); r2 = run(M, g1, g2, s, nu=800, nx=600, nt=400)
+         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\100-g-mi-tau-conditioning-d2\mi_tau_100n.py", line 32, in run
+    Elnq = np.array([float(np.sum(wt*np.log(np.maximum(-np.expm1(-abs(W(xu[i]))*zt/Lm[i, :, None]), 1e-300)), 1))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\100-g-mi-tau-conditioning-d2\mi_tau_100n.py", line 32, in <listcomp>
+    Elnq = np.array([float(np.sum(wt*np.log(np.maximum(-np.expm1(-abs(W(xu[i]))*zt/Lm[i, :, None]), 1e-300)), 1))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: only 0-dimensional arrays can be converted to Python scalars
