@@ -5,7 +5,7 @@ import hashlib
 import re
 import sys
 
-F = r"proposals\106-a-map-matrix-selection-b2\insert-r1.tex"
+F = r"proposals\106-a-map-matrix-selection-b2\insert-r2.tex"
 A = r"chapters\appH-microscopic-proofs.tex"
 ins = open(F, "rb").read()
 print("checked insert:", F, len(ins), "bytes, sha256/16",

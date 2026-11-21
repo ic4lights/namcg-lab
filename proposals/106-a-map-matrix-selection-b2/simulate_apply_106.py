@@ -9,7 +9,7 @@ import os
 import sys
 
 A = r"chapters\appH-microscopic-proofs.tex"
-INS = r"proposals\106-a-map-matrix-selection-b2\insert-r1.tex"
+INS = r"proposals\106-a-map-matrix-selection-b2\insert-r2.tex"
 OUT = r"scratch\sim\appH_after_106.tex"
 app = open(A, "rb").read()
 ins = open(INS, "rb").read()
