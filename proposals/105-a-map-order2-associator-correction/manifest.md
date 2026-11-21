@@ -1,0 +1,22 @@
+findings.md                                8495  6011658e
+hygiene_105.out                             321  777e6c06
+hygiene_105.py                             2824  024f142a
+insert-r1.tex                              1849  7c6fd752
+insert-r2.tex                              2130  e46c9870
+manifest_105.py                             716  ba081ef0
+mk_artifacts.py                           12946  5ac31bb9
+mk_r2_sentence_check.py                    2386  21cb9a21
+proposal-r1.md                            14490  90c7c151
+proposal-r2.md                             5164  485ae222
+review-r1-provisional.md                  17009  38f08643
+review-r1.md                              14589  51f98afa
+review-r2-final.md                         3974  0206bc7d
+review-r2.md                              10223  fa6148d4
+s1_naive_associator.out                    2944  2dcb482e
+s1_naive_associator.py                    10884  ac5c6d0c
+s1b_order2_coboundary.out                  1686  03fdef03
+s1b_order2_coboundary.py                  29264  8b527a30
+simulate_apply_105.out                      388  43485c94
+simulate_apply_105.py                      2111  e22dc522
+sme-consult-r1.md                         12418  e5e38080
+appH live:   805839  21163962  CRLF 3870
