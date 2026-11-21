@@ -780,3 +780,35 @@
   - ch16 L215 and L276, and appE L225, hard-code "Theorem~7.3".
   - appH L96-97 and L553 hard-code chapter numbers.
 - Next: local 070 (b-content-class). It is at r1 AWRR and now re-anchors after the 065 closing sentence.
+
+## 2026-11-21 - local 070 (Problem B content class) integrated
+- Package: proposals/070-b-content-class.
+- Review path: r2 addressed r1 M1, M2 and m1-m5. Gatekeeper r2 then returned AWRR on m-a, the periodic vs fixed-state wording.
+- r3 applied m-a and m-c. The m-b ruling went to the researcher: sympy nsimplify(Rational) is not the identity.
+- Full scan in 4 passes, which also covers the every-5th obligation (ordinal 65). Then plain ACCEPT (review-r3-final.md).
+- Placed after the 065 closing paragraph. Companion edit at L437: "at the end of this section" changed to "later in this section".
+- Result: at (6,2) the tensor side vanishes, c_A = 2 is the Dirac excess, and the required term is -(4kappa_X+n_D) = -2. G_A = G_T is 0 = 0 or 2 != 0, so it fixes no Newton constant.
+- appH sha 4ea0ee0f.... build_check PASS, 401 pp. Digest CURRENT. Uncommitted, on top of the author commit 443cd95.
+- No label change. B stays OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL.
+- Pre-existing items for a later wording pass:
+  - appH L307-308 vs L372/L382 (Tr rho^n wording)
+  - ch02 L499-503 ("bosonic at the microscopic level")
+  - ch16 L178-181 (sign killer)
+
+## 2026-11-21 - gpu 059 (Problem D1 local Lorentz frame) integrated
+- Package proposals/local-gpu/059-d1-lorentz-local-frame went through these rounds:
+  - local-r2: researcher decision (b), equivariant lifts. The new finite-N content is the su(2)/so(5) and Peter-Weyl truncations, an exact fuzzy-sphere redundancy identity, a derivation lemma, and a bounded no-go (Lorentzian finite-N: so(3,1) is represented trivially, so D_a=0).
+  - gk local-r2: AWRR. m1 (*-closure) and m2 (so(4,1) wording) were required.
+  - local-r3, then gk confirmation and a full scan in 4 passes, then plain ACCEPT (review-local-r3-final.md).
+- Placed at the end of Problem D, before Section E. Three bib keys added.
+- Hashes: appH 8d1eb5dc..., bib 12899966.... build_check PASS, 404 pp. Digest CURRENT. Uncommitted.
+- No label change. D/D1 stays OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL.
+- Next D1 avenue (gk ranking): a Krein-form finite-N de Sitter realisation (relax h2).
+- Author standing clearance, 2026-11-21: pending reports/ changes do not block integration.
+- Pre-existing item for a later wording pass: ch17 L163, Lambda^dagger Lambda = I (dagger = eta-adjoint).
+- Next: local 068 (D1 torsion / B dynamics), chain 1.
+
+## 2026-11-21 - local 068 (D1 torsion) r1 reviewed
+- proposal-r1: in the first-order class on left-invariant backgrounds with vanishing connection, the system is block-triangular with ten copies of Q, and there is an exact gauge-invariant Heisenberg growing mode.
+- gk r1: AWRR, minors m1-m5. m1 is placement: move the insert before \section{Problem E}. The math is verified. It is a positive conditional sub-lemma, not a breakthrough.
+- Pending: researcher r2 (m1-m5), then the full scan in 4 passes, then integration. Nothing integrated.

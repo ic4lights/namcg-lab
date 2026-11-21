@@ -1,0 +1,21 @@
+appH pre  sha256 8d1eb5dccd6c808feb0bfbc935b5d5d0444dbfd8a46ac9c56c56519d07cfd41e bytes 712252
+pre-hash matches expected: True
+block bytes 7277 sha256 4f64732b250d1cfe0884996757eadd112e6d712a7f3dd2b911b5e336867ed92f
+anchor offset 265299 line 1604
+appH post sha256 08bc659e6f37446c700d2ef9757aca76dfe96ae84688d40e0d5b756e4791b543 bytes 719531 bare LF 0
+label ass:EFT-a2 defined 1
+label ass:frame-lock defined 1
+label ass:local-lorentz defined 1
+label ass:lorentzian defined 1
+label ass:nondeg defined 1
+label eq:Smatrix defined 1
+cite FurutaHanadaKawaiKimura2007 in bib 1 in additions 0
+cite NielsenOlesen1978 in bib 0 in additions 1
+pdflatex rc 0 pages 389
+bibtex rc 0 
+pdflatex rc 0 pages 406
+pdflatex rc 0 pages 406
+undefined/multiply-defined warnings: 0
+bibtex warnings for new keys: []
+BUILD CLEAN
+temp copy removed: True

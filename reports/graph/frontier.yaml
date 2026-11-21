@@ -1,50 +1,70 @@
 schema_version: 1
-generated: "2026-11-14T12:13:32-05:00"
+generated: "2026-11-21 (planner run; ISO time not available to the planner)"
 based_on:
-  mission_graph: "reports/graph/mission-graph.yaml, generated 2026-11-14 (file written 12:08); digest tree-hash 9d20a5559c5a7edf"
-  ledger: "last entry 066-bw-diamond-scope-correction, STALLED 2026-11-09"
-  digest: current
-# Reading notes (planner; no status implied anywhere in this file)
-#  - 'rank' orders dispatch. No source read this run names any edge as closing an Appendix H problem; every ranked
-#    edge is, per its source, a conditional sharpening or a possible bounded outcome.
-#  - rank: null = not dispatchable (bounded inside its class, held for the author, paused, or blocked upstream).
-#  - Extra keys beyond the schema: in_flight, notes. State 'blocked-by:author.*' = waits on an author decision
-#    recorded in the ledger; it is not a gap or edge id.
+  mission_graph: "reports/graph/mission-graph.yaml, frozen historical map generated 2026-11-14 (used for orientation only; live gaps taken from appH Missing-step paragraphs)"
+  ledger: "last entry '2026-11-21 - local 070 (Problem B content class) integrated'"
+  digest: current   # python scripts/make_digest.py --check printed DIGEST CURRENT
+# Reading notes (planner; no status, priority or completion label is implied or changed anywhere in this file)
+#  - rank orders dispatch. rank: null = not dispatchable (bounded inside its class, held for the author, or blocked upstream).
+#  - Extra keys beyond the schema: in_flight, notes, class (a/b/c per the 2026-11-20 derivation-first directive:
+#    a = positive derivation / derivation-grade input; b = correction of a materially false claim; c = bounded no-go
+#    extension or statistic sharpening, deprioritised).
+#  - Gating relations re-derived this run (pointers with src, never authority):
+#      D1 -> F : ch17-agenda.tex:650-653 (order item 1 'specify the omega, A_mu, B and ghost operators needed by Problem F');
+#                appH:1804-1806 (F Missing step names the local-Lorentz-ghost operators); appH:2040-2044 (F operators 'depend on the
+#                G_int and potential choices of Problem D'); ch17:362-370 (D2 gives F only a stated truncation).
+#      D1 -> C : ch17:144-145 ('in a constructed frame'), ch17:654; appH:622-628 (composite vierbein 'not constructed'; Repair II,
+#                independent coframe or extra tensors 'require a separate analysis'); ch17:339-342 (frame existence is a D1 closure item).
+#      F <-> C : ch17:267-268 ('v/M_P requires G_eff, this ties Problem C to Problem F'); ch17:247-259 (Z depends on G_eff).
+#                ch17:654-657 lists C before F; the tie means C's physical pole needs F's G_eff.
+#      F -> N  : ch17:658-660, ch17:727-731, appH:3433-3437 and appH:3426-3431 (N target stated 'for the values of alpha and
+#                G_eff computed in Problem F'; ghost mass 'part of Problem F').
+#      A (and E) premises: ch17:668-673 (A and E unordered; B or F derivations invoking ass:dictionary are DERIVED only after A);
+#                ch17:124-129 (B 'of Smatrix after Problem A').
+#      B, G last in order: ch17:661-665 (G then derives the Lambda_eff scaling).
+#    Upstream gating problem = D1 (gates F, C, and through F, N). D1's edges rank above all F/C/N edges.
 #  - Source discrepancies found this run:
-#      (1) reports/ledger.md has no entries for proposals 038-052 (it jumps from 037 to 053) and none for 067.
-#          For 038-052 the attempt record below comes from the proposals/*/review-rK.md files directly.
-#      (2) mission-graph `gaps:` lists 5 symbols (A, B, F, G, H). C, D1, E and N have no entry there; their gaps
-#          below are taken from the Appendix H status / missing-step passages.
-#      (3) sec:status-G and sec:status-C have no "Missing step" paragraph (065 review-r2 records this for G as an
-#          author item); sec:status-E likewise has only "Status. Remains Assumption lorentzian".
-#      (4) ch17 frames Problem A as the infrared dictionary; appH titles it "matrix-to-modular map"
-#          (ledger 066, author item).
+#      (1) sec:status-C and sec:status-G still have no 'Missing step' paragraph (appH Missing-step paragraphs sit at L145, 180, 743, 1804,
+#          3129, 3277, 3433). C's missing step is stated in ch17:139-157 only.
+#      (2) The previous frontier (2026-11-14) was stale: 066 r5, 067, gpu 054-057, 058, 063, 065, 070, 072-080 and 081-088 are now
+#          integrated per the ledger; their prior_attempts are updated below.
+#      (3) Housekeeping items recorded by the ledger (not frontier edges): appH L96-97, L553 hard-code chapter numbers; ch16 L215/L276 and
+#          appE L225 hard-code 'Theorem~7.3'; ch18 L45-46 describes Problem A differently from ch17.
 gaps:
   # ------------------------------------------------------------------ A
-  - gap: "Weyl map, Hilbert space, continuum limit (mission-graph gaps:; appH sec:status-A 'Missing step', chapters/appH-microscopic-proofs.tex:63-70; ch17-agenda.tex:390-392)"
+  - gap: "Weyl map, Hilbert space, continuum limit (appH sec:status-A 'Missing step', chapters/appH-microscopic-proofs.tex:145-152; ch17-agenda.tex:701-703)"
     target_problem: "A"
     attack_edges:
       - id: "A.bw-scope-r5"
-        named_as: "'apply S1 and S2 (review-r4 Corrected snippet) to the r4 text' (reports/ledger.md 066 entry; proposals/066-bw-diamond-scope-correction/review-r4.md 'Recommended disposition')"
+        named_as: "'apply S1 and S2 (review-r4 Corrected snippet) to the r4 text' (reports/ledger.md 066; proposals/066-bw-diamond-scope-correction/review-r4.md)"
         requires_symbols: ["corrected Free/Poisson and General-sector text of sec:status-A"]
-        available_from: ["proposals/066-bw-diamond-scope-correction/proposal-r4.md", "review-r4.md S1, S2 snippets"]
-        missing_inputs: ["author authorisation of round 5 (ledger 066: 'For the author: decide whether to authorise r5')", "gatekeeper full scan before integration (3(b), 3(c))"]
+        available_from: ["ledger '2026-11-18 - gpu import narrowed': Applied (plain ACCEPT, standalone): 066 BW diamond scope correction (r5)"]
+        missing_inputs: []
         prior_attempts:
-          - {ref: "proposals/066-bw-diamond-scope-correction", verdict: "r4 ACCEPT WITH REQUIRED REVISIONS | M3 | PRIOR-CLAIM-ERROR | PROGRESS flat", outcome: "stalled", hypothesis_class: "-"}
-        state: "blocked-by:author.066-r5-authorisation"
+          - {ref: "proposals/066-bw-diamond-scope-correction", verdict: "r4 AWRR, then r5 plain ACCEPT with full scan (ledger 2026-11-18)", outcome: "accepted", hypothesis_class: "-"}
+        state: superseded
         rank: null
-        rank_reason: "Closest edge on the frontier by missing inputs (two verbatim substitutions), but STALLED at the round cap; not dispatchable without the author."
-        notes: "A correction of a confirmed false sentence (appH L30-31), not a derivation of A. The false sentence is still in the manuscript."
+        rank_reason: "Correction of a false sentence, now applied; kept for attempt history. It was a class (b) item, not a derivation of A."
+      - id: "A.map-dictionary-derivation"
+        named_as: "gpu 058 'a-map-dictionary-derivation' (ledger 2026-11-19: 'r3 applied the local-r1 fixes: MAJOR (Schouten closure is necessary; no order-Theta^2 correction can replace it)')"
+        requires_symbols: ["Theta", "Schouten closure", "K_0"]
+        available_from: ["integrated gpu 058 text in sec:status-A"]
+        missing_inputs: ["per ledger: Problem A stays OPEN; the general (non-quadratic) identification of the missing step is not supplied"]
+        prior_attempts:
+          - {ref: "proposals/local-gpu/058-a-map-dictionary-derivation", verdict: "r3 NEEDS EVIDENCE then plain ACCEPT after 4-pass full scan", outcome: "accepted", hypothesis_class: "-"}
+        state: attempted-open
+        rank: null
+        rank_reason: "A is not gated by D1/F (ch17:668-673), but no source read this run names a next untried A edge outside the review-ranked list below; those need the author's wedge-level scope decision."
       - id: "A.wedge-reformulation"
         named_as: "'wedge reformulation' (066 review-r4, ranked avenue 1)"
         requires_symbols: ["Theta_{mu nu}", "quadratic sector", "a stated Poincare-covariant IR theory with vacuum"]
         available_from: ["inputs: Theta_{mu nu}", "qm.Smicro"]
-        missing_inputs: ["Poincare-covariant IR theory (scout: 'this comes from D1/E')", "author decision whether a wedge-level A is a scope change", "reconciliation of the Moyal-element dilatation reading recorded in 066"]
+        missing_inputs: ["Poincare-covariant IR theory (scout: 'this comes from D1/E')", "author decision whether a wedge-level A is a scope change"]
         prior_attempts: []
-        state: "blocked-by:A.bw-scope-r5"
+        state: "blocked-by:author.A-wedge-scope"
         rank: null
-        rank_reason: "Review-ranked first relaxation, but anchored to the 066-corrected text and to an author scope decision."
-        lead_for_researcher: "reports/sme-scout-20261114-1206.md R1 (Buchholz-Lechner-Summers 1005.2656; Grosse-Lechner 0706.3992; abstracts only) and R2 (no closed-form massive diamond modular Hamiltonian; Speranza borderline marked by the scout as its own unverified reading). Pointers, not evidence."
+        rank_reason: "Review-ranked first relaxation; waits on an author scope decision."
+        lead_for_researcher: "reports/sme-scout-20261114-1206.md R1 (Buchholz-Lechner-Summers 1005.2656; Grosse-Lechner 0706.3992; abstracts only) and R2. Pointers, not evidence."
       - id: "A.hquad-operator-def"
         named_as: "'an operator-level definition of H_quad, then redo the K_0 symbol computation via forks (i) or (iii)' (066 review-r4, ranked avenue 2)"
         requires_symbols: ["H_quad", "K_0", "X_mu", "Theta_{mu nu}"]
@@ -52,179 +72,209 @@ gaps:
         missing_inputs: ["H_quad (ledger 066: 'defined nowhere')", "cyclic separating state", "half-sided-inclusion step"]
         prior_attempts:
           - {ref: "proposals/066-bw-diamond-scope-correction", verdict: "r4 AWRR", outcome: "stalled", hypothesis_class: "-"}
-        state: "blocked-by:A.bw-scope-r5"
-        rank: null
-        rank_reason: "Needs no scope decision, but its anchor paragraphs are the ones 066 r5 rewrites."
+        state: untried
+        rank: 12
+        rank_reason: "Direct positive-aimed edge on the A Missing step; not gated by D1/F; re-anchor against the integrated 066 r5 and gpu 058 paragraphs before dispatch (the 066 hold no longer applies)."
       - id: "A.ir-below-msigma"
         named_as: "'the IR theory below m_sigma' (066 review-r4, ranked avenue 3)"
         requires_symbols: ["m_sigma", "S_micro"]
         available_from: ["qm.Smicro"]
         missing_inputs: ["not specified by the source beyond the name"]
         prior_attempts: []
-        state: "blocked-by:A.bw-scope-r5"
-        rank: null
-        rank_reason: "Same passage as 066."
+        state: untried
+        rank: 24
+        rank_reason: "Same passage as the other A edges; nothing named beyond the title."
       - id: "A.small-diamond-error"
-        named_as: "'small-diamond error control' (066 review-r4, ranked avenue 4); the O(R sqrt||dTheta||) bounds are 'underived and uncited, and R is undefined' (ledger 066)"
+        named_as: "'small-diamond error control' (066 review-r4, ranked avenue 4)"
         requires_symbols: ["R", "delta Theta"]
         available_from: []
         missing_inputs: ["definition of R", "derivation of the bound"]
         prior_attempts: []
-        state: "blocked-by:A.bw-scope-r5"
-        rank: null
-        rank_reason: "Same passage as 066."
+        state: untried
+        rank: 26
+        rank_reason: "Review rank 4."
       - id: "A.maxwell-fermion-diamond"
         named_as: "'Maxwell and fermion diamond results' (066 review-r4, ranked avenue 5)"
         requires_symbols: ["A_mu", "fermion content"]
         available_from: ["qm.Smicro"]
         missing_inputs: ["not specified by the source beyond the name"]
         prior_attempts: []
-        state: "blocked-by:A.bw-scope-r5"
-        rank: null
-        rank_reason: "Same passage as 066; lowest review rank."
+        state: untried
+        rank: 28
+        rank_reason: "Lowest review rank."
   # ------------------------------------------------------------------ B
-  - gap: "g0 -> g map; stationarity delta S_D = 0 for the tensor block (mission-graph gaps:; appH sec:status-B 'Missing step', chapters/appH-microscopic-proofs.tex:98-107; ch17-agenda.tex:134-137)"
+  - gap: "g0 -> g map; stationarity delta S_D = 0 for the tensor block (appH sec:status-B 'Missing step', chapters/appH-microscopic-proofs.tex:180-189; ch17-agenda.tex:121-137, 704-707)"
     target_problem: "B"
     attack_edges:
       - id: "B.matrix-state-edge-sector"
-        named_as: "'The modular Hamiltonian and edge sector of the matrix state: does it carry the Maxwell edge modes of the symplectic U(1), and what supplies the remaining 3 kappa_X? This is A n B. Frenkel-Hartnoll vs the DW edge density in Moser variables is a concrete first package.' (proposals/043-gauge-charge-edge-term/review-r1.md:127; confirmed as top in review-r2 Scope)"
+        named_as: "'The modular Hamiltonian and edge sector of the matrix state ... This is A n B. Frenkel-Hartnoll vs the DW edge density in Moser variables is a concrete first package.' (proposals/043-gauge-charge-edge-term/review-r1.md:127)"
         requires_symbols: ["matrix state", "modular Hamiltonian", "Maxwell edge sector", "kappa_X", "Moser variables"]
-        available_from: ["qm.Smatrix", "appH sec:status-B paragraphs at L374-431 (Moser variables, joint flow, gauge realisation)"]
-        missing_inputs: ["the state (appH L429: 'do not determine the edge term of the matrix state, its modular Hamiltonian or the replica'; 065: the integral 'supplies no state')", "dictionary (A.map, open)"]
+        available_from: ["qm.Smatrix", "integrated gpu 065 Ward-measure sub-lemma and local 070 content-class paragraphs in sec:status-B"]
+        missing_inputs: ["the state (the integral 'supplies no state'; appH sec:status-G)", "dictionary (A.map, open)"]
         prior_attempts:
-          - {ref: "proposals/043-gauge-charge-edge-term", verdict: "r2 ACCEPT | FLAGS PRIOR-CLAIM-ERROR | PROGRESS improving", outcome: "bounded", hypothesis_class: "'limited to the Poisson limit, four coordinates, n_D = 0, joint-flow-invariant backgrounds and local charges' (review-r2 Scope)"}
-          - {ref: "proposals/019-fermion-replica-gluing, 021-spin-contact-term, 024-replica-classification", verdict: "ACCEPT (ledger)", outcome: "accepted", hypothesis_class: "-"}
+          - {ref: "proposals/043-gauge-charge-edge-term", verdict: "r2 ACCEPT | PRIOR-CLAIM-ERROR", outcome: "bounded", hypothesis_class: "'limited to the Poisson limit, four coordinates, n_D = 0, joint-flow-invariant backgrounds and local charges' (review-r2 Scope)"}
+          - {ref: "proposals/070-b-content-class", verdict: "r3-final plain ACCEPT (ledger 2026-11-21)", outcome: "accepted", hypothesis_class: "-"}
         state: untried
-        rank: 4
-        rank_reason: "Review-ranked first relaxation of the 043 bounded result; its named missing input (the state) is supplied by nothing upstream."
-        lead_for_researcher: "Subject matter overlaps the Frenkel-Hartnoll / FFHS edge machinery of the G chain (065, 067): read the sec:status-G paragraph at appH L2871-2894 first; do not edit it. Related earlier names: ledger 017 avenue 2 'replica gluing from matrix modular flow (Problem A sub-lemma)', ledger 037 avenue 4 'selection of alpha_v from the modular flow'."
-        notes: "Tagged A n B by its source. Must write only in sec:status-B while the A passage is held for 066."
+        rank: 14
+        rank_reason: "Review-ranked first relaxation of 043. Local 070 (integrated) found: at IKKT content (6,2) the comparison is 0 = 0 (or 2 != 0 for the fixed-state replica), so n_D = 0 is the only content on which '3 kappa_X remains' holds (ledger 070)."
+        lead_for_researcher: "Subject matter overlaps the Frenkel-Hartnoll / FFHS machinery in sec:status-G; read, do not edit, that passage."
+      - id: "B.ward-measure-insertion"
+        named_as: "gpu 065 'b-ward-measure-insertion-sublemma' (ledger 2026-11-19: 'Schwinger-Dyson insertion, measure Jacobians and null directions of the replica functional (conditional; not closure)')"
+        requires_symbols: ["Z_n(epsilon)", "Jacobian j_epsilon", "null directions", "dS_D = Tr(G1 P G1 B) - 1/2 Tr(G1 B)"]
+        available_from: ["integrated 2026-11-19"]
+        missing_inputs: ["per the integrated paragraph: the loop equations 'do not imply delta S_D = 0'; the replica block conditional on the stated class"]
+        prior_attempts:
+          - {ref: "proposals/local-gpu/065-b-ward-measure-insertion-sublemma", verdict: "plain ACCEPT after 4-pass full scan", outcome: "accepted", hypothesis_class: "-"}
+        state: attempted-open
+        rank: null
+        rank_reason: "Integrated; the edge is consumed. Its stated remainder is the matrix-state and dictionary inputs above."
       - id: "B.axion-independent-class"
         named_as: "'A class where theta (or its analogue) is independent of the tensor modes (rank-6, CP^{1,2}, fuzzy K), to test the closure conjecture.' (043 review-r1.md:128)"
         requires_symbols: ["rank-6 class", "CP^{1,2} x K class"]
-        available_from: ["appH sec:status-F conjugate-coordinate and product paragraphs (L2419-2850)"]
+        available_from: ["appH sec:status-F conjugate-coordinate and product paragraphs"]
         missing_inputs: ["a common G_T on the transverse polarisations (044 proposal-r2: 'neither established nor excluded')"]
         prior_attempts:
-          - {ref: "proposals/044-rank6-class-transfer", verdict: "r2 ACCEPT WITH REQUIRED REVISIONS (one minor wording defect)", outcome: "accepted", hypothesis_class: "-"}
+          - {ref: "proposals/044-rank6-class-transfer", verdict: "r2 ACCEPT WITH REQUIRED REVISIONS", outcome: "accepted", hypothesis_class: "-"}
         state: attempted-open
-        rank: 8
-        rank_reason: "Review rank 2 for B; depends on the F-section classes, so it must be serialized with the F chain."
-        notes: "Cross-passage: relies on sec:status-F classes. 044's integration is not recorded in the ledger (ledger gap 038-052)."
+        rank: 15
+        rank_reason: "Review rank 2 for B; depends on the F-section classes, so serialize behind any F edge that edits sec:status-F."
       - id: "B.edge-extended-phase-space"
         named_as: "'An edge-mode extended phase space (Donnelly-Freidel, Speranza) to fix the corner Y by boundary data.' (043 review-r1.md:129)"
         requires_symbols: ["corner term Y", "local charges"]
-        available_from: ["appH sec:status-B L399-431"]
+        available_from: ["appH sec:status-B"]
         missing_inputs: ["boundary data fixing Y"]
         prior_attempts: []
         state: untried
-        rank: 12
+        rank: 19
         rank_reason: "Review rank 3 for B."
       - id: "B.dirac-sector"
         named_as: "'The Dirac sector, kappa_X = 1 - n_D/2.' (043 review-r1.md:131)"
         requires_symbols: ["kappa_X", "n_D"]
-        available_from: ["appH sec:status-B L219-236"]
+        available_from: ["appH sec:status-B", "local 070 integrated content-class paragraph"]
         missing_inputs: ["not specified by the source beyond the name"]
         prior_attempts: []
         state: untried
-        rank: 18
-        rank_reason: "Review rank 5 for B."
+        rank: 25
+        rank_reason: "Review rank 5; partly overlapped by integrated local 070 (content-class gaps at general n_D)."
       - id: "B.local-charge-noether-gap"
-        named_as: "Gap c_A - c_T at order Lambda^2 and its Noether-charge reading (ledger 015, 017, 037 avenue 1; proposals 038, 039, 041, 042, 043)"
+        named_as: "Gap c_A - c_T at order Lambda^2 and its Noether-charge reading (ledger 015, 017, 037; proposals 038-043)"
         requires_symbols: ["rho^2 X", "kappa_X"]
-        available_from: ["appH sec:status-B L205-431"]
+        available_from: ["appH sec:status-B"]
         missing_inputs: ["nothing inside the class; see hypothesis_class"]
         prior_attempts:
-          - {ref: "proposals/015-entropy-action-identity", verdict: "r3 ACCEPT (ledger)", outcome: "bounded", hypothesis_class: "ledger 015: 'in class (Poisson, Euclidean, Feynman background gauge, one loop, Lambda^2, delta rho = 0, replica I)' - quoted from the ledger, review not re-read this run"}
-          - {ref: "proposals/038-lambda2-frame-entropy, 039-lorentz-locking-noether, 042-constrained-noether-charge", verdict: "r2 ACCEPT (review headers)", outcome: "accepted", hypothesis_class: "-"}
-          - {ref: "proposals/041-covariant-bundle-connection", verdict: "r2 ACCEPT WITH REQUIRED REVISIONS", outcome: "accepted", hypothesis_class: "-"}
+          - {ref: "proposals/015-entropy-action-identity", verdict: "r3 ACCEPT (ledger)", outcome: "bounded", hypothesis_class: "ledger 015: 'in class (Poisson, Euclidean, Feynman background gauge, one loop, Lambda^2, delta rho = 0, replica I)' (quoted from the ledger)"}
           - {ref: "proposals/043-gauge-charge-edge-term", verdict: "r2 ACCEPT | PRIOR-CLAIM-ERROR", outcome: "bounded", hypothesis_class: "'limited to the Poisson limit, four coordinates, n_D = 0, joint-flow-invariant backgrounds and local charges' (review-r2 Scope)"}
         state: bounded
         rank: null
-        rank_reason: "Not re-attemptable inside the class. Review-named relaxations (043 review-r1.md:133-136): 'the geometric nature of the gauge action (Poisson limit); local classical charges with free Y; T^op defined as the EL response (versus T_eta)'."
+        rank_reason: "Not re-attemptable inside the class. Review-named relaxations (043 review-r1.md:133-136): the geometric nature of the gauge action; local classical charges with free Y; T^op defined as the EL response."
   # ------------------------------------------------------------------ C
-  - gap: "physical scalar operator, mixing with T_{mu nu}, non-minimal and matter couplings; ass:gap-psi (appH sec:status-C 'Status', chapters/appH-microscopic-proofs.tex:505-519; ch17-agenda.tex:262-271; not in mission-graph gaps:)"
+  - gap: "physical scalar operator, mixing with T_{mu nu}, non-minimal and matter couplings; ass:gap-psi (ch17-agenda.tex:139-157, 708-711; appH sec:status-C 'Status', chapters/appH-microscopic-proofs.tex:622-640; sec:status-C has no 'Missing step' paragraph)"
     target_problem: "C"
     attack_edges:
+      - id: "C.missing-step-restatement"
+        named_as: "gpu 062 block 1: 'Problem C Missing step (appH L685)' (proposals/local-gpu/_local-review/group2-B-C-D1.md: AWRR, M1 requires inserting the ch17 phenomenological-comparison clause)"
+        requires_symbols: ["ch17:139-157 completion text"]
+        available_from: ["ch17-agenda.tex:139-157"]
+        missing_inputs: ["researcher r2 with M1 and m1-m2 applied", "gatekeeper full scan (3(c): touches a status passage)"]
+        prior_attempts:
+          - {ref: "proposals/local-gpu/062-c-scalar-tadpole-nonderivative-obstruction (block 1)", verdict: "local r1 AWRR, OPEN 0/1, PROGRESS first", outcome: "stalled", hypothesis_class: "-"}
+        state: "blocked-by:D1.lorentz"
+        rank: 17
+        rank_reason: "Records the target in sec:status-C where no Missing-step paragraph exists; derives nothing; the target needs a constructed frame (D1)."
+        notes: "Class (b)-adjacent editorial: it states an omitted missing step; no manuscript claim is false without it. Rides with the 062 package, so serialize with F.trace-channel-fibre-response."
       - id: "C.repair-II-separate-analysis"
-        named_as: "'Repair II, an independent coframe, or additional symmetry-breaking background tensors would change the construction and require a separate analysis.' (chapters/appH-microscopic-proofs.tex:510-512)"
+        named_as: "'Repair II, an independent coframe, or additional symmetry-breaking background tensors would change the construction and require a separate analysis.' (appH Status, L630-633 region of sec:status-C)"
         requires_symbols: ["e^A_mu", "G_eff", "Phi", "lambda", "v"]
         available_from: ["qm.Smicro (Phi, lambda, v)"]
-        missing_inputs: ["e^A_mu (D1.lorentz, open)", "G_eff (F.coeffs, open; ch17:267 'ties Problem C to Problem F')"]
+        missing_inputs: ["e^A_mu (D1.lorentz, open)", "G_eff (F, open; ch17:267-268)"]
         prior_attempts: []
         state: "blocked-by:D1.lorentz+F.coeffs"
         rank: null
-        rank_reason: "Both required upstream symbols are unsupplied (mission-graph edges D1->C, F->C)."
-        notes: "The only C-relevant open work a review names lies in the sec:status-F passage: see F.t-nonderivative-sector (049 review-r4 avenue 1, 'decides whether the branch gives a long-range force')."
-  # ------------------------------------------------------------------ D1
-  - gap: "SO(3,1) from the matrix algebra; omega, A_mu, B and ghost operators; locked frame and non-degeneracy derived (appH sec:status-D 'Missing step', chapters/appH-microscopic-proofs.tex:626-639; ch17-agenda.tex:712-717; not in mission-graph gaps:)"
+        rank_reason: "Both upstream symbols are unsupplied."
+        notes: "The only C-relevant open work a review names lies in sec:status-F: see F.t-nonderivative-sector (049 review-r4 avenue 1)."
+  # ------------------------------------------------------------------ D1  (UPSTREAM GATING PROBLEM)
+  - gap: "SO(3,1) from the matrix algebra; omega, A_mu, B and ghost operators; locked frame and non-degeneracy derived (appH sec:status-D 'Missing step', chapters/appH-microscopic-proofs.tex:743-754; ch17-agenda.tex:329-370, 712-717). Gates F and C (see header), and through F, N."
     target_problem: "D1"
     attack_edges:
+      - id: "D1.lorentz-local-frame-equivariant"
+        named_as: "gpu 059 'd1-lorentz-local-frame', gatekeeper M1 RESEARCHER-DECISION: '(b) Recompute with equivariant lifts. The gatekeeper verified T = 0, S_12 = -xi, R = -1, and prefers (b).' (proposals/local-gpu/_local-review/group2-B-C-D1.md)"
+        requires_symbols: ["horizontal lifts D_a", "fibre vector field xi", "scaled ghost operator sum ad_{X_i}^2 / hbar_eff^2"]
+        available_from: ["proposals/local-gpu/059-d1-lorentz-local-frame (r3 insertion-block.tex; scripts d1_finiteN_class.py, d1_toy_class_symbolic.py)", "integrated first-order equivariant-class paragraphs in sec:status-D"]
+        missing_inputs: ["researcher decision between relabel (a) and equivariant lifts (b)", "M2 (false 'not first-order' sentence), M3 (conditional wording for the frame-lock reading; a STRUCTURAL package if adopted outright), m1-m4", "any 4D, non-toy statement: the toy is the 2D fuzzy-sphere S^2 base"]
+        prior_attempts:
+          - {ref: "proposals/local-gpu/059-d1-lorentz-local-frame", verdict: "r3 gpu ACCEPT; local r1 AWRR (3 major, FLAGS RESEARCHER-DECISION, OPEN 0/3)", outcome: "stalled", hypothesis_class: "-"}
+        state: attempted-open
+        rank: 1
+        rank_reason: "D1 is the upstream gating problem (ch17:650-653; appH:1804-1806); this package supplies a derived ghost spectrum l(l+1), multiplicity 2l+1 (verified by the gatekeeper) in the one named D1 operator class; fewest edits to finish."
+        notes: "Does not close D1 (toy, two-dimensional base; rule 3). Its torsion convention fixes what local 068 must use, so it runs first in the D chain."
       - id: "D1.torsion-T-nonzero"
-        named_as: "'Quadratic form on non-commutant Lorentz modes at T != 0, starting from the null-rotation algebra (relaxes the commuting background)' (052 review-r3 avenue 1); 'T != 0 backgrounds (Lie-algebra or left-invariant with torsion): the first place a label can get a non-derivative term ... Read 0911.1769 first.' (051 review-r3 avenue 1); 'Sources at T != 0' (050 review-r2 avenue 2)"
+        named_as: "'Quadratic form on non-commutant Lorentz modes at T != 0, starting from the null-rotation algebra' (052 review-r3 avenue 1); 'T != 0 backgrounds ... Read 0911.1769 first.' (051 review-r3 avenue 1); 'Sources at T != 0' (050 review-r2 avenue 2); ledger 068: 'Chain 2 top edge D1.torsion-T-nonzero'"
         requires_symbols: ["first-order equivariant class", "label modes", "background torsion T", "pairing / norm"]
-        available_from: ["appH sec:status-D paragraphs L1394-1480 (class supplied, not derived)", "qm.Smatrix with C_{mu nu lambda} = 0"]
-        missing_inputs: ["a norm from a regulated action or finite-rank pairing on T != 0 backgrounds", "selection of the class by the matrix integral (appH L1414, L1453, L1480: not derived)"]
+        available_from: ["appH sec:status-D first-order equivariant paragraphs", "proposals/068-d1-torsion-nonzero scripts s1-s4 (no proposal-r1.md yet)"]
+        missing_inputs: ["a norm from a regulated action or finite-rank pairing on T != 0 backgrounds", "selection of the class by the matrix integral", "059 convention fixed first (group2 cross-package: 'Local 068's torsion convention contradicts the 059 toy. Fix 059 first.')"]
         prior_attempts:
           - {ref: "proposals/050-frame-bundle-local-lorentz", verdict: "r2 ACCEPT | PROGRESS improving", outcome: "accepted", hypothesis_class: "-"}
           - {ref: "proposals/051-finite-rank-pairing-torsion-modes", verdict: "r3 ACCEPT | PROGRESS improving", outcome: "bounded", hypothesis_class: "'Masslessness: quadratic order; T = 0 background; first-order operators; commutant labels; Theta, order-zero and K-singlet additions; the bilinear term on dS.' (review-r3 obstruction class 1)"}
           - {ref: "proposals/052-reflection-form-one-loop-labels", verdict: "r3 ACCEPT | PROGRESS flat", outcome: "bounded", hypothesis_class: "'One-loop second-order term: IKKT content, common regulator, fixed sigma, commuting background, vanishing fermion background, modulus.' (review-r3 obstruction class 1)"}
+          - {ref: "proposals/068-d1-torsion-nonzero", verdict: "none (round 1 interrupted 2026-11-15; scripts only)", outcome: "stalled", hypothesis_class: "-"}
         state: untried
         rank: 2
-        rank_reason: "The same relaxation is ranked first by three consecutive accepting reviews (050 av.2, 051 av.1, 052 av.1); builds on integrated paragraphs; targeted reads."
-        notes: "A conditional sharpening inside a supplied class; it derives neither the class nor the frame. D1 also needs eta_AB from E (mission-graph edge E->D1), and E is paused."
-      - id: "D1.diagonal-dynamics-zero-modes"
-        named_as: "'Diagonal fermion zero modes and eigenvalue dynamics ... This is the sharpest loop avenue for a label term.' (052 review-r3 avenue 3); 'Diagonal-element dynamics and which labels are Nambu-Goldstone (HKS mass gap)' (051 review-r3 avenue 2)"
-        requires_symbols: ["diagonal elements", "fermion zero modes", "label modes"]
-        available_from: ["appH sec:status-D L1455-1480"]
-        missing_inputs: ["sigma = 0 and the zero-mode-excluded object (052 review-r3 'Unresolved')"]
-        prior_attempts:
-          - {ref: "proposals/052-reflection-form-one-loop-labels", verdict: "r3 ACCEPT | PROGRESS flat", outcome: "accepted", hypothesis_class: "-"}
-        state: untried
-        rank: 6
-        rank_reason: "Review rank 2-3; relaxes the commuting vacuum."
-      - id: "D1.one-loop-labels-nonzero-commutators"
-        named_as: "'Second-order one-loop form on labels at nonzero background commutators (K, T, R), both index lines kept (F, N).' (052 review-r3 avenue 2); 'One-loop induced form on labels with IKKT content: decides the tension.' (051 review-r3 avenue 3)"
-        requires_symbols: ["IKKT content (supplied)", "background commutators", "label modes"]
-        available_from: ["appH sec:status-D L1455-1480"]
-        missing_inputs: ["regulated trace and domains (050 review-r2 avenue 5)"]
-        prior_attempts:
-          - {ref: "proposals/052-reflection-form-one-loop-labels", verdict: "r3 ACCEPT | PROGRESS flat", outcome: "bounded", hypothesis_class: "'One-loop second-order term: IKKT content, common regulator, fixed sigma, commuting background, vanishing fermion background, modulus.' (review-r3 obstruction class 1)"}
-        state: attempted-open
-        rank: 9
-        rank_reason: "Review rank 2 in 052, but tagged (F, N) by its source: collides with the F chain if it uses the K of the product class."
-      - id: "D1.constraint-branch"
-        named_as: "'Torsion sector, the gate for N. What removes the negative-norm components and double zeros. Constraint branch ... Mass branch ...' (050 review-r2 avenue 1); 'Constraint branch for the fibre class: HKS-type or supermatrix constraint removing excess labels. It must be derived, not imposed.' (051 review-r3 avenue 4); 'A closing bivector constraint or a supermatrix route retaining six-parameter rotations.' (052 review-r3 avenue 6)"
-        requires_symbols: ["torsion labels", "constraint"]
-        available_from: ["appH sec:status-D L1394-1480"]
-        missing_inputs: ["a derivation of the constraint (reviews: 'imposed by hand' in the literature; 'Neither is derived')"]
-        prior_attempts:
-          - {ref: "proposals/051-finite-rank-pairing-torsion-modes", verdict: "r3 ACCEPT", outcome: "accepted", hypothesis_class: "-"}
-        state: attempted-open
-        rank: 14
-        rank_reason: "Named by three reviews; ranked low by the latest two; mass branch already bounded by 051/052."
-      - id: "D1.orbit-relaxations"
-        named_as: "'Relaxations of O-orbit. Moyal or finite-N inner automorphisms; field-dependent parameters at second order; direct sums of orbits; extra matrices acting on y.' (050 review-r2 avenue 6); 'Beyond the Poisson limit: Moyal and finite-N inner automorphisms with non-quadratic generators ... the only route to non-geometric local rotations, relevant to D1.' (043 review-r1.md:130)"
-        requires_symbols: ["CP^{1,2} orbit", "Moyal product", "gauge parameters"]
-        available_from: ["appH sec:status-D L1377-1392"]
-        missing_inputs: ["not specified by the sources beyond the list"]
-        prior_attempts:
-          - {ref: "proposals/050-frame-bundle-local-lorentz", verdict: "r2 ACCEPT", outcome: "bounded", hypothesis_class: "'O-orbit. Hypotheses: Poisson limit; one orbit CP^{1,2}; base functions y^mu; gauge parameters functions on the leaf; linear order about T^a.' (review-r2 Scope)"}
-        state: untried
-        rank: 16
-        rank_reason: "Review-named relaxation of the O-orbit bounded obstruction; ranked sixth by its review."
+        rank_reason: "Named by three consecutive accepting reviews; attacks the 'torsion and propagating modes' part of the D1 Missing step directly; relaxation of the T = 0 hypothesis of the 051 class. Serialize after the 059 edge (same passage)."
+        notes: "A conditional sharpening inside a supplied class unless it also derives the class (the ledger names the selection edge below as the one the criterion needs). D1 also needs eta_AB from E (mission-graph edge E->D1)."
       - id: "D1.selection-of-class"
         named_as: "'Selection. Whether the matrix integral prefers this class against CP^{1,2} and commutative distributions; what fixes A; regular versus minimal representation. The frame and non-degeneracy would have to come from here.' (050 review-r2 avenue 3)"
         requires_symbols: ["matrix integral", "class algebra A"]
         available_from: ["qm.Smatrix"]
-        missing_inputs: ["everything beyond the action: no source supplies a selection principle"]
+        missing_inputs: ["no source supplies a selection principle"]
         prior_attempts: []
         state: untried
-        rank: 21
-        rank_reason: "The edge the criterion actually needs (frame and non-degeneracy derived), but with the most missing inputs; it overlaps the paused E thread (060-064 are tagged E, D1)."
+        rank: 3
+        rank_reason: "Rule 1: attacks the named D1 Missing-step requirement (locked frame and non-degeneracy derived, not assumed) directly, so it outranks one-hop sharpenings; closeness is low (most missing inputs)."
+        lead_for_researcher: "No SME/vector/adversary lead names a method; do not start without one. Overlaps the E-dependent eta_AB input."
+      - id: "D1.diagonal-dynamics-zero-modes"
+        named_as: "'Diagonal fermion zero modes and eigenvalue dynamics ... This is the sharpest loop avenue for a label term.' (052 review-r3 avenue 3); 'Diagonal-element dynamics and which labels are Nambu-Goldstone (HKS mass gap)' (051 review-r3 avenue 2)"
+        requires_symbols: ["diagonal elements", "fermion zero modes", "label modes"]
+        available_from: ["appH sec:status-D"]
+        missing_inputs: ["sigma = 0 and the zero-mode-excluded object (052 review-r3 'Unresolved')"]
+        prior_attempts:
+          - {ref: "proposals/052-reflection-form-one-loop-labels", verdict: "r3 ACCEPT | PROGRESS flat", outcome: "accepted", hypothesis_class: "-"}
+        state: untried
+        rank: 4
+        rank_reason: "Review rank 2-3; relaxes the commuting vacuum; addresses the Missing-step 'dynamics of the independent diagonal connection'."
+      - id: "D1.constraint-branch"
+        named_as: "'Constraint branch for the fibre class: HKS-type or supermatrix constraint removing excess labels. It must be derived, not imposed.' (051 review-r3 avenue 4); 'Torsion sector, the gate for N ...' (050 review-r2 avenue 1); 'A closing bivector constraint or a supermatrix route retaining six-parameter rotations.' (052 review-r3 avenue 6)"
+        requires_symbols: ["torsion labels", "constraint"]
+        available_from: ["appH sec:status-D"]
+        missing_inputs: ["a derivation of the constraint ('Neither is derived')"]
+        prior_attempts:
+          - {ref: "proposals/051-finite-rank-pairing-torsion-modes", verdict: "r3 ACCEPT", outcome: "accepted", hypothesis_class: "-"}
+        state: attempted-open
+        rank: 5
+        rank_reason: "Named by three reviews, and by 050 as 'the gate for N'; mass branch already bounded by 051/052."
+      - id: "D1.one-loop-labels-nonzero-commutators"
+        named_as: "'Second-order one-loop form on labels at nonzero background commutators (K, T, R), both index lines kept (F, N).' (052 review-r3 avenue 2); 'One-loop induced form on labels with IKKT content: decides the tension.' (051 review-r3 avenue 3)"
+        requires_symbols: ["IKKT content (supplied)", "background commutators", "label modes"]
+        available_from: ["appH sec:status-D"]
+        missing_inputs: ["regulated trace and domains (050 review-r2 avenue 5)"]
+        prior_attempts:
+          - {ref: "proposals/052-reflection-form-one-loop-labels", verdict: "r3 ACCEPT | PROGRESS flat", outcome: "bounded", hypothesis_class: "'One-loop second-order term: IKKT content, common regulator, fixed sigma, commuting background, vanishing fermion background, modulus.' (review-r3 obstruction class 1)"}
+        state: attempted-open
+        rank: 6
+        rank_reason: "Review rank 2 in 052; its source tags it (F, N): run in the D chain, not in parallel with an F chain edit."
+      - id: "D1.orbit-relaxations"
+        named_as: "'Relaxations of O-orbit. Moyal or finite-N inner automorphisms; field-dependent parameters at second order; direct sums of orbits; extra matrices acting on y.' (050 review-r2 avenue 6); 'Beyond the Poisson limit ... the only route to non-geometric local rotations, relevant to D1.' (043 review-r1.md:130)"
+        requires_symbols: ["CP^{1,2} orbit", "Moyal product", "gauge parameters"]
+        available_from: ["appH sec:status-D"]
+        missing_inputs: ["not specified by the sources beyond the list"]
+        prior_attempts:
+          - {ref: "proposals/050-frame-bundle-local-lorentz", verdict: "r2 ACCEPT", outcome: "bounded", hypothesis_class: "'O-orbit. Hypotheses: Poisson limit; one orbit CP^{1,2}; base functions y^mu; gauge parameters functions on the leaf; linear order about T^a.' (review-r2 Scope)"}
+        state: untried
+        rank: 7
+        rank_reason: "Review-named relaxation of the O-orbit bounded obstruction; ranked sixth by its review."
       - id: "D1.conjugate-coordinate-orbit"
-        named_as: "'Matrix gauge transformations and the frame index in the conjugate-coordinate class (conditional; bounded obstruction)' (chapters/appH-microscopic-proofs.tex:1377)"
+        named_as: "'Matrix gauge transformations and the frame index in the conjugate-coordinate class (conditional; bounded obstruction)' (appH sec:status-D paragraph)"
         requires_symbols: ["CP^{1,2} orbit", "gauge parameters"]
-        available_from: ["appH sec:status-D L1377-1392"]
+        available_from: ["appH sec:status-D"]
         missing_inputs: ["nothing inside the class; see hypothesis_class"]
         prior_attempts:
           - {ref: "proposals/050-frame-bundle-local-lorentz", verdict: "r2 ACCEPT", outcome: "bounded", hypothesis_class: "'O-orbit. Hypotheses: Poisson limit; one orbit CP^{1,2}; base functions y^mu; gauge parameters functions on the leaf; linear order about T^a. Result: no six-parameter local rotation of the frame index.' / 'It does not cover Moyal or finite-N, higher orders, direct sums or extra matrices.' (review-r2 Scope)"}
@@ -232,239 +282,302 @@ gaps:
         rank: null
         rank_reason: "Re-attempt only through D1.orbit-relaxations."
   # ------------------------------------------------------------------ E
-  - gap: "Lorentzian signature derived rather than retained; ass:lorentzian (appH sec:status-E 'Status. Remains Assumption lorentzian', chapters/appH-microscopic-proofs.tex:1662-1663; ch17-agenda.tex:718-719; not in mission-graph gaps:)"
+  - gap: "Lorentzian signature derived rather than retained; ass:lorentzian (appH sec:status-E 'Ledger label', chapters/appH-microscopic-proofs.tex:1599-1610; ch17-agenda.tex:718-719; sec:status-E has no 'Missing step' paragraph)"
     target_problem: "E"
     attack_edges:
+      - id: "E.rp-n2-os-framing"
+        named_as: "gpu 060 'rp-n2-invariant-failure' (proposals/local-gpu/_local-review/group3-E.md: AWRR, MAJOR OS framing; 'bounded no-go on the Euclidean reconstruction side')"
+        requires_symbols: ["theta-reflected pairing", "invariant polynomial algebra at N = 2"]
+        available_from: ["proposals/local-gpu/060-rp-n2-invariant-failure (r2, scripts rp_identities_n2.py, rp_mc_n2.py)"]
+        missing_inputs: ["researcher r2 applying the OS-framing replacements at the E insertion and at sec:status-D/N echoes", "gatekeeper full scan"]
+        prior_attempts:
+          - {ref: "proposals/local-gpu/060-rp-n2-invariant-failure", verdict: "local r1 AWRR, OPEN 0/1", outcome: "bounded", hypothesis_class: "'on the full invariant polynomial algebra taken as a theta-stable test algebra ... not a failure of the positivity of Osterwalder-Schrader in its positive-time form' (local review finding 1, paraphrased from the required replacement)"}
+        state: bounded
+        rank: 29
+        rank_reason: "Class (c): its outcome is a bounded no-go on a reconstruction route; ranks below every untried positive-aimed edge. Not integrated in the tree; nothing false in the tree depends on it."
+        notes: "Couples to N.positivity-remainder: the review says the N text (gpu L3766) repeats the OS framing and needs the same rescoping. Keep both in one serialized chain if both are run."
       - id: "E.spin41-decomposition"
-        named_as: "'Decomposition of HS(H_n) under Spin(4,1), starting with n = 0: whether C5 has continuous spectrum on M_kp.' (reports/ledger.md 064 entry, open avenue 1)"
+        named_as: "'Decomposition of HS(H_n) under Spin(4,1), starting with n = 0: whether C5 has continuous spectrum on M_kp.' (reports/ledger.md 064, open avenue 1)"
         requires_symbols: ["doubleton member", "C5", "supplied tau, i eps, gamma"]
-        available_from: ["appH sec:status-E L1622-1661"]
-        missing_inputs: ["supplied h_0, gamma, fermion content and family remain inputs (ledger 'SME scout after 60')"]
+        available_from: ["appH sec:status-E"]
+        missing_inputs: ["supplied h_0, gamma, fermion content and family remain inputs"]
         prior_attempts:
           - {ref: "proposals/064-relative-pfaffian-density", verdict: "r2 ACCEPT | PROGRESS improving", outcome: "accepted", hypothesis_class: "-"}
         state: "blocked-by:author.E-pause"
         rank: null
-        rank_reason: "E is paused (ledger 064: 'Per the SME scout, E work now pauses'; scout 20261114: 'Do not start E packages unless the author lifts the pause')."
+        rank_reason: "Ledger 064 / scout: 'E work now pauses'; no later ledger entry lifts it (the gpu 054-057 import is recorded as integrated, not as a lift)."
       - id: "E.pfaffian-open-items"
-        named_as: "'2. A per-unit-volume trace. 3. Summability over k. 4. Bosons and ghosts at O(gamma), with a derived cut-off. 5. A Fuglede-Kadison comparison.' (reports/ledger.md 064 entry, open avenues 2-5)"
+        named_as: "'2. A per-unit-volume trace. 3. Summability over k. 4. Bosons and ghosts at O(gamma), with a derived cut-off. 5. A Fuglede-Kadison comparison.' (reports/ledger.md 064, open avenues 2-5)"
         requires_symbols: ["Pf_rel", "trace", "gamma"]
-        available_from: ["appH sec:status-E L1633-1661"]
+        available_from: ["appH sec:status-E"]
         missing_inputs: ["a derived trace and cut-off"]
         prior_attempts:
           - {ref: "proposals/064-relative-pfaffian-density", verdict: "r2 ACCEPT", outcome: "accepted", hypothesis_class: "-"}
         state: "blocked-by:author.E-pause"
         rank: null
         rank_reason: "Paused with the rest of E."
-        lead_for_researcher: "scout 20261114 R7 (Liao-Maeta 2512.03161; Nishimura 2205.04726): pointers only; the scout states none satisfies the ch17 requirement for E."
+        lead_for_researcher: "scout 20261114 R7 (Liao-Maeta 2512.03161; Nishimura 2205.04726): pointers only."
       - id: "E.semiclassical-and-reflection-routes"
-        named_as: "'The semi-classical criterion and the signature of the kinetic tensor on the supplied backgrounds (conditional; bounded no-go)' (appH:1588); 'one route to E is bounded: reconstruction from a Euclidean integral' (052 proposal-r3 Result 4)"
+        named_as: "'The semi-classical criterion and the signature of the kinetic tensor on the supplied backgrounds (conditional; bounded no-go)' (appH sec:status-E); 'one route to E is bounded: reconstruction from a Euclidean integral' (052 proposal-r3 Result 4)"
         requires_symbols: ["eta_AB", "X_mu"]
-        available_from: ["qm.Smatrix"]
+        available_from: ["qm.Smatrix", "gpu 053-057 Lorentzian-limit paragraphs (integrated: 053 in HEAD; 054-057 integrated 2026-11-19)"]
         missing_inputs: ["nothing inside the classes; see hypothesis_class"]
         prior_attempts:
           - {ref: "proposals/052-reflection-form-one-loop-labels", verdict: "r3 ACCEPT | PROGRESS flat", outcome: "bounded", hypothesis_class: "'Reflection negativity: tree level, Euclidean contraction, commuting background with fibre, reflection by I, probes odd in the label.' / 'Neither touches the regulated Lorentzian integral.' (review-r3 Scope)"}
-          - {ref: "proposals/053 through 062 (E thread)", verdict: "ACCEPT (ledger)", outcome: "bounded", hypothesis_class: "not quoted: the 053-062 reviews were not re-read this run; the ledger records them as resting 'on a supplied h_0, gamma, fermion content and family'"}
         state: bounded
         rank: null
-        rank_reason: "Bounded and paused; hypothesis classes of 053-062 must be re-read from their reviews before any relaxation is routed."
+        rank_reason: "Bounded; hypothesis classes of the 053-062 and gpu 054-057 reviews must be re-read before any relaxation is routed."
   # ------------------------------------------------------------------ F
-  - gap: "F operator data (mission-graph gaps:; appH sec:status-F 'Missing step', chapters/appH-microscopic-proofs.tex:1678-1685; ch17-agenda.tex:457-467)"
+  - gap: "F operator data (appH sec:status-F 'Missing step', chapters/appH-microscopic-proofs.tex:1804-1812; ch17-agenda.tex:656-657, 720-722). Gated by D1 (see header); gates N; tied to C."
     target_problem: "F"
     attack_edges:
-      - id: "F.t-nonderivative-sector"
-        named_as: "'Non-derivative sector of t on the branch x < x_0: second-order terms of U_2 and the first term, using the factorised (P_+ - 2)(P_- - 2); tadpole; q_*^2 with -U_chi,phi^2/2U_chichi; V_00, V_01. This decides whether the branch gives a long-range force.' (049 review-r4 avenue 1)"
-        requires_symbols: ["t", "U_2", "Y", "chi", "K"]
-        available_from: ["appH sec:status-F paragraph L2793-2848 (CP^{1,2} x K class; K and content supplied)"]
-        missing_inputs: ["second-order non-derivative terms at chi^2 <~ vartheta", "the K selected by the theory (appH L2848: not constructed)"]
+      - id: "F.cubic-hessian-correction"
+        named_as: "local 069 (ledger 069: 'the 049 statements at appH L2810, L2824, L2844 (and L2846) hold only for the c = mu = 0 operators and the L2848 scope sentence does not say so'; adversary F7); proposals/069-f-nonderivative-sector/review-r1.md"
+        requires_symbols: ["cubic term C_ijk of eq:Smatrix on K = S^2_N", "kappa = 2 - c/chi", "beta_K"]
+        available_from: ["proposals/069-f-nonderivative-sector (proposal-r1, appH_insert.tex, scripts s1-s4, apply_check.py)"]
+        missing_inputs: ["researcher r2: F1 exact incomplete-gamma evaluation (GK values 41.1, 659; no zero at 0.926), F2 beta_K relation conditional on the uncomputed W_R response, F3 qualify 'not a stationary point', F4-F8 minor", "re-anchor to the tree: the false statement is now at appH L2970 ('V=T is approached at large N for this K and does not need a tuned K'; beta_K at L2934-2936, explicit K at L2950)", "carry the c = mu = 0 qualifier over any gpu 062/064 text (group4 review '069 overlap')", "gatekeeper full scan (M3)"]
         prior_attempts:
-          - {ref: "proposals/049-k-scale-dilaton-response", verdict: "r4 ACCEPT | PROGRESS improving", outcome: "bounded", hypothesis_class: "'O4a, beta_K <= 0. Common hypotheses plus U_4 <= 0, U_2 < 0, Y <= 4|U_4| + 2|U_2|, with Y's fibre flux at the background and cross term dropped.' Common hypotheses: 'Poisson limit; one loop; IKKT content supplied; product background without mixed flux; K single-scale with fixed Lambda; matter mass from chi alone; frozen symbol; formal continuation; first-order response; q.y = 0; V = T; late time; q below m_chi; local minimum with tree kinetic term; equal weights.' (review-r4 Scope)"}
-          - {ref: "proposals/045-cp12-times-K, 046-fibre-regime-interpolation, 047-lichnerowicz-torsion-closed-forms, 048-fibre-resolved-two-point", verdict: "final-round ACCEPT (review headers)", outcome: "bounded", hypothesis_class: "not quoted: reviews not re-read this run; appH paragraph titles L2696-2762 carry '(conditional; bounded no-go ...)'"}
+          - {ref: "proposals/069-f-nonderivative-sector", verdict: "r1 AWRR | M3 | PRIOR-CLAIM-ERROR | PROGRESS first | OPEN 0/3; r2 interrupted 2026-11-15", outcome: "stalled", hypothesis_class: "bounded no-go claimed in r1: 'K = S^2_N, bosonic cubic term only, Feynman gauge, one loop' (ledger 069; class quoted from the ledger, truncated there)"}
         state: attempted-open
-        rank: 3
-        rank_reason: "Review-ranked first; reuses an established factorisation; targeted reads of one paragraph. Also the only C-relevant edge a review names."
-        notes: "Carries Problems F, C and N in its closing caveat (appH L2848); occupies the F chain and therefore also the C slot."
+        rank: 8
+        rank_reason: "Only pending package that corrects text currently in the tree (class b). Ranked after the D1 edges by rule 2 but dispatchable now in parallel, because only one package can occupy the sec:status-D passage at a time."
+        notes: "The no-go content is class (c); the correction is what makes it worth finishing."
+      - id: "F.trace-channel-fibre-response"
+        named_as: "gpu 062 block 2 ('Trace-channel tadpole', AWRR M3 PRIOR-CLAIM-ERROR) and gpu 064 ('Trace-channel response of the fibre part', AWRR M3 PRIOR-CLAIM-ERROR) (proposals/local-gpu/_local-review/group4-CFHIN.md); the item 'the response of the fibre levels to hbar in v^M - 2 sigma^M ... is not computed' (gpu 064 proposal, P1)"
+        requires_symbols: ["t-wave hbar = (t/4) gbar", "vartheta", "Y = d/d ln chi of the density", "regulator s_Lambda"]
+        available_from: ["proposals/local-gpu/062-c-scalar-tadpole-nonderivative-obstruction (r2)", "proposals/local-gpu/064-f-fibre-level-response-q0-trace (r1)"]
+        missing_inputs: ["a single stated position on whether vartheta moves with the wave (062 and 064 take opposite implicit positions; fix together)", "064: restate coefficients as the t-response of Y or as density coefficients with s_Lambda stated; remove the sign claim; delete the ds/s sentence", "062: replace the q_*^2 = 0 sentence by the rigidity-qualified form", "069 integrated first (same passage; its c = mu = 0 qualifier must cover L3018/L3020 of the gpu numbering)"]
+        prior_attempts:
+          - {ref: "proposals/local-gpu/062-c-scalar-tadpole-nonderivative-obstruction (block 2)", verdict: "local r1 AWRR | M3 | PRIOR-CLAIM-ERROR", outcome: "stalled", hypothesis_class: "'equal weights, V=T, frozen symbol, product background, static channel q.v = 0, one loop, formal continuation, pure-trace channel' (gpu 062 proposal-r2 Result)"}
+          - {ref: "proposals/local-gpu/064-f-fibre-level-response-q0-trace", verdict: "local r1 AWRR | M3 | PRIOR-CLAIM-ERROR (regulator-dependent; major)", outcome: "stalled", hypothesis_class: "'frozen symbol and equal-weights hypotheses ... plus the stated response hypothesis (y and m held, contraction y.y in the fluctuated metric)' (gpu 064 proposal Result P1)"}
+        state: "blocked-by:F.cubic-hessian-correction"
+        rank: 9
+        rank_reason: "Positive-aimed computation of the named uncomputed item in the F non-derivative sector (class a), but it is regulator-dependent and rests on the 049 setting that 069 must correct first."
+        notes: "The 062 bounded no-go ('no supplied set of sqrt|g|-alone terms cancels the q = 0 tadpole while leaving M != 0') is class (c); the 064 response computation is the (a) part. Run as one package or two serialized rounds."
+      - id: "F.t-nonderivative-sector"
+        named_as: "'Non-derivative sector of t on the branch x < x_0: second-order terms of U_2 and the first term ... tadpole; q_*^2 with -U_chi,phi^2/2U_chichi; V_00, V_01. This decides whether the branch gives a long-range force.' (049 review-r4 avenue 1)"
+        requires_symbols: ["t", "U_2", "Y", "chi", "K"]
+        available_from: ["appH sec:status-F product-class paragraphs (L2920-3020 in the tree)"]
+        missing_inputs: ["second-order non-derivative terms at chi^2 <~ vartheta", "the K selected by the theory"]
+        prior_attempts:
+          - {ref: "proposals/049-k-scale-dilaton-response", verdict: "r4 ACCEPT | PROGRESS improving", outcome: "bounded", hypothesis_class: "'O4a, beta_K <= 0. Common hypotheses plus U_4 <= 0, U_2 < 0, Y <= 4|U_4| + 2|U_2|, with Y's fibre flux at the background and cross term dropped.' (review-r4 Scope)"}
+          - {ref: "proposals/069-f-nonderivative-sector", verdict: "r1 AWRR; the target 'is not delivered, and the proposal says so' (review-r1)", outcome: "stalled", hypothesis_class: "see F.cubic-hessian-correction"}
+        state: attempted-open
+        rank: 10
+        rank_reason: "Review-ranked first F edge and the only C-relevant one; its present attack is split into the two edges above, which supply its inputs."
+        notes: "Same sec:status-F passage as the two edges above: serialize."
       - id: "F.rotating-K-fluctuation"
         named_as: "'Fluctuation operator about the rotating K, static channel, uniform omega (the r1 hand estimate is still unverified).' (049 review-r4 avenue 2)"
         requires_symbols: ["rotating K", "fluctuation operator"]
-        available_from: ["appH sec:status-F L2762-2848"]
-        missing_inputs: ["the rotating class (appH L2848: not computed)"]
+        available_from: ["appH sec:status-F"]
+        missing_inputs: ["the rotating class (not computed)"]
         prior_attempts: []
         state: untried
-        rank: 7
+        rank: 13
         rank_reason: "Review rank 2 for F."
       - id: "F.cubic-coefficient-selected-K"
         named_as: "'Actual cubic coefficient for a K selected by the theory: whether anything fixes beta_K = 1; control of one-loop against tree where the tree quartic is of the order of Y; higher loops.' (049 review-r4 avenue 3)"
         requires_symbols: ["K", "beta_K"]
-        available_from: ["appH sec:status-F L2793-2848"]
+        available_from: ["appH sec:status-F"]
         missing_inputs: ["a K selected by the theory"]
         prior_attempts: []
         state: untried
-        rank: 10
-        rank_reason: "Review rank 3; its main input is unsupplied."
+        rank: 16
+        rank_reason: "Review rank 3; main input unsupplied."
       - id: "F.fibre-flux-two-derivative"
-        named_as: "'Two-derivative fibre-flux part (L2415) and the response of fibre levels, using the same so(3,1) decomposition, with the cross term kept. It is an invariant function on each component, which may make this tractable.' (049 review-r4 avenue 4)"
+        named_as: "'Two-derivative fibre-flux part and the response of fibre levels, using the same so(3,1) decomposition, with the cross term kept.' (049 review-r4 avenue 4)"
         requires_symbols: ["fibre flux", "cross term", "so(3,1) decomposition"]
-        available_from: ["appH sec:status-F L2707-2848"]
+        available_from: ["appH sec:status-F"]
         missing_inputs: ["the base-fibre cross term (dropped in 046-049)"]
         prior_attempts:
           - {ref: "proposals/046-fibre-regime-interpolation", verdict: "r3 ACCEPT", outcome: "accepted", hypothesis_class: "-"}
         state: untried
-        rank: 11
-        rank_reason: "Review rank 4, with the review's own tractability remark."
+        rank: 18
+        rank_reason: "Review rank 4; overlaps the gpu 064 fibre-response computation, so serialize behind F.trace-channel-fibre-response."
       - id: "F.compact-K-negative-Uhat"
         named_as: "'Compact K with Uhat < 0 and no negative mode, or a proof of absence (no non-existence is claimed).' (049 review-r4 avenue 5)"
         requires_symbols: ["K", "Uhat"]
-        available_from: ["appH sec:status-F L2793-2848"]
+        available_from: ["appH sec:status-F"]
         missing_inputs: ["an explicit K"]
         prior_attempts: []
         state: untried
-        rank: 17
-        rank_reason: "Review rank 5."
+        rank: 22
+        rank_reason: "Review rank 5. Note the 069 review's bounded result that for c != 0 at large N no point has V = T without a negative mode (class: K = S^2_N, bosonic cubic term only, Feynman gauge, one loop)."
       - id: "F.operator-data-missing-step"
-        named_as: "'Specify the gauge-fixed fluctuation, Goldstone, diffeomorphism-ghost, and local-Lorentz-ghost operators and weights; per-sector proper-time limits; massive threshold functions if masses are resummed; the continuation; and the finite-counterterm scheme.' (chapters/appH-microscopic-proofs.tex:1678-1682)"
+        named_as: "'Specify the gauge-fixed fluctuation, Goldstone, diffeomorphism-ghost, and local-Lorentz-ghost operators and weights; per-sector proper-time limits; massive threshold functions if masses are resummed; the continuation; and the finite-counterterm scheme.' (chapters/appH-microscopic-proofs.tex:1804-1808)"
         requires_symbols: ["e^A_mu", "ghost operators", "Phi"]
         available_from: ["qm.Smicro (Phi)", "thm.Geff (conditional identity only)"]
-        missing_inputs: ["e^A_mu and ghost operators (D1.lorentz, open; mission-graph edge D1->F)"]
+        missing_inputs: ["e^A_mu and ghost operators (D1.lorentz, open; appH:2040-2044)"]
         prior_attempts:
-          - {ref: "proposals/003-auto-target", verdict: "r3 ACCEPT | M3, M2", outcome: "bounded", hypothesis_class: "ledger 003: 'Lemma 2 no-go within H1-H4 only (flat scaffold, rotation-preserving regulator+gauge fixing, invariant vacuum, h fixed linear image of Phi)' - quoted from the ledger, review not re-read this run"}
+          - {ref: "proposals/003-auto-target", verdict: "r3 ACCEPT | M3, M2", outcome: "bounded", hypothesis_class: "ledger 003: 'Lemma 2 no-go within H1-H4 only (flat scaffold, rotation-preserving regulator+gauge fixing, invariant vacuum, h fixed linear image of Phi)' (quoted from the ledger)"}
         state: "blocked-by:D1.lorentz"
         rank: null
-        rank_reason: "The stated missing step itself; its ghost-operator input is unsupplied."
-        notes: "Open author question recorded in reports/run-20261101-0720.md: whether the F criterion is 'Einstein only' or 'Einstein plus axial torsion'."
+        rank_reason: "The stated missing step itself; its ghost-operator input is unsupplied (gating relation D1 -> F)."
+        notes: "Open author question (reports/run-20261101-0720.md): whether the F criterion is 'Einstein only' or 'Einstein plus axial torsion'."
       - id: "F.cp12-four-matrix-induced-coefficient"
-        named_as: "Conjugate-coordinate (four-matrix) class induced coefficient, appH paragraphs L2483-2668 titled '(conditional; bounded no-go ...)' (ledger 018, 020, 022, 023, 025, 027, 028, 030, 032, 034; proposal 040)"
+        named_as: "Conjugate-coordinate (four-matrix) class induced coefficient, appH paragraphs titled '(conditional; bounded no-go ...)' (ledger 018, 020-034; proposal 040)"
         requires_symbols: ["w", "G_eff"]
-        available_from: ["appH sec:status-F L2419-2668"]
+        available_from: ["appH sec:status-F"]
         missing_inputs: ["nothing inside the class; see hypothesis_class"]
         prior_attempts:
-          - {ref: "proposals/018-induced-coefficient-cp12", verdict: "r2 ACCEPT (ledger)", outcome: "bounded", hypothesis_class: "ledger 018: 'No-go class H1-H5 (Poisson limit/leading symbol, Euclidean contraction, equiregular points, bosonic/background gauge/one loop, proper-time cutoff of Box_X)' - quoted from the ledger, review not re-read this run"}
+          - {ref: "proposals/018-induced-coefficient-cp12", verdict: "r2 ACCEPT (ledger)", outcome: "bounded", hypothesis_class: "ledger 018: 'No-go class H1-H5 (Poisson limit/leading symbol, Euclidean contraction, equiregular points, bosonic/background gauge/one loop, proper-time cutoff of Box_X)' (quoted from the ledger)"}
           - {ref: "proposals/040-zeeman-vector-mass", verdict: "r2 ACCEPT | PRIOR-CLAIM-ERROR", outcome: "bounded", hypothesis_class: "not quoted: review not re-read this run"}
         state: bounded
         rank: null
-        rank_reason: "Chain of bounded results; the route moved to the product class (045-049). Hypothesis classes must be re-read from the reviews before a relaxation is routed."
+        rank_reason: "Chain of bounded results; the route moved to the product class (045-049)."
   # ------------------------------------------------------------------ G
-  - gap: "S_ent^(IR) and boundary stationarity; ass:Sent-density, ass:bdy-EE (mission-graph gaps:; appH sec:status-G 'Status', chapters/appH-microscopic-proofs.tex:2864-2869 and caveat L2894; ch17-agenda.tex:723-726)"
+  - gap: "S_ent^(IR) and boundary stationarity; ass:Sent-density, ass:bdy-EE (appH sec:status-G 'Status', chapters/appH-microscopic-proofs.tex:2990-2995; sec:status-G has no 'Missing step' paragraph; ch17-agenda.tex:723-726)"
     target_problem: "G-derived"
     attack_edges:
       - id: "G.spacetime-block"
-        named_as: "'A spacetime-block subsystem (a 4D region x fibre, with a 3D edge).' (065 review-r2 Scope, open avenue 1; reports/ledger.md 065 entry)"
+        named_as: "'A spacetime-block subsystem (a 4D region x fibre, with a 3D edge).' (065 review-r2 Scope, open avenue 1; reports/ledger.md 065)"
         requires_symbols: ["projector Theta of a region", "edge datum s", "map s -> g_{mu nu}"]
-        available_from: ["appH sec:status-G paragraph L2871-2894", "inputs: ass:Sent-density, ass:bdy-EE (not discharged)"]
-        missing_inputs: ["the map s -> g_{mu nu} (065: 'missing (A, D1)')", "the state, l_c and the frame subgroup (065: supplied inputs)"]
+        available_from: ["integrated local 067 and gpu 072-080, 081-088 edge/moment paragraphs in sec:status-G", "inputs: ass:Sent-density, ass:bdy-EE (not discharged)"]
+        missing_inputs: ["the map s -> g_{mu nu} (065: 'missing (A, D1)')", "the state, l_c and the frame subgroup (supplied inputs)", "a Lorentzian block: appH says for the Lorentzian weight 'neither construction applies as stated'"]
         prior_attempts:
-          - {ref: "proposals/065-relational-edge-entropy", verdict: "r2 ACCEPT | PROGRESS improving", outcome: "bounded", hypothesis_class: "'a compact internal factor with positive contraction, a fixed-frame single projector or coaxial cap pair, leading order with one dominant irrep, Gaussian proxy states and the FFHS block algebra' (review-r2 Scope, 'What the no-go covers')"}
-          - {ref: "proposals/067-product-sphere-edge", verdict: "none yet (round 1 in progress; folder holds scripts only)", outcome: "in-flight", hypothesis_class: "-"}
+          - {ref: "proposals/065-relational-edge-entropy", verdict: "r2 ACCEPT | PROGRESS improving", outcome: "bounded", hypothesis_class: "'a compact internal factor with positive contraction, a fixed-frame single projector or coaxial cap pair, leading order with one dominant irrep, Gaussian proxy states and the FFHS block algebra' (review-r2 Scope)"}
+          - {ref: "proposals/067-product-sphere-edge", verdict: "r2 ACCEPT; integrated 2026-11-19", outcome: "bounded", hypothesis_class: "'the product of two deformed fuzzy spheres with positive contraction, toric blocks at one fixed frame ... leading semiclassical order of FFHS' (integrated scope sentence); adversary P F1: sits inside the first clause of the 065 class"}
+          - {ref: "proposals/local-gpu/072-080-r2 and 081-088-r2", verdict: "plain ACCEPT (ledger 2026-11-19)", outcome: "accepted", hypothesis_class: "-"}
         state: attempted-open
-        in_flight: "proposals/067-product-sphere-edge, round 1"
-        rank: 1
-        rank_reason: "Already dispatched; first-ranked relaxation granted by the 065 review; scout lead R3."
-        lead_for_researcher: "reports/sme-scout-20261114-1206.md R3 (Fliss-Frenkel 2512.03163, Karczmarek-Sabella-Garnier 1310.8345; abstracts only): the scout expects 'a bounded no-go in the extensive regime'. Pointer, not evidence."
-        notes: "For the gatekeeper, not a judgement: the header of proposals/067-product-sphere-edge/e1_edge_operator.py sets up 'the product fuzzy factor S^2_N x S^2_N ... positive contraction delta_IJ', i.e. a compact factor with positive contraction, which is a clause of the 065 class quoted above. Whether 067 leaves that class (4D region x fibre) or only relaxes its 'fixed-frame single projector or coaxial cap pair' clause should be stated in its proposal."
+        rank: 23
+        rank_reason: "Names the block that would reach the emergent metric, but depends on A and D1 for the map s -> g (gating relation recorded on both gaps); the integrated attempts stay inside the compact-factor class."
+        lead_for_researcher: "reports/adversary/adversary-P-20261114-1705.md F1: a base-region / Lorentzian block is untried, not attempted. reports/sme-scout-20261114-1206.md R3. Pointers only."
       - id: "G.alt-subsystem-algebra"
         named_as: "'An alternative subsystem algebra, or a first-law or mutual-information test of the M-dependence.' (065 review-r2 Scope, open avenue 3)"
         requires_symbols: ["log d_mu", "rank M", "subsystem algebra"]
-        available_from: ["appH sec:status-G L2871-2894"]
+        available_from: ["appH sec:status-G"]
         missing_inputs: ["the state (supplied input in 065)"]
         prior_attempts: []
         state: untried
-        rank: 5
-        rank_reason: "Next review-named relaxation with a scout lead; must queue behind 067 (same passage)."
-        lead_for_researcher: "scout 20261114 R5 (Sugishita, verified only through a proceedings abstract; Donnelly-Wall 1412.1895 not independently verified). Pointer only."
+        rank: 20
+        rank_reason: "Next review-named relaxation with a scout lead; G is last in the ch17 order (ch17:661-665) and its map to g needs A and D1."
+        lead_for_researcher: "scout 20261114 R5 (Sugishita; Donnelly-Wall 1412.1895 not independently verified). Pointer only."
       - id: "G.lc-scales"
         named_as: "'Tying l_c and p to scales of the integral.' (065 review-r2 Scope, open avenue 5)"
         requires_symbols: ["l_c", "p"]
-        available_from: ["appH sec:status-G L2871-2894"]
-        missing_inputs: ["a scale fixed by the integral (065: 'none is fixed by the integral here')"]
+        available_from: ["appH sec:status-G"]
+        missing_inputs: ["a scale fixed by the integral"]
         prior_attempts: []
         state: untried
-        rank: 13
+        rank: 21
         rank_reason: "Review rank 5; removes a supplied input if it succeeds."
       - id: "G.stationary-nonsymmetric-background"
-        named_as: "'A stationary non-symmetric background with the state response.' (065 review-r2 Scope, open avenue 4); ledger: 'A stationary squashed background.'"
+        named_as: "'A stationary non-symmetric background with the state response.' (065 review-r2 Scope, open avenue 4)"
         requires_symbols: ["squashed background", "state response"]
-        available_from: ["appH sec:status-G L2871-2894"]
+        available_from: ["appH sec:status-G"]
         missing_inputs: ["the state"]
         prior_attempts: []
         state: untried
-        rank: 15
+        rank: 27
         rank_reason: "Review rank 4; no lead."
       - id: "G.vacuum-term"
-        named_as: "'The 2303.08012 vacuum term.' (065 review-r2 Scope, open avenue 6); appH L2892: 'Its relation to the sector sum of Equation eq:rho-debt and to Equation eq:Leff is not examined.'"
+        named_as: "'The 2303.08012 vacuum term.' (065 review-r2 Scope, open avenue 6); appH: 'Its relation to the sector sum of Equation eq:rho-debt and to Equation eq:Leff is not examined.'"
         requires_symbols: ["vacuum term", "eq:rho-debt", "eq:Leff"]
-        available_from: ["thm.Leff", "appH sec:status-G L2892"]
+        available_from: ["thm.Leff"]
         missing_inputs: ["not specified by the source beyond the name"]
         prior_attempts: []
         state: untried
-        rank: 19
+        rank: 30
         rank_reason: "Review rank 6."
       - id: "G.os-state-fibre"
         named_as: "'A within-core state via OS reconstruction on the fibre modes.' (065 review-r2 Scope, open avenue 2)"
         requires_symbols: ["reflection", "positive weight", "fibre modes"]
         available_from: ["qm.Smatrix"]
-        missing_inputs: ["an explicit reflection of the compact factor", "a positive weight (065: the Lorentzian weight 'is not positive')"]
+        missing_inputs: ["an explicit reflection of the compact factor", "a positive weight (the Lorentzian weight 'is not positive')"]
         prior_attempts:
-          - {ref: "proposals/052-reflection-form-one-loop-labels", verdict: "r3 ACCEPT", outcome: "bounded", hypothesis_class: "'Reflection negativity: tree level, Euclidean contraction, commuting background with fibre, reflection by I, probes odd in the label.' (review-r3; a different class, recorded as adjacent only)"}
+          - {ref: "proposals/052-reflection-form-one-loop-labels", verdict: "r3 ACCEPT", outcome: "bounded", hypothesis_class: "'Reflection negativity: tree level, Euclidean contraction, commuting background with fibre, reflection by I, probes odd in the label.' (adjacent class only)"}
         state: untried
-        rank: 20
-        rank_reason: "Review rank 2, lowered by the scout: R6 'Feasibility: low. Not worth a package unless an explicit reflection of the compact factor exists.'"
+        rank: 31
+        rank_reason: "Scout R6: 'Feasibility: low.' Also coupled to the E OS-framing correction (gpu 060)."
+      - id: "G.replica-obstruction-cut-benchmark"
+        named_as: "gpu 061 'g-sent-replica-obstruction-and-cut-benchmark' (group5-G1.md: AWRR, one MAJOR numeric-claim fix and two minor)"
+        requires_symbols: ["replica route of ass:Sent-density", "half-line cut entropy benchmark"]
+        available_from: ["proposals/local-gpu/061-g-sent-replica-obstruction-and-cut-benchmark (r3, scripts halfline_r2.py, continuum_check.py)"]
+        missing_inputs: ["researcher r2 applying the review's three replacements (the slope series is decreasing 0.31022 ... 0.27337, so it does not resolve 1/3)"]
+        prior_attempts:
+          - {ref: "proposals/local-gpu/061-g-sent-replica-obstruction-and-cut-benchmark", verdict: "local r1 AWRR (OPEN 0/1)", outcome: "bounded", hypothesis_class: "not quoted: the package's own class statement was not re-read in full this run"}
+        state: bounded
+        rank: 32
+        rank_reason: "Class (c): obstruction plus a numerical benchmark; touches the replica route the 065 review says is untouched, but its outcome is a bounded no-go. Ranked below every untried positive-aimed edge."
       - id: "G.fixed-volume-partition"
         named_as: "'Fixed-volume Euclidean partition function; the volume constraint from the Liouville density' (reports/sme-scout-20261114-1206.md R4; Jacobson-Visser 2212.10607, abstract only)"
         requires_symbols: ["G_eff", "induced Einstein-Hilbert action", "rho = 1/|Pf Theta|"]
         available_from: ["thm.Geff (conditional identity only)"]
-        missing_inputs: ["G_eff (F.coeffs, open)", "ass:bdy-EE is not addressed (scout: 'It does not discharge ass:bdy-EE')"]
+        missing_inputs: ["G_eff (F, open)", "ass:bdy-EE is not addressed"]
         prior_attempts: []
         state: "blocked-by:F.coeffs"
         rank: null
-        rank_reason: "Scout: 'R4 only after F offers a stated G_eff to compare with.' An SME lead, not a review-named relaxation."
+        rank_reason: "Scout: 'R4 only after F offers a stated G_eff to compare with.'"
       - id: "G.compact-internal-factor"
-        named_as: "'Edge entropy of a matrix block on a compact fuzzy factor (conditional; bounded no-go)' (chapters/appH-microscopic-proofs.tex:2871)"
+        named_as: "'Edge entropy of a matrix block on a compact fuzzy factor (conditional; bounded no-go)' (appH sec:status-G)"
         requires_symbols: ["log d_mu", "ass:Sent-density"]
-        available_from: ["appH sec:status-G L2871-2894"]
+        available_from: ["appH sec:status-G"]
         missing_inputs: ["nothing inside the class; see hypothesis_class"]
         prior_attempts:
-          - {ref: "proposals/065-relational-edge-entropy", verdict: "r2 ACCEPT | PROGRESS improving", outcome: "bounded", hypothesis_class: "'a compact internal factor with positive contraction, a fixed-frame single projector or coaxial cap pair, leading order with one dominant irrep, Gaussian proxy states and the FFHS block algebra' (review-r2 Scope). The review adds: 'the replica route of ass:Sent-density is untouched.'"}
+          - {ref: "proposals/065-relational-edge-entropy", verdict: "r2 ACCEPT | PROGRESS improving", outcome: "bounded", hypothesis_class: "'a compact internal factor with positive contraction, a fixed-frame single projector or coaxial cap pair, leading order with one dominant irrep, Gaussian proxy states and the FFHS block algebra' (review-r2 Scope). 'the replica route of ass:Sent-density is untouched.'"}
         state: bounded
         rank: null
-        rank_reason: "Re-attempt only through the six review-named avenues (edges above)."
+        rank_reason: "Re-attempt only through the review-named avenues."
   # ------------------------------------------------------------------ N
-  - gap: "no propagating Ostrogradsky ghost for p < L_UV from the matrix path integral; ass:EFT-a2 (appH sec:status-N 'Missing step', chapters/appH-microscopic-proofs.tex:3254-3263; ch17-agenda.tex:498-510, 727-731; not in mission-graph gaps:)"
+  - gap: "no propagating Ostrogradsky ghost for p < L_UV from the matrix path integral; ass:EFT-a2 (appH sec:status-N 'Missing step', chapters/appH-microscopic-proofs.tex:3433-3440; ch17-agenda.tex:658-660, 727-731). Gated by F (see header)."
     target_problem: "N"
     attack_edges:
       - id: "N.matrix-two-point-no-ghost"
-        named_as: "'Derive from the matrix path integral that the graviton two-point function has no propagating Ostrogradsky ghost for p < L_UV, for the values of alpha and G_eff computed in Problem F' (chapters/appH-microscopic-proofs.tex:3255-3257)"
+        named_as: "'Derive from the matrix path integral that the graviton two-point function has no propagating Ostrogradsky ghost for p < L_UV, for the values of alpha and G_eff computed in Problem F' (appH:3433-3437)"
         requires_symbols: ["alpha", "G_eff", "graviton two-point function"]
         available_from: []
-        missing_inputs: ["alpha and G_eff (F.coeffs, open; mission-graph edge F->N)", "a derived graviton two-point function"]
+        missing_inputs: ["alpha and G_eff (F, open)", "a derived graviton two-point function"]
         prior_attempts:
           - {ref: "proposals/002-auto-target", verdict: "r2 ACCEPT | PRIOR-CLAIM-ERROR, AUTHOR-DECISION | PROGRESS improving", outcome: "accepted", hypothesis_class: "-"}
         state: "blocked-by:F.coeffs"
         rank: null
-        rank_reason: "Target is defined at the values computed in F. Ledger 002: 'Open: W_C, A_1, G_eff, delta_W for locked block; |k|~Lambda_UV control; matrix derivation'; its fixed-L no-go was 'withdrawn in r2 ... do not resubmit it'."
-        lead_for_researcher: "050 review-r2 avenue 1 names the torsion sector as 'the gate for N' (routed as D1.constraint-branch, in the D passage). Scout 20261114 R7: Steinacker 2605.13294 is 'N-adjacent ... not a derivation of N's no-ghost statement'."
+        rank_reason: "Target is defined at the values computed in F (appH:3426-3431). Ledger 002: its fixed-L no-go was 'withdrawn in r2 ... do not resubmit it'."
+        lead_for_researcher: "050 review-r2 avenue 1 names the torsion sector as 'the gate for N' (routed as D1.constraint-branch). Scout 20261114 R7: Steinacker 2605.13294 is 'N-adjacent ... not a derivation'."
+      - id: "N.positivity-remainder"
+        named_as: "gpu 067 'n-positivity-remainder-sublemma' (group4-CFHIN.md: AWRR, M3 PRIOR-CLAIM-ERROR, one MAJOR OS-framing fix at gpu L3766-3768)"
+        requires_symbols: ["spectral positivity of the composite spin-two two-point function", "BV completion remainder R", "delta-shift identity"]
+        available_from: ["proposals/local-gpu/067-n-positivity-remainder-sublemma (r2; scripts remainder_rouche.py, check_f_zeros.py)"]
+        missing_inputs: ["the sup|R| hypothesis is 'an open Problem F input' (gpu 067 proposal Result)", "OS-framing replacement, shared with E.rp-n2-os-framing", "positivity is recorded as unavailable in the present class (the package's own statement)"]
+        prior_attempts:
+          - {ref: "proposals/local-gpu/067-n-positivity-remainder-sublemma", verdict: "local r1 AWRR | M3 | PRIOR-CLAIM-ERROR", outcome: "bounded", hypothesis_class: "'a conditional Kallen-Lehmann-type spectral-positivity sublemma ... recorded as unavailable in the present class' and 'bounded no-go for any logarithmic-coefficient-only stability claim (-c x^2 counterexample)' (gpu 067 proposal Result)"}
+        state: "blocked-by:F.coeffs"
+        rank: 33
+        rank_reason: "Mostly class (c) with a conditional sublemma whose hypothesis is an F output; the package itself says positivity would not discharge ass:EFT-a2. Not in the tree."
   # ------------------------------------------------------------------ H (optional)
-  - gap: "kappa_IR (mission-graph gaps:; ch17-agenda.tex:541-544)"
+  - gap: "kappa_IR and the modular ladder gap Delta k (appH sec:status-H 'Missing step', chapters/appH-microscopic-proofs.tex:3129-3140; ch17-agenda.tex:541-544)"
     target_problem: "H (optional within its stated scope)"
     attack_edges:
       - id: "H.kappa-IR-definition"
         named_as: "'Chapter 12 supplies Lambda_eff but defines no stationary boundary geometry or surface gravity kappa_IR' (mission-graph gaps: note, citing ch17:541-544)"
         requires_symbols: ["Lambda_eff", "kappa_IR"]
         available_from: []
-        missing_inputs: ["Lambda_eff derived (G.bdy, open)", "a stationary boundary geometry"]
+        missing_inputs: ["Lambda_eff derived (G, open)", "a stationary boundary geometry"]
         prior_attempts:
           - {ref: "proposals/058-efe-saturation-value", verdict: "ACCEPT | M3 PRIOR-CLAIM-ERROR (ledger)", outcome: "accepted", hypothesis_class: "-"}
         state: "blocked-by:G.bdy"
         rank: null
         rank_reason: "Optional and blocked upstream; not on the Chapter 17 critical path."
+      - id: "H.nu-linear-source-response"
+        named_as: "gpu 066-H 'h-nu-linear-source-response-obstruction' (group4-CFHIN.md: AWRR, MAJOR: the exponential-linear form holds only to first order)"
+        requires_symbols: ["Delta k(g_N, kappa_IR)", "nu_sqrt", "retired family eq:appE-exp"]
+        available_from: ["proposals/local-gpu/066-h-nu-linear-source-response-obstruction (r1; scripts check_first_order_affine_gap.py, check_target_class_separation.py)"]
+        missing_inputs: ["researcher r2 applying the 'to first order' replacement, the paragraph-title change and two minor fixes"]
+        prior_attempts:
+          - {ref: "proposals/local-gpu/066-h-nu-linear-source-response-obstruction", verdict: "local r1 AWRR (OPEN 0/1)", outcome: "bounded", hypothesis_class: "'Within the class of source dependence that is analytic at zero source strength at fixed infrared boundary data' (gpu 066-H proposal Result)"}
+        state: bounded
+        rank: 34
+        rank_reason: "Class (c) and Problem H is optional (ch17:744-745); ranked last."
 chains:
-  - {chain: 1, edges: ["G.spacetime-block", "G.alt-subsystem-algebra", "G.lc-scales", "G.stationary-nonsymmetric-background", "G.vacuum-term", "G.os-state-fibre"], problem: "G-derived (sec:status-G)", notes: "IN FLIGHT: proposals/067-product-sphere-edge round 1 holds this chain. Dispatch nothing else on G until 067 leaves the pipeline; then proceed in the listed order."}
-  - {chain: 2, edges: ["D1.torsion-T-nonzero", "D1.diagonal-dynamics-zero-modes", "D1.constraint-branch", "D1.orbit-relaxations", "D1.selection-of-class"], problem: "D1 (sec:status-D, paragraphs L1377-1480)", notes: "Free to dispatch. D1.one-loop-labels-nonzero-commutators (rank 9) is withheld from parallel dispatch: its source tags it (F, N); run it only when chain 3 is idle, or as a chain-3 item. No edge here may open an E package (E paused)."}
-  - {chain: 3, edges: ["F.t-nonderivative-sector", "F.rotating-K-fluctuation", "F.cubic-coefficient-selected-K", "F.fibre-flux-two-derivative", "F.compact-K-negative-Uhat"], problem: "F, with C and N as carried by the product-class paragraphs (sec:status-F L2673-2848)", notes: "Free to dispatch. Occupies Problems F and C (appH L2848 names C, F, N), so no separate C or N chain may run. B.axion-independent-class (rank 8) depends on these classes and is serialized here, not in chain 4."}
-  - {chain: 4, edges: ["B.matrix-state-edge-sector", "B.edge-extended-phase-space", "B.dirac-sector"], problem: "B (sec:status-B, paragraphs L337-431)", notes: "Free to dispatch, with two fences: write only in sec:status-B (the A passage is held for 066), and read but do not edit the sec:status-G edge paragraph (chain 1 shares the Frenkel-Hartnoll literature, not the passage)."}
-  - {chain: "hold-A", edges: ["A.bw-scope-r5", "A.wedge-reformulation", "A.hquad-operator-def", "A.ir-below-msigma", "A.small-diamond-error", "A.maxwell-fermion-diamond"], problem: "A (sec:status-A)", notes: "NOT dispatchable: 066 STALLED 2026-11-09, awaiting the author's r5 authorisation. All other A edges anchor on the paragraphs 066 rewrites."}
-  - {chain: "hold-E", edges: ["E.spin41-decomposition", "E.pfaffian-open-items"], problem: "E (sec:status-E)", notes: "NOT dispatchable: E paused (ledger 064; scout 20261114 section 4)."}
+  - {chain: 1, edges: ["D1.lorentz-local-frame-equivariant", "D1.torsion-T-nonzero", "D1.selection-of-class", "D1.diagonal-dynamics-zero-modes", "D1.constraint-branch", "D1.one-loop-labels-nonzero-commutators", "D1.orbit-relaxations"], problem: "D1 (sec:status-D, appH L713-1598), the upstream gating problem", notes: "Takes the first dispatch slot (rule 2). One package at a time on this passage: 059 equivariant-lift r2 first (fixes the torsion convention), then 068 resume. D1.selection-of-class has no named method; run only with a lead. No edge here may open an E package."}
+  - {chain: 2, edges: ["F.cubic-hessian-correction", "F.trace-channel-fibre-response", "C.missing-step-restatement", "F.t-nonderivative-sector", "F.rotating-K-fluctuation", "F.fibre-flux-two-derivative", "F.cubic-coefficient-selected-K", "F.compact-K-negative-Uhat"], problem: "F product-class paragraphs (sec:status-F, appH L2920-3020) with C carried by the gpu 062 package", notes: "Parallel to chain 1 (disjoint passage). Run only what rule 2 leaves: 069 r2 first (correction of in-tree text), then 062 block 2 and 064 together (one stated position on vartheta), with 062 block 1 (sec:status-C) riding in the same package. The F operator-data Missing step itself stays blocked by D1. Occupies Problems F and C; no separate C or N chain."}
+  - {chain: 3, edges: ["B.matrix-state-edge-sector", "B.axion-independent-class", "B.edge-extended-phase-space", "B.dirac-sector", "A.hquad-operator-def"], problem: "B (sec:status-B) and A (sec:status-A), both not gated by D1/F (ch17:668-673)", notes: "Free to dispatch when a slot is spare; positive-aimed but low closeness. B.axion-independent-class depends on F-section classes: do not run while chain 2 is editing sec:status-F. Read, do not edit, sec:status-G."}
+  - {chain: 4, edges: ["G.alt-subsystem-algebra", "G.lc-scales", "G.spacetime-block", "G.stationary-nonsymmetric-background", "G.vacuum-term", "G.os-state-fibre", "G.replica-obstruction-cut-benchmark"], problem: "G-derived (sec:status-G)", notes: "G is last in the ch17 order and its map to g needs A and D1. Dispatch only after the chains above; 061 (class c) last."}
+  - {chain: 5, edges: ["E.rp-n2-os-framing", "N.positivity-remainder", "H.nu-linear-source-response"], problem: "E (sec:status-E), N (sec:status-N), H (sec:status-H) - bounded-no-go packages", notes: "Class (c), deprioritised. 060 and gpu 067-N share the OS framing and must be serialized together; 066-H is on its own passage. Hold unless every positive-aimed edge above is exhausted or the author asks."}
+  - {chain: "hold-E", edges: ["E.spin41-decomposition", "E.pfaffian-open-items"], problem: "E (sec:status-E)", notes: "Not dispatchable: E paused (ledger 064; scout 20261114). E.rp-n2-os-framing is a bounded-no-go package and does not lift the pause."}
 blocked_gaps:
-  - {gap: "A: Weyl map, Hilbert space, continuum limit", blocked_by: "author.066-r5-authorisation", unblock_per_sources: "Ledger 066: 'For the author: decide whether to authorise r5'; gatekeeper r4: 'If r5 applies exactly S1 and S2, I will issue a plain ACCEPT conditional on the full scan.' That corrects a false sentence; it does not supply the missing step. Scout 20261114 R1: a wedge-level A is possible 'only if the author accepts a wedge-level A'."}
-  - {gap: "E: Lorentzian signature derived", blocked_by: "author.E-pause", unblock_per_sources: "Scout 20261114: 'Do not start E packages unless the author lifts the pause.' Ledger scout-after-60 entry: E 'has reached diminishing returns against ch17 L718-719, since 059-062 rest on a supplied h_0, gamma, fermion content and family'."}
-  - {gap: "C: physical scalar operator, coupling; ass:gap-psi", blocked_by: "D1.lorentz + F.coeffs", unblock_per_sources: "ch17:144, 267 and appH:505-519: a constructed frame (D1) and G_eff (F); 049 review-r4 avenue 1 (routed as F.t-nonderivative-sector) is the one named step bearing on a long-range scalar force."}
-  - {gap: "N: no Ostrogradsky ghost for p < L_UV; ass:EFT-a2", blocked_by: "F.coeffs", unblock_per_sources: "appH:3254-3263: the target is stated 'for the values of alpha and G_eff computed in Problem F'; 050 review-r2 avenue 1 names the torsion sector as 'the gate for N'."}
+  - {gap: "E: Lorentzian signature derived", blocked_by: "author.E-pause", unblock_per_sources: "Scout 20261114: 'Do not start E packages unless the author lifts the pause.' Ledger scout-after-60: E 'has reached diminishing returns against ch17 L718-719, since 059-062 rest on a supplied h_0, gamma, fermion content and family'."}
+  - {gap: "A wedge-level reformulation", blocked_by: "author.A-wedge-scope", unblock_per_sources: "066 review-r4 and scout 20261114 R1: possible 'only if the author accepts a wedge-level A'. The other A edges are no longer held by 066 (r5 applied 2026-11-18)."}
+  - {gap: "C: physical scalar operator, coupling; ass:gap-psi", blocked_by: "D1.lorentz + F.coeffs", unblock_per_sources: "ch17:144-145, 267-268 and appH:622-640: a constructed frame (D1) and G_eff (F)."}
+  - {gap: "F operator data (A, B, C; G_eff)", blocked_by: "D1.lorentz", unblock_per_sources: "ch17:650-653; appH:1804-1806, 2040-2044: the omega, A_mu, B and ghost operators specified by D1."}
+  - {gap: "N: no Ostrogradsky ghost for p < L_UV; ass:EFT-a2", blocked_by: "F.coeffs", unblock_per_sources: "appH:3433-3437; ch17:658-660: the target is stated 'for the values of alpha and G_eff computed in Problem F'; 050 review-r2 avenue 1 names the torsion sector as 'the gate for N'."}
   - {gap: "H (optional): kappa_IR", blocked_by: "G.bdy", unblock_per_sources: "ch17:541-544 via the mission graph: a stationary boundary geometry and a derived Lambda_eff."}

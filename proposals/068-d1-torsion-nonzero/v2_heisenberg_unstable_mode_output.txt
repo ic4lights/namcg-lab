@@ -1,0 +1,7 @@
+(U1) Mz[A] = (q0^2 - p^2 + kappa p) A : True ; F_32 / phi = p ; F_01 / phi = I*q0
+(U2) label J = 0: B1 = B2 = 0 at q0^2 = p(p - kappa): True ; linearised torsion nonzero: True
+(U2) label J = 1: B1 = B2 = 0 at q0^2 = p(p - kappa): True ; linearised torsion nonzero: True
+(U2) label J = 2: B1 = B2 = 0 at q0^2 = p(p - kappa): True ; linearised torsion nonzero: True
+(U2) label J = 3: B1 = B2 = 0 at q0^2 = p(p - kappa): True ; linearised torsion nonzero: True
+(U3) Gamma^2 = p(kappa - p); stationary point p = [kappa/2] ; Gamma there = kappa/2
+(U4) delta contraction: Mz[A] = -(q0^2 + p^2 - kappa p) A : True
