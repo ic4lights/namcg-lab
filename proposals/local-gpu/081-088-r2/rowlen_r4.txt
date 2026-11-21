@@ -1,0 +1,2 @@
+with \(W\) the sum over the boundary row inside the block.
+with \(W\) the sum over the boundary row inside the block without its entry at \(u\), while \(\tfrac12\langle\operatorname{Tr}Q^{2}\rangle\) is \(4s^{2}\) times the full sum over the boundary row inside the block (exact).

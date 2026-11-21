@@ -700,3 +700,83 @@
 - The ordinal-65 full scan is owed on the post-067 tree before a plain ACCEPT.
 
 ## Run stop 2026-11-15 — external limit (Fable model limit, resets 2026-11-21 12:00 America/New_York). Digest: reports/run-20261115-1325.md. Integrated this run: 0 (067 accepted; integration blocked by missing .claude/state/allow_chapters).
+
+## Import from origin/local/gpu (author-instructed) - integrated 2026-11-18 (uncommitted, author to commit)
+- Source: origin/local/gpu tip cd6669f; merge base 2cd49d0. Files taken at gpu version: chapters/appH-microscopic-proofs.tex, ch09, ch10, ch14, ch17, bib/namcg.bib (769+/92-). gpu versions are a superset of HEAD except the sentences gpu packages deliberately revised.
+- Carrying packages: gpu 053-088 plus claude-remote/066 r5 (all plain ACCEPT on the gpu line; 066 r5 with full scan). Provenance copied to proposals/local-gpu/ (gpu numbering, not comparable to local 057-070).
+- No status, priority or completion label change. build_check.py PASS (414 pp, after a bibtex pass).
+- Overlap to re-scope: local 068 (D1), 069 (F) and 070 (B) are in flight on targets that gpu packages have now advanced. Local 067 is accepted but not integrated and has no gpu equivalent.
+
+## Re-review of the local/gpu import on remote/claude - 2026-11-18 (7 gatekeeper groups; reviews in proposals/local-gpu/_local-review/ and per-package review-local-r1.md)
+- Plain ACCEPT (8): 066(claude-remote) 053 056 057 063 078 086 070.
+- AWRR (26): 058 065 059 062 054 055 060 064 066 067 061 072(blocking, researcher decision) 073 074 075 076 077 079 080 081 082 083 084 085 087 088; 069 has a minor objective fix.
+- REJECT (2): 068 and 071 (J audit false: wrong ansatz and index reading in the gpu CAS; HEAD identities re-verified exactly). Restore HEAD text.
+- PRIOR-CLAIM-ERROR in gpu-accepted text: 055, 062, 064, 067, 068.
+- No label changes proposed. The imported text is still in the working tree, uncommitted, pending the author decision.
+
+## 2026-11-18 - gpu import narrowed (author option 1)
+- The six imported files were restored to HEAD. The full imported versions are kept in scratch/integrator-backup/gpu-import-full/.
+- Applied (plain ACCEPT, standalone): 066 BW diamond scope correction (r5; appH plus bib HislopLongo1982), 063 Problem I drag definitional status (appH plus bib Landau1941, BerezhianiElderKhoury2019), 070 Peters citations (ch14 plus bib).
+- 053: already in HEAD (verified, no edit).
+- Deferred with their reverted parents: 056 and 057 (after 054/055), 078 (inside 072-077), 086 (corrects 081).
+- Reverted pending researcher r2 and re-review: all AWRR items. 068/071 REJECT: HEAD J text is back.
+- build_check PASS, 382 pp, digest CURRENT. Uncommitted. No label changes.
+
+## 2026-11-19 - gpu 054-057 (Problem E) integrated jointly
+- Package proposals/local-gpu/054-055-r2: r2 AWRR (factor 2 in the soft-mode exponents, a PRIOR-CLAIM-ERROR against accepted gpu 057), then r3 with a full scan in 3 passes, then plain ACCEPT (review-r3-final.md).
+- E1-E4 .r3.tex applied at anchors A1 (L1537) and A2 (before Problem E Status). appH sha256 fa3e3181..., which matches the gatekeeper copy.
+- build_check PASS, 386 pp. Digest CURRENT. Uncommitted.
+- No label change: Problem E is OPEN / CRITICAL PATH for the matrix-derived label / PROGRAMME-CONDITIONAL.
+- Optional author item: appJ:103-104 "the assumption stated in Chapter~3" (the label is in ch04).
+- Next: G2 081-088 consolidation (M1; brings back 086).
+
+## 2026-11-19 - local 067 + gpu 072-080 (Problem G edge block) integrated
+- Package proposals/local-gpu/072-080-r2:
+  - r2: 072 decided as option (b), the direct sum X1+X2. Block compressed from 12 to 4 paragraphs.
+  - gk r2: AWRR (M1 residual growth only at equal fractions; R2-R6).
+  - r3, then gk r3, then a full scan in 4 passes, then plain ACCEPT (review-r3-final.md).
+- PRIOR-CLAIM-ERRORs corrected in gpu-accepted text:
+  - E1: Frenkel's rule uses the block partition, not "the diagonal cut" (072, 076-078).
+  - E2: the 074 residual.
+  - E3: the 079 uniformity argument.
+  - Bearing (ii) correction is order l^2/M.
+- Applied: local 067 (proposals/067-product-sphere-edge, ACCEPT r2 2026-11-14) before \section{Problem H}, the block, the closing scope sentence, the Bearing (ii) edit, and bib Frenkel2023EdgeModes. This supersedes the earlier "067 ACCEPTED, NOT YET INTEGRATED" entry.
+- appH sha 779bfcac... and bib a7aec454... match the gatekeeper copy. build_check PASS, 394 pp. Digest CURRENT. Uncommitted.
+- No label change: Problem G stays OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL.
+- Next: gpu 081-088 consolidation (G2 M1). It must drop "diagonal-cut convention" (E1) and depends on "the transplanted selection rule" defined in the integrated block. 086 rides along.
+
+## 2026-11-19 - gpu 081-088 (Problem G moments) integrated
+- Package proposals/local-gpu/081-088-r2:
+  - r2: dropped the gpu "fuzzy variance proxy" (D_eff=1488). It does not describe the Row length state.
+  - gk r2: AWRR. The researcher's v3 was numerically broken; the correct D_eff is 38.0. Found a PRIOR-CLAIM-ERROR in the integrated Row length W definition.
+  - r3, then r4 (one phrase), then a full scan in 4 passes, then plain ACCEPT (review-r4-final.md).
+- Seven paragraphs became two. The closing clause is extended. The Row length W is corrected. 086 is moot.
+- appH sha fc0884aa... matches. build_check PASS, 394 pp. Digest CURRENT. Uncommitted.
+- No label change: Problem G stays OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL.
+- Remaining gpu revisions: 058, 059, 060, 061, 062 (two blocks), 064, 065, 066-H, 067-N (gpu), 069. 068 and 071 were rejected (HEAD kept).
+
+## 2026-11-19 - gpu 058 (Problem A) integrated
+- Package proposals/local-gpu/058-a-map-dictionary-derivation:
+  - r3 applied the local-r1 fixes: MAJOR (Schouten closure is necessary; no order-Theta^2 correction can replace it), R1 and R3.
+  - gk r3: NEEDS EVIDENCE, then a full scan in 4 passes, then plain ACCEPT (review-r3-final.md).
+- appH sha 4d6d58cf.... build_check PASS, 396 pp. Digest CURRENT. Uncommitted.
+- No label change. Problem A stays OPEN / CRITICAL PATH for the matrix-derived label / PROGRAMME-CONDITIONAL.
+- Pre-existing items for the author (out of scope):
+  - appH L96-97 and L553 hard-code "Chapter~8" / "Chapter~3".
+  - ch18 L45-46 describes Problem A differently from ch17.
+- Remaining gpu revisions: 059, 060, 061, 062 (two blocks), 064, 065, 066-H, gpu 067-N, 069.
+
+## 2026-11-19 - gpu 065 (Problem B Ward measure-insertion sub-lemma) integrated
+- Package: proposals/local-gpu/065-b-ward-measure-insertion-sublemma.
+- Review history:
+  - local-r2 applied m1-m5. The m5 placement was improved and the survey sentence softened.
+  - gk: NEEDS EVIDENCE.
+  - Full scan in 4 passes. It found 3 required replacements: appH L437 (the Foster/aether sentence), an edge-modes literature clause, and ch01 L257-259 (the "It is a Ward identity of the microscopic theory" overstatement, now conditional on ass:EE / prop:ward).
+  - local-r3, then gk confirmation: plain ACCEPT.
+- Files and post-integration hashes: appH 5106f993..., bib a0b2319a... (11 new keys), ch01 8c08273a....
+- build_check PASS, 399 pp. Digest CURRENT. Uncommitted.
+- No label change. B and D remain OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL.
+- Housekeeping items for the author, out of scope:
+  - ch16 L215 and L276, and appE L225, hard-code "Theorem~7.3".
+  - appH L96-97 and L553 hard-code chapter numbers.
+- Next: local 070 (b-content-class). It is at r1 AWRR and now re-anchors after the 065 closing sentence.

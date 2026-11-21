@@ -1,0 +1,27 @@
+== check 1: block comparison ==
+ch10 heading : \section{Provisional sector bookkeeping (frame/metric sector only)}
+ch05 heading : \section{Provisional sector bookkeeping}
+intro identical      : True
+tabular identical    : True
+closing ch10 366-367 : No total mode count of the full theory follows from this bookkeeping; the “2” is a metric-sector target, not a full-spectrum result.
+closing ch05 359-360 : No full-theory mode count follows from this bookkeeping. The final “2” is only a metric-sector target.
+closing identical    : False
+
+== checks 2-5: cross-file scan ==
+incoming \ref{sec:ch10-table} : []
+\label{sec:ch10-table} sites : [('chapters/ch10-lorentz-locking.tex', 332)]
+incoming \ref{sec:ch5-count}  : [('chapters/ch05-lorentz-decomposition.tex', 379), ('chapters/ch09-ultraviolet.tex', 386), ('chapters/ch10-lorentz-locking.tex', 229)]
+incoming refs to labels after the deleted section: {'sec:ch10-not': 0, 'sec:ch10-exercises': 0, 'sec:ch10-vector': 0, 'sec:ch10-diffs': 1}
+(sec:ch10-diffs precedes the deletion; its number is unaffected.)
+cleveref/autoref used anywhere      : False
+hard-coded "Section~10." references : []
+
+== check 4: anchor uniqueness in ch10 ==
+count 1 for conditional vector row of the provisional sector bookkeeping; it
+count 1 for \\section\{Provisional sector bookkeeping \(frame/metric sector only\)\}
+count 1 for No total mode count of the full theory follows from this bookkeeping;
+
+== check: the sentence the pointer will attach to (ch10 227-235) ==
+decoupling scale follows without those terms. If a specified internal-vector quadratic operator gaps the four components counted in Section~\ref{sec:ch5-count}, they are omitted from the low-energy frame/metric-sector bookkeeping; otherwise their spectrum remains open. If an internal subgroup \(H\) is unbroken, its corresponding gauge field is massless (conditional). This identifies the conditional vector row of the provisional sector bookkeeping; it does not establish the dynamics of the diagonal connection (Problem~D).
+
+ALL CHECKS PRINTED; compare with verify_output.txt

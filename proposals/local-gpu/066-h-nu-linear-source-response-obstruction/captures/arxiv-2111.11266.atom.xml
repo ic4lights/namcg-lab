@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/aYee5o6DvtiqvmDZLZHWEe+tXEA</id>
+  <title>arXiv Query: search_query=&amp;id_list=2111.11266&amp;start=0&amp;max_results=10</title>
+  <updated>2026-11-09T22:34:38Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2111.11266" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2111.11266v5</id>
+    <title>Modular structure of the Weyl algebra</title>
+    <updated>2023-03-22T08:17:44Z</updated>
+    <link href="https://arxiv.org/abs/2111.11266v5" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2111.11266v5" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the modular Hamiltonian associated with a Gaussian state on the Weyl algebra. We obtain necessary/sufficient criteria for the local equivalence of Gaussian states, independently of the classical results by Araki and Yamagami, Van Daele, Holevo. We then present a criterion for a Bogoliubov automorphism to be weakly inner in the GNS representation. We also describe the vacuum modular Hamiltonian associated with a time-zero interval in the scalar, massless, free QFT in two spacetime dimensions, thus complementing the recent results in higher space dimensions. In particular, we have the formula for the local entropy of a one-dimensional massless wave packet and Araki's vacuum relative entropy of a coherent state on a double cone von Neumann algebra.</summary>
+    <category term="math-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-11-22T15:09:45Z</published>
+    <arxiv:comment>33 pages. This manuscript is a shortened version of the published article, and takes into account the correction pointed out in the erratum</arxiv:comment>
+    <arxiv:primary_category term="math-ph"/>
+    <arxiv:journal_ref>Commun. Math. Phys. 392, 145-183 (2022)</arxiv:journal_ref>
+    <author>
+      <name>Roberto Longo</name>
+    </author>
+  </entry>
+</feed>

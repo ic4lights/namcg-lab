@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/jX1cGB1k/VTdN9rSG0tpPlUpSVY</id>
+  <title>arXiv Query: search_query=&amp;id_list=2407.13336,2602.02683,2201.06871,2107.08907,2609.10027,2306.01837,1812.01596,1810.12236,2603.28851,2606.27437&amp;start=0&amp;max_results=20</title>
+  <updated>2026-11-09T19:07:33Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=20&amp;id_list=2407.13336,2602.02683,2201.06871,2107.08907,2609.10027,2306.01837,1812.01596,1810.12236,2603.28851,2606.27437" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>20</opensearch:itemsPerPage>
+  <opensearch:totalResults>10</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2407.13336v3</id>
+    <title>Entanglement Entropy for the Black 0-Brane</title>
+    <updated>2024-12-06T16:29:32Z</updated>
+    <link href="https://arxiv.org/abs/2407.13336v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2407.13336v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We analyse the entanglement entropy between the Black 0-Brane solution to supergravity and its Hawking radiation. The Black 0-Brane admits a dual Gauge theory description in terms of the Matrix model for M-Theory, named BFSS theory, which is the theory of open strings on a collection of N D0-branes. Recent studies of the model have highlighted a mechanism of Black Hole evaporation for this system, based on the chaotic nature of the theory and the existence of flat directions. This paper further explores this idea, through the computation of the von Neumann entropy of Hawking radiation. In particular, we show that the expected Page curve is indeed reproduced, consistently with a complete recovery of information after the Black Hole has fully evaporated. A pivotal step in the computation is the definition of a Hilbert space which allows for a quantum mechanical description of partially evaporated Black Holes. We find that the entanglement entropy depends on the choice of a parameter, which can be interpreted as summarizing the geometric features of the Black Hole, such as the size of the resolved singularity and the size of the horizon.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-07-18T09:34:01Z</published>
+    <arxiv:comment>16 pages, 4 figures, v.3. Version accepted for publication in Physical Review D</arxiv:comment>
+    <arxiv:primary_category term="hep-th"/>
+    <arxiv:journal_ref>Physical Review D (Vol. 110, No. 12), 2024</arxiv:journal_ref>
+    <author>
+      <name>Angshuman Choudhury</name>
+    </author>
+    <author>
+      <name>Davide Laurenzano</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevD.110.126018</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevD.110.126018" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2201.06871v3</id>
+    <title>Target space entanglement in a matrix model for the bubbling geometry</title>
+    <updated>2022-04-28T08:34:25Z</updated>
+    <link href="https://arxiv.org/abs/2201.06871v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2201.06871v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the target space entanglement entropy in a complex matrix model that describes the chiral primary sector in $\mathcal{N}=4$ super Yang-Mills theory, which is associated with the bubbling AdS geometry. The target space for the matrix model is a two-dimensional plane where the eigenvalues of the complex matrix distribute. The eigenvalues are viewed as the position coordinates of fermions, and the eigenvalue distribution corresponds to a droplet formed by the fermions. The droplet is identified with one that specifies a boundary condition in the bubbling geometry. We consider states in the matrix model that correspond to $AdS_5\times S^5$, an AdS giant graviton and a giant graviton in the bubbling geometry. We calculate the target space entanglement entropy of a subregion for each of the states in the matrix model as well as the area of the boundary of the subregion in the bubbling geometry, and find a qualitative agreement between them.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-01-18T10:54:28Z</published>
+    <arxiv:comment>19 pages, 16 figures, published version</arxiv:comment>
+    <arxiv:primary_category term="hep-th"/>
+    <arxiv:journal_ref>JHEP 04 (2022) 086</arxiv:journal_ref>
+    <author>
+      <name>Asato Tsuchiya</name>
+    </author>
+    <author>
+      <name>Kazushi Yamashiro</name>
+    </author>
+    <arxiv:doi>10.1007/JHEP04(2022)086</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/JHEP04(2022)086" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2306.01837v3</id>
+    <title>Generalized entropy for general subregions in quantum gravity</title>
+    <updated>2023-12-07T16:45:01Z</updated>
+    <link href="https://arxiv.org/abs/2306.01837v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2306.01837v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We consider quantum algebras of observables associated with subregions in theories of Einstein gravity coupled to matter in the $G_N\rightarrow 0$ limit. When the subregion is spatially compact or encompasses an asymptotic boundary, we argue that the algebra is a type II von Neumann factor. To do so in the former case we introduce a model of an observer living in the region; in the latter, the ADM Hamiltonian effectively serves as an observer. In both cases the entropy of states on which this algebra acts is UV finite, and we find that it agrees, up to a state-independent constant, with the generalized entropy. For spatially compact regions the algebra is type II$_1$, implying the existence of an entropy maximizing state, which realizes a version of Jacobson's entanglement equilibrium hypothesis. The construction relies on the existence of well-motivated but conjectural states whose modular flow is geometric at an instant in time. Our results generalize the recent work of Chandrasekaran, Longo, Penington, and Witten on an algebra of operators for the static patch of de Sitter space.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-06-02T18:00:06Z</published>
+    <arxiv:comment>60 pages + 22 pages in appendices; v2 includes extra references and fixes some typos; v3 fixes two additional typos and matches the version in JHEP</arxiv:comment>
+    <arxiv:primary_category term="hep-th"/>
+    <arxiv:journal_ref>J. High Energ. Phys. 2023, 20 (2023)</arxiv:journal_ref>
+    <author>
+      <name>Kristan Jensen</name>
+    </author>
+    <author>
+      <name>Jonathan Sorce</name>
+    </author>
+    <author>
+      <name>Antony Speranza</name>
+    </author>
+    <arxiv:doi>10.1007/JHEP12(2023)020</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/JHEP12(2023)020" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.28851v1</id>
+    <title>A Covariant Phase Space Approach to Einstein-AEther Gravity</title>
+    <updated>2026-03-30T18:00:00Z</updated>
+    <link href="https://arxiv.org/abs/2603.28851v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.28851v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Black hole thermodynamics in Lorentz-violating gravity is subtle because different excitations propagate at different speeds and hence identify different causal horizons. We revisit Einstein--AEther gravity using the covariant phase space formalism with boundaries and derive a consistent first law for stationary black holes. For a mode of propagation speed $c_s$, we introduce a disformal frame in which the corresponding causal horizon is a Killing horizon, so that the standard Wald-type derivation can be carried out. The result is then mapped back to the original frame, where it mantains the same structure. The associated horizon charge contains, besides the usual Komar term, an irreducible entropic AEther contribution that can be interpreted as heat due to the AEther flux across the horizon; accordingly, the total entropy splits into a gravitational part and an AEther part. We further develop an extended-thermodynamics framework in which the couplings of the theory are allowed to vary, obtaining generalized Smarr relations. Finally, we analyze the probe-mode limit $c_s \to +\infty$, clarifying its connection to universal-horizon thermodynamics and resolving the apparent tension in the literature between approaches that (i) fix the entropy to be proportional to the area and infer a corresponding temperature, and (ii) impose the Hawking temperature associated with modes peeling from the universal horizon and infer the entropy. Once the independent AEther contribution is properly taken into account, the two prescriptions are reconciled.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-30T18:00:00Z</published>
+    <arxiv:comment>37 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Walter Arata</name>
+    </author>
+    <author>
+      <name>Stefano Liberati</name>
+    </author>
+    <author>
+      <name>Giulio Neri</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2107.08907v3</id>
+    <title>Momentum-space entanglement in scalar field theory on fuzzy spheres</title>
+    <updated>2021-11-30T11:22:41Z</updated>
+    <link href="https://arxiv.org/abs/2107.08907v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2107.08907v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Quantum field theory defined on a noncommutative space is a useful toy model of quantum gravity and is known to have several intriguing properties, such as nonlocality and UV/IR mixing. They suggest novel types of correlation among the degrees of freedom of different energy scales. In this paper, we investigate such correlations by the use of entanglement entropy in the momentum space. We explicitly evaluate the entanglement entropy of scalar field theory on a fuzzy sphere and find that it exhibits different behaviors from that on the usual continuous sphere. We argue that these differences would originate in different characteristics; non-planar contributions and matrix regularization. It is also found that the mutual information between the low and the high momentum modes shows different scaling behaviors when the effect of a cutoff becomes important.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-07-19T14:21:13Z</published>
+    <arxiv:comment>1+35 pages, 35 figures; Ver.2, minor changes; Ver. 3, added some explanation in Section 4, some paragraphs in Section 5, and some references. Version to appear in JHEP</arxiv:comment>
+    <arxiv:primary_category term="hep-th"/>
+    <author>
+      <name>Shoichi Kawamoto</name>
+    </author>
+    <author>
+      <name>Tsunehide Kuroki</name>
+    </author>
+    <arxiv:doi>10.1007/JHEP12(2021)101</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/JHEP12(2021)101" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.27437v1</id>
+    <title>Einstein-aether Elliptic Charges and the First Law of Asymptotically AdS Black Holes</title>
+    <updated>2026-06-25T18:00:22Z</updated>
+    <link href="https://arxiv.org/abs/2606.27437v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.27437v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We investigate the thermodynamic role of asymptotic aether alignment for universal horizons in Einstein-aether theory. In the static, spherically symmetric, asymptotically AdS sector with $c_{14}=0$, the known first law for universal horizons contains an additional term whenever the aether is misaligned with the timelike Killing vector at infinity. While this term has recently been interpreted in Hořava--Lifshitz gravity as the contribution of an elliptic charge associated with khronon reparameterizations, no corresponding explanation was available in Einstein-aether theory. We show that, in the same sector, Einstein-aether theory possesses a previously unidentified symmetry of the reduced action, generated by infinitesimal transformations of the form $δu^a=f a^a$, where $a^a$ is the aether acceleration and $f$ obeys an elliptic constraint. We derive the associated current and charge, and show that the aligned limit is naturally interpreted as the ensemble in which this aether-charge contribution vanishes. This provides the Einstein-aether counterpart of the elliptic-charge mechanism in Hořava--Lifshitz gravity and clarifies the thermodynamic significance of asymptotic aether alignment.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-25T18:00:22Z</published>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Walter Arata</name>
+    </author>
+    <author>
+      <name>Moustafa Ismail</name>
+    </author>
+    <author>
+      <name>Stefano Liberati</name>
+    </author>
+    <author>
+      <name>Luke Martin</name>
+    </author>
+    <author>
+      <name>David Mattingly</name>
+    </author>
+    <author>
+      <name>Giulio Neri</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1812.01596v3</id>
+    <title>Gravitational Thermodynamics of Causal Diamonds in (A)dS</title>
+    <updated>2019-12-13T15:19:22Z</updated>
+    <link href="https://arxiv.org/abs/1812.01596v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1812.01596v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The static patch of de Sitter spacetime and the Rindler wedge of Minkowski spacetime are causal diamonds admitting a true Killing field, and they behave as thermodynamic equilibrium states under gravitational perturbations. We explore the extension of this gravitational thermodynamics to all causal diamonds in maximally symmetric spacetimes. Although such diamonds generally admit only a conformal Killing vector, that seems in all respects to be sufficient. We establish a Smarr formula for such diamonds and a "first law" for variations to nearby solutions. The latter relates the variations of the bounding area, spatial volume of the maximal slice, cosmological constant, and matter Hamiltonian. The total Hamiltonian is the generator of evolution along the conformal Killing vector that preserves the diamond. To interpret the first law as a thermodynamic relation, it appears necessary to attribute a negative temperature to the diamond, as has been previously suggested for the special case of the static patch of de Sitter spacetime. With quantum corrections included, for small diamonds we recover the "entanglement equilibrium" result that the generalized entropy is stationary at the maximally symmetric vacuum at fixed volume, and we reformulate this as the stationarity of free conformal energy with the volume not fixed.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-12-04T18:52:59Z</published>
+    <arxiv:comment>v3: 64 pages, 6 appendices, 8 figures; matches published version</arxiv:comment>
+    <arxiv:primary_category term="hep-th"/>
+    <arxiv:journal_ref>SciPost Phys. 7, 079 (2019)</arxiv:journal_ref>
+    <author>
+      <name>Ted Jacobson</name>
+    </author>
+    <author>
+      <name>Manus R. Visser</name>
+    </author>
+    <arxiv:doi>10.21468/SciPostPhys.7.6.079</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.21468/SciPostPhys.7.6.079" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1810.12236v2</id>
+    <title>Equilibrium to Einstein: Entanglement, Thermodynamics, and Gravity</title>
+    <updated>2019-01-25T03:57:04Z</updated>
+    <link href="https://arxiv.org/abs/1810.12236v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1810.12236v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Here we develop the connection between thermodynamics, entanglement, and gravity. By attributing thermodynamics to timeslices of a causal diamond, we show that the Clausius relation $TΔS_{\text{rev}}=Q$, where $ΔS_{\text{rev}}$ is the reversible entropy change, gives rise to the non-linear gravitational equations of motion for a wide class of diffeomorphism invariant theories. We then compare the Clausius relation to the first law of causal diamond mechanics (FLCD), a geometric identity and necessary ingredient in deriving Jacobson's entanglement equilibrium proposal -- the entanglement entropy of a spherical region with a fixed volume is maximal in vacuum. Specifically we show that the condition of fixed volume can be understood as subtracting the irreversible contribution to the thermodynamic entropy. This provides a "reversible thermodynamic process" interpretation of the FLCD, and that the condition of entanglement equilibrium may be regarded as equilibrium thermodynamics for which the Clausius relation holds. Finally, we extend the entanglement equilibrium proposal to the timelike stretched horizons of future lightcones, providing an entanglement interpretation of stretched lightcone thermodynamics.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-10-29T16:24:53Z</published>
+    <arxiv:comment>23 pages, 2 figures</arxiv:comment>
+    <arxiv:primary_category term="hep-th"/>
+    <arxiv:journal_ref>Phys. Rev. D 99, 086006 (2019)</arxiv:journal_ref>
+    <author>
+      <name>Andrew Svesko</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevD.99.086006</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevD.99.086006" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.02683v1</id>
+    <title>Area terms and entanglement entropy in the $c=1$ string theory</title>
+    <updated>2026-02-02T19:02:37Z</updated>
+    <link href="https://arxiv.org/abs/2602.02683v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.02683v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study entanglement entropy in the low-energy effective field theory of two-dimensional string theory as well as in the singlet sector of the dual $c=1$ matrix quantum mechanics. From the target space perspective, we argue that a generic bulk subregion is expected to have an associated generalized entanglement entropy combining a dilaton-dependent gravitational term and a matter contribution coming from the tachyon. Given that the gravitational area-like term is absent in previous analyses of entanglement entropy in the $c=1$ model, we examine several possible mechanisms for its emergence. We show that the nonlocal transformation induced by the leg-pole factor that relates the target space tachyon and the matrix model collective excitations cannot account for the area-like term, and we comment on its possible origin in the non-singlet sectors of the theory.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-02T19:02:37Z</published>
+    <arxiv:comment>24 pages + appendices, 3 figures</arxiv:comment>
+    <arxiv:primary_category term="hep-th"/>
+    <author>
+      <name>Ben Craps</name>
+    </author>
+    <author>
+      <name>Marius Gerbershagen</name>
+    </author>
+    <author>
+      <name>Maxim Pavlov</name>
+    </author>
+    <author>
+      <name>Alejandro Vilar López</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.10027v1</id>
+    <title>Entanglement Entropy of Interacting Scalar Theories on Fuzzy Spaces</title>
+    <updated>2026-09-09T11:01:29Z</updated>
+    <link href="https://arxiv.org/abs/2609.10027v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.10027v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We investigate the impact of self-interactions on the Rényi and entanglement entropies of a scalar field on $(2+1)$-dimensional spacetimes, whose spatial sections are modeled by fuzzy spaces, specifically the fuzzy sphere and the fuzzy disc. We compute the first-order perturbative correction induced by a $λφ^4$ interaction using the Green's function approach. In contrast to the free theory, where the entanglement entropy is dominated by degrees of freedom near the entangling boundary and obeys an area law, we find that the interaction correction has an extensive bulk contribution, receiving significant contributions from degrees of freedom throughout the fuzzy space. For the fuzzy sphere, the correction exhibits strong infrared sensitivity associated with the zero mode. We isolate and resolve this zero-mode IR divergence by projecting out the zero mode, thereby obtaining a physically meaningful quantity. In the commutative continuum limit, the interaction correction has the same degree of UV divergence as the free entropy but does not obey a pure area law. Furthermore, we analyze the Moyal plane limit, where the interaction correction exhibits a distinct IR divergence. We discuss the physical origin of these extensive bulk features and examine their possible connection to the celebrated UV/IR mixing phenomenon in noncommutative quantum field theories.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-09T11:01:29Z</published>
+    <arxiv:comment>38 pages, 6 figures</arxiv:comment>
+    <arxiv:primary_category term="hep-th"/>
+    <author>
+      <name>A. Allouche</name>
+    </author>
+    <author>
+      <name>D. Dou</name>
+    </author>
+  </entry>
+</feed>

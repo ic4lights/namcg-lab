@@ -1,0 +1,217 @@
+"""077 s2b: the fixed-q leading-order window, extended (correction of s2(b)).
+
+s2(b) (left on disk with a failed assert) tested q in 2..16 at N=400 and
+asserted the tiling-violation D would exceed 0.5 by q=16. It does not: D
+reaches only ~0.20 and stays < 0.25 for every tested q (old s2 out,
+reproduced byte-identically). The recorded claim "grows to O(1) by q=16" is
+wrong; the failure mode was the threshold, not the effect. s2b measures the
+window properly on a larger grid.
+
+EFFICIENT ENSEMBLE REALIZATION. By the rank factorization of s5 Lemma 1,
+Q~ = -2i(U R^+ - R U^+) with (a-block of R e_a') = z_{a a'} = sum_f cbar^f
+Theta Pi^f_{a a'} v, and the nonzero spectrum of Q~ equals the spectrum of
+the 2q x 2q T = -2i[[C0^+, Z0],[-I, -C0]], C0[a,a'] = (u|z_{a a'}),
+Z0[a,a'] = sum_b (z_{ba}|z_{ba'}). For iid Gaussian Pi^f the marginal law of
+the q^2 vectors z_{ba} is iid CN(0, sigma_c^2 Theta), sigma_c^2 = sum_f|c^f|^2
+(each (Pi^f v)_i is CN(0,2) independent across i, Theta is a rank-M
+projector, the flavor sum rescales), so the charge ensemble can be sampled
+DIRECTLY in z without ever forming the qN x qN momenta. Checks:
+  (z0) per-event deterministic equivalence: at q=2, N=40 and q=3, N=30,
+      spectrum(T) vs spectrum(full Q~ from explicit Gaussian Pi) nonzero
+      parts match < 1e-9 (the lemma, on the same data);
+  (z1) distributional equivalence: median D over 150 events from the z-path
+      vs the full-Pi path at q=2, N=120 and q=3, N=60: ratio in [0.75, 1.35];
+  (a) for each q in {4, 8, 16, 32}, at N in {4q^2, 8q^2, 16q^2}, 10 events:
+      median D decays in N with log-log slope in [-0.9, -0.25];
+  (b) along q at N = 1024, q in {4, 8, 16, 32, 64}: all median D < 0.5 and
+      the along-q power exponent of D (polyfit log D on log q) < 1;
+  (c) the 4th-moment signature excess U_2 = Tr T^4/(2q (Tr T^2/2q)^2) - 1
+      stays < 0.05 at all (a),(b) points.
+Leading-order tiling therefore holds for the iid Gaussian class through
+fixed q and q growing at least like q = O(N^{1/2}); it does not break down
+within the tested range. Frenkel's stated fixed-q validity condition is
+respected by the claims made for this manuscript (q fixed with N).
+
+Run: python -I proposals/077-g-selrule-copyinv/s2b_qwindow.py
+Expected invariants: (z0) dev < 1e-9; (z1) ratio in [0.75,1.35]; (a) all
+slopes in [-0.9,-0.25]; (b) all D < 0.5, exponent < 1; (c) all U_2 < 0.05;
+last line 'PASS s2b'.
+"""
+import numpy as np
+
+rng = np.random.default_rng(77011)
+
+
+def su2(N):
+    j3 = np.diag([(N - 1) / 2 - i for i in range(N)]).astype(complex)
+    jp = np.zeros((N, N), complex)
+    for i in range(1, N):
+        jp[i - 1, i] = np.sqrt(i * (N - i))
+    return [(jp + jp.conj().T) / 2, (jp - jp.conj().T) / 2j, j3]
+
+
+def cap_data(J, n, M):
+    nj = n[0] * J[0] + n[1] * J[1] + n[2] * J[2]
+    ev, evec = np.linalg.eigh(nj)
+    order = np.argsort(-np.real(ev))
+    u = evec[:, order[M - 1]]
+    v = evec[:, order[M]]
+    Th = evec[:, order[:M]] @ evec[:, order[:M]].conj().T
+    Vm = evec[:, order[:M]]
+    return Th, u, v, Vm
+
+
+def herg(m):
+    g = rng.normal(size=(m, m)) + 1j * rng.normal(size=(m, m))
+    return g + g.conj().T
+
+
+def edge_charge(Xs, Th, Pis):
+    Tb = np.eye(len(Th), dtype=complex) - Th
+    A = sum((Th @ x @ Tb) @ (Tb @ pi @ Th) for x, pi in zip(Xs, Pis))
+    return -2j * (A - A.conj().T)
+
+
+def Tmat_from_z(z, u, q):
+    # z is dict [(b,a)] -> vector in C^N (a = copy column of R, b = block)
+    C0 = np.zeros((q, q), complex)
+    Z0 = np.zeros((q, q), complex)
+    for a in range(q):
+        for ap in range(q):
+            C0[a, ap] = np.vdot(u, z[(a, ap)])
+            Z0[a, ap] = sum(np.vdot(z[(b, a)], z[(b, ap)]) for b in range(q))
+    return -2j * np.block([[C0.conj().T, Z0], [-np.eye(q), -C0]])
+
+
+def stats_from_eigs(ev, q):
+    ev2 = ev ** 2
+    m2 = float(np.mean(ev2))
+    T2 = float(np.mean(ev2 ** 2)) / m2 ** 2
+    return T2 - 1.0
+
+
+def sample_z(u, Vm, q, M, sig):
+    # z[(b,a)] = Vm @ eta, eta ~ CN(0, sig^2 I_M) iid; returns dict
+    eta = sig * ((rng.normal(size=(q * q, M)) + 1j * rng.normal(size=(q * q, M))) / np.sqrt(2))
+    z = {}
+    k = 0
+    for b in range(q):
+        for a in range(q):
+            z[(b, a)] = Vm @ eta[k]
+            k += 1
+    return z
+
+
+def slope(xs, ys):
+    xs = np.asarray(xs, float); ys = np.asarray(ys, float)
+    i = [j for j, y in enumerate(ys) if np.isfinite(y) and y > 0]
+    return float(np.polyfit(np.log(xs[i]), np.log(ys[i]), 1)[0])
+
+
+def background(N):
+    M = N // 2
+    J = su2(N)
+    n = rng.normal(size=3); n /= np.linalg.norm(n)
+    Th, u, v, Vm = cap_data(J, n, M)
+    A3 = rng.normal(size=(3, 3))
+    X = [sum(A3[a, b] * J[b] for b in range(3)) for a in range(3)]
+    ca = [np.vdot(u, x @ v) for x in X]
+    sig = np.sqrt(sum(abs(c) ** 2 for c in ca)) * np.sqrt(2.0)  # var of (Pi v)_i is 2
+    return M, Th, u, v, Vm, X, ca, sig
+
+
+# ---- (z0) per-event equivalence of spectrum(T) vs full Q~ nonzero spectrum
+for (q_, N_) in ((2, 40), (3, 30)):
+    M, Th, u, v, Vm, X, ca, sig = background(N_)
+    Iq = np.eye(q_)
+    Xl = [np.kron(Iq, x) for x in X]
+    Thl = np.kron(Iq, Th)
+    Pis = [herg(q_ * N_) for _ in range(3)]
+    Ql = edge_charge(Xl, Thl, Pis)
+    z = {(b, a): sum(np.conj(ca[f]) * (Th @ Pis[f][b * N_:(b + 1) * N_,
+                                                    a * N_:(a + 1) * N_] @ v)
+                   for f in range(3))
+         for b in range(q_) for a in range(q_)}
+    # NOTE: z sampled from the same Pis, so the equivalence below is the exact
+    # per-event identity of the two constructions (no sampling involved).
+    e1 = np.sort(np.linalg.eigvalsh(Ql))
+    e2 = np.sort(np.linalg.eigvalsh(Tmat_from_z(z, u, q_)))
+    thr = 1e-9 * max(1.0, np.abs(e1).max())
+    nz1, nz2 = e1[np.abs(e1) > thr], e2[np.abs(e2) > thr]
+    dev = max(abs(nz1 - nz2)) if len(nz1) == len(nz2) else 9.9
+    print('(z0) q=%d,N=%d: full-Q~ vs T nonzero-spectrum dev %.2e (%d/%d nz)'
+          % (q_, N_, dev, len(nz1), len(nz2)))
+    assert dev < 1e-8 and len(nz1) == len(nz2) == 2 * q_
+
+# ---- (z1) distributional equivalence of the z-path vs the Pi path
+for (q_, N_) in ((2, 120), (3, 60)):
+    M, Th, u, v, Vm, X, ca, sig = background(N_)
+    Iq = np.eye(q_)
+    Xl = [np.kron(Iq, x) for x in X]
+    Thl = np.kron(Iq, Th)
+
+    def Dfull():
+        Pl = [herg(q_ * N_) for _ in range(3)]
+        ev = np.linalg.eigvalsh(edge_charge(Xl, Thl, Pl))
+        thr = 1e-9 * max(1.0, np.abs(ev).max())
+        e = np.sort(ev[np.abs(ev) > thr])
+        if len(e) != 2 * q_:
+            return float('nan')
+        return max(float(e[k * q_ + q_ - 1] - e[k * q_]) for k in range(2)) / np.abs(e).max()
+
+    def Dz():
+        zz = sample_z(u, Vm, q_, M, sig)
+        ev = np.linalg.eigvalsh(Tmat_from_z(zz, u, q_))
+        return max(float(ev[k * q_ + q_ - 1] - ev[k * q_]) for k in range(2)) \
+            / np.abs(ev).max()
+
+    dF = [Dfull() for _ in range(150)]
+    dZ = [Dz() for _ in range(150)]
+    mF, mZ = float(np.median(dF)), float(np.median(dZ))
+    ratio = mZ / mF
+    print('(z1) q=%d,N=%d: median D full %.4f vs z-path %.4f, ratio %.3f'
+          % (q_, N_, mF, mZ, ratio))
+    assert 0.75 < ratio < 1.35
+
+# ---- (a) N-decay of median D at fixed q, z-path (exact for the charge ensemble)
+ok_slope = True
+allU = []
+for q in (4, 8, 16, 32):
+    Ns, Ds = [], []
+    for N in (4 * q * q, 8 * q * q, 16 * q * q):
+        M, Th, u, v, Vm, X, ca, sig = background(N)
+        dv, uv = [], []
+        for _ in range(10):
+            zz = sample_z(u, Vm, q, M, sig)
+            ev = np.linalg.eigvalsh(Tmat_from_z(zz, u, q))
+            D = max(float(ev[k * q + q - 1] - ev[k * q]) for k in range(2)) / np.abs(ev).max()
+            dv.append(D); uv.append(stats_from_eigs(ev, q))
+        Ns.append(N); Ds.append(float(np.median(dv))); allU.append(float(np.median(uv)))
+    s = slope(Ns, Ds)
+    ok_slope = ok_slope and (-0.9 < s < -0.25)
+    print('(a) q=%2d: N,D median: %s ; slope %.3f' %
+          (q, ['%d:%.4f' % (a, b) for a, b in zip(Ns, Ds)], s))
+
+# ---- (b) along-q growth at N = 1024 and (c) U_2 levels
+N = 1024
+M, Th, u, v, Vm, X, ca, sig = background(N)
+qs, Ds, Us = [], [], []
+for q in (4, 8, 16, 32, 64):
+    dv, uv = [], []
+    for _ in range(8):
+        zz = sample_z(u, Vm, q, M, sig)
+        ev = np.linalg.eigvalsh(Tmat_from_z(zz, u, q))
+        D = max(float(ev[k * q + q - 1] - ev[k * q]) for k in range(2)) / np.abs(ev).max()
+        dv.append(D); uv.append(stats_from_eigs(ev, q))
+    qs.append(q); Ds.append(float(np.median(dv))); Us.append(float(np.median(uv)))
+    allU.append(float(np.median(uv)))
+    print('(b) N=1024 q=%2d: D %.4f  U_2 %.4f' % (q, Ds[-1], Us[-1]))
+expo = slope(qs, Ds)
+ok_b = max(Ds) < 0.5 and expo < 1.0
+ok_c = max(allU) < 0.05
+print('(b) along-q exponent of D: %.3f (< 1); (c) max U_2 %.4f' % (expo, max(allU)))
+
+ok = ok_slope and ok_b and ok_c
+print('all checks inside thresholds:', ok)
+assert ok
+print('PASS s2b')

@@ -54,6 +54,11 @@ warrant a label change, put it in a separated "Status-label recommendation" sect
   it; propose the minimal core change (relaxation, generalization, replacement definition, redaction) that could
   advance or close it; prove compatibility (see Compatibility ledger); show consequences for every downstream
   use; keep the original target's status visible. Prefer the smallest change with the largest leverage.
+  Priority (author directive 2026-11-20): F work is first-class when it unblocks a dependency gate or dissolves
+  a named obstruction on a critical path - e.g. showing that a gated target depends on the core only through
+  data at a level the core already derives, converting a selection demand into a clean state-side derivation
+  target. N packages remain decision-grade deliverables, not the default dispatch: propose one when the
+  obstruction is genuinely core-level, never to accumulate obstructions.
 - **N - negation.** A first-class deliverable is a derivation-quality negation: show the problem's target is
   inconsistent with (or unattainable from) the current core, naming the exact obstruction, or show a core aspect
   is inconsistent with the emergence commitments themselves. A negation must carry the same rigor as a

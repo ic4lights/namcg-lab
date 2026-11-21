@@ -1,0 +1,11 @@
+pre-image sha256 : fc0884aa8c24e414020520f979a356b07374e2d58e8cdedf55910344a16510c6 MATCH
+post-image sha256: 4d6d58cf7947dae9570e917ced6db8b6e40287437162321c4517eb726a568fce
+patched file CRLF-pure: True
+insert line count: 55
+pdflatex pass 1: rc=0 pages=390
+pdflatex pass 2: rc=0 pages=396
+undefined refs/cites: 0 []
+multiply-defined labels: 0 []
+LaTeX errors: 0 []
+BUILD PASS pages=396
+build dir removed

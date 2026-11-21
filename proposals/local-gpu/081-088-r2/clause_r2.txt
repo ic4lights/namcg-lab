@@ -1,0 +1,2 @@
+and for Gaussian states with the stated variances or the stated momentum data.
+and for Gaussian states with the stated variances, the stated momentum data or the stated slot laws, with the stated laws of the edge vector.

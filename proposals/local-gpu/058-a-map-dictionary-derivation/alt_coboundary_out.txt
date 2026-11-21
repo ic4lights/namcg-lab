@@ -1,0 +1,12 @@
+(A) dim 2, B2 up to order 3 per slot (100 coefficient functions): Alt(dB2) == 0 : True
+(A) dim 3, B2 up to order 2 per slot (100 coefficient functions): Alt(dB2) == 0 : True
+
+[Theta,Theta]^{abc} (cyclic definition) totally antisymmetric: True
+(B) generic 3D bivector: Alt(B1 o B1 part) == [Theta,Theta]^{abc} d_af d_bg d_ch (factor one): True
+    [Theta,Theta]^{123} = t12(x1, x2, x3)*Derivative(t23(x1, x2, x3), x2) - t12(x1, x2, x3)*Derivative(t31(x1, x2, x3), x1) - t23(x1, x2, x3)*Derivative(t12(x1, x2, x3), x2) + t23(x1, x2, x3)*Derivative(t31(x1, x2, x3), x3) + t31(x1, x2, x3)*Derivative(t12(x1, x2, x3), x1) - t31(x1, x2, x3)*Derivative(t23(x1, x2, x3), x3)
+    naive Moyal B2 instance: Alt(A2) == same contraction: True
+
+(C) B1 -> B1 + dC (generic order-2 operator C): Alt of B1 o B1 part unchanged: True
+(D) 1/6-averaged alternation equals [Theta,Theta]-contraction / 6: True
+
+ALL CHECKS: True

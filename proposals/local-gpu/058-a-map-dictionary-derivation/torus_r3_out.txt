@@ -1,0 +1,11 @@
+(1) remainder bound, theta = 2 pi p / N, U rebuilt for each p:
+  p=1 theta=0.10472 product-law err=6.3e-15 ||R||=1.3107e+02 bound=1.6838e+03 ok=True
+  p=2 theta=0.20944 product-law err=1.8e-14 ||R||=4.2523e+02 bound=1.4199e+04 ok=True
+  p=3 theta=0.31416 product-law err=2.1e-14 ||R||=1.1328e+03 bound=5.7891e+04 ok=True
+  p=4 theta=0.41888 product-law err=2.5e-14 ||R||=1.2187e+03 bound=1.1491e+05 ok=True
+
+(2a) Tr W_v W_w = N delta_{v+w,0} for all modes with |m|,|n|<=M, 2M<N: True
+(2b) without a mode limit: |Tr W_(N/2,0) W_(N/2,0)| = 60.0 ; |Tr W_(3,N-2) W_(-3,2)| = 60.0 (aliasing, both = N)
+(3) |2 sin(x/2) - x| <= |x|^3/24 on [-20,20]: True
+
+ALL CHECKS: True

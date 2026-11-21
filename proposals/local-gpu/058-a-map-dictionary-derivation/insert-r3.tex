@@ -1,0 +1,55 @@
+\paragraph{Explicit Weyl data and per-order error in the flat Abelian class (conditional; not closure).}
+Within the constant-\(\Theta\) Abelian Moyal class the map data of Problem~A can be
+pinned and the per-order error made explicit. These descriptions are limiting
+descriptions of matrix data: \(\Theta\) remains the expectation of the matrix coordinate
+commutator, not input geometry. On \(\mathbb R^4\) with constant nondegenerate
+\(\Theta\), take \(\mathcal H=L^2(\mathbb R^2)\) and
+\(W_\Theta(f)=\int\frac{d^4k}{(2\pi)^4}\tilde f(k)\,e^{\mathrm i k\cdot\hat X}\) with
+\([\hat X_\mu,\hat X_\nu]=\mathrm i\Theta_{\mu\nu}\); the pairing
+\(\operatorname{Tr}W_\Theta(f)W_\Theta(g)=(2\pi)^{-2}|\operatorname{Pf}\Theta|^{-1}\!\int fg\)
+is exact, with the \((2\pi)^{-2}|\operatorname{Pf}\Theta|^{-1}\) trace density of
+Remark~\ref{rem:ch3-trace-quadratic} and the \(|\operatorname{Pf}\theta|^{-1}\) density of
+Definition~\ref{def:matrix-coords-ext}. At finite \(N\), the analogue of one symplectic
+plane of these data is the 't~Hooft pair \(UV=e^{\mathrm i\vartheta}VU\) on
+\(\mathbb C^N\), \(\vartheta=2\pi p/N\), with Weyl-ordered symbols
+\(\widehat W(e_{m,n})=e^{-\mathrm i(\vartheta/2)mn}U^mV^n\), \(v=(m,n)\),
+\(w=(m',n')\) and \(\sigma(v,w)=mn'-nm'\):
+\([\widehat W_v,\widehat W_w]=2\mathrm i\sin(\tfrac{\vartheta}{2}\sigma(v,w))\,\widehat W_{v+w}\)
+holds exactly; for mode-limited symbols (\(\hat f_v=\hat g_v=0\) unless
+\(|m|,|n|\le M\)) with \(2M<N\),
+\(\operatorname{Tr}\widehat W(f)\widehat W(g)=N\sum_v\hat f_v\hat g_{-v}\) holds exactly,
+and the remainder
+\(R=\tfrac1{\mathrm i}[\widehat W(f),\widehat W(g)]-\widehat W(\{f,g\}_\Theta)\), where
+\(\{\cdot,\cdot\}_\Theta\) is the symbol-level Poisson bracket,
+\(\{e_v,e_w\}_\Theta=\vartheta\,\sigma(v,w)\,e_{v+w}\), obeys the operator-norm bound
+\(\|R\|\le\sum_{v,w}|\hat f_v|\,|\hat g_w|\,(\vartheta|\sigma(v,w)|)^3/24\), uniform in
+\(N\); the continuum limit is \(N\to\infty\) at fixed modes with \(\vartheta\to0\). Only
+odd powers of \(\Theta\) occur in the Moyal bracket; the order-\(\Theta\) term is
+\(\mathrm i\{\cdot,\cdot\}_\Theta\) and the first correction is order \(\Theta^3\) with
+coefficient \(-\mathrm i/24\), the third-derivative contraction of
+Remark~\ref{rem:ch3-moyal-check}. For fluctuating coordinates
+\(\hat X_\mu=W(y_\mu+a_\mu)\), the order-\(\Theta\) symbol of
+\([\hat X_\mu,\Phi]_\star\) is
+\(\mathrm i\Theta_{\mu\nu}\partial^\nu\Phi+\mathrm i\Theta^{\alpha\beta}(\partial_\alpha a_\mu)(\partial_\beta\Phi)\):
+the second term is the connection-inducing piece and the first higher-derivative
+correction of Equation~\eqref{eq:dictionary} in this class is order \(\Theta^3\) with
+third derivatives of \(a_\mu\). For nonconstant \(\Theta\) the naive insertion of
+\(\Theta(x)\) into the constant-coefficient Moyal formula generically fails associativity
+at order \(\Theta^2\); the order-\(\Theta^2\) part of \((f\star g)\star h-f\star(g\star h)\),
+summed with signs over the six orderings of \((f,g,h)\), equals
+\([\Theta,\Theta]^{abc}\partial_af\,\partial_bg\,\partial_ch\) with
+\([\Theta,\Theta]^{abc}:=\Theta^{ad}\partial_d\Theta^{bc}
++\Theta^{bd}\partial_d\Theta^{ca}+\Theta^{cd}\partial_d\Theta^{ab}\), and
+Schouten-closure alone does not remove the full order-\(\Theta^2\) associator of the
+naive truncation. No order-\(\Theta^2\) bidifferential correction of the product changes
+the first-derivative part of this signed sum, so an associative Moyal-type continuum
+description at a variable expectation-value \(\Theta\) requires a Schouten-closed leading
+bivector and, in general, explicit order-\(\Theta^2\) correction bidifferential operators.
+These statements are for the flat Abelian constant-\(\Theta\) class with mode-limited or
+Schwartz symbols; they do not select this class from the matrix condensate, do not
+identify the induced connection with the connection of the kinetic term
+in~\eqref{eq:Smicro} or resolve the constant-\(\Theta\) kinetic
+obstruction of Remark~\ref{rem:ch3-moyal-check}, do not cover the non-Abelian sector, and
+do not bound the unbounded boost/diamond-charge symbol or the sharp diamond cutoff, so
+they do not derive Assumption~\ref{ass:dictionary} and Problem~A remains open.
+

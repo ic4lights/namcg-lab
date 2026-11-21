@@ -1,0 +1,12 @@
+appH-microscopic-proofs.tex baseline bytes=624232 sha256=c2dac013f275fed851d53e8086bc3eceef717c5b607b10c09ae7541c43558b5c match=True
+  E1: OLD occurrences=1; NEW occurrences before=0
+  E2: OLD occurrences=1; NEW occurrences before=0
+  E3: OLD occurrences=1; NEW occurrences before=0
+  E4: OLD occurrences=1; NEW occurrences before=0
+  E5: OLD occurrences=1; NEW occurrences before=0
+  E6: OLD occurrences=1; NEW occurrences before=0
+  result bytes=625157 sha256=173ab97bc1ffeb14a089f2db2fbefb6f6570727e5d8f5ec885d09083f497e945 CRLF=3393 LF=3393 bareLF=0 BOM=False
+namcg.bib baseline bytes=29781 sha256=28fdd7f8cb62b2ad23da3cc05d819a0b750f7fdec096511fca60ab02135ea64d match=True
+  B1: OLD occurrences=1; NEW occurrences before=0
+  result bytes=30159 sha256=4315a89553cb97405af89604f1e43c9e5e0237fa5b7be0439431d042677a6060 CRLF=1006 LF=1006 bareLF=0 BOM=False
+ALL CHECKS PASS

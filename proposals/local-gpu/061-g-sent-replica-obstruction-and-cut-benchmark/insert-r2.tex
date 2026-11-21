@@ -1,0 +1,88 @@
+\paragraph{Bounded obstruction: the replica density on Presentation-A data.}
+The entropy density of Assumption~\ref{ass:Sent-density} is evaluated in
+Section~\ref{sec:ch6-replica} through the replica formula~\eqref{eq:replica}:
+\(\Tr\rho_D^n\) as a path integral on an \(n\)-sheeted cover of \(M\) branched
+over the edge \(B\) of \(\partial M\). Restricted to Presentation~A, the
+regularized trace over \(\mathcal H\) with cutoff~\eqref{eq:LUV-def} and matrix
+coordinates~\eqref{eq:NC}, this object is undefined: the data supply neither a
+manifold \(M\), nor a hypersurface \(\partial M\), nor a tubular neighbourhood,
+nor a branched cover, nor a factorization of the trace over a region. The
+boundary \(\partial M\) of the emergent spacetime is available only through the
+infrared dictionary of Assumption~\ref{ass:dictionary}; the non-factorization
+of region algebras in matrix models is established independently in the BFSS
+setting in~\cite{Anous2020}. Two exits remain. (i) A Presentation-A cut:
+spectral projections of the coordinate operators (Section~\ref{sec:ch6-modular}),
+with the cut by the half-spectrum of a single coordinate operator as their
+non-geometric variant, define a one-particle cut (the algebra of these
+projections is itself stated in that section only after the dictionary of
+Assumption~\ref{ass:dictionary}), and for quadratic fluctuations
+\(\Tr\rho_D^n\) is defined by Fock factorization over the restricted
+one-particle space; the
+output is a functional of the quadratic kernel of the action and of the cut
+projector, not a cover path integral and not a diffeomorphism scalar, and
+reducing it to the local form~\eqref{eq:Sent-exp} requires a dictionary-type
+identification of the cut with \(\partial M\), which is not derived.
+(ii) Presentation~B with the dictionary, in which case any use of
+\eqref{eq:Sent-exp} in \eqref{eq:Leff} inherits Assumption~\ref{ass:dictionary}
+and cannot discharge the matrix-derived completion criterion while that
+assumption is retained. The matrix-derived route through
+Assumption~\ref{ass:Sent-density} therefore depends on Problem~A, and a
+derivation chain recorded without this dependency is incomplete. A sharp
+spectral cut of a quadratic kernel gives a strict area law
+\(S=\sigma\Lambda_{\mathrm{UV}}^2 A_{\mathrm{cut}}\) of mass dimension two;
+the density form \(\alpha_0\Lambda_{\mathrm{UV}}^3\) of \eqref{eq:Sent-exp} is
+recovered from it only for a tube of width \(w=\Theta^{1/2}=\Lambda_{\mathrm{UV}}^{-1}\)
+in the convention of \eqref{eq:LUV-def}, so the localization scale of
+Assumption~\ref{ass:Sent-density} is forced by the cut rather than derived, and
+in the thin-tube limit \(w\to0\) the density diverges as
+\(\sigma\Lambda_{\mathrm{UV}}^2/w\).
+
+\paragraph{Free benchmark in the constant-\(\Theta\) sector.}
+For quadratic fluctuations about a constant \(\Theta\) background, with the
+cubic term and the matter action in \eqref{eq:Smatrix} dropped, each transverse
+Fourier mode \(p_\perp\) gives a one-dimensional quadratic problem whose cut,
+in the sense of exit (i), is the half-spectrum of a single coordinate operator.
+The computable form of this cut restricts the infinite one-dimensional chain to
+a contiguous interval of \(N\) sites, which carries two entanglement cuts and
+Toeplitz correlators; the restricted ground-state covariance \((C,D)\) has a
+restricted symplectic spectrum \(\nu_k\ge\tfrac12\) (a kernel that does not
+couple across the cut contributes only \(\nu_k=\tfrac12\) and no entropy), and
+\(S_{\mathrm{cut}}=\sum_k[(\nu_k+\tfrac12)\ln(\nu_k+\tfrac12)-(\nu_k-\tfrac12)\ln(\nu_k-\tfrac12)]\).
+The massless regime is approached through a mass regulator \(\mu=10^{-5}>0\) in
+the correlator symbols; the \(k=0\) point of the massless symbol is not
+integrable and is not dropped. Numerically, in lattice units with
+\(\Lambda_{\mathrm{UV}}=\pi\): the interval entropy has doubling slopes
+\((s_1(2N)-s_1(N))/\ln 2=0.31022,0.30788,0.30065\) approaching the
+central-charge value \(c/3=\tfrac13\) for the two cuts of the interval at
+\(c=1\); a mode of small mass \(\mu\) contributes
+\(s_1(\mu)=\tfrac13\ln(1/\mu)+b(\mu)\) with \(b(\mu)\to0\) along the sequence
+\(\mu=0.3,0.1,0.03,0.01\) giving \(b=0.01740,0.00263,0.00030,0.00004\); a mode
+of large mass satisfies \(s_1(\mu)\le\tfrac\pi2 e^{-\mu}\) with a large margin
+(the ratio \(s_1(\mu)/(\tfrac\pi2 e^{-\mu})\) falling from \(0.1935\) at
+\(\mu=1\) to \(0.1154\) at \(\mu=3\); no saturation of the bound is claimed);
+and the two-cut slab density
+\((2\pi)^{-2}\int_{\mathrm{BZ}^2}d^2p_\perp\,s_1(\mu(p_\perp))\) with
+\(\mu^2=4\sin^2(p_1/2)+4\sin^2(p_2/2)\) evaluates to \(0.048959\) (direct
+quadrature on a \(64^2\) offset Brillouin-zone grid for \(\mu\ge0.05\) plus the
+analytic infrared tail) and to \(0.049539\) by an independent interpolation
+route, a \(1.183\) percent agreement. Since the interval carries two cuts, the
+single-cut surface coefficient is one half of the logarithmic term. With
+\(w=\Theta^{1/2}=\Lambda_{\mathrm{UV}}^{-1}\) the tube identification above
+fixes \(\alpha_0\) in \eqref{eq:Sent-exp} to the single-cut coefficient at the
+free level; \(\alpha_1\) and \(\alpha_2\) are not computed. These are
+conditional benchmark values in a quadratic truncation of \eqref{eq:Smatrix} at
+finite regulator; they do not derive Assumption~\ref{ass:Sent-density}, and
+Problem~G remains open.
+
+\paragraph{Missing step.}
+Closing the matrix-derived criterion for Problem~G requires, beyond the
+present note: (i) a derivation, not a retained dictionary, of the
+identification between a Presentation-A boundary cut and \(\partial M\) under
+which the cut entropy becomes the local density \eqref{eq:Sent-exp}; (ii) the
+interacting condensate sector of \eqref{eq:Smatrix}, the cubic term, matter
+and non-Gaussian ground-state correlations, which carry the \(\alpha_1\) and
+\(\alpha_2\) structures; (iii) a derivation of the stationarity
+condition~\eqref{eq:bdy-EE} of Assumption~\ref{ass:bdy-EE}; and (iv) the
+mass-dimension-one boundary-to-bulk conversion recorded in the dimensional
+status remark of Chapter~\ref{ch:hbev}, without which \eqref{eq:Leff} stays
+schematic.

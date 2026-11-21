@@ -120,6 +120,14 @@ commit and every merge. Wherever this file says "the branch", read "the branch c
    - keep following up until each avenue has either produced a positive result or been bounded in turn.
    - do not move on to unrelated targets while a favourable avenue on the current gap is still unexplored, unless
      it is blocked.
+   - **Derivation-first qualification (author directive, 2026-11-20).** 2a never outranks a direct attack on a
+     named missing step or an upstream gating problem. Queue an avenue only when a plausible outcome is positive
+     derivation-grade data for a missing step; an avenue whose outcome is only the same no-go in a wider class,
+     or another negative-side/fibre-side statistic the integrated text says identifies nothing for the target,
+     is recorded on the frontier and skipped. When every remaining avenue on a gap is of that kind, park the
+     gap: note it in the ledger and dispatch the next missing-step-adjacent or gating edge (the pathfinder
+     ranks these first). The 2026-10-15 directive stays in force inside those bounds - a bounded no-go still
+     never marks a target dead.
 2. **A no-go is not necessarily conclusive.** Record an M2 no-go in the ledger, together with the exact hypothesis
    class it covers. Then continue: ask the researcher which hypothesis a within-core route can relax, and pursue
    that route. Do not mark a target dead because of a bounded no-go.

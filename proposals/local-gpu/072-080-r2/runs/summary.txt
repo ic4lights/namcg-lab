@@ -1,0 +1,29 @@
+072-g-edge-resum-dominant-rep/s1_moment_decomposition.py rc=0 secs=1 last=PASS s1
+072-g-edge-resum-dominant-rep/s2_hook_content.py rc=0 secs=3 last=PASS s2
+072-g-edge-resum-dominant-rep/s3_saddle_residual.py rc=0 secs=0 last=PASS s3
+073-g-edge-rowshift/s4_uniform_rowshift.py rc=0 secs=3 last=PASS s4
+073-g-edge-rowshift/s5_scaling_and_breakdown.py rc=0 secs=0 last=PASS s5
+074-g-edge-uqstack/s1_uq_closedform.py rc=0 secs=1 last=PASS s1
+074-g-edge-uqstack/s2_uq_scaling.py rc=0 secs=1 last=PASS s2
+074-g-edge-uqstack/s3_uq_boxmin.py rc=0 secs=1 last=PASS s3
+075-g-edge-frameavg/s1_frame_edge_data.py rc=0 secs=0 last=PASS s1
+075-g-edge-frameavg/s2_frame_two_row.py rc=0 secs=1 last=PASS s2
+075-g-edge-frameavg/s3_frame_stacked.py rc=0 secs=0 last=PASS s3
+076-g-edge-uqstack-selrule/s1_coincident_qlift.py rc=0 secs=0 last=PASS s1
+076-g-edge-uqstack-selrule/s2_band_sep_two_caps.py rc=0 secs=0 last=PASS s2
+076-g-edge-uqstack-selrule/s3_moment_mismatch.py rc=0 secs=2 last=PASS s3
+076-g-edge-uqstack-selrule/s4_product_qcopies.py rc=0 secs=1 last=PASS s4
+077-g-selrule-copyinv/s1_typicality_exact.py rc=0 secs=1 last=PASS s1
+077-g-selrule-copyinv/s3_criterion_blockdiag.py rc=0 secs=123 last=PASS s3
+077-g-selrule-copyinv/s4b_gram_mixture_fixed.py rc=0 secs=26 last=PASS s4b
+077-g-selrule-copyinv/s5_gram_and_q2_exact.py rc=0 secs=5 last=PASS s5
+077-g-selrule-copyinv/s6_imalpha.py rc=0 secs=29 last=PASS s6
+078-g-selrule-imalpha/s1_structure_general_q.py rc=0 secs=200 last=ALL S1 ASSERTS PASS
+078-g-selrule-imalpha/s2b_imalpha_exact_fixed.py rc=0 secs=1 last=ALL S2B ASSERTS PASS
+078-g-selrule-imalpha/s3_scalarK_general_q.py rc=0 secs=5 last=ALL S3 ASSERTS PASS
+079-g-frameavg-residual/s1_exact_lemma.py rc=0 secs=0 last=PASS s1
+079-g-frameavg-residual/s2_frame_uniform_check.py rc=0 secs=1 last=PASS s2
+080-g-selrule-mixedmult/s1_spectrum_mixed.py rc=0 secs=38 last=B cases=96 worst-spectrum-dev=8.882e-15 worst-involution-dev=1.421e-14 rank2q_ok=True
+080-g-selrule-mixedmult/s2_q2_criterion.py rc=0 secs=2 last=D general q=2 samples=2000 perfect-square(double-pair) hits=0 (expect 0)
+080-g-selrule-mixedmult/s3_mixed_moments.py rc=0 secs=1 last=C general-h weight identity: max |excess_from_spectra - excess_from_S_p weights| = 4.108e-15 over 30 samples x p=1,2
+DONE

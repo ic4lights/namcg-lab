@@ -1,0 +1,15 @@
+product-law max operator-norm error (machine level): 9.995861419347997e-15
+
+scaling of ||R||_op vs theta (mode structure fixed):
+  theta=0.10472  ||R||=1.104110e+02  bound=(th^3/24)*sum=1.837175e+03  ratio ||R||/th^3=9.6145e+04  bound ok: True
+  theta=0.20944  ||R||=5.428567e+02  bound=(th^3/24)*sum=1.617357e+04  ratio ||R||/th^3=5.9089e+04  bound ok: True
+  theta=0.31416  ||R||=9.995580e+02  bound=(th^3/24)*sum=5.045838e+04  ratio ||R||/th^3=3.2237e+04  bound ok: True
+  theta=0.41888  ||R||=1.242763e+03  bound=(th^3/24)*sum=1.240961e+05  ratio ||R||/th^3=1.6909e+04  bound ok: True
+
+exact pairing Tr W(f)W(g) = N*sum fhat_v ghat_-v:
+  Tr = (1156.5288089428868+1697.2181437633994j) 
+  RHS= (1156.5288089428864+1697.2181437634j) 
+  |diff| = 6.431098710768743e-13
+
+pairing exact (no Theta-order corrections): True
+real symbol -> Hermitian operator: True
