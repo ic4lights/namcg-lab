@@ -3,10 +3,18 @@ fix_s3_v4.py                               2140 fdcdac9d97b1e6f1
 fix_s3_v5.py                               1935 7f3d44bfbd3d4aa6
 hygiene_107.out                             904 0666a7975ac5f211
 hygiene_107.py                             2490 bbf86038c35b30e6
+hygiene_107_r2.out                          904 f247c9046246a935
+hygiene_107_r2.py                          2493 d54ed5bdab8e8ff1
 insert-r1.tex                              2107 7aed01d22e4a6806
+insert-r2.tex                              2249 d5eef9bbed7785d0
 manifest_107.py                             624 8c6b693e550d6197
 mk_insert_107.py                           3005 721589f5d8fc358c
+mk_insert_107_r2.py                        1118 13b2e48b8fbdc8e6
 proposal-r1.md                            25712 d63673afd0578b33
+proposal-r2.md                            12680 56385b173b081c68
+retarget_r2_107.py                         3605 d0eb9b0294e87c58
+retarget_r2_107b.py                        1865 2e543cca806c8378
+review-r1.md                              15490 07d8e25a4973757d
 s3_symbol_selection.py                    22563 3d77670e39a29ed3
 s3_symbol_selection_v2.py                 21830 629189c3c8dddaa2
 s3_symbol_selection_v3.out                 1262 14809444e2545967
@@ -15,7 +23,11 @@ s3_symbol_selection_v4.out                 1972 02f3dbb594678e63
 s3_symbol_selection_v4.py                 21850 777efa5a764782dd
 s3_symbol_selection_v5.out                 1972 2471e91456dcef8e
 s3_symbol_selection_v5.py                 21952 54f1391e97ab23bf
+s3_symbol_selection_v6.py                 21982 6901ae1bb6916d77
 simulate_apply_107.out                      461 227dff67a41dc963
 simulate_apply_107.py                      1908 22c45645a47cb652
+simulate_apply_107_r2.out                   464 2c6ccec8ac48cff1
+simulate_apply_107_r2.py                   1914 04e55046cb7d3524
 undo_check_107.out                          153 caf6144c260e1c66
+undo_check_107_r2.out                       153 3a2a12eef2a72a37
 LIVE appH: size 809976 sha256/16 8fa53c956445bb49 CRLF 3874
