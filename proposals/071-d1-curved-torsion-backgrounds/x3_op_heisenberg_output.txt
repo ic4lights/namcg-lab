@@ -1,0 +1,20 @@
+== Heisenberg kappa=1, w = k(a B + zeta N + x Np), (a,zeta,x)=(1,0,0); omega=-w; expect trace a k, R_13=kappa(aB+zeta N+x Np), F_13=a kappa/2
+  first relation 0.0e+00 ; matrix eq: vector part 0.0e+00, order-zero part 0.0e+00
+  trace T_ac^c at u=1: [ 1. -0.  1. -0.] ; t_a at u=1: [0.5, 0.0, 0.5, 0.0]
+  F_13 at u=1 = (multiplication part of [D_1,D_3]) + T_13^c t_c = 0.000000 + 0.500000 = 0.500000
+  R pairs nonzero: {(1, 3): {(0, 2): np.float64(1.0)}}
+== Heisenberg kappa=1, w = k(a B + zeta N + x Np), (a,zeta,x)=(-1,0,0); omega=-w; expect trace a k, R_13=kappa(aB+zeta N+x Np), F_13=a kappa/2
+  first relation 0.0e+00 ; matrix eq: vector part 0.0e+00, order-zero part 0.0e+00
+  trace T_ac^c at u=1: [-1. -0. -1. -0.] ; t_a at u=1: [-0.5, 0.0, -0.5, 0.0]
+  F_13 at u=1 = (multiplication part of [D_1,D_3]) + T_13^c t_c = 0.000000 + -0.500000 = -0.500000
+  R pairs nonzero: {(1, 3): {(0, 2): np.float64(-1.0)}}
+== Heisenberg kappa=1, w = k(a B + zeta N + x Np), (a,zeta,x)=(1/2,1,-1/3); omega=-w; expect trace a k, R_13=kappa(aB+zeta N+x Np), F_13=a kappa/2
+  first relation 0.0e+00 ; matrix eq: vector part 7.9e-17, order-zero part 0.0e+00
+  trace T_ac^c at u=1: [ 0.5  0.   0.5 -0. ] ; t_a at u=1: [0.25, 0.0, 0.25, 0.0]
+  F_13 at u=1 = (multiplication part of [D_1,D_3]) + T_13^c t_c = 0.000000 + 0.250000 = 0.250000
+  R pairs nonzero: {(1, 3): {(0, 1): np.float64(1.0), (0, 2): np.float64(0.5), (0, 3): np.float64(-0.333333), (1, 2): np.float64(1.0), (2, 3): np.float64(0.333333)}}
+== Heisenberg kappa=2, w = k(a B + zeta N + x Np), (a,zeta,x)=(-3/2,1/2,1); omega=-w; expect trace a k, R_13=kappa(aB+zeta N+x Np), F_13=a kappa/2
+  first relation 0.0e+00 ; matrix eq: vector part 3.5e-16, order-zero part 0.0e+00
+  trace T_ac^c at u=1: [-1.5  0.  -1.5  0. ] ; t_a at u=1: [-0.75, 0.0, -0.75, 0.0]
+  F_13 at u=1 = (multiplication part of [D_1,D_3]) + T_13^c t_c = 0.000000 + -1.500000 = -1.500000
+  R pairs nonzero: {(1, 3): {(0, 1): np.float64(1.0), (0, 2): np.float64(-3.0), (0, 3): np.float64(2.0), (1, 2): np.float64(1.0), (2, 3): np.float64(-2.0)}}

@@ -1,0 +1,12 @@
+block_C_r3.tex C1a: old occurs 1
+block_C_r3.tex C1b: old occurs 1
+block_C_r3.tex 2613 bytes sha c86d0ba1ed062ca951570205ff2131ac0982ea2ddd16ebb5d61a03c1da6a5e22
+block_F_r3.tex F1: old occurs 1
+block_F_r3.tex F2: old occurs 1
+block_F_r3.tex F3: old occurs 1
+block_F_r3.tex F4: old occurs 1
+block_F_r3.tex F5a: old occurs 1
+block_F_r3.tex F5b: old occurs 1
+block_F_r3.tex F6: old occurs 1
+block_F_r3.tex item6: old occurs 1
+block_F_r3.tex 7417 bytes sha 2c3640255043d697f9df2a980266b40c30ebbf37e1e6f904365bf63c951c9946

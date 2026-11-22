@@ -1,0 +1,32 @@
+appH pre  sha256 6a72a3268302d46b9b5d3ede69f8b15e838a0a3c14bfddc2e1b4e8ab58b39a7c bytes 719947
+pre-hash matches expected: True
+target paragraph: line 2949 to line 3005
+E1 cubic/mass beta_K forms (pre L2966): occurs 1x, line 2966, inside target paragraph True
+E2 beta_K = 1 attained in the cubic case (pre L2966): occurs 1x, line 2966, inside target paragraph True
+E3 example on S^2_N (pre L2980): occurs 1x, line 2980, inside target paragraph True
+E4 V=T without a tuned K (pre L3000): occurs 1x, line 3000, inside target paragraph True
+E5 availability at negligible Y (pre L3002): occurs 1x, line 3002, inside target paragraph True
+E6 scope sentence (pre L3004): occurs 1x, line 3004, inside target paragraph True
+insert: LF bytes 12796 sha256(LF) 8f44109e6b86e1c7467ad8fcb3f6e2fb7cae06f92bebb0baf3cf8f8d29c7961c ; inserted at line 3006
+line after the insert: \section{Problem G: HBEV}
+appH post sha256 120c8aba220c6a78277deaf4b98213ae84134cf141c198d1fcc1ea487db8439f bytes 733461 lines 3628 bare LF 0
+post-hash matches expected: True
+label ass:gap-psi defined 1
+label ass:lorentzian defined 1
+label ch:vierbein-emergence defined 1
+label def:matrix-coords-ext defined 1
+label eq:Smatrix defined 1
+cite IsoKimuraTanakaWakatsuki2001 in bib 0 in additions 1
+status sentences in insert: 1 ; at the end: True
+insert: no label words, no process language, balanced delimiters
+in-place edits: no label words, no process language, balanced delimiters
+no bare c, bare kappa or L' left in insert
+paragraph blocks in insert: 7
+pdflatex rc 0 pages 393
+bibtex rc 0 
+pdflatex rc 0 pages 410
+pdflatex rc 0 pages 410
+undefined/multiply-defined warnings: 0
+bibtex warnings for new keys: []
+BUILD CLEAN
+temp copy removed: True

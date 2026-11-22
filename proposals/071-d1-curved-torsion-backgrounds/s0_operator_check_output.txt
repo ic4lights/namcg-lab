@@ -1,0 +1,8 @@
+F trace-free (s=1) {'span_defect': '3.3e-15', 'T_vs_sectionvalue': '4.0e-15', 'R_vs_sectionvalue': '7.1e-15', 'first_relation': '0.0e+00', 'matrix_eq_max': '1.2e-14'}
+F trace-free (s=1) {'span_defect': '8.9e-15', 'T_vs_sectionvalue': '9.8e-15', 'R_vs_sectionvalue': '7.1e-15', 'first_relation': '0.0e+00', 'matrix_eq_max': '1.4e-14'}
+F tau=1 (s=1) {'span_defect': '6.7e-15', 'T_vs_sectionvalue': '2.4e-15', 'R_vs_sectionvalue': '3.6e-15', 'first_relation': '0.0e+00', 'matrix_eq_max': '0.0e+00'}
+F tau=1 (s=1) {'span_defect': '5.0e-14', 'T_vs_sectionvalue': '1.3e-14', 'R_vs_sectionvalue': '1.5e-14', 'first_relation': '0.0e+00', 'matrix_eq_max': '0.0e+00'}
+H (kappa=1, zeta=1, x=0.5) {'span_defect': '1.7e-14', 'T_vs_sectionvalue': '5.8e-15', 'R_vs_sectionvalue': '1.8e-15', 'first_relation': '0.0e+00', 'matrix_eq_max': '6.5e-16'}
+H (kappa=1, zeta=1, x=0.5) {'span_defect': '6.2e-15', 'T_vs_sectionvalue': '6.7e-15', 'R_vs_sectionvalue': '7.4e-15', 'first_relation': '0.0e+00', 'matrix_eq_max': '8.9e-16'}
+control: Heisenberg C with random W (not a solution) {'span_defect': '8.9e-15', 'T_vs_sectionvalue': '8.0e-15', 'R_vs_sectionvalue': '1.7e-14', 'first_relation': '4.4e-16', 'matrix_eq_max': '7.8e+01'}
+control: Heisenberg C with random W (not a solution) {'span_defect': '5.2e-14', 'T_vs_sectionvalue': '6.2e-14', 'R_vs_sectionvalue': '1.7e-13', 'first_relation': '1.8e-15', 'matrix_eq_max': '1.4e+02'}

@@ -1,0 +1,9 @@
+replacement A applied once
+replacement S applied once
+replacement D applied once
+replacement H applied once
+replacement C applied once
+replacement B applied once
+replacement SC1 applied once
+replacement SC2 applied once
+appH_insert_r2.tex bytes 9280 sha256 169d123939be2536762b4ab92f906e37b55964f56161430bc4d5aee8a72fff8d bare LF 0

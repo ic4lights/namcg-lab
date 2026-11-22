@@ -1,0 +1,20 @@
+pre  appH bytes 733675 sha a7f1492a30c89b52e9ecadcd2550aaab89261796c35266b19bfed0d5b354e842 CRLF 3628 bareLF 0
+post appH bytes 743713 sha fef011270d31b93239845581a8826059ea6011b8bafd0899c5a9328346b79aa7 CRLF 3647 bareLF 0
+label ass:frame-lock 1
+label ass:gap-psi 1
+label ass:nondeg 1
+label ch:agenda 1
+label ch:massless-tensor 1
+label ch:vierbein-emergence 1
+label def:vierbein 1
+label eq:Phi-transform 1
+label eq:Z-sigma 1
+label lem:msigma 1
+label sec:status-F 1
+pdflatex pass 1 returncode 0
+pdflatex pass 2 returncode 0
+undefined refs/cites: 0 []
+multiply defined labels: 0 []
+pdf exists: True
+errors: 0 []
+scratch copy removed: True

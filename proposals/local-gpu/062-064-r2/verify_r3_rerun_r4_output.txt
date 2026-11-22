@@ -1,0 +1,47 @@
+S1 profile metric: T=1, C=1/4, C/T=1/4
+S1 profile inverse: T=1, C=3/4, C/T=3/4
+S1 profile rank1(recorded): T=1, C=1, C/T=1
+S1 profile conformal: T=1, C=1/2, C/T=1/2
+S1 first-order part is parametrisation-free (all T=1): True
+S1 recorded rank-one profile has C=T (term U4 sigma^2): True
+S1 sigma->sigma+a sigma^2 shifts C by a T: True
+S2 U4 sigma^2 gives -q_b^2 (recorded q_b^2): True
+S2 chi exchange C=-beta U'/4 gives -beta U' L/(8 m^4) (recorded): True
+S2 recorded q_*^2|chi = beta U'/(4 U4) q_b^2 consistent: True
+S3 sum C = sum (C-T) on sum T = 0: True
+S3 invariant under redefinition at sum T = 0: True
+S3 U4 + Lambda sqrt|g| with zero tadpole: pole shift 0: True
+S4 q_*^2|chi = -U'^2 L/(4 m^4 U_chichi): True
+S5 Tb y = 0: True
+S5 covariance Tb gamma Tb^T unchanged, all orders in eps: True
+S5 y.y in fluctuated metric moves: d(y.y)/d eps = -(y.y)^2: True
+S5 dln(y.y)/d eps = -36703982374876/17566523911475  (= -y.y, nonzero)
+S6 regulated density bracket (exact): True
+S6 bracket = 15/4 th^2 E1 - th c/D + c^2/D^2 + O(s_Lambda D): True
+S6 dG/dD -> -(Y bracket) as s_Lambda -> 0: True
+S6 fibre-constant limit reproduces Y = 15F th^2 sqrt|g| N_K/64pi^2: True
+S7 extra first-order part = -p sqrt/32pi^2 [15/2 th^2 E1 - th c/D]: True
+S7 bracket = (15/2) th^2 [E_1 - 2c_J/(15 th D)] (so >0 iff E_1 > 2c_J/(15 th D)): True
+S7 exact-regulated extra part = -p sqrt/32pi^2 [15/2 th^2 E1(x) - th c e^{-x}/D], x = s_L D: True
+S7 exact-regulated minus leading bracket = th c x/D + O(x^2) (relative order s_Lambda D): True
+S7 x, leading bracket, exact-regulated bracket (th=1,D=10,c=2):
+    0.001 47.286545231021115 47.286745131054445
+    0.01 30.08447182403586 30.086461857286025
+    0.1 13.47192968814543 13.490962204538237
+    1.0 1.4453795079664022 1.5718036197321137
+    2.0 0.16675383031045837 0.3396867736631358
+    3.0 -0.10213714179352223 0.08790544453290498
+S7 exact-regulated bracket positive at s_Lambda D = 3 (the r2 'sign change' was an artefact of the leading form outside its validity): True
+S7 zero of leading bracket x = 2.4485504425764497 ; zero of exact-regulated bracket x = 36.52536233287628 (both >> 1)
+S7 for these values both zeros lie outside s_Lambda D << 1 and all sampled x <= 0.1 agree in sign: True
+S7 at 2c_J/(15 th D) = 4: leading zero x = 0.010390618204056203 ; exact-regulated zero x = 0.010854135220694767 ; e^{-gamma-4} = 0.010283489151666252
+S7 at 2c_J/(15 th D) = 4 the two zeros agree to relative O(x) (sign set by the criterion inside validity): True
+S7 U2 at V=T = -(3F/128pi^2) th That sqrt chi^2 (recorded): True
+S7 U2 first-order part exceeds profile by p U2 at V=T: True
+S8 t-response of Y summand: True
+S8 Y-response = d/dln chi of the first-order density response (s_L->0): True
+S8 contraction reading gives p = 1/2 (metric and inverse-metric pure trace): True
+S9 group4 extra tadpole th(15 th D E - 2c)/(8D): True
+S9 group4 extra quadratic th(75 th D E - 8c)/(64D): True
+S9 tadpole in t_064 = (1/2) x [p-extra at p=1/2] (dsigma/dt_064=1/2): True
+ALL CHECKS PASS: True

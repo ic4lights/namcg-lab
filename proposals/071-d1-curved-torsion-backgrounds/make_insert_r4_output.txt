@@ -1,0 +1,8 @@
+replacement H applied once
+replacement SC2 applied once
+replacement Q applied once
+old parameter-a patterns remaining: 0
+\chi occurrences in insert: 8
+q^2=-m^2 occurrences remaining: 0
+differs from appH_insert_r3.tex only by Q: True
+appH_insert_r4.tex bytes 9302 sha256 75da43f08edf2dac999876732beceaf052c6f1c425cb1475229d086f102b502b bare LF 0

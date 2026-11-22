@@ -812,3 +812,63 @@
 - proposal-r1: in the first-order class on left-invariant backgrounds with vanishing connection, the system is block-triangular with ten copies of Q, and there is an exact gauge-invariant Heisenberg growing mode.
 - gk r1: AWRR, minors m1-m5. m1 is placement: move the insert before \section{Problem E}. The math is verified. It is a positive conditional sub-lemma, not a breakthrough.
 - Pending: researcher r2 (m1-m5), then the full scan in 4 passes, then integration. Nothing integrated.
+
+## 2026-11-21 - local 068 (D1 torsion) integrated
+- Package: proposals/068-d1-torsion-nonzero.
+- Review path: r1, then gk AWRR (m1-m5), then r2, then gk confirmation and a full scan in 4 passes, then plain ACCEPT (review-r2-final.md).
+- Content: in the first-order class on left-invariant backgrounds with vanishing connection, the system is block-triangular with ten copies of the gauge-invariant Q, so there is no gauge-breaking mass term. Also an exact Heisenberg growing mode (linear tree-level instability) and the null-rotation cones.
+- Placement: before Section E. The L1581 sentence was updated.
+- Bib: NielsenOlesen1978 added.
+- Hashes: appH 6a72a326..., bib 419b6038.... build_check PASS, 406 pp. Digest CURRENT. Uncommitted, on top of 4b7db5f.
+- No label change. D, F and N stay OPEN / CRITICAL PATH / PROGRAMME-CONDITIONAL.
+- Next D1 avenues:
+  1. the nonlinear endpoint of the Heisenberg mode;
+  2. R!=0 and T!=0 backgrounds;
+  3. one loop on non-commuting backgrounds;
+  4. a Krein-form finite-N realisation (from 059).
+- Next item: local 069 (F correction, chain 2).
+
+## 2026-11-21 - local 069 (Problem F correction) ACCEPTED, awaiting author (M3)
+- Package: proposals/069-f-nonderivative-sector.
+- Rounds: r2 addressed review findings F1-F8. Gatekeeper r2 returned NEEDS EVIDENCE. The full scan ran in 4 passes; pass 2 gave 3 wording fixes. r3 applied them, and the gatekeeper's r3 verdict is plain ACCEPT (review-r3.md).
+- Correction: in the "response of the scale of K" paragraph, the cubic and mass branches used operators without the tree stabiliser's Hessian. Specifically:
+  - "V=T ... does not need a tuned K" is false with the Hessian: V/T -> (1-r_3)^2 = 0.028 at the example.
+  - The beta_K forms and the x=3/10 example are qualified accordingly.
+- New E7 paragraph: the exact Hessian; non-stationarity of the example, bounded by the regulator; conditional beta_K relations; a bounded no-go on the cubic branch.
+- Expected appH post-hash a7f1492a.... Bib adds IsoKimuraTanakaWakatsuki2001.
+- NOT integrated. M3 / PRIOR-CLAIM-ERROR goes to the author. No label change.
+
+## 2026-11-21 - local 069 (Problem F correction) integrated, author-approved M3
+- Applied E1, E2, E3, E8, E4, E9 and E6 in place (E5 withdrawn). The E7 paragraph goes before Section G, and IsoKimuraTanakaWakatsuki2001 is added to the bib.
+- Hashes: appH a7f1492a..., bib 61684ab4.... build_check PASS, 410 pp. Digest CURRENT. Uncommitted.
+- No label change. F, C and N stay OPEN.
+- Next: plan item 4, gpu 062 (C missing-step block and C/F trace-channel tadpole block) together with gpu 064 (F fibre response), as one package.
+
+## 2026-11-21 - gpu 062+064 joint r2 reviewed (C/F)
+- Reframed to the y^mu y^nu static channel. Gives an exact stationary-background identity and a bounded obstruction (tachyonic unless uncomputed terms contribute). Resolves the vartheta conflict. Keeps a reduced 064 remnant.
+- gk r2: AWRR with 2 major findings (an omitted tree non-derivative term; an unsupported sign change) and minors, F1-F6 and C1. 3(c) applies because of block C.
+- AUTHOR NOTE: the gpu-line appH (origin/local/gpu) still contains the erroneous gpu 062 block-2 paragraph ("pole at q^2=q_b^2", double-counted U_4). Do not merge that paragraph from the gpu line.
+- Pending: r3, then the full scan, then ACCEPT.
+
+## 2026-11-21 - gpu 062+064 (Problems C/F) integrated
+- Package: proposals/local-gpu/062-064-r2.
+- Review path: r2 (reframed to the y^mu y^nu channel), gk AWRR (F1-F6, C1), r3, gk confirm + 4-pass full scan (3(c), block C restates the target), r4 (3 wording fixes), plain ACCEPT (review-r4-final.md).
+- Block C: Problem C Missing step, in ch17 wording.
+- Block F: exact stationary-background identity, plus a bounded obstruction. A Yukawa pole needs positive contributions from listed uncomputed terms; it is tachyonic otherwise, for either sign of U-hat. Also covers vartheta, the regulated density, and the Y response.
+- appH sha d8d8b678.... build_check PASS, 412 pp. Digest CURRENT. Uncommitted, together with 068 and 069.
+- No label change. C, F, N OPEN.
+- Plan 2026-11-21 items 1-4 are complete.
+- Still held (deprioritised): gpu 060, 061, 066-H, 067-N.
+- Next: refresh the pathfinder ranking for derivation-first targets. Candidates:
+  - D1 Krein form;
+  - D1 Heisenberg nonlinear endpoint;
+  - F/C tree non-derivative terms of the wave.
+
+## 2026-11-22 - local 071 (D1: backgrounds with R and T nonzero) integrated
+- Package: proposals/071-d1-curved-torsion-backgrounds.
+- Review history: r1 AWRR (sign convention; rounding bug), r2 AWRR (rename a->chi; kappa scope), r3 confirmed, full scan in 4 passes, r4 (one phrase), then plain ACCEPT (review-r4-final.md).
+- Content: exact left-invariant first-order-class backgrounds with R != 0 and T != 0: family (i) (flat frame), family (ii) (time x Heisenberg), and a wider Heisenberg family chi kappa != 0 with R^2 = -4 chi^2 kappa^2. On (i): (R1) fails, the generalised (R2), a block-triangular system, and a gauge kernel with xi R. Bounded no-mass result on (i) via boost-dilation.
+- Edit E: L1623, vartheta=-1/2 -> +1/2. A routine PRIOR-CLAIM-ERROR fix to merged 068 text.
+- appH sha b98a3a34.... build_check PASS, 414 pp. Digest CURRENT. Uncommitted, together with 068, 069 and 062-064.
+- No label change. D, F, N OPEN.
+- Next D1 avenue (gk top rank): linearise the wider Heisenberg family at chi kappa != 0 in the oscillator sectors. This is the first background where a gap is not excluded by symmetry.

@@ -1,0 +1,11 @@
+replaced once: \]\nFor \(l\ge3\)
+replaced once: of the maximal minors
+replaced once: which contain all factors with \(l\le5\),
+replaced once: (exact in rational arithmetic)
+replaced once: At \(\chi=0\) this gives the levels \(q_0^2=p^2+\kappa p\,l\) of the p
+replaced once: No gauge-invariant gap or mass therefore appears for the Lorentz or to
+replaced once: with supremum \(|c\chi|\) as \(p\to\infty\);
+replaced once: its largest rate rises from
+replaced once: Over all modes the largest rate is
+replaced once: Nothing here shows that the matrix integral selects this class, these 
+appH_insert_r2.tex bytes 6317 sha256 01b5d27a25bb8c19904ed13f26f29aae6b33d813bd66e11d3d63bbad01a42513 bare LF 0 lines 14

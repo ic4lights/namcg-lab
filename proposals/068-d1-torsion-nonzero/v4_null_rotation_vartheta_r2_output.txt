@@ -1,0 +1,52 @@
+  vartheta=-0.5 root t=-0.972846876762-4.8e-14i  x=-2.000000000000-1.3e-13i  |x-j|=1.4e-13  |(q+j vartheta k)^2|/|q|^2=3.8e-14  j=-2  mult 2
+  vartheta=-0.5 root t=-0.667394912586+2.4e-14i  x=-1.000000000000+1.1e-13i  |x-j|=1.1e-13  |(q+j vartheta k)^2|/|q|^2=2.9e-14  j=-1  mult 6
+  vartheta=-0.5 root t=-0.521366118829-2.7e-14i  x=-0.000000000001-3.1e-13i  |x-j|=8.3e-13  |(q+j vartheta k)^2|/|q|^2=1.7e-13  j=0  mult 4
+  vartheta=-0.5 root t=-0.464971841020+6.1e-14i  x=+1.000000000003+1.7e-12i  |x-j|=3.6e-12  |(q+j vartheta k)^2|/|q|^2=5.1e-13  j=1  mult 6
+  vartheta=-0.5 root t=-0.439023787098-1.8e-13i  x=+1.999999999990-9.5e-12i  |x-j|=1.4e-11  |(q+j vartheta k)^2|/|q|^2=1.5e-12  j=2  mult 2
+  vartheta=-0.5 root t=-0.222180425000+3.5e-14i  x=-2.000000000000+3.6e-13i  |x-j|=5.8e-13  |(q+j vartheta k)^2|/|q|^2=2.5e-13  j=-2  mult 2
+  vartheta=-0.5 root t=-0.058866291439-1.4e-14i  x=-1.000000000000-5.9e-14i  |x-j|=6.4e-14  |(q+j vartheta k)^2|/|q|^2=6.0e-14  j=-1  mult 6
+  vartheta=-0.5 root t=+0.263871012541-1.1e-15i  x=+0.000000000000-2.9e-15i  |x-j|=2.9e-15  |(q+j vartheta k)^2|/|q|^2=2.7e-15  j=0  mult 4
+  vartheta=-0.5 root t=+0.676242832469-1.9e-15i  x=+1.000000000000-4.4e-15i  |x-j|=9.1e-15  |(q+j vartheta k)^2|/|q|^2=5.2e-15  j=1  mult 6
+  vartheta=-0.5 root t=+1.119060876284+1.1e-16i  x=+2.000000000000+2.5e-16i  |x-j|=6.7e-15  |(q+j vartheta k)^2|/|q|^2=2.5e-15  j=2  mult 2
+vartheta = -0.5: total roots 40; max |Im t| 1.8e-13; max |x - j| 1.4e-11; max cone residual 1.5e-12; all on cones: True; j -> multiplicities per crossing {-2: [2, 2], -1: [6, 6], 0: [4, 4], 1: [6, 6], 2: [2, 2]}
+  vartheta=+0.5 root t=-0.972846876762+5.5e-15i  x=+2.000000000000-1.5e-14i  |x-j|=1.7e-14  |(q+j vartheta k)^2|/|q|^2=4.7e-15  j=2  mult 2
+  vartheta=+0.5 root t=-0.667394912586+4.6e-15i  x=+1.000000000000-2.0e-14i  |x-j|=3.6e-14  |(q+j vartheta k)^2|/|q|^2=9.7e-15  j=1  mult 6
+  vartheta=+0.5 root t=-0.521366118829+1.9e-14i  x=+0.000000000000-2.2e-13i  |x-j|=2.5e-13  |(q+j vartheta k)^2|/|q|^2=5.0e-14  j=0  mult 4
+  vartheta=+0.5 root t=-0.464971841020-3.0e-14i  x=-1.000000000000+8.4e-13i  |x-j|=8.4e-13  |(q+j vartheta k)^2|/|q|^2=1.2e-13  j=-1  mult 6
+  vartheta=+0.5 root t=-0.439023787098-5.4e-15i  x=-2.000000000002+2.9e-13i  |x-j|=2.4e-12  |(q+j vartheta k)^2|/|q|^2=2.6e-13  j=-2  mult 2
+  vartheta=+0.5 root t=-0.222180425000+8.5e-14i  x=+2.000000000000-8.8e-13i  |x-j|=9.0e-13  |(q+j vartheta k)^2|/|q|^2=3.9e-13  j=2  mult 2
+  vartheta=+0.5 root t=-0.058866291439+1.7e-14i  x=+1.000000000000-6.8e-14i  |x-j|=8.0e-14  |(q+j vartheta k)^2|/|q|^2=7.5e-14  j=1  mult 6
+  vartheta=+0.5 root t=+0.263871012541-1.1e-15i  x=+0.000000000000+2.8e-15i  |x-j|=5.8e-15  |(q+j vartheta k)^2|/|q|^2=5.4e-15  j=0  mult 4
+  vartheta=+0.5 root t=+0.676242832469-4.8e-15i  x=-1.000000000000+1.1e-14i  |x-j|=1.1e-14  |(q+j vartheta k)^2|/|q|^2=6.4e-15  j=-1  mult 6
+  vartheta=+0.5 root t=+1.119060876284-1.3e-15i  x=-2.000000000000+2.8e-15i  |x-j|=9.7e-15  |(q+j vartheta k)^2|/|q|^2=3.5e-15  j=-2  mult 2
+vartheta = +0.5: total roots 40; max |Im t| 8.5e-14; max |x - j| 2.4e-12; max cone residual 3.9e-13; all on cones: True; j -> multiplicities per crossing {-2: [2, 2], -1: [6, 6], 0: [4, 4], 1: [6, 6], 2: [2, 2]}
+  vartheta=+1.0 root t=-1.819329568719-1.9e-15i  x=+2.000000000000+2.1e-15i  |x-j|=4.1e-15  |(q+j vartheta k)^2|/|q|^2=1.6e-15  j=2  mult 2
+  vartheta=+1.0 root t=-0.972846876762+5.3e-15i  x=+1.000000000000-7.2e-15i  |x-j|=1.2e-14  |(q+j vartheta k)^2|/|q|^2=6.7e-15  j=1  mult 6
+  vartheta=+1.0 root t=-0.521366118829+5.1e-14i  x=-0.000000000000-2.9e-13i  |x-j|=3.1e-13  |(q+j vartheta k)^2|/|q|^2=1.2e-13  j=0  mult 4
+  vartheta=+1.0 root t=-0.439023787097-1.3e-12i  x=-1.000000000022+3.5e-11i  |x-j|=4.1e-11  |(q+j vartheta k)^2|/|q|^2=8.8e-12  j=-1  mult 6
+  vartheta=+1.0 root t=-0.415612303023+3.9e-12i  x=-1.999999999963-2.6e-10i  |x-j|=2.7e-10  |(q+j vartheta k)^2|/|q|^2=3.8e-11  j=-2  mult 2
+  vartheta=+1.0 root t=-0.313229928517+2.3e-13i  x=+2.000000000003-5.7e-12i  |x-j|=6.7e-12  |(q+j vartheta k)^2|/|q|^2=2.0e-12  j=2  mult 2
+  vartheta=+1.0 root t=-0.222180425000-7.9e-14i  x=+1.000000000001+4.1e-13i  |x-j|=8.6e-13  |(q+j vartheta k)^2|/|q|^2=7.5e-13  j=1  mult 6
+  vartheta=+1.0 root t=+0.263871012541+3.1e-15i  x=+0.000000000000-4.1e-15i  |x-j|=5.2e-15  |(q+j vartheta k)^2|/|q|^2=9.7e-15  j=0  mult 4
+  vartheta=+1.0 root t=+1.119060876284+6.5e-15i  x=-1.000000000000-7.2e-15i  |x-j|=7.6e-15  |(q+j vartheta k)^2|/|q|^2=5.6e-15  j=-1  mult 6
+  vartheta=+1.0 root t=+2.033181587681-8.5e-15i  x=-2.000000000000+9.2e-15i  |x-j|=9.3e-15  |(q+j vartheta k)^2|/|q|^2=3.8e-15  j=-2  mult 2
+vartheta = +1.0: total roots 40; max |Im t| 3.9e-12; max |x - j| 2.7e-10; max cone residual 3.8e-11; all on cones: True; j -> multiplicities per crossing {-2: [2, 2], -1: [6, 6], 0: [4, 4], 1: [6, 6], 2: [2, 2]}
+  vartheta=+2.0 root t=-3.658487731093+9.2e-15i  x=+2.000000000000-5.0e-15i  |x-j|=5.5e-15  |(q+j vartheta k)^2|/|q|^2=2.3e-15  j=2  mult 2
+  vartheta=+2.0 root t=-1.819329568719-8.7e-15i  x=+1.000000000000+4.9e-15i  |x-j|=5.3e-15  |(q+j vartheta k)^2|/|q|^2=4.2e-15  j=1  mult 6
+  vartheta=+2.0 root t=-0.521366118829-9.1e-14i  x=+0.000000000000+2.6e-13i  |x-j|=2.7e-13  |(q+j vartheta k)^2|/|q|^2=2.2e-13  j=0  mult 4
+  vartheta=+2.0 root t=-0.415612303018-1.9e-12i  x=-1.000000000148+6.4e-11i  |x-j|=1.6e-10  |(q+j vartheta k)^2|/|q|^2=4.5e-11  j=-1  mult 6
+  vartheta=+2.0 root t=-0.398928988812+3.1e-12i  x=-1.999999998536-3.3e-10i  |x-j|=1.5e-09  |(q+j vartheta k)^2|/|q|^2=2.5e-10  j=-2  mult 2
+  vartheta=+2.0 root t=-0.349136157087-2.7e-12i  x=+1.999999999783+1.7e-10i  |x-j|=2.7e-10  |(q+j vartheta k)^2|/|q|^2=6.7e-11  j=2  mult 2
+  vartheta=+2.0 root t=-0.313229928518+1.9e-12i  x=+1.000000000014-2.4e-11i  |x-j|=2.8e-11  |(q+j vartheta k)^2|/|q|^2=1.7e-11  j=1  mult 6
+  vartheta=+2.0 root t=+0.263871012541+2.0e-14i  x=+0.000000000000-1.3e-14i  |x-j|=2.2e-14  |(q+j vartheta k)^2|/|q|^2=8.1e-14  j=0  mult 4
+  vartheta=+2.0 root t=+2.033181587681+9.9e-16i  x=-1.000000000000-5.4e-16i  |x-j|=4.7e-15  |(q+j vartheta k)^2|/|q|^2=3.7e-15  j=-1  mult 6
+  vartheta=+2.0 root t=+3.891562664405-8.6e-15i  x=-2.000000000000+4.6e-15i  |x-j|=4.7e-15  |(q+j vartheta k)^2|/|q|^2=2.0e-15  j=-2  mult 2
+vartheta = +2.0: total roots 40; max |Im t| 3.1e-12; max |x - j| 1.5e-09; max cone residual 2.5e-10; all on cones: True; j -> multiplicities per crossing {-2: [2, 2], -1: [6, 6], 0: [4, 4], 1: [6, 6], 2: [2, 2]}
+== exact rational ranks at vartheta = -1/2 (generic rank 30 = 40 - 10 gauge)
+generic rational q: exact rank 30 (floating rank 30 )
+q = ['12', '3', '4', '11']: (q + j vartheta k)^2 = 0 exactly for j = -2 (x = -2); exact rank 28
+q = ['25/2', '3', '4', '23/2']: (q + j vartheta k)^2 = 0 exactly for j = -1 (x = -1); exact rank 26
+q = ['13', '3', '4', '12']: (q + j vartheta k)^2 = 0 exactly for j = +0 (x = 0); exact rank 26
+q = ['27/2', '3', '4', '25/2']: (q + j vartheta k)^2 = 0 exactly for j = +1 (x = 1); exact rank 26
+q = ['14', '3', '4', '13']: (q + j vartheta k)^2 = 0 exactly for j = +2 (x = 2); exact rank 28
+ALL ROOTS ON CONES WITHOUT ROUNDING: True
