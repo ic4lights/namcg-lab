@@ -690,6 +690,67 @@ forming the coupled off-shell Hessian. The displayed microscopic action
 on the fixed scaffold does not specify the full coupled, gauge-fixed
 tensor operator or the remaining scalar couplings.
 
+\paragraph{A bilocal candidate frame composite (conditional; not closure).}
+Assume a locked sector in the sense of Assumption~\ref{ass:frame-lock}, without assigning its
+vacuum value, and let $\mathcal U(x,y)$ denote the path-ordered transporter from $y$ to $x$ of
+the combined connection, equal to $U_A(x,y)$ on the internal index and to the vector-representation
+transporter of the dressed connection~\eqref{eq:dressed-omega} on the frame index, with
+$\mathcal U(x,x)=\mathbb I$. On the condensate data of Equation~\eqref{eq:Smicro}, with
+$\eta=\operatorname{diag}(-1,1,1,1)$, define
+\begin{equation}
+  \label{eq:bilocal-frame-op}
+  \mathcal G_{\mu\nu}(x,y)
+  =
+  \frac{1}{v^{2}}\,\eta_{AC}\,\Phi^{A}{}_{\mu}(x)\,
+  \bigl[\mathcal U(x,y)\bigr]^{C}{}_{B}\,\Phi^{B}{}_{\nu}(y),
+\end{equation}
+with the internal indices of the two insertions contracted after the locked identification of
+Equation~\eqref{eq:VEV}; by the transformation law~\eqref{eq:Phi-transform} the object is
+invariant under independent internal and local frame transformations at $x$ and $y$. Its
+expansion in $\ell=y-x$, valid for separations large compared with $\LUV^{-1}$ and small compared with the scale on which $w_{\rho}$ varies, begins
+\begin{equation}
+  \label{eq:bilocal-frame-expansion}
+  \mathcal U(x,x+\ell)
+  =
+  \mathbb I+\ell^{\rho}w_{\rho}
+  +\tfrac{1}{2}\,\ell^{\rho}\ell^{\sigma}
+   \bigl(\partial_{\sigma}w_{\rho}+w_{\rho}w_{\sigma}\bigr)
+  +\mathcal O(|\ell|^{3}),
+\end{equation}
+the short-distance transport series of the kernel, in which $w_{\rho}$ is the connection in the
+frame representation (the dressed connection~\eqref{eq:dressed-omega} in the vector
+representation). Equation~\eqref{eq:bilocal-frame-expansion} is an exact identity of the
+truncated series through $\mathcal O(\ell^{2})$ (word-algebra check; coincidence with the exact
+series solution of the transport equation through the same order checked numerically at cubic
+scaling). In the induced expansion of $\mathcal G_{\mu\nu}(x,x+\ell)$ the coincidence term is
+$g^{+}_{\mu\nu}=v^{-2}\eta_{AB}\Phi^{A}{}_{\mu}\Phi^{B}{}_{\nu}$, the composite
+metric~\eqref{eq:g-from-e} of the Repair~II frame~\eqref{eq:vev-is-frame}; the
+$\mathcal O(\ell)$ connector contribution is of pure-gauge type, proportional to the
+$\eta$-antisymmetric $w_{\rho}$; an $\eta$-symmetric (soldering-type) connector contribution
+first appears at $\mathcal O(\ell^{2})$; and the dependence of the kernel on the transport path
+between $x$ and $y$ first appears at $\mathcal O(\ell^{2})$ with a curvature-type coefficient
+(antisymmetric derivative of $w$ plus commutator, sign fixed by the transport convention). The representation content is admissible where the linear Repair~I
+prescription is obstructed (Section~\ref{sec:status-C}): the linear intertwiner spaces vanish,
+$\operatorname{Hom}_{\mathrm{SO}(3,1)}(\mathrm{d}\Omega,V\otimes V)=\operatorname{Hom}_{\mathrm{SO}(3,1)}(\mathrm{d}\Omega,\operatorname{Sym}^{2}V)=0$,
+while the bilinear ones do not,
+$\dim\operatorname{Hom}_{\mathrm{SO}(3,1)}(W\otimes W,\operatorname{Sym}^{2}V)=22$ and
+$\dim\operatorname{Hom}_{\mathrm{SO}(3,1)}(W\otimes W,V\otimes V)=42$ with $V\otimes\mathfrak{so}(3,1)$ the
+source of $\mathrm{d}\Omega$, and the locked vacuum soldering is forced to a multiple of $\eta$;
+these multiplicities were checked with exact $\mathfrak{so}(3,1)$ characters and independently
+by Clebsch--Gordan enumeration. Non-degeneracy of $g^{+}_{\mu\nu}$ is equivalent to
+invertibility of the frame matrix, since the composite determinant differs from the squared frame
+determinant only by the constant factor $\det\eta$, and the composite determines the frame only modulo the right action of the
+orthogonal group of $g^{+}$, so on this reading Assumption~\ref{ass:nondeg} becomes a
+non-degeneracy statement about the two-point composite. The construction is the bilocal mechanism anticipated in
+Section~\ref{sec:status-D}; it presupposes the connection content that the closure of
+Problem~D1 requires to be specified, does not derive the locking of
+Assumption~\ref{ass:frame-lock}, and defines no action, selection rule, or fluctuation operator
+for $\mathcal G$. It is a candidate constructed frame composite with derived transformation
+properties under the stated hypotheses; it neither constructs the Repair~I linear map nor closes
+Problem~C or Problem~D, and the frame of Equation~\eqref{eq:bilocal-frame-op} is not identified
+with the emergent metric of Chapter~\ref{ch:vierbein-emergence}. Problems~B, C, D, F and~G
+remain open.
+
 \paragraph{Missing step.} The full target of Problem~C is the gauge-fixed quadratic scalar operator on the locked vacuum in a constructed frame: the canonically normalised kinetic coefficient of the pure-trace scalar, including the induced Einstein--Hilbert term, its mixing with \(T_{\mu\nu}\), its non-minimal curvature coupling, its matter coupling, and its pole mass as a derived output, with Assumption~\ref{ass:gap-psi} discharged. On the bare data of Presentation~A this operator is not yet definable: three of the inputs it needs are among the things the target is meant to establish. (i)~A frame. The transformation law of Equation~\eqref{eq:Phi-transform} is a field-content choice of Presentation~B and is not derived from Presentation~A alone; the stated Repair~I map to an orthonormal frame is obstructed above; the remark following Definition~\ref{def:vierbein} records that a corrected Repair~I would need additional background tensors or an independent coframe, which is part of Problem~C; and the route actually used posits the frame through Assumptions~\ref{ass:nondeg} and~\ref{ass:frame-lock}. (ii)~\(G_{\mathrm{eff}}\). The coefficient \(Z\) of Equation~\eqref{eq:Z-sigma} is written in terms of \(G_{\mathrm{eff}}\), whose derivation is Problem~F, so the scalar wave-function renormalisation ties Problem~C to Problem~F. (iii)~The constraint structure of the massless sector. The trace-constrained Fierz--Pauli structure of the quadratic tensor block is not shown to follow from the NAMCG quadratic block, and whether the \(\psi\) sector of Chapter~\ref{ch:massless-tensor} supplies it is unresolved and is a dependency of Problem~C; the \(\psi\) of Chapter~\ref{ch:massless-tensor} is the trace of the tensor fluctuation, distinct from the mode labels of \(K\) used in the Problem~F entry. With these three inputs supplied, the recorded results of this section (the tree radial mass of Lemma~\ref{lem:msigma}, the wave-function factor \(Z\) of Equation~\eqref{eq:Z-sigma} at the stated truncation, and the off-shell trace--tensor mixing term) are computations within posited frame data; the loop-level kinetic coefficient, the mixing, the non-minimal coupling, the matter coupling and the pole mass are not outputs of the matrix theory, and in the conjugate-coordinate class the \(q=0\) non-derivative sector of the trace channel carries a bounded obstruction recorded in the Problem~F entry.
 Problems~B, C, D, F and~G remain open.
 
