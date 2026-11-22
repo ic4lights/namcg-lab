@@ -1,0 +1,55 @@
+VERDICT: ACCEPT | MILESTONE: none | FLAGS: none | PROGRESS: improving | OPEN: 0/0
+OPEN: 0/0
+
+ACCEPT proposal 110 round 2, payload insert-bilocal-coinc.tex sha1 2cca5842ace0c3a1e67e6712d2c521990023f508 unchanged and cleared for integration (ordinal 40) — Problem C remains OPEN, CRITICAL PATH, PROGRAMME-CONDITIONAL, with this package recorded as conditional derivation-grade inputs to Missing-step (i).
+
+Basis: digest + targeted reads + review-r1 + scan reports (full 30-file split scan completed pre-review; helper-pass reports summarized in reports/ledger.md SCAN-20261122 entry; no re-scan required for a record-level revision round). Digest verified DIGEST CURRENT at head 23266972cd07dd01497abe5e0962810fa059db63 in this session (dirty-chapters: no; chapters/ clean vs HEAD per git status; the only uncommitted content is the proposals/ folder and reports/ledger.md).
+
+## Verdict
+r2 correctly adds the missing sym(F_r eta e_s + F_s eta e_r) term to I7/Result 3, the two battery targets now carry it on both the built and the analytic side, my independent direct differentiation confirms the corrected identity equals ground truth exactly, the negative controls show the corrected battery is sensitive to the new term while the r1 reconstruction passes vacuously, and findings 1-4 are closed; the payload is byte-frozen and no manuscript surface is touched.
+
+## Source reading
+Digest + targeted reads + review-r1 + scan reports (as instructed; digest + targeted reads + review-r1 + scan reports (full 30-file split scan completed pre-review; helper-pass reports summarized in reports/ledger.md SCAN-20261122 entry; no re-scan required for a record-level revision round)). Read in full: proposal-r2.md (all 532 lines), review-r1.md, r1_to_r2.diff (all 215 lines), the three induced battery scripts, fix_batt.py, the live anchor region of chapters/appH-microscopic-proofs.tex (L693-720 read; eq:bilocal-frame-op and eq:bilocal-frame-expansion definitions re-read), the payload file. Not unread: nothing. No full scan claimed (not required for a record-level revision round; the 12-hunk diff touches no definition, assumption, scope statement or status passage).
+
+## Claim under review
+Proposal 110 r2: record-and-battery correction round only. The corrected I7 identity — sym(d_r d_s G|0) = F_rs eta + F_0 sym(eta E_rs) + F_0 sym(eta(w_r e_s + w_s e_r)) + sym(F_r eta w_s + F_s eta w_r) + sym(F_r eta e_s + F_s eta e_r) + ½F_0 sym(eta{w_r,w_s}), F_0=(1+a)^2, F_r=(1+a)a_r, a_r = partial_r(sigma/v)|0 — equals the direct-differentiation ground truth of G = f·eta·U·E; battery targets G2/tgt7 corrected accordingly. Original target: Problem C Missing-step input (i). `Status: OPEN. Priority: CRITICAL PATH. Completion: PROGRAMME-CONDITIONAL.` (appH L532-533, quoted verbatim in the proposal and unchanged; ch17 L139-140 "CRITICAL PATH; OPEN"). Classification: conditional in-hypothesis evaluation / derivation-grade input; not a closure. The r2 diff introduces no manuscript text; the payload (whose physics r1 certified) is byte-identical.
+
+## Pins (all verified before reviewing)
+- proposal-r2.md a5014858... ✓; r1_to_r2.diff a0e2ee7f0c3b56da247f8ff70e63a63c6eccb75d ✓ (the task-line copy omitted one hex digit; actual hash matches the intended prefix); review-r1.md 5fc150de... ✓.
+- insert-bilocal-coinc.tex 2cca5842... ✓ — payload frozen; fenced copy in r2 (lines 303-310) byte-identical to the pinned file (both 2027 B, cmp).
+- check_induced_expansion.py 94184fd4... ✓; part2 8950ff46... ✓ (unchanged, matches r1 record); part3 fb440b2b... ✓; run_induced.out 32b3701886be... ✓ and cmp-identical to run_induced_r1_outdated.out ✓.
+- Spot-hashes of the other three batteries and their .out files match the r1-review recorded values (2145e16e/8aef4877/679a0ded/c0f0bbda/5496fbc6; 9177127b/7da3445d/23281c81) ✓.
+
+## Checks performed
+- **Diff audit.** 12 hunks, exactly as claimed; parsed against the fenced-payload line span in proposal-r1.md (fence 282-291): no hunk range overlaps it — the payload block is untouched by r2. Hunk contents are exactly the finding-1/2/3/4 record fixes plus the r1-&gt;r2 changelog, provenance, sha list and addendum.
+- **Probe 3, battery re-run.** Documented invocation `python -I -c "import sys; sys.path.insert(0,'.');exec(open(...))"` chain of the three scripts from the proposal folder: I0-I7 all PASS, stdout **byte-identical** to run_induced.out (cmp). The r1-&gt;r2 script delta is byte-exactly the two added terms: removing them from the r2 scripts (binary-exact, LF preserved) reproduces the r1 files with hashes c857d4f016c48d0e66d0438a1bde0766bc187d79 and 4035bdf7e72ded2bdfb707a178c17b1505211b21 — the r1 shas recorded in review-r1. The byte-identity of the output is therefore correct for the stated reason (the added terms enter check targets, not printed lines): the printed PASS lines never depended on them.
+- **Probe 2, independent re-derivation (fresh scratch script, not the researcher's code).** Built H = f·eta·U·E per the proposal's definitions (U = I + l w + ½ll(dw + ww) exactly as printed in eq:bilocal-frame-expansion, re-read at appH L706-720; f = (1+a)^2+(1+a)delta, the product of the two Omega factors of eq:bilocal-frame-op, re-read at L693-704; E general profile; w, dw general so(eta) linear combinations with independent coefficients = noncommuting generic data; a_r, a_rs free symbols so off-vacuum radial gradients are on). Direct sympy double differentiation d_r d_s H|0 for ordered pairs (1,2),(2,1),(2,3): sym part equals the corrected six-term RHS **exactly (zero)**; the five-term r1 RHS differs **exactly** by sym(F_1 eta e_2 + F_2 eta e_1) (verified symbolically nonzero and equal to that difference), confirming both the r1 defect and the r2 fix. Additionally F_0 = (1+a)^2 and F_r = d_r f|0 = (1+a)a_r confirmed symbolically, and sym(d_r G|0) = F_r eta + F_0 sym(eta e_r) (connector-free O(ell) sector, payload claim) confirmed. F_rs in the identity = d_r d_s f|0, consistent with the script's Fd2.
+- **Probe 1, negative controls** (all scratch, cwd in scratch, scripts copied — the proposal folder was not modified):
+
+| battery variant | content | expected | observed |
+|---|---|---|---|
+| corrected (as pinned) | both sides carry Fd1*eta*Ed1 terms | ALL PASS | ALL CHECKS PASS; cmp byte-identical to run_induced.out |
+| neg_a | tgt7 added term doubled (+2*) | must FAIL | **FAIL I7**; final line CHECKS FAILED (15 PASS lines unaffected) |
+| neg_b | both sides stripped (reconstructs r1 files, shas c857d4f0/4035bdf7 verified) | must PASS | **ALL CHECKS PASS** — demonstrates the r1 certification was vacuous and that the r1 stored output (32b37018) is what that battery produced |
+
+  The corrected battery is sensitive to exactly the new term; the old one was not sensitive to its omission. (The "x2 or drop sym" alternative was covered by the x2 perturbation.)
+- **Probe 4, r1 finding fixes.** (1) Corrected I7 present at R6/Result 3/Decision 2/changelog, term-by-term identical to the review-r1 Corrected snippet (addition order permuted only; commutative), with the correct coefficients F_0=(1+a)^2, F_r=(1+a)a_r. (2) Anchor lengths: measured HEAD string length **41**, TAIL **66** on live appH; occurrence counts HEAD 1 / TAIL 1 / joined 1; joined-anchor context shows the insertion point exactly where r1 certified (after "sign fixed by the transport convention). ", before "The representation content is admissible…"); r2's 41/66 corrected, and r2 states the integrator asserts counts, not lengths. (3) B-sentence now "B_{rho mu} = d_mu w_rho(0)"; under it F_12(0) = B21 - B12 - [C1,C2] is correct index bookkeeping, and my manual left-multiplication transport composition (legs a,b with linear w, keeping O(2)) reproduces (ab/2)[(B21-B12) - [C1,C2]] independently — the ordering/sign convention is consistent end to end. (4) Source-reading now records DIGEST CURRENT at 23266972..., which matches git rev-parse HEAD.
+- **Probe 5, hygiene.** `eq:bilocal-coinc-locked`: 0 occurrences in chapters/, bib/, namcg-book7.tex. The five eqref targets are each defined exactly once in chapters/**/*.tex (the second grep hits are .aux build artifacts, not sources); line positions match r1 (ch04:62,91,161; appH:712; ch10-lorentz-locking:133). Payload contains no status/priority/completion word and no closure language (0 matches for OPEN/Status/Priority/Completion/clos*). No new numbers beyond measured/verified ones (41/66 measured here; 12-hunk claim verified; the r1-outdated sha computed here; compile-cert byte delta +2036 not re-verified, accepted as in r1 via the payload-sha binding). fix_batt.py reproduces exactly the two targeted edits with count asserts; patch_r2.py/fixer.py reference no chapters/ path. No process language in manuscript-bound text; CRLF/LF status as certified in r1 (payload LF; the proposal asks the integrator to convert at splice).
+
+## Findings
+None blocking, none major. Minor observations (non-blocking, no action required):
+- R6's I7 line leaves F_{rs} unglossed (it is d_r d_s of the radial factor f, the script's Fd2); the same notation was used and accepted in r1 and in the r1 Corrected snippet, and my direct differentiation confirms it is the correct term. Optionally gloss it if the proposal record is ever revisited; do not touch the payload for it.
+- The `.aux` files under chapters/ contain duplicate `\newlabel` strings from prior builds; irrelevant to source-level uniqueness.
+
+## Scope of what is established
+- Established (conditional-identity tier, unchanged from r1): the coincidence formula, the area/path coefficient with ordering sign, eta-antisymmetry facts, the connector-quadratic soldering coefficient, det/right-action facts — all inside the posited locked sector; the payload claiming them is unchanged and its compile cert binds at sha 2cca5842.
+- Now additionally established for the record: the corrected six-term symmetric mixed-coefficient identity equals direct-differentiation ground truth (verified independently), and the battery now genuinely certifies it (negative controls: perturbation fails, omission would pass).
+- Still OPEN: Problem C (operator, kinetic coefficient, mixing, couplings, pole mass, ass:gap-psi), D1, D, inputs (ii)/(iii). Nothing is closed; the package remains conditional derivation-grade input to Missing-step (i), PROGRAMME-CONDITIONAL. Open avenues preserved as in r1 (w^2 soldering term for D1; O(ell^3) term and bilinear fluctuations toward Missing-step (iii)).
+
+## Recommended disposition
+Integrate the unchanged pinned payload (insert-bilocal-coinc.tex, sha1 2cca5842ace0c3a1e67e6712d2c521990023f508) as ordinal 40 per the anchor contract (assert counts 1/1/1 against the live file at splice time; convert to CRLF). No further revision needed.
+
+## Corrected snippet
+Not needed — r2 text already matches the r1 Corrected snippet up to commutative reordering.
+
+END REVIEW 110 r2

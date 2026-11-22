@@ -1,0 +1,215 @@
+--- proposal-r1.md
++++ proposal-r2.md
+@@ -1,4 +1,4 @@
+-# Proposal 110-cd1-bilocal-coincidence-evaluation, round 1
++# Proposal 110-cd1-bilocal-coincidence-evaluation, round 2
+ 
+ ## Result
+ 
+@@ -39,8 +39,9 @@
+    (boost instance); every derivative piece d_s w_r and the curvature-type
+    piece eta F_{rs} are eta-antisymmetric, so O(ell^2) path dependence
+    never enters the symmetric sector; the full symmetric O(ell^2) sector
+-   decomposes as (profile) + (radial e_rs) + (mixed e-w) + the
+-   anticommutator connector (`run_induced.out`). The item-109 draft claims
++   decomposes as (profile) + (radial e_rs) + (radial-gradient x e) +
++   (mixed e-w) + the anticommutator connector
++   (`run_induced.out`, corrected r2 identity in R6). The item-109 draft claims
+    are confirmed and made explicit; no claim in them needed correction.
+ 4. **Non-degeneracy (dispatch (c)).** det(E^T eta E) = det(eta) det(E)^2
+    is verified; concrete data: det G = -1 for E=I, -44100 for
+@@ -90,9 +91,13 @@
+ 
+ ## Source reading
+ 
+-Digest status: `python scripts/make_digest.py --check` printed "DIGEST
+-STALE (head changed)" at run start; per protocol 3 the digest was NOT
+-relied on and I used live targeted reads (digest + targeted reads of live
++Digest status at r1 run start: `python scripts/make_digest.py --check`
++printed "DIGEST STALE (head changed)"; at r2 run time it prints DIGEST
++CURRENT (head 23266972cd07dd01497abe5e0962810fa059db63, dirty-chapters:
++no). r2 required reading: review-r1.md (sha1
++5fc150de1587cc15fbe4cba31d893169405ccd14), read in full; r2 adds no
++manuscript reading beyond the count-only appH anchor re-verification.
++Per protocol 3 the r1 digest was NOT relied on and I used live targeted reads (digest + targeted reads of live
+ files; no full scan claimed - none of the four conditions (a)-(d) applies
+ to this package: no definition, assumption, scope-statement or status
+ passage is changed). Files read live: appH-microscopic-proofs.tex L529-560
+@@ -127,7 +132,7 @@
+ x -> x + eps a e_1 -> x + eps a e_1 + eps b e_2 with the chord x -> x +
+ eps(a e_1 + b e_2). The difference U_L - U_chord vanishes at O(eps) and at
+ O(eps^2) equals (ab/2) ((B_21 - B_12) - (C_1 C_2 - C_2 C_1)) = (ab/2)
+-F_12(0), where B_{mu nu} = d_mu w_nu(0), C_mu = w_mu(0), and
++F_12(0), where B_{rho mu} = d_mu w_rho(0), C_mu = w_mu(0), and
+ F_{rho sigma} = d_rho w_sigma - d_sigma w_rho - [w_rho, w_sigma]. For the
+ parabolic arc x = eps a s, y = eps b s^2 the O(eps^2) difference equals
+ (ab/6) F_12(0); ab/6 is the area between the parabola and its chord, while
+@@ -203,10 +208,21 @@
+ the second term being (1+a)^2/2 * d_r g+ (I5b) - profile and radial data
+ only; I7 the symmetric part of the mixed coefficient d_r d_s G|0 (r != s)
+ is exactly F_rs eta + F_0 sym(eta E_rs) + F_0 sym(eta(w_r e_s + w_s e_r))
+-+ sym(F_r eta w_s + F_s eta w_r) + F_0 (1/2) sym(eta {w_r,w_s}), i.e. the
+-connector-soldering term is exactly (1/2)(1+sigma/v)^2 sym(eta {w_r,w_s})
+++ sym(F_r eta w_s + F_s eta w_r) + sym(F_r eta e_s + F_s eta e_r)
+++ F_0 (1/2) sym(eta {w_r,w_s}), with F_0 = (1+a)^2 = (1+sigma/v)^2
++and F_r = (1+a) a_r, where a_r = partial_r(sigma/v)|0 is the linear
++coefficient of delta; i.e. the connector-soldering term is exactly
++(1/2)(1+sigma/v)^2 sym(eta {w_r,w_s})
+ (the printed claim "soldering-type connector first at O(ell^2)" with its
+-coefficient made explicit); I6, I6b: sym(eta F_12) = 0, sym(eta d_1 w_1) =
++coefficient made explicit). Ground truth for I7 is direct
++differentiation of G = f eta U E: the r1 exactly-list omitted the
++term sym(F_r eta e_s + F_s eta e_r) and the battery targets G2 and
++tgt7 omitted it too, so the r1 I7 check was tautological off-vacuum
++(review-r1 finding 1 and its S1 ground-truth check); the corrected
++identity above equals the direct-differentiation ground truth
++exactly. The narrower claims pinned in the payload are unaffected:
++the connector-quadratic part and the connector-free O(ell) sector
++stand as printed. I6, I6b: sym(eta F_12) = 0, sym(eta d_1 w_1) =
+ 0. All coefficient checks run at the coefficient level (product rule on
+ the three factors; I0 certifies equivalence with the direct expansion).
+ 
+@@ -254,10 +270,14 @@
+ ### File chapters/appH-microscopic-proofs.tex (single insertion; one paragraph)
+ 
+ Anchor contract (byte-verified against the live file at splice time):
+-- HEAD anchor (43 bytes): `sign fixed by the transport convention). `
+-- TAIL anchor (81 bytes): `The representation content is admissible where the linear Repair~I`
+-- Joined anchor HEAD+TAIL: occurrence count = 1 (verified by grep and by
+-  the splice assert). The block is inserted BETWEEN the two anchors; both
++- HEAD anchor (41 chars; ASCII, so 41 bytes): `sign fixed by the transport convention). `
++- TAIL anchor (66 chars; ASCII, so 66 bytes): `The representation content is admissible where the linear Repair~I`
++  (r1 stated 43/81; corrected at r2 by python len on the anchor
++  strings, review-r1 finding 2: bookkeeping only).
++- Joined anchor HEAD+TAIL: occurrence count = 1 (re-verified at r2 by
++  count-only python on the live appH: HEAD 1, TAIL 1, joined 1; the
++  integrator asserts the counts, not the lengths). The block is
++  inserted BETWEEN the two anchors; both
+   anchors stay byte-identical, as does every other character of the file.
+ - The sentence carrying `(antisymmetric derivative of $w$ plus
+   commutator, sign fixed by the transport convention)` is KEPT unchanged;
+@@ -300,7 +320,9 @@
+ Environment: Python 3 + sympy 1.14.0; run with `python -I` from this
+ folder. All outputs are deterministic (no randomness in time; fixed
+ rational instances); re-runs verified byte-identical to the stored .out
+-files (cmp) on 2026-11-22.
++files (cmp) on 2026-11-22; in r2 the induced battery was corrected per
++review-r1 finding 1 and re-run (output byte-identical), the other
++three batteries untouched.
+ 
+ 1. `check_path_curvature.py` + `_part2.py` + `_part3.py` (R1-R3)
+    Re-run: `python -I -c "exec(open('check_path_curvature.py').read()); exec(open('check_path_curvature_part2.py').read()); exec(open('check_path_curvature_part3.py').read())"`
+@@ -329,8 +351,13 @@
+    Expect I0-I7 all PASS (stored: `run_induced.out`). Central invariants:
+    G(0,0) = (1+a)^2 eta; sym(eta w_r) = 0; sym(eta d_s w_r) = 0;
+    sym(eta{w1,w2}) nonzero (entries printed); sym(G1_r) target;
+-   sym(G2_rs) = profile + radial + mixed + (1/2) F0 sym(eta{w_r,w_s});
+-   sym(eta F_12) = 0.
++   sym(G2_rs) = profile + radial + (Fd1[r] eta Ed1[s] + Fd1[s] eta
++   Ed1[r]) + mixed + (1/2) F0 sym(eta{w_r,w_s});
++   sym(eta F_12) = 0. r2 correction: the r1 G2/tgt7 targets omitted
++   the Fd1*eta*Ed1 terms (review-r1 finding 1); the corrected targets
++   match the direct-differentiation ground truth (review-r1 S1) and
++   the r2 re-run is byte-identical to the stored output, whose r1
++   copy is kept as run_induced_r1_outdated.out.
+ 
+ Tool output is a check, not a proof; the derivations are R1-R6 above.
+ sha1 (2026-11-22):
+@@ -339,13 +366,19 @@
+ - check_path_curvature_part3.py 679a0dedbb477709bde4fb02c849a22cbf3cd4ac
+ - check_locked_coincidence.py c0f0bbda2de31a341db1cb62cf9262f565853c37
+ - check_right_isometry.py 5496fbc60d25074c1c31486d9dcbaefd5f1b6cb1
+-- check_induced_expansion.py c857d4f016c48d0e66d0438a1bde0766bc187d79
++- check_induced_expansion.py 94184fd43019143ea3e3948d175acd06480d0d10
++  (r2: G2 target corrected per review-r1 finding 1)
+ - check_induced_expansion_part2.py 8950ff462761c52febaafd3f261d2a743cb69e35
+-- check_induced_expansion_part3.py 4035bdf7e72ded2bdfb707a178c17b1505211b21
++- check_induced_expansion_part3.py fb440b2bab67cce0b412fc33642d5eacb58a71d9
++  (r2: tgt7 target corrected per review-r1 finding 1)
+ - run_path.out 7da3445d83f9d1f7d4a44333ba75b8191e72bd39
+ - run_locked.out 9177127be94e865d0e3ee6df40a5012178d4fcf8
+ - run_rightiso.out 23281c81dc8ed16678ca30508423b07c379f2069
+ - run_induced.out 32b3701886be98430b5430d00fc4f2c49163992a
++- run_induced_r1_outdated.out 32b3701886be98430b5430d00fc4f2c49163992a
++  (superseded r1 battery output, inert provenance; the r2 re-run of the
++  corrected scripts is byte-identical because the added terms enter the
++  check targets, not the printed PASS lines)
+ - insert-bilocal-coinc.tex 2cca5842ace0c3a1e67e6712d2c521990023f508
+ 
+ Compile cert: sandbox copy of the tracked tree (git ls-files | tar), the
+@@ -368,8 +401,11 @@
+    sensitivity is stated in the inserted text instead of being hidden.
+ 2. The soldering coefficient claim is phrased as the connector-quadratic
+    part of the O(ell^2) symmetric coefficient (the full symmetric part
+-   also contains sigma-gradient x w and e x w cross terms; claiming more
+-   would be false off-vacuum).
++   also contains sigma-gradient x w, sigma-gradient x e and e x w
++   cross terms; claiming more would be false off-vacuum). r1 listed
++   only the first and third families; r2 restores the
++   sigma-gradient x e family consistently in Result 3, R6 and the
++   battery targets (review-r1 finding 1).
+ 3. Non-degeneracy and N>4 scope facts were kept out of the manuscript:
+    the 109 text already states the square-frame equivalence and the N=4
+    locked identification of eq:VEV is the programme setting; only the
+@@ -385,6 +421,46 @@
+ 6. No status/priority/completion edits; no new labels beyond
+    eq:bilocal-coinc-locked; insertion is additive, so the package cannot
+    create stale cross-references.
++
++## r1 -> r2 changelog
++
++Round 2 is a record-and-battery correction round on the gatekeeper
++verdict ACCEPT WITH REQUIRED REVISIONS (review-r1.md). The physics of
++the pinned payload was verified there and is unchanged; no manuscript
++text differs from round 1. Changes, keyed to the review findings:
++
++1. Finding 1 (major). R6/Result 3: the "exactly" I7 decomposition
++   gains the term sym(F_r eta e_s + F_s eta e_r), with F_0 = (1+a)^2 =
++   (1+sigma/v)^2 and F_r = (1+a) a_r, a_r = partial_r(sigma/v)|0; with
++   this term the identity equals the direct-differentiation ground
++   truth of G = f eta U E (review-r1 S1). Battery: G2 in
++   check_induced_expansion.py and tgt7 in check_induced_expansion_part3.py
++   gained the matching Fd1*eta*Ed1 terms (r1 omitted them on both sides,
++   making the r1 I7 check tautological off-vacuum). run_induced.out
++   re-run from the corrected scripts; its byte content is unchanged
++   (the terms enter the check targets, not the printed lines), and the
++   r1 output is archived as run_induced_r1_outdated.out (sha1
++   32b3701886be98430b5430d00fc4f2c49163992a). The Decision 2
++   cross-terms parenthetical is updated to match. The payload is
++   byte-identical (sha1 2cca5842ace0c3a1e67e6712d2c521990023f508): it
++   claims only the connector-quadratic part and the connector-free
++   O(ell) sector, both unaffected by the correction.
++2. Finding 2 (minor). Anchor contract: HEAD/TAIL lengths corrected to
++   the measured 41/66 chars (r1 said 43/81); occurrence counts
++   re-verified 1/1/1 on the live appH; the integrator contract (assert
++   counts, not lengths) unchanged.
++3. Finding 3 (minor). R2 body: the B-convention sentence now reads
++   B_{rho mu} = d_mu w_rho(0), matching the script convention under
++   which F_12 = B21 - B12 - [C1, C2].
++4. Finding 4 (minor). Source reading records the r2 digest state
++   DIGEST CURRENT (head 23266972cd07dd01497abe5e0962810fa059db63,
++   dirty-chapters: no) and review-r1.md as required reading.
++
++Result and claim classification are UNCHANGED: conditional
++in-hypothesis evaluations / derivation-grade inputs to Problem C
++Missing-step (i); nothing is closed (rule 3); no status, priority or
++completion label is touched (rule 2); the payload, labels and
++references are unchanged.
+ 
+ ## Milestone assessment
+ 
+@@ -443,3 +519,14 @@
+   bookkeeping only.
+ - The 109 sentence about the right action of the orthogonal group of g+
+   is correct as printed (L6 verifies it); do not edit it.
++- r2 addendum: the payload is unchanged (insert-bilocal-coinc.tex
++  sha1 2cca5842ace0c3a1e67e6712d2c521990023f508, compile cert
++  unchanged at that sha). Only check_induced_expansion.py (G2 gained
++  + Fd1[r]*eta*Ed1[s] + Fd1[s]*eta*Ed1[r]) and
++  check_induced_expansion_part3.py (tgt7 gained the symmetrized same
++  term) changed among the scripts; fix_batt.py in this folder
++  reapplies exactly those two edits with count asserts. Verify the
++  corrected I7 identity in R6 by direct differentiation of
++  G = f eta U E, re-run the induced battery (expect ALL CHECKS
++  PASS), and check the anchor counts (not lengths) on the live appH
++  before splicing.

@@ -1,0 +1,26 @@
+== Test A: Fock ground truth for the modular exponent (certified cuts, one line per cut) ==
+PASS A (L=17 mu=0.70 N=1): dG=8.75e-07<1e-3 dZ=7.17e-08<1e-3 dSfl=7.22e-16<1e-10 dSmod=0.00e+00<1e-10 dSfock=9.66e-07<5e-3
+PASS A (L=19 mu=0.40 N=2): dG=4.76e-08<1e-3 dZ=8.50e-09<1e-3 dSfl=6.05e-15<1e-10 dSmod=5.55e-17<1e-10 dSfock=1.47e-07<5e-3
+PASS A (L=23 mu=0.25 N=3): dG=2.60e-08<1e-3 dZ=5.69e-09<1e-3 dSfl=1.00e-12<1e-10 dSmod=5.55e-17<1e-10 dSfock=1.02e-07<5e-3
+== Test B: closed form for general physical covariances (one line per (n,seed)) ==
+PASS B (n=1 seed=1): relcov=7.91e-06<3e-2 dnorm=5.95e-07<3e-2 dfirst=4.44e-16<1e-9 dsym=0.00e+00<1e-10
+PASS B (n=1 seed=2): relcov=5.50e-05<3e-2 dnorm=4.82e-06<3e-2 dfirst=2.22e-16<1e-9 dsym=0.00e+00<1e-10
+PASS B (n=1 seed=3): relcov=4.97e-05<3e-2 dnorm=3.76e-06<3e-2 dfirst=1.11e-15<1e-9 dsym=0.00e+00<1e-10
+PASS B (n=2 seed=1): relcov=1.27e-03<3e-2 dnorm=1.90e-04<3e-2 dfirst=1.78e-15<1e-9 dsym=0.00e+00<1e-10
+PASS B (n=2 seed=2): relcov=3.25e-03<3e-2 dnorm=5.41e-04<3e-2 dfirst=0.00e+00<1e-9 dsym=0.00e+00<1e-10
+PASS B (n=2 seed=3): relcov=1.01e-02<3e-2 dnorm=2.48e-03<3e-2 dfirst=8.88e-16<1e-9 dsym=0.00e+00<1e-10
+PASS B (n=3 seed=1): relcov=9.71e-03<3e-2 dnorm=3.48e-03<3e-2 dfirst=5.11e-15<1e-9 dsym=0.00e+00<1e-10
+FAIL B (n=3 seed=2): relcov=3.17e-02<3e-2 dnorm=1.16e-02<3e-2 dfirst=0.00e+00<1e-9 dsym=0.00e+00<1e-10
+FAIL B (n=3 seed=3): relcov=3.19e-02<3e-2 dnorm=1.58e-02<3e-2 dfirst=4.44e-15<1e-9 dsym=0.00e+00<1e-10
+== Test C: positivity of A0 ==
+PASS C1 A0 positive on 12 random physical covariances
+PASS C2 certified cut L=31 mu=0.05 N=8: leak=1.39e-07<=1e-06 minEig(A0)=3.185e-01>0
+PASS C2 certified cut L=31 mu=0.20 N=8: leak=5.37e-07<=1e-06 minEig(A0)=1.075e+00>0
+PASS C2 certified cut L=27 mu=0.05 N=6: leak=1.19e-10<=1e-06 minEig(A0)=3.584e-01>0
+== Test S: documented exclusion outside certified grid (resolution limit, not a FAIL) ==
+PASS S1 near-pure cut L=41 mu=0.01 N=12 excluded: leak=1.29e-03 > 1e-2 tol (double-prec h(nu) limit; see _common policy note)
+== Test D: c0 forms agree and are real ==
+PASS D1 c0 = sum_modes ln(2 sinh(h/2)) 0.814120352312 vs 0.814120352312
+RESULTS: 18 checks, 2 failures
+FAILURES: ['B (n=3 seed=2): relcov=3.17e-02<3e-2 dnorm=1.16e-02<3e-2 dfirst=0.00e+00<1e-9 dsym=0.00e+00<1e-10', 'B (n=3 seed=3): relcov=3.19e-02<3e-2 dnorm=1.58e-02<3e-2 dfirst=4.44e-15<1e-9 dsym=0.00e+00<1e-10']
+FAILURES PRESENT
