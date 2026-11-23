@@ -1,0 +1,28 @@
+1. r - vartheta varpi/m^2 = 0
+   sigma_1 = -4*eps_1 - eps_y ; dgamma^00 = -2*eps_1*m**2 - 2*eps_y*m**2 ; dgamma^11 = 2*eps_1*m**2
+   h_beta^00/2m^2 = eps_1*(2*beta_K - 1) + eps_y*(beta_K/2 - 1)
+2. tree form in (sigma, z): sigma**2*(lam*q2*r/16 + 3*r/8) + sigma*(-lam*q2*r*z/2 - r*z) + z**2*(lam*q2*r - 2*r)
+   Schur complement of the tree form over z at fixed sigma: -r/(lam*q2 - 2) (expect r/(2 - lam q2))
+   at q=0: r/2 ; first order in q2: lam*q2*r/4 + r/2
+   stationary z at q=0: -sigma/4 -> eps_1 = -sigma/2 , eps_y = sigma
+3. on it: dgamma = [-m**2*sigma, -m**2*sigma, -m**2*sigma, -m**2*sigma] (isotropic: -m^2 sigma delta^{mu nu}); t = -2*m**2*sigma ; h_beta^11/h_beta^00 = (1 - beta_K)/(beta_K + 1)
+4. charge of the sigma_1-neutral singlet (1-4P)T: 3 (no beta_K); of the dilatation T: 2*beta_K - 1 ; of the rescaling P T: beta_K/2 - 1
+   y y channel alone: c^2/M = (beta_K - 2)**2/(4*(mu + q2))  (response -L rho0^2 c^2/M with J = 2 L rho0/m^2)
+5. Gamma(q2) = c^T M^-1 c ; denominator: 4*r*(lam*mu*q2 + lam*q2**2 - 2*mu - 2*q2 - r)
+   det M = r*(lam*mu*q2 + lam*q2**2 - 2*mu - 2*q2 - r)
+   pole condition (q2 + mu)(2 - lam q2) + r = 0; product of the roots = (-2*mu - r)/lam ; sum = -mu + 2/lam
+   mu = 0: [(1 - sqrt(lam*r + 1))/lam, (sqrt(lam*r + 1) + 1)/lam]  with lam r = (2/3) vartheta varpi
+6. q=0, z eliminated with the source: z = (-3*J - r*sigma)/(4*r) ; Ft_eff = 9*J**2/(8*r) + sigma**2*(mu + r/2) + sigma*(J*beta_K/2 + J/2)
+7. det(M0) < 0 at q=0 and exactly one root q2 > 0 for 1620 random cases with mu + r/2 > 0 and an extra PSD kinetic term
+   exact: det M0 = -r*(2*mu + r) < 0 for r > 0 whenever 2 mu + r > 0
+8. tree form at q=0 in (sigma, z'): -2*r*sigma*zp - 2*r*zp**2 (the y y channel z'=0 gives 0)
+   q=0 constant after eliminating the neutral singlet: (mu*(nu - 2*r) - (b - r)**2)/(nu - 2*r) ; its excess over mu: (-b + r)**2/(-nu + 2*r)
+   so it exceeds the y y value mu only if nu - 2r < 0, the neutral singlet's own coefficient being negative; b = nu = 0 gives mu + r/2
+   869 random cases with a positive-definite kinetic matrix and no static pole at q2 >= 0: all have mu > 0, nu > 2r and a constant <= mu: True
+9. (L/2m^4) C_tree + q_*^2|chi = 8*pi**2*m**2*(2*C_tree*U_chichi - Uprime**2)/(A*U_chichi) -> positive iff C_tree > U'^2/(2 U_chichi)
+   C_tree on the stationary combination = (rho_M/4g^2)(l^2+m^2); (L/2m^4) C_tree - vartheta varpi/(2m^2) = 0
+10. mu = -r/2: null vector of M(0) (eps_1, eps_y) ~ [-1/2, 1] (expect (-1/2, 1))
+11. Fierz-Pauli form on h = dgamma(eps_1, eps_y), static q: 4*eps_1*k**2*m**4*(3*eps_1 + 2*eps_y)
+    gauge check (form on a pure-gauge h): 0
+    = 4 m^4 q^2 (3 eps_1^2 + 2 eps_1 eps_y): indefinite (det [[3,1],[1,0]] = -1), zero on the y y channel
+all checks passed

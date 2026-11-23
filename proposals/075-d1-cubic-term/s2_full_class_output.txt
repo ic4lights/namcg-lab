@@ -1,0 +1,28 @@
+(1) background residuals (max over 8 random fibre points) at c = 0 and c = 0.9
+    Heisenberg (068)                     c=0: 0.0e+00   c!=0, v timelike : 3.768
+    Heisenberg (068)                     c=0: 0.0e+00   c!=0, v spacelike: 2.185
+    Heisenberg (068)                     c=0: 0.0e+00   c!=0, v null     : 22.281
+    null rotation g2 (068)               c=0: 0.0e+00   c!=0, v timelike : 1.875
+    null rotation g2 (068)               c=0: 0.0e+00   c!=0, v spacelike: 3.610
+    null rotation g2 (068)               c=0: 0.0e+00   c!=0, v null     : 3.998
+    family (i) (071)                     c=0: 2.2e-16   c!=0, v timelike : 20.586
+    family (i) (071)                     c=0: 2.2e-16   c!=0, v spacelike: 4.417
+    family (i) (071)                     c=0: 2.2e-16   c!=0, v null     : 6.399
+    Heisenberg + connection (071/072)    c=0: 0.0e+00   c!=0, v timelike : 4.425
+    Heisenberg + connection (071/072)    c=0: 0.0e+00   c!=0, v spacelike: 6.474
+    Heisenberg + connection (071/072)    c=0: 0.0e+00   c!=0, v null     : 5.911
+(2) flat point, kernel dimension of the 40 linearised equations
+    q generic   (q^2 = +1.06):  c = 0: 10  gauge rank 10 | v timelike: 10 (gauge residual 3e-16) | v spacelike: 10 (gauge residual 2e-16) | v null: 10 (gauge residual 3e-16)
+      kernel of delta(T, R): 10
+    q null      (q^2 = +0.00):  c = 0: 24  gauge rank 10 | v timelike: 10 (gauge residual 2e-16) | v spacelike: 10 (gauge residual 2e-16) | v null: 10 (gauge residual 5e-16)
+      kernel of delta(T, R): 10
+    q timelike  (q^2 = -1.48):  c = 0: 10  gauge rank 10 | v timelike: 10 (gauge residual 2e-16) | v spacelike: 10 (gauge residual 2e-16) | v null: 10 (gauge residual 4e-16)
+      kernel of delta(T, R): 10
+    q spacelike (q^2 = +1.30):  c = 0: 10  gauge rank 10 | v timelike: 10 (gauge residual 4e-16) | v spacelike: 10 (gauge residual 1e-16) | v null: 10 (gauge residual 1e-16)
+      kernel of delta(T, R): 10
+    q = 0: kernel of the stacked system 16 (constant frame deformations h: 16, omega = 0)
+(3) order-zero field, stacked over fibre points: kernel dimension (gauge A ~ q gives 1)
+    q generic   v timelike : 1    q generic   v spacelike: 1    q generic   v null     : 1
+    q null      v timelike : 1    q null      v spacelike: 1    q null      v null     : 1
+    q timelike  v timelike : 1    q timelike  v spacelike: 1    q timelike  v null     : 1
+    q spacelike v timelike : 1    q spacelike v spacelike: 1    q spacelike v null     : 1

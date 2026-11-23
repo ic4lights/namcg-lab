@@ -872,3 +872,72 @@
 - appH sha b98a3a34.... build_check PASS, 414 pp. Digest CURRENT. Uncommitted, together with 068, 069 and 062-064.
 - No label change. D, F, N OPEN.
 - Next D1 avenue (gk top rank): linearise the wider Heisenberg family at chi kappa != 0 in the oscillator sectors. This is the first background where a gap is not excluded by symmetry.
+
+## 2026-11-22 - local 072 (D1: wider Heisenberg family linearised) integrated
+- Package: proposals/072-d1-heisenberg-wider-linearised.
+- Review path: r1 AWRR (root-formula scope; hidden p->0 rate), r2 (S1-S3, F8), r2 confirm + full scan 4 passes (pass 1: F1 closer drops emergent-metric non-identification), r3 (F1), plain ACCEPT (review-r3-final.md).
+- Content:
+  - Exact Q = Q|_{w=0} - chi k^a F_ab on the null-leg family.
+  - Root formula: exact in J-blocks at zeta=x=0, numerical elsewhere.
+  - No gauge-invariant gap or mass at tree level, linear order; chi enters only as a rate.
+  - Modified growth bounds; no stability claim.
+  - Survey lead: non-null-leg connections.
+- Edit 2: updates the stale 071 sentence.
+- appH sha c8c07938.... build_check PASS, 416 pp. Digest CURRENT. Uncommitted on top of 399fcc8.
+- No label change. D, F, N OPEN.
+- Next D1 avenue (gk rank 1): non-null-leg constant connections on the Heisenberg algebra, the only place a real level shift / gap is not excluded.
+- Housekeeping noted: appH L3092 hard-codes "Chapter~12".
+
+## 2026-11-22 - local 073 (D1: non-null-leg Heisenberg connections) integrated
+- Package: proposals/073-d1-heisenberg-nonnull-leg.
+- Review path: r1 AWRR (gap argument; minors), r2 (S1-S3, renames to (sin phi, cos phi) and varpi), r2 confirm, full scan (4 passes, clean), plain ACCEPT (review-r2-final.md).
+- Content: exact family around a null line at tilt phi. Q = Q|_{w=0} - tau k^a F_ab. Unshifted Landau levels. No gauge-invariant gap. At sin phi != 0 a momentum-independent term appears but does not give a gap. Leg operator is nilpotent.
+- Edit 2 updates the 072 survey clause.
+- appH sha 29ac2a63.... build_check PASS, 418 pp. Uncommitted, together with 072.
+- No label change. D, F, N OPEN.
+- Assessment: three consecutive bounded no-gap results on constant-connection D1 backgrounds (071, 072, 073). Per derivation-first, further constant-connection Heisenberg families are deprioritised.
+- Next D1 candidate: C_munulambda != 0 (within core, intrinsic scale).
+- Switching to chain 2 now (the D1 packages have landed): F.t-nonderivative-sector, the tree non-derivative terms of the frame wave (derivation-grade, tree level).
+- mu^2 bilinear: STRUCTURAL if adopted (fundamentality agent).
+
+## 2026-11-22 - local 074 (F/C: tree non-derivative terms of the frame wave) integrated
+- Package: proposals/074-f-tree-nonderivative-wave.
+- Review path:
+  - r1 AWRR: overclaimed settling the identity's own profile; small-k positivity; leading-symbol constant absent from displays.
+  - r2 applied the review texts verbatim.
+  - r2 confirm, then the full scan in 4 passes; pass 2 found F1, a cross-reference.
+  - r3 (F1 + optional wording), then plain ACCEPT (review-r3-final.md).
+- Content:
+  - Exact localisation identity.
+  - T_tree = 0 in every channel. C_tree = 0 on the one-component rescaling realisation (degree argument, finite N; supplied bilinear; matter at zero background).
+  - Level-one values.
+  - A singlet-sector Yukawa-sign stationary value, conditional on the uncomputed kinetic matrix.
+  - The tree term depends on the realisation; its value on the identity's own profile is not computed.
+  - E1-E3 qualify the "not computed" lists.
+- appH sha 84f9c61e.... build_check PASS, 422 pp. Digest CURRENT. Uncommitted, together with 072 and 073.
+- No label change. C, F, N OPEN.
+- Next candidates:
+  - D1: C_munulambda != 0 (within core, upstream gating).
+  - F/C: the singlet kinetic matrix plus the matter coupling.
+  - F/C: s4 equal-weight-profile candidate, after its 3 corrections.
+
+## 2026-11-22 - local 075 (D1: cubic term C != 0) integrated - MILESTONE M2
+- Package: proposals/075-d1-cubic-term.
+- Review path: r1, gk NEEDS EVIDENCE (M2, full scan owed), full scan in 4 passes (clean), plain ACCEPT (review-r1-final.md).
+- Rigidity lemma (bounded no-go, H1-H5, tree level):
+  - In the SO(3,1)-equivariant first-order class, a constant c-number C_[munulambda] = i g^-2 eps v != 0 forces T=R=F=0.
+  - Equivariant fluctuations about flat space are pure gauge, so the TT and torsion modes are removed together. This is a constraint, not a mass.
+  - So the C=0 scoping of 068-073 is forced in this class.
+- Variant H_v-fibre classes (within core; off-target for D1, since D1 needs local SO(3,1)):
+  - exact curved backgrounds;
+  - a CFJ-type flat spectrum;
+  - a non-selective gap for spacelike v.
+- Bib: CarrollFieldJackiw1990 and AdamKlinkhamer2001 added (CRLF-normalised by the integrator).
+- Hashes: appH 8aed4519..., bib 9b942773.... build_check PASS, 424 pp. Digest CURRENT. Uncommitted, together with 072, 073 and 074.
+- No label change. D OPEN.
+- M2 is recorded and the loop continues (run-cycle: M2 no-go, ask which hypothesis a within-core route relaxes).
+- Redirected D1 avenues:
+  1. C=0 branch with a torsion gap from loops or bilocal modes.
+  2. A covariant section-valued C, keeping local SO(3,1) with spontaneous breaking to H_v (STRUCTURAL if adopted as the reading of eq:Smatrix; fundamentality agent).
+- Optional ch03 pointer offered by scan pass 3; not adopted. It is left for the author.
+- Next: F/C singlet kinetic matrix plus matter coupling (074 avenue 2).

@@ -1,0 +1,12 @@
+m1 field equation: old occurs 1x
+m1 first-order term: old occurs 1x
+m3 setting: old occurs 1x
+m3 degree argument: old occurs 1x
+M1 channel: old occurs 1x
+m1 constant L: old occurs 1x
+M1/M3 added passage: old occurs 1x
+m5 singlet: old occurs 1x
+M2 consequence: old occurs 1x
+scope (i): old occurs 1x
+scope (ii): old occurs 1x
+appH_insert_r2.tex bytes 9607 sha256(LF) fd866a4ea38c9fa098eb57e8299cd5ce435ae2a12adc9e954f65d04e631605b9

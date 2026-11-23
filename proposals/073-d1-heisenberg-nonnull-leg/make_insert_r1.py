@@ -1,0 +1,44 @@
+"""Writes appH_insert_r1.tex (UTF-8, no BOM, CRLF) from the text below.  Run: python -I -B make_insert_r1.py"""
+from pathlib import Path
+
+TEXT = r"""\paragraph{First-order equivariant class on the Heisenberg background: connections with legs off the null direction (conditional; not closure).}
+Keep time times the Heisenberg group with the normalisation and the fluctuation of the preceding paragraph. For \(s^2+c^2=1\) let \(n^a=(1,s,-c,0)\), \(\hat n^a=(0,s,-c,0)\), \(e^a=(0,c,s,0)\), \(f^a=(0,0,0,1)\) and \(k_a=-\eta_{ab}n^b\), write \(X(u,v)^{cd}=u^cv^d-u^dv^c\), and let \(B_n=X(\delta_0,-\hat n)\), \(J_n=X(e,f)\), \(N_e=X(n,e)\) and \(N_f=X(n,f)\); at \((s,c)=(0,1)\) these are \(k\), \(B\), \(N\) and \(N'\) of the preceding paragraphs and the rotation of the \(1\)-\(3\) plane. Take
+\[
+w_a{}^{cd}=k_a(\chi B_n+\vartheta J_n)^{cd}+P_aN_e^{cd}+Q_aN_f^{cd},\qquad P_a=\zeta k_a+\alpha e_a+(\beta+\vartheta)f_a,\quad Q_a=xk_a+\beta e_a+\gamma f_a,
+\]
+which is the wider family at \(s=\vartheta=\alpha=\beta=\gamma=0\). For all real \(\kappa,\chi,\vartheta,\zeta,x\) the first two brackets hold when
+\[
+\vartheta^2-2\vartheta\beta-2\beta^2-\alpha^2-\gamma^2+2\chi(\alpha+\gamma)=0
+\]
+and, if \(s\neq0\), \(\tau:=\chi+\alpha+\gamma=0\); at \(s\neq0\) and generic \(\tau\neq0\) the constraint alone does not suffice. Then \(\mathsf T_{ac}{}^c=\tau k_a\), the third bracket holds, \(\mathsf R_{abcd}\mathsf R^{abcd}=4\kappa^2c^2(\vartheta^2-\chi^2)\), which is positive for \(|\vartheta|>|\chi|\), and every \(w_a\) fixes the null line of \(n\) (exact for symbolic parameters; for the operators on the bundle at a rational Lorentz \(u\), order-zero part included, exact at one point with \(s=0\), \(\tau\neq0\) and one with \(s=\tfrac35\)). The form \(\eta^{ab}w_a{}^{cd}w_b{}^{ef}\) is nonzero when one of \(\alpha\), \(\beta\), \(\beta+\vartheta\), \(\gamma\) is, but on vectors \(\eta^{ab}w_aw_b=-\eta^{ab}(P_aP_b+Q_aQ_b)\,n\otimes n^\flat\), whose square is zero (exact). Of the __NCLEAN__ solutions of the survey of the preceding paragraph that converge to residual \(10^{-13}\), __NSTRICT__ pass the tests for this form at tolerances \(10^{-10}\) to \(10^{-9}\), __NLOOSE__ more at \(10^{-8}\) to \(10^{-6}\), and __NOUT__ do not; for all of them \((\eta^{ab}w_aw_b)^2\) vanishes on vectors to \(2\cdot10^{-11}\) (numerical, not a classification).
+
+On this family \(\mathcal Q_b[A]=\mathcal Q_b[A]|_{w=0}-\tau\,k^a\mathsf F_{ab}[A]\) for all \(A\) (exact), so at \(s=0\) the order-zero operator is that of the preceding paragraph with \(\chi\) replaced by \(\tau\), and at \(s\neq0\) it is the operator of the paragraph on left-invariant backgrounds with torsion. For the forty equations, in the sectors \(p=0\), where \(E_1\) and \(E_3\) commute, every characteristic root lies on a cone \((q+\Lambda k)^2=0\), and in the Landau sectors every root satisfies
+\[
+(q_\parallel+\Lambda k_\parallel)^2+\kappa p\,l=0,\quad\text{that is}\quad q_0^2-p^2+2\Lambda(q_0-cp)+s^2\Lambda^2=\kappa p\,l,\qquad k_\parallel=(1,0,c,0),\ l\in\{-1,1,3,\dots\},
+\]
+with \(\Lambda\) in the set
+\[
+\bigl\{\tfrac{\mathrm i}2\tau,\ \mathrm i(\tfrac\tau2+\chi),\ \mathrm i(\tfrac\tau2+\chi)\pm\vartheta,\ \mathrm i(\tau-\tfrac32\chi)\pm\rho\bigr\},\qquad\rho^2=\tfrac32\vartheta^2-\chi^2+\tfrac14(\tau-3\chi)^2,
+\]
+whose members carry \(10\), \(2\), \(2\), \(2\), \(2\) and \(2\) of the twenty quadratic factors at \(l\ge3\), and half of these at \(l=\pm1\). So \(\zeta\), \(x\), \(\alpha\), \(\beta\) and \(\gamma\) enter only through \(\tau\) and the constraint, and the levels \(\kappa p\,l\) are not shifted. At \(s=0\), \(\chi=\tfrac14\), \(\vartheta=\tfrac12\), \(\alpha=\gamma=\tfrac34\), \(\beta=-\tfrac14\), where the rotation of the \(1\)-\(3\) plane combined with the oscillator level is conserved, this is exact in rational arithmetic after rational reconstruction, in the sector \(p=0\) at a sampled \(q\), also with \(\zeta,x\neq0\), and in the blocks that on the observed pattern contain all factors with \(l\le5\), at \((\kappa,p)=(1,\tfrac12)\) and \((2,\tfrac14)\). Otherwise it is numerical at sampled points: at \(s=0\) for \(l\le5\) as in the preceding paragraph, and at \(s=\tfrac35\), where the solutions are not polynomials times the Landau Gaussian, for the eigenvalues of truncations to \(18\) and \(24\) oscillator levels that agree, all of which are assigned. The kernel at generic \(q_0\) is the ten gauge directions for each level (numerical).
+
+At \(s=0\) the vector \(k_\parallel=k\) is null and no term independent of the momentum enters, as for the wider family, now on backgrounds with \(\mathsf R_{abcd}\mathsf R^{abcd}>0\) and a nonzero leg form; the real parts \(\pm\vartheta\) and \(\pm\operatorname{Re}\rho\) of \(\Lambda\) shift the cones along \(k\), as on the null-rotation background of the paragraph on left-invariant backgrounds with torsion, and the imaginary parts are rates. At \(s\neq0\) the null leg has a component along \(E_1\), on which the Landau sectors act by oscillators, and \(k_\parallel^2=-s^2\), so the characteristic equation contains the momentum-independent term \(s^2\Lambda^2\) for every class with \(\Lambda\neq0\); the class \(\Lambda=\tfrac{\mathrm i}2\tau=0\), which contains \(\mathcal Q\), has none. This term is not a mass: it completes the square of the first-order term \(2\Lambda(q_0-cp)\) and vanishes with \(s\); as \(p\to0\) the roots of a class tend to \(q_0=-\Lambda(1\mp c)\), which are imaginary for imaginary \(\Lambda\); and for real \(\Lambda\), as at \(\chi=0\), it enters \(q_0^2\) as \(-s^2\Lambda^2\), with the sign opposite to that of a mass term, and for each \(l\) one of the two roots vanishes at the \(p>0\) with \(p^2+(2c\Lambda+\kappa l)p=s^2\Lambda^2\). So no gauge-invariant gap or mass of definite sign appears for the Lorentz or torsion modes on this family at this order. No norm is used, so no statement on stability is made.
+
+These statements are for Equation~\eqref{eq:Smatrix} with \(C_{\mu\nu\lambda}=0\) and no matter term, tree level, linear order in the fluctuation, the Lorentzian contraction and this family on time times the Heisenberg group with constant connection, in the sectors named. The survey solutions outside the family, a norm, loops, the nonlinear evolution, the regulated trace and the domains of the unbounded operators are not treated. Nothing here shows that the matrix integral selects this class, these backgrounds or the algebra \(\mathcal A\), so the assumptions listed in the paragraph on left-invariant backgrounds with curvature and torsion are not discharged, and the frame of these backgrounds is not identified with the emergent metric of Chapter~\ref{ch:vierbein-emergence}; Problems~D, F and~N remain open and PROGRAMME-CONDITIONAL.
+"""
+
+import re, sys
+here = Path(__file__).resolve().parent
+t = (here / "s3_survey_structure_output.txt").read_text(encoding="utf-8")
+m1 = re.search(r"residual below 1e-13 after polishing (\d+)", t)
+m2 = re.search(r"\): (\d+) at tolerances 1e-10, 1e-9, 1e-9; (\d+) more at 1e-8, 1e-6, 1e-6; (\d+) not", t)
+m3 = re.search(r"largest defects: .*?\|L\^2\| ([0-9.e+-]+)", t)
+nclean = int(m1.group(1)); ns, nl, no = map(int, m2.groups())
+assert ns + nl + no == nclean and float(m3.group(1)) < 2e-11
+txt = (TEXT.replace("__NCLEAN__", str(nclean)).replace("__NSTRICT__", str(ns)).replace("__NLOOSE__", str(nl))
+       .replace("__NOUT__", {1: "one", 2: "two", 3: "three"}.get(no, str(no))))
+assert "__" not in txt
+data = txt.replace("\r\n", "\n").replace("\n", "\r\n").encode("utf-8")
+(here / "appH_insert_r1.tex").write_bytes(data)
+print("survey: clean %d, strict %d, loose %d, outside %d" % (nclean, ns, nl, no))
+print("wrote appH_insert_r1.tex: bytes", len(data), "CRLF lines", data.count(b"\r\n"), "bare LF", data.count(b"\n") - data.count(b"\r\n"))

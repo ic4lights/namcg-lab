@@ -1,0 +1,21 @@
+appH pre  sha256 29ac2a634bb819df7ecb29e138f97ae014656d4c0bb812b86f3573759a872046 bytes 766977
+pre-hash matches expected: True
+E1 vacuum-term list (pre L3057): occurs 1x, line 3057, inside intended paragraph True
+E2 Yukawa-condition list (pre L3113): occurs 1x, line 3113, inside intended paragraph True
+E3 scope list (pre L3121): occurs 1x, line 3121, inside intended paragraph True
+insert: LF bytes 9607 sha256(LF) fd866a4ea38c9fa098eb57e8299cd5ce435ae2a12adc9e954f65d04e631605b9 ; inserted at line 3123
+line after the insert: \section{Problem G: HBEV}
+appH post sha256 b704e29e5c8af4e5c779150cbfb074430f255e64e9dac98ce8b64e009d416efb bytes 776980 lines 3721 bare LF 0
+post-hash matches expected: True
+label ch:vierbein-emergence defined 1
+status sentences in insert: 1 ; at the end: True
+insert: no label words, no process language, balanced delimiters
+in-place edits: no label words, no process language, balanced delimiters
+paragraph blocks in insert: 6
+pdflatex rc 0 pages 405
+bibtex rc 0 
+pdflatex rc 0 pages 422
+pdflatex rc 0 pages 422
+undefined/multiply-defined warnings: 0
+BUILD CLEAN
+temp copy removed: True

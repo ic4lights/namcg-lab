@@ -1,0 +1,3 @@
+survey: clean 107, strict 80, loose 25, outside 2
+symbol checks: no \Lambda, no stray s/c in math mode; S1, S2, S3, F4, F6 strings present once: True
+wrote appH_insert_r2.tex: bytes 7312 CRLF lines 24 bare LF 0
