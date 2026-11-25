@@ -2188,3 +2188,32 @@ Integrator dispatched for ordinal 51 on exact payload e0b8d6b31cad/5442: context
 - STATE AT STOP: appH 123108d4a947/880,023/4,144; ch03 78afd166ccdc/36,967; PDF 363c1e7625b4 (build
   current; 127 not applied). Awaiting author: 127 decision A-E; commit/merge of working tree.
   NO further dispatches this cycle.
+
+## 2026-11-25 ORCH - item 127 AUTHOR-APPROVED (option A): INTEGRATED ORDINAL 54
+- Author directive "proceed in order" (approval of proposal-r1 option (A): integrate both ACCEPTED
+  payloads) received 2026-11-25. The author also committed ordinals 46-53 to HEAD 6257f4d before this
+  dispatch, so the working tree held only the 127 package when the integrator ran.
+- Integrator (solo; brief embedded all pins; journal proposals/127-n-dict-kinetic-sign/
+  out-int54-journal.md): pre-gates PASS at live appH 123108d4a947/880,023/4,144 and ch03
+  78afd166ccdc/36,967; payload gates 6dd693e2cf0b/1,010 and 73aca8c862ec/3,050 (zero CR, ASCII,
+  trailing LF, LF counts 1/2); anchors unique 1x each. Backup scratch/integrator-backup/
+  54-127-n-dict-kinetic-sign/ + hashes.txt. Canonical-recipe splices reproduced review-r2 POST
+  byte-identically first try: ch03 9b1de0928d53/37,978/917; appH 6839a5cab30e/883,075/4,146; disk
+  re-read equal; orchestrator independently re-hashed equal after.
+- build_check after integration: 2x pdflatex exit 0, 450 pp, bibtex 0 warnings, 0 undefined
+  refs/citations, 0 multiply-defined; tracked PDF restored (363c1e7625b4); git diff --check CLEAN
+  (no ledger artifact this time). Pending diff under chapters/bib = exactly the 127 package.
+- Content recorded (tiers per review-r1/r2): class-scoped NEGATIVE resolution conditional on the
+  DECLARED two-contraction exhaustion: the kinetic sign of ass:dictionary transfers is a DATUM, not
+  an open transfer step; P1 extends the record inside the assumption environment (ch03, between the
+  matching-condition sentence and the LUV line); P2 adds the appH paragraph before the named
+  completion class head. NO status/priority/completion label touched; Problems A and N stay OPEN;
+  item 124 Presentation-B MQM untouched.
+- Frontier clerical update (single writer): edge N.dict-kinetic-sign -> state
+  resolved-by-127-integrated + prior_attempts record + post54_refresh key; chain-6 head moves to
+  N.tmunu-class-obs; frontier old 256c37c88162 -> new (printed this run). Derivation-first dispatch
+  (author directive 2026-11-20) in force: next dispatch researcher item 128, target F.eh-locked-tensor
+  (value of e_h for tr E_ten = e_h R_E, total-trace convention, appH L2093-2114 record). Next
+  mandatory protocol-3(a) scan: ordinal 58. E.thimble author pause; C.operator HOLD; N.specR
+  blocked-by F.coeff; kill-order on 123 verify_ghost_op_123.py stands. Nothing committed; author merges.
+

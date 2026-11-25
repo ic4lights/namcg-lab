@@ -1,0 +1,9 @@
+A1_MATCH_123 = True
+N0_MATCH_123 = True
+WINDOW_MATCH = True
+COND_IV_EH = [-5/3]
+E_H_INPUT = -5/3
+A1_derived_Q16nK0 = 0
+SIGMA_for_cond_iv = 0
+COND_IV_HOLDS = True
+PASS3

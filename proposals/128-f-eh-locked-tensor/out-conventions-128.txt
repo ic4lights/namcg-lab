@@ -1,0 +1,4 @@
+SPHERE_R = 2
+SPHERE_Ric_11 = sin(2*theta)/(2*tan(theta)) - cos(2*theta)  sin^2 = 0
+GAUGE_a1_S2 = 8/3  ratio_to_R = 4/3
+A1_TENSOR_R = (10/6 - e_h)*R holds: True

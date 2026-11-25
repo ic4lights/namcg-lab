@@ -1,0 +1,10 @@
+FAIL token b'\\label' in control-label
+FAIL bare LF in control-lf
+FAIL braces in control-brace
+FAIL raw TAB in control-tab
+CTRL_FIRES = (True, True, True, True)
+ANCHOR_COUNT = 1
+PAY_PIN  = 54f62d402998 / 4200
+PRE_PIN  = 6839a5cab30e / 883075
+POST_PIN = fa04730cc359 / 887275 (= PRE + PAY)
+GEN PASS
