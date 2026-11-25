@@ -1,0 +1,36 @@
+PASS S1 J identity + J(m=0)=1/a-1/b + value 0.1482962130
+PASS S2 a2 decomp: C2/120, c_R=1/2(1/6-Q)^2, R-lin=-m2(1/6-Q)
+PASS S3 Lm=E1(a)-E1(b) + L(0)=ln(b/a) + E1 small/large series
+PASS S4 Upsilon_H=10J/LUV^2: 10 at y=0, monotone, decouples
+PASS S5 U(a) cf + U(0)=-2 + U(a)-ln a -> 1/(6a) + monotone
+PASS S6 r monotone 0->1; 10r(y*)=1 at y*=e^{-(10+gE)}
+PASS S7 U_*(0)=pi/2, window -9.58<d<10, Fmin=0.82, counts
+PASS S8 massive kernel: log form + teeth + k-decoupling
+PASS S9 branch cut (-inf,-4y]: jump>0 light, =0 heavy, log tip
+PASS S10 Upsilon_H prop (1/6-Q): 0 at Q=1/6
+PASS S12 running-window factor: no positive real zero; x*L -> Uh/5; control fires
+Traceback (most recent call last):
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\121-n-hmassive-threshold\verify121.py", line 173, in <module>
+    toks = re.findall((BS+'e?'+'q?'+'ref'+BS+r'{[^}]*'+BS+r'}').encode(), b)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\re\__init__.py", line 216, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\re\__init__.py", line 294, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\re\_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\re\_parser.py", line 989, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\re\_parser.py", line 464, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\re\_parser.py", line 548, in _parse
+    code = _escape(source, this, state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\re\_parser.py", line 447, in _escape
+    raise source.error("bad escape %s" % escape, len(escape))
+re.error: bad escape \e at position 0

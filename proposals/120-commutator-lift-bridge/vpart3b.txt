@@ -1,0 +1,173 @@
+# ---- T6: W1 = Tr([Phi, Phi^dagger])^2 sector ----
+def cmat(n, tag):
+    R = sp.Matrix(n, n, lambda i, j: sp.Symbol("R" + tag + str(i) + str(j), real=True))
+    Ii = sp.Matrix(n, n, lambda i, j: sp.Symbol("I" + tag + str(i) + str(j), real=True))
+    return R + sp.I * Ii
+
+
+def Cfun(M):
+    return sp.expand(M * M.adjoint() - M.adjoint() * M)
+
+
+def Wfun(M):
+    C = Cfun(M)
+    return sp.expand((C.adjoint() * C).trace())
+
+
+Phi2 = cmat(2, "a")
+C2 = Cfun(Phi2)
+W2 = Wfun(Phi2)
+ok = (sp.simplify(C2.adjoint() - C2) == sp.zeros(2))
+ok = ok and (sp.simplify(W2 - (C2 * C2).trace()) == 0)
+chk("T6a C = [Phi, Phi^dagger] Hermitian and W1 = Tr(C^2) = Tr(C^dagger C), generic complex n=2", ok)
+
+samples = [sp.Matrix([[1, 2], [3, 4]]), sp.Matrix([[1 + sp.I, 2], [3, 4 - sp.I]]),
+           sp.Matrix([[0, 5], [0, 0]]), sp.Matrix([[1, 0], [0, 1]]), sp.Matrix([[1, 2], [2, 1]]),
+           sp.Matrix([[sp.I, 1 + sp.I], [0, 2 * sp.I]]), sp.Matrix([[3, 3], [3, 3]])]
+ok = True
+nz = 0
+for M in samples:
+    wv = sp.simplify(Wfun(M))
+    Cj = Cfun(M)
+    ok = ok and bool(wv.is_real) and (wv >= 0)
+    ok = ok and (wv == sp.simplify((Cj.adjoint() * Cj).trace()))
+    if wv != 0:
+        nz += 1
+ok = ok and nz == 4
+for k in (3, 4, 6):
+    ok = ok and (sp.simplify(Wfun(samples[k])) == 0)
+for k in (0, 1, 2, 5):
+    ok = ok and (sp.simplify(Wfun(samples[k])) > 0)
+chk("T6b numeric teeth: W1 real >= 0 on 7 fixed matrices; > 0 on the 4 nonnormal, = 0 on the 3 normal", ok)
+
+pp = sp.Symbol("pp", positive=True)
+Wnil = sp.simplify(Wfun(sp.Matrix([[0, pp], [0, 0]])))
+ok = (Wnil == 2 * pp ** 4)
+ok = ok and (sp.simplify(Wfun(sp.Matrix([[pp, 0], [0, 2 * pp]]))) == 0)
+chk("T6c nilpotent Phi=[[0,p],[0,0]]: W1 = 2 p^4 > 0; diagonal Phi: W1 = 0", ok)
+
+aa, bb2 = sp.symbols("aa bb2", complex=True)
+vv = sp.Symbol("vv", positive=True)
+U2 = sp.Matrix([[aa, bb2], [-bb2.conjugate(), aa.conjugate()]])
+ok = (sp.simplify(Wfun(vv * U2)) == 0)
+H4 = sp.Rational(1, 2) * sp.Matrix([[1, 1, 1, 1], [1, -1, 1, -1], [1, 1, -1, -1], [1, -1, -1, 1]])
+ok = ok and (H4 * H4 == sp.eye(4))
+ok = ok and (sp.simplify(Wfun(vv * H4)) == 0)
+H4t = H4.copy()
+H4t[0, 1] = H4t[0, 1] + 1
+ok = ok and (sp.simplify(Wfun(vv * H4t)) != 0)
+chk("T6d W1 vanishes on v.U(2) (generalized unitary) and on v times rational orthogonal 4x4; teeth off-vacuum nonzero", ok)
+
+
+def shift_variant(M, s):
+    return sp.simplify(Cfun(M + s * sp.eye(M.rows)) - Cfun(M))
+
+
+s2 = sp.Symbol("s2r", real=True) + sp.I * sp.Symbol("s2i", real=True)
+s3 = sp.Symbol("s3r", real=True) + sp.I * sp.Symbol("s3i", real=True)
+Phi3 = cmat(3, "b")
+ok = (shift_variant(Phi2, s2) == sp.zeros(2))
+ok = ok and (shift_variant(Phi3, s3) == sp.zeros(3))
+chk("T6e C(Phi + s I) = C(Phi) exactly for generic complex Phi, n=2 and n=3 (W1 shift-invariant)", ok)
+
+# ---- independent z/zc formalism: exact nullspace tests for shift invariants ----
+zz = sp.Matrix(2, 2, lambda i, j: sp.Symbol("z" + str(i) + str(j), complex=True))
+zzd = sp.Matrix(2, 2, lambda i, j: sp.Symbol("c" + str(i) + str(j), complex=True))
+ss = sp.Symbol("ss", complex=True)
+ssc = sp.Symbol("cc", complex=True)
+zl = [zz[i, j] for i in range(2) for j in range(2)]
+dl = [zzd[i, j] for i in range(2) for j in range(2)]
+VS10 = zl + dl + [sp.Symbol("US"), sp.Symbol("UC")]
+CJ = {}
+CJ.update({zl[k]: dl[k] for k in range(4)})
+CJ.update({dl[k]: zl[k] for k in range(4)})
+
+
+def cJ(e):
+    return sp.expand(e.xreplace(CJ))
+
+
+SH = {}
+SH.update({zl[k]: zl[k] + ss for k in range(4)})
+SH.update({dl[k]: dl[k] + ssc for k in range(4)})
+
+
+def polyvec(expr):
+    smap = {}
+    smap.update({zl[k]: VS10[k] for k in range(4)})
+    smap.update({dl[k]: VS10[4 + k] for k in range(4)})
+    smap[ss] = VS10[8]
+    smap[ssc] = VS10[9]
+    return sp.Poly(sp.expand(expr).xreplace(smap), *VS10)
+
+
+def nulltest(family):
+    rows = [polyvec(sp.expand(q.xreplace(SH) - q)) for q in family]
+    mons = sorted(set().union(*[set(r.monoms()) for r in rows]))
+    Mx = sp.Matrix(len(rows), len(mons), lambda i, j: rows[i].coeff_monomial(mons[j]))
+    return Mx.nullspace()
+
+
+Pw = zz
+Pd = zzd.T
+trP = Pw.trace()
+trPd = Pd.trace()
+trP2 = (Pw * Pw).trace()
+trPd2 = (Pd * Pd).trace()
+trX = (Pd * Pw).trace()
+QUAD = [sp.expand(trX), sp.expand((trP2 + trPd2) / 2), sp.expand((trP2 - trPd2) / (2 * sp.I)),
+        sp.expand(trP * trPd), sp.expand((trP * trP + trPd * trPd) / 2),
+        sp.expand((trP * trP - trPd * trPd) / (2 * sp.I))]
+nsq = nulltest(QUAD)
+chk("T6f no nonzero quadratic conjugation-invariant is shift-invariant (6-dim family, exact nullspace)",
+    len(nsq) == 0)
+
+w1 = sp.expand((Pw ** 4).trace())
+w2 = sp.expand((Pw ** 3 * Pd).trace())
+w3 = sp.expand((Pw * Pw * Pd * Pd).trace())
+w4 = sp.expand((Pw * Pd * Pw * Pd).trace())
+QUAR = [sp.expand((w1 + cJ(w1)) / 2), sp.expand((w1 - cJ(w1)) / (2 * sp.I)),
+        sp.expand((w2 + cJ(w2)) / 2), sp.expand((w2 - cJ(w2)) / (2 * sp.I)),
+        w3, w4, sp.expand(w2 * cJ(w2)),
+        sp.expand(trX * (trP2 + trPd2) / 2), sp.expand(trX * (trP2 - trPd2) / (2 * sp.I)),
+        sp.expand(trX * trP * trPd), sp.expand(trP * trPd * trP * trPd),
+        sp.expand((trP ** 4 + cJ(trP ** 4)) / 2), sp.expand((trP ** 4 - cJ(trP ** 4)) / (2 * sp.I)),
+        sp.expand((trP2 * trPd2 + cJ(trP2 * trPd2)) / 2),
+        sp.expand((trP ** 2 * trP2 + cJ(trP ** 2 * trP2)) / 2),
+        sp.expand((trP ** 2 * trP2 - cJ(trP ** 2 * trP2)) / (2 * sp.I))]
+W1w = sp.expand(2 * w4 - w3 - w2 - cJ(w2))
+nsg = nulltest(QUAR + [W1w])
+ok = (len(nsg) == 1) and (nsg[0][len(QUAR)] != 0) if len(nsg) >= 1 else False
+chk("T6g quartic conjugation-invariant family + W1 at n=2: shift-invariant subspace exactly 1-dim, W1-direction",
+    ok)
+
+SMR = {}
+SMR.update({zl[(2 * i + j)]: Phi2[i, j] for i in range(2) for j in range(2)})
+SMR.update({dl[(2 * i + j)]: sp.conjugate(Phi2[i, j]) for i in range(2) for j in range(2)})
+
+
+def to_ri(e):
+    return sp.expand(e.xreplace(SMR))
+
+
+if len(nsg) == 1:
+    v = nsg[0]
+    vn = [sp.nsimplify(x / v[len(QUAR)]) for x in v]
+    fr = sp.expand(sum(vn[k] * to_ri(QUAR[k]) for k in range(len(QUAR))) + vn[len(QUAR)] * to_ri(W1w))
+    pt = {}
+    for i in range(2):
+        for j in range(2):
+            pt[sp.Symbol("Ra" + str(i) + str(j))] = sp.Integer(i + 2 * j + 1)
+            pt[sp.Symbol("Ia" + str(i) + str(j))] = sp.Integer(2 * i + j + 2)
+    num = sp.nsimplify((fr - W2).subs(pt))
+    num2 = sp.nsimplify((fr + W2).subs(pt))
+    alpha = sp.Rational(1, 1)
+    wpt = sp.simplify(W2.subs(pt))
+    if wpt != 0:
+        alpha = sp.nsimplify(sp.simplify(fr.subs(pt) / wpt))
+    okp = (sp.expand(fr - alpha * W2) == 0)
+    chk("T6g2 unique quartic invariant direction equals alpha*W1 exactly (alpha=%s, poly identity)" % alpha,
+        okp and alpha != 0)
+chk("T6h W1 word identity: 2 Tr(P Pd P Pd) - Tr(P^2 Pd^2) - Tr(P^3 Pd) - h.c. = W1 (real/imag form)",
+    sp.expand(to_ri(W1w) - W2) == 0)
+

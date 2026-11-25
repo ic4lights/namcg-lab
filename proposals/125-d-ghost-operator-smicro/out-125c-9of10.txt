@@ -1,0 +1,15 @@
+[   0.4s] C4a divxi == textbook (general xi)   PASS
+[   0.4s] C4b div(f(th) d_phi) = 0 (teeth: nonzero w-derivs would FAIL)  PASS
+[   0.4s] C4c addl elementwise + length-guard fires   PASS
+[   4.1s] D1 S2-rot xi0: dF==cov+GT PASS | t-route==direct PASS
+[  15.1s] D2 S2-gen xi0: dF==cov+GT PASS | t-route==direct skip
+[  15.2s] D3 S2-Kill xi0: dF==cov+GT PASS | t-route==direct PASS
+[  17.9s] D3 S2-Kill xi1: dF==cov+GT PASS | t-route==direct PASS
+[  20.3s] D3 S2-Kill xi2: dF==cov+GT PASS | t-route==direct PASS
+[  20.8s] D4a H^2 convention check: R = -2 (expect -2), Ric+g = 0
+[  30.8s] D4 H2-rot xi0: dF==cov+GT PASS | t-route==direct PASS
+[ 231.1s] D5 4D Lorentz (A,B,C free): residual dF-(box+Ric-gd+GT) == 0 for ALL affine xi: FAIL (7 coef eqs)
+[ 231.7s] D6 Schw-kill xi0: dF==cov+GT PASS | t-route==direct PASS
+[ 231.9s] D6 Schw-kill xi1: dF==cov+GT PASS | t-route==direct PASS
+SUMMARY 125c: 9/10 PASS
+EXIT=1

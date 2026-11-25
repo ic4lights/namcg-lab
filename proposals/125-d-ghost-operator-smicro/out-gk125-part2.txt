@@ -1,0 +1,5 @@
+[   2.1s] GK4 polar: div xi = 1 ; graddiv = [0, 0] ; box = [0, 0] ; Ric.xi = [0, 0]
+[   2.1s] GK4 polar: tensorial-zero True ; dF nonzero and matches proposal values: True
+[   2.1s] GK4 cartesian: dF = [0, 0]
+[   2.5s] GK5a flat-polar dFtilde(x d_x) = [-2*sin(ph)**2/r, -2*sin(2*ph)/r**2]
+EXIT=124

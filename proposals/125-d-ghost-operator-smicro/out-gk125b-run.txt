@@ -1,0 +1,17 @@
+[   5.0s] C0 dF t-route        = [0, Derivative(f(x0), (x0, 2)) + Derivative(f(x0), x0)/tan(x0)]
+[   5.0s] C0 dF identity-route = [0, Derivative(f(x0), (x0, 2)) + Derivative(f(x0), x0)/tan(x0)]
+[   5.0s] C0 dF direct-route   = [0, Derivative(f(x0), (x0, 2)) + Derivative(f(x0), x0)/tan(x0)]
+[   5.0s] C0a three dF routes agree              PASS
+[   5.6s] C0b F = sqrt-det identity on general th-metric   PASS
+[   5.9s] C0c dF-(box+Ric)          = [0, -2*Derivative(f(x0), x0)/tan(x0)]
+[   5.9s] C0d dF-(box+Ric-graddiv)  = [0, -2*Derivative(f(x0), x0)/tan(x0)]
+[   5.9s] C0e pre-registered: NEITHER pure-tensorial candidate holds on this family (each would contradict the other; dF-(box+Ric) = -2*Derivative(f(x0), x0)/tan(x0) must be the -h Gamma term)
+[   6.0s] C0f wrong-sign candidate dF-(-(box+Ric)) nonzero  PASS
+[   6.1s] C1 K0: Killing PASS | (box+Ric)xi=0 PASS | dF=0 PASS
+[   7.3s] C1 K1: Killing PASS | (box+Ric)xi=0 PASS | dF=0 PASS
+[   8.6s] C1 K2: Killing PASS | (box+Ric)xi=0 PASS | dF=0 PASS
+[  10.2s] C1t generic rotational xi: dF nonzero (teeth)      PASS
+[  10.4s] C2' flat-polar linear xi: all of box/Ric/gd/DivGrad = 0: PASS ; dF(polar) != 0: PASS
+[  10.4s] C2' flat-cartesian same xi: dF = 0: PASS  (dF polar = [2*sin(x1)**2/x0, 2*sin(2*x1)/x0**2])
+[ 267.2s] C3 4D-SSS dF: t-route == direct-route : PASS
+GK-EXIT=124

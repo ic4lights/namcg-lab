@@ -1,0 +1,2 @@
+PATCH R2 VERIFIED (idempotent): base 36449 B -> 36449 B, new pin b71430a6ebf3
+CONTROL OK 120R2

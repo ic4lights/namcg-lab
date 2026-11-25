@@ -1,0 +1,7 @@
+ric2 = [[1, 0], [0, sin(2*x0)/(2*tan(x0)) - cos(2*x0)]]
+dC   = [0, Derivative(f(x0), (x0, 2)) + Derivative(f(x0), x0)/tan(x0)]
+box  = [0, -f(x0) + Derivative(f(x0), (x0, 2)) + 3*Derivative(f(x0), x0)/tan(x0)]
+ricv = [0, f(x0)]
+GT   = [0, -2*Derivative(f(x0), x0)/tan(x0)]
+dC-(box+ricv+GT) = [0, f(x0)]
+dA   = [0, Derivative(f(x0), (x0, 2)) + Derivative(f(x0), x0)/tan(x0)]

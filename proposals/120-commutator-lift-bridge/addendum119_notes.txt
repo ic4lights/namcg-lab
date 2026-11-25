@@ -1,0 +1,26 @@
+## Addendum 2026-11-23 (chain 120 stage 2)
+
+Record-only disclosures from the chain-120 audit of this folder. Nothing above this line
+was altered; this section was appended by byte write.
+
+(1) Second undisclosed escape artifact in this file, line 123: the trace-macro note
+begins "ewcommand{...}" because a prior python-string append turned "\newcommand" into
+LF + "ewcommand" (backslash eaten as an escape). Same failure class as the documented
+0x0D byte repair recorded in manifest.md line 52. Documentation-only: no number, claim
+or pin in this folder depends on the mangled line.
+
+(2) Corrected trace-macro census for appH, superseding the "88x vs 2x" figures of
+proposal-r2.md line 54 and line 237 and manifest.md line 85. Verified 2026-11-23 with
+proposals/120-commutator-lift-bridge/census_trace120.py on live appH bytes
+9e0b198af2c3/848842 (post-119 integration) and on the pre-integration reconstruction
+(live minus the 119 payload block, exact removal asserted in the script):
+pre-integration \operatorname{Tr} 138, \mathrm{Tr} 25, standalone \Tr 2 (both
+"\Tr\rho_D^n", appH lines 3235 and 3250, Problem N replica subsection);
+live post-integration 156 / 25 / 2 (the 119 payload adds 18 \operatorname{Tr}).
+The 119 figures were wrong on the operatorname count (138, not 88) and omitted the
+\mathrm{Tr} category (25); the "\Tr 2x" count is confirmed. The register decision
+(payload uses \operatorname{Tr}) is unaffected and strengthened: dominance 138 : 25 : 2.
+
+(3) scratch/119/out-s7-m1.txt (pin ccfc557ff99d / 808 B) is stale relative to its
+script, per the chain-120 stage-1 audit; record-only, no integrated 119 content derives
+from it.

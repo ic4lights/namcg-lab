@@ -1,0 +1,8 @@
+STATUS120 2026-11-23 S2-D supersession COMPLETE
+payload r2: a5aa77dc90a3/5287 (was 343226e27ebf/5138, archived byte-identical as insert-commutator-lift-r1-superseded-r1.tex); diff = payload line 5 only; gen twice identical: YES
+gen_payload_120.py: 67cee1fbc771/10378 (was 3eab305230b3/10229, archived gen_payload_120-superseded-r1.py)
+R5 applied: YES (constant-only re-pins, fix_r5.py; verify_r120.py dac3381f5dc8/39762 [P1 pin + P8 ceiling 5191->5340, +53 margin kept]; cert-r120p.py c633cbdc2288/4781 [PAY/POST pins]; pre-R5 copies kept; verify_repair_log.txt ## R5)
+cert: out-cert-r120p-r2.txt 53787eb3cf34/418 = CERT PASS on NEW payload
+verify: background chain bv8szddan exit 0; out-r120-rerun3.txt 0950831e672d/4610 = TOTAL 53/53 PASS + ALL CHECKS DONE 120, zero FAIL lines, on NEW payload
+proposal-r1.md re-assembled from rerun3 capture (see out-assemble-r3.txt for its pin); manifest_gen120.py intentionally not run by researcher
+Expected next step: orchestrator runs manifest_gen120.py and dispatches gatekeeper r1 against proposal-r1.md + pins above.

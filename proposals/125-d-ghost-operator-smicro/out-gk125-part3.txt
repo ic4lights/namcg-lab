@@ -1,0 +1,65 @@
+[S2gen] xi0: g^{ab}dGamma(L_xi g) == (box+Ric)xi : True
+Traceback (most recent call last):
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\125-d-ghost-operator-smicro\gk125_part3.py", line 68, in <module>
+    run(Matrix.diag(1,sinh(rho)**2),('rho','psi'),[[w1,w2]],'H2gen')
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\125-d-ghost-operator-smicro\gk125_part3.py", line 49, in run
+    dG=[simplify(sum(gi[a,b]*Rational(1,2)*sum(gi[mu,s]*(cD(h,a,b,s)+cD(h,b,a,s)-cD(h,s,a,b)) for s in range(N)) for a in range(N) for b in range(N))) for mu in range(N)]
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\125-d-ghost-operator-smicro\gk125_part3.py", line 49, in <listcomp>
+    dG=[simplify(sum(gi[a,b]*Rational(1,2)*sum(gi[mu,s]*(cD(h,a,b,s)+cD(h,b,a,s)-cD(h,s,a,b)) for s in range(N)) for a in range(N) for b in range(N))) for mu in range(N)]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\125-d-ghost-operator-smicro\gk125_part3.py", line 49, in <genexpr>
+    dG=[simplify(sum(gi[a,b]*Rational(1,2)*sum(gi[mu,s]*(cD(h,a,b,s)+cD(h,b,a,s)-cD(h,s,a,b)) for s in range(N)) for a in range(N) for b in range(N))) for mu in range(N)]
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\125-d-ghost-operator-smicro\gk125_part3.py", line 49, in <genexpr>
+    dG=[simplify(sum(gi[a,b]*Rational(1,2)*sum(gi[mu,s]*(cD(h,a,b,s)+cD(h,b,a,s)-cD(h,s,a,b)) for s in range(N)) for a in range(N) for b in range(N))) for mu in range(N)]
+                                                         ^^^^^^^^^^^
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\125-d-ghost-operator-smicro\gk125_part3.py", line 45, in cD
+    return simplify(diff(hh[b,c],X[a])-sum(G[(p,a,b)]*hh[p,c] for p in range(N))-sum(G[(p,a,c)]*hh[b,p] for p in range(N)))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\simplify.py", line 713, in simplify
+    expr = trigsimp(expr, deep=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\trigsimp.py", line 564, in trigsimp
+    expr_simplified = trigsimpfunc(expr)
+                      ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\trigsimp.py", line 557, in <lambda>
+    'matching': (lambda x: futrig(x)),
+                           ^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\trigsimp.py", line 1162, in futrig
+    e = f(bottom_up(e, _futrig))
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\fu.py", line 2086, in <lambda>
+    return _osborne(masked, d), lambda x: collect(signsimp(
+                                          ^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\radsimp.py", line 182, in collect
+    rv = collect(expr.subs(reps), syms,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\radsimp.py", line 389, in collect
+    return expr.func(*[
+                      ^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\radsimp.py", line 390, in <listcomp>
+    collect(term, syms, func, True, exact, distribute_order_term)
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\radsimp.py", line 385, in collect
+    expr = expr.func(*[
+                      ^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\radsimp.py", line 386, in <listcomp>
+    collect(a, syms, func, True, exact, distribute_order_term)
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\radsimp.py", line 389, in collect
+    return expr.func(*[
+                      ^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\radsimp.py", line 390, in <listcomp>
+    collect(term, syms, func, True, exact, distribute_order_term)
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\radsimp.py", line 416, in collect
+    terms = [parse_term(i) for i in args]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\radsimp.py", line 416, in <listcomp>
+    terms = [parse_term(i) for i in args]
+             ^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\radsimp.py", line 306, in parse_term
+    sexpr, deriv = parse_derivative(expr)
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\site-packages\sympy\simplify\radsimp.py", line 243, in parse_derivative
+    raise NotImplementedError(
+NotImplementedError: Improve MV Derivative support in collect
+EXIT=1

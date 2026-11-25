@@ -1,0 +1,10 @@
+J0_MASSLESS      PASS   Lambda_UV**2 - mu**2
+J_SERIES         PASS   -2*log(Lambda_UV) + 2*log(mu)
+MU_ZERO_T1       PASS   (0, 0)
+MU_ZERO_J        PASS
+UPSILON_H        PASS   -10*y*expint(1, y) + 10*exp(-y)
+UPSILON_DER      PASS
+UPSILON_Y0       PASS   1
+POLE_RATIO       PASS
+Q16_WINDOWED     PASS   (Lambda_UV**2 - mu**2)*(3*e_h + 5)/(96*pi**2)
+SCRIPT3 VERDICT: PASS

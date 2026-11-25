@@ -1,0 +1,7 @@
+hygiene payload: OK
+controls fired: [True, True, True, True, True]
+payload bytes: 3645 sha1: 702a60d1e5dc
+anchor count: 1
+PRE bytes: 854131 POST bytes: 857778 delta: 3647 = 3647 : True
+sha1 spliced: fd23c0d737b0
+GEN121 OK

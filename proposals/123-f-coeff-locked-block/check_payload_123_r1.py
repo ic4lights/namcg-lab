@@ -1,0 +1,123 @@
+# -*- coding: ascii -*-
+# Item 123 checker r1: independent re-verification from disk of the payload
+# hygiene, anchor uniqueness, POST arithmetic, manuscript-bound numerals and
+# label existence. Exit 0 only if all pass. Detectors carry injected controls.
+import sys, hashlib, re
+
+APPH = r"C:\Users\redgi\Projects\namcg-lab@gpu\chapters\appH-microscopic-proofs.tex"
+CH17 = r"C:\Users\redgi\Projects\namcg-lab@gpu\chapters\ch17-agenda.tex"
+FOLD = r"C:\Users\redgi\Projects\namcg-lab@gpu\proposals\123-f-coeff-locked-block"
+CRLF = b"\r\n"
+
+PIN_SHA1 = "d2af19df0f998ce150c12ea11af9ea8c0387435f"
+PIN_SIZE = 863831
+POST_SHA1 = "ba72024aba4d26aff3fd5ad5a1219cdd5a1bd1e1"
+PAY_SHA1 = "e0b8d6b31cad"  # 12-hex of payload-123.txt (r2 bytes)
+
+ANCHOR = (b"These statements are for the hypotheses and the channel convention "
+          b"stated here; they retire the recorded item on the response of the "
+          b"fibre levels to \\(\\bar h\\) only for this channel component, they "
+          b"change no status label, and Problems~C, F and~N remain open and "
+          b"PROGRAMME-CONDITIONAL.")
+SECLINE = b"\section{Problem G: HBEV}"  # context anchor (review-r1)
+CTX = ANCHOR + CRLF + CRLF + SECLINE
+
+ok = []
+def chk(name, cond):
+    ok.append(bool(cond))
+    print("%-22s %s" % (name, "PASS" if cond else "FAIL"))
+
+def sha(b): return hashlib.sha1(b).hexdigest()
+
+pre = open(APPH, "rb").read()
+pay = open(FOLD + r"\payload-123.txt", "rb").read()
+ch17 = open(CH17, "rb").read()
+
+chk("LIVE_PIN", sha(pre) == PIN_SHA1 and len(pre) == PIN_SIZE)
+chk("PAYLOAD_HASH", sha(pay)[:12] == PAY_SHA1)
+
+# hygiene (recomputed here, independent of the generator)
+def ascii_ok(b): return all(c < 128 for c in b)
+def eol_ok(b):
+    return (b.endswith(CRLF) and not re.search(rb"\r(?!\n)", b)
+            and not re.search(rb"(?<!\r)\n", b) and rb"\r\r" not in b
+            and CRLF not in b[:-2])
+def forbidden_ok(b):
+    return not any(tok in b for tok in (b"$", br"\label", br"\cite", br"\begin",
+                                        br"\end", rb"\[", rb"\]"))
+def braces_ok(b): return b.count(b"{") == b.count(b"}")
+chk("HYG_ASCII", ascii_ok(pay))
+chk("HYG_EOL", eol_ok(pay))
+chk("HYG_FORBIDDEN", forbidden_ok(pay))
+chk("HYG_BRACES", braces_ok(pay))
+# injected controls for the detectors (must fire)
+chk("CTRL_EOL_CRCRLF", not eol_ok(b"a\r\rb" + CRLF))
+chk("CTRL_EOL_BARELF", not eol_ok(b"a\nb"))
+chk("CTRL_EOL_BARECR", not eol_ok(b"a\rb" + CRLF))
+chk("CTRL_FORBIDDEN", not forbidden_ok(pay + b"$"))
+chk("CTRL_ASCII", not ascii_ok(pay + b"\xc3\xa9"))
+chk("CTRL_BRACES", not braces_ok(pay + b"{"))
+
+used = set(u.decode() for u in
+           re.findall(rb"\\(?:ref|eqref)\{([^}]*)\}", pay))
+WL = {"thm:Geff", "ass:aux-metric", "sec:status-D", "eq:Geff-structure",
+      "eq:V", "eq:appA-a1", "eq:appA-a2", "eq:appA-sector-sum",
+      "eq:appA-Wexp", "eq:christoffel", "eq:riemann", "ch:agenda"}
+chk("REFS_IN_WL", used <= WL)
+XFILES = [r"C:\Users\redgi\Projects\namcg-lab@gpu\chapters\ch02-preliminaries.tex",
+          r"C:\Users\redgi\Projects\namcg-lab@gpu\chapters\ch03-matrix-action.tex",
+          r"C:\Users\redgi\Projects\namcg-lab@gpu\chapters\ch08-heat-kernel.tex",
+          r"C:\Users\redgi\Projects\namcg-lab@gpu\chapters\ch17-agenda.tex",
+          r"C:\Users\redgi\Projects\namcg-lab@gpu\chapters\appA-seeley-dewitt.tex"]
+xtxt = b"".join(open(f, "rb").read() for f in XFILES)
+chk("LABELS_DEFINED", all((b"\label{" + l.encode() + b"}" in pre or
+                           b"\label{" + l.encode() + b"}" in xtxt)
+                          for l in used))
+chk("CTRL_LABELS", not (b"\label{no-such-label-xyz}" in pre and
+                        b"\label{no-such-label-xyz}" in xtxt))
+
+# anchor and splice arithmetic against live bytes
+chk("ANCHOR_UNIQUE_CTX", pre.count(CTX) == 1)
+chk("CTRL_ANCHOR_DEAD", pre.count(b"PROGRAMME-CONDITIONAL.XYZ" + CRLF + CRLF + SECLINE) == 0)
+i0 = pre.find(CTX) + len(CTX) - len(SECLINE)
+post = pre[:i0] + pay + CRLF + pre[i0:]
+chk("POST_LEN", len(post) == len(pre) + len(pay) + 2)
+chk("POST_SHA1", sha(post) == POST_SHA1)
+chk("NO_DOUBLE_INSERT", post.count(pay) == 1)
+
+# manuscript-bound numerals/records inside LIVE bytes (rule 7)
+recs = {
+    "REC_SIXTEEN_H": b"sixteen real",
+    "REC_A1H": b"16(\\tfrac16-Q)",
+    "REC_32PI2": b"32\\pi^2",
+    "REC_Y10": b"\\Upsilon=10",
+    "REC_YFORM": b"e^{-y}-yE_1(y)",
+    "REC_JDEF": b"J(m^2;s_{\\min}",
+    "REC_Q16VANISH": b"Both coefficients vanish",
+    "REC_M2": b"m^2=\\lambda v^2",
+    "REC_FPPOINTWISE": b"Faddeev--Popov determinants of the pointwise gauge sectors",
+    "REC_GHOSTM2W": b"ghost operator of weight \\(-2\\)",
+    "REC_MISSINGSTEP": b"Specify the gauge-fixed",
+    "REC_WCDELTAW": b"\\delta_W",
+}
+for name, tok in recs.items():
+    chk(name, tok in pre)
+chk("REC_CH17_ALTSOPE", b"Alternate scope: model work outside the critical-path sequence" in ch17)
+chk("REC_GHOSTM2W", b"ghost operator of weight \(-2\)" in pre)
+chk("CTRL_REC_DEAD", b"16(\\tfrac17-Q)" not in pre)  # counter-teeth: wrong value absent
+
+# payload-internal arithmetic self-checks (values must match scripts)
+for lit in (b"18+n_K", b"-\\tfrac53-e_h", b"-\\tfrac{10}{3}",
+            b"\\tfrac{10}{6}-e_h", b"(\\tfrac46+1)R=\\tfrac53R"):
+    chk("PAY_HAS_" + hashlib.md5(lit).hexdigest()[:6], lit in pay)
+
+FTOK = rb"fibre-traced endomorphism \(\mathrm{tr}\,E_{\mathrm{ten}}=e_h R_E\)"
+STOK = rb"the ghost operator is specified as the Laplace-type operator"
+NOTOK = rb"\frac{\mathrm d}{\mathrm d\varepsilon}"
+chk("PAY_FIBRETRACE", FTOK in pay)
+chk("PAY_GHOST_SPEC", STOK in pay)
+chk("PAY_NO_FIRSTVAR", NOTOK not in pay)
+chk("CTRL_PAY_NO_FIRSTVAR", NOTOK not in (pay + b"z") and NOTOK in (pay + NOTOK))
+chk("CTRL_PAY_FIBRETRACE", FTOK in pay and FTOK.replace(b"fibre", b"fibrX") not in pay)
+print("CHECKER VERDICT:", "PASS" if all(ok) else "FAIL")
+raise SystemExit(0 if all(ok) else 1)

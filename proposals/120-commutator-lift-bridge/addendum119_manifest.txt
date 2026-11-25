@@ -1,0 +1,25 @@
+## Addendum 2026-11-23 (chain 120 stage 2)
+
+Record-only addendum appended by the chain-120 stage-2 agent (byte append; nothing above
+altered).
+
+Census correction superseding the "Trace macro" line above (manifest.md line 85) and
+proposal-r2.md lines 54 and 237. Verified 2026-11-23 with
+proposals/120-commutator-lift-bridge/census_trace120.py: pre-integration appH
+(843649-byte baseline reconstructed by exact removal of the integrated 119 block from
+live 9e0b198af2c3/848842): \operatorname{Tr} 138, \mathrm{Tr} 25, standalone \Tr 2;
+live post-integration: 156 / 25 / 2 (119 payload contributes 18 \operatorname{Tr}).
+The "\Tr 2x" figure is confirmed (two "\Tr\rho_D^n", appH lines 3235/3250 in live
+bytes); "88x" for \operatorname{Tr} was wrong (138) and the \mathrm{Tr} category (25)
+was omitted. The register decision (\operatorname{Tr} in payloads) is unaffected and
+strengthened.
+
+Also recorded: (i) a second escape artifact in notes.md line 123 (LF + "ewcommand",
+same class as the documented 0x0D repair above), documentation-only; (ii)
+scratch/119/out-s7-m1.txt (ccfc557ff99d / 808 B) is stale relative to its script per
+the chain-120 stage-1 audit, record-only.
+
+Pin changes caused by this addendum pair: notes.md 6fbc2d9b88f7/12257 -> the post-append
+pin recorded in proposals/120-commutator-lift-bridge/manifest.md (chain 120 folder),
+this manifest 5e3e09090733/8999 -> own new pin likewise recorded there (a file cannot
+contain its own post-hash).

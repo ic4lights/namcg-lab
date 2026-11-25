@@ -1,0 +1,17 @@
+COMPILE CERTIFICATE 126 v3 (payload-126-v2.txt spliced into appH); supersedes v2/v1 (those certified payload-126.txt with the finding-F1 ghost-sign clause; left on disk, not authoritative)
+date: 2026-11-25 (resume1)
+temp tree: C:/Users/redgi/AppData/Local/Temp/build126_cert_v3_41207 (outside repo; repo untouched; not deleted)
+temp tree contents: namcg-book7.tex, frontmatter/, chapters/ (appH replaced by appH-spliced-126-v2.tex, stale *.aux removed), bib/, figs/
+payload v2: sha1 b9ebeba71fe933b1048dbcd2a0ec4f46d89c54dd size 4447 (v1 4361 + 86: one clause only; difflib opcodes: delete "ghost ", insert operator inline-math "[D^a,[D_a,.]]" form, insert " up to the sign of \(X_a = i D_a\)"; all other bytes identical)
+spliced v2: sha1 13341a8b6fb7f99ff7a005a5ad4ad1d0cf3d5f93 size 879555 (PRE 875106 + payload 4447 + join CRLF 2)
+live appH pin: sha1 76d862968c31d78fffc665f72aaf60d40c90367a size 875106 (re-verified by generator at splice time, anchor count 1 asserted)
+command: pdflatex -interaction=nonstopmode -halt-on-error namcg-book7.tex (x2)
+PASS1 exit 0; PASS2 exit 0
+log lines matching '^! ': 0
+undefined References: 0
+undefined Citations: 196 (natbib; bibtex not run in temp build; identical to v2 certificate baseline; payload adds no \cite)
+pdf: namcg-book7.pdf 3196731 B
+pdftotext grep -c 'unitarity obstruction': 1 (paragraph present in compiled PDF)
+pdftotext grep -c 'class ghost operator up to the sign': 1 (fixed clause present; compiled as "on End(C4), the class ghost operator up to the sign of X^a = iDa at N = 4, has")
+pdftotext grep -c 'The ghost operator on': 0 (superseded v1 clause absent)
+refs used by payload (all pre-existing): eq:Smatrix, ass:frame-lock, ass:nondeg; no labels, no cites added; v2 ref counts re-checked (x1 each)

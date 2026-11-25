@@ -1,0 +1,49 @@
+COMPILE CERTIFICATE 124-n-mqm-pos (payload splice), round 2, 2026-11-24
+========================================================================
+This version supersedes the round-1 certificate of the same name (preserved
+unmodified as cert-summary-124.r1.txt; r1 certified POST 1d192b89bd2d20c50a
+4c70dfd108656a529baa4d / 875,072, PDF 3,284,552 B; void because the payload
+was revised per gatekeeper findings 1-3). Intermediate round-2 payload
+1e8ce8a959c45a4e11e985245120a06a3e74d301 / 5,829 (missing the inline-math
+closer after \bigr)) was built in fresh tree namcg-124-build-r3 and FAILED
+(pdflatex pass 1 rc 1, single error "LaTeX Error: Bad math environment
+delimiter" at chapters/appH-microscopic-proofs.tex:4023, the payload line);
+rejected, not certified. The CERTIFIED bytes are the final round-2 ones:
+
+Tree: fresh copy OUTSIDE the repository at
+  C:\Users\redgi\AppData\Local\Temp\namcg-124-build-r4
+  contents: namcg-book7.tex, chapters/, frontmatter/, bib/, figs/
+  (copied from the working tree of C:\Users\redgi\Projects\namcg-lab@gpu;
+  nothing in the repository was built in; scripts/build_check.py NOT run)
+Substitution: chapters/appH-microscopic-proofs.tex replaced by the spliced
+  file, sha1 76d862968c31d78fffc665f72aaf60d40c90367a, 875,106 bytes
+  (= PRE appH ba72024aba4d26aff3fd5ad5a1219cdd5a1bd1e1, 869,275 B
+     + payload 8a86b389f85999161f8c7488064e13e9d1b8340c, 5,831 B);
+  hash asserted on the substituted tree file before building; identical
+  bytes preserved in this folder as spliced_appH_124.bin.
+
+Passes (MiKTeX, -interaction=nonstopmode -file-line-error):
+  pass1  pdflatex          rc=0
+  bibtex namcg-book7       rc=0  (style unsrtnat.bst, database bib/namcg.bib, no errors reported)
+  pass2  pdflatex          rc=0
+  pass3  pdflatex          rc=0   FINAL
+
+Final-pass (pass3) log scan, namcg-book7.log:
+  "Reference ... undefined"        : 0
+  "Citation ... undefined"         : 0
+  multiply-defined references      : 0
+  LaTeX Warning (any)              : 0
+  lines starting with "!" (errors) : 0
+  Output written on namcg-book7.pdf (448 pages, 3284690 bytes)
+  PDF sha1 26ceb9d21003d2d01555b756dc6ed6334e1a74bc
+
+Verdict: the round-2 spliced appH compiles cleanly (rc=0 all passes, zero
+undefined/multiply-defined references, zero LaTeX warnings, PDF produced).
+Reproduction: python -I make_payload_124.py <ext-dir> (regenerates payload
+and spliced bytes; pins printed; guard positive controls must fire), python
+-I check_payload_124.py (re-verifies pins against the live appH; ALL CHECKS
+PASS), python -I diff_payload_124.py (BYTE-EXACT-OK, CLUSTERS: 3,
+EXACTLY-THREE OK), then copy namcg-book7.tex, chapters/, frontmatter/, bib/,
+figs/ to an EXTERNAL directory, replace chapters/appH-microscopic-proofs.tex
+with spliced_appH_124.bin (hash-assert 76d86296... first), and run
+pdflatex; bibtex namcg-book7; pdflatex; pdflatex (nonstopmode).

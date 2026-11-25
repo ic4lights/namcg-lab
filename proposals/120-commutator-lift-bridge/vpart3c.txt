@@ -1,0 +1,39 @@
+# ---- T7: W1 is not a function of X (non-transfer witness) ----
+p1, p2 = sp.symbols("p1 p2", real=True)
+Ph = sp.diag(p1, p2)
+Xh = sp.expand(Ph.adjoint() * Ph)
+W1h = sp.simplify(Wfun(Ph))
+ok = (W1h == 0) and (Xh == sp.diag(p1 ** 2, p2 ** 2))
+H2 = (1 / sp.sqrt(2)) * sp.Matrix([[1, 1], [1, -1]])
+ok = ok and (sp.simplify(H2 * H2) == sp.eye(2))
+Ph2 = sp.expand(H2 * Ph)
+ok = ok and (sp.expand(Ph2.adjoint() * Ph2 - Xh) == sp.zeros(2))
+W1H = sp.simplify(Wfun(Ph2))
+ok = ok and (sp.expand(W1H - (p1 ** 2 - p2 ** 2) ** 2) == 0)
+chk("T7a X(H Phi) = X(Phi) exactly, W1(Phi) = 0, W1(H Phi) = (p1^2 - p2^2)^2 (same X, different W1)", ok)
+v1 = W1H.subs({p1: 2, p2: 1})
+v0 = W1h.subs({p1: 2, p2: 1})
+vD = W1H.subs({p1: 2, p2: 2})
+ok = (v1 == 9) and (v0 == 0) and (vD == 0)
+ok = ok and ((Xh - sp.expand(Ph2.adjoint() * Ph2)).subs({p1: 2, p2: 1}) == sp.zeros(2))
+chk("T7b witness values: X equal, W1 = 0 vs 9 (p=(2,1)); degenerate boundary p1=p2 gives 0", ok)
+al, be = sp.symbols("al be", complex=True)
+U2g = sp.Matrix([[al, be], [-sp.conjugate(be), sp.conjugate(al)]])
+Pg = cmat(2, "g")
+ok = (sp.expand((U2g * Pg).adjoint() * (U2g * Pg) - Pg.adjoint() * Pg) == sp.zeros(2))
+chk("T7c left action by any matrix with U^dagger U = I preserves X for generic Phi (channel obstruction)", ok)
+
+# ---- T8: lift is nonzero on linear Phi (gauge-matter coupling present), tree-level only ----
+Phi_l = [(e4(0), genmat(n, "g0")), (e4(1), genmat(n, "g1"))]
+Alin = [genmat(n, "N" + str(r)) for r in range(4)]
+Lg = lift_full(Phi_l, Alin, ThN, n)
+chk("T8 lift(A, linear Phi) nonzero for generic data (class has quartic gauge-matter coupling)",
+    sp.simplify(Lg) != 0)
+
+# ---- payload size ceiling and summary ----
+chk("P8 payload size 5138 <= 5191 (chain-119 payload size ceiling)", len(pay) <= 5191)
+print("TOTAL %d/%d PASS" % (PASS[0], PASS[0] + FAIL[0]))
+print("ALL CHECKS DONE 120")
+import sys
+if FAIL[0]:
+    sys.exit(1)

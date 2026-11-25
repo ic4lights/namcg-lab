@@ -1,0 +1,11 @@
+[   4.6s] GK1 dF = [0, Derivative(f(th), (th, 2)) + Derivative(f(th), th)/tan(th)]
+[   4.6s] GK1 box = [0, -f(th) + Derivative(f(th), (th, 2)) + 3*Derivative(f(th), th)/tan(th)] ; Ric.xi = [0, f(th)] ; GT = [0, -2*Derivative(f(th), th)/tan(th)]
+[   4.6s] GK1 S2-rot: dF=box+Ric+GT, parts match proposal hand-values: PASS
+[   5.3s] GK2 true Killing K0: Lie=0, (box+Ric)K=0, dF=0: PASS
+[  10.7s] GK2 true Killing K1: Lie=0, (box+Ric)K=0, dF=0: PASS
+[  10.7s] GK2 true Killing K2: Lie=0, (box+Ric)K=0, dF=0: FAIL
+[  10.7s] GK2 dead-script KILLS[1] NOT Killing: (L g)_thth = 2*sin(ph)*sin(th) : PASS
+[  10.7s] GK2 dead-script KILLS[2] NOT Killing: PASS
+[  32.4s] GK3 H^2: R = -2 ; rot identity True ; Killing dpsi kernel True
+GK PART1: 8/9 PASS
+EXIT=0

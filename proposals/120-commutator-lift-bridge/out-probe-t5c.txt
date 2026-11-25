@@ -1,0 +1,139 @@
+PASS P1 payload bytes=5138 sha1[:12]=343226e27ebf
+PASS P2 payload pure ASCII
+PASS P3 payload CRLF lines, ends CRLF, no tab/BOM/$
+PASS P4 no label/cite/Tr macros
+PASS P5 refs subset of grep-confirmed unique labels: 11 refs
+PASS P6 central claim strings present (6)
+PASS P7 no process/status/priority/completion words
+PASS T2a bridge identity symbolic Theta, A linear, Phi const, all mu, n=2 generic
+PASS T2b bridge identity symbolic Theta, A const, Phi linear, all mu
+PASS T2c bridge identity symbolic Theta, A quad, Phi mixed deg2, all mu
+PASS T2d bridge identity n=3 symbolic Theta, all mu
+PASS T2e bridge identity n=4 symbolic Theta, all mu
+PASS T2f bridge identity Hermitian A, symbolic Theta, all mu, n=2
+PASS T2g bridge identity A mixed deg2, Phi linear, symbolic Theta, all mu
+PASS T2h bridge identity A linear, Phi mixed deg2, symbolic Theta, all mu
+PASS T2i bridge identity Hermitian A const + Phi linear, all mu
+PASS T2j bridge identity A quad x2, Phi const, symbolic Theta, all mu
+PASS T2k sweep 144 monomial pairs x 4 mu, numeric Theta, generic coeffs, n=2
+PASS T2l Theta=0: star-commutator [x^mu.I, Phi(x)] vanishes for all mu (both sides 0)
+PASS T2m bridge identity for degenerate rank-2 Theta (single block), all mu
+PASS T2n bridge identity with Hermitian-structured Phi (real diag, conj offdiag), const+linear A
+PASS T3a LHS - printed-left-action-RHS = -Theta^{mu nu}(Phi *_star A_nu) exactly (4 classes x 4 mu)
+PASS T3a2 constant Phi: mismatch equals the right-action product -Theta^{0 nu} Phi A_nu exactly
+PASS T3a3 teeth: this mismatch is nonzero for generic data (no commutator produces it)
+PASS T3b central u(1) part invisible to commutators but nonzero in printed left action
+PASS T4a lift kinetic form = -(kappa/2) K^{bd} Tr(d_b Phi d_d Phi) exactly, symbolic Theta (kappa=1)
+PASS T4b K = Theta g Theta symmetric; other index convention Theta^T g Theta = -K
+PASS T4c1 K00 + c = 0 gives c = sum (Theta0i)^2 >= 0
+PASS T4c2 Kii - c = -(sum of squares) and sum = -2|Theta|^2: K = c g only real sol Theta=0, c=0
+PASS T4d canonical K = Theta g Theta = diag(-e^2, e^2, -b^2, -b^2)
+PASS T4e teeth (t01,t23)=(2,3): K00*g22 - K22*g00 = -13 != 0 (not g-proportional)
+PASS T4g spatial Theta: K^{0 mu} = 0 (no time-derivative term) and det K = 0 (degenerate)
+PASS T5a [Xhat^mu, phi0(x) I]_star = i Theta^{ab} d_a Xhat^mu d_b phi0 I exactly (quadratic phi0, linear A)
+PASS T5b frame bracket invariant under phi0 -> phi0 + const (frame only derivative-coupled)
+PREFIX DONE t=38.2s
+T xhat_sym       0.00s lenargs=[0, 4, 16]
+T D2op           0.00s lenargs=[4, 7, 16]
+T star           0.01s lenargs=[4, 7, 16]
+T D2op           0.00s lenargs=[7, 4, 16]
+T star           0.02s lenargs=[7, 4, 16]
+T xhat_sym       0.00s lenargs=[1, 4, 16]
+T D2op           0.00s lenargs=[4, 7, 16]
+T star           0.00s lenargs=[4, 7, 16]
+T D2op           0.00s lenargs=[7, 4, 16]
+T star           0.02s lenargs=[7, 4, 16]
+T xhat_sym       0.00s lenargs=[2, 4, 16]
+T D2op           0.00s lenargs=[4, 7, 16]
+T star           0.02s lenargs=[4, 7, 16]
+T D2op           0.00s lenargs=[7, 4, 16]
+T star           0.02s lenargs=[7, 4, 16]
+T xhat_sym       0.00s lenargs=[3, 4, 16]
+T D2op           0.00s lenargs=[4, 7, 16]
+T star           0.01s lenargs=[4, 7, 16]
+T D2op           0.00s lenargs=[7, 4, 16]
+T star           0.02s lenargs=[7, 4, 16]
+T brackets_full  0.13s lenargs=[7, 4, 16]
+STEP Bs1 t=0.1s
+T xhat_sym       0.00s lenargs=[0, 4, 16]
+T D2op           0.00s lenargs=[4, 8, 16]
+T star           0.03s lenargs=[4, 8, 16]
+T D2op           0.00s lenargs=[8, 4, 16]
+T star           0.01s lenargs=[8, 4, 16]
+T xhat_sym       0.02s lenargs=[1, 4, 16]
+T D2op           0.00s lenargs=[4, 8, 16]
+T star           0.05s lenargs=[4, 8, 16]
+T D2op           0.00s lenargs=[8, 4, 16]
+T star           0.02s lenargs=[8, 4, 16]
+T xhat_sym       0.00s lenargs=[2, 4, 16]
+T D2op           0.00s lenargs=[4, 8, 16]
+T star           0.02s lenargs=[4, 8, 16]
+T D2op           0.00s lenargs=[8, 4, 16]
+T star           0.01s lenargs=[8, 4, 16]
+T xhat_sym       0.00s lenargs=[3, 4, 16]
+T D2op           0.00s lenargs=[4, 8, 16]
+T star           0.02s lenargs=[4, 8, 16]
+T D2op           0.00s lenargs=[8, 4, 16]
+T star           0.02s lenargs=[8, 4, 16]
+T brackets_full  0.18s lenargs=[8, 4, 16]
+STEP Bs2 t=0.2s
+T D2op           1.75s lenargs=[88, 88, 16]
+T star           10.73s lenargs=[88, 88, 16]
+T simplify_sym   652.68s lenargs=[15936]
+T polymat        664.23s lenargs=[15936, 2]
+T D2op           1.56s lenargs=[88, 88, 16]
+T star           12.29s lenargs=[88, 88, 16]
+T simplify_sym   660.48s lenargs=[16632]
+T polymat        671.51s lenargs=[16632, 2]
+T D2op           1.89s lenargs=[90, 90, 16]
+T star           13.14s lenargs=[90, 90, 16]
+T simplify_sym   748.38s lenargs=[18628]
+T polymat        760.66s lenargs=[18628, 2]
+T D2op           1.90s lenargs=[90, 90, 16]
+T star           13.46s lenargs=[90, 90, 16]
+T simplify_sym   756.31s lenargs=[18628]
+T polymat        767.97s lenargs=[18628, 2]
+T lift_from_B    2920.69s lenargs=[4, 16, 2]
+STEP L1 t=2920.7s
+T D2op           1.42s lenargs=[96, 96, 16]
+T star           12.15s lenargs=[96, 96, 16]
+T simplify_sym   760.91s lenargs=[18048]
+T polymat        772.80s lenargs=[18048, 2]
+T D2op           1.55s lenargs=[96, 96, 16]
+T star           14.10s lenargs=[96, 96, 16]
+T simplify_sym   756.86s lenargs=[18960]
+T polymat        768.71s lenargs=[18960, 2]
+T D2op           3.00s lenargs=[98, 98, 16]
+T star           14.62s lenargs=[98, 98, 16]
+T simplify_sym   850.96s lenargs=[21100]
+T polymat        862.69s lenargs=[21100, 2]
+T D2op           3.11s lenargs=[98, 98, 16]
+T star           14.98s lenargs=[98, 98, 16]
+T simplify_sym   852.16s lenargs=[21100]
+T polymat        863.94s lenargs=[21100, 2]
+T lift_from_B    3329.66s lenargs=[4, 16, 2]
+STEP L2 t=3329.7s
+T simplify_sym   0.14s lenargs=[88]
+T polymat        0.21s lenargs=[88, 2]
+T simplify_sym   0.04s lenargs=[96]
+T polymat        0.04s lenargs=[96, 2]
+T mats_eq        0.27s lenargs=[88, 96, 2]
+T simplify_sym   0.11s lenargs=[88]
+T polymat        0.17s lenargs=[88, 2]
+T simplify_sym   0.03s lenargs=[96]
+T polymat        0.05s lenargs=[96, 2]
+T mats_eq        0.24s lenargs=[88, 96, 2]
+T simplify_sym   0.10s lenargs=[90]
+T polymat        0.18s lenargs=[90, 2]
+T simplify_sym   0.03s lenargs=[98]
+T polymat        0.05s lenargs=[98, 2]
+T mats_eq        0.24s lenargs=[90, 98, 2]
+T simplify_sym   0.12s lenargs=[90]
+T polymat        0.19s lenargs=[90, 2]
+T simplify_sym   0.05s lenargs=[98]
+T polymat        0.06s lenargs=[98, 2]
+T mats_eq        0.26s lenargs=[90, 98, 2]
+STEP mats_eq all=True t=1.0s
+STEP L2eqL1 struct=True final=True t=0.1s
+PROBE DONE
+RC=0

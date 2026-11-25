@@ -1,0 +1,17 @@
+PASS A0 six independent generators (rank 6)
+PASS A0b eta-antisymmetry of all generators
+PASS A1 exact closure of span under bracket (residual < 1e-9)
+PASS A2a Killing symmetric
+PASS A2b exact cross-check B(X,Y) = 2 tr(XY) vector rep (so(p,q) identity)
+PASS A2 nondegenerate Killing form (semisimple)
+PASS A3 Killing form INDEFINITE (noncompact)
+PASS A3a B(J12,J12) < 0 (compact direction)
+PASS A3b B(K1,K1) > 0 (boost direction)
+   B(J12,J12) = -4.000000  B(K1,K1) = 4.000000  eigs = [-4. -4. -4.  4.  4.  4.]  det = -4096.000
+PASS A4 tr(ad_A^2) = -||ad_A||_HS^2 (anti-Hermitian, 4x4, 8 seeds)
+PASS A5 derived algebra = full
+PASS A6 ad_S=0 forces D=0 (label map rank 4)
+PASS A7 so(4) Killing cross-check B = 2 tr(XY) (validates control's constants)
+CONTROL-FIRED so(4) Killing IS negative definite (eigs [-4. -4. -4. -4. -4. -4.]): A3 discriminates compact vs Lorentzian
+CONTROL-FIRED generic (non-anti-Hermitian) matrix violates A4 identity, dev = 144.867
+SUMMARY_A: ALL-PASS

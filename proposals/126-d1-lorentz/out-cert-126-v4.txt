@@ -1,0 +1,38 @@
+COMPILE CERTIFICATE 126 v4 (round 2; payload-126-v3.txt spliced into appH); supersedes out-cert-126-v3.txt (v2 payload) and out-cert-126.txt (v1)
+date: 2026-11-25 (round 2)
+temp tree: C:/Users/redgi/AppData/Local/Temp/build126_cert_v4_12620 (outside repo; repo untouched; not deleted)
+stage recipe: namcg-book7.tex + frontmatter/ + bib/ + figs/ + chapters/ (stale *.aux excluded), chapters/appH-microscopic-proofs.tex REPLACED by appH-spliced-126-v3.tex, staged hash asserted == 123108d4a94723be1dbad752883125baac940fe4 / 880023 (cert_stage_126.r2.py)
+payload v3: sha1 fb89da16df60f08b595e3fb0df71ce577e05fb61 size 4915 (v2 4447 + 468: the six review-required clause edits, no other bytes; see out-diff-v2v3.txt)
+spliced v3: sha1 123108d4a94723be1dbad752883125baac940fe4 size 880023 (PRE 875106 + payload 4915 + join CRLF 2; generator POST and independent recompute agree; recipe live.replace(ANCHOR, ANCHOR+payload+CRLF, 1); the canonical replace(anchor, payload+anchor) gives 880021 and the wrong order = NOT this object)
+live appH pin: sha1 76d862968c31d78fffc665f72aaf60d40c90367a size 875106 (re-verified by generator at splice time; anchor count 1)
+command: pdflatex -interaction=nonstopmode -halt-on-error namcg-book7.tex (x2), run in temp tree
+PASS1 exit 0; PASS2 exit 0
+log lines matching '^! ': 0
+undefined References: 0; multiply-defined: 0
+undefined Citations: 196 (natbib; bibtex not run; = prior certificate baseline; payload adds no \cite)
+pdf: namcg-book7.pdf 3197586 B
+probe note: the whole-book 'over with' x2 hits are pre-existing unrelated book text ('papered over with a citation' in the ch02 exercises note; 'replica cover with constant' in an appendix passage); the spliced paragraph region (between 'unitarity obstruction' and 'no base manifold sits inside') contains 0 defect strings, and the fixed clause compiles as 'of the class over A = C' (CTX-OVER). All defect probes are SCOPED to the spliced paragraph.
+refs used by payload (all pre-existing): eq:Smatrix, ass:frame-lock, ass:nondeg (generator guard refs: exactly 3, set match); no labels, no cites added
+pdftotext probes (whitespace-collapsed full-book text; PRESENT/COUNT/DEFECT-0 table):
+  PRESENT 'is perfect, this forces' want 1 got 1 OK
+  PRESENT 'retains the' want 2 got 2 OK
+  PRESENT 'realization of the two class relations whose' want 1 got 1 OK
+  PRESENT 'with constant coefficients and with the' want 1 got 1 OK
+  PRESENT 'analysis under Problem' want 1 got 1 OK
+  PRESENT 'application here is to the' want 1 got 1 OK
+  PRESENT 'statement recorded in the' want 1 got 1 OK
+  PRESENT 'one rotation and one boost' want 1 got 1 OK
+  PRESENT 'closes any of Problem' want 1 got 1 OK
+  PRESENT 'plus the nilpotent' want 1 got 1 OK
+  DEFECT-0 'over with' want 0 got 2 MISMATCH
+  DEFECT-0 'CI plus' want 0 got 0 OK
+  DEFECT-0 'The ghost operator on' want 0 got 0 OK
+  DEFECT-0 'C I plus' want 0 got 0 OK
+  COUNT 'closes none of Problem D, Problem D1, or Problem A' want 1 got 1 OK
+  COUNT 'unitarity obstruction' want 1 got 1 OK
+  CTX-CENTRALIZER 'tralizer of the adjoint action of the Da on that span is RI plus the nilpotent s'
+  CTX-OVER 'ic realizations. Take the two relations of the class over A = C at finite matrix size N , '
+  CTX-PERFECT 'e the S-sector of the class retains the so(3, 1) bracket and so(3, 1) is perfect, this forces Scd = 0, and the'
+  CTX-POINTER 'the general statement recorded in the conjugate- coordinate analysis under Problem E; the '
+  PROBE-RESULT 1-MISMATCHES
+RESOLVED-SCOPE: the single whole-book DEFECT-0 mismatch (over-with x2) is pre-existing unrelated book text as recorded above; defect strings in the spliced paragraph: over-with 0, CI-plus 0, C-I-plus 0, superseded v1 clause 0; old closer 1x whole-file (anchor only); PROBE-RESULT-SCOPED ALL-OK

@@ -1,0 +1,55 @@
+PASS P1 payload bytes=5287 sha1[:12]=a5aa77dc90a3
+PASS P2 payload pure ASCII
+PASS P3 payload CRLF lines, ends CRLF, no tab/BOM/$
+PASS P4 no label/cite/Tr macros
+PASS P5 refs subset of grep-confirmed unique labels: 11 refs
+PASS P6 central claim strings present (6)
+PASS P7 no process/status/priority/completion words
+PASS T2a bridge identity symbolic Theta, A linear, Phi const, all mu, n=2 generic
+PASS T2b bridge identity symbolic Theta, A const, Phi linear, all mu
+PASS T2c bridge identity symbolic Theta, A quad, Phi mixed deg2, all mu
+PASS T2d bridge identity n=3 symbolic Theta, all mu
+PASS T2e bridge identity n=4 symbolic Theta, all mu
+PASS T2f bridge identity Hermitian A, symbolic Theta, all mu, n=2
+PASS T2g bridge identity A mixed deg2, Phi linear, symbolic Theta, all mu
+PASS T2h bridge identity A linear, Phi mixed deg2, symbolic Theta, all mu
+PASS T2i bridge identity Hermitian A const + Phi linear, all mu
+PASS T2j bridge identity A quad x2, Phi const, symbolic Theta, all mu
+PASS T2k sweep 144 monomial pairs x 4 mu, numeric Theta, generic coeffs, n=2
+PASS T2l Theta=0: star-commutator [x^mu.I, Phi(x)] vanishes for all mu (both sides 0)
+PASS T2m bridge identity for degenerate rank-2 Theta (single block), all mu
+PASS T2n bridge identity with Hermitian-structured Phi (real diag, conj offdiag), const+linear A
+PASS T3a LHS - printed-left-action-RHS = -Theta^{mu nu}(Phi *_star A_nu) exactly (4 classes x 4 mu)
+PASS T3a2 constant Phi: mismatch equals the right-action product -Theta^{0 nu} Phi A_nu exactly
+PASS T3a3 teeth: this mismatch is nonzero for generic data (no commutator produces it)
+PASS T3b central u(1) part invisible to commutators but nonzero in printed left action
+PASS T4a lift kinetic form = -(kappa/2) K^{bd} Tr(d_b Phi d_d Phi) exactly, symbolic Theta (kappa=1)
+PASS T4b K = Theta g Theta symmetric; other index convention Theta^T g Theta = -K
+PASS T4c1 K00 + c = 0 gives c = sum (Theta0i)^2 >= 0
+PASS T4c2 Kii - c = -(sum of squares) and sum = -2|Theta|^2: K = c g only real sol Theta=0, c=0
+PASS T4d canonical K = Theta g Theta = diag(-e^2, e^2, -b^2, -b^2)
+PASS T4e teeth (t01,t23)=(2,3): K00*g22 - K22*g00 = -13 != 0 (not g-proportional)
+PASS T4g spatial Theta: K^{0 mu} = 0 (no time-derivative term) and det K = 0 (degenerate)
+PASS T5a [Xhat^mu, phi0(x) I]_star = i Theta^{ab} d_a Xhat^mu d_b phi0 I exactly (quadratic phi0, linear A)
+PASS T5b frame bracket invariant under phi0 -> phi0 + const (frame only derivative-coupled)
+PASS T5c full star lift: L(Phi + s I) - L(Phi) = 0 exactly (quadratic Phi, linear A, numeric Theta)
+PASS T5c-teeth: non-scalar constant shift changes the brackets (control: T5c non-vacuous)
+PASS T5d frame-mode lift = -(kappa/2) K^{bd} d_b phi0 d_d phi0 Tr(I) exactly (frame couples only via K)
+PASS T5e A=0: constant Phi has zero bracket (all mu) and zero lift: class supplies no mass term
+PASS T5f Phi=v I: bracket and lift vanish for any A (quartic gauge coupling vanishes on vacuum); teeth: generic constant Phi off-vacuum has nonzero bracket
+PASS T6a C = [Phi, Phi^dagger] Hermitian and W1 = Tr(C^2) = Tr(C^dagger C), generic complex n=2
+PASS T6b numeric teeth: W1 real >= 0 on 7 fixed matrices; > 0 on the 4 nonnormal, = 0 on the 3 normal
+PASS T6c nilpotent Phi=[[0,p],[0,0]]: W1 = 2 p^4 > 0; diagonal Phi: W1 = 0
+PASS T6d W1 vanishes on v.U(2) (generalized unitary) and on v times rational orthogonal 4x4; teeth off-vacuum nonzero
+PASS T6e C(Phi + s I) = C(Phi) exactly for generic complex Phi, n=2 and n=3 (W1 shift-invariant)
+PASS T6f quadratic n=2: shift-invariant subspace exactly the 3 traceless-part invariants; Tr X direction shift-variant (no X-dependent quadratic invariant)
+PASS T6g quartic conjugation-invariant family at n=2: shift-invariant subspace exactly 4-dim and contains the W1 direction w4 - w3
+PASS T6h W1 word identity: 2 Tr(P Pd P Pd) - 2 Tr(P^2 Pd^2) = W1 (real/imag form; W1 = Tr(C^dag C), C = [Phi, Phi^dag])
+PASS T6i n=3 teeth: four standard quartic conjugation-invariants all shift-variant (only W1 survives)
+PASS T7a X(H Phi) = X(Phi) exactly, W1(Phi) = 0, W1(H Phi) = (p1^2 - p2^2)^2 (same X, different W1)
+PASS T7b witness values: X equal, W1 = 0 vs 9 (p=(2,1)); degenerate boundary p1=p2 gives 0
+PASS T7c general U(2): (U2 Phi)^dag(U2 Phi) = norm * Phi^dag Phi, so normalized U preserves X (channel obstruction); unscaled U does not
+PASS T8 lift(A, linear Phi) nonzero for generic data (class has quartic gauge-matter coupling)
+PASS P8 payload size 5287 <= 5340 (chain-119 ceiling re-pinned R5, +53 margin kept)
+TOTAL 53/53 PASS
+ALL CHECKS DONE 120

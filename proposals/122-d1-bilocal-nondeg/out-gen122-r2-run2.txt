@@ -1,0 +1,25 @@
+ascii pure                                 OK
+CRLF-only EOL (no lone LF or CR)           OK
+no label/cite/dollar                       OK
+math \( \) balanced                        OK
+all refs resolve in chapters/              OK
+anchor unique in appH                      OK
+single paragraph (one line)                OK
+controls fired: 7/7
+  FIRED nonascii-bytes
+  FIRED no-CRLF-terminator
+  FIRED CR-CR-LF-terminator
+  FIRED label-injection
+  FIRED dollar-injection
+  FIRED unresolved-ref
+  FIRED unbalanced-math
+all seven controls fired                   OK
+fixed payload passes det_eol               OK
+CR-CR-LF defect rejected by det_eol        OK
+payload not CR-CR-LF terminated            OK
+exactly one CR and one LF byte             OK
+POST = PRE + payload + 2                   OK
+PRE 857887 PAY 5942 POST 863831
+POST-SHA1 d2af19df0f998ce150c12ea11af9ea8c0387435f
+PAYLOAD-SHA1 affd17c6f13d99ab0e8bbda2253950ee1cc2f1cf
+GEN-FAILURES: 0 (none)

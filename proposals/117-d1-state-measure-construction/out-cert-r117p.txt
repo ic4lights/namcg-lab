@@ -1,0 +1,7 @@
+temp: C:\Users\redgi\AppData\Local\Temp\cert117_plyxzcm0
+baseline sha1 28f3a0d2401efc1c65b53a99a5968cdcb70fed7d size 834663
+amended   sha1 a38d4e293806a09f7fc5072a273ae49f62100590 size 834750 (delta +87)
+POST      sha1 7e0546a425c16b55e30f2513a228efd836c120b8 size 839349 (= baseline +87 amend, +4597 payload, +2 join)
+rc1=0 rc2=0 errlines=0 outw=True undefrefs_pass2=0
+undefrefs-touching-package-labels=0
+CERT PASS

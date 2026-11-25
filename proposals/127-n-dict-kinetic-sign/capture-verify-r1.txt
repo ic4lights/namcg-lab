@@ -1,0 +1,31 @@
+PASS S0a Theta antisymmetric (generic)
+PASS S0b K symmetric (generic 6-par)
+PASS S0c POS-CONTROL S0b fires on K+e01
+PASS S1a det Theta = pf^2
+PASS S1b det K = det(eta) det(Theta)^2
+PASS S1c identity A^2 + K eta = 0
+PASS S1d det(Theta eta) = -pf^2
+PASS S1e POS-CONTROL complex structure: A^2=-1*I, detA=+1
+PASS S1f canonical K = diag(p^2,-p^2,q^2,q^2)
+PASS S1g real solution set of K=lam eta forces p^2+q^2=0
+PASS S1h POS-CONTROL complex (anti-)self-dual q=+/-I p solves K prop eta
+PASS S1i 200 random integer Theta: none gives K prop. eta
+PASS S1j POS-CONTROL prop detector fires for L=2I (non-antisym.)
+PASS S2a det K_spatial = -|b|^2 pf^2
+PASS S2b (K^-1)_00 = cof00/det K
+PASS S2c detKsp * detK = |b|^2 pf^6 (>=0, >0 iff pf!=0)
+PASS S2d 100 random nondegenerate integer Theta: (K^-1)_00 > 0
+PASS S2e POS-CONTROL degenerate pf=0 case: det Ksp = 0 (lemma is strict)
+PASS S2f POS-CONTROL purely spatial Theta: det K = 0 (recorded)
+PASS S2g canonical K: (K^-1)_00 = 1/p^2 > 0 strictly
+PASS S2h POS-CONTROL eta itself: (eta^-1)_00 = -1 < 0 (bounded case)
+PASS S3a s solved from (0,0); residuals K00+Kii and Kij are the conditions
+PASS S3b POS-CONTROL residual list vanishes for K = 2 eta (prop. case)
+PASS S4a canonical Lorentzian K: g-timelike v with K(v,v)>0 exists
+PASS S4b negative instance K = 2 eta: criterion silent (lambda>0 matched)
+PASS S4c POS-CONTROL K = -2 eta: criterion fires (wrong orientation)
+PASS S5a dagger contraction = - eta K eta exactly (raised: -K)
+PASS S5b plain contraction = + eta K eta exactly (raised: +K)
+PASS S5c dagger and plain carry opposite relative signs
+PASS S5d POS-CONTROL: a non-K tensor (eta) is not +/- K generically
+ALL PASS (30 checks)

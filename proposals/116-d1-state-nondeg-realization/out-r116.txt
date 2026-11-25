@@ -1,0 +1,34 @@
+== proposal 116 verification pack, seed 116 ==
+PASS N1 polar attains d = max|sigma-v| (op norm) rel-err 1.12e-15
+PASS N1 no unitary beats polar (Weyl lower bound) rel-viol 0.00e+00
+PASS N1 Frobenius analogue rel-err 8.38e-16
+PASS N2 two-sided estimate, 20000 draws violations 0
+PASS N3 sup and inf on d=delta attained (radial / single-scalar) bad 0
+PASS N3 no ball point exceeds sup_{d<=delta} max excess 0.00e+00
+PASS N4 V<=0.5 forces d<=0.338780 (thr=5.200) accepted 38, max excess 0.00e+00
+PASS N4 V<=1.0 forces d<=0.501373 (thr=5.200) accepted 156, max excess 0.00e+00
+PASS N4 V<=2.0 forces d<=0.767399 (thr=5.200) accepted 588, max excess 0.00e+00
+PASS N4 V<=4.0 forces d<=1.298738 (thr=5.200) accepted 2963, max excess 0.00e+00
+PASS N4 V<=5.1 forces d<=1.803408 (thr=5.200) accepted 5000, max excess 0.00e+00
+PASS N5 sup at delta_* equals threshold sup 5.200000000000 thr 5.200000000000
+delta_*/v = 0.2247448713915889   (1-delta_*/v)^4 = 0.3612256587700821
+PASS N5 every point with d<delta_* has V<threshold violations 0
+PASS N5 radius is largest possible (radial point (v+delta) reaches sup>=thr) bad 0
+PASS N6 Markov: mu{V>=thr} <= 4 E_V/(lambda v^4) badvol 0.050875 bound 0.057175
+PASS N6 degenerate set <= volume bound (contains test) detzero 0.050875
+PASS N6 equality case f=0.01: 4 E_V/(lambda v^4) == f bound 0.010000000000000
+PASS N6 equality case f=0.10: 4 E_V/(lambda v^4) == f bound 0.100000000000000
+PASS N6 equality case f=0.37: 4 E_V/(lambda v^4) == f bound 0.370000000000000
+PASS N6 equality case f=1.00: 4 E_V/(lambda v^4) == f bound 1.000000000000000
+PASS N6 refinement mu{|det e|<bound(eps)} <= E_V/eps over 20 eps max excess 0.00e+00
+PASS N7 (1-d_eps/v)^4 == (1-sqrt(4eps/lambda)/v^2)^2 sympy simplify -> 0
+PASS N8 boost direction: 2 lambda v^4 t^2 coefficient, bracketed by estimate coef 2.000000
+PASS N8 single-sigma exact identity V = (lambda/4) dd^2 (2v-dd)^2 V/dd^2 = 0.999900002 -> lambda v^2 = 1.0
+PASS N8 uniform radial exact identity V = lambda dd^2 (2v+dd)^2 V/dd^2 = 4.000400010 -> 4 lambda v^2 = 4.0
+PASS S1 d_eps = v - sqrt(v^2 - 2 sqrt(eps/lambda)) is the small root (50 numeric pts) sympy solve-root equals closed form
+PASS S2 delta_*(2 v + delta_*) = v^2/2
+PASS S3 delta_* = v(sqrt(3/2)-1)
+PASS S4 single-deviation series (lambda/4)((v+tau)^2-v^2)^2 = lambda v^2 tau^2 + O(tau^3) tau^2 coeff = lambda v^2
+----
+PASS 29 FAIL 0
+ALL CHECKS DONE 116

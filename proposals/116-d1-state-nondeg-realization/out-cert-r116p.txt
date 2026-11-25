@@ -1,0 +1,4 @@
+temp: C:\Users\redgi\AppData\Local\Temp\cert116_e5f71yyu
+rc1=0 rc2=0 errlines=0 outw=True undefrefs_pass2=0
+undefrefs-touching-package-labels=0
+CERT PASS

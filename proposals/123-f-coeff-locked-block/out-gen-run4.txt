@@ -1,0 +1,21 @@
+CTRL eol-crclr: fires OK
+CTRL eol-bareLF: fires OK
+CTRL eol-bareCR: fires OK
+CTRL forbidden-dollar: fires OK
+CTRL forbidden-label: fires OK
+CTRL ascii: fires OK
+CTRL braces: fires OK
+CTRL refs: fires OK
+CTRL r2-fibretrace: fires OK
+CTRL r2-nofirstvar: fires OK
+PIN OK d2af19df0f99 863831
+R2 TOKENS OK
+REFS OK used=12 labels
+LABELS OK (each used label defined in appH or a whitelisted file)
+ANCHOR unique on CONTEXT string (count 1)
+SPLACED WRITTEN C:\Users\redgi\AppData\Local\Temp/cert123r2/appH-spliced-r2.tex
+PRE  d2af19df0f99 863831
+PAY  e0b8d6b31cad 5442
+POST ba72024aba4d 869275
+POST sha1 full: ba72024aba4d26aff3fd5ad5a1219cdd5a1bd1e1
+GEN VERDICT: PASS

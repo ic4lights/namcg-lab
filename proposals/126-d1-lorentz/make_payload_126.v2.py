@@ -1,0 +1,100 @@
+# make_payload_126.v2.py -- payload v2 for chain 126: one-clause fix of finding F1 (the
+# operator on End(C^4) is now stated as [D^a,[D_a,.]], the class ghost operator up to
+# the sign of X_a = i D_a (appH L1617, L1624); v1 bytes preserved in
+# make_payload_126.v1.py and payload-126.txt (sha1 7e6ed4cd6c83).
+# writes payload-126-v2.txt (exact splice bytes) and the spliced
+# appH copy for the compile certificate. Run with: python -I make_payload_126.py <repo>
+# Anchors and pins are re-verified from the live file; fails loudly on drift.
+import hashlib
+import sys
+
+REPO = sys.argv[1] if len(sys.argv) > 1 else "."
+APP = REPO + "/chapters/appH-microscopic-proofs.tex"
+PIN_SHA1 = "76d862968c31d78fffc665f72aaf60d40c90367a"
+ANCHOR = (b"supplied: this paragraph closes none of Problem~D, Problem~D1, or Problem~A."
+          b"\r\n\r\n")
+
+BODY = (
+    "\\emph{Finite matrix size: a unitarity obstruction and two exact algebraic realizations.}"
+    " Take the two relations of the class over with \\(\\mathcal A=\\mathbb C\\) at finite"
+    " matrix size \\(N\\), keeping the \\(*\\)-structure on \\(\\mathcal S_{cd}\\)"
+    " (anti-Hermiticity). For anti-Hermitian \\(A\\) one has"
+    " \\(\\operatorname{tr}(\\operatorname{ad}_A\\operatorname{ad}_A)=-\\lVert\\operatorname{ad}_A\\rVert_{\\mathrm{HS}}^2\\le0\\),"
+    " so every matrix Lie algebra of anti-Hermitian matrices has negative-semidefinite"
+    " Killing form; \\(\\mathfrak{so}(3,1)\\) is simple with indefinite Killing form (in the"
+    " vector representation \\(\\operatorname{tr}(\\operatorname{ad}_{J_{12}}\\operatorname{ad}_{J_{12}})=-4\\)"
+    " and \\(\\operatorname{tr}(\\operatorname{ad}_{K_1}\\operatorname{ad}_{K_1})=+4\\)). The adjoint"
+    " action of the \\(\\mathcal S\\)-sector of the class is a homomorphic image of"
+    " \\(\\mathfrak{so}(3,1)\\) formed by anti-Hermitian endomorphisms of the matrix space; a"
+    " homomorphic image of a simple Lie algebra is either \\(0\\) or an isomorphic copy, and the"
+    " latter would make the Killing form both negative-semidefinite and indefinite: the adjoint"
+    " action of the \\(\\mathcal S\\)-sector therefore vanishes identically, and the first relation"
+    " then forces \\(\\mathbb D_a=0\\) (its label map has rank \\(4\\)). Hence the only finite-\\(N\\)"
+    " realization of the two relations with anti-Hermitian \\(\\mathcal S\\) is trivial, a unitary"
+    " realization requires \\(N=\\infty\\), and non-unitary \\(\\mathcal S\\) is unavoidable in any"
+    " finite-\\(N\\) Lorentzian data of the class; this is why the compact fibres used elsewhere in"
+    " this section are not obstructed. With the \\(*\\)-structure relaxed, two exact realizations"
+    " show that the relations are consistent at finite \\(N\\) with the Lorentzian \\(\\eta\\)"
+    " contraction. (i) \\(5\\times5\\) real matrices, \\(\\mathbb D_a=E_{a4}\\) and \\(\\mathcal S_{cd}\\) the"
+    " standard affine lift of the vector representation,"
+    " \\((\\mathcal S_{cd})^{\\mu}{}_{\\nu}=\\delta^{\\mu}_{c}\\eta_{d\\nu}-\\delta^{\\mu}_{d}\\eta_{c\\nu}\\): both"
+    " relations hold exactly with \\(\\mathsf T=\\mathsf R=\\mathsf F=0\\); the inner automorphism"
+    " \\(\\mathrm e^{\\mathcal S}\\mathbb D_a\\mathrm e^{-\\mathcal S}\\) reproduces the label Lorentz matrix exactly"
+    " (rotation and boost generators, at \\(t=1\\), exact exponentials), the finite-\\(N\\) form of"
+    " the identity of the class that local rotations are matrix gauge transformations; the ghost"
+    " operator \\([\hat X^a,[\hat X_a,\\cdot\\,]]\\) vanishes on \\(\\operatorname{span}\\{\\mathbb I,\\mathcal S,\\mathbb D\\}\\);"
+    " and the centralizer of the adjoint action of the \\(\\mathbb D_a\\) on that span is"
+    " \\(\\mathbb C\\mathbb I\\) plus the nilpotent \\(\\operatorname{span}\\{\\mathbb D_a\\}\\) (all products zero), whose"
+    " spectrum is a point: at \\(N=5\\) no base manifold sits inside the fibre algebra. (ii)"
+    " \\(4\\times4\\) complex matrices, \\(\\mathbb D_a=\\gamma_a\\) the Lorentzian Clifford generators"
+    " (\\(\\gamma_0\\) anti-Hermitian, \\(\\gamma_i\\) Hermitian) and \\(\\mathcal S_{cd}=\\tfrac14[\\gamma_c,\\gamma_d]\\):"
+    " both relations hold exactly with \\(\\mathsf T=\\mathsf F=0\\) and"
+    " \\(\\mathsf R_{ab}{}^{cd}=4(\\delta_a^c\\delta_b^d-\\delta_b^c\\delta_a^d)\\), and the contracted matrix identity"
+    " holds exactly, \\([\\mathbb D^a,[\\mathbb D_a,\\mathbb D_b]]=\\mathsf R_{ab}{}^{ae}\\mathbb D_e=12\\,\\mathbb D_b\\), i.e."
+    " \\(\\mathrm{Ric}_b{}^e=-12\\,\\delta_b{}^e\\) under the identity \\(\\mathsf R_{ab}{}^{ae}=-\\mathrm{Ric}_b{}^e\\) of the"
+    " matrix equation; the sign of \\(\\mathcal S_{cd}\\) is forced, by the first relation (48 exact"
+    " checks) and independently by this contraction. The ghost operator on"
+    " \\(\\operatorname{End}(\\mathbb C^4)\\), the class ghost operator at \\(N=4\\), has kernel the scalars"
+    " and eigenvalues \\(12,8,16,4\\) on the vector, bivector, pseudoscalar and axial sectors of"
+    " the \\(16\\) Dirac bilinears, which close under both adjoint actions with rational constants;"
+    " its mixed \\(*\\)-structure is forced by the obstruction above. Hypotheses: the two relations"
+    " at face value with constant coefficients, finite \\(N\\), no state, no dynamics, no reference"
+    " to Equation~\\eqref{eq:Smatrix}, no matter content, no selection; these are consistency and"
+    " obstruction results at the algebraic level, they derive no \\(\\mathrm{SO}(3,1)\\) from the"
+    " matrix algebra or the condensate, and they construct neither the locked frame nor its"
+    " non-degeneracy (Assumptions~\\ref{ass:frame-lock} and~\\ref{ass:nondeg}): this paragraph"
+    " closes none of Problem~D, Problem~D1, or Problem~A."
+)
+
+_P = chr(92)
+assert BODY.count('The ghost operator on') == 1, 'F1 anchor 1 missing/duplicate'
+BODY = BODY.replace('The ghost operator on',
+    'The operator ' + _P + '([' + _P + 'mathbb D^a,[' + _P + 'mathbb D_a,'
+    + _P + 'cdot' + _P + ',]]' + _P + ') on')
+assert BODY.count('), the class ghost operator at') == 1, 'F1 anchor 2 missing/duplicate'
+BODY = BODY.replace('), the class ghost operator at',
+    '), the class ghost operator up to the sign of ' + _P + '(' + _P + 'hat X_a=' + _P + 'mathrm i'
+    + _P + 'mathbb D_a' + _P + ') at')
+assert 'up to the sign of' in BODY and 'The ghost operator on' not in BODY, 'F1 fix failed'
+
+PAYLOAD = BODY.encode("ascii") + b"\r\n"
+
+def main():
+    b = open(APP, "rb").read()
+    assert hashlib.sha1(b).hexdigest() == PIN_SHA1, "appH pin drift"
+    assert b.count(ANCHOR) == 1, "anchor not unique in live bytes"
+    assert PAYLOAD.decode("ascii").isascii()
+    assert b"\n" not in PAYLOAD.replace(b"\r\n", b""), "bare LF in payload"
+    assert b"\r" not in PAYLOAD.replace(b"\r\n", b""), "bare CR in payload"
+    assert PAYLOAD.endswith(b"\r\n") and not PAYLOAD.endswith(b"\r\n\r\n"), "single CRLF terminator"
+    open("payload-126-v2.txt", "wb").write(PAYLOAD)
+    spliced = b.replace(ANCHOR, ANCHOR + PAYLOAD + b"\r\n")
+    assert len(spliced) == len(b) + len(PAYLOAD) + 2
+    assert spliced.count(ANCHOR) == 1 and spliced.count(PAYLOAD) == 1
+    open("appH-spliced-126-v2.tex", "wb").write(spliced)
+    print("PAYLOAD-BYTES", len(PAYLOAD))
+    print("PRE", len(b), "POST", len(spliced), "DELTA", len(spliced) - len(b))
+    print("SPLICED-SHA1", hashlib.sha1(spliced).hexdigest())
+    print("MAKE-OK")
+
+main()

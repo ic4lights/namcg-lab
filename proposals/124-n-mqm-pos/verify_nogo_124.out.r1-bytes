@@ -1,0 +1,9 @@
+C:\Users\redgi\Projects\namcg-lab@gpu\proposals\124-n-mqm-pos\verify_nogo_124.py:66: ComplexWarning: Casting complex values to real discards the imaginary part
+  rep.append(('B1 min over 300 random points: A_sum = %.4f (expect >= 0), B_sum = %.4f (expect >= 0)' % (minA, minB)))
+== verify_nogo_124 ==
+B1 identity residual (expect 0): 0
+B1 min over 300 random points: A_sum = 0.2465 (expect >= 0), B_sum = 0.1856 (expect >= 0)
+B2 S on ray X0=tP, X1=tQ (expect negative*c t^4): -t**4/4
+B2 value at t=2 (expect < 0): -4
+B3 eta^{00} = -1 (wrong-sign kinetic direction)
+B3 <psi| -eta^{00} d0^2 |psi>/<psi|psi| leading = (-lambda**2*re(chi(q0)) - I*lambda**2*im(chi(q0)) + 2*I*lambda*re(Derivative(chi(q0), q0)) - 2*lambda*im(Derivative(chi(q0), q0)) + re(Derivative(chi(q0), (q0, 2))) + I*im(Derivative(chi(q0), (q0, 2))))/chi(q0) (expect -lambda^2 + ...)

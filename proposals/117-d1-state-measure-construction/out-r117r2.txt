@@ -1,0 +1,39 @@
+PASS S1-expansion V = (lam/4)|Phi|^4 - (lam v^2/2)|Phi|^2 + lam v^4
+PASS S2-lower-pre V - [(lam/16)sum s^4 - (lam v^2/2)sum s^2] = (3lam/16)sum s^4 + lam v^4 >= 0
+PASS S3-coercivity disc((lam/32)u^2-(lam v^2/2)u+3lam v^4)=-lambda**2*v**4/8 < 0 => V >= (lam/32)|Phi|^4 - 2lam v^4
+PASS S3b-upper1 V <= (lam/4)(sum s^4 + 4v^4)
+PASS S3c-upper2 sum s^4 <= (sum s^2)^2 => V <= (lam/4)|Phi|^4 + lam v^4
+PASS S4-threshold V(0,v,v,v) = lambda v^4/4 (recorded 115 constant)
+PASS S5-supte sup t e^{-t/2} = 2/e at t=2
+PASS S6-ball32 omega_32 = pi^16/16! = 4.303070e-06
+PASS S7-supgauss int e^{-|phi|^4} dphi (D=32): quad+tail=1.734998e-01 closed=1.734998e-01 (Z-finiteness dominating integral)
+-- symbolic block done --
+PASS N2-interpolation sup|phi| <= C_L ||phi||_2, max surplus 0.00e+00 (C_L=4.1231)
+PASS N2-holder max (mean phi^2)^2 / mean phi^4 = 0.415611 <= 1
+PASS N3-orthonormal Fourier-mode Gram = I
+PASS N3-kinetic kinetic identity rel-err 2.19e-16
+PASS N3-constants k=0 is the unique constant mode (kinetic vanishes only on constants, lambda_1=(2pi)^2)
+PASS N4-IS-converge E_b[W] seed-split rel-diff b=1: 0.0541, b=16: 0.0683
+PASS N4-Zpositive Z(b) in (0,inf) via IS for b in (0.5, 1.0, 2.0, 4.0, 8.0, 16.0, 64.0)
+PASS N5-mono E_b[S]=E_b[V] strictly decreasing: 0.5:16.1400 1:6.0816 2:3.2096 4:1.3904 8:0.7640 16:0.3594 64:0.1192
+PASS N5-rate f(b)=4E_b[V] = O(1/b): b*f(b) in [22.2, 32.3], f(64)=0.4770
+PASS N5-ES-bound E[S]=E[W]=6.08164 <= (2/e)Z(1/2)/Z(1)=366.51503
+PASS N13-lnZ-convex secant slopes of lnZ increasing (lnZ convex; d lnZ/dbeta = -E_beta[S] increasing): -12.4218 -4.4093 -1.8959 -0.8886 -0.4426 -0.1647
+PASS N8-markov P{V>=lam v^4/4} <= min(1,4E[V]) and (1/4)P<=E[V] for all b; P(1)=1.0000 P(16)=0.6762
+PASS N11-event-cost P_b{V>=T} <= e^{-bT/2} Z(b/2)/Z(b) at b=2,4,8,16: b2:1.000<=64.030 b4:1.000<=26.891 b8:0.937<=12.863 b16:0.676<=4.669
+PASS N12-second-moment b^2 E_b[W^2] bounded: 0.5:67.30 1:46.24 2:44.21 4:35.07 8:43.22 16:40.17 64:63.87
+PASS N9-laplace Z(b) >= Z(1) e^{-1} b^{-9}: min_b [lnZ + 9 ln b - lnZ(1)] = -0.03 >= -1: 0.5:-0.03 1:0.00 2:1.83 4:4.28 8:6.96 16:9.66 64:14.23
+PASS N15-interpolation sup|Phi|_F <= 4 C_L ||phi||_2, max surplus -3.30e+02
+PASS N15-linearization sup_x V(x) <= 8C^4(intV + 2 lam v^4)+lam v^4; min slack 1.608e+10
+PASS N6-codim2 P(|det X|<eps) ~ eps^s over 5 usable eps (n=1500000), fitted s=2.05 (expect ~2 + log corr: real codim 2)
+PASS N6-nullprob small-ball probability of singular cone -> 0 (P(1e-2)=0.00e+00, batch tail): omega_x{det=0}=0 by absolute continuity
+PASS N7-defect-null defect-tube fractions m(t) collapse: 0.05:0.00092 0.10:0.00363 0.20:0.01495 0.40:0.06433 0.80:0.28653, fitted slope 2.07 (expect ~2: rank-2 complex zeros) -> defect set Lebesgue-null
+PASS N10-tube-frob max |I+E|_F = 2.3468 <= 2+rho = 2.5000
+PASS N10-tube max tube V = 0.2953 <= (lam/4)(2+rho)^4 + lam v^4 = 10.7656
+PASS N16-repaired-Vol14 repaired (v) at Vol=1/4: Vol*P_B <= 4*Vol*E_B[W], B in {1,2,4,8,16}; B=1:0.2500<=6.0816 B=2:0.2500<=3.2096 B=4:0.2500<=1.3904 B=8:0.2343<=0.7640 B=16:0.1690<=0.3594
+PASS N16-chain-beta-monotone repaired chain Vol=1/4, beta=16>=beta_0=4: 0.2500 <= 1.3904 <= 6.0816
+PASS N16-Vol-gt1 Vol=4, B=16: Vol*P = 2.7048 <= 4*Vol*E_B[W] = 5.7503
+PASS N16-old-display-fails r1 display fails at Vol=1/64, beta=64: P=1.0000 > 4*Vol*E=0.3801; repaired 0.015625 <= 0.3801
+-- summary --
+PASS 35 FAIL 0
+ALL CHECKS DONE 117R2

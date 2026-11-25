@@ -1,0 +1,52 @@
+\paragraph{Faddeev--Popov determinants of the pointwise gauge sectors of the locked block (conditional; Presentation-B scope; not closure).}
+Under~\eqref{eq:Phi-transform} both gauge actions on \(\Phi\) are pointwise: an
+internal transformation \(\Omega(x)\) acts by left multiplication and a local
+Lorentz transformation \(\Lambda(x)=\mathbb{I}+\lambda(x)\),
+\(\lambda\in\mathfrak{so}(3,1)\), by right multiplication, and neither contains
+a derivative of the transformation parameter. The Faddeev--Popov operator of a
+gauge fixing of either group therefore has order equal to the derivative order
+of the gauge-fixing functional, and a zeroth-order fixing yields a ghost
+operator that is a field endomorphism rather than a differential operator; the
+locked diagonal combination shares this property. For the
+\(\mathrm{SO}(3,1)\) sector, fix about the vacuum~\eqref{eq:VEV} the
+antisymmetric gauge \(F:=\mathrm{antisym}(\eta\Phi)=0\), which removes the six
+\(\eta\)-antisymmetric components of Proposition~\ref{prop:goldstone-count}.
+With \(a:=\eta\lambda\) antisymmetric, the ghost map
+\(a\mapsto\mathrm{antisym}(\eta\Phi\eta\,a)\) gives
+\[
+  \det M(\Phi)=\frac{1}{64}\prod_{i<j}\bigl(r_i(\Phi)+r_j(\Phi)\bigr),
+\]
+where \(r_i(\Phi)\) are the roots of the characteristic polynomial of \(\Phi\);
+the identity is polynomial in the entries of \(\Phi\). It equals \(v^{6}\) at
+\(\Phi=v\mathbb{I}\), is not a function of \(\det\Phi\) (the spectral datum
+\((2,\tfrac12,1,1)\) gives \(405/256\) at \(\det\Phi=1\)), and vanishes whenever
+\(r_i+r_j=0\); in particular the \(\eta\)-orthogonal frame obtained from the
+vacuum by a \(\pi/2\) spatial rotation is a zero, so this fixing is admissible
+only on the field-space patch containing the vacuum and free of such frames.
+Because \(M\) is an endomorphism field, the ghost integral is pointwise and
+exact, with no momentum integration and no regulator: it contributes the
+derivative-free local functional \(\int d^{4}x\,\ln\det M(\Phi(x))\) to the path-integral exponent (entering
+the effective action with sign \(-1\)), whose logarithmic linear response at
+the vacuum is \(\frac{3}{2v}\mathrm{tr}\,\delta\Phi\), a tadpole for the locking
+potential, and it contributes no kinetic operator. Two
+consequences for the operator content that Problem~D1 must specify: in a
+zeroth-order gauge the internal, Lorentz, and locked-diagonal
+Faddeev--Popov determinants are pointwise factors, so they do not enter the
+weighted sector sum of Theorem~\ref{thm:Geff} as kinetic operators, and, among the symmetries exhibited
+for the displayed action at the orders recorded above, no
+kinetic ghost operator other than that of the diffeomorphism
+sector arises; and with \(g^{(0)}_{\mu\nu}\) held fixed
+(Assumption~\ref{ass:aux-metric}) the invariance
+of~\eqref{eq:Smicro} under diffeomorphisms is exhibited only
+for those that preserve \(g^{(0)}\), such as its isometries,
+which does not exclude other symmetries and derives no
+diffeomorphism gauge symmetry, so the diffeomorphism ghost is
+a supplied input of the infrared sector and not a consequence
+of~\eqref{eq:Smicro}.
+These statements concern the gauge-fixing structure of the Presentation-B locked
+block under Assumption~\ref{ass:local-lorentz}, the
+transformation law~\eqref{eq:Phi-transform}, and the stated gauge choice and
+patch; they derive no local symmetry, derive no frame locking or
+non-degeneracy (Assumptions~\ref{ass:frame-lock} and~\ref{ass:nondeg}), leave
+the kinetic term for \(\omega_\mu\) and the diagonal-connection dynamics
+untouched, and say nothing about Presentation~A. Problem~D remains open.

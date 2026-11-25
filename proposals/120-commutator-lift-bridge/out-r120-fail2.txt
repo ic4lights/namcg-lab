@@ -1,0 +1,35 @@
+PASS P1 payload bytes=5138 sha1[:12]=343226e27ebf
+PASS P2 payload pure ASCII
+PASS P3 payload CRLF lines, ends CRLF, no tab/BOM/$
+PASS P4 no label/cite/Tr macros
+PASS P5 refs subset of grep-confirmed unique labels: 11 refs
+PASS P6 central claim strings present (6)
+PASS P7 no process/status/priority/completion words
+PASS T2a bridge identity symbolic Theta, A linear, Phi const, all mu, n=2 generic
+PASS T2b bridge identity symbolic Theta, A const, Phi linear, all mu
+PASS T2c bridge identity symbolic Theta, A quad, Phi mixed deg2, all mu
+PASS T2d bridge identity n=3 symbolic Theta, all mu
+PASS T2e bridge identity n=4 symbolic Theta, all mu
+PASS T2f bridge identity Hermitian A, symbolic Theta, all mu, n=2
+PASS T2g bridge identity A mixed deg2, Phi linear, symbolic Theta, all mu
+PASS T2h bridge identity A linear, Phi mixed deg2, symbolic Theta, all mu
+PASS T2i bridge identity Hermitian A const + Phi linear, all mu
+PASS T2j bridge identity A quad x2, Phi const, symbolic Theta, all mu
+PASS T2k sweep 144 monomial pairs x 4 mu, numeric Theta, generic coeffs, n=2
+PASS T2l Theta=0: star-commutator [x^mu.I, Phi(x)] vanishes for all mu (both sides 0)
+PASS T2m bridge identity for degenerate rank-2 Theta (single block), all mu
+PASS T2n bridge identity with Hermitian-structured Phi (real diag, conj offdiag), const+linear A
+PASS T3a LHS - printed-left-action-RHS = -Theta^{mu nu}(Phi *_star A_nu) exactly (4 classes x 4 mu)
+PASS T3a2 constant Phi: mismatch equals the right-action product -Theta^{0 nu} Phi A_nu exactly
+PASS T3a3 teeth: this mismatch is nonzero for generic data (no commutator produces it)
+PASS T3b central u(1) part invisible to commutators but nonzero in printed left action
+PASS T4a lift kinetic form = -(kappa/2) K^{bd} Tr(d_b Phi d_d Phi) exactly, symbolic Theta (kappa=1)
+PASS T4b K = Theta g Theta symmetric; other index convention Theta^T g Theta = -K
+PASS T4c1 K00 + c = 0 gives c = sum (Theta0i)^2 >= 0
+PASS T4c2 Kii - c = -(sum of squares) and sum = -2|Theta|^2: K = c g only real sol Theta=0, c=0
+PASS T4d canonical K = Theta g Theta = diag(-e^2, e^2, -b^2, -b^2)
+PASS T4e teeth (t01,t23)=(2,3): K00*g22 - K22*g00 = -13 != 0 (not g-proportional)
+PASS T4g spatial Theta: K^{0 mu} = 0 (no time-derivative term) and det K = 0 (degenerate)
+PASS T5a [Xhat^mu, phi0(x) I]_star = i Theta^{ab} d_a Xhat^mu d_b phi0 I exactly (quadratic phi0, linear A)
+PASS T5b frame bracket invariant under phi0 -> phi0 + const (frame only derivative-coupled)
+RC=1

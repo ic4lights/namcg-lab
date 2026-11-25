@@ -1,0 +1,17 @@
+PASS P1 payload bytes=5138 sha1[:12]=343226e27ebf
+PASS P2 payload pure ASCII
+PASS P3 payload CRLF lines, ends CRLF, no tab/BOM/$
+PASS P4 no label/cite/Tr macros
+PASS P5 refs subset of grep-confirmed unique labels: 11 refs
+PASS P6 central claim strings present (6)
+PASS P7 no process/status/priority/completion words
+PASS T2a bridge identity symbolic Theta, A linear, Phi const, all mu, n=2 generic
+PASS T2b bridge identity symbolic Theta, A const, Phi linear, all mu
+PASS T2c bridge identity symbolic Theta, A quad, Phi mixed deg2, all mu
+PASS T2d bridge identity n=3 symbolic Theta, all mu
+PASS T2e bridge identity n=4 symbolic Theta, all mu
+PASS T2f bridge identity Hermitian A, symbolic Theta, all mu, n=2
+PASS T2g bridge identity A mixed deg2, Phi linear, symbolic Theta, all mu
+PASS T2h bridge identity A linear, Phi mixed deg2, symbolic Theta, all mu
+PASS T2i bridge identity Hermitian A const + Phi linear, all mu
+PASS T2j bridge identity A quad x2, Phi const, symbolic Theta, all mu

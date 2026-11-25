@@ -1,0 +1,33 @@
+import hashlib, os
+SEC = (
+"## Payload r2 scope fix (supersession, 2026-11-23)\r\n"
+"- Paragraph-5 scope fix per R4 findings (T6f/T6g genuine payload defect). Minimal corrected wording\r\n"
+"(A) 'no shift-invariant term is a function of \\(X\\) at quadratic order, \\(X\\) itself being\r\n"
+"shift-variant' replaces 'no quadratic shift-invariant term exists'; (B) the quartic claim becomes\r\n"
+"'at quartic order the shift-invariant sector of the checked conjugation-invariant family is\r\n"
+"four-dimensional, spanned by \\(W_1=\\operatorname{Tr}([\\Phi,\\Phi^\\dagger])^2\\) and three\r\n"
+"invariants of the traceless part \\(\\widetilde\\Phi=\\Phi-(\\operatorname{Tr}\\Phi/2)\\,\\mathbb I\\)\r\n"
+"(checked at matrix size \\(2\\))'; (C) 'so this quartic locks nothing'. The verifier MARK string for\r\n"
+"W1 is preserved; paragraph 6 (W(X)-channel) untouched (uses only T7). Diff: payload line 5 only\r\n"
+"(9-line file, 1 changed line); generator source line 31 only; fix script fix_para5.py.\r\n"
+"- Pins: payload 343226e27ebf/5138 -> a5aa77dc90a3/5287 (old archived byte-identical as\r\n"
+"insert-commutator-lift-r1-superseded-r1.tex); gen_payload_120.py 3eab305230b3/10229 ->\r\n"
+"67cee1fbc771/10378 (archived gen_payload_120-superseded-r1.py). Gen run twice: outputs identical\r\n"
+"(out-gen120-c.txt == out-gen120-d.txt). POST 853982 -> 854131 (= 848842 + 5287 + 2),\r\n"
+"POST_SHA1 f5a761c55396faf78bb5f6d74693c5193bafbea0 (from gen).\r\n"
+"- R5 (constant-only re-pins, fix_r5.py; rationale appended to verify_repair_log.txt '## R5'): new\r\n"
+"payload exceeds the P8 chain-119 ceiling 5191, so verify_r120.py 4d751ac4afb8/39745 ->\r\n"
+"dac3381f5dc8/39762 (P1 payload pin re-pinned; P8 ceiling 5191 -> 5340, chain-119 +53 margin kept;\r\n"
+"pre-R5 copy verify_r120-preR5.py) and cert-r120p.py 1bf4a61b1597/4781 -> c633cbdc2288/4781\r\n"
+"(PAY_SHA1_12/PAY_SIZE/POST/POST_SHA1; pre-R5 copy cert-r120p-preR5.py). Note: R5 necessarily also\r\n"
+"covered the P1 and cert payload pins, which pinned the superseded bytes; constants only, no logic\r\n"
+"edits, no tier-word changes.\r\n"
+"- assemble_pr1.py tweaked (now 4eb619312b8c) to read the capture from %CAP120% or the newest\r\n"
+"existing of out-r120-rerun3.txt / out-r120-rerun2.txt. This proposal-r1.md was assembled from the\r\n"
+"rerun2 (old-payload, green) capture: TOTAL/R120PIN/LINES-* therefore cite rerun2 until refreshed.\r\n"
+"Re-run assemble_pr1.py after out-r120-rerun3.txt is green to refresh them on the new payload.\r\n"
+"Background chain bv8szddan: cert-r120p.py -> out-cert-r120p-r2.txt, then verify_r120.py ->\r\n"
+"out-r120-rerun3.txt.\r\n"
+)
+open('pr1_partB.md', 'ab').write(SEC.encode('ascii'))
+print('appended', os.path.getsize('pr1_partB.md'))

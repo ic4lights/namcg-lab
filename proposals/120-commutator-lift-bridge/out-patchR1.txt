@@ -1,0 +1,3 @@
+PATCH R1 VERIFIED (idempotent): old 34530 B -> new 36376 B
+old sha1[:12] 54ec6b20233b  new sha1[:12] 610a2c6c7a32
+CONTROL OK 120R1

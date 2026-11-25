@@ -1,0 +1,12 @@
+[   0.0s] == 125 ghost_linearization: first variation of F^mu = g^{ab} Gamma^mu_{ab} ==
+[   1.4s] A0 S^2 rotational xi:  dF = [0, Derivative(f(x0), (x0, 2)) + Derivative(f(x0), x0)/tan(x0)]
+[   1.4s] A0 S^2 rotational xi: box xi = [0, -f(x0) + Derivative(f(x0), (x0, 2)) + 3*Derivative(f(x0), x0)/tan(x0)] ;  Ric xi = [0, f(x0)]
+[   1.5s] A1 dF-(box+Ric) = [0, -2*Derivative(f(x0), x0)/tan(x0)]   [123-sign candidate +]
+[   1.5s] A1 dF+(box+Ric) = [0, 2*Derivative(f(x0), (x0, 2)) + 4*Derivative(f(x0), x0)/tan(x0)]   [123-sign candidate -]
+[   1.5s] A1 dF-box       = [0, f(x0) - 2*Derivative(f(x0), x0)/tan(x0)]   [no-Ric candidate]
+[   1.5s] A2 Killing K0: Lxi g = 0 and (box+Ric)xi = 0      PASS
+[   2.0s] A2 Killing K1: Lxi g = 0 and (box+Ric)xi = 0      FAIL
+[   2.5s] A2 Killing K2: Lxi g = 0 and (box+Ric)xi = 0      FAIL
+[   3.1s] A3 generic xi: (box+Ric)xi nonzero (guard teeth)      PASS
+[   3.2s] A4 eq:riemann convention: S^2 R=+2, Ric=g              PASS (R=2)
+rc=127

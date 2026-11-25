@@ -1,0 +1,14 @@
+COMPILE CERTIFICATE 126 v2 (payload-126.txt spliced into appH); supersedes v1 tree build126_cert_31448 (pre-revision obstruction sentence; left outside repo, not authoritative)
+date: 2026-11-25
+temp tree: C:/Users/redgi/AppData/Local/Temp/build126_cert_v2_31476 (outside repo; repo untouched)
+temp tree contents: namcg-book7.tex, frontmatter/, chapters/ (appH replaced by appH-spliced-126.tex), bib/, figs/
+spliced appH: sha1 7534c424b9696c3596dc40e4d5ceac256408359b size 879469 (PRE 875106 + payload 4361 + join CRLF 2)
+live appH pin: sha1 76d862968c31d78fffc665f72aaf60d40c90367a size 875106 (re-verified by generator at splice time)
+command: pdflatex -interaction=nonstopmode -halt-on-error namcg-book7.tex (x2)
+PASS1 exit 0; PASS2 exit 0
+log lines matching '^! ': 0
+undefined References: 0
+undefined Citations: 196 (natbib; bibtex not run in temp build; payload adds no \cite)
+pdf: namcg-book7.pdf 3196589 B
+pdftotext grep -c 'unitarity obstruction': 1 (paragraph present in compiled PDF)
+refs used by payload (all pre-existing): eq:Smatrix, ass:frame-lock, ass:nondeg; no labels, no cites added

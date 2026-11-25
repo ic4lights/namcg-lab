@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\120-commutator-lift-bridge\assemble_pr1.py", line 26, in <module>
+    assert len(total) == 1 and len(done) == 1, "capture lacks TOTAL/ALL DONE"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: capture lacks TOTAL/ALL DONE
+ASSEMBLE OK 120: proposal-r1.md 28153 B sha1[:12] 7a78d4dd0cbb
+TOTAL line: TOTAL 53/53 PASS
+placeholders substituted: 12

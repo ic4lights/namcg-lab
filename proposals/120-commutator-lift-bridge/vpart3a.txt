@@ -1,0 +1,127 @@
+# ---- T5: frame-mode blindness of the class ----
+def mmulp(f, gg):
+    out = []
+    for e1, C1 in f:
+        for e2, C2 in gg:
+            e = tuple(a + b for a, b in zip(e1, e2))
+            out.append((e, C1 * C2))
+    return out
+
+
+def polymat(f, n):
+    return sym_matrix(simplify_sym(f), n)
+
+
+def e4(k):
+    return tuple(1 if j == k else 0 for j in range(4))
+
+
+a0 = sp.Symbol("a0", complex=True)
+aq = [sp.Symbol("aq" + str(j), complex=True) for j in range(4)] + \
+     [sp.Symbol("aq" + str(j) + str(j), complex=True) for j in range(4)] + [sp.Symbol("aq12", complex=True)]
+TERMS = [((0, 0, 0, 0), a0)] + [(e4(j), aq[j]) for j in range(4)] + \
+        [(tuple(2 if k == j else 0 for k in range(4)), aq[4 + j]) for j in range(4)] + [((1, 1, 0, 0), aq[8])]
+
+
+def frame_bracket(mu, Adeg, terms, Th, n, shift=0):
+    Ms = [genmat(n, "m" + str(rho)) for rho in range(4)]
+    Xmu = xhat_sym(mu, Ms, Th, Adeg, n)
+    phi = [(e, c * sp.eye(n)) for (e, c) in terms]
+    if shift != 0:
+        phi = madd(phi, [((0, 0, 0, 0), shift * sp.eye(n))])
+    B = madd(star(Xmu, phi, Th), mmul_scalar(star(phi, Xmu, Th), -1))
+    return sp.simplify(polymat(B, n)), Ms
+
+
+ok = True
+for mu in range(4):
+    B, Ms = frame_bracket(mu, (1, 0, 0, 0), TERMS, THSyms, 2)
+    Xmu = xhat_sym(mu, Ms, THSyms, (1, 0, 0, 0), 2)
+    phiM = [(e, c * sp.eye(2)) for (e, c) in TERMS]
+    dX = [mdiff(Xmu, aa) for aa in range(4)]
+    dph = [mdiff(phiM, bb) for bb in range(4)]
+    exp_list = []
+    for aa in range(4):
+        for bb in range(4):
+            if THSyms[(aa, bb)] == 0:
+                continue
+            exp_list = madd(exp_list, mmul_scalar(mmulp(dX[aa], dph[bb]), sp.I * THSyms[(aa, bb)]))
+    E = sp.simplify(polymat(exp_list, 2))
+    ok = ok and (sp.expand(B - E) == sp.zeros(2))
+chk("T5a [Xhat^mu, phi0(x) I]_star = i Theta^{ab} d_a Xhat^mu d_b phi0 I exactly (quadratic phi0, linear A)", ok)
+
+B1, _ = frame_bracket(2, (1, 0, 0, 0), TERMS, THSyms, 2)
+B2, _ = frame_bracket(2, (1, 0, 0, 0), TERMS, THSyms, 2, shift=sp.Symbol("sframe", complex=True))
+chk("T5b frame bracket invariant under phi0 -> phi0 + const (frame only derivative-coupled)",
+    sp.simplify(B2 - B1) == sp.zeros(2))
+
+
+def lift_full(Phi_list, Asym, Th, n, Adeg=(1, 0, 0, 0)):
+    Bs = []
+    for mu in range(4):
+        Xmu = xhat_sym(mu, Asym, Th, Adeg, n)
+        Bmu = madd(star(Xmu, Phi_list, Th), mmul_scalar(star(Phi_list, Xmu, Th), -1))
+        Bs.append(Bmu)
+    tot = 0
+    for mu in range(4):
+        for nu in range(4):
+            Sb = star(Bs[mu], Bs[nu], Th)
+            tot = tot + (-sp.Rational(1, 2)) * g[mu, nu] * polymat(Sb, n).trace()
+    return sp.expand(tot)
+
+
+n = 2
+Pc = [genmat(n, "c1"), genmat(n, "c2"), genmat(n, "c3"), genmat(n, "c4"), genmat(n, "c5"),
+      genmat(n, "c6"), genmat(n, "c7")]
+Phi_q = [((0, 0, 0, 0), Pc[0])] + [(e4(j), Pc[1 + j]) for j in range(4)] + \
+        [(tuple(2 if k == j else 0 for k in range(4)), Pc[5 + j]) for j in range(2)]
+Asym = [genmat(n, "M" + str(r)) for r in range(4)]
+L1 = lift_full(Phi_q, Asym, ThN, n)
+Phi_q2 = madd(Phi_q, [((0, 0, 0, 0), sp.Symbol("ss", complex=True) * sp.eye(n))])
+L2 = lift_full(Phi_q2, Asym, ThN, n)
+chk("T5c full star lift: L(Phi + s I) - L(Phi) = 0 exactly (quadratic Phi, linear A, numeric Theta)",
+    sp.simplify(L2 - L1) == 0)
+
+# T5d: frame mode phi0(x) I: quadratic lift coefficient is exactly -K (derivative coupling only)
+phi0M = [(e, c * sp.eye(n)) for (e, c) in TERMS]
+Lf = lift_full(phi0M, [sp.zeros(n) for r in range(4)], THSyms, n)
+dphiM = [mdiff(phi0M, bb) for bb in range(4)]
+tgtf = 0
+for b in range(4):
+    for d in range(4):
+        if Kd[b, d] == 0:
+            continue
+        pb = polymat(dphiM[b], n)[0, 0]
+        pd = polymat(dphiM[d], n)[0, 0]
+        tgtf = tgtf + sp.Rational(-1, 2) * Kd[b, d] * 2 * sp.expand(pb * pd)
+chk("T5d frame-mode lift = -(kappa/2) K^{bd} d_b phi0 d_d phi0 Tr(I) exactly (frame couples only via K)",
+    sp.expand(Lf - tgtf) == 0)
+
+# T5e: no mass term: at A = 0 a constant Phi has zero bracket and zero lift (any Theta)
+zeroA = [sp.zeros(n) for r in range(4)]
+Phi_c = [((0, 0, 0, 0), genmat(n, "ph0"))]
+ok = True
+for mu in range(4):
+    Xmu = xhat_sym(mu, zeroA, THSyms, (0, 0, 0, 0), n)
+    Bmu = madd(star(Xmu, Phi_c, THSyms), mmul_scalar(star(Phi_c, Xmu, THSyms), -1))
+    ok = ok and sp.simplify(polymat(Bmu, n)) == sp.zeros(n)
+Lc = lift_full(Phi_c, zeroA, THSyms, n)
+chk("T5e A=0: constant Phi has zero bracket (all mu) and zero lift: class supplies no mass term",
+    ok and sp.simplify(Lc) == 0)
+
+# T5f: Phi = v I (v real const): bracket vanishes for ANY A (vacuum is in the blind kernel):
+# hence the gauge-quartic (seagull) coupling vanishes at Phi = v I: no gauge-boson mass.
+vv = sp.Symbol("v", real=True)
+Phi_v = [((0, 0, 0, 0), vv * sp.eye(n))]
+ok = True
+for mu in range(4):
+    Xmu = xhat_sym(mu, Asym, THSyms, (1, 0, 0, 0), n)
+    Bmu = madd(star(Xmu, Phi_v, THSyms), mmul_scalar(star(Phi_v, Xmu, THSyms), -1))
+    ok = ok and sp.simplify(polymat(Bmu, n)) == sp.zeros(n)
+Lv = lift_full(Phi_v, Asym, THSyms, n)
+# teeth: generic constant Phi does NOT give zero bracket when A != 0 (seagull exists off vacuum)
+Xteeth = xhat_sym(0, Asym, THSyms, (1, 0, 0, 0), n)
+Phi_g = [((0, 0, 0, 0), genmat(n, "pg"))]
+Bteeth = madd(star(Xteeth, Phi_g, THSyms), mmul_scalar(star(Phi_g, Xteeth, THSyms), -1))
+chk("T5f Phi=v I: bracket and lift vanish for any A (quartic gauge coupling vanishes on vacuum); teeth: generic constant Phi off-vacuum has nonzero bracket",
+    ok and sp.simplify(Lv) == 0 and sp.simplify(polymat(Bteeth, n)) != sp.zeros(n))

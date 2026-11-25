@@ -1,0 +1,17 @@
+CTRL eol-crclr: fires OK
+CTRL eol-bareLF: fires OK
+CTRL eol-bareCR: fires OK
+CTRL forbidden-dollar: fires OK
+CTRL forbidden-label: fires OK
+CTRL ascii: fires OK
+CTRL braces: fires OK
+CTRL refs: fires OK
+PIN OK d2af19df0f99 863831
+REFS OK used=12 labels
+LABELS OK (each used label defined in appH or a whitelisted file)
+ANCHOR unique (count 1)
+PRE  d2af19df0f99 863831
+PAY  5548ee218f2c 5488
+POST 704f3765797a 869321
+POST sha1 full: 704f3765797a89371fa683089b560e6a496f5df6
+GEN VERDICT: PASS
