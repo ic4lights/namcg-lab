@@ -19,3 +19,4 @@ scratch/
 .claude/settings.local.json
 
 strata.ps1
+margin_violations/
