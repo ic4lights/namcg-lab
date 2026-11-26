@@ -2217,3 +2217,64 @@ Integrator dispatched for ordinal 51 on exact payload e0b8d6b31cad/5442: context
   mandatory protocol-3(a) scan: ordinal 58. E.thimble author pause; C.operator HOLD; N.specR
   blocked-by F.coeff; kill-order on 123 verify_ghost_op_123.py stands. Nothing committed; author merges.
 
+## 2026-11-25 ORCH - remote/claude import review; held data routed (item 129 dispatched)
+- Author directives this window: (1) "bring in .tex changes from the remote/claude branch ... review for
+  duplication ... identify genuine corrections"; (2) "route the held data". No commits made (author merges);
+  chapters/bib untouched beyond the two imports below; no status/priority/completion label touched.
+- Imported (uncommitted, per-block, never file checkout): chapters/ch01-geometrogenesis.tex claim-tier repair
+  (Ward-identity assertion re-anchored to Assumption ass:EE / Proposition prop:ward / open Problem B; GENUINE
+  CORRECTION) d7c1ca4e4652/16,547 CRLF; namcg-book7.tex geometry block inner 0.9in outer 0.45in bindingoffset
+  0.05in (cosmetic; FLAG: imported inline comments are arithmetically wrong, kept verbatim for the author)
+  30746a3add74/4,258 CRLF. Both content-equal to branch modulo EOL (branch LF, ours CRLF). build_check after:
+  PASS pages=450, 0 undefined refs/citations, 0 multiply-defined, git diff --check clean.
+- Duplication verdict (full report reports/rc-import-review-2026-11-25.md): appE/appI/ch13/ch14/ch16 patches
+  byte-identical both sides; 38/59 branch appH added blocks are duplicates once EOL + the branch's
+  de-standardized "PROGRAMME CONDITIONAL" spelling are normalized; big diverged shared paragraphs are OLDER
+  versions our reviewed ordinals superseded (branch even dropped the "Problem E remains open and
+  PROGRAMME-CONDITIONAL" sentence); branch appH (782,439 B) vs ours (883,075 B) = independent evolution ->
+  NEVER wholesale-importable. Process changes: CLAUDE.md import/EOL/spelling normalization convention;
+  gatekeeper.md existing-prose claim-tier audit duty; memory file remote-claude-workspace.
+- Held (branch-original, gatekeeper-unreviewed, NOT imported): ~93.5 KB at
+  reports/rc-parallel-apph-blocks-2026-11-25.md (blocks 22, 27, 28, 42, 48, 49-51). Provenance extracted from
+  tip 1aafb3d to proposals/claude-remote-late/ = their items 068-076 with their own reviews + verdict table
+  (see its README; their verdicts are pointers, zero authority here; ordinals not comparable across lines).
+- ROUTING (author "route the held data"): researcher (fable) dispatched as item proposals/129-rc-held-recheck/
+  treating the held blocks + branch records as PRIOR ART: independent re-derivation under current source pins,
+  per-block ADOPT/MODIFY/REJECT/SUPERSEDED classification, rule-7 verification of every candidate citation
+  before any payload use, payload only for surviving material advancing current targets, payload compile certs
+  + generator positive controls, journal-129 append discipline. Dispatch pins: appH dee9a4174b81/883,075/4,146
+  (UNCHANGED by the imports), ch17 20ba622bd27e, digest CURRENT, ledger old fdfe2a00ca2f.
+- Item 128 chain remains PAUSED per author (gatekeeper pass 2 / SME-CONSULT / revision not dispatched). The
+  resumed pass-1 job exited again having persisted NOTHING (output 0 bytes; journal still ends at PASS-1 BLOCK
+  10): no consolidation; interim INTERIM REJECT | SME-CONSULT (trE = 3 R_E vs researcher 29/6 R_E) stands
+  unreviewed. Next mandatory protocol-3(a) scan: ordinal 58. E.thimble author pause; C.operator HOLD; N.specR
+  blocked-by F.coeff; kill-order on 123 verify_ghost_op_123.py stands.
+## 2026-11-26 ORCH - item 129 RC-HELD RECHECK: INTEGRATED ORDINAL 55 (F cubic branch)
+- Full prior-art routing chain closed same day as dispatch. Researcher r1 re-derived all 8 held blocks; ONE payload
+  survived: Problem F cubic-branch record (gauge-free shift identity ESTABLISHED N<=6; branch spectrum + exact
+  no-negative-mode window -1<=kappa_3<=2 CONDITIONAL on the same fluctuation-operator reduction as integrated L3194;
+  beta_K=2(r3-1)/(4-3r3+delta); bounded no-go CONDITIONAL on supplied weight input Vhat/That -> kappa_3^2/4).
+  Dispositions: 22 SUPERSEDED; 48p1 ADOPT-MODIFY -> payload; 48p2 SUPERSEDED; 48p3+49-51 not payloaded (C_tree
+  unproduced); 42/27/28 NOT-FOR-MANUSCRIPT (28 = Heisenberg Landau sectors, reproduction pack unreconstructible,
+  recorded future candidate). Their item-075 NEEDS-EVIDENCE resolved without overclaim.
+- Gatekeeper: r1 AWRR OPEN 0/2 (all math independently re-derived; 2 majors = unsourced 5.345 -> 5.34 (tree slope
+  recomputes exactly 5.3400 from supplied values AND from L3194's own polynomial), residual bound 1e-13 -> 1.5e-13
+  (own pack hit 1.421e-13), wording minor); r2 ACCEPT OPEN 0/0 PROGRESS improving. r2 byte-diff proof: inverting the
+  3 edit strings recovers r1 bytes exactly (no fourth region); guards 4/4 positive controls; cert re-run PASS.
+  No PRIOR-CLAIM-ERROR (L3194/3196/3220/3222 clean; anchor = kappa_3=2 case verified).
+- Integrator ordinal 55 (solo): pre appH dee9a4174b81/883,075 (sha1 6839a5cab30e) - payload pin match 3,147 B
+  87a7c2568f72 sha256; splice POST 886,224 B (= accepted arithmetic; payload ends CRLF) / 4,150 L /
+  beed36d60b8c sha256 (27bf197bd548 sha1); payload at L3196-3198 between unique anchors; removal round-trip exact;
+  guards positive-controlled (one pre-write guard abort on a +3,153 miscount, disk untouched). BUILD_CHECK PASS
+  pages=450, 0 undefined refs/citations, 0 multiply-defined, bibtex 0 warnings, PDF restored, diff --check clean.
+- Notes: appH carries ONE pre-existing UTF-8 em dash (L3401 region; verified present at HEAD, NOT from this
+  integration; ASCII-assert scripts should tolerate it). Author had meanwhile committed the 2026-11-25 imports
+  (ch01 claim-tier fix + book7 layout) in 144a655. Pending diff under chapters/bib = ONLY the ordinal-55 appH +4
+  lines; ledger appended by orchestrator; nothing else touched. Frontier clerical (single writer): record edge
+  F.cubic-branch-k3-record state consumed-by-129-integrated (rank 25 history; no-go evasion avenues recorded in
+  missing_inputs for pathfinder promotion); frontier d84b402aceac -> 4d9456a62c83 (LF). Digest refreshed
+  (DIGEST CURRENT). Problem F stays Status: OPEN, Priority: CRITICAL PATH, Completion: PROGRAMME-CONDITIONAL;
+  NO label touched. Next mandatory protocol-3(a) scan: ordinal 58. Item 128 chain remains PAUSED (author);
+  E.thimble author pause; C.operator HOLD; N.specR blocked-by F.coeff; kill-order on 123 verify_ghost_op_123.py
+  stands. Bib item for author: IsoKimuraTanakaWakatsuki2001 (hep-th/0101102, NPB B604 (2001) 121-147) verified to
+  exist, currently NOT in bib/namcg.bib, uncited by payload. Nothing committed; author merges.

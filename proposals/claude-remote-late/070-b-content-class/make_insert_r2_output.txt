@@ -1,0 +1,8 @@
+m4 occurrences of replaced text: 1
+m1 occurrences of replaced text: 1
+m2 occurrences of replaced text: 1
+M2 occurrences of replaced text: 1
+M1/m3 occurrences of replaced text: 1
+scope occurrences of replaced text: 1
+r2 insert bytes (LF): 9783
+MAKE R2 PASS

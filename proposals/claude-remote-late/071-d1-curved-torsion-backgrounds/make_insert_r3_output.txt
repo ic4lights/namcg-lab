@@ -1,0 +1,5 @@
+replacement H applied once
+replacement SC2 applied once
+old parameter-a patterns remaining: 0
+\chi occurrences in insert: 8
+appH_insert_r3.tex bytes 9312 sha256 c0ff0f791bfe4b19e4c37d29d70bfffc24f6311c0e78ef31818f17a3dc9a19dc bare LF 0

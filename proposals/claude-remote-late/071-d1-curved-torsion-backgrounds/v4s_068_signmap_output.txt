@@ -1,0 +1,23 @@
+== (1) torsion: constant-frame gauge omega_a^{12} = vartheta k_a versus left-invariant gauge
+  omega-vartheta = +0.5 (code w = -0.5): max|T - T_left-invariant| = 0.0e+00 ; T_abc T^abc = 0.0e+00
+  omega-vartheta = -0.5 (code w = +0.5): max|T - T_left-invariant| = 1.0e+00 ; T_abc T^abc = 0.0e+00
+== (2) characteristic roots, omega-vartheta values (code w = -vartheta)
+  omega-vartheta = -0.5: roots 40; max|Im t| 8.5e-14; max|x-j| 2.4e-12; all on cones True; j -> mult {-2: [2, 2], -1: [6, 6], 0: [4, 4], 1: [6, 6], 2: [2, 2]}
+  omega-vartheta = +0.5: roots 40; max|Im t| 1.8e-13; max|x-j| 1.4e-11; all on cones True; j -> mult {-2: [2, 2], -1: [6, 6], 0: [4, 4], 1: [6, 6], 2: [2, 2]}
+  omega-vartheta = +1.0: roots 40; max|Im t| 1.4e-11; max|x-j| 5.3e-11; all on cones True; j -> mult {-2: [2, 2], -1: [6, 6], 0: [4, 4], 1: [6, 6], 2: [2, 2]}
+  omega-vartheta = +2.0: roots 40; max|Im t| 8.3e-13; max|x-j| 2.5e-10; all on cones True; j -> mult {-2: [2, 2], -1: [6, 6], 0: [4, 4], 1: [6, 6], 2: [2, 2]}
+  omega-vartheta = -1.0: roots 40; max|Im t| 3.9e-12; max|x-j| 2.7e-10; all on cones True; j -> mult {-2: [2, 2], -1: [6, 6], 0: [4, 4], 1: [6, 6], 2: [2, 2]}
+  omega-vartheta = -2.0: roots 40; max|Im t| 3.1e-12; max|x-j| 1.5e-09; all on cones True; j -> mult {-2: [2, 2], -1: [6, 6], 0: [4, 4], 1: [6, 6], 2: [2, 2]}
+  ALL ROOTS ON CONES (q + j vartheta k)^2 = 0 WITH MULTIPLICITIES 4,6,6,2,2: True
+== (3) omega-vartheta = 1 (code w = -1): partial multiplicities and exact ranks on the cones
+  j = -2: cumulative sum_i min(m_i, L), L = 1..4: [2, 2, 2, 2] (constant from L = 3 on: chains <= 3: True)
+  j = -1: cumulative sum_i min(m_i, L), L = 1..4: [4, 5, 6, 6] (constant from L = 3 on: chains <= 3: True)
+  j = +0: cumulative sum_i min(m_i, L), L = 1..4: [4, 4, 4, 4] (constant from L = 3 on: chains <= 3: True)
+  j = +1: cumulative sum_i min(m_i, L), L = 1..4: [4, 5, 6, 6] (constant from L = 3 on: chains <= 3: True)
+  j = +2: cumulative sum_i min(m_i, L), L = 1..4: [2, 2, 2, 2] (constant from L = 3 on: chains <= 3: True)
+  generic rational q: exact rank 30
+  q = ['15', '3', '4', '14'] on (q -2 k)^2 = 0: exact rank 28
+  q = ['14', '3', '4', '13'] on (q -1 k)^2 = 0: exact rank 26
+  q = ['13', '3', '4', '12'] on (q +0 k)^2 = 0: exact rank 26
+  q = ['12', '3', '4', '11'] on (q +1 k)^2 = 0: exact rank 26
+  q = ['11', '3', '4', '10'] on (q +2 k)^2 = 0: exact rank 28

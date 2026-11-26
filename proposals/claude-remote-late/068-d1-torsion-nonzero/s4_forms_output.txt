@@ -1,0 +1,14 @@
+== flat
+  dimension of the solution space 36 (symmetric 21, antisymmetric 15); next eigenvalues of the constraint [6. 6.]
+  max |G| on the frame-frame block 1.7e-16, on the frame-connection blocks 1.8e-16; rank of a generic member 24 of 40
+  defect of the factorisation G_ww = eta_ab (x) g: 1.1e-15
+  max defect of ad(J_12)-invariance of g over the family: 4.6e-01
+  Killing form (1/2) lam_cd mu^cd in the family: True (residual 1.3e-15); signature of it: [-1 -1 -1  1  1  1]
+  positive form sum_{c<d} lam^cd mu^cd in the family: True (residual 1.4e-15); signature of it: [1 1 1 1 1 1]
+== null rotation, constant-connection gauge
+  dimension of the solution space 12 (symmetric 7, antisymmetric 5); next eigenvalues of the constraint [6.953 6.953]
+  max |G| on the frame-frame block 9.2e-16, on the frame-connection blocks 6.6e-16; rank of a generic member 24 of 40
+  defect of the factorisation G_ww = eta_ab (x) g: 4.3e-16
+  max defect of ad(J_12)-invariance of g over the family: 4.4e-16
+  Killing form (1/2) lam_cd mu^cd in the family: True (residual 8.9e-16); signature of it: [-1 -1 -1  1  1  1]
+  positive form sum_{c<d} lam^cd mu^cd in the family: True (residual 1.3e-15); signature of it: [1 1 1 1 1 1]

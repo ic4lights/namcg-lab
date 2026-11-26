@@ -1,0 +1,6 @@
+(i) flat frame, eta = [-1, 1, 1, 1] : 60 starts, 59 converged (residual < 1e-11), 56 with R != 0; max |R_abcd R^abcd| among them = 3.4e-15; scalar curvature range (np.float64(-0.007), np.float64(0.0))
+(i) flat frame, eta = [1, 1, 1, 1] : 60 starts, 0 converged (residual < 1e-11), 0 with R != 0; max |R_abcd R^abcd| among them = 0.0e+00; scalar curvature range -
+(ii) |B1| 1.1e-16 |B2| 2.4e-17 Jacobi 3.5e-17 | |T| 0.439 |R| 0.124 R_abcd R^abcd -7.14e-04 scalar 0.538 | dim[g,g] 2, center 0, derived series [2, 0]
+(ii) |B1| 2.1e-16 |B2| 2.4e-17 Jacobi 1.0e-16 | |T| 0.659 |R| 0.164 R_abcd R^abcd 8.93e-04 scalar 0.101 | dim[g,g] 2, center 0, derived series [2, 0]
+(ii) |B1| 1.3e-16 |B2| 3.1e-17 Jacobi 8.3e-17 | |T| 0.387 |R| 0.110 R_abcd R^abcd -3.69e-03 scalar -0.229 | dim[g,g] 2, center 0, derived series [2, 0]
+(ii) |B1| 2.5e-11 |B2| 4.3e-11 Jacobi 2.1e-12 | |T| 0.313 |R| 0.096 R_abcd R^abcd 8.98e-13 scalar 0.000 | dim[g,g] 2, center 0, derived series [2, 0]

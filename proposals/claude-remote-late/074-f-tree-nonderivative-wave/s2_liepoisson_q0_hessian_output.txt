@@ -1,0 +1,11 @@
+s=1: (a) E(T) = 0 for mu^2=-3: True
+s=1: (b) linearised field equation = recorded L(A): True
+s=1: (c) symmetric kappa: L(kappa T) = -2 kappa T + 2 tr(kappa) T: True; antisymmetric kappa: L = 0: True
+s=1: (d) L(P_u T) = 2(1-P_u)T: True; L(T) = 6T: True; span matrix eigenvalues {6: 1, -2: 1}
+s=1: (e) density along X=(1+eps P_u)T = d0 + ((1+eps)^2-1) * d_u exactly: True
+s=-1: (a) E(T) = 0 for mu^2=-3: True
+s=-1: (b) linearised field equation = recorded L(A): True
+s=-1: (c) symmetric kappa: L(kappa T) = -2 kappa T + 2 tr(kappa) T: True; antisymmetric kappa: L = 0: True
+s=-1: (d) L(P_u T) = 2(1-P_u)T: True; L(T) = 6T: True; span matrix eigenvalues {6: 1, -2: 1}
+s=-1: (e) density along X=(1+eps P_u)T = d0 + ((1+eps)^2-1) * d_u exactly: True
+all exact checks passed

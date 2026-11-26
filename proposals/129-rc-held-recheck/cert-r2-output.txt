@@ -1,0 +1,4 @@
+splice: pre 883075 B -> post 886224 B (payload 3147 B + join)
+bibtex exit 0
+pdflatex exit 0/0, pages = 450, undefined refs/citations = 0, multiply-defined = 0
+CERT129 PASS (exit 0, undefined refs/citations = 0)

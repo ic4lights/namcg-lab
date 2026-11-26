@@ -1,0 +1,8 @@
+== U2: constraint 0, tau = 7/5
+   (1) first relation at Cayley u, symbolic y, kappa: residual set {0}
+   (2) [D^a,[D_a,D_b]] at Cayley u, all components incl. multiplication part: {0}
+   (3) read-off at u = 1: T_ac^c - tau k_a = [0, 0, 0, 0] ; nonzero F pairs {(1, 3): 7*kappa/10} [36s]
+== T1: constraint 0, tau = 0
+   (1) first relation at Cayley u, symbolic y, kappa: residual set {0}
+   (2) [D^a,[D_a,D_b]] at Cayley u, all components incl. multiplication part: {0}
+   (3) read-off at u = 1: T_ac^c - tau k_a = [0, 0, 0, 0] ; nonzero F pairs {} [195s]

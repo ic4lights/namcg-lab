@@ -1,0 +1,20 @@
+appH pre  sha256 8aed4519472ef5ec9b1c8a4668e39b02b0882b5e7edb2cf9a9e0b5ba513ae229 bytes 785633
+pre-hash matches expected: True
+E1 Yukawa-condition list (tadpole paragraph): occurs 1x, line 3138, inside intended paragraph True
+E2 singlet-sector pointer (tree non-derivative paragraph): occurs 1x, line 3159, inside intended paragraph True
+insert: LF bytes 8306 sha256(LF) 1345e9401c93f0331a6424b1c5e4e452317c4f3b9b05a1501a1c49c4aaeedbe1 ; inserted at line 3165
+line after the insert: \section{Problem G: HBEV}
+appH post sha256 2b8f46a62f3b4480152f93801170029b589a08618ec1cf5504b8aea04eb85a4d bytes 794350 lines 3771 bare LF 0
+post-hash matches expected: True
+label ch:vierbein-emergence defined 1
+status sentences in insert: 1 ; at the end: True
+insert: no label words, no process language, balanced delimiters
+in-place edits: no label words, no process language, balanced delimiters
+paragraph blocks in insert: 6
+pdflatex rc 0 pages 409
+bibtex rc 0 
+pdflatex rc 0 pages 426
+pdflatex rc 0 pages 426
+undefined/multiply-defined warnings: 0
+BUILD CLEAN
+temp copy removed: True

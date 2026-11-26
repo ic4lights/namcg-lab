@@ -1,0 +1,41 @@
+A. merged point (operators without the cubic Hessian, as merged)
+  loop slope L' = 4U4+2U2+Y = 267/50 = 5.34 ; -4x^2-6x+15/2 = 5.34
+  tree slope 4Q+3C = -5.34 ; sum = 0.0
+  U_chichi: tree 15.72 loop -5.04 total 10.68  loop/tree = -0.32061068702290074
+  beta_K = 2L'/U_chichi = 1.0
+  slope: loop/tree =  -1.0 ; |loop slope| / (quartic slope 4Q) = 0.16824196597353497
+  r = c/2chi = 1.168241965973535  c/chi = 2.33648393194707  kappa = 2-c/chi = -0.33648393194706994
+  V/T -> (1-r)^2 = 0.028305359114640098 ; varrho=(V+2T)/3V = 23.885999242519883 ; (V+2T)/(2V+T) = 1.9196335264455515
+  chi-exchange part of q_*^2 over q_b^2: beta_K L'/(4 U4) = -14.833333333333334
+
+B. identities (sympy)
+  V_t'/(4 abar chi^4) = 1 - r ;  V_t''/(4 abar chi^4) = 4 - 3*r
+  beta_K = -2V_t'/(V_t''+U_loop'') =  2*(r - 1)/(delta - 3*r + 4)   [delta = U_loop''/(4 abar chi^4 rho_M/g^2)]
+  beta_K = 1  <=>  r = [delta/5 + 6/5]  ; V/T = (1-r)^2 = (delta + 1)**2/25
+  r for the merged point from this formula, delta = loop''/(4Q): 1.168241965973535
+  V=T needs r=0 or r=2; at r=2 beta_K = 2/(delta - 2) and the l=1, j=0 vector mode is chi^2*(1*2+kappa*2) with kappa=-2 -> -2
+  1/2 Ucc l^2 + L' l s + U4 s^2, l eliminated: -s**2*(Lp**2 - 2*U4*Ucc)/(2*Ucc)  -> with beta=2L'/Ucc: (U4 - beta L'/4) s^2 ; check: 0
+
+C. loop term with the cubic Hessian at the merged point (vartheta=1, chi^2=0.3, c=2 r chi), same units
+     N    eps*chi^2*N^2   P (replaces U4=-0.09)   dP/dlnchi (replaces 4U4=-0.36)   P/(tree quartic 7.935)   slope/L'(5.34)
+    16      5e-01               27.526                  32.087                     3.47                 6.01
+    16      1e-02              202.005                 800.589                    25.46               149.92
+    16      1e-04              407.399                1705.258                    51.34               319.34
+    64      5e-01              441.207                 510.897                    55.60                95.67
+    64      1e-02             3243.140               12852.135                   408.71              2406.77
+    64      1e-04             6541.529               27380.041                   824.39              5127.35
+   512      5e-01            28240.596               32686.760                  3558.99              6121.12
+   512      1e-02           207607.362              822715.852                 26163.50            154066.64
+   512      1e-04           418755.016             1752725.317                 52773.16            328225.71
+   check, c=0 in the same routine reproduces U4 = -x^2 = -0.09 (N=512): -0.09003
+   W_R term of U_2 at leading order: -(2-3/4)(kappa^2-4) x N^2-units -> 1.45754196132804  against the merged U_2 = -0.9
+
+D. tree mass term (mu^2/2) Tr X_i X_i on K: Hessian mu^2 on the three vector components only (chi=1, kappa=2)
+  N=  5 mu^2=0.3: m0=0.0e+00  m1=22.5000 (3 mu^2 N^2 = 22.5000)  m2=546.7500 (3mu^4N^2+3mu^2N^2(N^2-1) = 546.7500)
+  N=  5 mu^2=1.7: m0=0.0e+00  m1=127.5000 (3 mu^2 N^2 = 127.5000)  m2=3276.7500 (3mu^4N^2+3mu^2N^2(N^2-1) = 3276.7500)
+  N= 40 mu^2=0.3: m0=0.0e+00  m1=1440.0000 (3 mu^2 N^2 = 1440.0000)  m2=2302992.0000 (3mu^4N^2+3mu^2N^2(N^2-1) = 2302992.0000)
+  N= 40 mu^2=1.7: m0=0.0e+00  m1=8160.0000 (3 mu^2 N^2 = 8160.0000)  m2=13061712.0000 (3mu^4N^2+3mu^2N^2(N^2-1) = 13061712.0000)
+  m1 != 0: int ds s^-2 (v - tau) (the weight W_R) is logarithmically divergent at small s; m2 != 0: so is the s^-3 integral beyond its power term.
+
+E. identity V/T = (L'/4Utilde)^2 on the quartic+cubic branch: (1-r)^2 with 1-r = V_t'/(4 abar chi^4) = -L'/(4 Utilde)
+  merged point: (L'/4Q)^2 with the merged L' and Q: 0.028305359114640098  vs (1-r)^2 = 0.028305359114640098

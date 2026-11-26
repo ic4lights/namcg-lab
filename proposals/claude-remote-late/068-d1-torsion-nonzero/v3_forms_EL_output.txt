@@ -1,0 +1,3 @@
+== flat: dim 21; next constraint eigenvalue 3.02; rank of a generic member 24 of 40; max |G| on the frame-equation columns 2.0e-16
+== null rotation, constant-connection gauge: dim 7; next constraint eigenvalue 2.46; rank of a generic member 24 of 40; max |G| on the frame-equation columns 1.6e-15
+== Heisenberg, character directions 0,1,3: dim 42; next constraint eigenvalue 0.681; rank of a generic member 24 of 40; max |G| on the frame-equation columns 4.4e-16

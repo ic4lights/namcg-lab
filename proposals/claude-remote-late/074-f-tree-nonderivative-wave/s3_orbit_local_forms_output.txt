@@ -1,0 +1,12 @@
+(i) on 200 random orbit points: (eta M)^2=-l^2, T.T=l^2+m^2, y.y=-(l^2+m^2), T.y=0, y_mu M^(mu rho)=m T^rho, M_ab M^ab=2l^2-2m^2 ; worst relative residual 6.4e-13
+(ii) fibre over y=(y0,0,0,0), y4=m=8.5551: max|T^0|=1.4e-15; <T^i T^j>/(T.T/3) = diag [1.003 1.003 0.994], offdiag max 0.003
+(iii) <A.L(A)>/(l^2+m^2) on kappa=d1+dy P_y: d1^2 6.000000 (expect 6), dy^2 -3.27e-50 (expect 0), 2 d1 dy 2.000000 (expect 2)
+     form at fixed sigma_1 with dy = -sigma-4 d1: -2*d1**2 - 2*d1*sigma ; stationary at d1 = -sigma/2 value sigma**2/2 ; curvature in d1: -4
+     pure trace (dy=0): 3*sigma**2/8 ; yy channel (d1=0): 0
+     canonical pointwise density along the dilatation, 6 M.M - 6 T.T over l^2+m^2 at this point: -17.4583 (presentation dependent; A.L(A) gives 12)
+(iv) [f,[L,f]] is the multiplication 2(Df.Df) - 2 Df (Df . ) : no f, no second derivative of f: True
+(v) |yhat.v| = (|m|/|y|) |q.T| on the fibre: max deviation 3.6e-15; <(yhat.v)^2>/(m^2 k^2/3) = 0.9937
+     <v^mu (q.T)> = [-1.201479e+01 -5.990000e-03  1.240000e-03  0.000000e+00]  (only the time component is nonzero)
+     frozen tree form in the y y channel <= -3*m**2*rho*sigma**2/(4*g**2)  (phase-averaged; equality at f proportional to q.T)
+     its contribution to the constant of the first pole: -24*pi**2*m**4*rho/(A*g**2) = -3 * varpi/m^2
+all checks passed
