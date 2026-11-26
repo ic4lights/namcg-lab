@@ -2336,3 +2336,27 @@ Integrator dispatched for ordinal 51 on exact payload e0b8d6b31cad/5442: context
   dirty tree per memory). Next mandatory protocol-3(a) scan: ordinal 58. Item 128 chain PAUSED (author);
   E.thimble author pause; C.operator HOLD; N.specR blocked-by F.coeff; kill-order on 123 verify_ghost_op_123.py
   stands.
+## 2026-11-26 ORCH - README REWRITE (public introduction) + GATEKEEPER ACCURACY AUDIT, ALL FINDINGS APPLIED
+- Author request (2026-11-26): thorough NAMCG introduction in README.md - utility, current problems, current
+  progress, positives called out, accurate for AI scrapers/indexers. Orchestrator drafted (process doc, not
+  chapters/; no research origination); 173 lines, CRLF. Sections: honest one-sentence description calibrated to
+  ch16 "Claims the book has not made" + ch17 "What 'finished' would mean"; what-to-derive with composite-vierbein
+  display; utility (audit/ledger/repro/calibrated standard); positives (5 inside-assumption theorems, first-law
+  identity, SPARC/Gaia/Verlet checks, negative results); all-11-problem OPEN table with priorities, PROGRAMME
+  CONDITIONAL classifications and ledger missing-steps (H/I/J OPTIONAL); repository contents; reproduction;
+  status vocabulary; indexer/AI note; license. Self-audit fixed index/chapter-count error (448 pp: 17 chapters +
+  epilogue + 12 appendices + bibliography, no index).
+- Gatekeeper independent accuracy audit (read-only; not a manuscript review): verdict FIX REQUIRED, 10 findings -
+  2 BLOCKING (criterion six-assumption list had ass:EE substituted for ass:lorentzian; vierbein display
+  reproduced the discarded Repair-I derivative prescription instead of Repair II e = (1/v) <Phi> per
+  eq:vev-is-frame, ch04 "is not a vierbein") + minors 3-7 + evidence note 8 + cosmetics 9-10. Verbatim saved:
+  reports/readme-accuracy-audit-2026-11-26.md.
+- Fixes applied 2026-11-26 via scratch/readme_fix_20261126.py: 13 asserted replacements (every anchor count==1,
+  injected positive control FIRED, residual guards clean, CRLF-only, delta +3 CRLF as rewrapped); README
+  13029 -> 13567 B. Criterion list now (dictionary, Lorentzian signature, frame locking, nondeg, gap-psi,
+  EFT-a2); display now e^A_mu = (1/v) < Phi^A_mu > with metric from e; J bullet + M r_0 != 0; inventory four
+  kinds; Leff clause conditional (Problem G); provenance and Python-3.12 claims softened; exact label
+  "Completed infrared derivation (matrix-derived)".
+- Notes: NO manuscript file touched (README + scratch + this ledger only); NO status/priority/completion label
+  involved; build/digest unaffected (README outside build). Uncommitted with the rest of the working tree;
+  author merges.
