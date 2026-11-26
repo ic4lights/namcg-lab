@@ -2304,3 +2304,35 @@ Integrator dispatched for ordinal 51 on exact payload e0b8d6b31cad/5442: context
   CLAUDE.md + 4 agent-definition edits, this ledger line; author merges. Next mandatory protocol-3(a) scan:
   ordinal 58. Item 128 chain PAUSED (author); E.thimble author pause; C.operator HOLD; N.specR blocked-by F.coeff;
   kill-order on 123 verify_ghost_op_123.py stands.
+## 2026-11-26 ORCH - item 131 LEDGER-APPENDIX REORDER: INTEGRATED ORDINAL 57 (author decision; process-doc reword)
+- Author decision (2026-11-26, option set offered for the 232-of-448-pp ledger appendix): "Reorder only" +
+  "Generic reword"; Kindle stays the existing fixed-layout Kindle Create path (no action now). Full 448-pp build
+  remains the archival artifact. Orchestrator drafted the package (non-mathematical structural edit; no research
+  origination involved).
+- Package proposals/131-appendix-reorder/: one include line moved in namcg-book7.tex so
+  chapters/appH-microscopic-proofs.tex (label app:status) becomes the LAST appendix. cert_131.py: pure-line-
+  permutation proof with fired positive controls (perturbed-line reject, identity reject, block-anchor strictness,
+  9.99pt parser box); BASE/CAND mirror compiles (3 passes, .bbl copied) both 448pp, overfull 1 @ 1.215pt,
+  0 undefined refs/citations. CERT131 PASS PRE12=43031b9414e0 POST12=1b45f1d475ec.
+- Gatekeeper r1 ACCEPT 0/0 (review-r1.md): independent byte construction matched PRE/POST; auto-lettering verified
+  (book class, \appendix, no \thechapter redefinition); position-dependent prose hunt clean - only hardcoded
+  appendix letters are A-D (ch01, ch02, ch16, ch17 bridge), all at position-stable slots; no sentence anywhere
+  asserts relative appendix order. Printed effect: ledger letter H->L, appI-appL -> H-K, all \ref-based prose
+  follows. Minor pre-existing note (no action): ch06 L68 cites ledger sections under an "Appendix~" noun.
+- Integrator ordinal 57: namcg-book7.tex only; 12-line include block 443 B 4aa7b99378e8 -> 040c20252ad2; file
+  4293 B -> 1b45f1d475ec; permutation re-verified post-write; backup scratch/integrator-backup/57-131-appendix-
+  reorder/. BUILD_CHECK PASS pages=448, "total 1, >=2pt 0, max 1.22pt", 0 undefined refs/citations, bibtex 0
+  warnings, PDF restored, diff --check clean. UNCOMMITTED; author merges. Kindle .kpf must be re-built from the
+  new PDF by the author.
+- Process-doc reword (author-sanctioned): 27 "Appendix H" mentions -> "the problem-ledger appendix" /
+  "problem-ledger problem" across CLAUDE.md (5; first mention now also names label app:status), MILESTONE.md (2),
+  run-cycle.md (4), pathfinder (6 incl. one prose "appH"), researcher (3), gatekeeper (2), fundamentality (1),
+  sme (1), README (1), scripts/render_attack_graph.py (1), code/variants.py (1). Asserted-substitution script
+  (each anchor count==1, missing-anchor control FIRED); both scripts py_compile OK; 0 mentions remain in the 11
+  live files. NOT touched (historical): reports/, proposals/, this ledger, top-level agents/ legacy copy
+  (8 mentions, diverged from .claude/agents/, not loaded - flagged to author), archive/agents/.
+- Notes: NO status/priority/completion label touched; no ledger problem involved; bib untouched; appH content
+  untouched (128-hold passages safe). Digest refreshed after integration (DIGEST CURRENT; weak evidence on this
+  dirty tree per memory). Next mandatory protocol-3(a) scan: ordinal 58. Item 128 chain PAUSED (author);
+  E.thimble author pause; C.operator HOLD; N.specR blocked-by F.coeff; kill-order on 123 verify_ghost_op_123.py
+  stands.

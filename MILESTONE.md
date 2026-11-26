@@ -8,7 +8,7 @@ the author** when any of the following occurs.
 A gatekeeper-accepted item counts as a milestone if it does at least one of:
 
 1. Derives (not assumes) an important remaining step for a problem required by the current Chapter 17 completion
-   criterion and recorded in Appendix H, for example: the matrix-to-dictionary map (A), fixed-volume
+   criterion and recorded in the problem-ledger appendix (last), for example: the matrix-to-dictionary map (A), fixed-volume
    tensor-block stationarity (B), the scalar–tensor operator (C), matrix-derived local Lorentz/frame dynamics
    (D1), Lorentzian signature (E), specified heat-kernel coefficients (F), matrix-derived entropy/stationarity
    (G-derived), or effective-expansion/low-energy pole control (N). Re-read the current agenda and ledger; this
@@ -45,7 +45,7 @@ scope, dimensional or sign corrections to non-load-bearing text, bookkeeping.
 3. Milestone triggered (which trigger and why) or the stop reason.
 4. Any proposed status-label change, clearly separated, with the evidence that would justify it.
 5. Current status, priority and completion classification of every problem in the current Chapter 17 completion
-   criterion, cross-checked against Appendix H. Do not substitute a fixed historical list.
+   criterion, cross-checked against the problem-ledger appendix. Do not substitute a fixed historical list.
 6. Items stalled or rejected, with the gatekeeper's smallest-correction notes.
 7. Build result (page count, undefined references = 0, `git diff --check` clean).
 8. What the author should do: review the branch diff, merge or discard, and the suggested next target.

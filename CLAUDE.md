@@ -9,7 +9,7 @@ party who can approve a merge.
 ## Hard rules (apply to every agent and the orchestrator)
 
 1. **The current agenda and ledger control scope and status.** Chapter 17 defines the completion criterion for
-   each stated scope; Appendix H records each problem's status, priority, completion classification, evidence and
+   each stated scope; the problem-ledger appendix (last; label `app:status`) records each problem's status, priority, completion classification, evidence and
    missing step. Do not treat a historical problem list in these instructions as authoritative. At the current
    full-GR / matrix-derived scope, Chapter 17 requires A, B, C, D1, E, F, G-derived and N; H, I and J remain
    optional within their stated scopes. Re-read both sources on every task and report discrepancies.
@@ -38,7 +38,7 @@ party who can approve a merge.
    conjecture/mechanism; unresolved step. Mark unverifiable citations "not independently verified".
 7. **Do not invent citations or numbers.** A number appearing nowhere else in the repository is unsourced.
 8. **Every agent works toward the mission: completion of the derived emergent-spacetime programme.** Scope,
-   priority and effort follow the current Chapter 17 completion criterion and Appendix H at the stated (currently
+   priority and effort follow the current Chapter 17 completion criterion and the problem-ledger appendix at the stated (currently
    full-GR / matrix-derived) scope. Advisory, structural and literature work counts as mission progress only insofar
    as it advances, constrains, or honestly negates a current open target; it never substitutes for a derivation.
 
@@ -59,7 +59,7 @@ party who can approve a merge.
   Negative results are still reported honestly whenever they arise (rule 6) and count as progress only when they
   genuinely redirect a target (rule 8). Where the current sources state that one critical-path problem's
   completion depends on another problem's missing step, attack the upstream gating problem before running
-  further edges on the dependent problem. Re-derive the gating relations from the current Appendix H and
+  further edges on the dependent problem. Re-derive the gating relations from the current problem-ledger appendix and
   Chapter 17 passages on every task; frontier records of them are pointers with src, never authority.
 
 ## Manuscript conventions
@@ -69,7 +69,7 @@ party who can approve a merge.
 - Do not use chat/process language in the manuscript ("as proposed above", "the researcher"). No undefined labels.
 - New conditional paragraphs go in `chapters/appH-microscopic-proofs.tex` next to the relevant problem's ledger
   section, close with one scoped status sentence, and avoid repeating a fixed critical-problem list: use the
-  current Chapter 17 criterion and Appendix H.
+  current Chapter 17 criterion and the problem-ledger appendix.
 - `.tex` files use CRLF line endings. Preserve them. Write UTF-8 without BOM.
 - A change must be the smallest text that accurately records the result.
 - **Right-margin discipline (author directive 2026-11-26).** Never set a formula inline that cannot fit a line: use a display, split
@@ -129,7 +129,7 @@ until a milestone trigger fires, a stop condition occurs, or the budget is reach
   together. Each subagent still gets a self-contained prompt; outputs are persisted so progress survives
   interruptions.
 - **Disjoint work.** Each parallel chain gets its own `proposals/NNN-slug/` folder and a target whose manuscript
-  passages do not overlap another active chain's. Never run two chains on the same Appendix H problem or the same
+  passages do not overlap another active chain's. Never run two chains on the same problem-ledger problem or the same
   manuscript passage at once; serialize chains that would collide.
 - **Serialization points.** The integrator always runs alone (it edits the shared working tree and owns the
   build) and re-verifies anchors against the current tree, because another chain's integration may have moved the

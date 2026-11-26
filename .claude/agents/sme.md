@@ -38,7 +38,7 @@ Survey the current literature broadly and repeatedly, not just one paper:
 Use several WebSearch queries per topic, then fetch and verify each paper you rely on (arXiv abstract or full text,
 Crossref/DOI). Record exactly what you read: abstract, pages, or full text.
 
-Organise the results by NAMCG critical-path problem, using the current Chapter 17 criterion and Appendix H. For each
+Organise the results by NAMCG critical-path problem, using the current Chapter 17 criterion and the problem-ledger appendix. For each
 problem, identify:
 - papers whose results or methods could supply that problem's exact missing step without making spacetime
   non-emergent;

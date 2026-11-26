@@ -16,7 +16,7 @@ or completion label (CLAUDE rules 2, 4, 6, 8).
 
 1. `reports/graph/mission-graph.yaml` - the frozen historical map (retired with its agent on 2026-11-15, so it
    normally predates the latest ledger entry by design). Use it for orientation and gap background only; never
-   treat it as current. Take live gaps from the current Appendix H missing-step paragraphs, with `src`.
+   treat it as current. Take live gaps from the current problem-ledger appendix's missing-step paragraphs, with `src`.
 2. `chapters/appH-microscopic-proofs.tex` - the current per-problem status passages, missing-step paragraphs and
    the "These statements are for ..." caveat paragraphs (grep to the `sec:status-*` sections; read in full
    anything you rank or route).
@@ -34,8 +34,8 @@ schema_version: 1
 generated: "<ISO timestamp of this run>"
 based_on: {mission_graph: "<date/tree-hash read>", ledger: "<last entry id/date>", digest: current | stale | checked-only}
 gaps:
-  - gap: "<symbol/edge name, taken from mission-graph `gaps:` or an appH missing-step paragraph, with src>"
-    target_problem: "<Appendix H problem id>"
+  - gap: "<symbol/edge name, taken from mission-graph `gaps:` or a problem-ledger appendix missing-step paragraph, with src>"
+    target_problem: "<problem-ledger problem id>"
     attack_edges:
       - id: "<stable slug, e.g. A.gen-match>"
         named_as: "<the sub-problem quoted or named where it is named, with src: file:line / review / ledger / report>"
@@ -51,7 +51,7 @@ gaps:
         rank_reason: "<one line: closeness / prior progress / lead pointer>"
         lead_for_researcher: "<optional pointer to an SME/vector/adversary lead or a review-named relaxation; never your own method>"
 chains:
-  - {chain: 1, edges: ["<attack_edge ids>"], problem: "<Appendix H problem(s)>", notes: "<ordering, why grouped>"}
+  - {chain: 1, edges: ["<attack_edge ids>"], problem: "<problem-ledger problem(s)>", notes: "<ordering, why grouped>"}
 blocked_gaps:
   - {gap: "<name>", blocked_by: "<id>", unblock_per_sources: "<what the ledger/reviews say would unblock it>"}
 ```
@@ -90,7 +90,7 @@ are never overridden by 3-6:
 
 Partition the top edges into up to N disjoint chains for parallel dispatch (the orchestrator names N; default:
 one chain per open critical-path problem). Disjointness is hard (CLAUDE Execution & Concurrency Rules): two
-chains never share an Appendix H problem or manuscript passage. Edges that would collide go into the SAME chain,
+chains never share a problem-ledger problem or manuscript passage. Edges that would collide go into the SAME chain,
 ordered by rank. Where ranking rule 2 (dependency gating) applies, the gating problem's chain takes the dispatch
 slots first; the dependent problem's chain runs only what rule 2 leaves above the rest of the frontier.
 
@@ -114,7 +114,7 @@ Then:
 ## Source reading        (digest status; what was read in full)
 ## Frontier changes      (edges added / closed / bounded / stalled since the previous run; "first run" if none)
 ## Closable now          (ranked edges, one line each: id, problem, what is still missing, prior-attempt ref)
-## Chain partition       (chain -> edges -> Appendix H problem(s); explicit disjointness confirmation)
+## Chain partition       (chain -> edges -> problem-ledger problem(s); explicit disjointness confirmation)
 ## Not closable / blocked (gap, blocked-by, and what the ledger/reviews say would unblock it - never your method)
 ## Confirmations         (no manuscript file touched; no label altered; no proof content authored)
 ```

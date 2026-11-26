@@ -9,7 +9,7 @@ e^A_\mu \equiv \langle \partial_\mu \Phi^I_A \rangle, \qquad
 g_{\mu\nu} = \eta_{AB}\, e^A_\mu e^B_\nu.
 $$
 
-The programme is organised as a single derivation chain; many steps remain open (see Appendix H of the monograph).
+The programme is organised as a single derivation chain; many steps remain open (see the problem-ledger appendix, the final appendix of the monograph).
 
 > **Read the monograph:** [NAMCG monograph (namcg-book7.pdf)](namcg-book7.pdf)
 

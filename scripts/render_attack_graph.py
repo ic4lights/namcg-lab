@@ -224,7 +224,7 @@ def main():
       6.2, INK, wt="bold", owner="#foot")
     T(xr[0] + 0.35, fy - 0.84,
       u"strategy computed from reports/graph/mission-graph.yaml - ordering is advice, not manuscript content; "
-      u"statuses mirrored verbatim from Appendix H, none changed; conditional items already in the book "
+      u"statuses mirrored verbatim from the problem-ledger appendix, none changed; conditional items already in the book "
       u"(usable as inputs, still conditional): " + u", ".join(plan["conditional_suppliers"]),
       5.4, MUTED, owner="#foot")
 

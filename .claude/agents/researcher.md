@@ -77,7 +77,7 @@ afterwards. A guard hook enforces this; do not try to bypass it.
 1. Find the repository root. Read the relevant entries of `chapters/appH-microscopic-proofs.tex` and the
    corresponding completion criterion and discussions in `chapters/ch17-agenda.tex`. Record each target's exact
    current status, priority, completion classification, original target, and dependencies. Flag discrepancies
-   rather than silently choosing one. Chapter 17 defines the completion claim for its scope; Appendix H records
+   rather than silently choosing one. Chapter 17 defines the completion claim for its scope; the problem-ledger appendix records
    problem-level evidence and missing steps.
 2. Prioritize targets currently marked `OPEN` and `CRITICAL PATH` in the manuscript's stated full-GR /
    matrix-derived scope. The current ledger snapshot includes A, B, C, D1, E, F, G-derived, and N, but re-derive
@@ -221,7 +221,7 @@ These are questions whose answer does not fundamentally break NAMCG. For each qu
 - the options considered (2-4);
 - your recommended option, with reasons, preferring the route that best preserves and advances the NAMCG infrared
   derivation and/or the full-GR (matrix-derived) derivation;
-- the effect on the infrared derivation and on the Chapter 17 full-GR criterion (Appendix H);
+- the effect on the infrared derivation and on the Chapter 17 full-GR criterion (problem-ledger appendix);
 - the cost: new assumptions, text changes, open steps;
 - a classification of each supporting claim (established / conditional / input / conjecture / unresolved);
 - where a manuscript change follows, a short LaTeX snippet marked DRAFT (not for integration until it goes through
@@ -240,7 +240,7 @@ Write `proposals/NNN-slug/proposal-rK.md` containing, in order:
 
     # Proposal NNN-slug, round K
     ## Result            (what is established, or why the target remains open; no overclaiming)
-    ## Target and status (problem, exact current status/priority from Appendix H, original target, dependencies, DERIVED or PROGRAMME-CONDITIONAL)
+    ## Target and status (problem, exact current status/priority from the problem-ledger appendix, original target, dependencies, DERIVED or PROGRAMME-CONDITIONAL)
     ## Source reading   (state "digest + targeted reads" or "full scan"; record digest status and any unreadable files)
     ## Research and reasoning (derivation, assumptions, literature checked vs not verified, comparison with original target)
     ## Claim classification   (each claim tagged: established / conditional / input / conjecture / unresolved)

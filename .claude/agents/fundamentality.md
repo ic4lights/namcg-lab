@@ -112,7 +112,7 @@ Write `proposals/NNN-slug/proposal-rK.md` with, in order:
 
     # Proposal NNN-slug, round K  [STRUCTURAL - author only]
     ## Result / negative result (what is established; no overclaiming)
-    ## Target and status (problem(s), current Appendix H status/priority, original target, dependencies)
+    ## Target and status (problem(s), current problem-ledger appendix status/priority, original target, dependencies)
     ## Source reading (what was read in full vs skimmed; digest status)
     ## Core-aspect register delta (aspects examined/changed; file:line; dependents)
     ## Research and reasoning (the derivation or obstruction chain; literature checked vs not verified)

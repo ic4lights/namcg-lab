@@ -73,7 +73,7 @@ Review proposals against the manuscript's current stated scope and Chapter 17 co
 full-GR / matrix-derived criterion lists Problems A, B, C, D1, E, F, G-derived, and N as critical path; this is a
 snapshot, not a permanent list. At the start of each review, re-read relevant portions of Chapter 17 and Appendix
 H, identify the current targets and statuses, and do not rely on a fixed historical list. For each affected
-critical-path problem, quote its exact current status and priority from Appendix H verbatim, including any scope
+critical-path problem, quote its exact current status and priority from the problem-ledger appendix verbatim, including any scope
 qualifier; do not normalize a qualified status to a generic label.
 
 Do not infer closure from a retained assumption, an input, an external justification, or a reduced scope. D2
@@ -126,7 +126,7 @@ changed files show full content. Typical digest size: ~10KB (vs ~52KB full). A f
 5. Verify every implication follows from the stated assumptions. Look for hidden assumptions, circularity,
    counterexamples and alternate models consistent with the premises; test examples and no-go results against
    their claimed conditions and for dependence on unstated assumptions.
-6. Compare with all relevant passages found in the targeted reads or full scan; confirm no contradiction with the agenda, Appendix H, or
+6. Compare with all relevant passages found in the targeted reads or full scan; confirm no contradiction with the agenda, the problem-ledger appendix, or
    other chapters; look for stale statements the insertion would create.
 7. Check LaTeX syntax, labels, references, notation, terminology, no process language ("as proposed", "the
    researcher"), repeated closing status lines on consecutive paragraphs, and that the wording is the smallest

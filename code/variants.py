@@ -108,7 +108,7 @@ if __name__ == "__main__":
         "Problem N (Ostrogradsky Ghost Control)": test_problem_n_ostrogradsky_ghosts,
     }
     
-    print("=== NAMCG Appendix H: 5,000-Derivation Simulation Suite ===")
+    print("=== NAMCG problem-ledger appendix: 5,000-Derivation Simulation Suite ===")
     for name, func in problems.items():
         count, _ = func()
         success_rate = (count / NUM_DERIVATIONS) * 100

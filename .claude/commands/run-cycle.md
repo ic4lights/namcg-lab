@@ -64,7 +64,7 @@ on-demand:
   `archive/agents/mission-graph.md`; never dispatch it and never refresh the map.
   `reports/graph/mission-graph.yaml` and its PNG are frozen background from 2026-11-07/08 by design - stale is
   the expected state - and are not passed to subagents as current. The pathfinder frontier now carries the live
-  gap list (each gap with its own manuscript `src`), with Appendix H missing-step paragraphs as the fallback.
+  gap list (each gap with its own manuscript `src`), with the problem-ledger appendix's missing-step paragraphs as the fallback.
   The author may render the picture on demand outside the pipeline (`scripts/render_mission_graph.py`).
 - **`vector-miner` is on-demand only (2026-11-15).** Removed from every cadence. Task it only when the researcher
   is stuck on a named gap, in mode 1 (external query mining) or mode 5 (deep dig) scoped to that gap; not mode 6.
@@ -82,12 +82,12 @@ no status.
   mission-graph agent was retired 2026-11-15: the attempt-graph of candidate attack edges per gap (prior attempts
   with proposal refs and verdicts, bounded no-gos with their hypothesis classes, stalls), ranked closable edges,
   and a partition of the frontier into disjoint chains. Task it before target choice at the start of a run
-  (rebuild/refresh `frontier.yaml` from the current sources; take live gaps from the Appendix H missing-step
+  (rebuild/refresh `frontier.yaml` from the current sources; take live gaps from the problem-ledger appendix's missing-step
   paragraphs with `src` - the frozen mission-graph map is background only), after every integration (diff update),
   and at the end of a run that integrated at least one item. Use its chain partition at step (a) to choose
   disjoint parallel targets - the `CLAUDE.md` disjoint-work rule is then enforced from the frontier, not from
   memory. Paste its `FRONTIER: ...` first line into the run digest. If it fails, choose targets from the current
-  Appendix H missing-step paragraphs directly and note it.
+  problem-ledger appendix's missing-step paragraphs directly and note it.
 - **`adversary`** attacks the plan and the joint body of results, not proposal texts (mode P pre-mortem, mode C
   assumption-collision scan, mode B counterexample probes; it never proposes fixes). Task it in mode P after the
   frontier exists and before chains start, but only when the run fans out to two or more chains; modes C/B only
@@ -195,7 +195,7 @@ several independent items concurrently (disjoint proposal folders and manuscript
 stages below still run each item's pipeline in order, and integration and the scripts stay serial.
 
 **a. Choose the target/package.** If the argument names a problem or connected target set, use it. Otherwise ask
-the researcher to choose using the current Chapter 17 completion criterion and Appendix H (not a remembered
+the researcher to choose using the current Chapter 17 completion criterion and the problem-ledger appendix (not a remembered
 problem list). Pass it the latest SME scout report and the pathfinder frontier `reports/graph/frontier.yaml`
 (gap list with `src`, ranked closable edges and the chain partition - when running parallel chains, take each
 chain's target from a different frontier chain; its `lead_for_researcher` lines carry the SME/vector/adversary
