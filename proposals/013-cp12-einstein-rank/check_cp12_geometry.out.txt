@@ -1,0 +1,17 @@
+(G1) Lie-Poisson sign s = -1 (spread 1.1e-14)
+     max |{T^a,y^mu} - s eta^{a mu} M^45| = 1.78e-15
+(G2) max |M^{ab} y_b| (a,b=0..4) = 5.07e-14
+(G3) rest point y^a = [-4. -0.  0.  0.  0.]  residual 1.5e-26
+     boost sign +1 gives y^a = [-5. -0.  0.  0. -3.]
+     fibre samples: 3000, max deviation of y^a from base value: 2.38e-13
+     singular values of the 10 functions (M^{mu rho}, mu<rho; T^mu) over the fibre: [227.524856 223.582113 219.643982   0.         0.         0.      ]
+     fibre mean of M^{mu rho}, T^mu: [ 0.0185 -0.0203  0.0065  0.0086  0.0271  0.0247  0.     -0.0309  0.0339 -0.0108]
+     singular values of the 6 functions M^{mu rho} alone: [160.884369 158.096428 155.311749   0.         0.         0.      ]
+     max residual expressing T^mu as linear combination of M^{mu rho}: 1.23e-13
+     max |T^mu + M^{mu sigma} y_sigma / y^4| = 2.61e-13
+(G4) base point y^a = [-5. -0.  0.  0. -3.]  y.y = -16.0
+     chirality +1: ||W_numeric - projection onto model span|| = 2.44e-14
+     chirality -1: ||W_numeric - projection onto model span|| = 1.66e+00
+     matching chirality: 1
+(G5) singular values of the four functions T^mu over the fibre: [160.884369 158.096428 155.311749   0.      ] -> span dimension 3
+     y_mu T^mu over the fibre, max abs: 1.07e-12

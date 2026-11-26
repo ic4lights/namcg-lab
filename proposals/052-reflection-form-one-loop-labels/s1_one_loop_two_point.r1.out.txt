@@ -1,0 +1,18 @@
+sum rules: Str 1 (d=10 Weyl) = 10 - 2 - 8 = 0 ; (d=4 N=1) = 4 - 2 - 2 = 0
+   d=10, 16-component Weyl, weight 1/2 relative to vector : tr V01 V01 = -8.0 ; tr S01 S01 = -16.0 ; tr V^2 - wt tr S^2 = 0.0
+   d=4, 4-component Majorana, weight 1/2 : tr V01 V01 = -8.0 ; tr S01 S01 = -4.0 ; tr V^2 - wt tr S^2 = -6.0
+
+(a) d=10 Weyl, commuting X0, Euclid, eps=0.3                 |dGamma| at t=(0.01, 0.005, 0.0025): [3.029e-03 1.862e-04 1.159e-05] ; log-slopes [4.024 4.006] ; expected power 4
+(a2) same, eps=1.0                                           |dGamma| at t=(0.01, 0.005, 0.0025): [2.621e-04 1.631e-05 1.018e-06] ; log-slopes [4.006 4.002] ; expected power 4
+(b) d=10 Weyl, commuting X0, Lorentz, eps=0.5i+0.3           |dGamma| at t=(0.01, 0.005, 0.0025): [1.099e-01 6.935e-03 4.303e-04] ; log-slopes [3.986 4.011] ; expected power 4
+(c) d=10 bosonic, commuting X0, generic A (diagonal part: potential of the eigenvalues) |dGamma| at t=(0.01, 0.005, 0.0025): [5.703e-02 2.790e-02 1.404e-02] ; log-slopes [1.032 0.99 ] ; expected power 1
+(c2) d=10 bosonic, commuting X0, off-diagonal A              |dGamma| at t=(0.0012, 0.0006, 0.0003): [3.246e-05 8.230e-06 2.065e-06] ; log-slopes [1.98  1.995] ; expected power 2
+(c3) d=10 Weyl, commuting X0, off-diagonal A                 |dGamma| at t=(0.01, 0.005, 0.0025): [3.027e-03 1.861e-04 1.159e-05] ; log-slopes [4.023 4.006] ; expected power 4
+(d) d=4 N=1, commuting X0, Euclid, eps=0.3                   |dGamma| at t=(0.0012, 0.0006, 0.0003): [4.397e-04 1.099e-04 2.748e-05] ; log-slopes [2. 2.] ; expected power 2
+(e1) d=10 Weyl, random non-commuting X0, Euclid, eps=60 (operators positive) |dGamma| at t=(0.01, 0.005, 0.0025): [1.046e-03 5.314e-04 2.678e-04] ; log-slopes [0.977 0.989] ; expected power 1
+(e2) d=10 Weyl, M x K (fuzzy su(2), N=2), A along M only  |dGamma| [2.337519e-04 5.842751e-05 1.459488e-05] slopes [2.000258 2.001186]
+    eps=0.3: (Gamma[t]-Gamma[0])/t^2 = 162.29863-1.17848e-09j
+    eps=1.0: (Gamma[t]-Gamma[0])/t^2 = 32.57302+2.30643e-08j
+    eps=3.0: (Gamma[t]-Gamma[0])/t^2 = 4.73029+3.56295e-09j
+(e3) same without K flux: commuting again                    |dGamma| at t=(0.01, 0.005, 0.0025): [1.137e-03 7.059e-05 4.404e-06] ; log-slopes [4.01  4.003] ; expected power 4
+ALL ASSERTIONS PASSED

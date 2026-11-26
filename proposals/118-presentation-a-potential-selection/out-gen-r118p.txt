@@ -1,0 +1,13 @@
+joins checked 49, macro-absorb none
+bytes 4024 CR 2 LF 2 CRLF 2 loneCR 0 loneLF 0 tab 0 nonASCII 0 ctrl 0 endsCRLF True BOM False backslash-ws 0 \( 41 \) 41 braces 27/27
+forbidden \label/\cite absent; required labels present
+distinct macro tokens: 17  ['Delta', 'Phi', 'Theta', 'cos', 'dagger', 'det', 'emph', 'eqref', 'lambda', 'mathbb', 'mathcal', 'mathrm', 'ne', 'ref', 'sigma', 'sum', 'varepsilon']  UNKNOWN: []
+sha1 bbe4e535dd31c76a82ea89ff1b20980eb979f9bf size 4024
+PAYLOAD SCAN OK
+joins checked 49, macro-absorb none
+regeneration byte-identical to existing payload OK
+bytes 4024 CR 2 LF 2 CRLF 2 loneCR 0 loneLF 0 tab 0 nonASCII 0 ctrl 0 endsCRLF True BOM False backslash-ws 0 \( 41 \) 41 braces 27/27
+forbidden \label/\cite absent; required labels present
+distinct macro tokens: 17  ['Delta', 'Phi', 'Theta', 'cos', 'dagger', 'det', 'emph', 'eqref', 'lambda', 'mathbb', 'mathcal', 'mathrm', 'ne', 'ref', 'sigma', 'sum', 'varepsilon']  UNKNOWN: []
+sha1 bbe4e535dd31c76a82ea89ff1b20980eb979f9bf size 4024
+PAYLOAD SCAN OK

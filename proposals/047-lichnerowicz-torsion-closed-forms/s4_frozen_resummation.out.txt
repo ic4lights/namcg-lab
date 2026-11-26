@@ -1,0 +1,39 @@
+(B) closed forms at (y0,y4) = (5,3), q = (2/5,0,0,9/10), x = -32/13 = -2.46154; xi = s coth^2 tau / 2
+  helicity 2: <D2>/unit0 in xi: -12*xi*(2*xi**2 - 15*xi + 15)*exp(-xi/2)/125
+      series check: Q1/unit0 = -2 (expect -2); Q2/unit0 = 25/6 (expect 25/6)
+  helicity 1: <D2>/unit0 in xi: -6*xi*(17*xi**2 - 735*xi + 1950)*exp(-xi/2)/8125
+      series check: Q1/unit0 = -2 (expect -2); Q2/unit0 = 95/39 (expect 95/39)
+  helicity 0: <D2>/unit0 in xi: 12*xi*(32*xi**2 + 165*xi - 975)*exp(-xi/2)/8125
+      series check: Q1/unit0 = -2 (expect -2); Q2/unit0 = 145/78 (expect 145/78)
+
+    direct numerical check of <D2> (matrix exponential, Gauss quadrature):
+      helicity 2, s = 0.30: closed 0.00533460, numeric 0.00533460-1.5e-16i, relative difference 5.5e-10
+      helicity 2, s = 1.20: closed -0.00558003, numeric -0.00558003-1.0e-15i, relative difference 3.0e-08
+      helicity 0, s = 0.30: closed 0.00257481, numeric 0.00257481-1.5e-16i, relative difference 1.3e-10
+      helicity 0, s = 1.20: closed 0.00374036, numeric 0.00374036-3.3e-16i, relative difference 4.0e-09
+
+(A) background traces: <cos z> and <cos 2z>, closed against quadrature
+   s=0.2 xi=0.2778: <cos z> 0.6285678575 vs (1-xi)e^{-xi/2} 0.6285678575; <cos 2z> -0.0637503801 vs (1-4xi)e^{-2xi} -0.0637503801
+   s=1.0 xi=1.3889: <cos z> -0.1941923622 vs (1-xi)e^{-xi/2} -0.1941923622; <cos 2z> -0.2832486094 vs (1-4xi)e^{-2xi} -0.2832486094
+   s=3.0 xi=4.1667: <cos z> -0.3942958262 vs (1-xi)e^{-xi/2} -0.3942958262; <cos 2z> -0.0037657885 vs (1-4xi)e^{-2xi} -0.0037657885
+
+(C) K-weighted frozen mixed form G_h(M) = int_0^inf ds s^{-1} e^{-sM} <D2>_h / unit (tau^K = tau_2 s^2 e^{-sM}),
+    first-order truncation: -2/M + Q2hat/M^2; at (5,3), x as above
+   M   coth^2/M   G_2(M)    trunc_2    G_1(M)    trunc_1    G_0(M)    trunc_0    G_1-G_2  G_0-G_2
+  100.00   0.028   -0.01959   -0.01958   -0.01976   -0.01976   -0.01982   -0.01981   -0.0002  -0.0002
+   30.00   0.093   -0.06225   -0.06204   -0.06405   -0.06396   -0.06465   -0.06460   -0.0018  -0.0024
+   10.00   0.278   -0.16357   -0.15833   -0.17791   -0.17564   -0.18270   -0.18141   -0.0143  -0.0191
+    3.00   0.926   -0.35824   -0.20370   -0.46598   -0.39601   -0.50189   -0.46011   -0.1077  -0.1437
+    1.00   2.778   -0.42432    2.16667   -0.82949    0.43590   -0.96455   -0.14103   -0.4052  -0.5402
+    0.30   9.259   -0.24842   39.62963   -1.02084   20.39886   -1.27831   13.98860   -0.7724  -1.0299
+    0.10  27.778   -0.16813  396.66667   -0.99273  223.58974   -1.26760  165.89744   -0.8246  -1.0995
+    0.03  92.593   -0.17386 4562.96296   -0.94268 2639.88604   -1.19895 1998.86040   -0.7688  -1.0251
+    0.01 277.778   -0.18451 41466.66667   -0.92167 24158.97436   -1.16739 18389.74359   -0.7372  -0.9829
+
+(D) completeness at the background, exact rational points (m^2 = -y.y - l^2): frozen s^2 coefficient against the complete a_2 index part
+   point {'y0': 5, 'y1': 0, 'y2': 0, 'y3': 0, 'L': 4}: c = 25/9; R = 26, e = -1/12; Q1bar = -25/3; check e + a = -R/12: True
+       tr Omega^2 (from B) = -2146/27 ; -(1/2) Riem^2 = -2146/27
+       frozen s^2 coefficient (Z^4 part) = 3125/648 ; complete index a_2 (mod total derivatives): e tr A + (1/2) tr A^2 + (1/12) tr Omega^2 = 1783/648 ; R^2/72 - Riem^2/24 - 2 e^2 = 1783/648
+   point {'y0': 13, 'y1': 3, 'y2': -2, 'y3': 1, 'L': 5}: c = 31/26; R = -33/13, e = 115/104; Q1bar = -93/26; check e + a = -R/12: True
+       tr Omega^2 (from B) = -1623/338 ; -(1/2) Riem^2 = -1623/338
+       frozen s^2 coefficient (Z^4 part) = 4805/5408 ; complete index a_2 (mod total derivatives): e tr A + (1/2) tr A^2 + (1/12) tr Omega^2 = -14905/5408 ; R^2/72 - Riem^2/24 - 2 e^2 = -14905/5408

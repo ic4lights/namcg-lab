@@ -1,0 +1,30 @@
+A. normal-form samples (n=10)
+  (P) min ratio over samples (scaled, must be > 0): 1.995e-08
+  C_0: midpoint of the theta arc in (0,pi/2); C_1: in (pi,3pi/2); cone args inside predicted sectors: OK
+B. general complex symmetric h near the Euclidean point and near eta^{-1}: (P) by minimisation vs normal form
+  trials 200; decisions agree 200; (P) holds in 53 (class C_0: 53, C_1: 0)
+C. adversarial: push arg(q^T h^{-1} q) out of the sector, starting in C_0, (P) enforced by penalty;
+   h normalised to Frobenius norm sqrt(n); final candidates re-tested by minimisation (ratio > 1e-6, cond < 1e6)
+   start u=1.110: final point fails the re-test (Pmin ratio=-1.09e-01, cond=2.5e+02); not counted
+   start u=1.723: final point fails the re-test (Pmin ratio=-9.73e-02, cond=1.0e+02); not counted
+   start u=0.197: final point fails the re-test (Pmin ratio=-4.11e-01, cond=6.4e+00); not counted
+   start u=0.739: final point fails the re-test (Pmin ratio=-1.06e+00, cond=3.4e+02); not counted
+   start u=0.429: final point fails the re-test (Pmin ratio=-6.91e-01, cond=5.9e+02); not counted
+   start u=0.896: final point fails the re-test (Pmin ratio=-8.36e-01, cond=2.5e+01); not counted
+   start u=0.445: final point fails the re-test (Pmin ratio=-8.04e-01, cond=4.1e+01); not counted
+   start u=1.480: final point fails the re-test (Pmin ratio=-1.97e-01, cond=2.5e+02); not counted
+  counted 0; largest excess with (P) holding (lemma predicts < 0): -inf
+D. n = 2: (P) does not exclude the forbidden quadrant
+  Im det h = 0.9877 > 0 (P min 0.9877); q=(1,1): q^T h^-1 q = -1.2000+1.4050j, arg/pi = 0.7250
+E. R_u: h = diag(-e^{-3 pi i u/4}, e^{pi i u/4} x9)
+  u= 0.00: min_{mu<nu} Im(d_mu d_nu) = -0.0000   class None
+  u= 0.01: min_{mu<nu} Im(d_mu d_nu) = +0.0157   class 0
+  u= 0.50: min_{mu<nu} Im(d_mu d_nu) = +0.7071   class 0
+  u= 1.00: min_{mu<nu} Im(d_mu d_nu) = +1.0000   class 0
+  u= 1.50: min_{mu<nu} Im(d_mu d_nu) = +0.7071   class 0
+  u= 1.99: min_{mu<nu} Im(d_mu d_nu) = +0.0157   class 0
+  u= 2.00: min_{mu<nu} Im(d_mu d_nu) = +0.0000   class None
+  u= 2.01: min_{mu<nu} Im(d_mu d_nu) = -0.0157   class None
+  u= 2.50: min_{mu<nu} Im(d_mu d_nu) = -0.7071   class None
+F. perturbations of R_u, u in (0.02,0.3) (near eta^{-1}), satisfying (P)
+  perturbations in C: 400; of these in C_0: 400; Re h has exactly one negative eigenvalue in all

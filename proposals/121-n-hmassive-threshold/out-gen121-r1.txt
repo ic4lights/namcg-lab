@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\121-n-hmassive-threshold\gen_payload_121.py", line 123, in <module>
+    main()
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\121-n-hmassive-threshold\gen_payload_121.py", line 92, in main
+    fail = hygiene_ok(pb)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\121-n-hmassive-threshold\gen_payload_121.py", line 80, in hygiene_ok
+    toks = re.findall(BS + b'(?:eq)?ref' + BS + b'{([^}]*)}', b)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\re\__init__.py", line 216, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\re\__init__.py", line 294, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\re\_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\redgi\AppData\Local\Programs\Python\Python311\Lib\re\_parser.py", line 994, in parse
+    raise source.error("unbalanced parenthesis")
+re.error: unbalanced parenthesis at position 6

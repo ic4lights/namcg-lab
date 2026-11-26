@@ -1,0 +1,13 @@
+insert-r1.tex -> insert-r2.tex  (proposal 062 r2; F1 correction)
+insert-r1.tex is VOID for integration (retained for audit); insert-r2.tex is the text to apply.
+
+block 1 (C block): byte-identical, len 2415 -> 2415, sha256 c8985520d679dcf1 -> c8985520d679dcf1
+block 2 (F block): single contiguous replacement at offset 1665 (bytes 1665..2234 of block 2),
+  common prefix 1775 bytes, common suffix 1697 bytes, len 3886 -> 3864, sha256 55d18e40e5431354 -> 84fdd1fa26b7576c
+  split marker line unchanged; file LF-only in both.
+
+OLD (removed, 570 bytes):
+Conversely the Yukawa threshold \(q_*^2=q_b^2\) at \(\hat U>0\) requires an uncancelled tadpole of size \(|T|=\hat U\chi^2/(32\pi^2m^8)\) in the same convention. Second, taken alone and not cancelled, \(U_4\) contributes \(\mathcal M=F\sqrt{|g|}\hat U\chi^4/256\pi^2\), of the sign that pulls \(q_*^2\) positive for \(\hat U>0\), and \(q_*^2=6F\sqrt{|g|}\hat U\chi^4m^6/(\hat V+2\hat T)\); its ratio to \(q_b^2\) is \(F\sqrt{|g|}\chi^2m^8/2\), and the comparison of magnitudes turns on the conventions for \(m\), \(\vartheta\) and \(\sqrt{|g|}\) and is not settled here.
+
+NEW (inserted, 548 bytes; gatekeeper Corrected snippet, review-r1.md):
+Conversely the Yukawa threshold \(q_*^2=q_b^2\) at \(\hat U>0\) requires an uncancelled tadpole of size \(|T|=F\hat U\chi^4/(32\pi^2m^8)\) in the same convention. Second, taken alone and not cancelled, \(U_4\) contributes \(\mathcal M=F\sqrt{|g|}\hat U\chi^4/256\pi^2\), of the sign that pulls \(q_*^2\) positive for \(\hat U>0\), and \(q_*^2=6\sqrt{|g|}\hat U\chi^2m^6/(\hat V+2\hat T)\); its ratio to \(q_b^2\) is \(\sqrt{|g|}m^8/2\), and the comparison of magnitudes turns on the conventions for \(m\) and \(\sqrt{|g|}\) and is not settled here.

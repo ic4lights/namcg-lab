@@ -1,0 +1,15 @@
+seed 0  e-R/6= 11058659/263502774  J!=0 generic
+   s24 + CB + tau           = 0  (claim 0)
+   COm - tau                = 0  (claim 0)
+   total s24 + CB + COm     = 0
+   Hodge-distribution total = 4243039/9759362  (differs from uniform when tr_N E_G != tr E_G/2)
+seed 1  e-R/6= 25319513/4320000  J!=0 generic
+   s24 + CB + tau           = 0  (claim 0)
+   COm - tau                = 0  (claim 0)
+   total s24 + CB + COm     = 0
+   Hodge-distribution total = 4953/4000  (differs from uniform when tr_N E_G != tr E_G/2)
+seed 2  e-R/6= 94121989/2066242608  J!=0 generic
+   s24 + CB + tau           = 0  (claim 0)
+   COm - tau                = 0  (claim 0)
+   total s24 + CB + COm     = 0
+   Hodge-distribution total = -2673904/14348907  (differs from uniform when tr_N E_G != tr E_G/2)

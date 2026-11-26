@@ -1,0 +1,63 @@
+(CG) c(J,J') = <J0 20|J'0>^2: closed forms agree with sympy for J <= 6: True; sum over J' = [1, 1, 1, 1, 1, 1, 1]
+
+(A) second-order kernel of -d gamma d with an intermediate-level shift
+   draw 0 (Euclidean gbar): Isserlis q^2 coefficient = [a(1-a) F1 + (1-2a)^2 F2]/s exactly: True
+   draw 1 (Lorentzian gbar): Isserlis q^2 coefficient = [a(1-a) F1 + (1-2a)^2 F2]/s exactly: True
+   a_1 density (forms_lib.scalar_form) / [((1/6)F1 + (1/3)F2)/sqrt|det gbar|] at 4 draws (2 Euclidean, 2 Lorentzian): [1/4, 1/4, 1/4, 1/4]
+
+(B) l = 2 (second fibre harmonic) forms on the six polarisations, inert amplitudes set to zero
+  case (5, 3) q=['3/7', '1/2', '-2/3', '1/5'] chi=1: (1/6)L_F1 + (1/3)L_F2 = SC2 - SC1 exactly: True
+     generalised eigenvalues on the five traceless polarisations, relative to EH(hbar): IX2-IX1: ['-2.3562', '-2.3562', '1.2668', '1.2668', '2.4745'] ; scalar F1-leak: ['-0.18981', '-0.18981', '0.013562', '0.21484', '0.21484'] ; scalar F2-leak: ['0', '0', '0', '0', '0']
+  case (5, 3) q=['-1/3', '2/5', '1/4', '-3/2'] chi=1: (1/6)L_F1 + (1/3)L_F2 = SC2 - SC1 exactly: True
+     generalised eigenvalues on the five traceless polarisations, relative to EH(hbar): IX2-IX1: ['-2.1712', '-2.1712', '0.40456', '0.40456', '1.2632'] ; scalar F1-leak: ['-0.12181', '-0.12181', '0.064035', '0.20713', '0.20713'] ; scalar F2-leak: ['0', '0', '0', '0', '0']
+  case (5, 3) q=['2', '1/3', '-1/2', '1/4'] chi=1: (1/6)L_F1 + (1/3)L_F2 = SC2 - SC1 exactly: True
+     generalised eigenvalues on the five traceless polarisations, relative to EH(hbar): IX2-IX1: ['-4.4274', '-4.2463', '-4.2463', '-3.7029', '-3.7029'] ; scalar F1-leak: ['0.27096', '0.27096', '0.29767', '0.29767', '0.30114'] ; scalar F2-leak: ['0', '0', '0', '0', '0']
+  case (13, 5) q=['2/3', '-1/2', '1/3', '1/7'] chi=1: (1/6)L_F1 + (1/3)L_F2 = SC2 - SC1 exactly: True
+     generalised eigenvalues on the five traceless polarisations, relative to EH(hbar): IX2-IX1: ['-69.188', '-52.598', '-52.598', '-2.8286', '-2.8286'] ; scalar F1-leak: ['0.23452', '0.23452', '2.9995', '4.3088', '4.3088'] ; scalar F2-leak: ['0', '0', '0', '0', '0']
+  case (5, 4) q=['1/9', '3/4', '-1/2', '2/3'] chi=1: (1/6)L_F1 + (1/3)L_F2 = SC2 - SC1 exactly: True
+     generalised eigenvalues on the five traceless polarisations, relative to EH(hbar): IX2-IX1: ['-0.72387', '-0.72387', '-0.46834', '-0.46834', '-0.38316'] ; scalar F1-leak: ['-0.079225', '-0.079225', '0.13263', '0.14683', '0.14683'] ; scalar F2-leak: ['0', '0', '0', '0', '0']
+  case (-5, 3) q=['3/7', '1/2', '-2/3', '1/5'] chi=1: (1/6)L_F1 + (1/3)L_F2 = SC2 - SC1 exactly: True
+     generalised eigenvalues on the five traceless polarisations, relative to EH(hbar): IX2-IX1: ['-2.3562', '-2.3562', '1.2668', '1.2668', '2.4745'] ; scalar F1-leak: ['-0.18981', '-0.18981', '0.013562', '0.21484', '0.21484'] ; scalar F2-leak: ['0', '0', '0', '0', '0']
+  case (-5, 3) q=['3/7', '1/2', '-2/3', '1/5'] chi=-1: (1/6)L_F1 + (1/3)L_F2 = SC2 - SC1 exactly: True
+     generalised eigenvalues on the five traceless polarisations, relative to EH(hbar): IX2-IX1: ['-2.3562', '-2.3562', '1.2668', '1.2668', '2.4745'] ; scalar F1-leak: ['-0.18981', '-0.18981', '0.013562', '0.21484', '0.21484'] ; scalar F2-leak: ['0', '0', '0', '0', '0']
+
+(C) fibre weights and K-weighted ratios; model tau^K(s) and (v^K - tau^K)(s) proportional to s^2 exp(-s M)
+   moment functions m0, m1, m2 (closed forms) agree with quadrature at x = 0.3, 2, 15, -1.5
+   spectrum mu_J = J(J+2), fibre truncation n = 30 (beta = W^(2)/W^(0); 1 = trace reading, 0 = averaged frame):
+      M = m_K^2 = 0.01    beta_X = 0.06535 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.00836) ; beta_R1 = 0.05588 ; beta_R2 = 0.08431
+      M = m_K^2 = 0.03    beta_X = 0.16949 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.02096) ; beta_R1 = 0.15049 ; beta_R2 = 0.20747
+      M = m_K^2 = 0.1     beta_X = 0.40003 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.05493) ; beta_R1 = 0.36950 ; beta_R2 = 0.46109
+      M = m_K^2 = 0.3     beta_X = 0.66298 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.12451) ; beta_R1 = 0.63172 ; beta_R2 = 0.72549
+      M = m_K^2 = 1       beta_X = 0.85869 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.27465) ; beta_R1 = 0.83867 ; beta_R2 = 0.89872
+      M = m_K^2 = 3       beta_X = 0.93590 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.48723) ; beta_R1 = 0.92592 ; beta_R2 = 0.95588
+      M = m_K^2 = 8       beta_X = 0.96385 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.69315) ; beta_R1 = 0.95900 ; beta_R2 = 0.97354
+      M = m_K^2 = 30      beta_X = 0.97649 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.88646) ; beta_R1 = 0.97473 ; beta_R2 = 0.98001
+      M = m_K^2 = 100     beta_X = 0.97672 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.96201) ; beta_R1 = 0.97603 ; beta_R2 = 0.97809
+      M = m_K^2 = 1000    beta_X = 0.96345 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.99602) ; beta_R1 = 0.96338 ; beta_R2 = 0.96358
+      M = m_K^2 = 10000   beta_X = 0.98239 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.99960) ; beta_R1 = 0.98210 ; beta_R2 = 0.98298
+   spectrum mu_J = 3J, fibre truncation n = 30 (beta = W^(2)/W^(0); 1 = trace reading, 0 = averaged frame):
+      M = m_K^2 = 0.01    beta_X = 0.18530 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.01066) ; beta_R1 = 0.17538 ; beta_R2 = 0.20515
+      M = m_K^2 = 0.03    beta_X = 0.40448 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.02652) ; beta_R1 = 0.38867 ; beta_R2 = 0.43609
+      M = m_K^2 = 0.1     beta_X = 0.69293 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.06851) ; beta_R1 = 0.67604 ; beta_R2 = 0.72670
+      M = m_K^2 = 0.3     beta_X = 0.86657 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.15223) ; beta_R1 = 0.85500 ; beta_R2 = 0.88971
+      M = m_K^2 = 1       beta_X = 0.94356 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.32432) ; beta_R1 = 0.93845 ; beta_R2 = 0.95378
+      M = m_K^2 = 3       beta_X = 0.96380 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.54931) ; beta_R1 = 0.96192 ; beta_R2 = 0.96756
+      M = m_K^2 = 8       beta_X = 0.96767 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.74615) ; beta_R1 = 0.96696 ; beta_R2 = 0.96907
+      M = m_K^2 = 30      beta_X = 0.96498 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.91161) ; beta_R1 = 0.96481 ; beta_R2 = 0.96533
+      M = m_K^2 = 100     beta_X = 0.95948 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.97115) ; beta_R1 = 0.95945 ; beta_R2 = 0.95956
+      M = m_K^2 = 1000    beta_X = 0.95289 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.99701) ; beta_R1 = 0.95289 ; beta_R2 = 0.95289
+      M = m_K^2 = 10000   beta_X = 0.95448 (J=0 channel only: (M/mu_2) ln(1+mu_2/M) = 0.99970) ; beta_R1 = 0.95448 ; beta_R2 = 0.95449
+
+(D) index part: generalised eigenvalues of IX1 + beta_X (IX2 - IX1) relative to EH on the five traceless polarisations (case 1)
+   M = 0.01    beta_X = 0.0654: eigenvalues ['-2.1540', '-2.1540', '-1.9172', '-1.9172', '-1.8383'] ; spread (max - min)/2 = 0.1579
+   M = 0.03    beta_X = 0.1695: eigenvalues ['-2.3993', '-2.3993', '-1.7853', '-1.7853', '-1.5806'] ; spread (max - min)/2 = 0.4094
+   M = 0.1     beta_X = 0.4000: eigenvalues ['-2.9426', '-2.9426', '-1.4932', '-1.4932', '-1.0101'] ; spread (max - min)/2 = 0.9662
+   M = 0.3     beta_X = 0.6630: eigenvalues ['-3.5621', '-3.5621', '-1.1601', '-1.1601', '-0.3595'] ; spread (max - min)/2 = 1.6013
+   M = 1       beta_X = 0.8587: eigenvalues ['-4.0233', '-4.0233', '-0.9122', '-0.9122', '0.1248'] ; spread (max - min)/2 = 2.0740
+   M = 3       beta_X = 0.9359: eigenvalues ['-4.2052', '-4.2052', '-0.8144', '-0.8144', '0.3159'] ; spread (max - min)/2 = 2.2606
+   M = 8       beta_X = 0.9638: eigenvalues ['-4.2711', '-4.2711', '-0.7790', '-0.7790', '0.3851'] ; spread (max - min)/2 = 2.3281
+   M = 30      beta_X = 0.9765: eigenvalues ['-4.3008', '-4.3008', '-0.7629', '-0.7629', '0.4164'] ; spread (max - min)/2 = 2.3586
+   M = 100     beta_X = 0.9767: eigenvalues ['-4.3014', '-4.3014', '-0.7627', '-0.7627', '0.4169'] ; spread (max - min)/2 = 2.3591
+   M = 1000    beta_X = 0.9634: eigenvalues ['-4.2701', '-4.2701', '-0.7795', '-0.7795', '0.3841'] ; spread (max - min)/2 = 2.3271
+   M = 10000   beta_X = 0.9824: eigenvalues ['-4.3147', '-4.3147', '-0.7555', '-0.7555', '0.4309'] ; spread (max - min)/2 = 2.3728
+   (eigenvalues of IX2 - IX1 relative to EH on the five: ['-2.3562', '-2.3562', '1.2668', '1.2668', '2.4745']; the spread is beta_X times 4.8308/2)

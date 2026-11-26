@@ -1,0 +1,37 @@
+(A) torsion and index density
+    Tbar . deltaT at q.y=q.v=0: 0
+    Tbar^{ab mu} Tbar_ab^nu - 2 (y^2 eta^{mu nu} - y^mu y^nu): True
+    Xbar = -6*y0**2/m**2 = 6 y^2/m^2 with y^2 = -y0**2
+    d ln(sqrt|g| X)/de - [-(5/6) t/m^2 + y.h.y/(3 y^2 m^2)]: 0
+    Omega := m^2 d ln(sqrt|g| X) with h22=h11, h33=0: h00/2 - 5*h11/3 (t = -h00 + 2 h11)
+    with h11 = 0 (late-time static channel): Omega/t = -1/2
+    isotropic h = c eta at fixed Tbar: m^2 dF/c = -3 ; with Tbar scaled (X^a -> sqrt(lam) X^a, c = m^2 dlam) the torsion adds +2 m^2 dlam, total -m^2 dlam
+(B) rank-one determinant and second-order vacuum term
+    det(1 + A W^T) - (1 + W.A): 0
+    1/(1+x) to second order: x**2 - x + 1 ; e^{-2 phi} with phi = (x - x^2/2)/2 agrees
+    <x>  MC -0.4051, tr/3 -0.4044 ; <x^2> MC 0.3036, (tr(M M)+tr(M M^T)+tr(M)^2)/15 0.3032 (structure of the second-order vacuum term)
+(C) exponents
+   homogeneous rescaling (w4,w2)=(1,1/2)
+     V_t = A4 chi^4 : beta = -(4*b4*chi**2 + y2)/(2*y2)
+        y2=0: zoo*b4 ; b4=0: -1/2
+     V_t = A3 chi^3 : beta = -(4*b4*chi**2 + y2)/(-2*b4*chi**2 + y2)
+        y2=0: 2 ; b4=0: -1
+     V_t = A2 chi^2 : beta = (4*b4*chi**2 + y2)/(4*b4*chi**2)
+        y2=0: 1 ; b4=0: zoo*y2 + 1
+   static plane wave, late times (w4,w2)=(1,1)
+     V_t = A4 chi^4 : beta = -(2*b4*chi**2 + y2)/y2
+        y2=0: zoo*b4 ; b4=0: -1
+     V_t = A3 chi^3 : beta = -2*(2*b4*chi**2 + y2)/(-2*b4*chi**2 + y2)
+        y2=0: 2 ; b4=0: -2
+     V_t = A2 chi^2 : beta = (2*b4*chi**2 + y2)/(2*b4*chi**2)
+        y2=0: 1 ; b4=0: zoo*y2 + 1
+  tree mass plus tree quartic, static channel, Y2 and b4 retained
+     beta = (2*b4*chi**2 + y2)/(2*chi**2*(A4 + b4))  with A4 chi^4 = tree quartic, b4 chi^4 = loop quartic, y2 chi^2 = loop quadratic
+     tree cubic + quartic: beta = -2*(2*b4*chi**2 + y2)/(-2*A4*chi**2 - 2*b4*chi**2 + y2)
+     no tree stabiliser (quartic only): beta(b4, y2): -(2*b4*chi**2 + y2)/y2 ; in terms of eps = b4/A4: -1/(1+eps), check residual 0
+(D) sign statement, static channel: beta = 4 (2 B4 + Y2)/U_pp with U_pp the second derivative in ln chi
+    samples with a local minimum: 81176, with beta >= 0: 0
+(E) exponent at finite q
+    reduced: -(J + Upf*dphi)**2/(2*(Upp + Z*q2))
+    terms: dphi^2: -Upf**2/(2*Upp + 2*Z*q2)  J dphi: -Upf/(Upp + Z*q2)  J^2: -1/(2*Upp + 2*Z*q2)
+    With J = 2 rho0 m^2 and dphi = t/(4 m^2), the term linear in t is (beta(q)/2) rho0 t with beta(q) = -Upf/(Z q2 + Upp)

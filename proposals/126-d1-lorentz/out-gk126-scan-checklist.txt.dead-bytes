@@ -1,0 +1,27 @@
+GATEKEEPER 126 r1 - PART 0 FULL SCAN CHECKLIST (protocol 3(a), ordinal 53 duty; scan date 2026-11-25)
+Baseline: appH live = 76d862968c31d78fffc665f72aaf60d40c90367a / 875106 B / 4142 lines (verified at scan start via sha1sum).
+Manifest enumerated via find chapters -name *.tex at scan start: 30 files, 1291026 B, 13915 lines.
+Method: files read in full via Read/cat, small->large, appH last in ~400-line chunks; per-file note appended immediately after each read (death-tolerant).
+Interaction targets per file: ghost-operator/eigenvalue statements; L1931 lemma echoes; D1 class data (L1616-1636 analogues); closers L1704-1740; eq:Smatrix / ass:frame-lock / ass:nondeg uses; finite-N realization statements; unitarity/anti-Hermiticity of fibre action; SO(3,1)/SO(4) language.
+STATUS: STARTED
+OK appL(61): no interaction; pheno outside chain; prior-scan appI note stands
+appG(67): ghosts mentioned only as not-evaluated; no finite-N/unitarity claims; ref ass:emergent-op, thm:Geff. No interaction.
+appI(87): none; EFE/RAR phenomenology; plaintext cites at ~L47 (prior-scan minor, unchanged).
+appK(91): mentions locked 4x4 block + LL ghost sectors, tr S^{ab}=0 standard fact; no so(3,1) finite-N rep claims. No interaction.
+ch18(92): D1 next-step wording matches ch17; "what has not been obtained" list STILL omits E,N (prior-scan FLAG persists, unchanged); no finite-N/unitarity claims.
+appF(93): IR equation appendix; no interaction.
+appD(121): SPARC; no interaction.
+appJ(123): recovery limits; D/D1/G wording consistent w/ current criterion; no interaction.
+appB(213): modular/replica; no finite-N fibre/unitarity claims; no interaction.
+appC(219): integrator lab; garbled phrase ~L102 (-\Geff-less toy potential) persists (prior-scan minor); no interaction.
+appA(265): SDW; a2 D2R 1/30 vs standard 1/180 persists w/ redistribution hedge (prior-scan minor); ghost sectors mentioned as unspecified (Problem F) - consistent w/ 126 payload scope note; no interaction.
+appE(315): RAR bridge; hard-coded "Assumption~E.1" + \eqref numeric refs persist (prior-scan minor cluster); no interaction.
+ch15(330): numerics lab; prior-scan minors (O(dt^2) wording ~L126) unchanged; no interaction.
+ch16(362): falsifiers; uses ass:frame-lock x2, ass:nondeg x2, ass:local-lorentz "local SO(3,1) is gauged" load-bearing; D1 torsion-massive = condition to test; hard-coded "Theorem~7.3--12.4" cluster persists (prior minor); no conflict w/ 126 claims.
+ch01(385): intro; SO(3,1) tangent-index handle; composite metric fundamental statement = emergence intact; no interaction. Prior minor L325-326 back-to-back paragraph heads persists.
+ch09(394): UV; "local Lorentz gauge symmetry of Phi: not yet constructed" + torsion undetermined (Problem D) - corroborates D1 OPEN framing; eq:Smatrix ref x1; no conflict w/ 126.
+ch12(399): HBEV; dim-incompleteness remark keeps Problem G OPEN; no interaction.
+ch13(409): cores/galaxies; eq:G-sss G^theta_theta sign persists WRONG (re-derived: correct +(rf''+2f')/(2r) from dS test; prior-scan MAJOR#2 persists unchanged); no 126 interaction.
+ch01/ch09 earlier notes stand.
+ch08(410): heat kernel; ghosts=Ostrogradsky sense only; eq:Smicro ref ok; no 126 interaction.
+ch14(411): drag/Kubo; no 126 interaction.

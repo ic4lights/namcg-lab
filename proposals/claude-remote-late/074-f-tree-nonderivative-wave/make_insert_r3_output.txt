@@ -1,0 +1,3 @@
+F1 display reference: old occurs 1x
+W scope wording: old occurs 1x
+appH_insert_r3.tex bytes 9652 sha256(LF) 75b89a9d200757fe7a13c0f70aeec3946c07d117b618a9a5f1b283212eb43bfd

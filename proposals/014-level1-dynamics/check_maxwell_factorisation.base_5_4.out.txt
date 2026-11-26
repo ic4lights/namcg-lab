@@ -1,0 +1,15 @@
+(0) Gram of S_i = [[50/9, 0, 0], [0, 50/9, 0], [0, 0, 50/9]]  expected diag 50/9
+(a) Q = q_perp^2 P_perp - q_perp q_perp^T  (4x4 block): True
+(b) number of the 10 entries of E[h(c)] NOT divisible by q^2 (as polynomials): 10
+(b') polynomial P (linear in q) with E H = P M exists: False
+(c) null q=(1,1,0,0): Lorenz-gauge Maxwell solutions: 9 free amplitudes (3 colours x 3), rank of c->E[h]: 1
+    => E[h(c)] vanishes only on a subspace of dimension 8 of the 9; gauge directions (3) are in that subspace; physical polarisations annihilated: 5 of 6
+(d') Q^{mu a}T_a^nu = (q^2+q_par^2) T + q^2 yhat tau - q_par q tau : True
+(d) trial 0 : h = (2/q^2)(Q T + T Q) closed form matches: True
+    E[h] (lower) first row: [1261/9, 2195/108, 1130/27, -851/54]  ; q^2 T_{0 nu}: [58, 38, -12, -6]
+(d') Q^{mu a}T_a^nu = (q^2+q_par^2) T + q^2 yhat tau - q_par q tau : True
+(d) trial 1 : h = (2/q^2)(Q T + T Q) closed form matches: True
+    E[h] (lower) first row: [836/351, 4717/351, -12734/3159, -8044/3159]  ; q^2 T_{0 nu}: [2651/351, 3095/234, -899/702, 11/702]
+(d') Q^{mu a}T_a^nu = (q^2+q_par^2) T + q^2 yhat tau - q_par q tau : True
+(d) trial 2 : h = (2/q^2)(Q T + T Q) closed form matches: True
+    E[h] (lower) first row: [932/243, -16195/972, -3823/972, 4381/1458]  ; q^2 T_{0 nu}: [2345/324, -395/9, -1733/162, 691/108]

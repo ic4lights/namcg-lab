@@ -1,0 +1,6 @@
+c0=0 (eta_c0c0=-1): (n_neg,n_pos,rank H,rank centre)->count {(0, 4, 4, 2): 25}; y.y in [-3.686,-0.068]; Euclid h: f2/f1 in [1.000000,1.000000]
+c0=1 (eta_c0c0=+1): (n_neg,n_pos,rank H,rank centre)->count {(2, 2, 4, 2): 25}; y.y in [0.090,3.779]
+c0=2 (eta_c0c0=+1): (n_neg,n_pos,rank H,rank centre)->count {(2, 2, 4, 2): 25}; y.y in [0.145,3.731]
+c0=3 (eta_c0c0=+1): (n_neg,n_pos,rank H,rank centre)->count {(2, 2, 4, 2): 25}; y.y in [0.067,3.421]
+c0=4 (eta_c0c0=+1): (n_neg,n_pos,rank H,rank centre)->count {(2, 2, 4, 2): 25}; y.y in [0.101,3.954]
+c0=5 (eta_c0c0=-1): (n_neg,n_pos,rank H,rank centre)->count {(0, 4, 4, 2): 25}; y.y in [-3.911,-0.097]; Euclid h: f2/f1 in [1.000000,1.000000]

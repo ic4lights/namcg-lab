@@ -1,0 +1,5 @@
+unrotated (integer-n data)           gap = 4 - n_D ; at (nD,Ns,alpha)=(2,6,1): cT=0 cA=2 gap=2
+rotated n<1 (does not match n=2)     gap = 3 - n_D ; at (nD,Ns,alpha)=(2,6,1): cT=0 cA=1 gap=1
+rotated n>1 (does not match n=2)     gap = 5 - n_D ; at (nD,Ns,alpha)=(2,6,1): cT=0 cA=3 gap=3
+gap = 0 requires n_D = [4] (unrotated); weight of rho^2 X there:  -1
+periodic Cartesian, scalar-like domain (017): cA(Dirac)=-2/3 -> gap 4-2 n_D: not Tr rho^n at even n, not a Dirac-operator trace; withdrawn as a gluing

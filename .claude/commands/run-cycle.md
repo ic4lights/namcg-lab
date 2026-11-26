@@ -8,40 +8,220 @@ You are the **orchestrator**. Arguments: `$ARGUMENTS` (defaults: target `auto`, 
 Read `CLAUDE.md` and `MILESTONE.md` first. Obey every hard rule there. You coordinate; you do not do mathematics
 yourself, you do not edit `chapters/` (only the integrator does), and you never change status labels.
 
-Subagents cannot spawn subagents, so you call `researcher`, `gatekeeper` and `integrator` directly with the Task
-tool, one at a time, each with a self-contained prompt (they have no shared memory). Pass file paths, not summaries.
+Subagents cannot spawn subagents, so you call `researcher`, `fundamentality`, `gatekeeper`, `integrator` and the
+advisory agents `sme`, `pathfinder` and `adversary` directly with the Task tool (`vector-miner` only on the
+on-demand basis in the roster directive below), each with a self-contained
+prompt (they have no shared memory). Pass file paths, not summaries.
+You may run **as many subagents in parallel as the goal needs** (author directive, 2026-11-14, removing the
+same-day main + 1 cap): issue independent Task calls together - several proposal chains, advisory passes and
+read-only lookups at once. The accuracy guards are absolute: never two agents on the same proposal; parallel
+chains use disjoint `proposals/NNN-slug/` folders and non-overlapping manuscript targets; never two writers on
+`chapters/`/`bib/`; the integrator always runs alone and re-verifies anchors against the current tree. See the
+Execution & Concurrency Rules in `CLAUDE.md`.
+
+## Author directive (2026-10-14): autonomous mode
+
+The author has asked for autonomous work toward the NAMCG **infrared derivation** and the **full-GR
+(matrix-derived) derivation**. This directive overrides the stop and contact rules below and in `MILESTONE.md`
+where they conflict. The `CLAUDE.md` hard rules still hold: no autonomous status, priority or completion-label
+change; no push or merge; work only on the working branch; and only gatekeeper-`ACCEPT`ed text
+reaches `chapters/`.
+
+**SME scouting and consultation (author directive, 2026-10-15).**
+- **Scouting.** Task the `sme` agent in mode 1 (literature scout):
+  - at the start of a run;
+  - after every fifth integration;
+  - whenever the author asks.
+
+  Save its reply verbatim to `reports/sme-scout-<YYYYMMDD-HHMM>.md` (uncommitted; the author commits it). When choosing a target (step a),
+  give the researcher the path of the latest scout report and ask it to weigh the ranked routes there.
+- **Consultation.** If a gatekeeper review carries `FLAGS` containing `SME-CONSULT`:
+  1. Task `sme` in mode 2 with the questions from the review's `## SME consultation request`, plus the proposal and
+     review paths.
+  2. Save its reply verbatim as `proposals/NNN-*/sme-consult-rK.md`.
+  3. Resume the same gatekeeper with the reply, or re-task it if it can no longer be resumed, to issue a final
+     verdict.
+  4. Save that final verdict as `review-rK.md`, overwriting the provisional one, after first keeping the provisional
+     verdict as `review-rK-provisional.md`.
+
+  Then branch on the final verdict as usual.
+
+**Advisory roster after the 2026-11-15 cost optimization (author directive, 2026-11-15; supersedes the 2026-11-14
+mission-graph / vector-miner cadence).** The in-cycle advisory agents are now `sme` (scouting and consultation,
+as above), `pathfinder` and `adversary` (minimised below). Containment rules for every advisory agent, in-cycle or
+on-demand:
+- Dispatch at pipeline-stage boundaries (after an integration or a verdict). They may overlap pipeline agents
+  on *other* proposals - they never touch `chapters/` or proposal folders - but never run alongside the
+  integrator, which owns the tree and the build.
+- They never count toward `--items` or `--rounds`, and a failed advisory pass never stalls or stops the loop.
+- On rate limit or budget pressure, skip pending advisory dispatches first; only the pipeline itself can stop a run.
+- Their writes (`reports/graph/`, `reports/vector/`, `reports/adversary/`, `scratch/vector/`) are uncommitted,
+  like everything else.
+- None of them originates manuscript mathematics, changes any status, priority or completion label, or counts as
+  progress on any problem (CLAUDE rules 4, 6, 8).
+
+- **`mission-graph` is retired from the loop (2026-11-15).** Its agent definition is archived at
+  `archive/agents/mission-graph.md`; never dispatch it and never refresh the map.
+  `reports/graph/mission-graph.yaml` and its PNG are frozen background from 2026-11-07/08 by design - stale is
+  the expected state - and are not passed to subagents as current. The pathfinder frontier now carries the live
+  gap list (each gap with its own manuscript `src`), with the problem-ledger appendix's missing-step paragraphs as the fallback.
+  The author may render the picture on demand outside the pipeline (`scripts/render_mission_graph.py`).
+- **`vector-miner` is on-demand only (2026-11-15).** Removed from every cadence. Task it only when the researcher
+  is stuck on a named gap, in mode 1 (external query mining) or mode 5 (deep dig) scoped to that gap; not mode 6.
+  Save each reply verbatim as `reports/vector/vector-mining-<mode>-<YYYYMMDD-HHMM>.md`. Its output stays triage
+  for the researcher: vector proximity is semantic similarity, not a derivation, and no proposal may cite it as
+  one. An actionable finding (a citation completion, a `notation-collision` hazard, a `conjecture-candidate`)
+  becomes a follow-up proposal through the normal researcher -> gatekeeper -> integrator pipeline; the mining
+  report itself is never integrated and changes no status.
+
+**Pathfinder and adversary in the loop (author directive, 2026-11-14).** Two further advisory agents (full
+definitions in their agent files), same containment as the others: never counted toward `--items` or `--rounds`,
+skipped first under rate/budget pressure, outputs are plans, maps and warnings that integrate nothing and change
+no status.
+- **`pathfinder`** maintains the attack plan `reports/graph/frontier.yaml` - the live gap/attack record since the
+  mission-graph agent was retired 2026-11-15: the attempt-graph of candidate attack edges per gap (prior attempts
+  with proposal refs and verdicts, bounded no-gos with their hypothesis classes, stalls), ranked closable edges,
+  and a partition of the frontier into disjoint chains. Task it before target choice at the start of a run
+  (rebuild/refresh `frontier.yaml` from the current sources; take live gaps from the problem-ledger appendix's missing-step
+  paragraphs with `src` - the frozen mission-graph map is background only), after every integration (diff update),
+  and at the end of a run that integrated at least one item. Use its chain partition at step (a) to choose
+  disjoint parallel targets - the `CLAUDE.md` disjoint-work rule is then enforced from the frontier, not from
+  memory. Paste its `FRONTIER: ...` first line into the run digest. If it fails, choose targets from the current
+  problem-ledger appendix's missing-step paragraphs directly and note it.
+- **`adversary`** attacks the plan and the joint body of results, not proposal texts (mode P pre-mortem, mode C
+  assumption-collision scan, mode B counterexample probes; it never proposes fixes). Task it in mode P after the
+  frontier exists and before chains start, but only when the run fans out to two or more chains; modes C/B only
+  before a milestone verdict, not on a five-integration cadence (cost trim, 2026-11-15). If two consecutive runs
+  produce no actionable finding, suspend adversary dispatches and note it for the author. Save each reply verbatim
+  as `reports/adversary/adversary-<mode>-<YYYYMMDD-HHMM>.md`. Route findings:
+  a `PLAN-HAZARD` becomes a named test target in the next gatekeeper dispatch for that chain and in the
+  researcher's next-round instructions; `ASSUMPTION-COLLISION` and `CLAIM-ERROR-CANDIDATE` become follow-up
+  proposals through the normal researcher -> gatekeeper -> integrator pipeline (the gatekeeper re-derives first;
+  an upheld prior-claim error goes through M3 as usual); `NO-GO-APPLIES` informs target choice and the pathfinder
+  re-ranks. A finding never stops a run by itself, never integrates, and never closes or narrows any problem
+  beyond its quoted hypothesis class.
+
+**Current branch only — no git writes by agents (author directive, 2026-11-05, supersedes 2026-10-15).** All work
+happens on the branch that is already checked out when the run starts, so the author can follow it in VS Code.
+The orchestrator and every subagent must never create, rename, delete, switch or check out a branch, and never run
+any git write command (`add`, `commit`, `checkout`, `switch`, `branch <name>`, `stash`, `reset`, `restore`, `push`,
+`merge`, `rebase`). Read-only git (`status`, `log`, `diff`, `show`, `rev-parse`, `branch --show-current`) is
+allowed; `scripts/build_check.py` restoring its tracked PDF is the only internal exception. The author makes every
+commit and every merge. Wherever this file says "the branch", read "the branch currently checked out".
+
+1. **Contact the author only for a breakthrough.** That means a gatekeeper verdict of `ACCEPT` whose `FLAGS`
+   contain `BREAKTHROUGH`: a noteworthy advance, such as deriving a critical-path step from the matrix theory, or a
+   result that warrants a label change (`LABEL-CHANGE-PROPOSED`, M1 or M4). Then integrate whatever is allowed,
+   write the digest and stop with a short message. Outside a breakthrough, do not stop to report.
+2a. **Follow every favourable avenue after a no-go (author directive, 2026-10-15).** When a package records a
+   bounded no-go, gap or mismatch and lists open relaxations that could favour the infrared or full-GR derivation:
+   - queue a follow-up package straight away that explores those avenues. Ask the SME (mode 1) for literature
+     mechanisms that resolve the same gap when that helps.
+   - keep following up until each avenue has either produced a positive result or been bounded in turn.
+   - do not move on to unrelated targets while a favourable avenue on the current gap is still unexplored, unless
+     it is blocked.
+   - **Derivation-first qualification (author directive, 2026-11-20).** 2a never outranks a direct attack on a
+     named missing step or an upstream gating problem. Queue an avenue only when a plausible outcome is positive
+     derivation-grade data for a missing step; an avenue whose outcome is only the same no-go in a wider class,
+     or another negative-side/fibre-side statistic the integrated text says identifies nothing for the target,
+     is recorded on the frontier and skipped. When every remaining avenue on a gap is of that kind, park the
+     gap: note it in the ledger and dispatch the next missing-step-adjacent or gating edge (the pathfinder
+     ranks these first). The 2026-10-15 directive stays in force inside those bounds - a bounded no-go still
+     never marks a target dead.
+2. **A no-go is not necessarily conclusive.** Record an M2 no-go in the ledger, together with the exact hypothesis
+   class it covers. Then continue: ask the researcher which hypothesis a within-core route can relax, and pursue
+   that route. Do not mark a target dead because of a bounded no-go.
+3. **Never make spacetime non-emergent.** Any route that turns NAMCG into a theory with a fundamental,
+   non-emergent spacetime or metric is excluded outright. It is not pursued, not proposed and not integrated.
+4. **Milestones and flags that no longer stop the loop** (record them in the ledger and digest, then continue):
+   - **M3 / `PRIOR-CLAIM-ERROR`:** have the researcher write the correction as a proposal; integrate it on the
+     branch after an `ACCEPT`.
+   - **M5 / structural changes (author directive, 2026-10-14, second part):** "proceed with positive impact
+     changes that remain namcg emergent spacetime, automatically". A structural or scope change, including a change
+     to a core definition (e.g. `def:matrix-coords`), is pre-approved when:
+     - it keeps spacetime and the metric emergent;
+     - it has a positive impact on the infrared / full-GR derivation;
+     - it changes no status, priority or completion label;
+     - it passes a normal gatekeeper review.
+
+     Have the researcher develop it as a normal proposal (with a full scan, since it changes a definition), and
+     integrate it after `ACCEPT`. Record it in the ledger and digest as an author-pre-approved structural change.
+     (`fundamentality`-originated core changes do not take this route: they stop for the author per step (a).)
+   - **`AUTHOR-DECISION`:** if the decision changes no status, priority or completion label and keeps spacetime
+     emergent, the researcher resolves it in a "Decisions Taken" section, favouring the infrared / full-GR
+     derivation. That covers scope, core-assumption and structural choices. Queue it for the author only if it
+     would change a label (contact the author then) or would make spacetime non-emergent (excluded outright).
+   - **`ACCEPT` whose flags concern only items outside the proposal text:** integrate the accepted text, and
+     queue the outside items as follow-up proposals.
+5. **Budget.** Ignore `--items` and `ACCEPTED_BATCH_LIMIT`; keep starting new items. Stalls: after two in a row,
+   switch to a different critical-path target instead of stopping. After three in a row, write the digest and stop
+   quietly. Also stop on a build failure that cannot be reverted cleanly, or on an external limit such as a rate
+   limit or session end. In those cases leave the branch clean and the digest current.
+6. **Bookkeeping.** Write proposals, reviews and ledger entries into the working tree after each item, so that
+   progress survives interruptions. Do not commit them — the author commits everything.
 
 ## 0. Pre-flight & Unmerged Proposals
 
-1. `git branch --show-current`. If `main`/`master`, create and switch to `auto/<YYYYMMDD-HHMM>`. If already on an
-   `auto/*` branch, continue on it.
-2. `git status --porcelain` must be empty (if not, stop: the author must commit or stash first).
+1. `git branch --show-current`. Run the whole cycle on that checked-out branch. Never create or switch branches.
+   If the checked-out branch is `main` or `master`, stop and ask the author to check out a working branch first.
+2. `git status --porcelain` must show nothing except uncommitted changes in `chapters/` and `bib/` and untracked
+   `proposals/` folders. Integrated manuscript changes are left uncommitted for the author to review in VS Code (see
+   "Manuscript changes are not committed" below). Anything else dirty means stop: the author must commit or stash
+   first.
 3. **Check for unmerged proposals**: Scan `proposals/` for any existing unmerged proposal folder (e.g., `proposals/NNN-slug/`) containing a `proposal-rK.md` or `review-rK.md` that has not yet been merged into `chapters/`. 
    - If an unmerged proposal exists, resume execution directly from that folder and its latest round `K`, rather than creating a new proposal ID `NNN`.
    - If no unmerged proposal exists, list `proposals/` to find the next sequential ID `NNN`.
-4. Record `BASE=$(git rev-parse HEAD)`, the chapter manifest count, and run `python scripts/build_check.py`
-   to confirm the baseline builds. Run `python scripts/make_digest.py`, then verify it with
-   `python scripts/make_digest.py --check` (`DIGEST CURRENT`). Ensure `.claude/state/allow_chapters` does not exist.
+4. Record `BASE=$(git rev-parse HEAD)`, the chapter manifest count, and run `python scripts/build_check.py --fast`
+   to confirm the baseline builds (skips pdflatex if no .tex files changed). Run `python scripts/make_digest.py`
+   (compact by default; produces ~10KB digest vs ~52KB full), then verify it with
+   `python scripts/make_digest.py --check` (`DIGEST CURRENT`). `.claude/state/allow_chapters` is kept permanently by
+   the author (author directive, 2026-11-08); do not create or delete it — if it is missing, note that the
+   integrator will abort and the author must restore it.
 5. Initialise counters: `accepted=0`, `stalled_in_a_row=0`.
+
+**Digest mode decision (optimized rescans).**
+- `make_digest.py` uses **compact mode by default**: unchanged files are TOC-only (one line each), changed files show full content.
+  Typical digest size: ~10KB (vs ~52KB full). Saves ~70-80% tokens on digest reads.
+- Use `python scripts/make_digest.py --full` when: gatekeeper requires full scan (every 5th integrated item),
+  a milestone verdict (M1-M5) is triggered, or tree-hash is stale with actual content changes.
+- Before passing digest to subagents: if digest size < 20KB, pass compact digest + targeted reads.
+- Gatekeeper may use compact digest for navigation + targeted file reads; only full scan when protocol requires.
+- `build_check.py --fast` skips pdflatex when no .tex files changed (saves ~2 pdflatex passes per integration).
 
 ## 1. Loop
 
-Repeat until a stop condition in `MILESTONE.md` or the budget is reached:
+Repeat until a stop condition in `MILESTONE.md` or the budget is reached. Under the fan-out rule you may pursue
+several independent items concurrently (disjoint proposal folders and manuscript targets, per `CLAUDE.md`); the
+stages below still run each item's pipeline in order, and integration and the scripts stay serial.
 
 **a. Choose the target/package.** If the argument names a problem or connected target set, use it. Otherwise ask
-the researcher to choose using the current Chapter 17 completion criterion and Appendix H (not a remembered
-problem list). Prefer a consequential unresolved step or a coherent bundle of related steps that materially
+the researcher to choose using the current Chapter 17 completion criterion and the problem-ledger appendix (not a remembered
+problem list). Pass it the latest SME scout report and the pathfinder frontier `reports/graph/frontier.yaml`
+(gap list with `src`, ranked closable edges and the chain partition - when running parallel chains, take each
+chain's target from a different frontier chain; its `lead_for_researcher` lines carry the SME/vector/adversary
+leads). If an on-demand `reports/vector/` report exists from the current run, pass it too as triage only - never
+a derivation aid - to inform the choice. Prefer a consequential unresolved step or a coherent bundle of related steps that materially
 advances the stated scope. Do not create multiple small items merely to use the budget, combine unrelated targets
 only to reduce PR count, or repeat a route recorded as REJECTED/stalled in the ledger. `--items` defaults to one
 accepted proposal package per run; increase it only when the author requests multiple packages.
+When the package targets the NAMCG core itself - a definition, assumption, scope statement, or a redaction/negation
+of a core aspect - task `fundamentality` instead of `researcher`. Its packages carry the `STRUCTURAL - author only`
+flag and trigger the rule 3(c) full scan: review them, but do not integrate one until the author has approved that
+exact structural decision (the author may extend the 2026-10-14 pre-approval envelope to this agent; until then
+every fundamentality package stops for the author). Researcher-originated structural packages that fall inside the
+M5 envelope below keep following that envelope as before.
 
 **b. Researcher execution (Round K).** 
 - If starting a new item, create `proposals/NNN-slug/` and set `K=1`. 
 - If resuming an unmerged/paused proposal, use its existing folder and latest round `K`. 
-Task `researcher` with: the target set, the proposal folder, round `K`, the ledger path, the current digest status, and instructions to address prior reviews or write the proposal package. Read the returned path.
+Task `researcher` with: the target set, the proposal folder, round `K`, the ledger path, the current digest status (compact/full),
+and instructions to address prior reviews or write the proposal package. The researcher may use the compact digest for navigation
+and targeted reads. Read the returned path.
 
-**c. Gatekeeper.** Task `gatekeeper` with the proposal path, round, current digest status, and proposed integration
-ordinal (`accepted + 1`). Save its full reply verbatim to `proposals/NNN-slug/review-rK.md`. Parse the first line
+**c. Gatekeeper.** Task `gatekeeper` with the proposal path, round, current digest status (compact/full, tree-hash),
+and proposed integration ordinal (`accepted + 1`). The gatekeeper may use the compact digest for navigation + targeted
+file reads; only full scan when protocol requires (5th item, milestone, definition/assumption change, or stale tree-hash).
+Save its full reply verbatim to `proposals/NNN-slug/review-rK.md`. Parse the first line
 (`VERDICT | MILESTONE | FLAGS`).
 
 **d. Branch on the verdict.**
@@ -67,14 +247,30 @@ change any status, priority, or completion-classification label, and does not cl
 is closed/solved/derived without establishing it for the current scope. If it proposes any label change, treat it
 as `LABEL-CHANGE-PROPOSED` and stop for the author. Confirm the review round equals the proposal round.
 
-**f. Integrate.** Create `.claude/state/allow_chapters`, Task `integrator` with the proposal path, review path,
-branch and current digest status, then ensure the flag file is removed. If it reports a build failure or anchor
+**Nothing is committed by agents (author directive, 2026-11-05, supersedes 2026-10-15).** The integrator edits
+`chapters/` and `bib/` in the working tree, builds and verifies, and does not commit; proposals, reviews, reports
+and the ledger are likewise left uncommitted. The author reviews the working-tree changes in VS Code and makes
+every commit. As a consequence:
+- Never run `git add`, `git commit` or any other git write command on any path. Never stash, reset, restore or
+  check out anything.
+- While the manuscript has uncommitted changes, `make_digest.py` reports `dirty-chapters: yes`. Under `CLAUDE.md`
+  3(d) that obliges a full scan for any gatekeeper review that relies on the digest. Tell the gatekeeper explicitly
+  that the dirty state comes from accepted, build-verified integrations awaiting the author's commit. It may then
+  read the working-tree files directly and need not treat the dirty flag itself as a scan trigger beyond what
+  `CLAUDE.md` requires.
+- In the ledger, record "uncommitted (author to commit)" and the integrator's backup path instead of a commit hash.
+
+**f. Integrate.** Task `integrator` with the proposal path, review path,
+branch and current digest status (the guard flag `.claude/state/allow_chapters` is author-kept; never create or
+delete it — the integrator verifies it and aborts if missing). If it reports a build failure or anchor
 mismatch: ledger entry `INTEGRATION-FAILED`, stop the run. Else increment `accepted`, rebuild the digest with
-`python scripts/make_digest.py`, verify `python scripts/make_digest.py --check` prints `DIGEST CURRENT`, and set
-`stalled_in_a_row=0`. Pass the refreshed digest status to all later subagents.
+`python scripts/make_digest.py` (compact by default), verify `python scripts/make_digest.py --check` prints `DIGEST CURRENT`,
+and set `stalled_in_a_row=0`. Pass the refreshed digest status to all later subagents. Use `python scripts/build_check.py --fast`
+for the integration build (skips pdflatex if no .tex files changed).
 
 **g. Ledger.** Append one block to `reports/ledger.md`: id, date, problem, claim (one sentence), rounds, final
-verdict, commit hash or "not integrated", what is proved/conditional/open, milestone code (gatekeeper's M-code,
+verdict, "uncommitted (author to commit)" or "not integrated" (never a self-made commit hash), what is
+proved/conditional/open, milestone code (gatekeeper's M-code,
 or the researcher's if the gatekeeper said none and you agree it matches a `MILESTONE.md` trigger, otherwise none).
 
 **h. Milestone check.** If the accepted item has a gatekeeper milestone code M1–M5 (see `MILESTONE.md`), stop the
@@ -94,11 +290,23 @@ in a separate "STRUCTURAL - author only" section. Do not send the author's own m
 recommendations are advisory: integrate nothing on their basis, change no label, and list them in the digest
 under item 4.
 
-**Digest.** When the loop ends for any reason, write `reports/run-<YYYYMMDD-HHMM>.md` with exactly the contents listed at the
-end of `MILESTONE.md`. Make sure the branch is clean (`git status --porcelain` empty), run
-`git log --oneline $BASE..HEAD`, and `git diff --stat $BASE..HEAD`. Commit the digest and ledger on the branch
-(`git add reports proposals; git commit -m "Run digest and proposals"`).
+**Independent SME review (before any merge).** Run the SME review when the loop stops with integrated items on
+the branch, or whenever the author asks to merge or for a pre-merge review. Task `sme` with:
+- the branch;
+- the base (`main`, or the merge base);
+- `reports/ledger.md`.
 
-Then **stop**. Final message to the author: the stop reason, the milestone (if any) in two sentences, the branch
-name, the digest path, and the exact commands to review (`git diff <BASE>..HEAD`) and to merge or discard. Do not
-merge, push, or continue researching. Do not start another run on your own.
+Save its full reply verbatim to `reports/sme-<branch>-<YYYYMMDD-HHMM>.md` (uncommitted; the author commits it), and put its first
+line and "Summary for the author" in the digest and in the final message. The SME is advisory. A `HOLD` does not undo
+integrations; it is reported to the author with the smallest fix it names. Contacting the author with a pre-merge SME
+review is allowed under the autonomy directive.
+
+**Digest.** When the loop ends for any reason, write `reports/run-<YYYYMMDD-HHMM>.md` with exactly the contents listed at the
+end of `MILESTONE.md`, plus the `FRONTIER: ...` line from the pathfinder, if it ran during the run. Run `git log --oneline $BASE..HEAD`, `git diff --stat $BASE..HEAD`, and
+`git diff --stat -- chapters bib` for the uncommitted manuscript changes awaiting the author. Leave the digest,
+ledger, proposals, reviews and reports all uncommitted in the working tree; the author commits everything.
+
+Then **stop**. Final message to the author: the stop reason, the milestone (if any) in two sentences, the checked-out
+branch name, the digest path, and the commands to review the uncommitted work (`git status`, `git diff`, plus
+`git log --oneline $BASE..HEAD` for anything already committed) and to commit or discard. Do not commit, merge,
+push, or continue researching. Do not start another run on your own.

@@ -1,0 +1,5 @@
+sigma 1 C sign C -> ODE residual: 0
+sigma 1 C sign -C -> ODE residual: 0
+sigma -1 C sign C -> ODE residual: 0
+sigma -1 C sign -C -> ODE residual: 0
+alpha/beta = r**2/sqrt(-C + r**4)  ; 1/sqrt(1-C/r^4) = 1/sqrt(-C/r**4 + 1)

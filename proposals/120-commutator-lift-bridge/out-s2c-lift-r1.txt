@@ -1,0 +1,19 @@
+PASS T4 lift kinetic tensor Ct = (1/2) K of def:matrix-coords-ext (exact)
+== T5: solve Ct = c*g for constant Theta ==
+solutions: [{c: -th01**2/2 + th12**2/2 + th13**2/2, th02: -I*th13, th03: I*th12, th23: -I*th01}, {c: -th01**2/2 + th12**2/2 + th13**2/2, th02: I*th13, th03: -I*th12, th23: I*th01}, {c: th12**2/2 + th13**2/2, th01: 0, th02: -I*th13, th03: I*th12, th23: 0}, {c: th12**2/2 + th13**2/2, th01: 0, th02: I*th13, th03: -I*th12, th23: 0}, {c: th12**2/2 + th23**2/2, th01: -I*th23, th02: 0, th03: -I*th12, th13: 0}, {c: th12**2/2 + th23**2/2, th01: I*th23, th02: 0, th03: I*th12, th13: 0}, {c: th12**2/2, th01: 0, th02: 0, th03: -I*th12, th13: 0, th23: 0}, {c: th12**2/2, th01: 0, th02: 0, th03: I*th12, th13: 0, th23: 0}]
+PASS T5 every solution is Theta=0 or non-real (no real nonzero Theta)
+== T6: canonical Theta(e,b) ==
+Ct(e,b) = Matrix([[e**2/2, 0, 0, 0], [0, -e**2/2, 0, 0], [0, 0, b**2/2, 0], [0, 0, 0, b**2/2]])
+PASS T6a Ct canonical = diag(e^2/2,-e^2/2,b^2/2,b^2/2)
+PASS T6b spatial Theta: Ct degenerate, no d0 kinetic (C00=0, det=0)
+det Ct(e,b) = -b**4*e**4/16
+== T7-T9: full N=2 Moyal lift, numeric data, canonical Theta(e=2,b=3) ==
+T7 A-linear part (e=2,b=3) nonzero: True
+PASS T7 A-linear cross term present (Adjoint Tr(dPhi[A,Phi])-type)
+Llin = I*(54*x0*x1 + 8*x0*x2 - 56*x0 + 36*x1*x2 - 12*x1)
+PASS T8 constant Phi, A=0: lift vanishes (no mass/potential term)
+L(frame linear) = 4*u0**2 - 4*u1**2 + 9*u2**2 + 9*u3**2
+expected -2 Ct u u = -4*u0**2 + 4*u1**2 - 9*u2**2 - 9*u3**2
+PASS T9 frame mode: lift = +/- 2 Ct^{ab} d_a c d_b c (derivative-only, K-type)
+T9 sign: minus-conv: False  plus-conv: True
+SUMMARY pass=7 fail=0

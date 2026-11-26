@@ -1,0 +1,41 @@
+== characteristic roots along a line q0 + t n (numerical; roots common to two random compressions)
+-- flat : number of roots 40
+   t =  -0.5214  +0.0000i  x 20   q^2 = (-0+0j)
+   t =   0.2639  +0.0000i  x 20   q^2 = -0j
+-- null rotation, constant-connection gauge : number of roots 40
+   t =  -1.8193  -0.0000i  x  2   q^2 = (-15.7471-0j)  j with (q + j k)^2 = 0: 2.0
+   t =  -0.9728  +0.0000i  x  6   q^2 = (-3.2517+0j)  j with (q + j k)^2 = 0: 1.0
+   t =  -0.5214  +0.0000i  x  4   q^2 = 0j  j with (q + j k)^2 = 0: -0.0
+   t =  -0.4390  -0.0000i  x  6   q^2 = (0.3371-0j)  j with (q + j k)^2 = 0: -1.0
+   t =  -0.4156  +0.0000i  x  2   q^2 = (0.4185+0j)  j with (q + j k)^2 = 0: -2.0
+   t =  -0.3132  +0.0000i  x  2   q^2 = (0.6995+0j)  j with (q + j k)^2 = 0: 2.0
+   t =  -0.2222  -0.0000i  x  6   q^2 = (0.8469-0j)  j with (q + j k)^2 = 0: 1.0
+   t =   0.2639  +0.0000i  x  4   q^2 = -0j  j with (q + j k)^2 = 0: 0.0
+   t =   1.1191  +0.0000i  x  6   q^2 = (-8.1701-0j)  j with (q + j k)^2 = 0: -1.0
+   t =   2.0332  -0.0000i  x  2   q^2 = (-26.3223+0j)  j with (q + j k)^2 = 0: -2.0
+-- Heisenberg, q_2 = 0 : number of roots 40
+   t =  -0.4950  -0.0000i  x 20   q^2 = (-0-0j)
+   t =   0.2060  -0.0000i  x 20   q^2 = (-0+0j)
+-- second algebra, q_2 = q_3 = 0 : number of roots 40
+   t =  -0.3782  -0.0000i  x 18   q^2 = -0j  (q - i tau)^2 with tau_a = (2,0,0,0): (4-2.5424j)
+   t =  -0.3782  +1.0363i  x  2   q^2 = (6.3627+2.5424j)  (q - i tau)^2 with tau_a = (2,0,0,0): (-0-0j)
+   t =   0.0358  -0.0000i  x 18   q^2 = 0j  (q - i tau)^2 with tau_a = (2,0,0,0): (4+1.5983j)
+   t =   0.0358  +0.6515i  x  2   q^2 = (2.5147-1.5983j)  (q - i tau)^2 with tau_a = (2,0,0,0): (-0+0j)
+== partial multiplicities at a root: cumulative sum_i min(m_i, L), L = 1..4, gauge chains removed
+flat, q^2 = 0                         [14, 20, 20, 20]
+null rotation (flat frame), (q-2k)^2 = 0  [2, 2, 2, 2]
+null rotation (flat frame), (q-1k)^2 = 0  [4, 5, 6, 6]
+null rotation (flat frame), (q+0k)^2 = 0  [4, 4, 4, 4]
+null rotation (flat frame), (q+1k)^2 = 0  [4, 5, 6, 6]
+null rotation (flat frame), (q+2k)^2 = 0  [2, 2, 2, 2]
+Heisenberg, q_2 = 0, q^2 = 0          [14, 18, 20, 20]
+null rotation, left-invariant gauge, q_0 = q_3   [14, 20, 20, 20]
+null rotation, left-invariant gauge, q_0 = -q_3  [14, 16, 16, 16]
+== exact ranks (rational arithmetic) on the null-rotation background, flat frame
+generic rational q: rank 30 (floating rank 30 )
+q = [15, 3, 4, 14] on (q-2k)^2 = 0: rank 28
+q = [14, 3, 4, 13] on (q-1k)^2 = 0: rank 26
+q = [13, 3, 4, 12] on (q+0k)^2 = 0: rank 26
+q = [12, 3, 4, 11] on (q+1k)^2 = 0: rank 26
+q = [11, 3, 4, 10] on (q+2k)^2 = 0: rank 28
+flat, q = (13,3,4,12): rank 16

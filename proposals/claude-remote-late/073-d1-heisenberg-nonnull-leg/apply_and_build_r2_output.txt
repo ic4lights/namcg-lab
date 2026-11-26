@@ -1,0 +1,21 @@
+appH pre  sha256 c8c07938df995ac1e6ebedc4e80bcc4ce43eaec9ec99c45696aad6474554ab52 bytes 759626
+pre-hash matches expected: True
+anchor unique: True; offset 293392 line 1663
+paragraph before the insert ends: e}; Problems~D, F and~N remain open and PROGRAMME-CONDITIONAL.
+stale-passage anchor unique: True; line 1661
+block bytes 7312 sha256 0a56538d601cbdb17de3727b1f6074fea73116faa49d3da0e20d53c48562969c
+appH post sha256 29ac2a634bb819df7ecb29e138f97ae014656d4c0bb812b86f3573759a872046 bytes 766977 bare LF 0
+post-hash matches expected: True
+status sentences in block: 1 ; in last paragraph: True
+block ends: e}; Problems~D, F and~N remain open and PROGRAMME-CONDITIONAL.
+line after the insert: \section{Problem E: signature} ; preceded by blank line: True
+label ch:vierbein-emergence defined 1
+label eq:Smatrix defined 1
+citations in block: []
+pdflatex rc 0 pages 403
+bibtex rc 0 
+pdflatex rc 0 pages 418
+pdflatex rc 0 pages 418
+undefined/multiply-defined warnings: 0
+BUILD CLEAN
+temp copy removed: True

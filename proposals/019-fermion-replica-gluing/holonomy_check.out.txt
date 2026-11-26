@@ -1,0 +1,6 @@
+Dirac block, (1-n d_n)[sum (a_k+mu)^2] at n=1 : -1/6  (independent of m)
+cross-term cancellation verified for n=2..5
+multiplication theorem verified (n=2,3,5)
+scalar-like complex component, n>1 branch: (1-n d_n) f at n=1 = m + 1/3
+scalar-like complex component, n<1 branch: (1-n d_n) f at n=1 = 1/3 - m
+=> linear |mu| term: slopes differ by 2m (kink); absent in the Dirac-domain fermion block

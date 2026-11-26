@@ -1,0 +1,7 @@
+trial 0: Jacobi(0)=0  e=2769043/36864  X=197015/768  (a) E_s-e=0  (b) trE_v-(4e-X)=0  (c) trE_f-(4e-X/2)=0
+trial 1: Jacobi(0)=0  e=1046491/9604  X=111684/343  (a) E_s-e=0  (b) trE_v-(4e-X)=0  (c) trE_f-(4e-X/2)=0
+trial 2: Jacobi(0)=0  e=753839/40000  X=5357/720  (a) E_s-e=0  (b) trE_v-(4e-X)=0  (c) trE_f-(4e-X/2)=0
+trial 3: Jacobi(0)=0  e=9797/4  X=13266  (a) E_s-e=0  (b) trE_v-(4e-X)=0  (c) trE_f-(4e-X/2)=0
+weighted a_1 - [N_tot(R/6-e) + (1-n_D/2) X] = 0
+weighted a_1 at (6,2): 0
+S1 PASS

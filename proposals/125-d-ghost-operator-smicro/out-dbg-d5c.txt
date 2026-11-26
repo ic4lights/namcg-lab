@@ -1,0 +1,3 @@
+xi^r-affine-only PASS [37s]
+xi^th-affine-only PASS [31s]
+xi^ph-affine-only PASS [15s]

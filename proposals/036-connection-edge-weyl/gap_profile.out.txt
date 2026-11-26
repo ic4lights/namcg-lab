@@ -1,0 +1,36 @@
+Ric' = [[c_a + c_b, 0, 0, 0], [0, c_a + c_b, 0, 0], [0, 0, c_b, 0], [0, 0, 0, c_b]]
+== SD
+  A  = Riem.Riem'  (W, Rsig): (4*c_a - 2*c_b, -2*c_a)
+  B  = Ric.Ric'    (W, Rsig): (c_a, -c_a)
+  C.C'  = A-2B     (W, Rsig): (2*c_a - 2*c_b, 0)  -> depends on c_a-c_b only: True
+  E4 x  = A-4B     (W, Rsig): (-2*c_b, 2*c_a)
+  Phi*90 = A-B     (W, Rsig): (3*c_a - 2*c_b, -c_a)
+  calibration at c=(1,0): 3Phi - (1/30)(3W - Rsig) = [0, 0]
+  tr(J12 Om12) (W,Rsig) = (-2, 1)   tr(J34 Om12) = (2, -1)
+  tr(H Om12) with H = c_a J12 + chi c_b J34 : (-2*c_a + 2*c_b, c_a - c_b)
+  replica W (raw, 035 extension)   : (3*N_s*c_a - 2*N_s*c_b + 18*c_a*n_D - 54*c_a - 22*c_b*n_D + 56*c_b)/30
+  gap_raw  = replica - 12 kappa_C^T : (3*N_s*c_a - 2*N_s*c_b - 3*N_s + 18*c_a*n_D - 54*c_a - 22*c_b*n_D + 56*c_b - 48*n_D + 114)/30
+  gap_Weyl (Euler cross W-part dropped): (N_s*c_a - N_s*c_b - N_s + 6*c_a*n_D - 18*c_a - 6*c_b*n_D + 18*c_b - 16*n_D + 38)/10
+  gap_raw at c=(1,0): 2 - n_D ; at c=(1,-1): (N_s - 4*n_D + 2)/15 ; at c=(2,0): (N_s - 4*n_D + 2)/10
+  gap_Weyl at c=(1,-1): (N_s - 4*n_D + 2)/10 ; at c=(2,0): (N_s - 4*n_D + 2)/10
+== ASD
+  A  = Riem.Riem'  (W, Rsig): (4*c_a - 2*c_b, -2*c_a)
+  B  = Ric.Ric'    (W, Rsig): (c_a, -c_a)
+  C.C'  = A-2B     (W, Rsig): (2*c_a - 2*c_b, 0)  -> depends on c_a-c_b only: True
+  E4 x  = A-4B     (W, Rsig): (-2*c_b, 2*c_a)
+  Phi*90 = A-B     (W, Rsig): (3*c_a - 2*c_b, -c_a)
+  calibration at c=(1,0): 3Phi - (1/30)(3W - Rsig) = [0, 0]
+  tr(J12 Om12) (W,Rsig) = (-2, 1)   tr(J34 Om12) = (-2, 1)
+  tr(H Om12) with H = c_a J12 + chi c_b J34 : (-2*c_a + 2*c_b, c_a - c_b)
+  replica W (raw, 035 extension)   : (3*N_s*c_a - 2*N_s*c_b + 18*c_a*n_D - 54*c_a - 22*c_b*n_D + 56*c_b)/30
+  gap_raw  = replica - 12 kappa_C^T : (3*N_s*c_a - 2*N_s*c_b - 3*N_s + 18*c_a*n_D - 54*c_a - 22*c_b*n_D + 56*c_b - 48*n_D + 114)/30
+  gap_Weyl (Euler cross W-part dropped): (N_s*c_a - N_s*c_b - N_s + 6*c_a*n_D - 18*c_a - 6*c_b*n_D + 18*c_b - 16*n_D + 38)/10
+  gap_raw at c=(1,0): 2 - n_D ; at c=(1,-1): (N_s - 4*n_D + 2)/15 ; at c=(2,0): (N_s - 4*n_D + 2)/10
+  gap_Weyl at c=(1,-1): (N_s - 4*n_D + 2)/10 ; at c=(2,0): (N_s - 4*n_D + 2)/10
+rho-preserving profile: Pf(Theta) = Theta^{12}Theta^{34} => delta ln rho = eps (c_a + c_b) ln r (|Theta^{34}| exponent c_b), so delta rho = 0 <=> c_b = -c_a for both chiralities.
+SD : gap_raw  = N_tot*((3*c_a - 2*c_b - 3)/30) + kappa_X*(-2*(c_a - c_b - 2))
+SD : gap_Weyl = N_tot*((c_a - c_b - 1)/10) + kappa_X*(-2*(c_a - c_b - 2))
+     kappa_X part vanishes at c_a = [c_b + 2]  (raw) and [c_b + 2]  (Weyl)
+ASD : gap_raw  = N_tot*((3*c_a - 2*c_b - 3)/30) + kappa_X*(-2*(c_a - c_b - 2))
+ASD : gap_Weyl = N_tot*((c_a - c_b - 1)/10) + kappa_X*(-2*(c_a - c_b - 2))
+     kappa_X part vanishes at c_a = [c_b + 2]  (raw) and [c_b + 2]  (Weyl)

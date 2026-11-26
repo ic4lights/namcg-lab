@@ -1,0 +1,23 @@
+appH baseline: 579751 b6c505ad16fcc689f32b3bc9975d78049f2bfc2679585149d56209154a7e5a8a match
+   CRLF 3279 bare LF 0
+bib baseline: 26627 acbee1ce97a86bf8c68d1e4aca168f8d20ad7fb0df26b002af3c6338c93e738f match
+   CRLF 892 bare LF 0 ends with CRLF: True
+anchor count 1 line 1588
+insert: LF 11102 d4d35ace6f76aa370ace725a54bbb23f0e6deb028888dd0c6f694af0198b089b ; CRLF 11122 fdff5088e8b01bb03ac91bcb37563b35eb99a594b24a35daed5f5c49dbef3aa2
+result appH: 590875 94befe3b6d9f6c01c6a30d88010eebce6cac986938e6e882f5bd06b4397485c6 CRLF 3300 bare LF 0
+   preceding bytes before insert end with blank line: True
+bib entries: 972 38196621339bdb75e661909b01fb2488b9b0ac61a3d1a677e98a76adf04f6eda
+result bib: 27601 645c93c9bab8486142651b2d8ec0a784431bc248acb815a530bd1747a47d0f67 CRLF 923 bare LF 0
+  ref ass:frame-lock labels found: 1
+  ref ass:lorentzian labels found: 1
+  ref ass:nondeg labels found: 1
+  ref ch:vierbein-emergence labels found: 1
+  ref def:matrix-coords-ext labels found: 1
+  ref eq:Smatrix labels found: 1
+  ref sec:status-D labels found: 1
+  ref sec:status-F labels found: 1
+  new labels in insert: []
+  cite LiaoMaeta2025 in bib (after append): 1
+  cite Steinacker2018BB in bib (after append): 1
+  cite Steinacker2026Weak in bib (after append): 1
+  duplicate bib keys after append: []

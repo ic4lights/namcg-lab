@@ -1,0 +1,15 @@
+s=1: (a) L(Mq) = 0 exactly: True;  {q.T, T^a} / (Mq)^a = {-1}
+s=1: (b) L(w) = L(w1) exactly: True;  w.L(w) at u0=1 = q3**2*(2*M03**2 - M13**2 - M23**2)/2
+s=1: q.w = 0;  algebraic trace eta_(a mu){w^a,y^mu} = -M35*q3*(2*u0**2 - 3)/2
+s=-1: (a) L(Mq) = 0 exactly: True;  {q.T, T^a} / (Mq)^a = {1}
+s=-1: (b) L(w) = L(w1) exactly: True;  w.L(w) at u0=1 = q3**2*(2*M03**2 - M13**2 - M23**2)/2
+s=-1: q.w = 0;  algebraic trace eta_(a mu){w^a,y^mu} = M35*q3*(2*u0**2 - 3)/2
+trial 0 s=1 m=5.103: <wLw>/(k^2(m^2-l^2)/3)=0.9990  <w.w>/(k^2(2l^2-m^2)/12)=0.9989  <w.v>/(k^2(m^2+2l^2)/6)=0.9992  max|q.w|=0.0e+00  max|trace|=7.2e-17
+trial 0 s=-1 m=5.103: <wLw>/(k^2(m^2-l^2)/3)=0.9990  <w.w>/(k^2(2l^2-m^2)/12)=0.9989  <w.v>/(k^2(m^2+2l^2)/6)=0.9992  max|q.w|=0.0e+00  max|trace|=7.2e-17
+trial 1 s=1 m=5.726: <wLw>/(k^2(m^2-l^2)/3)=0.9949  <w.w>/(k^2(2l^2-m^2)/12)=0.9944  <w.v>/(k^2(m^2+2l^2)/6)=0.9959  max|q.w|=0.0e+00  max|trace|=7.9e-17
+trial 1 s=-1 m=5.726: <wLw>/(k^2(m^2-l^2)/3)=0.9949  <w.w>/(k^2(2l^2-m^2)/12)=0.9944  <w.v>/(k^2(m^2+2l^2)/6)=0.9959  max|q.w|=0.0e+00  max|trace|=7.9e-17
+level-one  C = -3*rho*(k*m - 1)*(k*m + 1)/(2*g**2*k**2)
+equal-weight small-k profile  C = -3*m**2*rho*(-2*ell**2*k**2*m**2 + 4*ell**2 + k**2*m**4 - 4*m**2)/(2*g**2*k**2*(2*ell**2 + m**2)**2)
+normalised: non-derivative = 12*(-ell + m)*(ell + m)/(k**2*m**2*(2*ell**2 + m**2)**2) * varpi ;  leading symbol = -3*(-2*ell**2 + m**2)/(2*ell**2 + m**2)**2 * varpi
+  at ell -> 0: non-derivative 12/(k**2*m**4) * varpi ; leading symbol -3/m**2 * varpi
+s4 done

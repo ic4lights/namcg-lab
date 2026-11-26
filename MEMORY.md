@@ -1,0 +1,1 @@
+- [repository-structure](repository-structure.md) — 37,291 rotation model .dat files in sparc/rotmod/, main chapters/, scripts/, and agent definitions

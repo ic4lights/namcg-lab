@@ -1,0 +1,39 @@
+== Heisenberg, w = k (a B + zeta N + x N'), symbolic
+  B1 nonzero entries: []
+  B2 nonzero entries: []
+  so the first two brackets hold for all kappa, a, zeta, x
+-- a = a : B1 = 0: True ; B2 = 0: True
+   trace T = [a, 0, a, 0] ; T_abc T^abc = 2*kappa**2
+   R_abcd R^abcd = -4*a**2*kappa**2 ; scalar R_ab^ab = 0
+   F_ab nonzero (a<b): {(1, 3): a*kappa/2}
+   third bracket nabla^a F_ab - T_ab^c F^a_c = [0, 0, 0, 0]
+   nonzero R_ab^{cd} (a<b, c<d): [((1, 3), (0, 1), kappa*zeta), ((1, 3), (0, 2), a*kappa), ((1, 3), (0, 3), kappa*x), ((1, 3), (1, 2), kappa*zeta), ((1, 3), (2, 3), -kappa*x)]
+   Ricci R_ab^{ae} (row b): [[0, 0, 0, 0], [kappa*x, 0, -kappa*x, 0], [0, 0, 0, 0], [-kappa*zeta, 0, kappa*zeta, 0]]
+   rank of R as map pairs->so(3,1): 1
+-- a = kappa : B1 = 0: True ; B2 = 0: True
+   trace T = [kappa, 0, kappa, 0] ; T_abc T^abc = 2*kappa**2
+   R_abcd R^abcd = -4*kappa**4 ; scalar R_ab^ab = 0
+   F_ab nonzero (a<b): {(1, 3): kappa**2/2}
+   third bracket nabla^a F_ab - T_ab^c F^a_c = [0, 0, 0, 0]
+   nonzero R_ab^{cd} (a<b, c<d): [((1, 3), (0, 1), kappa*zeta), ((1, 3), (0, 2), kappa**2), ((1, 3), (0, 3), kappa*x), ((1, 3), (1, 2), kappa*zeta), ((1, 3), (2, 3), -kappa*x)]
+   Ricci R_ab^{ae} (row b): [[0, 0, 0, 0], [kappa*x, 0, -kappa*x, 0], [0, 0, 0, 0], [-kappa*zeta, 0, kappa*zeta, 0]]
+   rank of R as map pairs->so(3,1): 1
+-- a = -kappa : B1 = 0: True ; B2 = 0: True
+   trace T = [-kappa, 0, -kappa, 0] ; T_abc T^abc = 2*kappa**2
+   R_abcd R^abcd = -4*kappa**4 ; scalar R_ab^ab = 0
+   F_ab nonzero (a<b): {(1, 3): -kappa**2/2}
+   third bracket nabla^a F_ab - T_ab^c F^a_c = [0, 0, 0, 0]
+   nonzero R_ab^{cd} (a<b, c<d): [((1, 3), (0, 1), kappa*zeta), ((1, 3), (0, 2), -kappa**2), ((1, 3), (0, 3), kappa*x), ((1, 3), (1, 2), kappa*zeta), ((1, 3), (2, 3), -kappa*x)]
+   Ricci R_ab^{ae} (row b): [[0, 0, 0, 0], [kappa*x, 0, -kappa*x, 0], [0, 0, 0, 0], [-kappa*zeta, 0, kappa*zeta, 0]]
+   rank of R as map pairs->so(3,1): 1
+-- a = 0 : B1 = 0: True ; B2 = 0: True
+   trace T = [0, 0, 0, 0] ; T_abc T^abc = 2*kappa**2
+   R_abcd R^abcd = 0 ; scalar R_ab^ab = 0
+   F_ab nonzero (a<b): {}
+   third bracket nabla^a F_ab - T_ab^c F^a_c = [0, 0, 0, 0]
+   nonzero R_ab^{cd} (a<b, c<d): [((1, 3), (0, 1), kappa*zeta), ((1, 3), (0, 3), kappa*x), ((1, 3), (1, 2), kappa*zeta), ((1, 3), (2, 3), -kappa*x)]
+   Ricci R_ab^{ae} (row b): [[0, 0, 0, 0], [kappa*x, 0, -kappa*x, 0], [0, 0, 0, 0], [-kappa*zeta, 0, kappa*zeta, 0]]
+   rank of R as map pairs->so(3,1): 1
+== scalar check on family (i): w = s k B + m N on the hyperbola (flat frame)
+  true scalar sum_b Ric_b^b = 0 ; weighted sum_b Ric_b^b eta_bb (symgeom scal) = -s**2*(tau + 1)**2/tau ; -2 s m_1 = -s**2*(tau + 1)**2/tau
+  family (ii): true scalar = 0 ; weighted = 0

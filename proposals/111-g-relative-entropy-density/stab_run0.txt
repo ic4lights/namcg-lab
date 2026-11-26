@@ -1,0 +1,59 @@
+== Test A: Fock ground truth for the modular exponent (small chain cuts) ==
+PASS A1 rho(A0) has covariance G0 (L=17 mu=0.70 N=1) maxdiff=8.75e-07
+PASS A2 Tr exp(-H) = exp(-c0) (N=1) diff=7.17e-08
+PASS A3 S = <H_mod> = sum s(nu) (N=1) |0.151876430159-0.151876430159| 5.00e-16 / 2.78e-17
+PASS A4 Fock entropy vs spectral entropy (N=1) diff=9.66e-07
+PASS A1 rho(A0) has covariance G0 (L=19 mu=0.40 N=2) maxdiff=4.76e-08
+PASS A2 Tr exp(-H) = exp(-c0) (N=2) diff=8.50e-09
+PASS A3 S = <H_mod> = sum s(nu) (N=2) |0.308502582972-0.308502582972| 2.89e-15 / 1.11e-16
+PASS A4 Fock entropy vs spectral entropy (N=2) diff=1.47e-07
+PASS A1 rho(A0) has covariance G0 (L=23 mu=0.25 N=3) maxdiff=2.60e-08
+PASS A2 Tr exp(-H) = exp(-c0) (N=3) diff=5.68e-09
+PASS A3 S = <H_mod> = sum s(nu) (N=3) |0.447326060947-0.447326060946| 8.71e-13 / 5.55e-17
+PASS A4 Fock entropy vs spectral entropy (N=3) diff=1.02e-07
+== Test B: closed form for general physical covariances ==
+PASS B1 rho(A0) cov (n=1 seed=1) relmax=5.74e-06
+PASS B2 norm (n=1 seed=1) diff=4.72e-07
+PASS B3 first-law identity (n=1 seed=1) diff=1.11e-16
+PASS B4 A0 symmetric (n=1 seed=1)
+PASS B1 rho(A0) cov (n=1 seed=2) relmax=3.64e-05
+PASS B2 norm (n=1 seed=2) diff=3.34e-06
+PASS B3 first-law identity (n=1 seed=2) diff=2.22e-16
+PASS B4 A0 symmetric (n=1 seed=2)
+PASS B1 rho(A0) cov (n=1 seed=3) relmax=5.71e-05
+PASS B2 norm (n=1 seed=3) diff=4.06e-06
+PASS B3 first-law identity (n=1 seed=3) diff=6.66e-16
+PASS B4 A0 symmetric (n=1 seed=3)
+PASS B1 rho(A0) cov (n=2 seed=1) relmax=1.50e-03
+PASS B2 norm (n=2 seed=1) diff=2.05e-04
+PASS B3 first-law identity (n=2 seed=1) diff=8.88e-16
+PASS B4 A0 symmetric (n=2 seed=1)
+PASS B1 rho(A0) cov (n=2 seed=2) relmax=4.86e-03
+PASS B2 norm (n=2 seed=2) diff=7.15e-04
+PASS B3 first-law identity (n=2 seed=2) diff=8.88e-16
+PASS B4 A0 symmetric (n=2 seed=2)
+PASS B1 rho(A0) cov (n=2 seed=3) relmax=8.72e-03
+PASS B2 norm (n=2 seed=3) diff=2.20e-03
+PASS B3 first-law identity (n=2 seed=3) diff=2.66e-15
+PASS B4 A0 symmetric (n=2 seed=3)
+PASS B1 rho(A0) cov (n=3 seed=1) relmax=8.17e-03
+PASS B2 norm (n=3 seed=1) diff=3.29e-03
+PASS B3 first-law identity (n=3 seed=1) diff=8.88e-16
+PASS B4 A0 symmetric (n=3 seed=1)
+PASS B1 rho(A0) cov (n=3 seed=2) relmax=2.54e-02
+PASS B2 norm (n=3 seed=2) diff=1.11e-02
+PASS B3 first-law identity (n=3 seed=2) diff=5.33e-15
+PASS B4 A0 symmetric (n=3 seed=2)
+PASS B1 rho(A0) cov (n=3 seed=3) relmax=2.74e-02
+PASS B2 norm (n=3 seed=3) diff=1.36e-02
+PASS B3 first-law identity (n=3 seed=3) diff=4.44e-15
+PASS B4 A0 symmetric (n=3 seed=3)
+== Test C: positivity of A0 (faithful sigma => H_mod bounded below) ==
+Traceback (most recent call last):
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\111-g-relative-entropy-density\check_modular.py", line 99, in <module>
+    ev = np.linalg.eigvalsh(cm.A_of_G(G0))
+                            ^^^^^^^^^^^^^
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\111-g-relative-entropy-density\_common.py", line 81, in A_of_G
+    assert np.max(np.abs(A.imag)) < 1e-6 * scale + 1e-12, "A0 imag part not noise"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: A0 imag part not noise

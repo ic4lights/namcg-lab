@@ -1,0 +1,11 @@
+PASS A1 V=0 and |det Phi|=v^4 on v*U(4)*phase  maxV=2.705e-30 max|det|dev=3.997e-15
+PASS A2 Phi^dag Phi=v^2 I => Phi Phi^dag=v^2 I  max=1.554e-15
+PASS B1 symbolic: 4V/lambda|(s1=0) - v^4 = sum (s_i^2-v^2)^2 (squares >= 0)
+PASS B2 min V over det Phi=0 >= lambda v^4/4 (= 0.730971), sampled min close  min=0.739089 th=0.730971
+PASS B3 V<=eps => sigma_i^2>=v^2-sqrt(4eps/lam) and |det e|>=(1-sqrt(4eps/lam)/v^2)^2  n=24139 viol=0 worst det e margin=4.067e-01
+PASS C1 symbolic: V(v Om(t)) = 2 lambda v^4 cosh(2t) sinh^2(t); det(Om^T Om)=1
+PASS C2 quadratic term 2 t^2 matches recorded V^(2)(d=vB)=2 lambda v^4
+PASS C3 V(v Om)=(lambda v^4/4)||Om^T Om-I||^2 >=0, zero iff pure rotation, Om^T eta Om=eta  idmax=4.66e-10 etapremax=1.07e-11 minV=8.78e-27 pureRotMaxV=8.78e-27
+PASS C4 SO(3) subgroup: V(v Om)=0 exactly (3 flat directions)  max=7.715e-27
+threshold lambda v^4/4 = 0.7309713741 ; sqrt(4 eps/lam) = 1.028020468
+ALL CHECKS PASSED (seed 115)

@@ -1,0 +1,24 @@
+(1) Gaussian smearing: int exp(-(k-k0)^2/l^2) e^{i k x} dk = sqrt(pi) l exp(i k0 x - l^2 x^2/4)
+    difference simplifies to: 0
+(2) On R_u, A_0 = e^{-i alpha} At_0 with eigenvalue lam of At_0 real: log|exp(i k0 A_0 - l^2 A_0^2/4)| =
+    lambda*(-ellp**2*lambda*cos(2*alpha) + 4*kappa0*sin(alpha))/4
+    maximum over lam: kappa0**2*(-1 + 1/cos(2*alpha))/(2*ellp**2)  (= k0^2 sin^2 a/(l^2 cos 2a) for cos 2a > 0)
+    check: 0
+(3) Unitarity on R_u: kappa A_0 = K At_0 for kappa = K e^{3 pi i u/8}; kappa A_j = K At_j for kappa = K e^{-pi i u/8}
+    K K
+(4) Arguments of F_E: timelike t = (kappa e^{-3 pi i/8})^2, kappa = K e^{3 pi i u/8}: arg t = 3 pi (u-1)/4;
+    spacelike t = (kappa e^{i pi/8})^2, kappa = K e^{-pi i u/8}: arg t = pi (1-u)/4.
+    u -> 0+: timelike arg t -> -3 pi/4, spacelike arg t -> pi/4; u = 1: both 0; u in (0,2): timelike |arg t| < 3 pi/4.
+    u=0: timelike -3*pi/4, spacelike pi/4
+    u=1: timelike 0, spacelike 0
+    u=2: timelike 3*pi/4, spacelike -pi/4
+    k.k = -kappa^2 (timelike, k^0 = kappa) and e^{i pi/4} k.k with k.k = |kappa|^2 e^{i(2 arg kappa - pi)}:
+    arg(e^{i pi/4} k.k) =  2*argk - 3*pi/4  = arg t of the timelike case: True
+(5) |2 cos(z r/2)| >= 2|sinh(Im z r/2)|:  |cos(p+iq)|^2 - sinh(q)^2 = cos(2*x)/2 + 1/2
+(6) Scaling of the dominating integral: At -> c^{-1/4} At in int d^30 At det(Gt)^4 exp(-c S_E): exponent
+    (30 + 24)/4 = 27/2 ; for SU(N): (10 + 8)(N^2-1)/4 = 9*(N - 1)*(N + 1)/2
+(7) Re i S_b on (alpha, beta) contours at N=2 in terms of Euclidean pieces:
+    -lambda*(Pquad*sin(2*alpha - 2*beta) + e2W*sin(4*beta))  ; on R_u (a=3 pi u/8, beta=pi u/8): -lambda*(Pquad + e2W)*sin(pi*u/2)
+(8) Sampled Cauchy-Binet bound |det(G(u))| <= det(Gt), G(u) = e^{2 i beta} Bt^T Bt - e^{-2 i alpha} at at^T, u in (0,2)
+    max ratio over 20000 samples: 0.9999999999964394
+(9) Evenness at N=2: G = W - a a^T and a^T (tr W - W) a are even in a; with A_j a row of B, W = sum_i b_i b_i^T is even in b_j.

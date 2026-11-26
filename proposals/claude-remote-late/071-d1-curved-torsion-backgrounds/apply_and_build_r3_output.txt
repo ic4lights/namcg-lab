@@ -1,0 +1,25 @@
+appH pre  sha256 d8d8b678fa0ceabe03f3f9c2f56cc60dbe140aa845658beddb0c206ba26c9180 bytes 743792
+pre-hash matches expected: True
+anchor unique: True; offset 277558 line 1631
+paragraph before the insert ends: ed; Problems~D, F and~N remain open and PROGRAMME-CONDITIONAL.
+E anchor unique: True; line 1623
+block bytes 9312 sha256 c0ff0f791bfe4b19e4c37d29d70bfffc24f6311c0e78ef31818f17a3dc9a19dc
+appH post sha256 36cb6f30fc7544ef15a6418b5d2bd5b2d8b8160b516c8be12eb4eecffe8a9dfe bytes 753105 bare LF 0
+status sentences in block: 1 ; in last paragraph: True
+block ends: e}; Problems~D, F and~N remain open and PROGRAMME-CONDITIONAL.
+line after the insert: section{Problem E: signature}
+label ass:EFT-a2 defined 1
+label ass:frame-lock defined 1
+label ass:local-lorentz defined 1
+label ass:lorentzian defined 1
+label ass:nondeg defined 1
+label ch:vierbein-emergence defined 1
+label eq:Smatrix defined 1
+citations in block: []
+pdflatex rc 0 pages 399
+bibtex rc 0 
+pdflatex rc 0 pages 414
+pdflatex rc 0 pages 414
+undefined/multiply-defined warnings: 0
+BUILD CLEAN
+temp copy removed: True

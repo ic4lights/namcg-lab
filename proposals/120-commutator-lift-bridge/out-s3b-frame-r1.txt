@@ -1,0 +1,9 @@
+== F1 [phi(x) I, Y]_star vs i Th dphi dY ==
+PASS F1 scalar star-commutator = i Theta^{ab} d_a phi d_b Y exactly
+F2 diff = 0
+PASS F2 lift invariant under Phi -> Phi + s*I (constant s)
+PASS F3 [Phi+sI,(.)^dag] word = [Phi,Phi^dag] word (scalar drops)
+X1-X2 = Matrix([[0, 0], [0, 0]])  W1(P) = 0  W1(WP) = (p1**2 - p2**2)**2
+PASS F5a same X for Phi and W Phi
+PASS F5b W1 differs on the pair => not a function of X (no W(X)-channel)
+SUMMARY pass=5 fail=0

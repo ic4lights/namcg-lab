@@ -1,0 +1,73 @@
+== A. eq:V slice and invariant independence ==
+PASS A1 eq:V = (lam/4)TrX^2 - (lam v2/2)TrX + lam v2^2 with zero (TrX)^2 coefficient, generic 4x4 X
+PASS A2 TrX^2 and (TrX)^2 independent on rank>=2 diagonal backgrounds (det != 0)
+== H. one-loop machine calibration anchors ==
+PASS H1 single-scalar STrM4 = Tr H^2 = lam4^2 phi^4 / 4 for W = lam4 phi^4/24
+PASS H2 MSbar chain gives beta(lam4) = 3 lam4^2/(16 pi^2) (textbook anchor)
+PASS H3 O(2) model W = cO2 (phi^2)^2: Tr H^2 = 160 cO2^2 phi^4 (textbook beta anchor input)
+== B. scalar structure tensors (exact Hessian, S = Tr(H W H W)) ==
+PASS B1 n=2: T33=(32(n+4),96) T32=(96,32(n+4)) T22=(0,128(n+1)) exact, residuals 0
+PASS B1 n=3: T33=(32(n+4),96) T32=(96,32(n+4)) T22=(0,128(n+1)) exact, residuals 0
+PASS B1 n=4: T33=(32(n+4),96) T32=(96,32(n+4)) T22=(0,128(n+1)) exact, residuals 0
+PASS B2 n=4 q3 anchor: (A33,B32->B33)=(256,96), B33/A33 = 3/8
+PASS B1 n=5: T33=(32(n+4),96) T32=(96,32(n+4)) T22=(0,128(n+1)) exact, residuals 0
+PASS B1 n=6: T33=(32(n+4),96) T32=(96,32(n+4)) T22=(0,128(n+1)) exact, residuals 0
+PASS B3 n=4 generic off-diagonal Phi (c3=2,c2=3): S - pred = 0 (bilinear tensor identity)
+== C. gauge one-loop S = sum_ab K^ab K^ba, K^ab = Tr(T^a Y T^b) ==
+PASS C1 u(2): orthonormal Hermitian basis asserted
+PASS C2 u(2): S = n TrX^2 exactly, (TrX)^2 coeff 0, residuals 0 (c2=0 preserved)
+PASS C1 u(3): orthonormal Hermitian basis asserted
+PASS C2 u(3): S = n TrX^2 exactly, (TrX)^2 coeff 0, residuals 0 (c2=0 preserved)
+PASS C1 u(4): orthonormal Hermitian basis asserted
+PASS C2 u(4): S = n TrX^2 exactly, (TrX)^2 coeff 0, residuals 0 (c2=0 preserved)
+PASS C1 u(5): orthonormal Hermitian basis asserted
+PASS C2 u(5): S = n TrX^2 exactly, (TrX)^2 coeff 0, residuals 0 (c2=0 preserved)
+PASS C3 su(2): traceless orthonormal basis asserted
+PASS C4 su(2): (A,B) = (n-2/n, 1/n^2) = (1, 1/4), residuals 0
+PASS C5 su(2) hand anchor: A=1, B=1/4 (S = TrY^2 + (TrY)^2/4, Pauli hand computation)
+PASS C3 su(3): traceless orthonormal basis asserted
+PASS C4 su(3): (A,B) = (n-2/n, 1/n^2) = (7/3, 1/9), residuals 0
+PASS C3 su(4): traceless orthonormal basis asserted
+PASS C4 su(4): (A,B) = (n-2/n, 1/n^2) = (7/2, 1/16), residuals 0
+PASS C3 su(5): traceless orthonormal basis asserted
+PASS C4 su(5): (A,B) = (n-2/n, 1/n^2) = (23/5, 1/25), residuals 0
+PASS C3 su(6): traceless orthonormal basis asserted
+PASS C4 su(6): (A,B) = (n-2/n, 1/n^2) = (17/3, 1/36), residuals 0
+PASS C6 u(4) generic complex integer Phi: S == 4 TrX^2 exactly (residual 0)
+PASS C7 su(4) same Phi: S == (7/2)TrX^2 + (1/16)(TrX)^2 exactly (residual 0)
+PASS C8 group-choice tooth: u(4) ratio B/A = 0 vs su(4) B/A = 1/56 (selection datum not in eq:Smicro)
+PASS C9 non-orthonormal-basis control: orthonormality assert fires AND fitted B/A differs from 1/56 (discarded 1/35 was an artifact of a non-orthonormal basis)
+== D. beta_r = c3/(32 pi^2) P(r), fixed-ray analysis ==
+PASS D10a payload beta_c2 channel: with n=4 tensors, B33+2*B32*r+B22*r^2 == 96+512r+640r^2 exactly
+PASS D10b payload beta_c3 channel: with n=4 tensors, A33+2*A32*r+A22*r^2 == 256+192r exactly (A22=0 kills r^2)
+PASS D1 P(r) is quadratic in r (r^3 coefficient = -A22 = 0 exactly)
+PASS D2 P(0) = 96 + B_G w, fermion-independent (v4 absent from P(0); beta_r(0) = c3/(32pi^2)(96+B_G w))
+PASS D3 n=4, BG=0: disc = 16[(w-v4-64)^2 - 10752] exactly (real fixed rays iff (w-v4-64)^2 > 10752)
+PASS D3b n=4, general B_G: disc = 16[(w-v4-64)^2 - 10752 - 112 B_G w] exactly (fixed rays need (w-v4-64)^2 > 10752 + 112 B_G w)
+FAIL D4 window check: (w-v4-64)^2 < 10752 => disc<0, LC=448>0 => P(r)>0 for all real r, no fixed ray (grid of 8 (w,v4))
+PASS D5 threshold w*=64+16 sqrt(42) (=(w-v4-64)^2=10752 boundary): disc=0, marginal double root r*=sqrt(42)/14
+PASS D6 threshold exceeds nominal perturbativity: w* = 64+16sqrt42 ~ 167.69 > 16 pi^2 ~ 157.91 (n=4, v4=0)
+PASS D7 OFF-DEFAULT tooth (w=200,v4=0, outside window): exact fixed rays r = 3/14 and r = 1 (claim honestly fails outside window; both in boundedness region r > -1/4)
+PASS D8 boundedness boundary: P(-1/4) = 60 + w(1+B_G) - v4 at n=4 (pushes INTO boundedness at r=-1/4)
+D9 general-n strong-coupling threshold w*(n) (v4=0): n=2: 115.88, n=3: 143.64, n=4: 167.69, n=5: 189.58, n=6: 209.98; 16 pi^2 = 157.91
+PASS D9 general-n: minimum strong coupling for ANY real fixed ray is w*(n) (disc sign change at w*(n)); n=4: w* > 16 pi^2
+== E. renormalizable-Yukawa single-word checks (fermions feed TrX^2 only) ==
+PASS E1 n=2 multiplicity model M = kron(Phi, Y): tr(MM+MM+) = TrX^2 * tr(YY+YY+): single-word, diff 0
+PASS E1 n=3 multiplicity model M = kron(Phi, Y): tr(MM+MM+) = TrX^2 * tr(YY+YY+): single-word, diff 0
+PASS E2 conjugate-channel Dirac warm-up M = y[[0,Phi],[Phi+,0]]: tr(MM+MM+) = 2 TrX^2, diff 0 (no (TrX)^2 word)
+== F. sharp cutoff / Pauli-Villars / MSbar: sign(c1) not fixed by any scheme ==
+PASS F1 exact radial integral: d/dm2 [Int_0^Lam k^3 ln(k^2+m2) dk - closed form(X=Lam^2)] = 0
+PASS F2 quadratic divergence per real scalar: V_quad = (1/2)(1/16pi^2)(m2 Lambda^2/2) = m2 Lambda^2/(64 pi^2)
+PASS F3 n=4 exact traces: Tr Hess TrX^2 = 64 TrX (K3=64); Tr Hess (TrX)^2 = 136 TrX (K2=136); Tr Hess TrX = 64
+PASS F4 C_u(n) = sum_a Tr(T^a Y T^a)/TrY = n exactly for n=2..6
+PASS F5 C_su(n) = (n^2-1)/n for n=2..6 (measured ['3/2', '8/3', '15/4', '24/5', '35/6'])
+PASS F6 sign tooth: sharp-cutoff bracket 64c3+136c2+C_G g^2-4 m_Y y^2 takes + (b=65) and - (y large): sign(c1) is content data, not loop structure
+PASS F7 PV exact threshold: linear-in-ph2 coeff of M~^4 ln M~^2 = A M0 (2 ln(M0/mu^2)+1), diff 0 (no Lambda^2: sign is a PV spectrum datum)
+PASS F8 MSbar dimension argument made checkable: beta_c1 = c1*gamma => beta|_{c1=0} = 0, c1=0 exact RG surface (no additive generation of c1 in a mass-independent scheme)
+== G. constant-Phi Moyal collapse (cubic polynomial Phi, p up to 3) ==
+PASS G1 constant-Phi collapse to p=3: W_star - W_ordinary = 0 with theta symbolic (all kept orders)
+PASS G2 p=3 Moyal term vanishes identically on quadratic polynomial Phi (>=3 derivatives per factor; no constant piece possible)
+FAIL G3 O(theta^2): zero-gradient (potential) part of W_star vanishes at zero gradients
+TOTAL 59/61 PASS
+FAILURES: 2
+ALL CHECKS DONE 119

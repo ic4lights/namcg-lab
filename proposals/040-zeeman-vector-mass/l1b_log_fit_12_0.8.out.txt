@@ -1,0 +1,5 @@
+seed 12 th 0.8 a,b 8.367541568754644 3.2972714741657163 c0 83.18409647992213
+scal : fit c*16pi^2 = g1 F1 + g2 F2 : g1 = (0.041683+2.4e-05j)  g2 = (-0.083333+0j)   residual 7.29e-08 (relative)
+vec  : fit c*16pi^2 = g1 F1 + g2 F2 : g1 = (-0.833663-0.000482j)  g2 = (-0.333335+3e-06j)   residual 8.49e-07 (relative)
+dirac: fit c*16pi^2 = g1 F1 + g2 F2 : g1 = (-0.333465-0.000192j)  g2 = (-0.333333-1e-06j)   residual 6.04e-07 (relative)
+expected scalar: g1 = 1/24 = 0.041667, g2 = -2/24 = -0.083333

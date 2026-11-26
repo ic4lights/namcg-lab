@@ -1,0 +1,18 @@
+insert 16413 bytes sha256 4bacb6ee304e94af190d3bd88647dbed5d48bb6368551004030c227436692838
+bib    2198 bytes sha256 81584d933ad25611bcf741b3f6913f31ab678b004f8f0ccd6f477eeff3d08cdc
+insert after CRLF conversion 16440 bytes; bib after CRLF conversion 2273 bytes
+baseline (current working tree):
+  anchor+CRLF count 1 ; anchor+bare LF count 0 ; bare LF in appH before 0
+  exit codes (pdflatex, bibtex, pdflatex, pdflatex) [0, 0, 0, 0] ; 348 pages
+  undefined refs [] ; undefined citations [] ; multiply defined labels []
+  bibtex warnings 0 []
+  in bbl: [] ; bibitems 70
+with insert and bib entries:
+  anchor+CRLF count 1 ; anchor+bare LF count 0 ; bare LF in appH before 0
+  bare LF in appH after 0 ; bytes added 16440
+  bare LF in bib after 0
+  exit codes (pdflatex, bibtex, pdflatex, pdflatex) [0, 0, 0, 0] ; 352 pages
+  undefined refs [] ; undefined citations [] ; multiply defined labels []
+  bibtex warnings 0 []
+  in bbl: ['Sakai2017', 'OsterwalderSchrader1973', 'OsterwalderSchrader1975', 'IsonoTomino2010', 'Liao2026', 'AokiIsoKawaiKitazawaTada1998', 'Steinacker2026Invitation'] ; bibitems 77
+scratch removed: True

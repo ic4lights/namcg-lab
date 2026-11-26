@@ -1,0 +1,12 @@
+scalar : coefficient matrix c with E_G containing  c * (l11 + l22)/2 -> delta part  c * (pi eps delta^2) * [G-normalisation factor f^-2]:
+Matrix([[exp(-2*l(x1, x2))/2]]) | Matrix([[exp(-2*l(x1, x2))/2]]) | Matrix([[0]])
+scalar  Omega_12 : d/dl11, d/dl22, d/dl12 (should vanish for second derivs; third derivatives enter):
+Matrix([[0]])
+vector : coefficient matrix c with E_G containing  c * (l11 + l22)/2 -> delta part  c * (pi eps delta^2) * [G-normalisation factor f^-2]:
+Matrix([[exp(-2*l(x1, x2))/2, 0, 0, 0], [0, exp(-2*l(x1, x2))/2, 0, 0], [0, 0, exp(-2*l(x1, x2))/2, 0], [0, 0, 0, exp(-2*l(x1, x2))/2]]) | Matrix([[exp(-2*l(x1, x2))/2, 0, 0, 0], [0, exp(-2*l(x1, x2))/2, 0, 0], [0, 0, exp(-2*l(x1, x2))/2, 0], [0, 0, 0, exp(-2*l(x1, x2))/2]]) | Matrix([[0, 0, 0, 0], 
+vector  Omega_12 : d/dl11, d/dl22, d/dl12 (should vanish for second derivs; third derivatives enter):
+Matrix([[0, -l11 - l22, 0, 0], [l11 + l22, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])
+Dirac : coefficient matrix c with E_G containing  c * (l11 + l22)/2 -> delta part  c * (pi eps delta^2) * [G-normalisation factor f^-2]:
+Matrix([[exp(-2*l(x1, x2))/2, 0, 0, 0], [0, exp(-2*l(x1, x2))/2, 0, 0], [0, 0, exp(-2*l(x1, x2))/2, 0], [0, 0, 0, exp(-2*l(x1, x2))/2]]) | Matrix([[exp(-2*l(x1, x2))/2, 0, 0, 0], [0, exp(-2*l(x1, x2))/2, 0, 0], [0, 0, exp(-2*l(x1, x2))/2, 0], [0, 0, 0, exp(-2*l(x1, x2))/2]]) | Matrix([[0, 0, 0, 0], 
+Dirac  Omega_12 : d/dl11, d/dl22, d/dl12 (should vanish for second derivs; third derivatives enter):
+Matrix([[I*(-l11 - l22)/2, 0, 0, 0], [0, I*(l11 + l22)/2, 0, 0], [0, 0, I*(-l11 - l22)/2, 0], [0, 0, 0, I*(l11 + l22)/2]])

@@ -1,0 +1,10 @@
+K_y * G = 1 at pt: True
+det G_y at pt vs -rho^2: 0
+(i) comp 0 : EL - eta*O A = 0    (EL = 0.91324784)
+(i) comp 1 : EL - eta*O A = 0    (EL = -6.8097789)
+(i) comp 2 : EL - eta*O A = 0    (EL = -1.5077220)
+(i) comp 3 : EL - eta*O A = 0    (EL = 4.3017909)
+(ii) -D^2 V + E V - O V at pt: [0, 0, 0, 0]
+(iii-a) scalar:  R_G/6 - E_s - R[g_rho]/(6 rho)               = 0
+(iii-b) vector:  4R_G/6 - trE - (4/6)R[g_rho]/rho - Xspin     = 0
+   magnitudes: R_G/6 = -0.979778651410661  trE = -7.00507038323905  Xspin = 2.68520357177837  (4/6)R[g_rho]/rho = 0.400752205818037

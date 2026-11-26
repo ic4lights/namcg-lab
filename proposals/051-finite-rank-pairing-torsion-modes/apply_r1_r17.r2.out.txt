@@ -1,0 +1,27 @@
+R4 old contains backslash-apostrophe: True
+self-test on a mutated old string:
+R1  old  197 bytes, new  390 bytes, count at its turn 0
+  refused as required: R1: old string occurs 0 times at its turn
+applying:
+R1  old  196 bytes, new  390 bytes, count at its turn 1
+R2  old  128 bytes, new  169 bytes, count at its turn 1
+R3  old   63 bytes, new   71 bytes, count at its turn 1
+R4  old  169 bytes, new  203 bytes, count at its turn 1
+R5  old   51 bytes, new   63 bytes, count at its turn 1
+R6  old   83 bytes, new  200 bytes, count at its turn 1
+R7  old   63 bytes, new  256 bytes, count at its turn 1
+R8  old  100 bytes, new  197 bytes, count at its turn 1
+R9  old   56 bytes, new   75 bytes, count at its turn 1
+R10 old  239 bytes, new  326 bytes, count at its turn 1
+R11 old  509 bytes, new  958 bytes, count at its turn 1
+R12 old   75 bytes, new  103 bytes, count at its turn 1
+R13 old   76 bytes, new  143 bytes, count at its turn 1
+R14 old   74 bytes, new   99 bytes, count at its turn 1
+R15 old  191 bytes, new  323 bytes, count at its turn 1
+R16 old   67 bytes, new   95 bytes, count at its turn 1
+R17 old  127 bytes, new  184 bytes, count at its turn 1
+result 14148 bytes, sha256 b6ccbf5f8cbd2848413c3c1fddb7a6c112e52c103262c307d593c5cb45ef86dd
+ascii True ; CR 0 ; BOM False
+kept r1 bytes: True
+wrote appH_insert.tex: True
+DONE

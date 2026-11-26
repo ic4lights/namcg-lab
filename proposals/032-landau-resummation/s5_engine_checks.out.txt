@@ -1,0 +1,23 @@
+(A) F=0 gauge Maxwell coefficient
+   s=0.5 : coefficient of kappa^2 = (0.00416139-0j) ; prediction (s^2/24) F_ab F^ab = 0.00416139 ; ratio 1.0000000000
+   s=(1.197-0.506j) : coefficient of kappa^2 = (-0.00607453+0.00625457j) ; prediction (s^2/24) F_ab F^ab = (-0.00607453+0.00625457j) ; ratio 1.0000000000
+(B) gauge invariance at F != 0 (m = 0)
+   (fe,fm)=(0.7,1.3): T2/Theta = (-0.0386534401+0.0502419973j) ; shifted n_a -> n_a + 0.9 kappa_a: (-0.0386534401+0.0502419973j) ; |diff| = 2.26e-15
+   (fe,fm)=(0.2,0.5): T2/Theta = (0.014129867-0.025027461j) ; shifted n_a -> n_a + 0.9 kappa_a: (0.014129867-0.025027461j) ; |diff| = 7.85e-16
+(C) kappa -> 0 constant-field limit, pure gauge
+   (fe,fm)=(0.7,1.3) lam=1e-02 : T2/Theta / lam^2 = (0.02540436-0.07531176j) ; (1/4) D^2Theta[Q,Q]/Theta = (0.02540532-0.07531214j)
+   (fe,fm)=(0.7,1.3) lam=5e-03 : T2/Theta / lam^2 = (0.02540508-0.07531204j) ; (1/4) D^2Theta[Q,Q]/Theta = (0.02540532-0.07531214j)
+   (fe,fm)=(0.6,0.3) lam=1e-02 : T2/Theta / lam^2 = (-0.00953314-0.10544796j) ; (1/4) D^2Theta[Q,Q]/Theta = (-0.00953101-0.1054499j)
+   (fe,fm)=(0.6,0.3) lam=5e-03 : T2/Theta / lam^2 = (-0.00953155-0.10544941j) ; (1/4) D^2Theta[Q,Q]/Theta = (-0.00953101-0.1054499j)
+(D) kappa -> 0 constant-vielbein limit
+   (fe,fm)=(0.7,1.3) lam=1e-03 : T2/Theta = (0.21578816+0.0247435j) ; (1/4) d^2/de^2 [det^-1 Theta(F')]/Theta = (0.21578826+0.02474369j)
+   (fe,fm)=(0.7,1.3) lam=3e-04 : T2/Theta = (0.21578825+0.02474367j) ; (1/4) d^2/de^2 [det^-1 Theta(F')]/Theta = (0.21578826+0.02474369j)
+   (fe,fm)=(0.6,0.3) lam=1e-03 : T2/Theta = (1.08299236-0.04448692j) ; (1/4) d^2/de^2 [det^-1 Theta(F')]/Theta = (1.08299281-0.04448617j)
+   (fe,fm)=(0.6,0.3) lam=3e-04 : T2/Theta = (1.08299277-0.04448623j) ; (1/4) d^2/de^2 [det^-1 Theta(F')]/Theta = (1.08299281-0.04448617j)
+(E) F=0 vielbein: s-linear coefficient vs tensor A
+   draw 0: T2/Theta0 |_{kappa^2} = -0j + (-0-0.00229102j) s + -0j s^2 + ... ; c1/A = (4e-08+1j)
+   draw 1: T2/Theta0 |_{kappa^2} = -0j + (-0-4.35252275j) s + 0j s^2 + ... ; c1/A = 1j
+   draw 2: T2/Theta0 |_{kappa^2} = 0j + (-0-0.27084994j) s + 0j s^2 + ... ; c1/A = 1j
+   draw 3: T2/Theta0 |_{kappa^2} = (-0+0j) + -0.01219461j s + (-0+0j) s^2 + ... ; c1/A = (-0+1j)
+   draw 4: T2/Theta0 |_{kappa^2} = -0j + (-0-0.39370931j) s + (1e-08-0j) s^2 + ... ; c1/A = (1e-08+1j)
+   c1/A spread: [ 4.e-08+1.j  0.e+00+1.j  0.e+00+1.j -0.e+00+1.j  1.e-08+1.j]

@@ -1,0 +1,36 @@
+appH-microscopic-proofs.tex baseline bytes=624232 sha256=c2dac013f275fed851d53e8086bc3eceef717c5b607b10c09ae7541c43558b5c match=True
+  [r1] E1+E6: OLD before=1 NEW before=0 NEW after=1 ok
+  [r1] E2: OLD before=1 NEW before=0 NEW after=1 ok
+  [r1] E3: OLD before=1 NEW before=0 NEW after=1 ok
+  [r1] E4: OLD before=1 NEW before=0 NEW after=1 ok
+  [r1] E5: OLD before=1 NEW before=0 NEW after=1 ok
+  r1 result sha256=173ab97bc1ffeb14a089f2db2fbefb6f6570727e5d8f5ec885d09083f497e945 matches r1 proposal=True
+  [r1->r2] D0 (Finding 3, L28): OLD before=1 NEW before=0 NEW after=1 ok
+  [r1->r2] D1 (Findings 1-3): OLD before=1 NEW before=0 NEW after=1 ok
+  [r1->r2] D2 (Finding 4, E2 R->ell): OLD before=1 NEW before=0 NEW after=1 ok
+  [r1->r2] D3 (Finding 5, norm): OLD before=1 NEW before=0 NEW after=1 ok
+  [r1->r2] D4 (Finding 4, E7 display): OLD before=1 NEW before=0 NEW after=1 ok
+  [r1->r2] D5 (Finding 6, L37-39): OLD before=1 NEW before=0 NEW after=1 ok
+  r2 result sha256=b8155af307c5d8840405d2bb8e4d3e1b5217316d1fcf555f398839c9ce82394e matches r2 proposal=True
+  [r2->r3] D9 (r2->r3, review-r2 Finding 1): OLD before=1 NEW before=0 NEW after=1 ok
+  r3 result sha256=fa12e54a83a05061177e2289b83be59c1007118b57f3c799d9e8685049ce29f7 matches r3 proposal=True
+  [r3->r4] D10 (r3->r4, review-r3 Finding 1): OLD before=1 NEW before=0 NEW after=1 ok
+  [direct] F0: OLD before=1 NEW before=0 NEW after=1 ok
+  [direct] F1: OLD before=1 NEW before=0 NEW after=1 ok
+  [direct] F2: OLD before=1 NEW before=0 NEW after=1 ok
+  [direct] F3: OLD before=1 NEW before=0 NEW after=1 ok
+  [direct] F4: OLD before=1 NEW before=0 NEW after=1 ok
+  [direct] F5: OLD before=1 NEW before=0 NEW after=1 ok
+  [direct] F6: OLD before=1 NEW before=0 NEW after=1 ok
+  [direct] F7: OLD before=1 NEW before=0 NEW after=1 ok
+  [direct] F9: OLD before=1 NEW before=0 NEW after=1 ok
+  [direct] F10: OLD before=1 NEW before=0 NEW after=1 ok
+  r4 result bytes=625774 sha256=c5bf9be4f7c9b51218be4000dcdd5273ebf3cfa3e125d0a5fe90299e443075b3 chain==direct=True CRLF=3402 LF=3402 bareLF=0 BOM=False
+namcg.bib baseline bytes=29781 sha256=28fdd7f8cb62b2ad23da3cc05d819a0b750f7fdec096511fca60ab02135ea64d match=True
+  [r1] B1: OLD before=1 NEW before=0 NEW after=1 ok
+  r1 result sha256=4315a89553cb97405af89604f1e43c9e5e0237fa5b7be0439431d042677a6060 matches r1 proposal=True
+  r2 result sha256=4315a89553cb97405af89604f1e43c9e5e0237fa5b7be0439431d042677a6060 matches r2 proposal=True
+  r3 result sha256=4315a89553cb97405af89604f1e43c9e5e0237fa5b7be0439431d042677a6060 matches r3 proposal=True
+  [direct] F8: OLD before=1 NEW before=0 NEW after=1 ok
+  r4 result bytes=30159 sha256=4315a89553cb97405af89604f1e43c9e5e0237fa5b7be0439431d042677a6060 chain==direct=True CRLF=1006 LF=1006 bareLF=0 BOM=False
+ALL CHECKS PASS

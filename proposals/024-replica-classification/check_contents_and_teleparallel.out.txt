@@ -1,0 +1,17 @@
+E_s(torsion) - E_s(rho) on the identity R=-T_tele-2 nabla V : 0
+scalar density R/6-E_s  =  -R/12 - T_tele/4 - V^2/4 ? 0
+scalar density with T_tele = -R-2 nabla V : coefficient of R = 1/6   (= c_T per scalar component, 1/6)
+   boundary term B = R + T_tele = -2 nabla V ;  E_s = B/4 + V^2/4: 0
+c_A^sm - (-c_R/2)            = 0
+c_A^sm - c_(G,torsion)       = 0
+c_A^fx - c_T                 = 4 - n_D
+c_A^sm - c_T                 = -(N_s + 4*n_D - 14)/4
+c_A^fx - c_A^sm              = N_s/4 + 1/2  = (N_s+2)/4 = bosonic contacts
+scalar-only (n_D=0 and no connection sector): c_A^fx = c_T = N/6; c_A^sm = -N/12
+IKKT           N_s=6 n_D=2  c_R=0 c_T=0 c_A^fx=2 c_A^sm=0 ; fx-T=2 sm-T=0
+line           N_s=10 n_D=1  c_R=4/3 c_T=-2/3 c_A^fx=7/3 c_A^sm=-2/3 ; fx-T=3 sm-T=0
+D=6 SUSY       N_s=2 n_D=1  c_R=0 c_T=-2 c_A^fx=1 c_A^sm=0 ; fx-T=3 sm-T=2
+D=4 N=1 SYM    N_s=0 n_D=1/2  c_R=0 c_T=-3 c_A^fx=1/2 c_A^sm=0 ; fx-T=7/2 sm-T=3
+c_A^sm=0 <=> N_tot=0 <=> N_s=4 n_D-2 ;  c_T=0 <=> N_tot=24 b : N_s = [22 - 8*n_D]  ; N_tot=0 : [4*n_D - 2]
+intersection: {N_s: 6, n_D: 2}
+c_A(f) at IKKT: 2 - 2*f ; slope = -(N_s+2)/4 = -N_s/4 - 1/2

@@ -1,0 +1,9 @@
+tree files copied: 2945 (root PDF excluded, reports/ excluded, .bbl included)
+PRE-COMPILE PINS OK: baseline 2ed53c7778c1/843649, anchor 1, payload 3b4c2d0794a9/4704, POST 848355 eaea0964e7f5
+PASS 1: rc=0, '!' error lines: 0
+PASS 2: rc=0, '!' error lines: 0
+PASS 2 log: 'undefined' lines: 0, 'multiply defined' lines: 0
+output PDF bytes: 3231492
+CERT PASS
+temp tree removed
+CERT-EXIT=0

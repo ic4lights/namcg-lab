@@ -1,0 +1,27 @@
+== R0 ==
+R0 inequality (60 trials)                OK 
+R0 equality with unitary factor          OK 
+R0 TOOTH strict w/o unitarity            OK smin(diag(1,2)diag(2,1))=2 vs 1
+== R1 ==
+R1 kernel factorization exact (40)       OK 
+R1 lower estimate c^2 sW <= sM (40)      OK 
+R1 upper estimate smax(T_M) <= C^2 smax(W) (40) OK 
+R1 TOOTH sW=0 forces sM=0 (Phi invertible) OK 
+R1 TOOTH near-deg fiber tracks c^2       OK 
+== R2 ==
+R2 smin(AUB^dag) >= smin(A)smin(B) (60)  OK 
+R2 equality on radial shells rho*U (30)  OK 
+R2 TOOTH strict for non-radial fibers    OK 
+R2 det multiplicativity (60)             OK 
+== R3 ==
+R3 smin(Phi Phi^dag)=smin(Phi)^2 (80)    OK 
+R3 threshold chain vs recorded form      OK 
+R3 det bound prod sv^2 >= vlo2^4         OK 
+R3 TOOTH sv=(0,v,v,v) at threshold       OK 
+== R5 ==
+R5 compression of H>=s keeps s (30)      OK 
+R5 TOOTH non-positive compresses below s OK 
+== R6 ==
+R6 kappa transfer (30)                   OK 
+== S1 SUMMARY ==
+FAILURES: 0 (none)

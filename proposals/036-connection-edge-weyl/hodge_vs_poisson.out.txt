@@ -1,0 +1,6 @@
+SD  Riem2/C2 = 2  Ric2/C2 = 1/2  trOm2/C2 = -4  | s/C2 = 1/120  Hodge (v-4s)/C2 = 1/12  matrix-derived (v-4s)/C2 = -1/3
+SD  Riem2/C2 = 2  Ric2/C2 = 1/2  trOm2/C2 = -4  | s/C2 = 1/120  Hodge (v-4s)/C2 = 1/12  matrix-derived (v-4s)/C2 = -1/3
+SD  Riem2/C2 = 2  Ric2/C2 = 1/2  trOm2/C2 = -4  | s/C2 = 1/120  Hodge (v-4s)/C2 = 1/12  matrix-derived (v-4s)/C2 = -1/3
+ASD  Riem2/C2 = 2  Ric2/C2 = 1/2  trOm2/C2 = -4  | s/C2 = 1/120  Hodge (v-4s)/C2 = 1/12  matrix-derived (v-4s)/C2 = -1/3
+ASD  Riem2/C2 = 2  Ric2/C2 = 1/2  trOm2/C2 = -4  | s/C2 = 1/120  Hodge (v-4s)/C2 = 1/12  matrix-derived (v-4s)/C2 = -1/3
+ASD  Riem2/C2 = 2  Ric2/C2 = 1/2  trOm2/C2 = -4  | s/C2 = 1/120  Hodge (v-4s)/C2 = 1/12  matrix-derived (v-4s)/C2 = -1/3

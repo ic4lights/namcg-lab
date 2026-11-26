@@ -1,0 +1,17 @@
+so(6) relations hold with sign -1
+N=1: dim check (sum 4*dim5, sum formula multiplicities, 4 d^2) = (64, 64, 64) ; numerical lowest = -4.000000 ; formula lowest = -4.000000 ; max |sorted difference| = 7.11e-15
+N=2: dim check (sum 4*dim5, sum formula multiplicities, 4 d^2) = (400, 400, 400) ; numerical lowest = -5.000000 ; formula lowest = -5.000000 ; max |sorted difference| = 3.82e-14
+N=3: dim check (sum 4*dim5, sum formula multiplicities, 4 d^2) = (1600, 1600, 1600) ; numerical lowest = -6.000000 ; formula lowest = -6.000000 ; max |sorted difference| = 1.24e-13
+
+exact counts from the formula (compact Euclidean analogue). a = so(6) label (C_6 = 2a^2+6a), window a<=A:
+  A  total_modes  negative  zero  min_eigenvalue  frac_negative
+   1          64        38     6           -4.0  0.59375
+   2         400       124    46           -5.0  0.31000
+   3        1600       344    85           -6.0  0.21500
+   4        4900       750   103           -7.0  0.15306
+   6       28224      2397   241           -9.0  0.08493
+   8      108900      5690   685          -11.0  0.05225
+  12      828100     23197  1288          -15.0  0.02801
+  16     3755844     64021  3078          -19.0  0.01705
+  24    34222500    290860  9995          -27.0  0.00850
+  32   171348100    879930 22308          -35.0  0.00514

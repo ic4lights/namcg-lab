@@ -1,0 +1,4 @@
+anchor count (section Problem G: HBEV):
+1
+1871:\section{Problem G: HBEV}
+eq:Smatrix: 1

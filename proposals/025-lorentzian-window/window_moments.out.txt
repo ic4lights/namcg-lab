@@ -1,0 +1,25 @@
+(0) isotropic check of the angular principal value pi/(a+c): numeric Gaussian moment vs closed form
+   c=1.00 a=1.00   numeric (1+1j)   closed form 1.0000000000
+   c=2.00 a=5.00   numeric (0.2857142857+0.1807015806j)   closed form 0.2857142857
+   c=0.50 a=3.00   numeric (0.5714285714+0.2332847374j)   closed form 0.5714285714
+   c=3.00 a=0.20   numeric (0.625+2.4206145914j)   closed form 0.6250000000
+(a) pencil structure at random orbit points (kappa=3/4)
+  y4^2=  0.3281 ell^2= 0.2256 | K_H|vert max rel=5.18e-01 | K42|base eig [-10.324  -1.316  -0.937  -0.422]  K42|vert eig [0.68  1.125] | nonzero gen.eig [-2.      2.9082  7.8165  7.8165]
+  y4^2= 93.6556 ell^2= 1.6520 | K_H|vert max rel=2.71e-01 | K42|base eig [-79.234 -10.275  -7.424  -0.529]  K42|vert eig [ 0.938 12.277] | nonzero gen.eig [ -2.     113.3863 228.7725 228.7725]
+  y4^2= 70.9128 ell^2= 1.0048 | K_H|vert max rel=4.88e-01 | K42|base eig [-785.711   -6.522   -3.999   -1.58 ]  K42|vert eig [2.011 6.028] | nonzero gen.eig [ -2.     141.1445 284.2889 284.2889]
+  y4^2=144.2059 ell^2= 1.2389 | K_H|vert max rel=6.64e-01 | K42|base eig [-500.772   -9.239   -4.805   -0.8  ]  K42|vert eig [1.65  8.262] | nonzero gen.eig [ -2.     232.7948 467.5897 467.5897]
+  y4^2=  1.5340 ell^2= 1.4524 | K_H|vert max rel=1.01e+00 | K42|base eig [-28.827  -9.543  -2.584  -2.123]  K42|vert eig [2.594 9.025] | nonzero gen.eig [-2.      2.1124  6.2248  6.2248]
+  y4^2=  2.2589 ell^2= 2.6439 | K_H|vert max rel=7.23e-01 | K42|base eig [-69.857 -12.862  -7.299  -5.9  ]  K42|vert eig [ 9.149 12.002] | nonzero gen.eig [-2.      1.7088  5.4176  5.4176]
+  y4^2=  6.8889 ell^2= 0.7659 | K_H|vert max rel=4.79e-01 | K42|base eig [-42.889  -4.392  -2.526  -2.277]  K42|vert eig [2.92  3.206] | nonzero gen.eig [-2.     17.99   37.9801 37.9801]
+  y4^2=  0.0843 ell^2= 0.6426 | K_H|vert max rel=3.22e-01 | K42|base eig [-15.374  -4.283  -2.569  -0.786]  K42|vert eig [2.493 2.648] | nonzero gen.eig [-2.      0.2624  2.5247  2.5247]
+(b) Gaussian-window moments <1/(sigma-i0)> (units of Lambda^2, per normalised Gaussian in the 4 nonzero directions): Lorentzian vs Euclid contraction (eta->delta)
+  y4^2=  0.3281  Lorentz: Re=  0.25395 Im=  0.15281   Euclid=  0.15086   Re_L/Euc= 1.6833
+  y4^2= 93.6556  Lorentz: Re=  0.01080 Im=  0.00115   Euclid=  0.00474   Re_L/Euc= 2.2779
+  y4^2= 70.9128  Lorentz: Re=  0.00871 Im=  0.00083   Euclid=  0.00431   Re_L/Euc= 2.0224
+  y4^2=144.2059  Lorentz: Re=  0.00531 Im=  0.00039   Euclid=  0.00478   Re_L/Euc= 1.1113
+  y4^2=  1.5340  Lorentz: Re=  0.30310 Im=  0.20725   Euclid=  0.24977   Re_L/Euc= 1.2135
+  y4^2=  2.2589  Lorentz: Re=  0.33608 Im=  0.24901   Euclid=  0.25757   Re_L/Euc= 1.3048
+  y4^2=  6.8889  Lorentz: Re=  0.06235 Im=  0.01638   Euclid=  0.03841   Re_L/Euc= 1.6233
+  y4^2=  0.0843  Lorentz: Re=  0.55095 Im=  0.68600   Euclid=  0.41120   Re_L/Euc= 1.3398
+(c) sign scan of Re<1/(sigma-i0)> for lam=(-c,a1,a2,a3), c in [0.1,10], a_i in [1e-3,1e3] log-uniform; 4000 samples
+   number with Re<=0: 0 ; min of Re*sqrt(prod|lam|): 9.735497204441331e-05

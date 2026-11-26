@@ -1,0 +1,8 @@
+rank test on a six-dimensional leaf: rank[grad u, grad N] should be 5; adding grad K_u and grad Box u shows the failure of closure
+  alpha=0.0 beta=1.0 : (rank[du,dN], +dK_u, +dBox u) at 4 points: [(5, 5, 5), (5, 5, 5), (5, 5, 5), (5, 5, 5)]
+  alpha=1.0 beta=0.0 : (rank[du,dN], +dK_u, +dBox u) at 4 points: [(5, 7, 5), (5, 7, 5), (5, 7, 5), (5, 7, 5)]
+  alpha=1.0 beta=1.0 : (rank[du,dN], +dK_u, +dBox u) at 4 points: [(4, 7, 7), (4, 7, 7), (4, 7, 7), (4, 7, 7)]
+  alpha=0.3 beta=1.0 : (rank[du,dN], +dK_u, +dBox u) at 4 points: [(5, 7, 7), (5, 7, 7), (5, 7, 7), (5, 7, 7)]
+  alpha=1.0 beta=0.2 : (rank[du,dN], +dK_u, +dBox u) at 4 points: [(5, 7, 7), (5, 7, 7), (5, 7, 7), (5, 7, 7)]
+Result reading: (0,1): all ranks 5 -> K_u and Box u are functions of y (closed);  alpha != 0 -> ranks exceed 5 (K_u fibre dependent via M^{a mu}M_a^nu; Box u = -3 alpha T - beta y not a function of u).
+Direct check of Box T^mu = -3 T^mu and Box y^mu = -y^mu (R=1): max deviations 1.78e-15, 8.88e-16

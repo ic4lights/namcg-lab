@@ -1,0 +1,10 @@
+r1 saved: C:\Users\redgi\Projects\namcg-lab\proposals\057-mass-plane-class\appH_insert.r1.tex 7714 f7fbbade4567d6843f13fe50f06ccb457cc78ac230863e1505b0bdb8f074af82
+R1 old count before 1 new count before 0
+R2a old count before 1 new count before 0
+R2b old count before 1 new count before 0
+R3 old count before 1 new count before 0
+R1 old count after 0 new count after 1
+R2a old count after 0 new count after 1
+R2b old count after 0 new count after 1
+R3 old count after 0 new count after 1
+r2 insert: 8046 4e0a85d101eaa1300a6206ed8760d83e4c5a74950b8b789d8fcfc3d7c20c0a7d CR present: False

@@ -1,0 +1,8 @@
+trial 0: max|pi^(mn)+pi^(nm)| = 0;  residual J - d_nu Q + E e xi = [7.8886e-31, 7.8886e-31];  |J| ~ [-20.373, 5.4877]
+trial 1: max|pi^(mn)+pi^(nm)| = 0;  residual J - d_nu Q + E e xi = [-3.9443e-30, 7.8886e-31];  |J| ~ [-29.250, 0.084333]
+trial 2: max|pi^(mn)+pi^(nm)| = 0;  residual J - d_nu Q + E e xi = [-2.3666e-30, 7.8886e-31];  |J| ~ [-15.050, 1.7410]
+
+Flat frame e^A = delta^A_mu (d=2), boost xi = (x2, x1) (Killing, vanishes at the origin):
+   (e_{A mu} L_xi e^A_nu), nu=0, mu=0,1: [0, 1]  (antisymmetric: = nabla_nu xi_mu, the Komar integrand)
+   (e_{A mu} L_xi e^A_nu), nu=1, mu=0,1: [1, 0]  (antisymmetric: = nabla_nu xi_mu, the Komar integrand)
+   Q^{mu nu} = pi^{mu nu}_A e^A_sigma xi^sigma is proportional to xi: it vanishes at xi = 0 for every L(e, de).

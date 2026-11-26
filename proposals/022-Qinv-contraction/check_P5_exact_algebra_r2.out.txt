@@ -1,0 +1,10 @@
+s=+1 (1) sum_C e_C {y_C,{y_C,y_A}} / y_A = {4}  -> mu^2 = 4
+s=+1 (2) y_A D^A f == 0 (trivial for this f; inconclusive) True (INCONCLUSIVE item: this f has no M^{.5} factor, so y_A D^A f = 0 holds trivially; the orbit-level check y_A D^A = 0 is in check_P5_vs_P4, 1.4e-13)
+s=+1 (3) Box5 = C_{so(4,1)} - C_{so(4,2)}: True
+s=+1 (4a) H_V = -Box - 2 (sigma s) J.A + mu^2 for sigma=+1/-1: {1: False, -1: True}
+s=+1 (4b) combos (sg,(a,b,c)) with H_V = a C42 + b C_G + c C_Sigma + mu2: [(1, (1, -1, 1))]
+s=-1 (1) sum_C e_C {y_C,{y_C,y_A}} / y_A = {4}  -> mu^2 = 4
+s=-1 (2) y_A D^A f == 0 (trivial for this f; inconclusive) True (INCONCLUSIVE item: this f has no M^{.5} factor, so y_A D^A f = 0 holds trivially; the orbit-level check y_A D^A = 0 is in check_P5_vs_P4, 1.4e-13)
+s=-1 (3) Box5 = C_{so(4,1)} - C_{so(4,2)}: True
+s=-1 (4a) H_V = -Box - 2 (sigma s) J.A + mu^2 for sigma=+1/-1: {1: False, -1: True}
+s=-1 (4b) combos (sg,(a,b,c)) with H_V = a C42 + b C_G + c C_Sigma + mu2: [(-1, (1, -1, 1))]

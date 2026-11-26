@@ -1,0 +1,6 @@
+eta=(1, 1, 1, 1) seed=1: a1(Maxwell-dilaton only) = -12.75503486   -R/3+box-V2 = -12.75503486   [R=+12.3615 V2=+1.7207 box=-6.9139]
+eta=(1, 1, 1, 1) seed=2: a1(Maxwell-dilaton only) = -1.67942122   -R/3+box-V2 = -1.67942122   [R=+1.3111 V2=+0.1284 box=-1.1140]
+eta=(1, 1, 1, 1) seed=3: a1(Maxwell-dilaton only) = -309.46018240   -R/3+box-V2 = -309.46018240   [R=+334.3806 V2=+5.6026 box=-192.3974]
+eta=(-1, 1, 1, 1) seed=1: a1(Maxwell-dilaton only) = -9.03100688   -R/3+box-V2 = -9.03100688   [R=+9.0011 V2=+1.6232 box=-4.4074]
+eta=(-1, 1, 1, 1) seed=2: a1(Maxwell-dilaton only) = -0.35786509   -R/3+box-V2 = -0.35786509   [R=+0.1698 V2=+0.0910 box=-0.2102]
+eta=(-1, 1, 1, 1) seed=3: a1(Maxwell-dilaton only) = -152.35610766   -R/3+box-V2 = -152.35610766   [R=+171.0545 V2=+4.8772 box=-90.4607]

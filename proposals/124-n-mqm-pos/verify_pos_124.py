@@ -1,0 +1,110 @@
+# -*- coding: ascii -*-
+# Item 124 verifier A: Presentation-B matrix-QM positivity. Bounded single-shot run.
+# A1 Legendre transform of the one-complex-component truncation: H = sum(P^2/4) + V exactly.
+# A2 Potential V(M) = (lambda/4) Tr (M^dag M - v^2 I)^2, general complex 2x2 M:
+#    (a) invariant form; (b) 2 Tr A^2 - (Tr A)^2 = (a11-a22)^2 + 4|a12|^2 for Hermitian A
+#        (sum of squares => V >= (lambda/16)(Tr M^dag M - 2 v^2)^2 >= 0 near coercivity);
+#    (c) ray homogeneity V(tM): t^4 growth (numeric); bound margin >= 0;
+#    (d) V = 0 on M = v U for random unitary U, V > 0 off the zero set.
+# A3 Numerical QM H = -Laplacian + V on R^2 (N=1 complex scalar, box [-8,8]^2, 180^2 grid):
+#    discrete positive spectrum, normalizable ground state; KL residues r_n = |<0|O|n>|^2 >= 0,
+#    sum-rule fraction vs <0|O^2|0>; spectral reconstruction of <0|O(t)O(0)|0> at t = 0.37.
+# A4 OS corollary sanity: bottom of e^{-T H} is e^{-T lambda_0} > 0.
+import numpy as np
+import sympy as sp
+from scipy.sparse import diags, kron, identity as spid
+from scipy.sparse.linalg import eigsh
+
+rng = np.random.default_rng(124)
+rep = []
+
+# ---------- A1 ----------
+q1, q2, dq1, dq2 = sp.symbols('q1 q2 dq1 dq2', real=True)
+v = sp.Symbol('v', positive=True)
+lam = sp.Symbol('lambda', positive=True)
+V1 = lam/4*(q1**2 + q2**2 - v**2)**2
+L1 = dq1**2 + dq2**2 - V1                     # L = |dphi|^2 - V, phi = (q1 + i q2)/sqrt(2)
+P1, P2 = sp.diff(L1, dq1), sp.diff(L1, dq2)
+# P_a = 2 dq_a are the canonical momenta; Legendre H = P dq - L with dq = P/2:
+resA1 = sp.simplify((P1*dq1 + P2*dq2 - L1) - (P1**2/4 + P2**2/4 + V1))
+rep.append(('A1 Legendre residual (expect 0): %s' % resA1))
+
+# ---------- A2 ----------
+mre = sp.symbols('m00r m00i m01r m01i m10r m10i m11r m11i', real=True)
+M = sp.Matrix(2, 2, lambda i, j: mre[2*(2*i+j)] + sp.I*mre[2*(2*i+j)+1])
+Md = M.conjugate().transpose()
+A = Md*M - v**2*sp.eye(2)
+Vm = sp.expand(lam/4*sp.simplify(sp.trace(A*A)))
+inv_form = sp.expand(lam/4*(sp.simplify(sp.trace(Md*M*Md*M)) - 2*v**2*sp.trace(Md*M) + 2*v**4))
+resA2a = sp.simplify(sp.expand(Vm - inv_form))
+rep.append(('A2a V - invariant form residual (expect 0): %s' % resA2a))
+a11, a22, ar, ai = sp.symbols('a11 a22 ar ai', real=True)
+Ah = sp.Matrix([[a11, ar + sp.I*ai], [ar - sp.I*ai, a22]])
+resA2b = sp.expand(2*sp.trace(Ah*Ah) - sp.trace(Ah)**2 - ((a11 - a22)**2 + 4*(ar**2 + ai**2)))
+rep.append(('A2b TrA2-SOS residual (expect 0): %s' % resA2b))
+
+Mre = sp.Matrix(2, 2, lambda i, j: mre[2*(2*i+j)])
+Mim = sp.Matrix(2, 2, lambda i, j: mre[2*(2*i+j)+1])
+Mc = Mre + sp.I*Mim
+Mc3 = 3*Mc
+Vray = sp.expand((lam/4)*sp.simplify(sp.trace(((Mc3).conjugate().transpose()*Mc3 - v**2*sp.eye(2))**2)))
+c4 = Vray.subs({v: 0})/81
+c2 = sp.expand((Vray - Vray.subs({v: 0})).subs(sp.Symbol('lambda'), 1))
+# coefficient of t^4 with lambda=1: Tr((Re+i Im)^dag(...))^2 /4 * t^4; check positivity numerically
+f4 = sp.lambdify(list(mre), sp.simplify(c4.subs(lam, 1)), 'numpy')
+vals4 = [f4(*rng.normal(size=8)) for _ in range(200)]
+rep.append(('A2c t^4 coefficient min over 200 random rays (expect > 0): %.6f' % min(vals4)))
+
+def Vnum(Mx, vv=1.0, ll=1.0):
+    Am = Mx.conj().T @ Mx - vv*vv*np.eye(Mx.shape[0])
+    return ll/4.0*float(np.real(np.trace(Am @ Am)))
+
+Mr = (rng.normal(size=(2, 2)) + 1j*rng.normal(size=(2, 2)))/np.sqrt(2)
+ratios = [Vnum(2*Mr)/Vnum(Mr), Vnum(4*Mr)/Vnum(2*Mr)]  # NOT pure t^4 (mass term), so use pure quartic part
+qpart = lambda X: float(np.real(np.trace((X.conj().T @ X) @ (X.conj().T @ X))))/4
+ratios4 = [qpart(2*Mr)/qpart(Mr), qpart(4*Mr)/qpart(2*Mr)]
+rep.append(('A2c quartic-part ray ratios (expect 16, 16): %s' % np.round(ratios4, 6)))
+marg = [Vnum(t*Mr) - (1.0/8)*(np.trace((t*Mr).conj().T @ (t*Mr)) - 2.0)**2 for t in (0.1, 1.0, 3.0)]
+rep.append(('A2c bound V - (lam/16)(Tr M^dag M - 2 v^2)^2 at t=0.1,1,3 (expect >= 0): %s' % np.round(marg, 6)))
+U, _ = np.linalg.qr(rng.normal(size=(2, 2)) + 1j*rng.normal(size=(2, 2)))
+sig = rng.uniform(0.2, 3.0, size=2)
+Moff = (U * np.sqrt(sig)) @ U.conj().T
+rep.append(('A2d V(vU) (expect ~0): %.3e   V(off zero set) (expect > 0): %.6f' % (Vnum(1.0*U), Vnum(Moff))))
+
+# ---------- A3 ----------
+lam_n, v_n, R, n = 1.0, 1.0, 8.0, 180
+x = np.linspace(-R, R, n)
+h = x[1] - x[0]
+D1 = diags([1.0, -2.0, 1.0], [-1, 0, 1], shape=(n, n), format='csr')/h**2
+I = spid(n, format='csr')
+Vg = (lam_n/4)*(x[:, None]**2 + x[None, :]**2 - v_n**2)**2
+H = (-kron(D1, I) - kron(I, D1)).tocsc() + diags(Vg.ravel(), 0, shape=(n*n, n*n), format='csc')
+vals, vecs = eigsh(H, k=12, which='SM')
+o = np.argsort(vals)
+vals, vecs = vals[o], vecs[:, o]
+rep.append(('A3 eigenvalues 0..7 (expect > 0, increasing): %s' % np.round(vals[:8], 6)))
+psi0 = vecs[:, 0]
+rep.append(('A3 eigsh psi0 unit-Euclidean; L2 norm = h*||psi||_2 = h = %.9f (normalization is 1/h, artifact)' % (h*np.sqrt(np.sum(psi0**2)))))
+xd = diags(x, 0, shape=(n, n), format='csr')
+Q1 = kron(xd, I).tocsr()
+Q2 = kron(I, xd).tocsr()
+for O, lab in ((Q1, 'q1'), (Q2, 'q1*q2')):
+    r = np.array([float(psi0 @ (O @ vecs[:, k])) for k in range(12)])**2
+    tot = float(psi0 @ (O @ (O @ psi0)))
+    rep.append(('A3 KL O=%s: min r_n (expect >= 0) = %.3e; sum r_n / <O^2> = %.5f' % (lab, r.min(), r.sum()/tot)))
+    if lab == 'q1':
+        from scipy.sparse.linalg import expm_multiply
+        tt = 0.37
+        Gspec = complex(np.sum(r*np.exp(-1j*(vals - vals[0])*tt)))
+        a = expm_multiply(-1j*tt*H, psi0)
+        b = expm_multiply(-1j*tt*H, (Q1 @ psi0))
+        Gex = complex(np.vdot(a, Q1 @ b))
+        rep.append(('A3 G(t=0.37) spectral-12 = %.8f %+.8fj ; expm = %.8f %+.8fj ; |diff| = %.2e' % (Gspec.real, Gspec.imag, Gex.real, Gex.imag, abs(Gspec-Gex))))
+
+# ---------- A4 ----------
+T = 0.5
+rep.append(('A4 bottom of e^{-T H} = e^{-T lam0} (expect > 0): %.9f' % float(np.exp(-T*vals[0]))))
+
+print('== verify_pos_124 report ==')
+for line in rep:
+    print(line)

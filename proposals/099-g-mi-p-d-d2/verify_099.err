@@ -1,0 +1,2 @@
+C:\Users\redgi\Projects\namcg-lab@gpu\proposals\099-g-mi-p-d-d2\verify_099.py:90: RuntimeWarning: invalid value encountered in divide
+  W=np.where(np.abs(rho)<1e-10,1.0,(1-np.exp(-rho))/rho)

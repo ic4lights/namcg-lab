@@ -1,0 +1,7 @@
+before: 10683 bytes, sha256 3059afeb673b66e284bdc1c8a4bcbb19be67e96580fe920d2eec724f87d1926a
+(a) old occurrences 1 -> replaced; length change +33
+(b) old occurrences 1 -> replaced; length change +48
+(c) old occurrences 1 -> replaced; length change +110
+after: 10874 bytes, sha256 6294d41602769e13180ce74d961899082dfd6a55d2c1506e58ba9301ba9784b2
+word-level changed spans between before and after: 7
+lines changed: [8, 12] of 15

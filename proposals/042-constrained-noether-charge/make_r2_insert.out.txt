@@ -1,0 +1,9 @@
+replacement 1: old occurs 1 time(s)
+replacement 2: old occurs 1 time(s)
+replacement 3: old occurs 1 time(s)
+replacement 4: old occurs 1 time(s)
+replacement 5: old occurs 1 time(s)
+replacement 6: old occurs 1 time(s)
+bytes 8952 CR 0 TAB 0 nonASCII 0 other control 0
+braces net 0 \( \) net 0 \[ 1 \] 1
+label eq:first-law definitions: 1 ['C:\\Users\\redgi\\Projects\\namcg-lab\\chapters\\ch06-entanglement-equilibrium.tex']

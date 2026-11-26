@@ -1,0 +1,5 @@
+(a) max coefficient of |V - dlnrho|^2 (all masks): 5.543841832702046e-27    of |V + dlnrho|^2: 199865.382273865
+(b) teleparallel: max |cubic coeff of rho^2 R_G + rho^2(I_A/4+I_B/2-I_V)| = 1.1641532182693481e-10  typical |rho^2 R_G| cubic coeff: 112330.93272724541
+(c) max |cubic coeff of rho^2 R_G - h - 3/2 r| = 1.673470251262188e-10  typical: 112330.93272724541
+(d) max |rho^2 (I_S - (I_A - 2 I_B)/3)| over all masks = 2.546585164964199e-11
+algebra: rho^2 X = a = -2*h - r + 3*s/2

@@ -1,0 +1,16 @@
+@@OLD
+        \(\gamma\to\nu_{\sqrt{}}(g_{\mathrm{gal}})\approx 1.1\).
+        A quality-controlled Gaia sample consistent with Newton
+        constrains the isolated reading and is compatible with
+        Assumption~\ref{ass:efe}.
+        A surviving \(\gamma\approx 1.4\) is not explained by that
+        saturation.
+@@NEW
+        \(\gamma\to\nu_{\sqrt{}}(g_{\mathrm{gal}})\approx 1.35\).
+        A quality-controlled Gaia sample consistent with Newton
+        constrains the isolated reading and the saturated value
+        of Assumption~\ref{ass:efe}.
+        A surviving \(\gamma\approx 1.4\) is comparable to that
+        saturated value; it would be a coefficient-level agreement
+        with Assumption~\ref{ass:efe}, not a derivation.
+@@END

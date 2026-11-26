@@ -1,0 +1,29 @@
+--- boost(0,2)  k = [-1, 1, 0, 0]
+dQ2/dt at 0 = v.p with v = [0, 0, -2, 0] ; |v|^2 = 4
+H11 series: -P**2*epsilon**2 + O(epsilon**3)
+H22 series: 0
+H12 series: -sqrt(2)*P*epsilon + O(epsilon**3)
+predicted leading H12 = -(eps/sqrt 2) P |v|: -sqrt(2)*P*epsilon ; ratio to exact at eps -> 0: 1
+  P=1 eps=1/10  H12=-1.417754e-01  eigenvalues 1.368575e-01, -1.468700e-01  (real: symmetric matrix on a positive Gram; both residues positive)
+  P=1 eps=1/100  H12=-1.414249e-02  eigenvalues 1.409258e-02, -1.419258e-02  (real: symmetric matrix on a positive Gram; both residues positive)
+  P=1 eps=1/1000  H12=-1.414214e-03  eigenvalues 1.413714e-03, -1.414714e-03  (real: symmetric matrix on a positive Gram; both residues positive)
+  in the basis O1, O2raw = O2/(sqrt2 eps):  <O1,Q2 O2raw> -> -P, <O2raw,O2raw> = 1/(2 eps^2)
+--- rotation(1,2)  k = [-1, 1, 0, 0]
+dQ2/dt at 0 = v.p with v = [0, 0, 2, 0] ; |v|^2 = 4
+H11 series: 2*P**2*epsilon**2 + O(epsilon**3)
+H22 series: 3*P**2*epsilon**2 + O(epsilon**3)
+H12 series: -sqrt(2)*P*epsilon + O(epsilon**3)
+predicted leading H12 = -(eps/sqrt 2) P |v|: -sqrt(2)*P*epsilon ; ratio to exact at eps -> 0: 1
+  P=1 eps=1/10  H12=-1.410682e-01  eigenvalues 1.661125e-01, -1.161999e-01  (real: symmetric matrix on a positive Gram; both residues positive)
+  P=1 eps=1/100  H12=-1.414178e-02  eigenvalues 1.439187e-02, -1.389187e-02  (real: symmetric matrix on a positive Gram; both residues positive)
+  P=1 eps=1/1000  H12=-1.414213e-03  eigenvalues 1.416713e-03, -1.411713e-03  (real: symmetric matrix on a positive Gram; both residues positive)
+  in the basis O1, O2raw = O2/(sqrt2 eps):  <O1,Q2 O2raw> -> -P, <O2raw,O2raw> = 1/(2 eps^2)
+--- Monte Carlo, boost, eps = 0.05, P = 1, N = 4000000
+  <O2,O2> = 1.0000 (exact 1), <O1,O2> = 4.06e-05 (exact 0)
+  H11 = -0.00253, H22 = -0.00004, H12 = -0.07072
+  eigenvalues [-0.07202, 0.06944]
+  spectral measure of O1: positive weights by construction; quantiles 5%, 50%, 95% of Q2 = -0.2071, 0.0000, 0.1930
+  spectral measure of O2: positive weights by construction; quantiles 5%, 50%, 95% of Q2 = -0.2050, 0.0025, 0.1964
+--- W: at a boost of rapidity 1.3 the Gaussian frame weight has W_00 = 6.7690, W_11 = 6.7690, W_01 = 6.6947, eigenvalues [ 0.0743  1.      1.     13.4637]
+W_00 > 0 for every positive weight, while eta_00 = -1 and eta_11 = +1, so W = c eta has no solution (W_00 = -c, W_11 = c).
+ALL ASSERTIONS PASSED

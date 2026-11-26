@@ -1,0 +1,5 @@
+(1) sum of squares of Jacobi components: 0
+(2) vsf^a cbar_ab^d: {0}
+(3) cbar_ac^c: {0}
+(4) first bracket with cubic term, distinct components: {0}
+(5) T_abc T^abc / (v.v) = -3/2

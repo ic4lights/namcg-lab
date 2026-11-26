@@ -1,0 +1,41 @@
+2-hbev.aux) (chapters/ch13-cores-galaxies.aux)
+(chapters/ch14-dissipation.aux) (chapters/ch15-numerics.aux)
+(chapters/ch16-falsifiers.aux) (chapters/ch17-agenda.aux)
+(chapters/appA-seeley-dewitt.aux) (chapters/appB-modular.aux)
+(chapters/appC-integrator.aux) (chapters/appD-empirical.aux)
+(chapters/appE-rar-bridge.aux) (chapters/appF-field-equation.aux)
+(chapters/appG-sector-entropy.aux) (chapters/appH-microscopic-proofs.aux)
+(chapters/appI-gaia-wide.aux) (chapters/appJ-summary.aux)
+(chapters/appK-endomorphism.aux) (chapters/appL-coupling.aux)
+(chapters/ch18-epilogue.aux)) )
+(see the transcript file for additional information)<C:/Users/redgi/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/redgi
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/redgi
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/redgi
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/redgi/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/redgi
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/redgi
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/redgi
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/redgi
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/redgi/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/redgi/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/redgi/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmib10.pfb><C:/Users/redgi/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/redgi/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/redgi/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/redgi/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/redgi/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/redgi/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/redgi/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/redgi/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/redgi/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/lm/lmss8.pfb><C:/Users/redgi/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/redgi/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/redgi/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/redgi/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/redgi/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/redgi/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/redgi/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on namcg-book7.pdf (446 pages, 3272848 bytes).
+Transcript written on namcg-book7.log.

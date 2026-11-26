@@ -1,0 +1,7 @@
+closed form sigma=1 C=+0.8         |J| = 3.9795e-38   Pf(omega) = 16.014
+closed form sigma=1 C=-0.8         |J| = 3.8535e-38   Pf(omega) = 16.011
+closed form sigma=-1 C=+0.8        |J| = 3.7228e-34   Pf(omega) = -0.014172
+closed form sigma=-1 C=-0.8        |J| = 4.6759e-34   Pf(omega) = -0.011315
+SD h=1                             |J| = 0.0   Pf(omega) = 4.0
+ASD h=r^-4                         |J| = 7.4058e-35   Pf(omega) = -0.078707
+NOT a solution h=r                 |J| = 0.063669   Pf(omega) = 16.02

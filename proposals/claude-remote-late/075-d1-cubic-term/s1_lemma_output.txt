@@ -1,0 +1,14 @@
+(a) |S[C] - S[C_antisym]| / |S| = 2.7e-17
+(b) Im S = 1.8e-15 (real action for C = i c eps v, c, v real)
+    finite difference -57.74231827  Tr(dX^l G_l) -57.74231828  rel.diff 1.7e-10
+(c) fuzzy sphere j=0.5: residual of the 3d equation at chi = c3/2: 0.0e+00
+(c) fuzzy sphere j=1.0: residual of the 3d equation at chi = c3/2: 2.8e-17
+(c) fuzzy sphere j=1.5: residual of the 3d equation at chi = c3/2: 2.8e-17
+    Lambda in SO+(3,1): |L^T eta L - eta| = 2.3e-14  det = 1.000000  L00 = 10.496
+(d) covariance residual 4.5e-12
+(e) timelike  v: rank span(v - Lambda^-1 v) = 4
+(e) spacelike v: rank span(v - Lambda^-1 v) = 4
+(e) null      v: rank span(v - Lambda^-1 v) = 4
+(e) generic   v: rank span(v - Lambda^-1 v) = 4
+(f) rank of F -> eps_{bcdf}F^{cd}: 6
+(g) G[X;v] - G[X;Lambda^-1 v] - (ic/2) eps(w)[X,X] = 2.8e-14

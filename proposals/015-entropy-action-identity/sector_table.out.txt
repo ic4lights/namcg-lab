@@ -1,0 +1,12 @@
+sector | c in (G,rho,dTheta) = S^(I) in units Lambda^2 A/(8 pi) | c in (G,torsion) = S^(II)
+  scalar (N_s comps, w=1): N_s/6 | -N_s/12
+  connection (4 comps, w=1): 2/3 | -1/3
+  ghost (1 comp, w=-2): -1/3 | 1/6
+total: N_s/6 + 1/3 = N_tot/6 | -N_s/12 - 1/6 = -N_tot/12
+ratio (II)/(I) = -1/2
+TT eigenvalue (rho_bar^2 p^2 M units): 11/12 - N_s/24  expected 1 - N_tot/24: True
+third mode: 3/4 - N_s/8
+c_TT = -4 * TT eigenvalue = N_s/6 - 11/3  ; c_cone = N_tot/6; difference c_cone - c_TT = 4
+1/G_cone = Lambda**2*(N_s + 2)/(12*pi) ; 1/G_TT = Lambda**2*(N_s - 22)/(12*pi) ; difference = 2*Lambda**2/pi
+separate cutoffs: 1/G_cone = (Lambda_s**2*N_s - 2*Lambda_s**2 + 4*Lambda_v**2)/(12*pi)  1/G_TT = (Lambda_s**2*N_s - 2*Lambda_s**2 - 20*Lambda_v**2)/(12*pi)  difference = 2*Lambda_v**2/pi
+scalar-only content (no connection, no ghost): c_TT - c_cone = 0

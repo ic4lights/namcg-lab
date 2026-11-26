@@ -1,0 +1,27 @@
+appH pre  sha256 84f9c61e066fa19fda86907a5651e551f35e3112bfba6697a76c1b0efee0224f bytes 777025
+pre-hash matches expected: True
+anchor unique: True; offset 300743 line 1688
+paragraph before the insert ends: e}; Problems~D, F and~N remain open and PROGRAMME-CONDITIONAL.
+block bytes 8606 sha256 407e4fa350d8e31f89624334dd4048bb2c4fcad9f8b22baa1d6ea86390ae6b41
+appH post sha256 8aed4519472ef5ec9b1c8a4668e39b02b0882b5e7edb2cf9a9e0b5ba513ae229 bytes 785633 bare LF 0
+post-hash matches expected: True
+status sentences in block: 1 ; in last paragraph: True
+block ends: e}; Problems~D, F and~N remain open and PROGRAMME-CONDITIONAL.
+line after the insert: \section{Problem E: signature} ; preceded by blank line: True
+label ch:vierbein-emergence defined 1
+label eq:Smatrix defined 1
+label sec:status-F defined 1
+citations in block: ['AdamKlinkhamer2001', 'CarrollFieldJackiw1990']
+  cite AdamKlinkhamer2001 in bib: False ; in additions: True
+  cite CarrollFieldJackiw1990 in bib: False ; in additions: True
+additions keys absent from bib/namcg.bib: ['CarrollFieldJackiw1990', 'AdamKlinkhamer2001']
+pdflatex rc 0 pages 407
+bibtex rc 0 
+pdflatex rc 0 pages 424
+pdflatex rc 0 pages 424
+undefined/multiply-defined warnings: 0
+bibtex warnings: 0
+  bbl contains AdamKlinkhamer2001 : True
+  bbl contains CarrollFieldJackiw1990 : True
+BUILD CLEAN
+temp copy removed: True

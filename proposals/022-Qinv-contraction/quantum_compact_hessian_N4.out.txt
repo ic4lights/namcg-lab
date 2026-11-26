@@ -1,0 +1,3 @@
+so(6) relations hold with sign -1
+P4c (4 matrices X^a=M^{a5}) N=4 d=35 m2=-3 |herm err 0.0e+00| negative: 746 (min -7.0000) zero: 1327 (gauge d^2-1 = 1224) positive: 2823 (smallest 1.0000)
+P5c (5 matrices X^A=M^{A6}) N=4 d=35 m2=-4 |herm err 0.0e+00| negative: 814 (min -4.0000) zero: 1305 (gauge d^2-1 = 1224) positive: 4001 (smallest 2.0000)

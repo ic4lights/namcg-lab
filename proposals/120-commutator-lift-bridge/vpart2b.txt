@@ -1,0 +1,133 @@
+# ---- T3: printed left action is incompatible: mismatch = -Theta^{mu nu} Phi *_star A_nu ----
+def left_action_mismatch(mu, eA, eP, n, Th):
+    Ms = [genmat(n, "m" + str(rho)) for rho in range(4)]
+    N = genmat(n, "p")
+    Xmu = xhat_sym(mu, Ms, Th, eA, n)
+    Phi = [(eP, N)]
+    LHS = madd(star(Xmu, Phi, Th), mmul_scalar(star(Phi, Xmu, Th), -1))
+    RHSla = []
+    tgt = sp.zeros(n)
+    for nu in range(4):
+        if Th[(mu, nu)] == 0:
+            continue
+        Aonly = [(eA, Ms[nu])]
+        # printed: i Theta^{mu nu} D_nu Phi with D = d - i A (left action)
+        #      = i Theta d(Phi) + Theta (A *_star Phi)
+        term = madd(mmul_scalar(dnu(Phi, nu), sp.I), star(Aonly, Phi, Th))
+        RHSla = madd(RHSla, mmul_scalar(term, Th[(mu, nu)]))
+        tgt = tgt + sp.expand(Th[(mu, nu)]) * sym_matrix(star(Phi, Aonly, Th), n)
+    Diff = sp.simplify(sym_matrix(simplify_sym(madd(LHS, mmul_scalar(RHSla, -1))), n))
+    return sp.simplify(Diff + tgt), Diff, N, Ms
+
+
+ok = True
+for mu in range(4):
+    for (eA, eP, n) in [((1, 0, 0, 0), (0, 0, 0, 0), 2), ((0, 0, 1, 0), (2, 0, 0, 0), 2),
+                        ((0, 0, 0, 0), (0, 1, 0, 0), 3), ((1, 1, 0, 0), (1, 0, 0, 0), 2)]:
+        resid, _, _, _ = left_action_mismatch(mu, eA, eP, n, THSyms)
+        ok = ok and resid == sp.zeros(n)
+chk("T3a LHS - printed-left-action-RHS = -Theta^{mu nu}(Phi *_star A_nu) exactly (4 classes x 4 mu)", ok)
+
+# for constant Phi the star product is the ordinary product: mismatch = -Theta Phi A
+resid0, D0, N0, M0 = left_action_mismatch(0, (1, 0, 0, 0), (0, 0, 0, 0), 2, THSyms)
+tgt0 = sp.zeros(2)
+for nu in range(4):
+    tgt0 = tgt0 - sp.expand(THSyms[(0, nu)] * mon((1, 0, 0, 0)) * (N0 * M0[nu]))
+chk("T3a2 constant Phi: mismatch equals the right-action product -Theta^{0 nu} Phi A_nu exactly",
+    sp.expand(D0 - tgt0) == sp.zeros(2))
+chk("T3a3 teeth: this mismatch is nonzero for generic data (no commutator produces it)",
+    D0 != sp.zeros(2))
+
+# u(1) invisibility at dictionary order: with A_nu = alpha_nu I the ordinary
+# commutator [A_nu, Phi] = 0, while the printed connection term A_nu Phi is nonzero.
+ok = True
+aa = [sp.Symbol("al" + str(r), complex=True) for r in range(4)]
+Nu = genmat(2, "p")
+for nu in range(4):
+    Acomm = aa[nu] * sp.eye(2) * Nu - Nu * aa[nu] * sp.eye(2)
+    ok = ok and sp.simplify(Acomm) == sp.zeros(2)
+    ok = ok and (aa[nu] * sp.eye(2) * Nu != sp.zeros(2))
+chk("T3b central u(1) part invisible to commutators but nonzero in printed left action", ok)
+
+
+def Kmat(Th, conv="Kdef"):
+    Tm = sp.Matrix(4, 4, lambda a, b: Th[(a, b)])
+    if conv == "Kdef":
+        return sp.expand(Tm * g * Tm)
+    return sp.expand(Tm.T * g * Tm)
+
+
+# ---- T4a: kinetic tensor of the shift-symmetric lift is proportional to K exactly ----
+Ys = [genmat(2, "y" + str(c)) for c in range(4)]
+Bm = []
+for mu in range(4):
+    Gm = sp.zeros(2)
+    for c in range(4):
+        for b in range(4):
+            if g[mu, c] * THSyms[(c, b)] != 0:
+                Gm = Gm + g[mu, c] * THSyms[(c, b)] * Ys[b]
+    Bm.append(sp.I * sp.expand(Gm))
+liftq = sp.expand(sum(-sp.Rational(1, 2) * g[mu, nu] * (Bm[mu] * Bm[nu]).trace()
+                      for mu in range(4) for nu in range(4)))
+Kd = Kmat(THSyms)
+targetq = sp.expand(sum(sp.Rational(-1, 2) * Kd[b, d] * (Ys[b] * Ys[d]).trace()
+                        for b in range(4) for d in range(4)))
+chk("T4a lift kinetic form = -(kappa/2) K^{bd} Tr(d_b Phi d_d Phi) exactly, symbolic Theta (kappa=1)",
+    sp.expand(liftq - targetq) == 0)
+
+Ks = Kmat(THSyms, "Ksym")
+chk("T4b K = Theta g Theta symmetric; other index convention Theta^T g Theta = -K",
+    (Kd - Kd.T) == sp.zeros(4) and (Ks + Kd.T) == sp.zeros(4))
+
+# ---- T4c: K = c g forces Theta = 0 (real): explicit sum-of-squares certificate ----
+cc = sp.Symbol("c", real=True)
+Q0 = THSyms[(0, 1)] ** 2 + THSyms[(0, 2)] ** 2 + THSyms[(0, 3)] ** 2
+cval = -Kd[0, 0]
+chk("T4c1 K00 + c = 0 gives c = sum (Theta0i)^2 >= 0", sp.expand(cval - Q0) == 0)
+F = [sp.expand(Kd[i, i] - cval) for i in (1, 2, 3)]
+sq = [THSyms[(0, 2)] ** 2 + THSyms[(0, 3)] ** 2 + THSyms[(1, 2)] ** 2 + THSyms[(1, 3)] ** 2,
+      THSyms[(0, 1)] ** 2 + THSyms[(0, 3)] ** 2 + THSyms[(1, 2)] ** 2 + THSyms[(2, 3)] ** 2,
+      THSyms[(0, 1)] ** 2 + THSyms[(0, 2)] ** 2 + THSyms[(1, 3)] ** 2 + THSyms[(2, 3)] ** 2]
+ok = all(sp.expand(F[i] + sq[i]) == 0 for i in range(3))
+Qall = sum((THSyms[(i, j)]) ** 2 for i in range(4) for j in range(i + 1, 4))
+ok = ok and sp.expand(sum(F) + 2 * Qall) == 0
+chk("T4c2 Kii - c = -(sum of squares) and sum = -2|Theta|^2: K = c g only real sol Theta=0, c=0", ok)
+
+# ---- T4d: canonical block data K = diag(-e^2, e^2, -b^2, -b^2) ----
+ee, bb = sp.symbols("e b", real=True)
+ThB = {}
+for i in range(4):
+    for j in range(4):
+        ThB[(i, j)] = sp.Integer(0)
+ThB[(0, 1)] = ee
+ThB[(1, 0)] = -ee
+ThB[(2, 3)] = bb
+ThB[(3, 2)] = -bb
+KB = Kmat(ThB)
+chk("T4d canonical K = Theta g Theta = diag(-e^2, e^2, -b^2, -b^2)",
+    KB == sp.diag(-ee ** 2, ee ** 2, -bb ** 2, -bb ** 2))
+
+# ---- T4e: numeric teeth: K not g-proportional at generic blocks ----
+ThX = {}
+for i in range(4):
+    for j in range(4):
+        ThX[(i, j)] = sp.Integer(0)
+for (i, j), v in [((0, 1), 2), ((2, 3), 3)]:
+    ThX[(i, j)] = sp.Integer(v)
+    ThX[(j, i)] = sp.Integer(-v)
+KX = Kmat(ThX)
+chk("T4e teeth (t01,t23)=(2,3): K00*g22 - K22*g00 = -13 != 0 (not g-proportional)",
+    KX[0, 0] * g[2, 2] - KX[2, 2] * g[0, 0] == -13)
+
+# ---- T4g: purely spatial Theta: row/col 0 of K vanish and det K = 0 ----
+s12, s13, s23 = sp.symbols("s12 s13 s23", real=True)
+ThS = {}
+for i in range(4):
+    for j in range(4):
+        ThS[(i, j)] = sp.Integer(0)
+for (i, j), sv in [((1, 2), s12), ((1, 3), s13), ((2, 3), s23)]:
+    ThS[(i, j)] = sv
+    ThS[(j, i)] = -sv
+KSp = Kmat(ThS)
+chk("T4g spatial Theta: K^{0 mu} = 0 (no time-derivative term) and det K = 0 (degenerate)",
+    all(KSp[0, m] == 0 and KSp[m, 0] == 0 for m in range(4)) and sp.expand(KSp.det()) == 0)

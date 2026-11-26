@@ -1,0 +1,10 @@
+eta=(1, 1, 1, 1): 14 samples; singular values of the invariant matrix: 4.617e+01 5.001e+00 8.124e-01 4.747e-01 2.211e-01 7.412e-14
+   null vector (t2V2 coefficient = 1): R=+0.500000, V2=-1.000000, box=+1.500000, th2=+1.000000, vth=-2.000000, t2V2=+1.000000
+   max | s|U|^2 - (-R/2 + V2 - 3/2 box) | = 5.78e-12   (max |rhs| = 16.40)
+   max | a1(V) - [-R/3 + box - V2 + 6 s|U|^2] | = 2.82e-11;  max|a1(M) - same| = 2.94e-11
+   max | a1(V) - [-10R/3 + 5 V2 - 8 box] | = 6.48e-12
+eta=(-1, 1, 1, 1): 14 samples; singular values of the invariant matrix: 6.614e+00 2.747e+00 1.924e+00 3.572e-01 1.507e-01 1.386e-14
+   null vector (t2V2 coefficient = 1): R=-0.500000, V2=+1.000000, box=-1.500000, th2=+1.000000, vth=-2.000000, t2V2=+1.000000
+   max | s|U|^2 - (-R/2 + V2 - 3/2 box) | = 2.29e-13   (max |rhs| = 3.23)
+   max | a1(V) - [-R/3 + box - V2 + 6 s|U|^2] | = 2.10e-11;  max|a1(M) - same| = 2.12e-11
+   max | a1(V) - [-10R/3 + 5 V2 - 8 box] | = 2.24e-11

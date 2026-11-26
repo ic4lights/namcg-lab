@@ -1,0 +1,1 @@
+identifiability of the input profile from the pushforward within that class is argued from the pairwise-ratio laws of the shared factor but has not been proved, and the closed form above is specific to the exponential law.

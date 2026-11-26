@@ -1,0 +1,7 @@
+temp: C:\Users\redgi\AppData\Local\Temp\cert118p_2pt1k12w
+baseline sha1 ce91063fddcaa5599429519f4bc2c478e0d919e8 size 839337
+POST      sha1 c24902b31abafc126a7e59485f2b706d2f2b17d4 size 843363 (= baseline 839337 + payload 4024 + 2 join)
+rc1=0 rc2=0 errlines=0 outw=True undefrefs_pass2=0
+undefrefs-touching-package-labels=0
+CERT PASS
+cert exit 0

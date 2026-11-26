@@ -1,0 +1,2 @@
+bytes 3782 CR 1 LF 1 CRLF 1 loneCR 0 loneLF 0 badC0 0 tab 0 backslash+ws 0 nonascii 0 endsCRLF True
+PAYLOAD SCAN OK

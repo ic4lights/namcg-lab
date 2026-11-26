@@ -1,0 +1,15 @@
+base point y = [-5. -0.  0.  0.  3.]  m = M^45 = 3.0  bracket sign -1
+unit-sphere check: max | |n|^2 - 1 | = 4.1e-14
+gauge check (forms on the gauge amplitudes, relative): IX2 3.2e-15, SC2 3.1e-15
+
+Generalised eigenvalues on the five traceless polarisations, relative to EH of the averaged metric
+(s2 exact model at (y0,y4) = (-5,3), same q:  IX2: -4.35623 x2, -0.733169 x2, 0.474519;  SC2: -0.0231477 x2, 0.180228, 0.38151 x2;  IX1: -2 x5)
+  IX2 Monte Carlo + Lie-Poisson      ['-4.3893', '-4.3893', '-0.79381', '-0.7585', '0.38292']
+  IX2 exact moments, realisation S   ['-4.3562', '-4.3562', '-0.73317', '-0.73317', '0.47452']
+  SC2 Monte Carlo + Lie-Poisson      ['-0.022354', '-0.018864', '0.18622', '0.38353', '0.38568']
+  SC2 exact moments, realisation S   ['-0.023148', '-0.023148', '0.18023', '0.38151', '0.38151']
+  IX1 (averaged frame, MC)           ['-2.0006', '-2', '-2', '-2-8.7e-05i', '-2+8.7e-05i']
+  IX1 (averaged frame, exact)        ['-2', '-2', '-2', '-2', '-2']
+  SC1 (averaged frame, MC)           ['0.16667', '0.16667', '0.16667', '0.16667', '0.16676']
+  SC1 (averaged frame, exact)        ['0.16667', '0.16667', '0.16667', '0.16667', '0.16667']
+(Monte Carlo with 6000 fibre samples; statistical error of order 1/sqrt(N) ~ 1.3e-02 relative)

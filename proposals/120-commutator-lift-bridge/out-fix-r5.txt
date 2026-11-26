@@ -1,0 +1,3 @@
+preR5 copies (share old hashes) ('4d751ac4afb8', 39745) ('1bf4a61b1597', 4781)
+postR5 ('dac3381f5dc8', 39762) ('c633cbdc2288', 4781)
+R5 log appended

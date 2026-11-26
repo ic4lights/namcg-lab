@@ -1,0 +1,13 @@
+PASS label eq:Smatrix defined 1x
+PASS label eq:Smicro defined 1x
+PASS label eq:Dmu-Phi defined 1x
+PASS label eq:dictionary defined 1x
+PASS label ass:dictionary defined 1x
+PASS label eq:LUV-def defined 1x
+PASS label eq:vacuum-manifold defined 1x
+PASS label eq:V defined 1x
+PASS label def:matrix-coords-ext defined 1x
+PASS label sec:ch3-relate defined 1x
+PASS label ass:emergent-op defined 1x
+PASS \LUV macro defs 1
+LABELS OK 120

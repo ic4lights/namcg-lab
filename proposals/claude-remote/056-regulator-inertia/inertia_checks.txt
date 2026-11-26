@@ -1,0 +1,29 @@
+A. Lemma for the regulator of Definition (A) (P = I)
+  random Lambda with Re M > 0: 2355; inertia of Re h always (9,1,0)
+  min over samples of [lambda_2(Re h) - lambda_1(Re M)]/|M| = 4.539e-14 (must be >= 0)
+  max over samples of [lambda_1(Re h) - (-v0*ReM v0/|v0|^2)]/|M| = -9.433e-10 (must be <= 0)
+  adversarial search (12 starts): min [lambda_2(Re h) - lambda_1(Re M)] among admissible end points = 3.774e-19 (must be >= 0)
+B. The -C_0 example A_0 = X_0, A_i = e^{2 pi i/3} X_i
+  eigenvalues of Re M: [-0.5  1. ]  class of h: -C_0  inertia Re h: (0, 10, 0)
+C. Isotropic regulators: P = c L_b^T diag(mu0, mu,...,mu) L_b with L_b a real boost
+  admissible samples 464; inertia of Re h always (9,1,0)
+D. Anisotropic regulators
+  3x3, E = diag(-1,1,4) (P = I in these coordinates): eig Re M = [0.36 1.   1.  ]  eig Re h = [-1.56 -1.    4.  ]
+  isotropic mu = 1 (Definition (A)): best lambda_min(Re M)/|M| = -2.0799e-01; h = -diag(d) exact to 7.2e-15; class of h = -C_0; inertia Re h (1, 9, 0)
+  anisotropic mu = 1,...,1,25: best lambda_min(Re M)/|M| = -1.8287e-01; h = -diag(d) exact to 1.2e-15; class of h = -C_0; inertia Re h (1, 9, 0)
+  anisotropic mu = 25^(j/8), j=0..8: best lambda_min(Re M)/|M| = -8.2150e-02; h = -diag(d) exact to 9.2e-16; class of h = -C_0; inertia Re h (1, 9, 0)
+  10x10, P = diag(1,1,1/4,1,...,1): eig Re(Lambda^T P Lambda) min = 0.36 ; inertia of Re(Lambda^T eta Lambda) = (8, 2, 0)
+G. Mass term: combined quadratic matrix P_eff = eps I + i g eta (g = gamma/(2 g_YM^2))
+  gamma <= 0: admissible samples 51; identity (eps+ig)h = M_eff - 2 eps l l^T exact; Re((eps+ig)h) has <= 1 negative eigenvalue in 51/51
+  random h in -C_0 (300), phi in [-pi/2, 0]: min number of negative eigenvalues of Re(e^(i phi) h) = 9 (claim >= 8)
+  gamma > 0 example A_0 = e^(i pi/8) X_0, A_i = e^(-3 pi i/8) X_i: h = -e^(i pi/4) I to 1.6e-16; class -C_0; eps=0.1, g=0.2: min eig Re M_eff = +0.0707 (positive iff g > eps)
+  gamma > 0 example A_0 = e^(i pi/8) X_0, A_i = e^(-3 pi i/8) X_i: h = -e^(i pi/4) I to 1.6e-16; class -C_0; eps=0.1, g=0.05: min eig Re M_eff = -0.0354 (positive iff g > eps)
+  gamma > 0 example A_0 = e^(i pi/8) X_0, A_i = e^(-3 pi i/8) X_i: h = -e^(i pi/4) I to 1.6e-16; class -C_0; eps=0.0, g=0.3: min eig Re M_eff = +0.2121 (positive iff g > eps)
+  h_00 h_11 = -0.000+1.000j, h_11 h_22 = -0.000+1.000j (both i: Re iS_b = -S_E)
+E. Momenta with bounded modes on admissible contours (P = I)
+  samples 2384: min Re(k^T k) * |M| / |q|^2 = 1.420e+00 (must be > 0)
+  imaginary row 0: Re h = Re M + 2 b b^T (exact); max over 8 optimised starts of lambda_min(Re M)/|M| = -1.183e-09 (must be <= 0)
+F. N = 2 scaling used in the non-integrability argument
+  R=10.0, s=0.1: det G / (R^2 s^4 det Z^T h Z) = 1.000000000000+0.000000000000j;  |sigma_2(G)| = 127.7945 (bounded when s = 1/R)
+  R=100.0, s=0.01: det G / (R^2 s^4 det Z^T h Z) = 1.000000000000+0.000000000000j;  |sigma_2(G)| = 127.7798 (bounded when s = 1/R)
+  R=3.0, s=0.5: det G / (R^2 s^4 det Z^T h Z) = 1.000000000000+0.000000000000j;  |sigma_2(G)| = 296.6854 (bounded when s = 1/R)

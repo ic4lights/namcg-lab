@@ -1,0 +1,15 @@
+s=1: (a) L(T)=6T and L(PT)=2(1-P)T exactly: True
+s=1: (b) R^(mu nu)(w) = -m^2(eta^(mu nu) w_a - (delta^mu_a w^nu + delta^nu_a w^mu)/2) exactly: True; third-order Taylor coefficient zero: True
+s=-1: (a) L(T)=6T and L(PT)=2(1-P)T exactly: True
+s=-1: (b) R^(mu nu)(w) = -m^2(eta^(mu nu) w_a - (delta^mu_a w^nu + delta^nu_a w^mu)/2) exactly: True; third-order Taylor coefficient zero: True
+s=1: (c) N_ij=<w_i.L w_j>/(l^2+m^2) = [[6.0, 2.0], [-0.0, 0.0]]  (expect [[6,2],[0,0]]; symmetrised [[6,1],[1,0]])
+s=1: (c) static kinetic matrix Z/(m^2 k^2 (l^2+m^2)) = [[0.666666667, -0.0], [-0.0, -0.0]] (expect [[2/3,0],[0,0]]); from -qq<w R w>: [[0.666666667, -0.0], [-0.0, -0.0]]
+s=1: (c) K^mu = (B_1y - B_y1)/2 over (l^2+m^2)|y0| = [0.238642289, -0.0, 0.0, -0.0] ; spatial parts of all B^mu_ij: max 2.5e-17
+s=1: (c) <T_mu M^(mu rho)> = [2.233624126, 0.0, 0.0, 0.0] (only rho=0 may be non-zero)
+s=-1: (c) N_ij=<w_i.L w_j>/(l^2+m^2) = [[6.0, 2.0], [-0.0, 0.0]]  (expect [[6,2],[0,0]]; symmetrised [[6,1],[1,0]])
+s=-1: (c) static kinetic matrix Z/(m^2 k^2 (l^2+m^2)) = [[0.666666667, -0.0], [-0.0, -0.0]] (expect [[2/3,0],[0,0]]); from -qq<w R w>: [[0.666666667, -0.0], [-0.0, -0.0]]
+s=-1: (c) K^mu = (B_1y - B_y1)/2 over (l^2+m^2)|y0| = [0.238642289, -0.0, 0.0, -0.0] ; spatial parts of all B^mu_ij: max 2.5e-17
+s=-1: (c) <T_mu M^(mu rho)> = [2.233624126, 0.0, 0.0, 0.0] (only rho=0 may be non-zero)
+(d) <T^mu T^nu>(y) = (-(y.y) eta^(mu nu) + y^mu y^nu)/3 at boosted base points: worst relative residual 7.3e-14
+(d) <T R^(mu nu) PT>(y0) / (-m^2) = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]] ; d_mu of it, nu = 0..3: [-Y0/2, 0, 0, 0] ; contracted with static q (q_0 = 0): 0
+all checks passed

@@ -1,0 +1,21 @@
+SD example (029) (0, 0, 1/3, 1/5)
+SD example (029) (0, 0, 1/2, -1/3)
+SD example (029) (0, 0, 2/3, 1/7)
+SD rot-invariant (0, 0, -1/2, 2/3)
+SD rot-invariant (0, 0, 0, 2/3)
+SD rot-invariant (0, 0, -1/2, 2/3)
+SD rot-invariant (0, 0, 2/5, 4/5)
+SD rot-invariant (0, 0, 1/3, 3/2)
+SD rot-invariant (0, 0, 4/5, 1)
+SD rot-invariant (0, 0, 1/2, 3/2)
+SD rot-invariant (0, 0, -3/4, 2/3)
+non-SD J=0 (h=1+ sqrt(1-C/r^4)) (0, 0, 3/5, 4/5)
+non-SD J=0 (h=1+ sqrt(1-C/r^4)) (0, 0, 4/5, -3/5)
+non-SD J=0 (h=1- sqrt(1-C/r^4)) (0, 0, 3/5, 4/5)
+non-SD J=0 (h=1- sqrt(1-C/r^4)) (0, 0, 4/5, -3/5)
+non-SD J!=0 h=1+r^2 (0, 0, 3/5, 4/5)
+non-SD J!=0 h=1/(1+r^2) (0, 0, 3/5, 4/5)
+generic closed omega (algebraic only) seed 0
+generic closed omega (algebraic only) seed 1
+generic closed omega (algebraic only) seed 2
+saved 20

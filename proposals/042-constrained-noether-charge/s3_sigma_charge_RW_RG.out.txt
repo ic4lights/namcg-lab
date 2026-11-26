@@ -1,0 +1,12 @@
+Euclid commuting trial 0: |[e,B]| = 0.0e+00, max|q_G - q_W| = 0.00e+00, max|q_G| = 0.133
+Euclid commuting trial 1: |[e,B]| = 0.0e+00, max|q_G - q_W| = 0.00e+00, max|q_G| = 0.128
+Euclid commuting trial 2: |[e,B]| = 0.0e+00, max|q_G - q_W| = 2.22e-16, max|q_G| = 0.948
+Euclid commuting trial 3: |[e,B]| = 0.0e+00, max|q_G - q_W| = 1.11e-16, max|q_G| = 0.798
+Euclid generic e trial 0: |[e,B]| = 2.52, max|q_G - q_W| = 90.383
+Euclid generic e trial 1: |[e,B]| = 2.00, max|q_G - q_W| = 4.091
+Lorentz commuting trial 0: |[e,B]| = 0.0e+00, max|q_G - q_W| = 0.00e+00, max|q_G| = 0.529
+Lorentz commuting trial 1: |[e,B]| = 0.0e+00, max|q_G - q_W| = 0.00e+00, max|q_G| = 0.487
+Lorentz commuting trial 2: |[e,B]| = 0.0e+00, max|q_G - q_W| = 0.00e+00, max|q_G| = 0.986
+Lorentz commuting trial 3: |[e,B]| = 0.0e+00, max|q_G - q_W| = 0.00e+00, max|q_G| = 0.591
+Lorentz generic e trial 0: |[e,B]| = 1.17, max|q_G - q_W| = 1.449
+Lorentz generic e trial 1: |[e,B]| = 2.24, max|q_G - q_W| = 11.400

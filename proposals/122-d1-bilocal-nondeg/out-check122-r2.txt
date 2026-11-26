@@ -1,0 +1,24 @@
+pure ASCII                                     OK
+zero lone LF                                   OK
+zero lone CR                                   OK
+ends exactly one CRLF                          OK
+not CR-CR-LF terminated                        OK
+zero label / cite tokens                       OK
+refs exactly six whitelisted                   OK
+refs all resolve in chapters/                  OK
+finding-2 verbatim wording present             OK
+finding-3 verbatim wording present             OK
+old (ii) wording absent                        OK
+old (iii) wording absent                       OK
+anchor count 1 in live appH                    OK
+recomputed POST == generator preview bytes     OK
+POST = PRE + PAY + 2                           OK
+PRE  857887  PAY 5942  POST 863831
+POST-SHA1-12 d2af19df0f99  PAYLOAD-SHA1-12 affd17c6f13d
+wrong-zone variant same size                   OK
+wrong-zone variant hashes differently          OK
+exact exp(-s^2 n^2 / 4)  s=0.15  n= 32 : 0.00315
+exact exp(-s^2 n^2 / 4)  s=0.15  n= 64 : 9.86e-11
+exact exp(-s^2 n^2 / 4)  s=0.15  n=128 : 9.45e-41
+exact exp(-s^2 n^2 / 4)  s=0.15  n=256 : 7.97e-161
+CHECK-FAILURES: 0 (none)

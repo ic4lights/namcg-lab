@@ -1,0 +1,39 @@
+COMPILE CERTIFICATE 124-n-mqm-pos (payload splice), 2026-11-24
+================================================================
+This version supersedes the first-run summary of the same name (first run
+used the pre-paren-fix payload PAY 5a1fb53335ae3f35d9b6917ade881b58bfa4f1c7
+/ 5796 B, POST 7074b6f32d7dd687719c2bca731a22f700873b9f / 875071 B, in
+namcg-124-build, and also passed all passes; superseded because the payload
+gained one closing parenthesis). The certified bytes are the current ones:
+
+Tree: fresh copy OUTSIDE the repository at C:\Users\redgi\Projects\namcg-124-build2
+  contents: namcg-book7.tex, chapters/, frontmatter/, bib/, figs/
+  (copied from the working tree of C:\Users\redgi\Projects\namcg-lab@gpu;
+  nothing in the repository was built in; scripts/build_check.py NOT run)
+Substitution: chapters/appH-microscopic-proofs.tex replaced by the spliced
+  file, sha1 1d192b89bd2d20c50a4c70dfd108656a529baa4d, 875072 bytes
+  (= PRE appH ba72024aba4d26aff3fd5ad5a1219cdd5a1bd1e1, 869275 B
+     + payload 8988a8baf171cc510ed109618c25fa729f2fb5d2, 5797 B);
+  identical bytes preserved in this folder as spliced_appH_124.bin.
+
+Passes (MiKTeX, -interaction=nonstopmode -file-line-error):
+  pass1  pdflatex          rc=0
+  bibtex namcg-book7       rc=0  (style unsrtnat.bst, database bib/namcg.bib, no errors reported)
+  pass2  pdflatex          rc=0
+  pass3  pdflatex          rc=0   FINAL
+
+Final-pass (pass3) log scan, namcg-book7.log:
+  "Reference ... undefined"        : 0
+  "Citation ... undefined"         : 0
+  multiply-defined references      : 0
+  LaTeX Warning (any)              : 0
+  Output written on namcg-book7.pdf (448 pages, 3284552 bytes)
+
+Verdict: the spliced appH compiles cleanly (rc=0 all passes, zero
+undefined/multiply-defined references, zero LaTeX warnings, PDF produced).
+Reproduction: python -I make_payload_124.py <ext-dir> (regenerates payload
+and spliced bytes; pins printed), python -I check_payload_124.py (re-verifies
+pins against the live appH), then copy namcg-book7.tex, chapters/,
+frontmatter/, bib/, figs/ to an EXTERNAL directory, replace
+chapters/appH-microscopic-proofs.tex with spliced_appH_124.bin, and run
+pdflatex; bibtex namcg-book7; pdflatex; pdflatex (nonstopmode).

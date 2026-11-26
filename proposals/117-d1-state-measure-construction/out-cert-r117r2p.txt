@@ -1,0 +1,8 @@
+temp: C:\Users\redgi\AppData\Local\Temp\cert117r2_xd5yl0de
+baseline sha1 28f3a0d2401efc1c65b53a99a5968cdcb70fed7d size 834663
+amended   sha1 a38d4e293806a09f7fc5072a273ae49f62100590 size 834750 (delta +87)
+byte-reconstruction: r2 = r1 + single (v)-sentence replacement; reverse exact OK
+POST      sha1 ce91063fddcaa5599429519f4bc2c478e0d919e8 size 839337 (= baseline +87 amend, +4585 payload, +2 join)
+rc1=0 rc2=0 errlines=0 outw=True undefrefs_pass2=0
+undefrefs-touching-package-labels=0
+CERT PASS

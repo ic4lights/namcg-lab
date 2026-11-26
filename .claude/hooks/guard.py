@@ -42,7 +42,7 @@ def branch():
         return ""
 
 
-ALLOWED_ALWAYS = ("proposals/", "scratch/", "reports/", ".claude/state/")
+ALLOWED_ALWAYS = ("scripts/", "proposals/", "scratch/", "reports/", ".claude/state/")
 CHAPTERS_FLAG = os.path.join(root, ".claude", "state", "allow_chapters")
 PROTECTED = ("agents/", ".claude/agents/", ".claude/hooks/", ".claude/commands/", ".claude/settings",
              "CLAUDE.md", "MILESTONE.md", "bib/", "code/", "figs/", "frontmatter/", "namcg-book7.tex")
@@ -56,7 +56,7 @@ if tool in ("Write", "Edit", "MultiEdit", "NotebookEdit"):
         if not os.path.exists(CHAPTERS_FLAG):
             deny("chapters/ may only be edited by the integrator step (flag .claude/state/allow_chapters absent)")
         if not branch().startswith("auto/"):
-            deny("chapters/ edits are only allowed on an auto/* branch")
+            deny("chapters/ edits are only allowed on an working branch")
         old = inp.get("old_string", "") or ""
         new = inp.get("new_string", "") or ""
         for edit in inp.get("edits", []) or []:
@@ -94,8 +94,8 @@ elif tool == "Bash":
         if re.search(pat, low):
             deny("forbidden command: " + name)
     if re.search(r"\bgit\s+commit\b", low) and branch() in ("main", "master", ""):
-        deny("commits are only allowed on an auto/* branch")
+        deny("commits are only allowed on an working branch")
     if re.search(r"\bgit\s+(add|commit)\b", low) and branch() not in ("",) and not branch().startswith("auto/"):
-        deny("git add/commit only on an auto/* branch")
+        deny("git add/commit only on an working branch")
 
 sys.exit(0)

@@ -1,0 +1,7 @@
+delta rho = 0 mode 0: first-order delta rho = 0, <rho R>_2 = -144109/1440, <rho^2 X>_2 = 144109/360, ratio = -1/4
+delta rho = 0 mode 1: first-order delta rho = 0, <rho R>_2 = -353565/123904, <rho^2 X>_2 = 353565/30976, ratio = -1/4
+delta rho = 0 mode 2: first-order delta rho = 0, <rho R>_2 = -483669/23104, <rho^2 X>_2 = 483669/5776, ratio = -1/4
+delta rho = 0 mode 3: first-order delta rho = 0, <rho R>_2 = -2024275/768, <rho^2 X>_2 = 2024275/192, ratio = -1/4
+generic mode 0 (delta rho != 0): <rho R>_2 = -726189/3200, <rho^2 X>_2 = 28913/32, ratio = -25041/99700
+generic mode 1 (delta rho != 0): <rho R>_2 = -318653/4, <rho^2 X>_2 = 156653, ratio = -318653/626612
+S2 PASS: ratio -1/4 on every delta rho = 0 mode

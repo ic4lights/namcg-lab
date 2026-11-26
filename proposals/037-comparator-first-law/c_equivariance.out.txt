@@ -1,0 +1,10 @@
+(A) diagonal rotation R in the (1,2)-plane (Pythagorean 3/5,4/5):
+  Theta'(x') = R Theta(R^-1 x') R^T                mismatch ||b_new - tensor law(b)|| = 0
+(B) chart-only rotation (matrix indices untouched):
+  Theta'(x') = Theta(R^-1 x'); form index rotates, matrix indices fixed mismatch ||b_new - tensor law(b)|| = 104*sqrt(33345949732601690)/12735866737
+(C) matrix-index-only rotation (chart untouched):
+  Theta'(x) = R Theta(x) R^T; matrix indices rotate, form index fixed mismatch ||b_new - tensor law(b)|| = 520*sqrt(935311050375746)/12735866737
+(D) diagonal GL(4) map A = diag(2,1,1,1) acting on chart and indices:
+  Theta'(x') = A Theta(A^-1 x') A^T                mismatch ||b_new - tensor law(b)|| = 20281560*sqrt(397933)/12735866737
+(E) non-linear diffeomorphism x' = x + (1/5) x1^2 e2, Theta transformed as a bivector:
+  b of transformed Theta vs tensor law             mismatch ||b_new - tensor law(b)|| = 2*sqrt(5006045844802968096154)/445755335795

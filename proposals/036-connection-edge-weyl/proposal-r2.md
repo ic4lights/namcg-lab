@@ -1,0 +1,211 @@
+# Proposal 036-connection-edge-weyl, round 2
+
+## Changelog (round 2, addressing review-r1)
+
+- F1 (major): 035 replacement clause replaced by the gatekeeper's snippet; old and new strings recorded verbatim in section (b), "Correction to the integrated 035 text".
+- F2 (major): comparator sentence added to the insert after "...without a singular metric on \(\Sigma\)."
+- F3: endomorphism sentence now "...which vanishes at first order about constant \(\bar\Theta\)".
+- F4: DW wording now "does not treat the dependence on the Weyl tensor, and leaves that on the extrinsic geometry open".
+- F5: "stated above" replaced by "of the preceding paragraph".
+- "Remaining open step" replaced by the review's ranked avenues (comparator first).
+- Anchor re-verified, 035 old string re-verified once, insert has no TAB, scratch compile redone with both edits. Mathematics and scripts unchanged; no label changes.
+
+## Result
+
+Bounded no-go with a located gap, a verified literature reading, one validation, and one correction of an integrated sentence. Nothing here closes B or A.
+
+The question was whether edge and contact terms of the vector/connection sector supply the missing `-2 kappa_X W` of the completed Weyl gap `2 kappa_X` (033), beyond the Lorentz-Noether holonomy contact already used (035). On the 033 test modes (`delta rho = 0` plane waves about constant (A)SD `Theta-bar`, totally geodesic Sigma, first order in `1-n`, completed replica) they do not:
+
+1. **Endomorphism (Kabat-type) contacts.** At first order about constant `Theta-bar`, the vector and Dirac endomorphisms are `E_V = E_f = e * 1` (antisymmetric part: divergence of `Theta^{rs} d_r Theta^{mn}`; symmetric traceless part: quadratic). `e` vanishes for `delta rho = 0`. Every `a_2` cross term with an endomorphism delta (uniform, normal-block, symmetric or antisymmetric) is zero, for every content. Verified in exact arithmetic (`e_first_order.py`).
+2. **Edge modes (Donnelly-Wall).** In the classes DW treat, the edge sector is a wrong-sign scalar on Sigma whose log density is the 2D trace anomaly of the Laplacian of Sigma, `-R_Sigma/24 pi`. In the basis `(W, R_Sigma, R, e, X')` this has W-coefficient 0. A weight built from `Pf Theta`, `tr Theta^2` adds nothing (Hessians vanish on the modes). A Sigma-potential would need `alpha + 2 beta = kappa_X/3`, which depends on `n_D`; the vector carries one edge scalar, the Dirac fields none. So no `n_D`-independent edge term equals `2 kappa_X` for all `n_D`. DW do **not** treat Weyl or extrinsic dependence (their Sec. VIII leaves it open); the no-go is conditional on the edge operator being the intrinsic one of the classes treated.
+3. **Holonomy (Lorentz-charge) contact beyond `J_12`.** Exact symbolic computation gives `H = c_a J_12 + chi c_b J_34` with `chi = +1` (SD) and `-1` (ASD) for `|Theta^{34}| = r^{-eps c_b}`. This corrects the integrated 035 sentence for ASD (gap `2 kappa_X (1+c_b)` for both chiralities, not `(1-c_b)`). Weyl-class structure: `C.C' = 2 s W`, `s = c_a - c_b`; the Euler cross term is `2 c_a R_Sigma - 2 c_b W` (a non-topological artefact of the extended rule). If the W part is dropped, `gap = (s-1) N_tot/10 - 2 (s-2) kappa_X`: the metric part needs `s = 1`, the connection part `s = 2`. The `delta rho = 0` profile `c_b = -c_a` has `s = 2` and kills the `kappa_X` part, but leaves `N_tot/15` (raw) or `N_tot/10` (Weyl-consistent), has a singular Sigma metric, and a Riemann-delta scalar `2 c_a + 4 c_b` of opposite sign to the cone. No profile of the diagonal family closes the gap for all contents.
+4. **Validation by-product.** The same cross-term machinery on the metric-only Hodge-Maxwell operator reproduces `W = 6/5`, `R_Sigma = -31/15` (the 62/12 ratios) and equals its own `12 kappa_C`; the endomorphism contact carries `3` of the W coefficient (`-9/5` without it). So the mechanism that closes c for Maxwell in the Hodge presentation is exactly the endomorphism contact, which is absent for the matrix-derived operator (item 1). The two operators are inequivalent (`v - 4s = -C^2/3` against `C^2/12` on the modes).
+
+Where the missing ingredient sits: it must be proportional to the index-weighted sum multiplying `tr Omega^2` (rep-independent), so it is a holonomy-type (so(4)-valued) contact attached to Sigma with a generator outside `J_12`, or a change of the T-side comparator, not an abelian edge mode and not an endomorphism contact. Ranked forks are in "Remaining open step".
+
+At the physical content `(N_s, n_D) = (6, 2)` every gap here vanishes identically (`N_tot = kappa_X = 0`); the statements concern the content-independence test.
+
+## Target and status
+
+Problem B (replica Ward identity; first law established, stationarity of the tensor block and the area/G relation not derived) and, through the matrix-to-modular map, Problem A. Current Appendix H ledger labels, read from `chapters/appH-microscopic-proofs.tex` in the working tree:
+
+- Problem B: Status OPEN, Priority CRITICAL PATH, Completion PROGRAMME-CONDITIONAL (`sec:status-B`, line 44 region).
+- Problem A: Status OPEN, Priority CRITICAL PATH for the matrix-derived label, Completion PROGRAMME-CONDITIONAL.
+- Chapter 17 (matrix-derived scope): A, B, C, D1, E, F, G-derived, N required; H, I, J optional. No discrepancy found between Chapter 17 and Appendix H for B and A.
+
+Original target of B: tensor-block stationarity and the area/G relation derived from the matrix theory. This package is an infrared-side sub-lemma about the logarithmic Weyl coefficient. Completion class of the result: PROGRAMME-CONDITIONAL (bounded no-go plus a correction). No closure by scope.
+
+## Source reading
+
+Digest plus targeted reads. `scratch/digest.md` read (regenerated by the orchestrator; `dirty-chapters: yes` as stated). Read in full: Problem A and B ledger labels; the integrated 031/033/035 paragraphs of `sec:status-B` (lines 247-281); `chapters/appH` lines 188-282 context; `proposals/035-connection-entropy/review-r2.md`, `proposal-r2.md` (research and open avenues), `pairing_modes.py`, `metric_delta_pairing.py`, `diag_family_holonomy.py` and its outputs; `proposals/033-log-content-scan` `lin_lib.py`, `tt_gap.py`, `quad_check.py`, `sector_data.py`, `geom.py`, `jetlib.py`, `common.py`; `reports/sme-scout-torsion-entropy-20261018.md`; the 021/024 contact paragraphs (lines 204-211, to confirm `Q = 0`, no Ricci coupling in `(G,rho,dTheta)` variables). I did not do a full scan of every chapter. Ignored `proposals/034-*` as instructed.
+
+Literature (opened live): Donnelly-Wall arXiv:1506.05792 (PRD 94, 104053): abstract and pages 1-8 and 29-36 of the PDF read (intro, Secs. VII, VIII). Not read: the middle sections III-VI (KK reduction, Dirichlet/Neumann, functional measure), so claims about them are taken from the abstract and Sec. I summary only. The scout's Jacobson-Mohd / Elgood et al. equation numbers were not re-verified (not cited in the insert).
+
+## Research and reasoning
+
+### 0. What is being compared (re-derived)
+
+Basis `(W, R_Sigma, R, e, X')`, `W = R_ijij - R_ii + R/3`, `R_Sigma = R - 2 R_ii + R_ijij` (totally geodesic Gauss). Over the 12 modes `(W, R_Sigma)` has rank 2 and `R = 0`; fits give `R_ii = W - R_Sigma`, `R_ijij = 2W - R_Sigma` (`edge_weyl_fit.py`). Any metric-curvature-linear density is a unique combination of `(W, R_Sigma, R)`, so the W coefficient is well defined (c-type), and a functional `kC C^2 + kE E4 + kR R^2` has entropy density `12 kC W + 12 kE R_Sigma + 12 kR R` (033). The completed replica coefficient is `N_tot/10 - 2 kappa_X`, the T side `12 kappa_C^T = N_tot/10 - 4 kappa_X`; gap `2 kappa_X`, `kappa_X = 1 - n_D/2`, `N_tot = N_s + 2 - 4 n_D`.
+
+### 1. Endomorphism contacts (Lemma E)
+
+Exact jet computation (copy of the 033 code, eps = 1/1000 and 1/4000, SD and ASD, generic and `delta rho = 0` cubic potentials): `E_V/eps`, `E_f/eps`, `e/eps` have identical trace part (equal to `e`), zero symmetric-traceless and zero antisymmetric parts (`e_first_order.out.txt`). Analytic reason: `E_V = B - G^{nm}(d_n omega_m + omega_n omega_m - omega_s Gamma^s_{nm})` with `B = 0`; the first-order part is `-d_n omega_n`, whose matrix part is `-1/2 d_n (2 Theta^{rn} d_r Theta^{mu nu}) = -Theta^{rn} d_n d_r Theta - (d_n Theta^{rn}) d_r Theta`, zero for antisymmetric `Theta` at first order about constant `Theta-bar` (the second term is second order). The scalar part gives `e`. Consequence: the cross term of `(1/360)[60 R trE + 180 trE^2 + ...]` with any `E_delta` is `tr(E_delta E^(1))` or `R^(1) tr E_delta`, both zero on `delta rho = 0` modes (`R^(1) = 0`). This holds for every content and every distribution (uniform, Hodge normal block, symmetric, antisymmetric). It agrees with the 021 statement that the operator has no Ricci coupling (`Q = 0`) in `(G, rho, d Theta)`.
+
+Presentation check (`hodge_maxwell_check.py`, `hodge_vs_poisson.py`): using only cross-term rule + weights `(1/360)[...]`, `24 pi sigma = 3 x (cross density)`, the Hodge-Maxwell operator (4 components, `E = -Ric`, `Omega = Riem`, ghosts `-2` scalars) on the same modes gives `(W, R_Sigma) = (6/5, -31/15)`; scalar `(1/10, -1/30)` (calibration). T side: `12 [ (172 Ric^2 - 22 Riem^2)/360 - 2 s ]/C^2 = 6/5` with `Riem^2 = 2 C^2`, `Ric^2 = C^2/2`, `s = C^2/120`. Gap 0. Without the endomorphism contact: `W = -9/5`; the endomorphism contact carries `W = 3`, `R_Sigma = -3`. The matrix-derived vector operator has `v - 4s = -C^2/3` against `+C^2/12` for Hodge: different operators; the Hodge mechanism cannot be transplanted.
+
+### 2. Edge modes
+
+What DW establish (verified on the pages read): the geometric entropy of Maxwell in products `B x F` (B 2D with bifurcate horizon, F compact) and in `S^1 x H^3` equals the entropy of bulk modes plus edge modes; the contact term is one negative scalar d.o.f. confined to the entangling surface; the edge partition function gives, for the sphere, the 2D scalar trace anomaly `<T^a_a> = -R/24 pi` (Eq. 97) and `S_edge ~ (1/3) ln eps` (Eq. 98), closing the `62` versus `32` (31/45 versus 16/45) discrepancy for the a-type coefficient. Sec. VIII: generalisation to entangling surfaces with extrinsic curvature "would allow us to determine the dependence on the extrinsic geometry"; i.e. left open. They do not compute Weyl dependence. Therefore "edge modes carry no c-type piece" is **not** a DW theorem. My statement is a reading under a hypothesis: the edge log density is the a_1 heat coefficient of the intrinsic Sigma operator (`ln Z_edge` scales as `ln(1/eps) x` zeta of the Sigma Laplacian as `eps -> 0`; corrections of relative order `eps^2` times curvature drop out). Under it the edge density is `-R_Sigma/24 pi`; W coefficient 0 (`edge_weyl_fit.py`: `(W,R_Sigma) = (0,-1)` both chiralities).
+
+Relaxations explored: (a) weight `w`: `-w^{-1} div(w grad)` adds `-1/2 Delta ln w - 1/4 |grad ln w|^2` (031 formula); for `w` a function of the two invariants of `Theta`, `Pf` and `tr Theta^2`, the Hessians vanish on all six fresh modes tested per chirality (script), and the gradients vanish at the point, so zero. (b) Potential `E_Sigma = alpha R_ii + beta R_ijij`: density `-(R_Sigma + 6 E_Sigma)`, W coefficient `-6(alpha + 2 beta)`; matching `-2 kappa_X` needs `alpha + 2 beta = kappa_X/3`. This is a characterisation, not a derivation and not a fit: the n_D-dependence rules out a single vector-sector term. (c) Content structure: the gap equals `2 kappa_X` with `kappa_X = sum_i w_i I(R_i)` (vector `+1`, Dirac `-1/2` each, scalars and ghosts 0): the vector part is `2` and each Dirac part `-1`. The Dirac fields have no gauge sector and no edge scalar; the mechanism must act on every fibre representation through the same so(4) element, which only a holonomy does.
+
+Bookkeeping caution (not used for the result): the manuscript contact `-(R_Sigma - R_ii)/24 pi` has `(W,R_Sigma) = (1,-2)` in this basis; DW's edge identification covers only the `-R_Sigma` part, so the `R_ii` (W-carrying) part of the Hodge contact is not an edge density in the DW sense. Which entropy it belongs to (bulk-mode versus extended-Hilbert-space) is not decided here. This should be kept separate from the 031 sentence that `-R_Sigma/24 pi` "has the density of the edge-mode entropy".
+
+Entropy bookkeeping (target item 3): the completed replica is the geometric (Wald/contact-completed) entropy, which includes E_delta and Omega_delta; the periodic and fixed-state replicas are bulk-mode in the 021/024 classification. A DW edge term is extended-Hilbert-space. Its `-R_Sigma` density is the same as the `R_Sigma` part of the completed contact, so adding it would double count; and it has no W, so nothing changes at the W level either way.
+
+### 3. Holonomy contact beyond J_12 (and the ASD sign)
+
+`diag_family_chirality.py` repeats the 035 symbolic computation with `Theta^{34} = s exp(-l2)`, `s = +-1`: delta part of `Omega_12 = -2 La J_12 - 2 s Lb J_34`. So `H = c_a J_12 + chi c_b J_34`, `chi = s`. (Reason: `omega_s^{34}` carries `Theta^{12} Theta^{34}/|...|`, i.e. the relative sign.) The pairing on the ASD modes gives `tr(J_34 Omega_12) = (-2, +1)` in `(W, R_Sigma)` against `(+2, -1)` for SD, so `chi c_b x (2 chi) = 2 c_b` for both. `gap_profile.py` reproduces the 035 SD formulas exactly and gives, for ASD, the same as SD. The integrated 035 sentence "`... 2 kappa_X (1 - c_b)` about an anti-self-dual one" is therefore wrong as stated for the family `|Theta^{34}| = r^{-eps c_b}`; it is correct only if `c_b` there denotes the J_34 coefficient of `H`. The qualitative conclusion of 035 is unchanged.
+
+Independent re-derivation of the metric part: `Riem'`, `Ric'` built from the exact deltas (`R'_{1212} = c_a`, `R'_{aibj} = (c_b/2) d_ab d_ij`; `Ric' = diag(c_a + c_b, c_a + c_b, c_b, c_b)`), contracted with the first-order tensors of the modes: `A = Riem.Riem' = (4c_a - 2c_b) W - 2 c_a R_Sigma`, `B = Ric.Ric' = c_a (W - R_Sigma)`, `A - B = (3c_a - 2c_b) W - c_a R_Sigma` (this is 035's `90 Phi`), and calibration `3(A-B)/90 = (3W - R_Sigma)/30` at `(1,0)` equals the manuscript's periodic scalar value. New decomposition: `C.C' = A - 2B = 2(c_a - c_b) W` (depends on the Weyl class `s = c_a - c_b` only, as it must since `C` is Weyl-covariant and the profile is Weyl-equivalent to the cone `(s, 0)`); the Euler combination `A - 4B = 2 c_a R_Sigma - 2 c_b W` contains W for `c_b != 0`. A topological density should not; so the `c_b`-dependence of the metric W coefficient in the extended cross-term rule comes entirely from a term whose W part is suspect. Both versions are reported:
+
+- raw (as integrated): `gap = N_tot (3c_a - 2c_b - 3)/30 + 2 kappa_X (2 - c_a + c_b)`;
+- Weyl-consistent (Euler W part dropped): `gap = (s-1) N_tot/10 - 2 (s-2) kappa_X`.
+
+Both give `2 kappa_X` at `(1,0)` (033). In the Weyl-consistent version the replica coefficient is `s (N_tot/10 - 2 kappa_X)` against the T side `N_tot/10 - 4 kappa_X`: the connection sector's response to the Weyl class is the same as the metric sector's, while the T side needs twice. So no profile in the family closes it: metric part needs `s = 1`, connection part `s = 2`. Uniform rescaling of the profile rescales all sectors alike and the area term with them, so it cannot fix the ratio either.
+
+`delta rho = 0` profile: `Pf(Theta) = Theta^{12} Theta^{34}`, so `delta ln rho = eps (c_a + c_b) ln r` and `delta rho = 0 <=> c_b = -c_a` for both chiralities. Then `H = J_12 - chi J_34`, the generator of chirality opposite to `Theta-bar`, `s = 2`; the `kappa_X` part vanishes; remainder `N_tot/15` (raw) or `N_tot/10`; the induced Sigma metric is `r^{-2 eps}` (singular at first order, affecting the area term); the Riemann-delta scalar `2c_a + 4c_b = -2`, opposite in sign to the cone. This profile is the only place where the index-weighted part closes, and it is excluded as a replica by the last two properties and by `N_tot`; it locates the missing piece as "a J_34-type holonomy". The line `N_tot = 0` (`N_s = 4 n_D - 2`) would match in this profile for all `n_D` in both versions, but this is a metric-sector accident of a profile with the wrong area-term sign and is not claimed as a test.
+
+### 4. Hypotheses of the no-go and their relaxations (fork list)
+
+| Hypothesis | Relaxation | What it gave here |
+|---|---|---|
+| Edge operator = intrinsic Sigma operator of the DW classes (U(1), product / hyperbolic) | weight, potential, content structure | W = 0 for any weight from `Theta` invariants; potential would need `kappa_X/3` (content-dependent); cannot supply Dirac part; DW silent on Weyl dependence |
+| Presentation `(G, rho, d Theta)` with `E^(1) = e 1` | Hodge presentation | Hodge-Maxwell closes c via the endomorphism contact (`W = 3`), validated; operators inequivalent; mechanism unavailable for the matrix-derived operator |
+| Cross-term rule at first order, `n<1`, totally geodesic Sigma | extended to `c_b != 0` | gap formulas; W of Euler cross term is non-topological artefact; Weyl-consistent version fails too |
+| Diagonal profile | `delta rho = 0` sub-profile | kills `kappa_X` part only with wrong-sign area scalar, singular Sigma metric, `N_tot` remainder |
+| Holonomy tied to metric deltas (single function `l2`) | not removable in the diagonal family | needs profile with J_34-type circulation and no Sigma-metric singularity (off-diagonal) |
+| Comparator = metric-universal `12 kappa_C^T` for a non-metric `tr Omega^2` | Noether charge in `(G, omega)` variables | equals the replica, `-2 kappa_X` (035): the gap is the difference between two comparators; not decided |
+
+### 5. Claim status of the Weyl-class observation
+
+`C.C' = 2 s W` and `E4`-type `= 2 c_a R_Sigma - 2 c_b W` are algebraic identities on the delta data; the dropping of the Euler W part is a hypothesis; the extended rule itself is not derived (as flagged in 035).
+
+## Claim classification
+
+- `E_V = E_f = e 1` at first order; Kabat-type endomorphism contacts vanish at W: **established** (exact arithmetic at sampled jets plus analytic argument for the antisymmetric/symmetric parts; not a proof for jets of other classes).
+- DW edge log density `-R_Sigma/24 pi` in the classes treated: **established in the cited paper** (read Eqs. 97-98; middle sections not read).
+- Edge operator intrinsic in general backgrounds, hence W-free: **conditional / conjecture**; DW leave it open.
+- Weight from `Theta` invariants adds nothing: **established on sampled modes** (Hessians exactly zero, 12 modes); analytic reason: `delta rho = 0` implies both invariants stationary to first order.
+- Content-structure argument (vector weight 1, Dirac none; gap `2 kappa_X`): **established algebra**, conditional on 031's statement that Dirac fields carry no edge mode.
+- `H = c_a J_12 + chi c_b J_34`: **established** (symbolic); ASD correction of 035: **correction of an integrated sentence**.
+- `A, B, C.C', E4`-type decompositions and calibration: **established** (exact on 8 modes per chirality, residual 0).
+- Weyl-consistent gap `(s-1) N_tot/10 - 2(s-2) kappa_X`: **conditional** (Euler W part dropped as topological; extended rule not derived).
+- Hodge-Maxwell reproduction `(6/5, -31/15)`, `W_contact = 3`: **established** (same rule and weights as integrated paragraphs; a consistency check of the machinery, not a result about the matrix operator).
+- Missing ingredient is rep-index-proportional holonomy-type: **conjecture** (inferred from where the gap sits).
+- Whether the T-side metric-universal comparator or the Noether entropy is the right comparator: **unresolved**.
+
+## Proposed changes
+
+Target file: `chapters/appH-microscopic-proofs.tex`.
+
+### (a) Insertion
+
+Anchor: `\section{Problem C: conformal mode and Cassini}`. Verified unique (one occurrence, working tree line 282; preceded by the blank line after the 035 block ending "Problem~B stays open and PROGRAMME-CONDITIONAL."). Insert the block below, followed by one blank line, immediately before the anchor. Nothing existing is removed. Text: `appH_insert.tex` in this folder (identical to the block below; ASCII, 0 TAB, LF in the file, the integrator converts to CRLF).
+
+Labels: the block has no `\label`, no `\ref`, one `\cite{DonnellyWall2016}` (key present in `bib/namcg.bib` line 522, arXiv 1506.05792, PRD 94, 104053, doi 10.1103/PhysRevD.94.104053 as stored; verified against the arXiv record). `sec:status-B` exists once. No BibTeX additions are needed.
+
+```latex
+\paragraph{Edge and contact terms of the vector and connection sector at the Weyl coefficient (conditional; not closure).}
+Keep the setting of the preceding paragraph: the weighted \(a_2\) density, the modes with \(\delta\rho=0\) about a constant self-dual or anti-self-dual \(\bar\Theta\), the completed replica, a totally geodesic \(\Sigma\), cross terms at first order in \(1-n\), and the completed gap \(2\kappa_X\) in the coefficient of \(W\), read in the basis \((W,R_\Sigma,R,e,X')\). On the twelve modes \(W\) and \(R_\Sigma\) are independent (rank 2), with \(R_{ii}=W-R_\Sigma\) and \(R_{ijij}=2W-R_\Sigma\).
+
+\emph{Endomorphism contacts.} To first order in the amplitude about a constant \(\bar\Theta\) the endomorphisms \(E_V\) of the vector and \(E_f\) of the Dirac operator equal \(e\,\mathbb I\): the antisymmetric part is a divergence of \(\Theta^{\rho\sigma}\partial_\rho\Theta^{\mu\nu}\), which vanishes at first order about constant \(\bar\Theta\), and the symmetric traceless part is quadratic (exact arithmetic, cubic jets of both chiralities, two amplitudes). Since \(e\) vanishes for \(\delta\rho=0\), every cross term of \(a_2\) with a delta of an endomorphism, uniform or confined to the normal block, vanishes at this order for every content: a contact of Kabat type has no coefficient of \(W\) in this presentation. For the Hodge operator of the metric \(G\) (\(E=-\mathrm{Ric}\), \(\Omega=\mathrm{Riem}\)), the same cross-term rule on the same modes gives \(6/5\) and \(-31/15\) for the Maxwell field with its ghosts, equal to its \(12\kappa_C\) in the coefficient of \(W\), of which the endomorphism contact carries \(3\) (the value is \(-9/5\) without it). The matrix-derived vector operator is not the Hodge operator: on these modes \(\mathrm{Riem}^2=2C^2\) and \(\mathrm{Ric}^2=C^2/2\), and \(v-4s\) is \(-C^2/3\) against \(C^2/12\). That mechanism is therefore not available for it.
+
+\emph{Edge modes.} In the classes treated in~\cite{DonnellyWall2016}, products of a two-dimensional base with a bifurcate horizon and a compact fibre, and \(S^1\times H^3\), the edge sector of the Maxwell field is a scalar of wrong-sign statistics on the entangling surface, and its logarithmic density is the two-dimensional trace anomaly of the Laplacian of \(\Sigma\), \(-R_\Sigma/24\pi\); that paper does not treat the dependence on the Weyl tensor, and leaves that on the extrinsic geometry open. In the basis above \(-R_\Sigma\) has coefficient \(0\) of \(W\). A weight \(w\) built from \(\operatorname{Pf}\Theta\) and \(\operatorname{tr}\Theta^2\) in \(-w^{-1}\operatorname{div}(w\nabla)\) adds nothing at first order, because the Hessians of both vanish on the modes. A potential \(E_\Sigma=\alpha R_{ii}+\beta R_{ijij}\) would change the density to \(-(R_\Sigma+6E_\Sigma)\) and would need \(\alpha+2\beta=\kappa_X/3\) for the coefficient \(-2\kappa_X\) of \(W\). This depends on \(n_D\) through the Dirac weight, whereas the vector carries one edge scalar, if it carries the edge sector of a Maxwell field, and the Dirac fields none. No edge term independent of \(n_D\) equals \(2\kappa_X\) for all \(n_D\).
+
+\emph{Holonomy contact.} For the diagonal profile with \(\lvert\Theta^{34}\rvert=r^{-\epsilon c_b}\) the holonomy is \(H=c_a\mathcal J_{12}+\chi c_b\mathcal J_{34}\), with \(\chi=+1\) about a self-dual and \(\chi=-1\) about an anti-self-dual \(\bar\Theta\) (symbolic computation), and the coefficient of \(W\) in \(\operatorname{tr}(\mathcal J_{34}\Omega_{12})\) is \(2\chi\). The gap, in the extended cross-term rule of the preceding paragraph, is therefore the same for both chiralities, \(N_{\mathrm{tot}}(3c_a-2c_b-3)/30+2\kappa_X(2-c_a+c_b)\). With \(s=c_a-c_b\), the contraction of the first-order Weyl tensor with the Weyl tensor of the deltas is \(2sW\), and the Euler combination \(\mathrm{Riem}\cdot\mathrm{Riem}'-4\,\mathrm{Ric}\cdot\mathrm{Ric}'\) is \(2c_aR_\Sigma-2c_bW\), which contains \(W\) for \(c_b\neq0\). If that \(W\) part is dropped as topological, the gap is \((s-1)N_{\mathrm{tot}}/10-2(s-2)\kappa_X\): the metric part requires \(s=1\) and the connection part \(s=2\). The profile with \(\delta\rho=0\), \(c_b=-c_a\), has \(s=2\) and removes the \(\kappa_X\) part, leaving \(N_{\mathrm{tot}}/15\) (\(N_{\mathrm{tot}}/10\) after dropping the Euler part); its induced metric on \(\Sigma\) is singular at first order and the scalar of its Riemann delta, \(2c_a+4c_b\), has the sign opposite to that of the cone.
+
+No edge, endomorphism-contact or holonomy term of this family therefore supplies \(-2\kappa_X W\) for all contents. The required term is proportional to the index-weighted sum that multiplies \(\operatorname{tr}\Omega^2\), the same for every fibre representation; of the candidates examined only a holonomy generator beyond \(\mathcal J_{12}\) attached to \(\Sigma\) has this property, and none of the profiles of the diagonal family provides it without a singular metric on \(\Sigma\). The gap is also relative to the comparator \(12\kappa_C^T\) assigned to \(\operatorname{tr}\Omega^2\) by the metric-universal rule; whether the entropy of this non-metric term is that value or the Noether value \(-2\kappa_X\) of the preceding paragraph, which equals the replica, is not decided here.
+
+These statements are for the Poisson-limit operators, one loop, \(\alpha=1\), a totally geodesic \(\Sigma\), cross terms at first order in \(1-n\) on the \(n<1\) branch, the modes and replica of the preceding paragraphs, the cross-term rule extended to \(c_b\neq0\) (not derived), and an edge sector of the abelian type of the cited paper. They do not treat non-diagonal profiles, the non-delta singular first-order parts, the exact heat trace of the cone with holonomy, the symplectic gauge group, or the mode with \(\delta\rho\neq0\), and give no value or sign of \(G_{\mathrm{eff}}\). Problem~B stays open and PROGRAMME-CONDITIONAL.
+```
+
+Scratch compile (outside the repo, in the session scratchpad; copy of `namcg-book7.tex`, `chapters`, `frontmatter`, `bib`, `figs`, `namcg-book7.bbl` from the working tree, with the insertion and the 035 clause replacement of section (b) both applied, CRLF): two `pdflatex` passes, exit 0, 301 pages, no errors, no undefined references or citations, no multiply-defined labels.
+
+### (b) Correction to the integrated 035 text (PRIOR-CLAIM-ERROR, confirmed by the gatekeeper as a genuine error)
+
+Apply to `chapters/appH-microscopic-proofs.tex`, working-tree line 278 (the 035 paragraph). The old string occurs exactly once (re-checked in the working tree for this round). Replace exactly the old string by the new string; the rest of the sentence (", and equals \(2\kappa_X\) at \(c_b=0\).") and the paragraph are unchanged.
+
+Old string (verbatim):
+
+```latex
+and \(-N_{\mathrm{tot}}c_b/15+2\kappa_X(1-c_b)\) about an anti-self-dual one
+```
+
+New string (verbatim, the gatekeeper's snippet):
+
+```latex
+and the same expression about an anti-self-dual one with \(\Theta^{34}=-r^{-\epsilon c_b}\), for which \(H=c_a\mathcal J_{12}-c_b\mathcal J_{34}\)
+```
+
+Reason: in the 035 family the exponent \(c_b\) of \(\lvert\Theta^{34}\rvert\) enters the metric deltas and the \(N_{\mathrm{tot}}\) coefficient, while the \(\mathcal J_{34}\) coefficient of \(H\) is \(\chi c_b\), \(\chi=-1\) for \(\Theta^{34}<0\). The consistent gap as a function of the exponent is \(N_{\mathrm{tot}}(3c_a-2c_b-3)/30+2\kappa_X(2-c_a+c_b)\) for both chiralities, so the integrated ASD expression was wrong under either single-parameter reading. Conclusions of 035 that stay true: the gap equals \(2\kappa_X\) at \(c_b=0\); the \(\kappa_X\) part vanishes only for a holonomy of chirality opposite to \(\bar\Theta\); no content-independent profile of the family removes the gap. No label is touched.
+
+Stale passages elsewhere: none (the formula occurs only at line 278). The 031 sentence on \(-R_\Sigma/24\pi\) stays correct.
+
+## Verification scripts
+
+All in `proposals/036-connection-edge-weyl/`; outputs saved next to them (`*.out.txt`). Library files copied unchanged from 033/035: `common.py`, `jetlib.py`, `geom.py`, `lib.py`, `lin_lib.py`, `sector_data.py`, `sd_family.py`, `pairing_modes.py`, `metric_delta_pairing.py`, `diag_family_holonomy.py`. Run with `python script.py` from the folder.
+
+- `e_first_order.py` -> `e_first_order.out.txt`: `E_V`, `E_f`, `e` at first order for generic and `delta rho = 0` cubic jets, SD and ASD, two amplitudes: only the trace part (equal to `e`) survives; zero for `delta rho = 0`.
+- `edge_weyl_fit.py` -> `edge_weyl_fit.out.txt`: rank of `(W, R_Sigma)`; `R_ii = W - R_Sigma`, `R_ijij = 2W - R_Sigma`; DW edge `(0,-1)`; Hessians of `Pf`, `tr Theta^2` vanish; Hodge contact `(1,-2)`; potential `alpha + 2 beta = kappa_X/3`.
+- `diag_family_chirality.py` -> `diag_family_chirality.out.txt`: delta part of `Omega_12` for `s = +-1`: `H = c_a J_12 + s c_b J_34`.
+- `profile_lib.py`, `gap_profile.py` -> `gap_profile.out.txt`: `A`, `B`, `C.C'`, Euler combination, calibration, pairings, `gap_raw`, `gap_Weyl` for both chiralities, `kappa_X` part vanishing at `c_a = c_b + 2`.
+- `hodge_maxwell_check.py` -> `hodge_maxwell_check.out.txt`: Hodge-Maxwell `(6/5, -31/15)`, gap 0, contact `W = 3`, `-9/5` without it.
+- `hodge_vs_poisson.py` -> `hodge_vs_poisson.out.txt`: `Riem^2 = 2 C^2`, `Ric^2 = C^2/2`, `tr Omega^2 = -4 C^2`, Hodge `(v-4s)/C^2 = 1/12` against `-1/3`.
+
+Not computed: exact heat trace of the cone with holonomy; non-diagonal profiles; the mode with `delta rho != 0`; any proof of the first-order statements beyond the sampled jets.
+
+## Decisions Taken
+
+- **Route.** Rather than only recording the vector-edge no-go, I took the content-structure argument (gap proportional to `kappa_X`) and traced the missing piece to the so(4) holonomy, because the no-go-is-a-fork rule asks where the missing ingredient sits. Alternative rejected: fitting an edge potential `E_Sigma` to `kappa_X/3`; it is not derived and content dependent.
+- **Correction of 035.** I include the ASD sign correction as a clause replacement in the same package (shared derivation and file), flagged as PRIOR-CLAIM-ERROR, instead of a separate package; alternative (leave the contradictory sentence) rejected because the new paragraph would contradict it.
+- **Euler W part.** Both the raw and the Weyl-consistent gap are reported; I did not choose one as "the" result, because dropping the Euler W part is a hypothesis.
+- **Hodge presentation.** Used only as a validation and as a negative result (operators differ); not offered as a route to closure.
+- **No DW over-reading.** DW's silence on Weyl dependence is stated; the W-free edge density is a conditional reading.
+
+## Milestone assessment
+
+Routine. No critical-path step is derived from the matrix theory; the result is a bounded no-go, a correction and a localisation. I make no breakthrough claim. Self-assessment: not a breakthrough.
+
+## Status-label recommendation
+
+Critical-path list re-derived from Chapter 17 and Appendix H (A, B, C, D1, E, F, G-derived, N; H, I, J optional): all remain OPEN and CRITICAL PATH; A and B remain PROGRAMME-CONDITIONAL. No label change is recommended. No label is edited in the LaTeX.
+
+## Author decision needed
+
+None.
+
+## Remaining open step
+
+To close B at the logarithmic Weyl coefficient one still needs a derivation, from the matrix theory, of the entropy assigned to the non-Riemannian part of `Omega^v` (twice the Levi-Civita `tr Omega^2` on the modes), then the area/G relation and stationarity of the tensor block; A is untouched.
+
+Ranked open avenues (from the gatekeeper's review; this package exploits each only as stated):
+
+1. **Comparator, via a second-order first law with variation of both G and omega.** Decide whether the T-side entropy for a quadratic form that is not a metric functional is the metric-universal `12 kappa_C^T` (`-4 kappa_X`) or the Noether/Wald entropy in the variables `(G, omega)` (`-2 kappa_X`, equal to the replica, 035). This is a first-law question (second variation of the leaf entropy against the Hessian of the T action on perturbations that move both `G` and the contortion), not a heat-kernel one. If the Noether entropy is the right comparator, the W gap is an artefact of a metric rule applied to a non-metric term.
+2. **Off-diagonal / equivariant profiles** with a J_34-type circulation and a regular metric on Sigma (including vortex-type deltas with `delta'` terms).
+3. **Exact heat trace of the cone with holonomy** (Aharonov-Bohm index with rotated connection, `n<1` and `n>1`) in place of the cross-term rule; decides whether the Euler cross term carries W for `c_b != 0`.
+4. **Non-delta `1/r` singular parts** of `omega` and `ln rho`.
+5. **Edge algebra of the symplectic gauge group** (non-abelian boundary charges), as opposed to DW's U(1).
+6. **Non-totally-geodesic Sigma** (Dong/Camps `K^2` terms).
+
+Hypotheses a within-core route can relax: the comparator choice (avenue 1), the diagonal family (2), the cross-term rule (3).
+
+## Special instructions for the gatekeeper
+
+- Scope: a bounded conditional no-go. Do not read it as closing or advancing B beyond a localisation; do not read the `delta rho = 0` profile as a candidate resolution (its area-term scalar has the wrong sign, its Sigma metric is singular and an `N_tot` remainder is left).
+- DW: please re-open arXiv:1506.05792 and check Eqs. (97)-(98) and Sec. VIII (p. 33). I read the introduction and Secs. VII-VIII; the Kaluza-Klein sections were not read. The block states the classes as "products of a two-dimensional base with a bifurcate horizon and a compact fibre, and S^1 x H^3" and that Weyl/extrinsic dependence is left open; check these against the paper.
+- Re-run: `e_first_order.py` (Lemma E), `gap_profile.py`, `diag_family_chirality.py` (the ASD sign), `hodge_maxwell_check.py`.
+- The ASD clause replacement (b) is a correction of an integrated sentence; please decide whether it needs an explicit PRIOR-CLAIM-ERROR flag. Confirm with `diag_family_chirality.out.txt` that the delta part of `Omega_12` for `s = -1` has `+2 Lb` in the `(3,4)` block entry's lower row, i.e. `-chi` relative sign.
+- Check the claim that the `W` coefficient of the Euler combination is `-2 c_b` (`gap_profile.out.txt`) and that the statement in the block is worded as a hypothesis ("if that W part is dropped as topological").
+- Check that the statement "the vector carries one edge scalar, if it carries the edge sector of a Maxwell field, and the Dirac fields none" is not read as an established identification of the symplectic gauge sector; 031 states it is not proved.
+- Not independently verified: Jacobson-Mohd and Elgood et al. equation numbers from the scout (not cited in the insert).

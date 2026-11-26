@@ -1,0 +1,56 @@
+=== (A) factorisation identity ===
+dM=4 trial 0: str = -6.026728064009e-01-1.5e-16i | rel.res pairing(++,--) = 3.24e-16 | pairing(+-,-+) = 6.95e-03
+dM=4 trial 1: str = -8.811828896067e-01-2.2e-17i | rel.res pairing(++,--) = 2.27e-15 | pairing(+-,-+) = 5.17e-03
+dM=4 trial 2: str = -1.905951992609e+00+1.9e-16i | rel.res pairing(++,--) = 3.74e-15 | pairing(+-,-+) = 3.74e-02
+dM=7 trial 0: str = -3.811834619721e-01+2.9e-16i | rel.res (8,2) = 4.38e-15
+dM=7 trial 1: str = -7.480871811304e-01+7.3e-16i | rel.res (8,2) = 3.89e-15
+dM=7 trial 2: str = -5.674931347663e-02-1.0e-15i | rel.res (8,2) = 1.82e-13
+
+=== (B) Taylor coefficients c_{mn} of str in (lam, mu), s = 0.6 ===
+-- dM = 4: scale |c40|+|c04|+|c22| = 1.571e+00
+   c_00/scale = 4.69e-10   (expected 0)
+   c_10/scale = 2.47e-16   (expected 0)
+   c_20/scale = 7.59e-13   (expected 0)
+   c_30/scale = 1.18e-13   (expected 0)
+   c_01/scale = 6.68e-11   (expected 0)
+   c_02/scale = 1.00e-11   (expected 0)
+   c_03/scale = 1.32e-12   (expected 0)
+   c_11/scale = 2.00e-17   (expected 0)
+   c_21/scale = 6.60e-14   (expected 0)
+   c_12/scale = 6.55e-17   (expected 0)
+   c_31/scale = 1.11e-14   (expected 0)
+   c_13/scale = 2.16e-17   (expected 0)
+   c_40 = +6.728934e-02, c_04 = +6.046325e-01  (nonzero: first M-only / K-only order)
+   c_22 = -8.9872579004e-01 ; -(1/8) v2M v2K = -8.9872579004e-01 ; rel.diff = 3.78e-12
+   v1M = 7.1e-16, v3M = 2.2e-01, v1K = 9.8e-11, v3K = 2.7e-01  (vector-index odd orders; nonzero allowed for non-commuting fluxes, structure-constant part)
+   so(4): v2M = +1.86220768e+00 ; 2(sig2+ + sig2-) = +1.86220768e+00   [Dirac index = half vector index at 2nd order]
+          sig2+ = +4.178135e-01, sig2- = +5.132904e-01  (differ: self-dual / anti-self-dual parts)
+   so(6): v2K = +3.86090467e+00 ; tau2+ + tau2- = +3.86090467e+00 ; tau2+ - tau2- = 3.0e-14 (expected 0, conjugate reps)
+          tau3+ = -1.011122e-01+2.2e-16i, tau3- = -1.730054e-01+2.9e-16i, sum = -2.741176e-01 vs v3K = -2.741176e-01 (equal: structure-constant part; the d-symbol part flips sign between 4 and 4bar)
+   c_23 = +6.552403e-02-1.1e-16i ; -(1/2)(sig2+ tau3+ + sig2- tau3-) = +6.552403e-02-1.3e-16i  (parity-odd mixed term; with tau3-=-tau3+ it is -(1/2)(sig2+-sig2-)tau3+)
+   c_22 via spinor blocks: -8.9872579004e-01  (= -(1/4) v2K (sig2+ + sig2-))
+-- dM = 7: scale |c40|+|c04|+|c22| = 4.764e-01
+   c_00/scale = 1.09e-10   (expected 0)
+   c_10/scale = 5.84e-12   (expected 0)
+   c_20/scale = 1.82e-12   (expected 0)
+   c_30/scale = 8.83e-14   (expected 0)
+   c_01/scale = 3.45e-16   (expected 0)
+   c_02/scale = 2.14e-12   (expected 0)
+   c_03/scale = 3.55e-15   (expected 0)
+   c_11/scale = 1.37e-16   (expected 0)
+   c_21/scale = 1.38e-16   (expected 0)
+   c_12/scale = 3.49e-14   (expected 0)
+   c_31/scale = 1.59e-16   (expected 0)
+   c_13/scale = 6.11e-17   (expected 0)
+   c_40 = +2.140501e-01, c_04 = +1.168888e-02  (nonzero: first M-only / K-only order)
+   c_22 = -2.5062964572e-01 ; -(1/8) v2M v2K = -2.5062964572e-01 ; rel.diff = 1.97e-13
+   v1M = 4.8e-12, v3M = 8.0e-02, v1K = 9.2e-17, v3K = 4.8e-04  (vector-index odd orders; nonzero allowed for non-commuting fluxes, structure-constant part)
+   so(7): v2M = +6.80989111e+00 ; sig2(8) = +6.80989111e+00   [T(8) = T(7)]
+   so(3): v2K = +2.94430136e-01 ; 4 tau2(2) = +2.94430136e-01   [T(3) = 4 T(2)]
+   c_22 via spinor blocks: -2.5062964572e-01
+
+=== (C) positivity of the spinor index part tau^K(s) = Tr tr e^{-s(h+Sig.k)} - dim * Tr e^{-s h} (Peierls-Bogoliubov) ===
+dM = 4: min over 20 random K data and s in (0.05,0.3,1,3) of tau^K/s0^K = 2.346e-02 (>= 0 expected)
+dM = 7: min over 20 random K data and s in (0.05,0.3,1,3) of tau^K/s0^K = 6.449e-04 (>= 0 expected)
+
+ALL CHECKS PRINTED; compare residuals with 0 (machine precision ~1e-12 relative for (A), ~1e-10 for (B)).

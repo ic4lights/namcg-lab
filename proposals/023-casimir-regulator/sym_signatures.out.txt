@@ -1,0 +1,10 @@
+signatures (n_plus, n_minus, n_zero) of the symbol forms at 40 random orbit points:
+   C42 {(2, 4, 0): 40}
+   C41 {(2, 4, 0): 40}
+   C31 {(2, 3, 1): 40}
+   Box4 {(3, 1, 2): 40}
+   Box4E {(4, 0, 2): 40}
+   C42-C41 {(0, 4, 2): 40}
+   Ccomp {(5, 0, 1): 40}
+   Sum15 {(6, 0, 0): 40}
+max over unit coefficient vectors of lambda_min(sum c_i K_i), i in {C42,C41,C31,Box4E}: max over points of the best value = 1457.7755501720576 (<=0 means no definite combination)

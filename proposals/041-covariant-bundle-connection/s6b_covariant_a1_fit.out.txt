@@ -1,0 +1,36 @@
+  eta=(1, 1, 1, 1) seed 0: residual 1.8e-13  a1(V)=+116.205402 a1(M)=+116.205402
+  eta=(1, 1, 1, 1) seed 1: residual 2.1e-14  a1(V)=+0.061359 a1(M)=+0.061359
+  eta=(1, 1, 1, 1) seed 2: residual 6.2e-14  a1(V)=+5.741262 a1(M)=+5.741262
+  eta=(1, 1, 1, 1) seed 3: residual 5.8e-15  a1(V)=+1.497853 a1(M)=+1.497853
+  eta=(1, 1, 1, 1) seed 4: residual 2.8e-14  a1(V)=+13.076990 a1(M)=+13.076990
+  eta=(1, 1, 1, 1) seed 5: residual 1.7e-14  a1(V)=+2.304323 a1(M)=+2.304323
+  eta=(1, 1, 1, 1) seed 6: residual 2.0e-15  a1(V)=+0.291483 a1(M)=+0.291483
+  eta=(1, 1, 1, 1) seed 7: residual 6.9e-15  a1(V)=+1.992520 a1(M)=+1.992520
+  eta=(1, 1, 1, 1) seed 8: residual 1.4e-14  a1(V)=+2.930853 a1(M)=+2.930853
+  eta=(1, 1, 1, 1) seed 9: residual 9.0e-14  a1(V)=+9.996803 a1(M)=+9.996803
+  eta=(1, 1, 1, 1) seed 10: residual 6.0e-15  a1(V)=+0.629108 a1(M)=+0.629108
+  eta=(1, 1, 1, 1) seed 11: residual 1.6e-15  a1(V)=+0.483817 a1(M)=+0.483817
+  eta=(1, 1, 1, 1) seed 12: residual 7.1e-15  a1(V)=+0.134208 a1(M)=+0.134208
+  eta=(1, 1, 1, 1) seed 13: residual 3.8e-15  a1(V)=+0.696258 a1(M)=+0.696258
+  eta=(-1, 1, 1, 1) seed 0: residual 1.0e-13  a1(V)=-17.042998 a1(M)=-17.042998
+  eta=(-1, 1, 1, 1) seed 1: residual 3.6e-14  a1(V)=+0.006097 a1(M)=+0.006097
+  eta=(-1, 1, 1, 1) seed 2: residual 1.5e-13  a1(V)=-1.305444 a1(M)=-1.305444
+  eta=(-1, 1, 1, 1) seed 3: residual 3.5e-15  a1(V)=-0.238136 a1(M)=-0.238136
+  eta=(-1, 1, 1, 1) seed 4: residual 3.2e-14  a1(V)=+0.223726 a1(M)=+0.223726
+  eta=(-1, 1, 1, 1) seed 5: residual 7.8e-15  a1(V)=-0.001946 a1(M)=-0.001946
+  eta=(-1, 1, 1, 1) seed 6: residual 1.3e-14  a1(V)=+0.028917 a1(M)=+0.028917
+  eta=(-1, 1, 1, 1) seed 7: residual 1.1e-14  a1(V)=-0.049563 a1(M)=-0.049563
+  eta=(-1, 1, 1, 1) seed 8: residual 5.1e-15  a1(V)=-0.270884 a1(M)=-0.270884
+  eta=(-1, 1, 1, 1) seed 9: residual 9.0e-14  a1(V)=-1.358873 a1(M)=-1.358873
+  eta=(-1, 1, 1, 1) seed 10: residual 2.7e-15  a1(V)=-0.000317 a1(M)=-0.000317
+  eta=(-1, 1, 1, 1) seed 11: residual 2.5e-15  a1(V)=-0.163035 a1(M)=-0.163035
+  eta=(-1, 1, 1, 1) seed 12: residual 1.7e-14  a1(V)=-0.091573 a1(M)=-0.091573
+  eta=(-1, 1, 1, 1) seed 13: residual 7.9e-15  a1(V)=-0.040153 a1(M)=-0.040153
+eta=(1, 1, 1, 1): 14 samples; max|a1(V)-a1(M)| = 1.19e-12
+   a1(V) fit: R=-2.35088, V2=+3.03509, box=-5.05263, th2=+1.96491, vth=-3.92982, t2V2=+1.96491;  max resid 1.6e-13, rank 5
+   a1(M) fit: R=-2.35088, V2=+3.03509, box=-5.05263, th2=+1.96491, vth=-3.92982, t2V2=+1.96491;  max resid 2.0e-13, rank 5
+   analytic prediction (Euclid / Lorentz-sign-flipped axion): [-0.3333333333333333, -1.0, -2.0, 6.0, -12.0, 6.0]  max|a1(M) - pred.rows| = 12.478820137382186
+eta=(-1, 1, 1, 1): 14 samples; max|a1(V)-a1(M)| = 1.85e-13
+   a1(V) fit: R=-2.35088, V2=+3.03509, box=-5.05263, th2=-1.96491, vth=+3.92982, t2V2=-1.96491;  max resid 1.5e-13, rank 5
+   a1(M) fit: R=-2.35088, V2=+3.03509, box=-5.05263, th2=-1.96491, vth=+3.92982, t2V2=-1.96491;  max resid 1.6e-13, rank 5
+   analytic prediction (Euclid / Lorentz-sign-flipped axion): [-0.3333333333333333, -1.0, -2.0, -6.0, 12.0, -6.0]  max|a1(M) - pred.rows| = 14.221246451978473

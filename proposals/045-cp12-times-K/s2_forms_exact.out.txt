@@ -1,0 +1,165 @@
+(0) EH2 validation: phase-averaged O(H^2) part of sqrt|g| R, direct curvature computation vs EH2:
+    Lorentzian background: direct = 163611/256, EH2 = 163611/256, equal: True
+    Euclidean background: direct = -71177/512, EH2 = -71177/512, equal: True
+
+(1) four-coordinate class calibration (constant Theta, a^mu = u^mu cos(p.x), delta rho = 0 modes, gauge u ~ Theta p removed):
+    Euclidean, draw 0: gauge invariant True | EH^-1 X = [[-4, 0], [0, -4]] | EH^-1 a1_scalar = [[1/6, 0], [0, 1/6]]
+    Euclidean, draw 1: gauge invariant True | EH^-1 X = [[-4, 0], [0, -4]] | EH^-1 a1_scalar = [[1/6, 0], [0, 1/6]]
+    Lorentzian, draw 0: gauge invariant True | EH^-1 X = [[-4, 0], [0, -4]] | EH^-1 a1_scalar = [[1/6, 0], [0, 1/6]]
+    Lorentzian, draw 1: gauge invariant True | EH^-1 X = [[-4, 0], [0, -4]] | EH^-1 a1_scalar = [[1/6, 0], [0, 1/6]]
+
+(2) CP^{1,2} level-one sector, frozen base point (y^0, y^i = 0, y^4), leading symbol, exact fibre moments
+
+  base (y0,y4) = (5,3), chirality 1, ell = 4, q = [3/7, 1/2, -2/3, 1/5], q^2 = 24289/44100, eigenvalues of Gram s_i.s_j: [-4.95694, 13.4042, 13.4042]
+   gauge amplitudes g_i q: all forms vanish on them: True; no cross terms with D: True
+   averaged metric: independent of antisymmetric D: True; rank of D -> hbar: 6; transverse (hbar.q = 0): True
+   torsion of the averaged frame: axial = 0 on symmetric D: True; axial != 0 on an inert D: True; vector V^a = {-1} q^a tr(DG)
+   fibre-resolved torsion: axial != 0 for D = diag(1,-1,0): True (its fibre average = 0: True); axial = 0 for D = 1: True
+   pointwise index density X(t) = m^-4 (v.v)(alpha M alpha), alpha = n^i c_i, v = n^j s_j: True
+   IX2: sym-antisym cross block zero: False; antisym block zero: False
+   SC2: sym-antisym cross block zero: False; antisym block zero: False
+   IX1: sym-antisym cross block zero: True; antisym block zero: False
+   SC1: sym-antisym cross block zero: True; antisym block zero: True
+   EH(hbar) = -24289/64297800 tr(GDGD) + 24289/64297800 (tr GD)^2  [i.e. proportional to h.h - (tr h)^2]: True
+   averaged-frame reading: X = -2 EH + (24289/32148900)(tr GD)^2 exactly: True ; a1_scalar = (1/6) EH + (-24289/257191200)(tr GD)^2 exactly: True
+   trace reading IX2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.267015)
+   trace reading SC2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.262439)
+   IX1 / EH on the five traceless polarisations: ['-2', '-2', '-2', '-2', '-2']
+   SC1 / EH on the five traceless polarisations: ['0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   IX2 / EH on the five traceless polarisations: ['-4.35623', '-4.35623', '-0.733169', '-0.733169', '0.474519']
+   SC2 / EH on the five traceless polarisations: ['-0.0231477', '-0.0231477', '0.180228', '0.38151', '0.38151']
+   IX1 / EH on the six: ['-2', '-2', '-2', '-2', '-2', '1']
+   SC1 / EH on the six: ['-0.208333', '0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   trace reading: solutions (wR, wX) of wR*SC2 + wX*IX2 in the covariant span: [{a1: 0, a2: 0, wR: 0, wX: 0}]; proportional to EH on the six: [{a1: 0, wR: 0, wX: 0}]; on the five traceless: [{a1: 0, wR: 0, wX: 0}]
+
+  base (y0,y4) = (5,3), chirality 1, ell = 4, q = [-1/3, 2/5, 1/4, -3/2], q^2 = 8501/3600, eigenvalues of Gram s_i.s_j: [-21.2525, 40.5600, 40.5600]
+   gauge amplitudes g_i q: all forms vanish on them: True; no cross terms with D: True
+   averaged metric: independent of antisymmetric D: True; rank of D -> hbar: 6; transverse (hbar.q = 0): True
+   torsion of the averaged frame: axial = 0 on symmetric D: True; axial != 0 on an inert D: True; vector V^a = {-1} q^a tr(DG)
+   fibre-resolved torsion: axial != 0 for D = diag(1,-1,0): True (its fibre average = 0: True); axial = 0 for D = 1: True
+   pointwise index density X(t) = m^-4 (v.v)(alpha M alpha), alpha = n^i c_i, v = n^j s_j: True
+   IX2: sym-antisym cross block zero: False; antisym block zero: False
+   SC2: sym-antisym cross block zero: False; antisym block zero: False
+   IX1: sym-antisym cross block zero: True; antisym block zero: False
+   SC1: sym-antisym cross block zero: True; antisym block zero: True
+   EH(hbar) = -8501/5248800 tr(GDGD) + 8501/5248800 (tr GD)^2  [i.e. proportional to h.h - (tr h)^2]: True
+   averaged-frame reading: X = -2 EH + (8501/2624400)(tr GD)^2 exactly: True ; a1_scalar = (1/6) EH + (-8501/20995200)(tr GD)^2 exactly: True
+   trace reading IX2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.314094)
+   trace reading SC2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.362445)
+   IX1 / EH on the five traceless polarisations: ['-2', '-2', '-2', '-2', '-2']
+   SC1 / EH on the five traceless polarisations: ['0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   IX2 / EH on the five traceless polarisations: ['-4.17123', '-4.17123', '-1.59544', '-1.59544', '-0.736839']
+   SC2 / EH on the five traceless polarisations: ['0.0448536', '0.0448536', '0.230702', '0.373801', '0.373801']
+   IX1 / EH on the six: ['-2', '-2', '-2', '-2', '-2', '1']
+   SC1 / EH on the six: ['-0.208333', '0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   trace reading: solutions (wR, wX) of wR*SC2 + wX*IX2 in the covariant span: [{a1: 0, a2: 0, wR: 0, wX: 0}]; proportional to EH on the six: [{a1: 0, wR: 0, wX: 0}]; on the five traceless: [{a1: 0, wR: 0, wX: 0}]
+
+  base (y0,y4) = (5,3), chirality 1, ell = 4, q = [2, 1/3, -1/2, 1/4], q^2 = -515/144, eigenvalues of Gram s_i.s_j: [32.1875, 42.7778, 42.7778]
+   gauge amplitudes g_i q: all forms vanish on them: True; no cross terms with D: True
+   averaged metric: independent of antisymmetric D: True; rank of D -> hbar: 6; transverse (hbar.q = 0): True
+   torsion of the averaged frame: axial = 0 on symmetric D: True; axial != 0 on an inert D: True; vector V^a = {-1} q^a tr(DG)
+   fibre-resolved torsion: axial != 0 for D = diag(1,-1,0): True (its fibre average = 0: True); axial = 0 for D = 1: True
+   pointwise index density X(t) = m^-4 (v.v)(alpha M alpha), alpha = n^i c_i, v = n^j s_j: True
+   IX2: sym-antisym cross block zero: False; antisym block zero: False
+   SC2: sym-antisym cross block zero: False; antisym block zero: False
+   IX1: sym-antisym cross block zero: True; antisym block zero: False
+   SC1: sym-antisym cross block zero: True; antisym block zero: True
+   EH(hbar) = 515/209952 tr(GDGD) + -515/209952 (tr GD)^2  [i.e. proportional to h.h - (tr h)^2]: True
+   averaged-frame reading: X = -2 EH + (-515/104976)(tr GD)^2 exactly: True ; a1_scalar = (1/6) EH + (515/839808)(tr GD)^2 exactly: True
+   trace reading IX2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.0532524)
+   trace reading SC2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.0295118)
+   IX1 / EH on the five traceless polarisations: ['-2', '-2', '-2', '-2', '-2']
+   SC1 / EH on the five traceless polarisations: ['0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   IX2 / EH on the five traceless polarisations: ['-6.4274', '-6.24628', '-6.24628', '-5.70292', '-5.70292']
+   SC2 / EH on the five traceless polarisations: ['0.437622', '0.437622', '0.464334', '0.464334', '0.467808']
+   IX1 / EH on the six: ['-2', '-2', '-2', '-2', '-2', '1']
+   SC1 / EH on the six: ['-0.208333', '0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   trace reading: solutions (wR, wX) of wR*SC2 + wX*IX2 in the covariant span: [{a1: 0, a2: 0, wR: 0, wX: 0}]; proportional to EH on the six: [{a1: 0, wR: 0, wX: 0}]; on the five traceless: [{a1: 0, wR: 0, wX: 0}]
+
+  base (y0,y4) = (13,5), chirality 1, ell = 12, q = [2/3, -1/2, 1/3, 1/7], q^2 = -37/588, eigenvalues of Gram s_i.s_j: [1.57313, 66.0499, 66.0499]
+   gauge amplitudes g_i q: all forms vanish on them: True; no cross terms with D: True
+   averaged metric: independent of antisymmetric D: True; rank of D -> hbar: 6; transverse (hbar.q = 0): True
+   torsion of the averaged frame: axial = 0 on symmetric D: True; axial != 0 on an inert D: True; vector V^a = {-5/3} q^a tr(DG)
+   fibre-resolved torsion: axial != 0 for D = diag(1,-1,0): True (its fibre average = 0: True); axial = 0 for D = 1: True
+   pointwise index density X(t) = m^-4 (v.v)(alpha M alpha), alpha = n^i c_i, v = n^j s_j: True
+   IX2: sym-antisym cross block zero: False; antisym block zero: False
+   SC2: sym-antisym cross block zero: False; antisym block zero: False
+   IX1: sym-antisym cross block zero: True; antisym block zero: False
+   SC1: sym-antisym cross block zero: True; antisym block zero: True
+   EH(hbar) = 37/6615000 tr(GDGD) + -37/6615000 (tr GD)^2  [i.e. proportional to h.h - (tr h)^2]: True
+   averaged-frame reading: X = -2 EH + (-37/3307500)(tr GD)^2 exactly: True ; a1_scalar = (1/6) EH + (37/26460000)(tr GD)^2 exactly: True
+   trace reading IX2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.196313)
+   trace reading SC2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.172533)
+   IX1 / EH on the five traceless polarisations: ['-2', '-2', '-2', '-2', '-2']
+   SC1 / EH on the five traceless polarisations: ['0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   IX2 / EH on the five traceless polarisations: ['-71.1876', '-54.5979', '-54.5979', '-4.82858', '-4.82858']
+   SC2 / EH on the five traceless polarisations: ['0.401191', '0.401191', '3.16615', '4.47542', '4.47542']
+   IX1 / EH on the six: ['-2', '-2', '-2', '-2', '-2', '1']
+   SC1 / EH on the six: ['-0.208333', '0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   trace reading: solutions (wR, wX) of wR*SC2 + wX*IX2 in the covariant span: [{a1: 0, a2: 0, wR: 0, wX: 0}]; proportional to EH on the six: [{a1: 0, wR: 0, wX: 0}]; on the five traceless: [{a1: 0, wR: 0, wX: 0}]
+
+  base (y0,y4) = (5,4), chirality 1, ell = 3, q = [1/9, 3/4, -1/2, 2/3], q^2 = 1613/1296, eigenvalues of Gram s_i.s_j: [-19.9136, 11.5100, 11.5100]
+   gauge amplitudes g_i q: all forms vanish on them: True; no cross terms with D: True
+   averaged metric: independent of antisymmetric D: True; rank of D -> hbar: 6; transverse (hbar.q = 0): True
+   torsion of the averaged frame: axial = 0 on symmetric D: True; axial != 0 on an inert D: True; vector V^a = {-4/3} q^a tr(DG)
+   fibre-resolved torsion: axial != 0 for D = diag(1,-1,0): True (its fibre average = 0: True); axial = 0 for D = 1: True
+   pointwise index density X(t) = m^-4 (v.v)(alpha M alpha), alpha = n^i c_i, v = n^j s_j: True
+   IX2: sym-antisym cross block zero: False; antisym block zero: False
+   SC2: sym-antisym cross block zero: False; antisym block zero: False
+   IX1: sym-antisym cross block zero: True; antisym block zero: False
+   SC1: sym-antisym cross block zero: True; antisym block zero: True
+   EH(hbar) = -1613/5971968 tr(GDGD) + 1613/5971968 (tr GD)^2  [i.e. proportional to h.h - (tr h)^2]: True
+   averaged-frame reading: X = -2 EH + (1613/2985984)(tr GD)^2 exactly: True ; a1_scalar = (1/6) EH + (-1613/23887872)(tr GD)^2 exactly: True
+   trace reading IX2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.0748218)
+   trace reading SC2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.213643)
+   IX1 / EH on the five traceless polarisations: ['-2', '-2', '-2', '-2', '-2']
+   SC1 / EH on the five traceless polarisations: ['0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   IX2 / EH on the five traceless polarisations: ['-2.72387', '-2.72387', '-2.46834', '-2.46834', '-2.38316']
+   SC2 / EH on the five traceless polarisations: ['0.0874421', '0.0874421', '0.299298', '0.313495', '0.313495']
+   IX1 / EH on the six: ['-2', '-2', '-2', '-2', '-2', '1']
+   SC1 / EH on the six: ['-0.208333', '0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   trace reading: solutions (wR, wX) of wR*SC2 + wX*IX2 in the covariant span: [{a1: 0, a2: 0, wR: 0, wX: 0}]; proportional to EH on the six: [{a1: 0, wR: 0, wX: 0}]; on the five traceless: [{a1: 0, wR: 0, wX: 0}]
+
+  base (y0,y4) = (-5,3), chirality 1, ell = 4, q = [3/7, 1/2, -2/3, 1/5], q^2 = 24289/44100, eigenvalues of Gram s_i.s_j: [-4.95694, 13.4042, 13.4042]
+   gauge amplitudes g_i q: all forms vanish on them: True; no cross terms with D: True
+   averaged metric: independent of antisymmetric D: True; rank of D -> hbar: 6; transverse (hbar.q = 0): True
+   torsion of the averaged frame: axial = 0 on symmetric D: True; axial != 0 on an inert D: True; vector V^a = {-1} q^a tr(DG)
+   fibre-resolved torsion: axial != 0 for D = diag(1,-1,0): True (its fibre average = 0: True); axial = 0 for D = 1: True
+   pointwise index density X(t) = m^-4 (v.v)(alpha M alpha), alpha = n^i c_i, v = n^j s_j: True
+   IX2: sym-antisym cross block zero: False; antisym block zero: False
+   SC2: sym-antisym cross block zero: False; antisym block zero: False
+   IX1: sym-antisym cross block zero: True; antisym block zero: False
+   SC1: sym-antisym cross block zero: True; antisym block zero: True
+   EH(hbar) = -24289/64297800 tr(GDGD) + 24289/64297800 (tr GD)^2  [i.e. proportional to h.h - (tr h)^2]: True
+   averaged-frame reading: X = -2 EH + (24289/32148900)(tr GD)^2 exactly: True ; a1_scalar = (1/6) EH + (-24289/257191200)(tr GD)^2 exactly: True
+   trace reading IX2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.267015)
+   trace reading SC2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.262439)
+   IX1 / EH on the five traceless polarisations: ['-2', '-2', '-2', '-2', '-2']
+   SC1 / EH on the five traceless polarisations: ['0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   IX2 / EH on the five traceless polarisations: ['-4.35623', '-4.35623', '-0.733169', '-0.733169', '0.474519']
+   SC2 / EH on the five traceless polarisations: ['-0.0231477', '-0.0231477', '0.180228', '0.38151', '0.38151']
+   IX1 / EH on the six: ['-2', '-2', '-2', '-2', '-2', '1']
+   SC1 / EH on the six: ['-0.208333', '0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   trace reading: solutions (wR, wX) of wR*SC2 + wX*IX2 in the covariant span: [{a1: 0, a2: 0, wR: 0, wX: 0}]; proportional to EH on the six: [{a1: 0, wR: 0, wX: 0}]; on the five traceless: [{a1: 0, wR: 0, wX: 0}]
+
+  base (y0,y4) = (-5,3), chirality -1, ell = 4, q = [3/7, 1/2, -2/3, 1/5], q^2 = 24289/44100, eigenvalues of Gram s_i.s_j: [-4.95694, 13.4042, 13.4042]
+   gauge amplitudes g_i q: all forms vanish on them: True; no cross terms with D: True
+   averaged metric: independent of antisymmetric D: True; rank of D -> hbar: 6; transverse (hbar.q = 0): True
+   torsion of the averaged frame: axial = 0 on symmetric D: True; axial != 0 on an inert D: True; vector V^a = {-1} q^a tr(DG)
+   fibre-resolved torsion: axial != 0 for D = diag(1,-1,0): True (its fibre average = 0: True); axial = 0 for D = 1: True
+   pointwise index density X(t) = m^-4 (v.v)(alpha M alpha), alpha = n^i c_i, v = n^j s_j: True
+   IX2: sym-antisym cross block zero: False; antisym block zero: False
+   SC2: sym-antisym cross block zero: False; antisym block zero: False
+   IX1: sym-antisym cross block zero: True; antisym block zero: False
+   SC1: sym-antisym cross block zero: True; antisym block zero: True
+   EH(hbar) = -24289/64297800 tr(GDGD) + 24289/64297800 (tr GD)^2  [i.e. proportional to h.h - (tr h)^2]: True
+   averaged-frame reading: X = -2 EH + (24289/32148900)(tr GD)^2 exactly: True ; a1_scalar = (1/6) EH + (-24289/257191200)(tr GD)^2 exactly: True
+   trace reading IX2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.267015)
+   trace reading SC2 in the covariant span {tr(GDGD), (tr GD)^2}: False (relative residual of the best fit 0.262439)
+   IX1 / EH on the five traceless polarisations: ['-2', '-2', '-2', '-2', '-2']
+   SC1 / EH on the five traceless polarisations: ['0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   IX2 / EH on the five traceless polarisations: ['-4.35623', '-4.35623', '-0.733169', '-0.733169', '0.474519']
+   SC2 / EH on the five traceless polarisations: ['-0.0231477', '-0.0231477', '0.180228', '0.38151', '0.38151']
+   IX1 / EH on the six: ['-2', '-2', '-2', '-2', '-2', '1']
+   SC1 / EH on the six: ['-0.208333', '0.166667', '0.166667', '0.166667', '0.166667', '0.166667']
+   trace reading: solutions (wR, wX) of wR*SC2 + wX*IX2 in the covariant span: [{a1: 0, a2: 0, wR: 0, wX: 0}]; proportional to EH on the six: [{a1: 0, wR: 0, wX: 0}]; on the five traceless: [{a1: 0, wR: 0, wX: 0}]

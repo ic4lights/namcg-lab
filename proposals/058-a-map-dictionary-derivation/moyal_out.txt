@@ -1,0 +1,42 @@
+coeff th^1: I*(Derivative(f(x1, x2), x1)*Derivative(g(x1, x2), x2) - Derivative(f(x1, x2), x2)*Derivative(g(x1, x2), x1))
+coeff th^2 (expect 0): 0
+coeff th^4 (expect 0): 0
+check th^1 == i*Poisson: True
+check th^3 == -(i/24)*(third-derivative contraction): True
+[x1,g]_star exact (all n up to 11) == i*th*d2 g: True
+degree-2 symbol exact: True
+
+order-Theta term of [x1+t, g]_star:
+  // d                \  d                d              d            \
+I*||---(t(x1, x2)) + 1|*---(g(x1, x2)) - ---(g(x1, x2))*---(t(x1, x2))|
+  \\dx1               / dx2              dx1            dx2           /
+order-Theta^3 term of [x1+t, g]_star (first higher-derivative correction):
+  /  3               3                 3               3                     3 >
+  | d               d                 d               d                     d  >
+I*|----(g(x1, x2))*----(t(x1, x2)) - ----(g(x1, x2))*----(t(x1, x2)) + 3*----- >
+  |   3               3                 3               3                   2  >
+  \dx1             dx2               dx2             dx1                 dx2   >
+------------------------------------------------------------------------------ >
+                                                                             2 >
+
+>                    3                       3                   3             >
+>                   d                       d                   d              >
+> ---(g(x1, x2))*--------(t(x1, x2)) - 3*--------(g(x1, x2))*--------(t(x1, x2 >
+>                       2                       2               2              >
+> dx1            dx2 dx1                 dx2 dx1             dx2  dx1          >
+> ---------------------------------------------------------------------------- >
+> 4                                                                            >
+
+>   \
+>   |
+> ))|
+>   |
+>   /
+> ---
+>    
+
+ALL CHECKS:
+(a) even powers vanish: True
+(b) Poisson at order Theta: True
+(c) -i/24 at order Theta^3: True
+(d) linear and quadratic exactness: True

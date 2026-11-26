@@ -1,0 +1,16 @@
+area coefficient c_A (finite parts; the first-term terms of order Lambda^2 and log, and the first-term fibre-flux part, not included):
+   fixed-state  c_A = W_R/6 - 2*W_X
+   periodic     c_A = W_R/6
+   smooth       c_A = -W_R/12
+
+averaged-frame reading:
+   five traceless polarisations: c_T = W_R/6 - 2*W_X    (single coefficient; -2 W_X > 0 since W_X < 0; W_R of no fixed sign)
+   trace polarisation:           c_T = -5*W_R/24 + W_X
+   fixed-state  c_A - c_T: five traceless 0 ; trace polarisation 3*W_R/8 - 3*W_X
+   periodic     c_A - c_T: five traceless 2*W_X ; trace polarisation 3*W_R/8 - W_X
+   smooth       c_A - c_T: five traceless -W_R/4 + 2*W_X ; trace polarisation W_R/8 - W_X
+
+trace reading (fibre average of the pointwise densities), case (5,3), q = (3/7,1/2,-2/3,1/5):
+   index part alone (W_R = 0): c_T / W_X on the five traceless polarisations = [-4.35623, -4.35623, -0.733169, -0.733169, 0.474519]
+   fixed-state mixed-term gap (c_A - c_T) / W_X = [2.35623, 2.35623, -1.266831, -1.266831, -2.474519]  (vanishes on none; signs differ)
+   scalar part alone (W_X = 0): c_T / W_R = [-0.0231477, -0.0231477, 0.180228, 0.38151, 0.38151]  against c_A / W_R = 1/6 (fixed-state, periodic), -1/12 (smooth)

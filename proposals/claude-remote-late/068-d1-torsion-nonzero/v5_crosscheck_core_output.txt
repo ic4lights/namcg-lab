@@ -1,0 +1,2 @@
+flat: max |v1 - core| = 7.0e-16 (max |core| = 5.88)
+Heisenberg: max |v1 - core| = 6.7e-16 (max |core| = 4.13)

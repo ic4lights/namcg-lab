@@ -1,0 +1,1 @@
+For the wider class of product slot laws in which the squared slot magnitudes are independent and the law of each is fixed by \(s^{2}\) times the slot variance, the equivariance and uniform-input exchangeability just stated hold verbatim;

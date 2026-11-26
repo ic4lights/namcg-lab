@@ -1,0 +1,6 @@
+CERT rc = 0
+ERR_LINES = 0 []
+OUTPUT = ['Output written on p.pdf (1 page, 86410 bytes).']
+UNDEF_REF_WARNINGS(expected) = 5
+PDF_EXISTS = True / 86410 bytes
+CERT PASS

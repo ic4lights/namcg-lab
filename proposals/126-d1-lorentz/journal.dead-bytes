@@ -1,0 +1,35 @@
+# journal 126-d1-lorentz
+
+## T0 setup
+- Created folder. Digest read header: dirty-chapters: yes, appH CHANGED 4142 lines. Digest --check vacuous (tree dirty); live pin authoritative.
+- appH live pin confirmed: sha1 76d862968c31d78fffc665f72aaf60d40c90367a, 875106 B (matches dispatch).
+- 059 review-r3 L31 six avenues read verbatim: (1) finite-N Lorentzian-fibre class test; (2) explicit bilocal composite with matrix parallel transporters; (3) compact-U(N)-gauge-group Elitzur statement; (4) class-selection stationarity; (5) Manta-Steinacker recipe vs 22-label count; (6) local-lambda bootstrap.
+- 122 folder exists with proposal-r2 + review-r2 -> bilocal avenue likely consumed by 122; must check.
+
+## T1 source reading done
+- D1 ledger L765-793 (missing step: derive SO(3,1) from matrix algebra; locked frame + nondeg to be derived; ass:frame-lock, ass:nondeg).
+- Closers read live: L1704 (059 toy: compact S2xS1, U(1) fibre, Euclidean contraction, explicit non-retention of SO(3,1)/noncompact fibre/(7,3)/selection), L1707 (059 composite mechanism), L1710 (115 potential threshold), L1713 (116 state-route: pointwise SV bounds do not control two-point kernel), L1715 (117 Gibbs probe: mean-field gap), L1717 (122 bilocal reduction: avenue 2 CONSUMED; explicitly "computation of w for the specific carrier of Problem D1 remains open"), L1720 (118 selection constraint), L1722-1731 (119 one-loop underdetermination), L1733-1740 (120 commutator lift, K-type bound).
+- L1616-1636: the D1 class: A commutative, S_cd anti-Hermitian derivations forming free/proper unitary SO(3,1) action, relations [S_cd,D_a]=eta_ad D_c - eta_ac D_d, [D_a,D_b] = -T D + 1/2 R S + F; boosts anti-Hermitian on Hilbert space; K from eta; selection/frame/nondeg NOT derived.
+- L1638-1675 flat point: X=i u d on L2(R4 x SO(3,1)); pairing; double zeros. L1677-1702 one-loop + reflected form (compact SO(4) fibre for reflection; nothing finite-N).
+- L1614: rank argument about SO(4,1)/SO(3,1) orbits (Poisson-limit orbit geometry; different from finite-dimensional unitarity question).
+## T2 avenue decision
+- Avenue 1 (finite-N Lorentzian-fibre class test) NOT consumed by 059/115/116/117/122/118/119/120 (none touches finite-N Lorentzian fibre). Chosen.
+- Plan: (T-C) no-go: no nonzero finite-N realization with S anti-Hermitian (unitary fibre action) - so(3,1) simple noncompact vs compact subalgebra of u(N); Killing-form definite vs indefinite. Exact proof + numeric/sympy checks.
+- (T-A conds) relax unitarity: (a) FLAT exact 5x5 real iso(3,1) model (standard affine rep): T=R=F=0, relations exact; inner automorphism rotates D by Lorentz exactly (R12 finite-model instance); kinetic 1/4[D^a,[D_a,.]] VANISHES on all generators (flat finite model has no propagation - residual lives on coefficient algebra A); commutant of ad D on span{1,S,D} = span{1} (A=C forced).
+  (b) CURVED exact 4x4 complex spinor model D=gamma_a, S=1/4[gamma,gamma]: T=F=0, R_ab^{cd}=4(delta delta - delta delta) const, R_ab^{ae}=12 delta_b^e; contracted double commutator 6 D_b = (1/2 R_ab^{ae}) D_e (Bianchi-consistent); full R13 [D^a,[D_a,D_b]] - R_ab^{ae} D_e = 1/2 D^a F_ab with F_ab = 2 R_ab^{ae} D_e = 12 D_b; kinetic: L(D)=3/2 D, L(S)=S nonzero. Relativistic configuration space Cl_{3,1} = M4(C): full End(C^4) is a class module (check 16 basis closed under [S,.],[D,.]); kinetic on End: 1.5 on vector sector, 1 on so sector, 0 on gamma5/pseudoscalar sectors.
+- Non-duplication: no claim in appH L1599-1741 about finite-dimensional unitary obstruction or explicit finite matrix models; 059 toy is compact Euclidean.
+
+## T3 verification status (green)
+- A (no-go) ALL-PASS, runs identical (out-A-run2/3). B (flat 5x5) ALL-PASS, runs identical (out-B-run2/3), controls fired.
+- C (spinor 4x4 curved) ALL-PASS, runs identical (out-C-run1/2). FOUR CONTROL-FIRED.
+- CORRECTION to T2 plan: contracted double commutator is 12*D_b (not 6), F_ab = 0 (not 12 D_b), L(gamma) = 3 D (not 3/2). C3: direct [D^a,[D_a,D_b]] = 12 D_b while R_ab^{ae} D_e = 12 s D_b -> consistency (T=0, const R, F=0) FORCES s=+1; independently C1 gives s=+1 exactly (0/48 violations).
+- Spinor model exact data: R_ab^{cd} = 4(delta-delta), R_ab^{ae} = 12 delta_b^e; Ric = -12 eta under appH L1628 identification R_ab^{ae} = -Ric_b^e (T=0). Kinetic sector eigenvalues: L(1)=0, L(gamma)=3, L(S)=2, L(gamma5)=4, L(gamma_a gamma5)=1. gamma5^2 = -1 I (Lorentzian). End basis: 16 Dirac bilinears {1, gamma, S, gamma gamma5, gamma5} rank 16 (S_cd gamma5 are NOT new: dual-tensor automorphism of span{S}).
+- sympy pitfalls found and fixed (for gatekeeper): (i) Matrix .D is Dirac conjugate in sympy 1.14, use .H for adjoint; (ii) sp.Matrix(sp.BlockMatrix(...)) stays a MatrixExpr (no entry fusion, reshape gives 1x1): build explicit blocks via row_join/col_join; (iii) sigma_2 must be [[0,-i],[i,0]] (real antisymmetric [[0,-1],[1,0]] squares to -I and breaks Clifford); (iv) Matrix([Matrix rows]) nests block-wise: use list(...) flat rows.
+- Bug history kept: out-C-run-bad1/2 predate fixes? No - overwritten run1. A/B first-run failures in out-A-run1/out-B-run1.
+
+## T4 payload and certificate
+- ch17 mandatory reads done: order passage L650-669 (D1 item 1, gates C? no: order D1, C, F, N, B, G; D1 first), D1 completion item L715-720, matrix-derived criterion L696-701 (DERIVED = no remaining assumed premise incl ass:frame-lock/nondeg/lorentzian).
+- appH live pin re-verified at payload time: sha1 76d862..., 875106 B, 4142 lines. Anchor "supplied: this paragraph closes none of Problem~D, Problem~D1, or Problem~A.\r\n\r\n" count 1 (end of L1740, D1 closers region, before \section{Problem E}).
+- Payload: one new conditional ledger paragraph recording (a) finite-N unitarity obstruction (established theorem), (b) flat 5x5 and spinor 4x4 exact realizations (conditional algebraic data), with hypothesis list and one scoped closing status sentence; uses only pre-existing refs eq:Smatrix, ass:frame-lock, ass:nondeg; no labels, no citations. 4361 B; POST 879469 = PRE + payload + 2 (join CRLF per splice accounting memory).
+- Certificate v2: temp tree build126_cert_v2_31476 outside repo, 2 passes exit 0, 0 "^! " lines, 0 undefined references, paragraph present in pdftotext. v1 tree superseded (pre-revision obstruction wording), left on disk (deletion denied).
+- Obstruction wording revised to the clean chain: adjoint action of S-sector = homomorphic image of so(3,1) in anti-Hermitian endomorphisms (compact) -> image 0 -> relation 1 + rank-4 label map -> D = 0. Avoids the central-extension ambiguity of a literal S->matrices homomorphism claim.

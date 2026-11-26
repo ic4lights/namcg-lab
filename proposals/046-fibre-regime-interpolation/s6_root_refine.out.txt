@@ -1,0 +1,68 @@
+inputs: lambda_L = -1.956233 (saved s4 output), coth^2 tau = 25/9 = 2.777778, spectrum mu_J = J(J+2), grid = s4's (241 points, 1e-3 to 1e3)
+W_index reproduces the s4 check lines:
+   M = 0.1, n = 30: W1 = 15.787537, beta_X = 0.400031
+   M = 3, n = 30: W1 = 5.290595, beta_X = 0.935904
+
+(1) the nine s4 rows: left grid endpoint as s4 prints it, and the root
+   n    L/c   M*(s4 grid)  M*(root)    beta_X(root)  coth^2/M*(s4 grid)  coth^2/M*(root)  residual f(M*)
+   2    0     0.6683       0.67236     0.39253       4.156               4.13137          -1.8e-15
+   2    1     5.012        5.08753     0.51999       0.5542              0.54600          0.0e+00
+   2    10    29.85        30.76179    0.52001       0.09305             0.09030          0.0e+00
+   30   0     0.2818       0.29196     0.65703       9.856               9.51416          -3.8e-13
+   30   1     1.496        1.54965     0.89810       1.857               1.79252          -4.1e-13
+   30   10    5.012        5.17699     0.95436       0.5542              0.53656          4.9e-13
+   300  0     0.2113       0.21940     0.71846       13.14               12.66092         -5.2e-13
+   300  1     1.122        1.13007     0.92880       2.476               2.45806          -1.1e-14
+   300  10    3.548        3.62756     0.97425       0.7829              0.76574          -7.1e-15
+
+(2) the review's sample: n = 2..60 and every 5th n up to 300 (107 values)
+   L/c = 0   : sign changes per n [1]; M* decreasing in n: True
+      M*        0.219398 (n=300) to 0.672362 (n=2)
+      beta_X    0.392525 (n=2) to 0.718460 (n=300)
+      coth^2/M* 4.131372 (n=2) to 12.660922 (n=300)
+      review table M  (0.2194, 0.6724), rounded root values (0.2194, 0.6724): MATCH
+      review table b  (0.3925, 0.7185), rounded root values (0.3925, 0.7185): MATCH
+      review table t  (4.131, 12.66), rounded root values (4.131, 12.66): MATCH
+   L/c = 1   : sign changes per n [1]; M* decreasing in n: True
+      M*        1.130067 (n=300) to 5.087527 (n=2)
+      beta_X    0.519985 (n=2) to 0.928797 (n=300)
+      coth^2/M* 0.545998 (n=2) to 2.458065 (n=300)
+      review table M  (1.1301, 5.0875), rounded root values (1.1301, 5.0875): MATCH
+      review table b  (0.51999, 0.9288), rounded root values (0.51999, 0.9288): MATCH
+      review table t  (0.546, 2.458), rounded root values (0.546, 2.458): MATCH
+   L/c = 10  : sign changes per n [1]; M* decreasing in n: True
+      M*        3.627557 (n=300) to 30.761789 (n=2)
+      beta_X    0.520009 (n=2) to 0.974246 (n=300)
+      coth^2/M* 0.090300 (n=2) to 0.765743 (n=300)
+      review table M  (3.6276, 30.762), rounded root values (3.6276, 30.762): MATCH
+      review table b  (0.52001, 0.97425), rounded root values (0.52001, 0.97425): MATCH
+      review table t  (0.0903, 0.7657), rounded root values (0.0903, 0.7657): MATCH
+
+   review table reproduced at the printed digits: True
+
+(3) every integer n from 2 to 300 (299 values), which is the range the insert states
+   L/c = 0   : sign changes per n [1]; M* decreasing in n: True
+      M*        0.219398 (n=300) to 0.672362 (n=2)
+      beta_X    0.392525 (n=2) to 0.718460 (n=300)
+      coth^2/M* 4.131372 (n=2) to 12.660922 (n=300)
+   L/c = 1   : sign changes per n [1]; M* decreasing in n: True
+      M*        1.130067 (n=300) to 5.087527 (n=2)
+      beta_X    0.519985 (n=2) to 0.928797 (n=300)
+      coth^2/M* 0.545998 (n=2) to 2.458065 (n=300)
+   L/c = 10  : sign changes per n [1]; M* decreasing in n: True
+      M*        3.627557 (n=300) to 30.761789 (n=2)
+      beta_X    0.520009 (n=2) to 0.974246 (n=300)
+      coth^2/M* 0.090300 (n=2) to 0.765743 (n=300)
+
+(4) the inequalities printed in the insert, every integer 2 <= n <= 300
+   0.21 <= M* <= 0.68 (L/c = 0)                            True
+   coth^2/M* >= 4.1 (L/c = 0)                              True
+   1.1 <= M* <= 31 (L/c = 1, 10)                           True
+   0.51 <= beta_X <= 0.98 (L/c = 1, 10)                    True
+   exactly one sign change on the grid, all n and L/c      True
+
+(5) the values printed before review-r2 replacement (d), against the roots
+   M* <= 0.67 (L/c = 0)                                    False
+   coth^2/M* >= 4.2 (L/c = 0)                              False
+   M* <= 30 (L/c = 1, 10)                                  False
+   0.52 <= beta_X <= 0.97 (L/c = 1, 10)                    False

@@ -1,0 +1,14 @@
+--- first run
+inputs: insert (16413, '4bacb6ee304e94af190d3bd88647dbed5d48bb6368551004030c227436692838') bib (2198, '81584d933ad25611bcf741b3f6913f31ab678b004f8f0ccd6f477eeff3d08cdc') CR 0 0 ; review-r2.md CR 0 sha256 756c9c25a3e4fab17306976dc4b47a1827d73462a306212301e61a02ddc85603
+S1: old count at its turn 1; count in the r2 bytes 1; lengths 80 -> 141; delta +61
+S2: old count at its turn 1; count in the r2 bytes 1; lengths 46 -> 294; delta +248
+S3: old count at its turn 1; count in the r2 bytes 1; lengths 31 -> 44; delta +13
+S4: old count at its turn 1; count in the r2 bytes 1; lengths 29 -> 58; delta +29
+S5: old count at its turn 1; count in the r2 bytes 1; lengths 66 -> 116; delta +50
+insert result 16814 444aaf5ddb42c266f890f7b20eef4e7eb2279dd586ee18096eae9d0d578242aa ASCII True CR 0
+S6: entry bytes 364 ; bib result 2563 5c771b380c9286b066002297ef8b0b6a674180b05092219613230f5ccddb8f4f CR 0
+WRITTEN: appH_insert.r2.tex, new_bib_entries.r2.bib (r2 bytes); appH_insert.tex, new_bib_entries.bib (r3 bytes)
+exit 0
+--- second run
+REFUSED, nothing written: kept copy already exists: appH_insert.r2.tex
+exit 1

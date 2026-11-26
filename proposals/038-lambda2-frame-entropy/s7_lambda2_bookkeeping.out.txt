@@ -1,0 +1,52 @@
+Dirac holonomy shift: sum_k (a_k+d)^2 over the symmetric twists a_k = k/n, k=-(n-1)/2..(n-1)/2:
+   first-order coefficient in the common shift d vanishes (n=2,3,4,5,7): Dirac holonomy contact = 0 at first order.
+
+Area coefficient c and residue c - c_T  (c_T = N_tot/6 - 4 kappa_X):
+  fixed-state replica (no delta, no holonomy)
+      c      = N_s/6 + n_D/3 + 1/3
+      c-c_T  = 4 - n_D
+  fixed-state + vector holonomy alpha_v
+      c      = N_s/6 - alpha_v*sigma + n_D/3 + 1/3
+      c-c_T  = -alpha_v*sigma - n_D + 4
+  periodic Dirac (graded trace), no delta, no holonomy
+      c      = N_s/6 - 2*n_D/3 + 1/3
+      c-c_T  = 4 - 2*n_D
+  uniform E_delta only (smooth-type bosonic+Dirac contact)
+      c      = -N_s/12 + n_D/3 - 1/6
+      c-c_T  = -N_s/4 - n_D + 7/2
+  completed: uniform E_delta + vector holonomy alpha_v
+      c      = -N_s/12 - alpha_v*sigma + n_D/3 - 1/6
+      c-c_T  = -N_s/4 - alpha_v*sigma - n_D + 7/2
+
+Bosonic content n_D = 0, alpha_v = 1 (cone angle fixes c_a = 1):
+  fixed-state replica (no delta, no holonomy): residue = 4
+        sigma=+1: residue = 4; zero at N_s = []
+        sigma=-1: residue = 4; zero at N_s = []
+  fixed-state + vector holonomy alpha_v: residue = 4 - sigma
+        sigma=+1: residue = 3; zero at N_s = []
+        sigma=-1: residue = 5; zero at N_s = []
+  periodic Dirac (graded trace), no delta, no holonomy: residue = 4
+        sigma=+1: residue = 4; zero at N_s = []
+        sigma=-1: residue = 4; zero at N_s = []
+  uniform E_delta only (smooth-type bosonic+Dirac contact): residue = 7/2 - N_s/4
+        sigma=+1: residue = 7/2 - N_s/4; zero at N_s = [14]
+        sigma=-1: residue = 7/2 - N_s/4; zero at N_s = [14]
+  completed: uniform E_delta + vector holonomy alpha_v: residue = -N_s/4 - sigma + 7/2
+        sigma=+1: residue = 5/2 - N_s/4; zero at N_s = [10]
+        sigma=-1: residue = 9/2 - N_s/4; zero at N_s = [18]
+
+General N_s-independence argument: residue is linear in N_s with slope
+   uniform E_delta: -1/4 (scalars carry the delta), all other rows: 0
+
+Per-sector cutoffs (scalars Lambda_s, connection+ghost Lambda_v), n_D = 0, in units Lambda^2/(2 pi):
+   1/G_A - 1/G_T = (c_A - c_T)/(2 pi) = 2*Lambda_v**2 / pi
+   residue after uniform E_delta (alpha_v=0): -Lambda_s**2*N_s/4 + 7*Lambda_v**2/2  -> zero iff N_s Lambda_s^2 = 14 Lambda_v^2
+   residue after vector holonomy only (alpha_v=1, sigma=+1): 3*Lambda_v**2
+
+Noether (pure-diffeo) coefficient of R in the induced Lagrangian c_R rho R[g_rho] + kappa_X rho^2 X, X = TT, for the presentations of s1:
+  r = +0  b-presentation (X independent): c_W = N_s/6 - 2*n_D/3 + 1/3;  c_W - c_T = 4 - 2*n_D
+  r = -2  keep R, V^2, S^2 (q^2 eliminated; ledger identity): c_W = N_s/6 + n_D/3 - 5/3;  c_W - c_T = 2 - n_D
+  r = +1  keep R, S^2, q^2 (V^2 eliminated): c_W = N_s/6 - 7*n_D/6 + 4/3;  c_W - c_T = 5 - 5*n_D/2
+  r = +4  keep R, V^2, q^2 (S^2 eliminated): c_W = N_s/6 - 8*n_D/3 + 13/3;  c_W - c_T = 8 - 4*n_D
+  r = -4  mode-null remainder (Z = 2S^2 - q^2): c_W = N_s/6 + 4*n_D/3 - 11/3;  c_W - c_T = 0
+  (r = -4 is the only value with c_W = c_T for all contents; on the delta-rho=0 modes X = -4<R> (s4).)

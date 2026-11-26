@@ -1,0 +1,26 @@
+(1) char poly of N=Theta eta equals z^4+(B^2-E^2) z^2-(E.B)^2 : True
+    Pf(Theta)^2 - (E.B)^2 = 0
+(2) S^2 - (trS/2) S - (E.B)^2 1 == 0 : True ; det S == (E.B)^4 : True
+    traceless part obeys S0^2 = (tr S0^2/4) 1 : True
+(2b) (K eta)^2 - (tr(K eta)/2) K eta - Pf^2 1 == 0 : True ; K eta = -N^2 : True
+     hence S_rho = rho K eta (rho = 1/|Pf|) obeys S_rho^2 - (tr S_rho/2) S_rho = 1 (and det S_rho = -1 for Lorentzian eta).
+(3) Lorentz trial 0 : Pf^2 divides Gram det: True ; quotient total degree 8
+(3) Lorentz trial 1 : Pf^2 divides Gram det: True ; quotient total degree 8
+(3) Lorentz trial 2 : Pf^2 divides Gram det: True ; quotient total degree 8
+    random integer points with Pf != 0: 40  of which rank 6: 40
+    rank at the Pf=0 point (only Theta^{01} != 0): 5
+(3) Euclid trial 0 : Pf^2 divides Gram det: True ; quotient total degree 8
+(3) Euclid trial 1 : Pf^2 divides Gram det: True ; quotient total degree 8
+(3) Euclid trial 2 : Pf^2 divides Gram det: True ; quotient total degree 8
+    random integer points with Pf != 0: 39  of which rank 6: 39
+    rank at the Pf=0 point (only Theta^{01} != 0): 5
+(4) constant term of p(z) is -(E.B)^2 <= 0, while (z^2+c)^2 has constant term c^2 > 0 for c != 0 real;
+    c = 0 would give N^2 = 0 but det N = (E.B)^2 != 0 when Pf != 0.  Hence no real nondegenerate Theta has Theta eta Theta eta = -c 1, c != 0 (Lorentzian eta).
+    Lorentzian eta, c =  1.00: min_Theta ||N^2 + c 1||^2 = 2.000e+00
+    Lorentzian eta, c = -1.00: min_Theta ||N^2 + c 1||^2 = 2.000e+00
+    Lorentzian eta, c =  0.10: min_Theta ||N^2 + c 1||^2 = 2.000e-02
+    Lorentzian eta, c = -0.10: min_Theta ||N^2 + c 1||^2 = 2.000e-02
+    Euclidean eta, c =  1.00: min_Theta ||N^2 + c 1||^2 = 3.369e-16
+    Euclidean eta, c = -1.00: min_Theta ||N^2 + c 1||^2 = 4.000e+00
+    Euclidean eta, c =  0.10: min_Theta ||N^2 + c 1||^2 = 5.264e-16
+    Euclidean eta, c = -0.10: min_Theta ||N^2 + c 1||^2 = 4.000e-02

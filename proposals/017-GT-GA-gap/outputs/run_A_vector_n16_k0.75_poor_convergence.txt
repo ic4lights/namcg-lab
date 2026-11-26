@@ -1,0 +1,4 @@
+vector kappa=0.75: lam^2: eig(rel to rho^2 p^2 M) = [-1.82408293e-03  2.36498874e-04  2.26604910e+00]  gauge residual 2.09e-16 imag 2.1e-17
+vector kappa=0.75: lam^4: eig(rel to rho^2 p^2 M) = [0.6991754  0.74443782 3.88765641]  gauge residual 7.69e-16 imag 3.6e-16
+vector kappa=0.75: lam^6: eig(rel to rho^2 p^2 M) = [1.84826203 2.24681173 2.49703848]  gauge residual 1.88e-14 imag 4.6e-15
+time 129.02790760993958

@@ -1,0 +1,2 @@
+survey: clean 107, strict 80, loose 25, outside 2
+wrote appH_insert_r1.tex: bytes 6604 CRLF lines 24 bare LF 0

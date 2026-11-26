@@ -1,0 +1,8 @@
+samples 600000
+Euclidean point: c_E = trace/10 = 0.36099; off-diagonal max |R| = 8.0e-04
+diagonal, phases pi/4 +- 0.25: c_h = 0.889; |R - c_E e^(i pi/4) h^-1| / |pred| = 0.0039; median/max entrywise deviation in sigma: 1.02/2.84; opposite sign would give 2.000
+   R_00 = 0.3604+0.0078j +- 0.0004+0.0002j  predicted 0.3609+0.0080j
+diagonal, phases pi/4 +- 0.4: c_h = 0.762; |R - c_E e^(i pi/4) h^-1| / |pred| = 0.0068; median/max entrywise deviation in sigma: 0.88/3.01; opposite sign would give 1.999
+   R_00 = 0.3479+0.0916j +- 0.0006+0.0007j  predicted 0.3490+0.0921j
+O^T D O (last D, O real orthogonal): c_h = 0.762; |R - c_E e^(i pi/4) h^-1| / |pred| = 0.0073; median/max entrywise deviation in sigma: 0.97/3.81; opposite sign would give 1.999
+   R_00 = 0.3515-0.0297j +- 0.0007+0.0004j  predicted 0.3523-0.0294j

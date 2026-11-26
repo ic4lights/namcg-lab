@@ -1,0 +1,3 @@
+wrote appH_insert_r1.tex 8606 bytes; 24 CRLF lines; bare LF 0
+status sentences: 1
+process-language scan: []

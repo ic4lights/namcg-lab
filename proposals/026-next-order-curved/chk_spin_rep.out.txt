@@ -1,0 +1,2 @@
+upper gamma^{mn} = -1 * etabar ^k_{mn} tau_k
+lower gamma^{mn} = -1 * eta ^k_{mn} tau_k

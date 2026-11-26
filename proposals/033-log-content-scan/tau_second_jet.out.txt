@@ -1,0 +1,30 @@
+sample 5
+sample 6
+sample 7
+sample 8
+sample 9
+sample 10
+sample 11
+rank of curvature/endomorphism variations: 3 of 6
+rank [X | dtau_v]: 4
+rank [X | dtau_f]: 4
+subset ['R', 'Rii', 'Rijij']  rank 3  rank with dtau_v 4
+subset ['R', 'Rii', 'e']  rank 2  rank with dtau_v 3
+subset ['R', 'Rii', 'Xp']  rank 2  rank with dtau_v 3
+subset ['R', 'Rii', 'trN_EG']  rank 2  rank with dtau_v 3
+subset ['R', 'Rijij', 'e']  rank 2  rank with dtau_v 3
+subset ['R', 'Rijij', 'Xp']  rank 2  rank with dtau_v 3
+subset ['R', 'Rijij', 'trN_EG']  rank 2  rank with dtau_v 3
+subset ['R', 'e', 'Xp']  rank 1  rank with dtau_v 2
+subset ['R', 'e', 'trN_EG']  rank 1  rank with dtau_v 2
+subset ['R', 'Xp', 'trN_EG']  rank 1  rank with dtau_v 2
+subset ['Rii', 'Rijij', 'e']  rank 3  rank with dtau_v 4
+subset ['Rii', 'Rijij', 'Xp']  rank 2  rank with dtau_v 3
+subset ['Rii', 'Rijij', 'trN_EG']  rank 3  rank with dtau_v 4
+subset ['Rii', 'e', 'Xp']  rank 2  rank with dtau_v 3
+subset ['Rii', 'e', 'trN_EG']  rank 2  rank with dtau_v 3
+subset ['Rii', 'Xp', 'trN_EG']  rank 2  rank with dtau_v 3
+subset ['Rijij', 'e', 'Xp']  rank 2  rank with dtau_v 3
+subset ['Rijij', 'e', 'trN_EG']  rank 2  rank with dtau_v 3
+subset ['Rijij', 'Xp', 'trN_EG']  rank 2  rank with dtau_v 3
+subset ['e', 'Xp', 'trN_EG']  rank 1  rank with dtau_v 2

@@ -1,0 +1,9 @@
+seed 0 : sum w trE = 0  sum w trOm^2 = 0  sum w cur = 0
+   a2_total = 250095084.71580306   (1/2) sqrtG S = 250095084.71580306   equal: True
+   tr_V(bb)^2 = 318272558.57699186  tr_D(bb)^2 = 40184990.481930874  S= 237902577.61313012
+seed 1 : sum w trE = 0  sum w trOm^2 = 0  sum w cur = 0
+   a2_total = 480.22686849249584   (1/2) sqrtG S = 480.22686849249584   equal: True
+   tr_V(bb)^2 = 2.376798115206841  tr_D(bb)^2 = 0.322913645804467  S= 1.7309708235979069
+seed 2 : sum w trE = 0  sum w trOm^2 = 0  sum w cur = 0
+   a2_total = 22160.17244477818   (1/2) sqrtG S = 22160.17244477818   equal: True
+   tr_V(bb)^2 = 635.3346969922496  tr_D(bb)^2 = 92.32557658396762  S= 450.6835438243144

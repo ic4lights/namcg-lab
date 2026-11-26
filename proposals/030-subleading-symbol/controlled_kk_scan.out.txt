@@ -1,0 +1,12 @@
+trial 0  P4 scale 1.000: residual of Im Q1 = lam1 QEH + lam2 Gm: 1.605e-02 ; lam1=7.66944e-05 ; lam2=3.7664e-07
+trial 0  P4 scale 0.100: residual of Im Q1 = lam1 QEH + lam2 Gm: 1.593e-03 ; lam1=7.80870e-05 ; lam2=3.7664e-08
+trial 0  P4 scale 0.010: residual of Im Q1 = lam1 QEH + lam2 Gm: 1.592e-04 ; lam1=7.82262e-05 ; lam2=3.7664e-09
+trial 0  P4 scale 0.001: residual of Im Q1 = lam1 QEH + lam2 Gm: 1.592e-05 ; lam1=7.82401e-05 ; lam2=3.7664e-10
+trial 1  P4 scale 1.000: residual of Im Q1 = lam1 QEH + lam2 Gm: 8.696e-01 ; lam1=7.74604e-04 ; lam2=7.2211e-06
+trial 1  P4 scale 0.100: residual of Im Q1 = lam1 QEH + lam2 Gm: 4.198e-01 ; lam1=2.55053e-04 ; lam2=7.2211e-07
+trial 1  P4 scale 0.010: residual of Im Q1 = lam1 QEH + lam2 Gm: 5.506e-02 ; lam1=2.03098e-04 ; lam2=7.2211e-08
+trial 1  P4 scale 0.001: residual of Im Q1 = lam1 QEH + lam2 Gm: 5.622e-03 ; lam1=1.97903e-04 ; lam2=7.2211e-09
+trial 2  P4 scale 1.000: residual of Im Q1 = lam1 QEH + lam2 Gm: 5.093e-01 ; lam1=4.10608e-04 ; lam2=2.5400e-04
+trial 2  P4 scale 0.100: residual of Im Q1 = lam1 QEH + lam2 Gm: 4.759e-02 ; lam1=3.65050e-04 ; lam2=2.5400e-05
+trial 2  P4 scale 0.010: residual of Im Q1 = lam1 QEH + lam2 Gm: 4.273e-03 ; lam1=3.60494e-04 ; lam2=2.5400e-06
+trial 2  P4 scale 0.001: residual of Im Q1 = lam1 QEH + lam2 Gm: 4.228e-04 ; lam1=3.60039e-04 ; lam2=2.5400e-07

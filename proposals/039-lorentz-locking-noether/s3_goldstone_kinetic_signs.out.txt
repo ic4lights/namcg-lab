@@ -1,0 +1,8 @@
+(1, 1, 1, 1) boost-pair Hessian diag: [np.float64(38.612), np.float64(42.197), np.float64(29.456)] rotation-pair: [np.float64(41.339), np.float64(28.597), np.float64(32.182)] eig (+,-): (12, 0) min|eig|: 23.5981
+(1, 1, 1, 1) boost-pair Hessian diag: [np.float64(16.165), np.float64(18.855), np.float64(17.743)] rotation-pair: [np.float64(15.994), np.float64(14.882), np.float64(17.572)] eig (+,-): (12, 0) min|eig|: 11.2457
+(1, 1, 1, 1) boost-pair Hessian diag: [np.float64(9.369), np.float64(8.205), np.float64(9.898)] rotation-pair: [np.float64(7.873), np.float64(9.566), np.float64(8.402)] eig (+,-): (12, 0) min|eig|: 5.9236
+(1, 1, 1, 1) boost-pair Hessian diag: [np.float64(5.735), np.float64(7.748), np.float64(8.85)] rotation-pair: [np.float64(5.05), np.float64(6.151), np.float64(8.164)] eig (+,-): (12, 0) min|eig|: 4.6332
+(-1, 1, 1, 1) boost-pair Hessian diag: [np.float64(2.589), np.float64(2.573), np.float64(2.598)] rotation-pair: [np.float64(-5.656), np.float64(-5.68), np.float64(-5.665)] eig (+,-): (6, 6) min|eig|: 2.5931
+(-1, 1, 1, 1) boost-pair Hessian diag: [np.float64(-9.447), np.float64(-17.797), np.float64(-15.299)] rotation-pair: [np.float64(3.994), np.float64(1.495), np.float64(9.846)] eig (+,-): (6, 6) min|eig|: 3.9772
+(-1, 1, 1, 1) boost-pair Hessian diag: [np.float64(-2.754), np.float64(-6.653), np.float64(-6.741)] rotation-pair: [np.float64(0.534), np.float64(0.622), np.float64(4.521)] eig (+,-): (6, 6) min|eig|: 1.483
+(-1, 1, 1, 1) boost-pair Hessian diag: [np.float64(-35.223), np.float64(-30.531), np.float64(-52.191)] rotation-pair: [np.float64(-79.856), np.float64(-58.196), np.float64(-62.888)] eig (+,-): (6, 6) min|eig|: 1.0908

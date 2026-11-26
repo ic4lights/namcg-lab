@@ -1,0 +1,10 @@
+(1) trace of the Ricci delta over a one-form / delta of R = 1  -> Kabat shift Delta c = -1 per vector
+(2) R-coefficient of a_1 for the Hodge operator per vector = -1/3 = 4/6 + kappa_X r with r = -1
+    c_A - 1 - c_W(-1) at kappa_X = 1: 0
+(3) X on the stationary set = -4*R + 6*V2 - 10*boxlnrho; R-coefficient -4 = -1 (Hodge) + -3 (axion gradient)
+(4) T^op superpotential, edge term carried by T^op (r = -4): c = N_tot/6 - 4*kappa_X, c - c_T = 0
+(4) fixed-state replica, no extra edge term (r = 0): c = N_tot/6, c - c_T = 4*kappa_X
+(4) Chen-type Noether charge of tree-level fluctuation Lagrangians (zero on Sigma): c = N_tot/6, c - c_T = 4*kappa_X
+(4) Maxwell edge sector in Moser variables (Kabat value -1 per vector): c = N_tot/6 - kappa_X, c - c_T = 3*kappa_X
+(4) stipulated local dressing (039), r = -2: c = N_tot/6 - 2*kappa_X, c - c_T = 2*kappa_X
+ALL CHECKS PASSED

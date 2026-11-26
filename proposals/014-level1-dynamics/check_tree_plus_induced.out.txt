@@ -1,0 +1,28 @@
+trial 0 q= [0, 1/3, -5, 3] q^2= 307/9
+ (a) Eh symmetric: True  rank of Eh on all h: 6
+ Maxwell form symmetric: True  rank: 9
+ W1 gauge-invariant (W1*gauge=0): True  rank W1: 6
+ quotient dims: rank M9 = 9  rank W9 = 6
+ det(W1 - lam M) on quotient = 837201991720249*lam**3*(9*lam - 614)**2*(144*lam - 2149)**2*(18*lam**2 + 1228*lam + 94249)/22039921152
+ ratio to q^2: [2, 7/16, -1 - sqrt(14)*I/2, -1 + sqrt(14)*I/2, 0]
+trial 1 q= [7, 1, 2, -1] q^2= -43
+ (a) Eh symmetric: True  rank of Eh on all h: 6
+ Maxwell form symmetric: True  rank: 9
+ W1 gauge-invariant (W1*gauge=0): True  rank W1: 6
+ quotient dims: rank M9 = 9  rank W9 = 6
+ det(W1 - lam M) on quotient = 6321363049*lam**3*(4*lam - 231)**2*(8*lam - 537)**2*(32*lam**2 + 2148*lam - 207819)/32768
+ ratio to q^2: [-231/172, -537/344, 537/688 + 3*sqrt(216769)/688, 537/688 - 3*sqrt(216769)/688, 0]
+trial 2 q= [3, 1, 0, 0] q^2= -8
+ (a) Eh symmetric: True  rank of Eh on all h: 6
+ Maxwell form symmetric: True  rank: 9
+ W1 gauge-invariant (W1*gauge=0): True  rank W1: 6
+ quotient dims: rank M9 = 9  rank W9 = 6
+ det(W1 - lam M) on quotient = 2*lam**3*(8*lam - 97)**2*(16*lam - 169)**2*(8*lam**2 + 97*lam - 1746)
+ ratio to q^2: [-97/64, -169/128, 97/128 + sqrt(65281)/128, 97/128 - sqrt(65281)/128, 0]
+trial 3 q= [2, 5, 1, 1] q^2= 23
+ (a) Eh symmetric: True  rank of Eh on all h: 6
+ Maxwell form symmetric: True  rank: 9
+ W1 gauge-invariant (W1*gauge=0): True  rank W1: 6
+ quotient dims: rank M9 = 9  rank W9 = 6
+ det(W1 - lam M) on quotient = 148035889*lam**3*(2*lam - 117)**2*(16*lam - 261)**2*(8*lam**2 + 468*lam + 24219)/8192
+ ratio to q^2: [117/46, 261/368, -117/92 - 9*sqrt(429)*I/92, -117/92 + 9*sqrt(429)*I/92, 0]

@@ -1,0 +1,6 @@
+4D free-A,B,C xi^{0} affine: g^{ab}dGamma == box+Ric : True (4 coef eqs)
+4D free-A,B,C xi^{1} affine: g^{ab}dGamma == box+Ric : True (4 coef eqs)
+4D free-A,B,C xi^{2} affine: g^{ab}dGamma == box+Ric : True (4 coef eqs)
+4D free-A,B,C xi^{3} affine: g^{ab}dGamma == box+Ric : True (4 coef eqs)
+GK PART4: ALL PASS
+EXIT=0

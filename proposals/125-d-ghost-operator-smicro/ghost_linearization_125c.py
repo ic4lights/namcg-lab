@@ -1,0 +1,375 @@
+#!/usr/bin/env python3
+# -*- coding: ascii -*-
+# Item 125c (concurrent D-battery only; functions byte-identical to 125b) of ghost_linearization_125.py, bytes pinned in
+# ghost_linearization_125.py.dead-bytes): settle (i) residual bug vs
+# (ii) genuine convention finding for the first variation of the harmonic
+# gauge functional F^mu[g] = g^{ab} Gamma^mu_{ab} along delta g = Lie_xi g.
+#
+# Three INDEPENDENT dF implementations:
+#   dF_t   : d/dt F(g + t k)|0 through the exact inverse of (g + t k)  [dead script]
+#   dF_id  : same, but F computed from the trace-of-connection identity
+#            F^mu = -|g|^{-1/2} d_nu(|g|^{1/2} g^{mu nu})              [identity route]
+#   dF_dir : tensorial first variation  F'(h) = -h^{ab} Gam^c_ab g^{?} :
+#            dF^mu = -h^{ab} Gam^mu_ab + g^{ab} dGam^mu_ab(h), h = Lie_xi g  [direct route]
+# Agreement tests + INJECTED POSITIVE CONTROLS (memory rule: every guard
+# must fire on an injected wrong value; wrong sign / wrong coefficient must
+# FAIL).
+#
+# Conventions exactly as eq:christoffel / eq:riemann (ch02):
+#   Gamma^r_mn = 1/2 g^{rs}(d_m g_ns + d_n g_ms - d_s g_mn)
+#   R^r_smn    = d_m Gamma^r_ns - d_n Gamma^r_ms + Gam^r_ml Gam^l_ns - Gam^r_nl Gam^l_ms
+#   R_mn = R^r_mrn   (checked: S^2 gives Ric = g, R = +2 -- A4 in part 1, PASS)
+import sys, time
+from sympy import (symbols, Function, Matrix, Rational, simplify, expand,
+                   sin, cos, sinh, cosh, tan, diff, Poly, linsolve, symbols as S, sqrt, log as slog)
+
+T0 = time.time()
+R = Rational
+def log(*a):
+    print("[%6.1fs]" % (time.time() - T0), *a); sys.stdout.flush()
+def addl(*a):
+    # elementwise sum of equal-length vectors (was a CONCATENATOR: that wiring
+    # bug made battery/D5 compare dF against box+GT with the Ric term silently
+    # dropped; D1 residual [0,+f] = +Ric(xi) caught it; see out-125c-bugtrace.txt)
+    a = [list(x) for x in a]
+    assert all(len(x) == len(a[0]) for x in a), "addl: length mismatch"
+    return [sum(xs[i] for xs in a) for i in range(len(a[0]))]
+def iszero(v):
+    return simplify(v) == 0
+
+X = None
+
+def gamma(met, iginv, n):
+    gam = {}
+    for r in range(n):
+        for m in range(n):
+            for q in range(m, n):
+                s = 0
+                for ss in range(n):
+                    s += iginv[r, ss] * (diff(met[m, ss], X[q])
+                                         + diff(met[q, ss], X[m])
+                                         - diff(met[m, q], X[ss]))
+                v = R(1, 2) * simplify(s)
+                gam[(r, m, q)] = v; gam[(r, q, m)] = v
+    return gam
+
+def richi(ig, gam, n):
+    ric = Matrix.zeros(n, n)
+    for m in range(n):
+        for q in range(m, n):
+            s = 0
+            for r in range(n):
+                s += diff(gam[(r, q, m)], X[r]) - diff(gam[(r, r, m)], X[q])
+                for l in range(n):
+                    s += gam[(r, r, l)] * gam[(l, q, m)] - gam[(r, q, l)] * gam[(l, r, m)]
+            v = simplify(s); ric[m, q] = v; ric[q, m] = v
+    return ric
+
+def conn(gam, n):
+    C = {}
+    for a in range(n):
+        for b in range(n):
+            for mu in range(n):
+                C[(a, b, mu)] = gam[(mu, a, b)]
+    return C
+
+def geom(met, n):
+    ig = met.inv()
+    for i in range(n):
+        for j in range(n):
+            ig[i, j] = simplify(ig[i, j])
+    gam = gamma(met, ig, n)
+    return ig, gam, richi(ig, gam, n), conn(gam, n)
+
+def Ffun(gmet, n):
+    ig = gmet.inv()
+    for i in range(n):
+        for j in range(n):
+            ig[i, j] = simplify(ig[i, j])
+    gam = gamma(gmet, ig, n)
+    return [simplify(sum(ig[a, b] * gam[(mu, a, b)]
+                         for a in range(n) for b in range(n))) for mu in range(n)]
+
+def Fidfun(gmet, n):
+    # identity route: F^mu = -|g|^{-1/2} d_nu(|g|^{1/2} g^{mu nu})
+    gd = simplify(gmet.det())
+    sq = simplify(sqrt(gd))
+    ig = gmet.inv()
+    for i in range(n):
+        for j in range(n):
+            ig[i, j] = simplify(ig[i, j])
+    out = []
+    for mu in range(n):
+        s = 0
+        for nu in range(n):
+            s += diff(simplify(sq * ig[mu, nu]), X[nu])
+        out.append(simplify(-s / sq))
+    return out
+
+def dF_t(met, k, n, t):
+    gmet = met + t * k
+    Fv = Ffun(gmet, n)
+    return [simplify(diff(Fv[mu], t).subs(t, 0)) for mu in range(n)]
+
+def dF_id(met, k, n, t):
+    gmet = met + t * k
+    Fv = Fidfun(gmet, n)
+    return [simplify(diff(Fv[mu], t).subs(t, 0)) for mu in range(n)]
+
+def dF_dir(met, h, n, gam, ig, C):
+    # F'(h)^mu = -h^{ab} Gam^mu_ab + g^{ab} dGam^mu_ab(h);
+    # dGam^r_mn(h) = 1/2 g^{rs}(nabla_m h_ns + nabla_n h_ms - nabla_s h_mn)
+    # h is covariant (Lie derivative of g); h^{ab} = g^{ac} g^{bd} h_cd
+    hu = Matrix([[simplify(sum(ig[a, p] * ig[b, q] * h[p, q]
+                               for p in range(n) for q in range(n)))
+                  for b in range(n)] for a in range(n)])
+    def ch(a, b, c):  # nabla_a h_bc
+        s = diff(h[b, c], X[a])
+        for p in range(n):
+            s -= C[(a, b, p)] * h[p, c] + C[(a, c, p)] * h[b, p]
+        return simplify(s)
+    out = []
+    for mu in range(n):
+        tot = 0
+        for a in range(n):
+            for b in range(n):
+                dgm = 0
+                for ss in range(n):
+                    dgm += ig[mu, ss] * (ch(a, b, ss) + ch(b, a, ss) - ch(ss, a, b))
+                tot += ig[a, b] * R(1, 2) * dgm - hu[a, b] * gam[(mu, a, b)]
+        out.append(simplify(tot))
+    return out
+
+def lie(met, xi, n):
+    K = Matrix.zeros(n, n)
+    for a in range(n):
+        for b in range(a, n):
+            s = sum(xi[p] * diff(met[a, b], X[p]) for p in range(n))
+            s += sum(met[p, b] * diff(xi[p], X[a]) for p in range(n))
+            s += sum(met[a, p] * diff(xi[p], X[b]) for p in range(n))
+            v = expand(s); K[a, b] = v; K[b, a] = v
+    return K
+
+def boxvec(ig, C, xi, n):
+    out = []
+    for mu in range(n):
+        bx = 0
+        for a in range(n):
+            for b in range(n):
+                t1 = diff(xi[mu], X[a], X[b])
+                t1 += sum(diff(C[(b, d, mu)], X[a]) * xi[d] for d in range(n))
+                t1 += sum(C[(b, d, mu)] * diff(xi[d], X[a]) for d in range(n))
+                t1 += sum(C[(a, d, mu)] * (diff(xi[d], X[b])
+                          + sum(C[(b, e, d)] * xi[e] for e in range(n))) for d in range(n))
+                t1 -= sum(C[(a, b, d)] * (diff(xi[mu], X[d])
+                          + sum(C[(d, e, mu)] * xi[e] for e in range(n))) for d in range(n))
+                bx += ig[a, b] * t1
+        out.append(simplify(bx))
+    return out
+
+def ricvec(ig, ric, xi, n):
+    return [simplify(sum(ig[mu, s] * ric[s, nu] * xi[nu]
+                         for s in range(n) for nu in range(n))) for mu in range(n)]
+
+def divxi(ig, C, xi, n):
+    # div xi = d_a xi^a + Gamma^a_{ab} xi^b   (xi contravariant)
+    s = sum(diff(xi[a], X[a]) for a in range(n))
+    for a in range(n):
+        for b in range(n):
+            s += C[(a, b, a)] * xi[b]
+    return simplify(s)
+
+def grad_div(ig, C, xi, n):
+    d = divxi(ig, C, xi, n)
+    return [simplify(sum(ig[mu, a] * diff(d, X[a]) for a in range(n)))
+            for mu in range(n)]
+
+def div_grad(ig, C, xi, n):
+    Wm = {}
+    for mu in range(n):
+        for nu in range(n):
+            s = 0
+            for m in range(n):
+                inner = diff(xi[nu], X[m]) + sum(C[(m, d, nu)] * xi[d] for d in range(n))
+                s += ig[mu, m] * inner
+            Wm[(mu, nu)] = simplify(s)
+    out = []
+    for mu in range(n):
+        s = 0
+        for nu in range(n):
+            for p in range(n):
+                term = diff(Wm[(mu, nu)], X[p])
+                term += sum(C[(p, e, mu)] * Wm[(e, nu)] for e in range(n))
+                term += sum(C[(p, e, nu)] * Wm[(mu, e)] for e in range(n))
+                s += ig[p, nu] * term
+        out.append(simplify(s))
+    return out
+
+def solveabc(fam, n, tag):
+    """fam = (met, xi) with general metric fns and general vector field;
+    solve dF = a*box + b*Ric + c*graddiv + d*DivGrad by coefficient match."""
+    met, xi = fam
+    t = symbols('t')
+    ig, gam, ric, C = geom(met, n)
+    h = lie(met, xi, n)
+    dB = dF_dir(met, h, n, gam, ig, C)
+    if tag.startswith("C2") or tag.startswith("C3"):
+        dA = dB  # direct route only (t-route infeasible on these families);
+                  # route agreement is established on S^2 (C0a) and D-families
+        agree = True
+    else:
+        dA = dF_t(met, h, n, t)
+        agree = all(iszero(a - b) for a, b in zip(dA, dB))
+    log("%s dF: t-route == direct-route : %s" % (tag, "PASS" if agree else "FAIL"))
+    bx = boxvec(ig, C, xi, n)
+    rv = ricvec(ig, ric, xi, n)
+    gv = grad_div(ig, C, xi, n)
+    dv = div_grad(ig, C, xi, n)
+    a_, b_, c_, d_ = S('a b c d')
+    cs = [s for s in xi[0].free_symbols if s.is_symbol and s.name.startswith('c')]
+    cs += [s for s in xi[1].free_symbols if s.is_symbol and s.name.startswith('c')] if n > 1 else []
+    for mu2 in range(2, n):
+        cs += [s for s in xi[mu2].free_symbols if s.is_symbol and s.name.startswith('c')]
+    cs = sorted(set(cs), key=lambda s: s.name)
+    eqs = []
+    for mu in range(n):
+        res = expand(simplify(dA[mu] - (a_ * bx[mu] + b_ * rv[mu] + c_ * gv[mu] + d_ * dv[mu])))
+        eqs += list(Poly(res, *cs).coeffs())
+    sol = linsolve(eqs, (a_, b_, c_, d_))
+    log("%s SOLVE (a,b,c,d) dF = a box + b Ric + c graddiv + d DivGrad : %s" % (tag, sol))
+    return sol, (dA, dB, bx, rv, gv, dv, ig, gam, ric, C)
+
+
+RES = []
+t = symbols('t')
+# ---------- C4: divxi sanity (fix-verification + teeth) -------------------
+X = (symbols('x0'), symbols('x1'))
+th, ph = X
+met = Matrix([[1, 0], [0, sin(th)**2]])
+ig4, gam4, ric4, C4 = geom(met, 2)
+u1, v1 = Function('u')(th, ph), Function('v')(th, ph)
+dcode = divxi(ig4, C4, [u1, v1], 2)
+dtxt = simplify(diff(u1, th) + u1 / tan(th) + diff(v1, ph))
+log("C4a divxi == textbook (general xi)   %s" % ("PASS" if simplify(dcode - dtxt) == 0 else "FAIL"))
+RES.append(simplify(dcode - dtxt) == 0)
+dw = divxi(ig4, C4, [0, Function('w')(th)], 2)
+log("C4b div(f(th) d_phi) = 0 (teeth: nonzero w-derivs would FAIL)  %s"
+    % ("PASS" if dw == 0 else "FAIL"))
+RES.append(dw == 0)
+# C4c: addl unit control: sums elementwise; length mismatch MUST raise (teeth)
+okc = addl([1, 2], [3, 4], [5, 6, 0][:2]) == [9, 12]
+try:
+    addl([1, 2], [3])
+    okc = False
+except AssertionError:
+    pass
+log("C4c addl elementwise + length-guard fires   %s" % ("PASS" if okc else "FAIL"))
+RES.append(okc)
+
+# ---------- D: identity battery on four families --------------------------
+def battery(tag, met, n, xis, gd_on, gamX, igX, ricX, CX, gamT=None, ricT=None, do_t=True):
+    t = symbols('t')
+    ig = igX; gam = gamX; ric = ricX; C = CX
+    okall = True; okcov = True
+    for j, xk in enumerate(xis):
+        h = lie(met, xk, n)
+        dA = dF_t(met, h, n, t) if do_t else None
+        dC = dF_dir(met, h, n, gam, ig, C)
+        cov = boxvec(ig, C, xk, n)
+        cov = addl(cov, ricvec(ig, ric, xk, n))
+        # analytic cancellation: +grad(div xi) from nabla_nu nabla^mu xi^nu and
+        # -grad(div xi) from -1/2 nabla^mu tr(L g) cancel EXACTLY (checked on
+        # flat family C2'); gd_on kept only to log that gd is NOT consumed.
+        # Gamma T term: -(L_xi g)^{ab} Gam^mu_ab
+        hu = [[simplify(sum(ig[a, p] * ig[b, q] * h[p, q] for p in range(n) for q in range(n)))
+               for b in range(n)] for a in range(n)]
+        GT = [simplify(-sum(hu[a][b] * gam[(mu, a, b)] for a in range(n) for b in range(n)))
+              for mu in range(n)]
+        r1 = [simplify(a - b - c) for a, b, c in zip(dC, cov, GT)]
+        if do_t:
+            r2 = [simplify(a - b) for a, b in zip(dA, dC)]
+            agree = all(iszero(z) for z in r2)
+        else:
+            agree = True
+        ident = all(iszero(z) for z in r1)
+        okall = okall and ident
+        okcov = okcov and agree
+        log("%s xi%d: dF==cov+GT %s | t-route==direct %s" %
+            (tag, j, "PASS" if ident else "FAIL",
+             ("PASS" if agree else "FAIL") if do_t else "skip"))
+        if not ident:
+            log("    residual r1 = %s" % [simplify(z) for z in r1])
+    return okall and okcov
+
+# D1: S^2, grad-div OFF on rotational (div=0); general xi ON
+X = (symbols('x0'), symbols('x1'))
+th, ph = X
+met = Matrix([[1, 0], [0, sin(th)**2]])
+ig2, gam2, ric2, C2 = geom(met, 2)
+f1 = Function('f')(th)
+ok = battery("D1 S2-rot", met, 2, [[0, f1]], False, gam2, ig2, ric2, C2)
+RES.append(ok)
+u2, v2 = Function('u')(th, ph), Function('v')(th, ph)
+ok = battery("D2 S2-gen", met, 2, [[u2, v2]], True, gam2, ig2, ric2, C2, do_t=False)
+RES.append(ok)
+KILLS = [[0, 1], [-sin(ph), -cos(ph) * cos(th) / sin(th)], [cos(ph), -sin(ph) * cos(th) / sin(th)]]
+ok = battery("D3 S2-Kill", met, 2, KILLS, True, gam2, ig2, ric2, C2)
+RES.append(ok)
+
+# D4: hyperbolic plane ds^2 = d rho^2 + sinh^2 rho dphi^2 (Ric = -g, R = -2)
+rho, psi = symbols('x0 x1')
+metH = Matrix.diag(1, sinh(rho)**2)
+igH, gamH, ricH, CH = geom(metH, 2)
+RscH = simplify(sum(igH[a, b] * ricH[a, b] for a in range(2) for b in range(2)))
+log("D4a H^2 convention check: R = %s (expect -2), Ric+g = %s" %
+    (RscH, simplify(ricH[1, 1] + metH[1, 1])))
+RES.append(RscH == -2)
+w1 = Function('w')(rho)
+ok = battery("D4 H2-rot", metH, 2, [[0, w1]], False, gamH, igH, ricH, CH)
+RES.append(ok)
+
+# D5: 4D Lorentzian Schwarzschild-family, general quadratic xi
+X = (symbols('x0'), symbols('x1'), symbols('x2'), symbols('x3'))
+tt, rr, th2, ph2 = X
+A5 = Function('A')(rr); B5 = Function('B')(rr); C5 = Function('C')(rr)
+met5 = Matrix.diag(-C5, B5, rr**2, rr**2 * sin(th2)**2)
+ig5, gam5, ric5, C5c = geom(met5, 4)
+# D5: the composite xi -> dF(L_xi g) - (box+Ric)xi - GT is LINEAR in xi
+# (lie is linear in xi; dF_dir linear in h; boxvec/ricvec/GT linear), so
+# "identity for all affine xi" <=> identity for each vector component with the
+# other three zero. Component-wise testing keeps simplify at 4 constants where
+# it terminates to exact 0; the combined 16-constant call left 7 coefficients
+# that simplify() could not reduce to syntactic 0 (see out-125c.txt run 9/10).
+ok5 = True
+for k in range(4):
+    csk = [symbols('c%d_%d' % (k, j)) for j in range(4)]
+    mb = [1, X[0], X[1], X[2]]
+    xi5 = [0, 0, 0, 0]
+    xi5[k] = sum(csk[j] * mb[j] for j in range(4))
+    h5 = lie(met5, xi5, 4)
+    dD = dF_dir(met5, h5, 4, gam5, ig5, C5c)
+    cov5 = addl(boxvec(ig5, C5c, xi5, 4), ricvec(ig5, ric5, xi5, 4))
+    hu5 = [[simplify(sum(ig5[a, p] * ig5[b, q] * h5[p, q] for p in range(4) for q in range(4)))
+            for b in range(4)] for a in range(4)]
+    GT5 = [simplify(-sum(hu5[a][b] * gam5[(mu, a, b)] for a in range(4) for b in range(4)))
+           for mu in range(4)]
+    r5 = [expand(simplify(a - b - c)) for a, b, c in zip(dD, cov5, GT5)]
+    eqs5 = []
+    for mu in range(4):
+        eqs5 += list(Poly(r5[mu], *csk).coeffs())
+    z5 = all(e == 0 for e in eqs5)
+    log("D5 4D Lorentz (A,B,C free) xi^%s affine: dF-(box+Ric+GT)==0 for all 4 const: %s (%d coef eqs)"
+        % (["t", "r", "th", "ph"][k], "PASS" if z5 else "FAIL", len(eqs5)))
+    RES.append(z5)
+    ok5 = ok5 and z5
+
+# D6: Lorentzian Killing controls on Schwarzschild (Ricci-flat): exact
+# Killing fields must satisfy dF = 0 and (box+Ric) xi = 0.
+Mp = symbols('M', positive=True)
+met6 = Matrix.diag(-(1 - 2*Mp/rr), 1/(1 - 2*Mp/rr), rr**2, rr**2*sin(th2)**2)
+ig6, gam6, ric6, C6 = geom(met6, 4)
+RES.append(battery("D6 Schw-kill", met6, 4, [[1, 0, 0, 0], [0, 0, 0, 1]],
+                   True, gam6, ig6, ric6, C6))
+
+print("SUMMARY 125c: %d/%d PASS" % (sum(1 for r in RES if r), len(RES)))
+sys.exit(0 if all(RES) else 1)

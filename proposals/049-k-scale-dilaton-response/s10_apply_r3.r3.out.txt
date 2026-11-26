@@ -1,0 +1,14 @@
+source appH_insert.tex 21698 bytes, sha256 92f8033b70adb8140f1c70b69e81f101ae30597d10d662c4c70f72045a10e4e2
+G1: old occurs 1 at its turn, 1 in r2; old 76 chars, new 81 chars
+G2: old occurs 1 at its turn, 1 in r2; old 100 chars, new 435 chars
+G3: old occurs 1 at its turn, 1 in r2; old 79 chars, new 189 chars
+G4: old occurs 1 at its turn, 1 in r2; old 33 chars, new 179 chars
+G5: old occurs 1 at its turn, 1 in r2; old 114 chars, new 200 chars
+G6: old occurs 1 at its turn, 1 in r2; old 87 chars, new 394 chars
+G7: old occurs 1 at its turn, 1 in r2; old 57 chars, new 122 chars
+G8: old occurs 1 at its turn, 1 in r2; old 42 chars, new 48 chars
+G9: old occurs 1 at its turn, 1 in r2; old 62 chars, new 73 chars
+result 22769 bytes, sha256 b19b4c9890f65a15f33ec0fb21bc5af957ad2e56617335ec3e7f3ff7d47e43e3
+matches the review's byte count and sha256
+archived r2 bytes as appH_insert.r2.tex
+wrote appH_insert.tex; ASCII True CR 0 BOM False

@@ -1,0 +1,72 @@
+# -*- coding: ascii -*-
+# Item 124 checker: INDEPENDENT re-verification of the payload and splice,
+# run against the LIVE appH bytes (read-only). Does not import the generator.
+# Expected invariant outputs (all lines print OK, final line ALL CHECKS PASS, rc=0):
+#   payload sha1 8a86b389f85999161f8c7488064e13e9d1b8340c size 5831
+#   PRE    sha1 ba72024aba4d26aff3fd5ad5a1219cdd5a1bd1e1 size 869275
+#   POST   sha1 76d862968c31d78fffc665f72aaf60d40c90367a size 875106
+#   anchor count 1; refs missing [] ; POST paragraph-header count 1
+import os, sys, hashlib, re, glob
+
+APPH = r"C:\Users\redgi\Projects\namcg-lab@gpu\chapters\appH-microscopic-proofs.tex"
+FOLDER = r"C:\Users\redgi\Projects\namcg-lab@gpu\proposals\124-n-mqm-pos"
+CHAPTERS = r"C:\Users\redgi\Projects\namcg-lab@gpu\chapters"
+PAYFILE = os.path.join(FOLDER, 'payload-124.txt')
+
+PRE_SHA1, PRE_SIZE = "ba72024aba4d26aff3fd5ad5a1219cdd5a1bd1e1", 869275
+PAY_SHA1, PAY_SIZE = "8a86b389f85999161f8c7488064e13e9d1b8340c", 5831
+POST_SHA1, POST_SIZE = "76d862968c31d78fffc665f72aaf60d40c90367a", 875106
+
+ANCHOR = b"\\paragraph{The named completion class and the remainder bound.}"
+PAYHEAD = b"\\paragraph{Realization of the spectral-positivity hypotheses in homogeneous Presentation-B matrix quantum mechanics"
+
+def sha1(b):
+    return hashlib.sha1(b).hexdigest()
+
+def check(name, cond, detail=''):
+    print('%-38s %s %s' % (name, 'OK' if cond else 'FAIL', detail))
+    assert cond, name
+    return cond
+
+def main():
+    data = open(APPH, 'rb').read()
+    pay = open(PAYFILE, 'rb').read()
+    check('PRE appH pin', sha1(data) == PRE_SHA1 and len(data) == PRE_SIZE,
+          'sha1 %s size %d' % (sha1(data), len(data)))
+    check('payload pin', sha1(pay) == PAY_SHA1 and len(pay) == PAY_SIZE,
+          'sha1 %s size %d' % (sha1(pay), len(pay)))
+    check('payload ASCII', all(32 <= b <= 126 for b in pay[:-4]))
+    check('payload CRLF-only (no bare LF)', b'\n' not in pay.replace(b'\r\n', b''))
+    check('payload CRLF-only (no bare CR)', b'\r' not in pay.replace(b'\r\n', b''))
+    check('payload tail CRLFCRLF', pay.endswith(b'\r\n\r\n'))
+    check('payload one text line', pay.count(b'\r\n') == 2)
+    d = 0
+    bal = True
+    for c in pay.decode('ascii'):
+        d += (c == '{') - (c == '}')
+        bal = bal and d >= 0
+    check('braces balanced', bal and d == 0, 'delta %d' % d)
+    s = pay.decode('ascii')
+    check('no \\label in payload', '\\label' not in s)
+    check('no \\cite in payload', '\\cite' not in s)
+    labels = set()
+    for f in glob.glob(os.path.join(CHAPTERS, "*.tex")):
+        labels.update(re.findall(r'\\label\{([^}]+)\}',
+                                 open(f, encoding='utf-8', errors='replace').read()))
+    refs = sorted(set(re.findall(r'\\(?:ref|eqref)\{([^}]+)\}', s)))
+    missing = [r for r in refs if r not in labels]
+    check('all ref/eqref targets exist', missing == [], '%s missing %s' % (refs, missing))
+    check('anchor count == 1 in PRE', data.count(ANCHOR) == 1, 'count %d' % data.count(ANCHOR))
+    new = data.replace(ANCHOR, pay + ANCHOR, 1)
+    check('POST size = PRE + PAY', len(new) == len(data) + len(pay),
+          '%d = %d + %d' % (len(new), len(data), len(pay)))
+    check('POST pin', sha1(new) == POST_SHA1 and len(new) == POST_SIZE,
+          'sha1 %s size %d' % (sha1(new), len(new)))
+    check('POST anchor count 1', new.count(ANCHOR) == 1)
+    check('POST payload-header count 1', new.count(PAYHEAD) == 1)
+    check('payload immediately precedes anchor in POST',
+          new.find(pay + ANCHOR) == data.find(ANCHOR))
+    print('ALL CHECKS PASS')
+
+if __name__ == '__main__':
+    sys.exit(0 if main() is None else 0) or 0

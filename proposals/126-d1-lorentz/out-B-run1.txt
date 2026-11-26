@@ -1,0 +1,11 @@
+PASS R1 [S_cd,D_a] = eta_ad D_c - eta_ac D_d exactly (48 checks)
+PASS R2 [D_a,D_b] = 0
+PASS R3a blocks of S independent (rank 6)
+PASS R3b [S,S] in span exactly, no translation-row leak
+PASS R4a exp(S12) D_a exp(-S12) = (exp L)^c_a D_c exactly
+PASS R4b exp(S01) D_a exp(-S01) = (exp L)^c_a D_c exactly
+PASS R5 (1/4) eta^{ab}[D_a,[D_b,G]] = 0 on span{1,S,D} (11 gens)
+FAIL R6 commutant of ad D on span{1,S,D} = span{1} (rank 6, null dim 5)
+CONTROL-FIRED Euclidean delta fails 6/48 R1 checks (Lorentzian eta is load-bearing)
+CONTROL-FIRED dropping D_3 enlarges commutant to dim 5 (scan non-vacuous)
+SUMMARY_B: FAILURES ['R6 commutant of ad D on span{1,S,D} = span{1} (rank 6, null dim 5)']

@@ -1,0 +1,6 @@
+(1, 1, 1, 1) 1 eta^-1 Jl: res 3.2e-16; Theta eta Jl: res 1.0e+00; Theta Jl: res 1.0e+00; Jl: res 3.2e-16; K Jl: res 1.1e-01; Theta eta Theta^T eta Jl: res 1.1e-01; omega-based: res 1.0e+00
+(1, 1, 1, 1) 2 eta^-1 Jl: res 1.1e-15; Theta eta Jl: res 1.0e+00; Theta Jl: res 1.0e+00; Jl: res 1.1e-15; K Jl: res 1.6e-01; Theta eta Theta^T eta Jl: res 1.6e-01; omega-based: res 1.0e+00
+(1, 1, 1, 1) 3 eta^-1 Jl: res 9.2e-16; Theta eta Jl: res 1.0e+00; Theta Jl: res 1.0e+00; Jl: res 9.2e-16; K Jl: res 8.1e-01; Theta eta Theta^T eta Jl: res 8.1e-01; omega-based: res 1.0e+00
+(-1, 1, 1, 1) 1 eta^-1 Jl: res 1.4e-16; Theta eta Jl: res 1.0e+00; Theta Jl: res 8.4e-01; Jl: res 9.4e-01; K Jl: res 8.4e-01; Theta eta Theta^T eta Jl: res 4.1e-01; omega-based: res 9.8e-01
+(-1, 1, 1, 1) 2 eta^-1 Jl: res 4.2e-16; Theta eta Jl: res 1.0e+00; Theta Jl: res 9.7e-01; Jl: res 6.5e-01; K Jl: res 9.2e-01; Theta eta Theta^T eta Jl: res 7.1e-01; omega-based: res 9.8e-01
+(-1, 1, 1, 1) 3 eta^-1 Jl: res 6.0e-16; Theta eta Jl: res 1.0e+00; Theta Jl: res 8.3e-01; Jl: res 8.5e-01; K Jl: res 9.8e-01; Theta eta Theta^T eta Jl: res 6.9e-01; omega-based: res 9.0e-01

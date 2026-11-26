@@ -1,0 +1,8 @@
+Scratch build (outside repository): scratchpad/build063a
+Copy of working tree without .git, proposals, reports; chapters/ch14-dissipation.tex replaced by apply_check.py output
+(sha256 b1fefa684669f0315e705061a9efd84c732eca741e687b9f3a88977f2f976dd2).
+Working tree includes the uncommitted appH/bib changes (061+062).
+pdflatex -interaction=nonstopmode -halt-on-error namcg-book7.tex : pass 1 exit 0, pass 2 exit 0
+Output written on namcg-book7.pdf (376 pages, 2788840 bytes).
+grep -i "undefined|multiply" namcg-book7.log : 0 lines
+Overfull/Underfull/Warning lines in the ch14 section of the log: 0

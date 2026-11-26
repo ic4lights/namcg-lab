@@ -1,0 +1,28 @@
+--- chapters/ch03-matrix-action.tex
++++ chapters/ch03-matrix-action.tex
+@@ -796,23 +796,25 @@
+   \LUV,\qquad v,\qquad \lambda,\qquad g_{\mathrm{YM}},
+ \end{equation}
+ together with the auxiliary-background curvature scale, which is set
+ to zero when \(g^{(0)}=\eta\). Their intended roles are:
+ 
+ \begin{center}
++{\setlength{\tabcolsep}{3pt}
+ \begin{tabular}{@{}ll@{}}
+ \toprule
+ Quantity & Role \\
+ \midrule
+ \(\LUV\) & kinematic cutoff from \(\Theta^{\mu\nu}\) \\
+ \(v\) & condensate scale; appears in the working conditional \(\Geff\) parameterization \\
+ \(\lambda\) & controls the radial Higgs mass \(m_\sigma\sim\sqrt{\lambda}\,v\) \\
+ \(g_{\mathrm{YM}}\) & internal gauge coupling; enters the connection
+                      that eats Goldstones \\
+ \bottomrule
+ \end{tabular}
++}
+ \end{center}
+ 
+ Chapter~8 gives a conditional truncated heat-kernel identity. Define
+ \(C_R^L\) as the Lorentzian curvature coefficient only after the
+ specified sector sum and continuation:
+ \begin{equation}

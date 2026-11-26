@@ -1,0 +1,16 @@
+A. consistency of the ansatz: Ham fields of X^a = T^a + eps alpha^a cos(q.y), checked through the Poisson bracket {F,.} identity
+   O(eps) change of Ham({X^a,X^b}) (linear A=alpha (q.y)): |numerical - predicted| = 1.5462631175466868e-13  |pred| = 0.7919264770037023
+
+B. Re N, Im N, derivatives along alpha at 6 orbit points (q random), window kappa=3/4
+  a=-1.382  N(0)=0.000000+0.000000i  dN=-0.00000+0.00000i  d2N=-0.00000-0.00000i   min over eps in[-.5,.5] of Re N = 0.00000
+  a=4.031  N(0)=0.000000+0.000000i  dN=-0.00000-0.00000i  d2N=0.00000+0.00000i   min over eps in[-.5,.5] of Re N = 0.00000
+  a=4.235  N(0)=0.000007+0.000001i  dN=0.00000+0.00000i  d2N=0.00001+0.00000i   min over eps in[-.5,.5] of Re N = 0.00001
+  a=0.782  N(0)=0.000000+0.000000i  dN=-0.00000+0.00000i  d2N=-0.00000-0.00001i   min over eps in[-.5,.5] of Re N = 0.00000
+  a=-0.688  N(0)=0.000006+0.000006i  dN=0.00001+0.00002i  d2N=-0.00006-0.00002i   min over eps in[-.5,.5] of Re N = 0.00000
+  a=0.876  N(0)=0.000909+0.000700i  dN=-0.00002-0.00060i  d2N=-0.00187-0.00149i   min over eps in[-.5,.5] of Re N = 0.00073
+
+C. quadratic form Q_ab = d^2 Re N/d eps^2 (polarised over alpha in R^4), eigenvalues relative to Re N(0)
+  Re N(0) = 0.000005 ; eigenvalues of Q/ReN(0): [-0.5685 -0.1731 -0.0998 -0.0587]
+  Re N(0) = 0.000011 ; eigenvalues of Q/ReN(0): [4.52000e-02 7.52200e-01 1.57310e+00 8.81344e+01]
+  Re N(0) = 0.003554 ; eigenvalues of Q/ReN(0): [-1.5117 -0.3692 -0.1406  0.3276]
+  Re N(0) = 0.000008 ; eigenvalues of Q/ReN(0): [-0.1508 -0.0111 -0.0006  0.019 ]

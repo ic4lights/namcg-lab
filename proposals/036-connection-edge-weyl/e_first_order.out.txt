@@ -1,0 +1,56 @@
+== SD generic seed 1  max|tr(Theta-bar S_ab)| = 31/3
+   eps=1/1000 EV/eps: trace part -0.250000 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 Ef/eps: trace part -0.250000 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 e/eps = -0.250000
+   eps=1/4000 EV/eps: trace part -0.250000 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 Ef/eps: trace part -0.250000 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 e/eps = -0.250000
+== SD generic seed 2  max|tr(Theta-bar S_ab)| = 32/3
+   eps=1/1000 EV/eps: trace part -3.41667 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 Ef/eps: trace part -3.41667 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 e/eps = -3.41667
+   eps=1/4000 EV/eps: trace part -3.41667 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 Ef/eps: trace part -3.41667 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 e/eps = -3.41667
+== SD constrained seed 1  max|tr(Theta-bar S_ab)| = 0
+   eps=1/1000 EV/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 Ef/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 e/eps = 0
+   eps=1/4000 EV/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 Ef/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 e/eps = 0
+== SD constrained seed 2  max|tr(Theta-bar S_ab)| = 0
+   eps=1/1000 EV/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 Ef/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 e/eps = 0
+   eps=1/4000 EV/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 Ef/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 e/eps = 0
+== ASD generic seed 1  max|tr(Theta-bar S_ab)| = 26/3
+   eps=1/1000 EV/eps: trace part -4.08333 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 Ef/eps: trace part -4.08333 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 e/eps = -4.08333
+   eps=1/4000 EV/eps: trace part -4.08333 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 Ef/eps: trace part -4.08333 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 e/eps = -4.08333
+== ASD generic seed 2  max|tr(Theta-bar S_ab)| = 31/3
+   eps=1/1000 EV/eps: trace part 1.41667 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 Ef/eps: trace part 1.41667 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 e/eps = 1.41667
+   eps=1/4000 EV/eps: trace part 1.41667 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 Ef/eps: trace part 1.41667 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 e/eps = 1.41667
+== ASD constrained seed 1  max|tr(Theta-bar S_ab)| = 0
+   eps=1/1000 EV/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 Ef/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 e/eps = 0
+   eps=1/4000 EV/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 Ef/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 e/eps = 0
+== ASD constrained seed 2  max|tr(Theta-bar S_ab)| = 0
+   eps=1/1000 EV/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 Ef/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/1000 e/eps = 0
+   eps=1/4000 EV/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 Ef/eps: trace part 0 ; |sym traceless|max 0 ; |antisym|max 0
+   eps=1/4000 e/eps = 0

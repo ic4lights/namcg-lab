@@ -1,0 +1,35 @@
+W1(random) = 1620  imag: 0
+PASS A1 W1 = Tr[C,C^dag] = Tr C^2 (C=[Phi,Phi^dag] Hermitian)
+PASS A2 W1 >= 0 on random Phi
+PASS A3 W1 = 0 on diagonal (normal) matrices
+W1(v*U2) raw: 0
+PASS A4 W1 = 0 on v*U(2) vacuum manifold (normal)
+== quartic candidate shift-derivatives (nonzero = not shift-invariant) ==
+TrPhi4 shift-deriv: 564 + 692*I
+PASS B1 quartic not invariant: TrPhi4
+TrPhi3PhH shift-deriv: 141 + 173*I
+PASS B1 quartic not invariant: TrPhi3PhH
+TrPhi2PhH2 shift-deriv: 106 + 260*I
+PASS B1 quartic not invariant: TrPhi2PhH2
+Tr(PhiPhH)^2 shift-deriv: 106 - 260*I
+PASS B1 quartic not invariant: Tr(PhiPhH)^2
+TrPhi2 TrPhH2 shift-deriv: 32 + 176*I
+PASS B1 quartic not invariant: TrPhi2 TrPhH2
+(TrPhiPhH)^2 shift-deriv: -528*I
+PASS B1 quartic not invariant: (TrPhiPhH)^2
+TrPhi4dag shift-deriv: 564 - 692*I
+PASS B1 quartic not invariant: TrPhi4dag
+TrPhH3Phi shift-deriv: 159 - 390*I
+PASS B1 quartic not invariant: TrPhH3Phi
+== quadratic candidates ==
+TrPhiPhH shift-deriv: 6 + I
+PASS B2 quadratic not invariant: TrPhiPhH
+TrPhi2 shift-deriv: 12 - 2*I
+PASS B2 quadratic not invariant: TrPhi2
+TrPhi TrPhH shift-deriv: 18 + 3*I
+PASS B2 quadratic not invariant: TrPhi TrPhH
+(TrPhi)^2 shift-deriv: 36 - 6*I
+PASS B2 quadratic not invariant: (TrPhi)^2
+PASS C1 W1 IS kappa-shift invariant
+PASS C2 W1 blind to scalar shifts (value unchanged, kappa=7)
+SUMMARY pass=18 fail=0

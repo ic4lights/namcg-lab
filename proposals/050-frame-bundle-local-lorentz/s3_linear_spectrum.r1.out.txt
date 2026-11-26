@@ -1,0 +1,27 @@
+# s3: linear spectrum about flat. Exact rational arithmetic.
+q=(3, 1, 2, 5) q^2=21: rank M=30 of 40, kernel dim 10, gauge vectors independent rank 10, M*gauge=0: True; rank without E3=30
+q=(1, 2, -1, 1/2) q^2=17/4: rank M=30 of 40, kernel dim 10, gauge vectors independent rank 10, M*gauge=0: True; rank without E3=30
+q=(2, 1, 0, 0) q^2=-3: rank M=30 of 40, kernel dim 10, gauge vectors independent rank 10, M*gauge=0: True; rank without E3=30
+null q=(1, 1, 0, 0): rank=16, kernel dim 24, gauge rank 10, M*gauge=0: True, physical kernel dim (kernel minus gauge) 14
+on the null kernel: rank of the map to torsion = 12; to curvature = 6; joint rank (T,R) = 14
+  subspace with T = 0: dim 12 (gauge 10 + 2 torsion-free modes)
+  curvature rank on T = 0 subspace: 2
+  subspace with R = 0: dim 18
+M(eps) has degree 3 in eps; q^2 = -(1+eps)^2 + 1 = -2 eps - eps^2
+k=1: dim of truncated kernel N_k = 24, chains of length >= k: 24
+k=2: dim of truncated kernel N_k = 40, chains of length >= k: 16
+k=3: dim of truncated kernel N_k = 50, chains of length >= k: 10
+k=4: dim of truncated kernel N_k = 60, chains of length >= k: 10
+k=5: dim of truncated kernel N_k = 70, chains of length >= k: 10
+k=6: dim of truncated kernel N_k = 80, chains of length >= k: 10
+chains of length >= k minus the 10 gauge families: [14, 6, 0, 0, 0, 0]
+heads of chains of length >= 2 (including the gauge directions): rank 16
+  on the heads: rank to torsion 6, to curvature 0, joint 6
+  torsion-free null modes that head a length-2 chain, modulo gauge: 0
+  (intersection dimension of the heads with the T = 0 subspace, minus 10 gauge)
+on the null kernel: rank of trace vector 3, axial 3, non-axial 11
+on the heads: rank of trace vector 1, axial 1, non-axial 6
+subspace of null kernel with T totally antisymmetric: dim 13, minus gauge and the two torsion-free modes: 1
+  curvature rank there 3; intersection with heads modulo gauge 0
+torsion-free sector: T = 0 forces w = w(h) and E1 becomes the linearised Ricci operator of the symmetric part of h (see the proposal).
+second line q=(1+eps,1,eps,0), q^2 = -2 eps: chains of length >= k minus 10: [14, 6, 0, 0]

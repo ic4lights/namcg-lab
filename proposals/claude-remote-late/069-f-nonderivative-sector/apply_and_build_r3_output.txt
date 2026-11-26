@@ -1,0 +1,35 @@
+appH pre  sha256 6a72a3268302d46b9b5d3ede69f8b15e838a0a3c14bfddc2e1b4e8ab58b39a7c bytes 719947
+pre-hash matches expected: True
+target paragraph: line 2949 to line 3005
+E1 cubic/mass beta_K forms (pre L2966): occurs 1x, line 2966, inside target paragraph True
+E2 beta_K = 1 attained in the cubic case (pre L2966): occurs 1x, line 2966, inside target paragraph True
+E3 example on S^2_N (pre L2980): occurs 1x, line 2980, inside target paragraph True
+E8 V and T scale as chi^2 (pre L3000): occurs 1x, line 3000, inside target paragraph True
+E4 V=T without a tuned K (pre L3000): occurs 1x, line 3000, inside target paragraph True
+E9 start of the beta_K = 1 sentence (pre L3002): occurs 1x, line 3002, inside target paragraph True
+E6 scope sentence (pre L3004): occurs 1x, line 3004, inside target paragraph True
+E5 old string kept once; final E9 sentence present once; no new (next paragraph)
+final sentence: In the forms with a tree stabiliser above, which omit its Hessian, the value \(\beta_K=1\) needs a tree term of negative slope at the minimum and, for \(\hat U\ge0\), \(Y>4|U_4|+2|U_2|\), which at large \(N\) on \(S^2_N\) is \(\chi^2<(\sqrt{39}-3)\vartheta/4\); for \(\hat U<0\), where \(q_b^2<0\), it is available at negligible \(Y\).
+insert: LF bytes 12817 sha256(LF) 07ae105c65514f208b4ff49ba2ecd7243db89c1aea49a5b473d568597245c8a5 ; inserted at line 3006
+line after the insert: \section{Problem G: HBEV}
+appH post sha256 a7f1492a30c89b52e9ecadcd2550aaab89261796c35266b19bfed0d5b354e842 bytes 733675 lines 3628 bare LF 0
+post-hash matches expected: True
+label ass:gap-psi defined 1
+label ass:lorentzian defined 1
+label ch:vierbein-emergence defined 1
+label def:matrix-coords-ext defined 1
+label eq:Smatrix defined 1
+cite IsoKimuraTanakaWakatsuki2001 in bib 0 in additions 1
+status sentences in insert: 1 ; at the end: True
+insert: no label words, no process language, balanced delimiters
+in-place edits: no label words, no process language, balanced delimiters
+no bare c, bare kappa or L' left in insert
+paragraph blocks in insert: 7
+pdflatex rc 0 pages 393
+bibtex rc 0 
+pdflatex rc 0 pages 410
+pdflatex rc 0 pages 410
+undefined/multiply-defined warnings: 0
+bibtex warnings for new keys: []
+BUILD CLEAN
+temp copy removed: True

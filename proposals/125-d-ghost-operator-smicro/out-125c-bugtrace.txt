@@ -1,0 +1,5 @@
+[   0.4s] C4a divxi == textbook (general xi)   PASS
+[   0.4s] C4b div(f(th) d_phi) = 0 (teeth: nonzero w-derivs would FAIL)  PASS
+[   4.7s] D1 S2-rot xi0: dF==cov+GT FAIL | t-route==direct PASS
+[   4.7s]     residual r1 = [0, f(x0)]
+EXIT=127

@@ -1,0 +1,11 @@
+[Lorentzian] (a) identically conserved two-derivative tensors linear in h: dim = 2; span = {G1, (kk - eta k^2) tr h}: True
+[Lorentzian] (b) single divergences with symmetric divergence: 8 free parameters; every divergence in span{G1, trace term}: True
+[Lorentzian] (c) G1 = lambda * k^r k^s K_(m r n s) with curvature-symmetric K: lambda = [{lam: -1}], K symmetries: True
+[Euclidean] (a) identically conserved two-derivative tensors linear in h: dim = 2; span = {G1, (kk - eta k^2) tr h}: True
+[Euclidean] (b) single divergences with symmetric divergence: 8 free parameters; every divergence in span{G1, trace term}: True
+[Euclidean] (c) G1 = lambda * k^r k^s K_(m r n s) with curvature-symmetric K: lambda = [{lam: -1}], K symmetries: True
+[Lorentzian boost] (d) xi.dd U = d(F), F antisymmetric: True; W = 0 on Sigma: True; edge term V^01 on Sigma nonzero: True
+[diamond field] (l^2-t^2-r^2)/2 d_t - t x^i d_i is conformal Killing: True; with +t x^i d_i instead: False
+[diamond conformal Killing field] bulk remainder (dd xi).U nonzero: True
+[Euclidean rotation] (d) xi.dd U = d(F), F antisymmetric: True; W = 0 on Sigma: True; edge term V^01 on Sigma nonzero: True
+ALL CHECKS PASSED

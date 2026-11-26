@@ -1,0 +1,14 @@
+R114 local-Lorentz FP-operator checks (sympy 1.14.0, numpy 2.4.6, seed 114)
+S1 detM(Phi) polynomial, total degree 6 (expect 6): True
+S2 exact diag identity detM == prod(r_i+r_j)/64: True
+S3a unique weighted-degree-6 reduction: True
+S3b prod(r_i+r_j)/64 = -(E1**2*E4 - E1*E2*E3 + E3**2)/64 (in E_i = char-poly coefficients of Phi)
+S3c exact integer sampling, 300 general 4x4 Phi (seed 114), mismatches: 0
+S4 detM(v*I) == v**6: True
+S5a w0 in so(3,1): True
+S5b F(Phi*Lambda) is linear in eps with Phi-only coefficients (order 0): True
+S6a Rot eta-orthogonal: True | S6b detM(Rot) == 0: True
+S7 detM(diag(2,1/2,1,1)) = 405/256 | det Phi = 1 | val != 1: True
+S8 linear response d/dt detM(v*I+t*E_ij)|0 == (3/2) v^5 (E_ij) for all 16 i,j: True
+S9 max rel err, 200 random Phi (seed 114): 1.542e-13
+ALL CHECKS DONE

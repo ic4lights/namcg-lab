@@ -1,0 +1,14 @@
+SUBSTITUTED appH sha1 704f3765797a size 869321 (expect POST 704f3765797a 869321)
+pdflatex1 rc=0
+bibtex rc=0
+pdflatex2 rc=0
+pdflatex3 rc=0
+pl1.log: bang-lines=0 undefined=1606 multiply=0 '^!'=0
+pl2.log: bang-lines=0 undefined=0 multiply=0 '^!'=0
+pl3.log: bang-lines=0 undefined=0 multiply=0 '^!'=0
+ENDSTATE pl1.log: bang=0 undefined=1606 multiply=0
+ENDSTATE pl2.log: bang=0 undefined=0 multiply=0
+ENDSTATE pl3.log: bang=0 undefined=0 multiply=0
+STABLE = True
+PDF present: True size 3272848
+CERT VERDICT: PASS

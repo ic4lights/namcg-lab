@@ -1,0 +1,33 @@
+(R) Lorentzian Clifford relations ok; tr_V Sigma Sigma = 2 tr_D Sigma Sigma for all index pairs: True; both sets close so(3,1) (common sign): True
+
+(Q) forms on the six polarisations (inert amplitudes zero), J = 0 loop modes, base point y^i = 0
+  case (y0,y4)=(5,3) chi=1 q=['3/7', '1/2', '-2/3', '1/5']: Q1_D = 81 x IX1 (rel. residual 3.5e-16); |Q1_V - 2 Q1_D|/|Q1_D| = 4.9e-16; max imaginary part 0.0e+00
+     on the five traceless, relative to EH: Q1_D [-162.0, -162.0, -162.0, -162.0, -162.0] | Q2_D (Tbar^2 dT^2, mixed term) [137.47736, 187.48302, 187.48302, 337.5, 337.5] | P2 = Q2_V - 2Q2_D (first term) [-375.27173, -375.27173, 524.83017, 524.83017, 824.86414] | coth^2 tau = 2.7778
+     normalised by the Q1_D eigenvalue and coth^2 tau: Q2_D/(|Q1_D| coth^2) [0.30551, 0.41663, 0.41663, 0.75, 0.75] ; P2/(|Q1_D| coth^2) [-0.83394, -0.83394, 1.16629, 1.16629, 1.83303]
+  case (y0,y4)=(5,3) chi=1 q=['-1/3', '2/5', '1/4', '-3/2']: Q1_D = 81 x IX1 (rel. residual 4.0e-16); |Q1_V - 2 Q1_D|/|Q1_D| = 2.6e-16; max imaginary part 0.0e+00
+     on the five traceless, relative to EH: Q1_D [-162.0, -162.0, -162.0, -162.0, -162.0] | Q2_D (Tbar^2 dT^2, mixed term) [180.44201, 219.70651, 219.70651, 337.5, 337.5] | P2 = Q2_V - 2Q2_D (first term) [140.30408, 140.30408, 847.06505, 847.06505, 1082.65204] | coth^2 tau = 2.7778
+     normalised by the Q1_D eigenvalue and coth^2 tau: Q2_D/(|Q1_D| coth^2) [0.40098, 0.48824, 0.48824, 0.75, 0.75] ; P2/(|Q1_D| coth^2) [0.31179, 0.31179, 1.88237, 1.88237, 2.40589]
+  case (y0,y4)=(5,3) chi=1 q=['2', '1/3', '-1/2', '1/4']: Q1_D = 81 x IX1 (rel. residual 3.2e-16); |Q1_V - 2 Q1_D|/|Q1_D| = 4.2e-16; max imaginary part 0.0e+00
+     on the five traceless, relative to EH: Q1_D [-162.0, -162.0, -162.0, -162.0, -162.0] | Q2_D (Tbar^2 dT^2, mixed term) [337.5, 337.5, 350.82524, 350.82524, 355.26699] | P2 = Q2_V - 2Q2_D (first term) [2131.60194, 2158.25243, 2158.25243, 2238.20388, 2238.20388] | coth^2 tau = 2.7778
+     normalised by the Q1_D eigenvalue and coth^2 tau: Q2_D/(|Q1_D| coth^2) [0.75, 0.75, 0.77961, 0.77961, 0.78948] ; P2/(|Q1_D| coth^2) [4.73689, 4.79612, 4.79612, 4.97379, 4.97379]
+  case (y0,y4)=(13,5) chi=1 q=['2/3', '-1/2', '1/3', '1/7']: Q1_D = 625 x IX1 (rel. residual 1.5e-15); |Q1_V - 2 Q1_D|/|Q1_D| = 1.5e-15; max imaginary part 0.0e+00
+     on the five traceless, relative to EH: Q1_D [-1250.0, -1250.0, -1250.0, -1250.0, -1250.0] | Q2_D (Tbar^2 dT^2, mixed term) [6337.5, 6337.5, 19145.72072, 19145.72072, 23415.12763] | P2 = Q2_V - 2Q2_D (first term) [140490.76577, 166107.20721, 166107.20721, 242956.53153, 242956.53153] | coth^2 tau = 6.7600
+     normalised by the Q1_D eigenvalue and coth^2 tau: Q2_D/(|Q1_D| coth^2) [0.75, 0.75, 2.26577, 2.26577, 2.77102] ; P2/(|Q1_D| coth^2) [16.62613, 19.65766, 19.65766, 28.75225, 28.75225]
+  case (y0,y4)=(5,4) chi=1 q=['1/9', '3/4', '-1/2', '2/3']: Q1_D = 256 x IX1 (rel. residual 1.6e-16); |Q1_V - 2 Q1_D|/|Q1_D| = 3.2e-16; max imaginary part 0.0e+00
+     on the five traceless, relative to EH: Q1_D [-512.0, -512.0, -512.0, -512.0, -512.0] | Q2_D (Tbar^2 dT^2, mixed term) [330.68816, 398.01612, 398.01612, 600.0, 600.0] | P2 = Q2_V - 2Q2_D (first term) [368.2579, 368.2579, 1580.16119, 1580.16119, 1984.12895] | coth^2 tau = 1.5625
+     normalised by the Q1_D eigenvalue and coth^2 tau: Q2_D/(|Q1_D| coth^2) [0.41336, 0.49752, 0.49752, 0.75, 0.75] ; P2/(|Q1_D| coth^2) [0.46032, 0.46032, 1.9752, 1.9752, 2.48016]
+  case (y0,y4)=(-5,3) chi=1 q=['3/7', '1/2', '-2/3', '1/5']: Q1_D = 81 x IX1 (rel. residual 3.5e-16); |Q1_V - 2 Q1_D|/|Q1_D| = 4.9e-16; max imaginary part 0.0e+00
+     on the five traceless, relative to EH: Q1_D [-162.0, -162.0, -162.0, -162.0, -162.0] | Q2_D (Tbar^2 dT^2, mixed term) [137.47736, 187.48302, 187.48302, 337.5, 337.5] | P2 = Q2_V - 2Q2_D (first term) [-375.27173, -375.27173, 524.83017, 524.83017, 824.86414] | coth^2 tau = 2.7778
+     normalised by the Q1_D eigenvalue and coth^2 tau: Q2_D/(|Q1_D| coth^2) [0.30551, 0.41663, 0.41663, 0.75, 0.75] ; P2/(|Q1_D| coth^2) [-0.83394, -0.83394, 1.16629, 1.16629, 1.83303]
+  case (y0,y4)=(-5,3) chi=-1 q=['3/7', '1/2', '-2/3', '1/5']: Q1_D = 81 x IX1 (rel. residual 3.9e-16); |Q1_V - 2 Q1_D|/|Q1_D| = 6.7e-16; max imaginary part 0.0e+00
+     on the five traceless, relative to EH: Q1_D [-162.0, -162.0, -162.0, -162.0, -162.0] | Q2_D (Tbar^2 dT^2, mixed term) [137.47736, 187.48302, 187.48302, 337.5, 337.5] | P2 = Q2_V - 2Q2_D (first term) [-375.27173, -375.27173, 524.83017, 524.83017, 824.86414] | coth^2 tau = 2.7778
+     normalised by the Q1_D eigenvalue and coth^2 tau: Q2_D/(|Q1_D| coth^2) [0.30551, 0.41663, 0.41663, 0.75, 0.75] ; P2/(|Q1_D| coth^2) [-0.83394, -0.83394, 1.16629, 1.16629, 1.83303]
+  case (y0,y4)=(25,7) chi=1 q=['3/7', '1/2', '-2/3', '1/5']: Q1_D = 2401 x IX1 (rel. residual 3.9e-16); |Q1_V - 2 Q1_D|/|Q1_D| = 5.7e-16; max imaginary part 0.0e+00
+     on the five traceless, relative to EH: Q1_D [-4802.0, -4802.0, -4802.0, -4802.0, -4802.0] | Q2_D (Tbar^2 dT^2, mixed term) [18712.19568, 25518.52176, 25518.52176, 45937.5, 45937.5] | P2 = Q2_V - 2Q2_D (first term) [-51078.65186, -51078.65186, 71435.21759, 71435.21759, 112273.17404] | coth^2 tau = 12.7551
+     normalised by the Q1_D eigenvalue and coth^2 tau: Q2_D/(|Q1_D| coth^2) [0.30551, 0.41663, 0.41663, 0.75, 0.75] ; P2/(|Q1_D| coth^2) [-0.83394, -0.83394, 1.16629, 1.16629, 1.83303]
+  case (y0,y4)=(5,4) chi=1 q=['3/7', '1/2', '-2/3', '1/5']: Q1_D = 256 x IX1 (rel. residual 2.2e-16); |Q1_V - 2 Q1_D|/|Q1_D| = 5.8e-16; max imaginary part 0.0e+00
+     on the five traceless, relative to EH: Q1_D [-512.0, -512.0, -512.0, -512.0, -512.0] | Q2_D (Tbar^2 dT^2, mixed term) [244.40419, 333.30314, 333.30314, 600.0, 600.0] | P2 = Q2_V - 2Q2_D (first term) [-667.14974, -667.14974, 933.03141, 933.03141, 1466.42513] | coth^2 tau = 1.5625
+     normalised by the Q1_D eigenvalue and coth^2 tau: Q2_D/(|Q1_D| coth^2) [0.30551, 0.41663, 0.41663, 0.75, 0.75] ; P2/(|Q1_D| coth^2) [-0.83394, -0.83394, 1.16629, 1.16629, 1.83303]
+  case (y0,y4)=(17,15) chi=1 q=['3/7', '1/2', '-2/3', '1/5']: Q1_D = 50625 x IX1 (rel. residual 3.1e-16); |Q1_V - 2 Q1_D|/|Q1_D| = 5.6e-16; max imaginary part 0.0e+00
+     on the five traceless, relative to EH: Q1_D [-101250.0, -101250.0, -101250.0, -101250.0, -101250.0] | Q2_D (Tbar^2 dT^2, mixed term) [39730.95589, 54182.59191, 54182.59191, 97537.5, 97537.5] | P2 = Q2_V - 2Q2_D (first term) [-108453.52938, -108453.52938, 151675.91914, 151675.91914, 238385.73531] | coth^2 tau = 1.2844
+     normalised by the Q1_D eigenvalue and coth^2 tau: Q2_D/(|Q1_D| coth^2) [0.30551, 0.41663, 0.41663, 0.75, 0.75] ; P2/(|Q1_D| coth^2) [-0.83394, -0.83394, 1.16629, 1.16629, 1.83303]

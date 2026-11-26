@@ -1,0 +1,63 @@
+(F) frozen resummed second variation: exact comparison with the closed form, general q (exact rational Isserlis + radial closed forms)
+   q0=2/5 q3=9/10 (y0,m)=(5,3): x=-32/13; closed form exact for helicities 2,1,0: [True, True, True]
+   q0=3/2 q3=1/3 (y0,m)=(5,3): x=793/693; closed form exact for helicities 2,1,0: [True, True, True]
+   q0=1/7 q3=4/3 (y0,m)=(13,5): x=-113121/19375; closed form exact for helicities 2,1,0: [True, True, True]
+   q0=5/4 q3=1/2 (y0,m)=(5,4): x=109/84; closed form exact for helicities 2,1,0: [True, True, True]
+   F(M) > 0: F(0) = (16 - 64/5)/c^2 = 0.41472 at c = 25/9; numeric min over 2000 values of M in [0,1e4]: 9.998e-09
+
+(N) M*(x): roots of N(M;x) at (y0,y4) = (5,3) for sampled wave-vector classes, first-order T = 1/M^2 and frozen T = F(M); nan = no root in 1e-5 < M < 1e7
+   x       lambda_L  | n  L/c  M*(first order)  | M*(frozen resummed) 
+    -2.70412 -1.95623 |  30  0 | ['0.29196'] | []
+    -2.70412 -1.95623 |  30  1 | ['1.54965'] | ['1.52852']
+    -2.70412 -1.95623 |  30 10 | ['5.17699'] | ['5.17355']
+    -2.70412 -1.95623 | 300  0 | ['0.21940'] | []
+    -2.70412 -1.95623 | 300  1 | ['1.13007'] | ['1.11288']
+    -2.70412 -1.95623 | 300 10 | ['3.62756'] | ['3.62455']
+    -1.90848 -1.77123 |  30  0 | ['0.30726'] | []
+    -1.90848 -1.77123 | 300  0 | ['0.23074'] | []
+    -1.77778 -1.72500 |  30  0 | ['0.31146'] | []
+    -1.77778 -1.72500 | 300  0 | ['0.23386'] | []
+    -5.00000 -2.16000 |  30  0 | ['0.27747'] | []
+    -5.00000 -2.16000 | 300  0 | ['0.20864'] | []
+   -50.00000 -2.37600 |  30  0 | ['0.26421'] | []
+   -50.00000 -2.37600 | 300  0 | ['0.19879'] | []
+    +1.32902 -3.30292 |  30  0 | ['0.22312'] | []
+    +1.32902 -3.30292 |  30  1 | ['1.17783'] | ['1.15983']
+    +1.32902 -3.30292 |  30 10 | ['3.90485'] | ['3.90166']
+    +1.32902 -3.30292 | 300  0 | ['0.16821'] | []
+    +1.32902 -3.30292 | 300  1 | ['0.86454'] | ['0.85019']
+    +1.32902 -3.30292 | 300 10 | ['2.76695'] | ['2.76420']
+    +3.00000 -2.80000 |  30  0 | ['0.24285'] | []
+    +3.00000 -2.80000 | 300  0 | ['0.18291'] | []
+   +50.00000 -2.42400 |  30  0 | ['0.26151'] | []
+   +50.00000 -2.42400 | 300  0 | ['0.19679'] | []
+   lambda_L range: q spacelike x <= -l^2/m^2: -(6/5)(2 + 1/x) from -1.72500 (x=-l^2/m^2) to -12/5 (x -> -inf); q timelike x >= 1: from -18/5 (x=1) to -12/5 (x -> inf)
+   sign change of lambda_L at x = -1/2, on the leaf only if m^2 >= 2 l^2 (y4^2 >= 2 l^2); e.g. (13,12): l^2 = 25, m^2 = 144, x range includes -1/2, lambda_L(-0.17361) = 4.5120
+   L/c = 0, frozen: scan for a root over n = 2..300, x in a grid, c = 25/9:
+      roots found in 0 of 960 (n, x) pairs
+
+(P) Peierls-Bogoliubov: v^K(s), tau^K(s) >= 0 for random non-commuting Hermitian data (dimension 6 block, vector and 8-dim spinor chirality-summed)
+   min of index part over 72 evaluations: 2.7972e+01 (non-negative: True)
+   B_0 - B_1 = int_0^1 (1 - 6a(1-a)) e^{-xa} da >= 0 for x >= 0: min over grid -4.823e-07 (Legendre coefficient of a convex function)
+   c_T(averaged, five) = (1/6)W_R - 2 W_X = (1/6)V + (1/12)T ; c_T^{TT} = (1/6)V0 + (1/12)T0 + (7/30)(V1 - T1) + (7/20)T2 with T2 >= T1: > 0 for non-zero flux
+
+(B) commuting fluxes, f1 = f2 + f3: v - tau
+   f = (1.0, 0.3, 0.7): v = 8.1971187494, tau = 8.1971187494, difference 0.0e+00
+   f = (1.3, 1.1, 0.2): v = 18.8359730147, tau = 18.8359730147, difference -3.6e-15
+   f = (4.0, 2.0, 2.0): v = 3084.1912538484, tau = 3084.1912538484, difference 0.0e+00
+
+(O) on-shell limit: exact forms at nearly null q, base (5,3); expected lambda_2 -> -24/5, SC2 -> 2/5
+   q^2 = 0.21000 x = -15.005: IX2 eigenvalues [-4.72003, -4.72003, 13.84634, 13.84634, 20.03512] ; closed helicity-2 value -4.720028 ; SC2 [-1.23053, -1.23053, -0.6348, 0.39667, 0.39667] ; closed 0.396668
+   q^2 = 0.02010 x = -139.976: IX2 eigenvalues [-4.79143, -4.79143, 163.7751, 163.7751, 219.96394] ; closed helicity-2 value -4.791427 ; SC2 [-13.7231, -13.7231, -8.96516, 0.39964, 0.39964] ; closed 0.399643
+   q^2 = 0.00200 x = -1389.973: IX2 eigenvalues [-4.79914, -4.79914, 1663.76751, 1663.76751, 2219.9564] ; closed helicity-2 value -4.799137 ; SC2 [-138.72231, -138.72231, -92.29818, 0.39996, 0.39996] ; closed 0.399964
+
+(D) fibre-point decomposition: X_hat = -4 EH[h_n] + m^-4 q^2 (a.v)^2 at random fibre points, exact rational arithmetic
+   identity holds at 6 random fibre points: True
+
+(G) algebra of the coefficients on the mass shell, helicity two; V_i, T_i weighted integrals of v^K, tau^K with level weights D, B_1, B_0
+   c_T^TT = T0/12 - 7*T1/30 + 7*T2/20 + V0/6 + 7*V1/30
+   averaged c_T = T0/12 + V0/6
+   fixed-state, finite mixed part: c_A - c_T^TT = 7*T1/30 - 7*T2/20 - 7*V1/30
+   periodic: c_A - c_T^TT = -T0/4 + 7*T1/30 - 7*T2/20 - 7*V1/30
+   smooth: c_A - c_T^TT = 7*T1/30 - 7*T2/20 - V0/4 - 7*V1/30
+   R[G] at the background: 18 c - 24, e = 2 - (3/4) c  (see s4 part (D))

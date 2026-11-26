@@ -1,0 +1,13 @@
+anchor \section{Problem G: HBEV}: 1 occurrence(s), line 1857
+last sentence of the 011 torsion paragraph (line 1855) ends with: This changes no ledger label; Problem~F remains open.
+'Connection-sector term' paragraph heading count: 1
+label rem:ch3-trace-quadratic defined 1 time(s)
+label def:matrix-coords-ext defined 1 time(s)
+label ch:vierbein-emergence defined 1 time(s)
+label ass:emergent-op defined 1 time(s)
+label ass:EE defined 1 time(s)
+bib key MantaSteinacker2025 present in bib/namcg.bib: 1
+bib key Steinacker2016Gravity present in bib/namcg.bib: 1
+bib key Steinacker2019NoGhost present in bib/namcg.bib: 1
+bib key SperlingSteinacker2019 present in bib/namcg.bib: 0
+new labels introduced by the proposal: none

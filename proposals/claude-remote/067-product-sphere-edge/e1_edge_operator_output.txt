@@ -1,0 +1,28 @@
+product P(x)Q M1=5 M2=2            N= 6 single-gap=False offdiag=0.0e+00 diag-dev=1.8e-15  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 17.651641 formula 17.651641  rank 6 sites 6
+    product closed forms: |s^2 - (M2 s1^2 + M1 s2^2)|, |T - T_prod|, rank-(M1+M2-1): max dev 7.1e-15
+half-plane b/a=0.781               N= 6 single-gap=False offdiag=0.0e+00 diag-dev=3.6e-15  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 23.948268 formula 23.948268  rank 6 sites 6
+two separated discs                N= 6 single-gap=False offdiag=0.0e+00 diag-dev=0.0e+00  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 40.006810 formula 40.006810  rank 12 sites 12
+product P(x)Q M1=4 M2=2            N= 6 single-gap=False offdiag=0.0e+00 diag-dev=0.0e+00  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 19.548340 formula 19.548340  rank 5 sites 5
+    product closed forms: |s^2 - (M2 s1^2 + M1 s2^2)|, |T - T_prod|, rank-(M1+M2-1): max dev 1.4e-14
+half-plane b/a=1.006               N= 6 single-gap=False offdiag=0.0e+00 diag-dev=3.6e-15  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 28.028454 formula 28.028454  rank 6 sites 6
+two separated discs                N= 6 single-gap=False offdiag=0.0e+00 diag-dev=3.6e-15  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 49.300515 formula 49.300515  rank 12 sites 12
+product P(x)Q M1=2 M2=5            N= 9 single-gap=False offdiag=0.0e+00 diag-dev=3.6e-15  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 19.013666 formula 19.013666  rank 6 sites 6
+    product closed forms: |s^2 - (M2 s1^2 + M1 s2^2)|, |T - T_prod|, rank-(M1+M2-1): max dev 0.0e+00
+half-plane b/a=0.438               N= 9 single-gap=False offdiag=0.0e+00 diag-dev=1.8e-15  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 32.899614 formula 32.899614  rank 9 sites 9
+two separated discs                N= 9 single-gap=False offdiag=0.0e+00 diag-dev=3.6e-15  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 56.192654 formula 56.192654  rank 16 sites 16
+product P(x)Q M1=7 M2=5            N= 9 single-gap=False offdiag=0.0e+00 diag-dev=7.1e-15  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 48.956544 formula 48.956544  rank 11 sites 11
+    product closed forms: |s^2 - (M2 s1^2 + M1 s2^2)|, |T - T_prod|, rank-(M1+M2-1): max dev 7.1e-15
+half-plane b/a=1.613               N= 9 single-gap=False offdiag=0.0e+00 diag-dev=1.4e-14  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 46.649931 formula 46.649931  rank 9 sites 9
+two separated discs                N= 9 single-gap=False offdiag=0.0e+00 diag-dev=7.1e-15  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 75.230980 formula 75.230980  rank 16 sites 16
+product P(x)Q M1=10 M2=5           N=12 single-gap=False offdiag=0.0e+00 diag-dev=3.6e-15  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 92.948315 formula 92.948315  rank 14 sites 14
+    product closed forms: |s^2 - (M2 s1^2 + M1 s2^2)|, |T - T_prod|, rank-(M1+M2-1): max dev 0.0e+00
+half-plane b/a=0.874               N=12 single-gap=False offdiag=0.0e+00 diag-dev=1.4e-14  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 89.586182 formula 89.586182  rank 12 sites 12
+two separated discs                N=12 single-gap=False offdiag=0.0e+00 diag-dev=1.4e-14  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 102.584432 formula 102.584432  rank 16 sites 16
+product P(x)Q M1=8 M2=3            N=12 single-gap=False offdiag=0.0e+00 diag-dev=7.1e-15  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 45.543965 formula 45.543965  rank 10 sites 10
+    product closed forms: |s^2 - (M2 s1^2 + M1 s2^2)|, |T - T_prod|, rank-(M1+M2-1): max dev 2.8e-14
+half-plane b/a=0.531               N=12 single-gap=False offdiag=0.0e+00 diag-dev=1.4e-14  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 88.183250 formula 88.183250  rank 12 sites 12
+two separated discs                N=12 single-gap=False offdiag=0.0e+00 diag-dev=1.4e-14  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 87.731918 formula 87.731918  rank 16 sites 16
+max deviation over gap-free cases: 2.84e-14
+single gap, A1 non-conformal       N= 8 single-gap=True  offdiag=1.2e+01 diag-dev=3.6e-15  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 57.205238 formula 59.269635  rank 15 sites 15
+single gap, A1 conformal on (1,2)  N= 8 single-gap=True  offdiag=0.0e+00 diag-dev=3.6e-15  TrE-(1/2)Tr(Th Box Th)=0.0e+00  T: op 57.082160 formula 57.082160  rank 15 sites 15
+PASS e1

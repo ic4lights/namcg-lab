@@ -1,0 +1,31 @@
+pre appH: 693736 5106f9938be746607dd0b5fe6ecbf89a2918d795ffad7ee79d9ed7bf972d7681
+PASS pre hash matches
+PASS anchor occurs once
+PASS companion phrase occurs once
+PASS insert is CRLF only
+PASS insert has no BOM
+PASS insert ends with one blank line
+PASS result CRLF only
+PASS insert lies in sec:status-B
+PASS companion edit precedes insert, inside sec:status-B
+PASS ref sec:status-F has exactly one label (1)
+PASS insert adds no label
+PASS cite DonnellyWall2016 has one bib entry (1)
+PASS cite Steinacker2023 has one bib entry (1)
+PASS \LUV defined in namcg-book7.tex
+PASS brace/inline/display/env balance (0, 0, 0, 0)
+PASS no process words []
+PASS no ledger-label line
+PASS exactly one status sentence ['Problem~B stays open and PROGRAMME-CONDITIONAL.']
+PASS status sentence differs from the adjacent preceding one
+PASS no duplicate labels after apply []
+post appH: 702490 4ea0ee0f50b0676ee161ff8ebd6620e3bd775ae74ffb1796b07d8a78f9e24b18
+PASS post hash matches expected
+PASS build base lies outside the repository
+build copy: C:\Users\redgi\AppData\Local\Temp\claude\3ba14ee056ac155d\8095df06-9555-40ba-b1c2-719eb5f35f33\scratchpad\070-r3-build-1795102124
+PASS pdflatex pass 1
+PASS pdflatex pass 2
+PASS no undefined/multiply-defined references or citations (0)
+pages: 401
+repository PDF mtime unchanged by this script (not written): 1795100855.3941202
+APPLY/BUILD R3 PASS

@@ -1,0 +1,2 @@
+signature of Q over 59 (point,q) draws: {'pos': 5, 'neg': 14, 'indef': 40}
+Q(alpha=q^a)/(Re N(0) |q|^2_eta): min -61751.354 median -0.459 max 173.586 ; nonzero in all cases: True

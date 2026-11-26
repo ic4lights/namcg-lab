@@ -1,0 +1,6 @@
+c^2 range over orbit sample (should be a single number): 0.06492513509176859 3.9942348842388067
+(a) max |M_A^B M_B^C + c^2 delta| = 1.4552803406786552e-12
+(b) max |T^a y_a| = 2.2737367544323206e-13
+(c) max errors g^{-1}=eta+yy/l^2 and K=m^2(g^{-1}-yy/l^2): 1.893323997137486e-06
+(d) Q^{-1} closed form err: 1.9584877009037882e-07 ; base symbol of Q^{-1}-contraction minus g^{-1}: 3.884542820742354e-08
+ell^2 = 0.7224999999999999  c^2 = 0.7224999999999996 (eta6 M)^2 diag: [-0.7225 -0.7225 -0.7225 -0.7225 -0.7225 -0.7225]

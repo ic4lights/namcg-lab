@@ -1,0 +1,4 @@
+scratch copy outside the repository (session scratchpad), working tree at the time of the run, block inserted before the Problem C section, three new bib entries appended
+Output written on namcg-book7.pdf (305 pages, 2288601 bytes).
+undefined or multiply defined references (grep of the third pass log): 0
+no overfull box reported at appH lines 306-331 of the scratch copy

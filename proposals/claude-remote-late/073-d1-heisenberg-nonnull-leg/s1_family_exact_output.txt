@@ -1,0 +1,13 @@
+nonzero bracket components before reduction: 64 [12s]
+(a) s arbitrary, tau = 0, constraint: residual set {0}
+(b) s = 0, tau free, constraint: residual set {0}
+(c) s free, constraint only: every remainder vanishes at tau = 0 and at s = 0: True ; distinct remainders 13
+(d) R_abcd R^abcd - 4 kappa^2 c^2 (th^2 - chi^2) = 0
+    R_ab^{ab} = 2*kappa*(beta*s**2 + c*s*x - s**2*vartheta + vartheta)  ; T_abc T^abc = -2*kappa*(2*beta*s**2 + 2*c*s*x - kappa - 2*s**2*vartheta + 2*vartheta)
+    T_ac^c - tau k_a = [0, 0, 0, 0]  ; k_a = [1, -s, c, 0]
+(e) s = 0: nonzero F pairs {(1, 3): kappa*(alpha + chi + gamma)/2} ; third bracket [0, 0, 0, 0]
+(f) W_a n = lambda_a n for all a: True ; lambda_a = [-chi, chi*s, -c*chi, 0]
+    L + (eta^{ab}(P_a P_b + Q_a Q_b)) n n^flat == 0: True ; eta^{ab}(P_a P_b + Q_a Q_b) = alpha**2 + 2*beta**2 + 2*beta*vartheta + gamma**2 + vartheta**2 ; L^2 == 0: True
+    leg form at s = 0, chi = th = zeta = x = 0, al = 1, be = ga = 0, nonzero: True
+(g) [Q_b - Q_b|_{w=0}] + tau k^a F_ab = [0, 0, 0, 0]
+[24s]

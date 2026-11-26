@@ -1,0 +1,33 @@
+(P1) pointwise densities against the exact routines of forms_lib, g dependence, 4 fibre points x 5 cases
+   all residuals exactly zero: True
+
+(P2) fibre averages against cp12_forms on all nine D, exact rational, including static (q0=0) and pure-k cases
+   (y0,y4)=(5,3) chi=+1 q=['3/7', '1/2', '-2/3', '1/5'] : residuals zero: IX2 True, SC2 True, gauge independence True
+   (y0,y4)=(5,3) chi=+1 q=['-1/3', '2/5', '1/4', '-3/2'] : residuals zero: IX2 True, SC2 True, gauge independence True
+   (y0,y4)=(5,3) chi=+1 q=['2', '1/3', '-1/2', '1/4'] : residuals zero: IX2 True, SC2 True, gauge independence True
+   (y0,y4)=(13,5) chi=+1 q=['2/3', '-1/2', '1/3', '1/7'] : residuals zero: IX2 True, SC2 True, gauge independence True
+   (y0,y4)=(5,4) chi=+1 q=['1/9', '3/4', '-1/2', '2/3'] : residuals zero: IX2 True, SC2 True, gauge independence True
+   (y0,y4)=(-5,3) chi=+1 q=['3/7', '1/2', '-2/3', '1/5'] : residuals zero: IX2 True, SC2 True, gauge independence True
+   (y0,y4)=(-5,3) chi=-1 q=['3/7', '1/2', '-2/3', '1/5'] : residuals zero: IX2 True, SC2 True, gauge independence True
+   (y0,y4)=(5,3) chi=+1 q=['0', '1/2', '-2/3', '1/5'] : residuals zero: IX2 True, SC2 True, gauge independence True
+   (y0,y4)=(13,5) chi=+1 q=['0', '0', '0', '1'] : residuals zero: IX2 True, SC2 True, gauge independence True
+   all exact: True
+
+(P3) dictionary, symbolic in q0,k,l,m (q along the third axis)
+   a - (m^2 q0^2 + l^2 k^2) = 0
+   a - b - y0^2 k^2 = 0
+   4a+b - [5 m^2 (q0^2 - k^2/5) + 4 l^2 k^2] = 0
+   2a+3b - [5 m^2 (q0^2 - 3k^2/5) + 2 l^2 k^2] = 0
+   (trG 1 + 2G) - 5 m^2 [delta_ij (q0^2 - k^2/5) - (2/5) k_i k_j] = [[4*k**2*l**2, 0, 0], [0, 4*k**2*l**2, 0], [0, 0, 2*k**2*l**2]]
+   the difference is l^2 k^2 (4 delta_ij - 2 qhat_i qhat_j): True
+
+(P3b) Fourier sign of the printed Eq. (4.44): A Box (d0^2 - d^2/5 - m_c^2) A, Box = -gamma d d -> m^2 q^2, d0^2 -> -q0^2, d_i^2 -> -k^2
+   second factor -> k**2/5 - m_c**2 - q0**2  = -(q0^2 - k^2/5 + m_c^2), the factor printed in (4.46)
+
+(P4) moments of cos^2 theta, n3 = cos theta
+   <n3^2> = 1/3 ; <n3^2 n1^2>/<n1^2> = 1/5 ; <n3^2 n3^2>/<n3^2> = 3/5
+
+(P5) helicity-zero eigenvalues at q.y=0, (y0,y4)=(5,3), exact forms against the printed closed forms and the scout's values
+   Gram matrix [[16, 0, 0], [0, 16, 0], [0, 0, -9]]
+   IX2/EH = -67/72 -0.9305555555555556  closed -(6/5)[2+(2+1/x)(1+(x-1)2/3)] = -67/72  scout -4+(2/5)s^2+8/(5 s^2) = -67/72
+   SC2/EH = 2063/8640 0.23877314814814815  closed = 2063/8640  scout (1/20)[22/3 - s^2/3 - 4/(3 s^2)] = 2063/8640

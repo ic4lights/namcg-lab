@@ -1,0 +1,11 @@
+anchor guard: PRE count 1; doubled-copy control count 2 (fires)
+guard ascii: payload clean; injected control fires
+guard braces: payload clean; injected control fires
+guard nolabelcite: payload clean; injected control fires
+guard refs-exist: payload clean; injected control fires
+guard one-line: payload clean; injected control fires
+refs used: ['ass:EFT-a2', 'ass:dictionary', 'ass:lorentzian', 'eq:Smatrix', 'eq:Smicro', 'eq:V', 'sec:status-D', 'sec:status-E']
+PRE sha1 ba72024aba4d26aff3fd5ad5a1219cdd5a1bd1e1 size 869275
+PAY sha1 8988a8baf171cc510ed109618c25fa729f2fb5d2 size 5797
+POST sha1 1d192b89bd2d20c50a4c70dfd108656a529baa4d size 875072
+OK

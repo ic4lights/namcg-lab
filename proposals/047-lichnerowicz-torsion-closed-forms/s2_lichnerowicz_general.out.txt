@@ -1,0 +1,7 @@
+General rho-divergence-free frames, random exact two-jets
+  eta = diag(-1,1,1,1): 10 points; fitted (R, Box phi, |d phi|^2, A^2) = [-1, 4, 4, -1/8] ; residual on all points zero: True
+     (P1) rho-divergence of T vanishes (2 points, 3 pairs): True
+     (P3) Z.Z is scalar + c G5 in all points: True; c / eps(T.T) values: [-1/4]
+  eta = delta: 10 points; fitted (R, Box phi, |d phi|^2, A^2) = [-1, 4, 4, 1/8] ; residual on all points zero: True
+     (P1) rho-divergence of T vanishes (2 points, 3 pairs): True
+     (P3) Z.Z is scalar + c G5 in all points: True; c / eps(T.T) values: [-1/4]

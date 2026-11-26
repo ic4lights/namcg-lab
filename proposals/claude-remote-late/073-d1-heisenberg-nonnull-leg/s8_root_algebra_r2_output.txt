@@ -1,0 +1,7 @@
+(a) -(q_par+varpi k_par)^2 - display LHS = 0
+    -varpi^2 k_par^2 - varpi^2 sin^2 phi = 0
+(b) p = 0 roots: [varpi*(Abs(cos(phi)) - 1), -varpi*(Abs(cos(phi)) + 1)] ; expected -varpi(1-+cos): True
+    product of p = 0 roots - varpi^2 sin^2 phi = 0
+(c) -(equation at q0 = 0) - [p^2 + (2 varpi cos + kappa l) p - varpi^2 sin^2] = 0
+    product of p-roots = -varpi**2*sin(phi)**2
+(d) r1 display under s=sin, c=cos, Lambda=varpi minus r2 display = 0

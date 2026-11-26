@@ -1,0 +1,14 @@
+PASS R1 [S_cd,D_a] = eta_ad D_c - eta_ac D_d exactly (48 checks)
+PASS R2 [D_a,D_b] = 0
+PASS R3a blocks of S independent (rank 6)
+PASS R3b [S,S] in span exactly, no translation-row leak
+PASS R3c span{S} subset eta-antisymmetric (rank 6 + 6-dim space: span = so(3,1))
+PASS R4a exp(S12) D_a exp(-S12) = (exp L)^c_a D_c exactly
+PASS R4b exp(S01) D_a exp(-S01) = (exp L)^c_a D_c exactly
+PASS R5 (1/4) eta^{ab}[D_a,[D_b,G]] = 0 on span{1,S,D} (11 gens)
+PASS R6 centralizer of ad D on span{1,S,D} = span{1,D} (rank 6, null dim 5)
+PASS R6b null vectors have zero S-component (S-sector has no ad-D centralizer)
+PASS R6c D_a D_b = 0 (centralizer = C + nilradical: point spectrum, no base manifold)
+CONTROL-FIRED Euclidean delta fails 6/48 R1 checks (Lorentzian eta is load-bearing)
+CONTROL-FIRED scan dims a={0}: 8, a={0,1,2}: 5, all a: 5 (row-wise annihilation structure)
+SUMMARY_B: ALL-PASS

@@ -1,0 +1,9 @@
+model central seed 21 theta 1.4 time 155s
+ yy: |Q kappa|/(|Q||kappa|) = 1.4e-09
+ cc: |Q kappa|/(|Q||kappa|) = 1.5e-10
+ full: |Q kappa|/(|Q||kappa|) = 2.3e-09
+ yy Re: best fit lambda*A-form: lambda=7.3688e-02  residual 0.004 ; eigenvalues on quotient (normalised) [-1.    -0.128  0.068]
+ yy Im: best fit lambda*A-form: lambda=7.5991e-03  residual 0.000 ; eigenvalues on quotient (normalised) [-1.    -0.124  0.068]
+ A-form eigenvalues on quotient (normalised): [-1.    -0.124  0.068]
+ cc Re: eigenvalues on quotient (normalised) [0.006 0.308 1.   ]
+ cc Im: eigenvalues on quotient (normalised) [-1.    -0.797  0.663]

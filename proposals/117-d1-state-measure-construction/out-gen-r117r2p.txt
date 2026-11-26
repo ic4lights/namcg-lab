@@ -1,0 +1,8 @@
+r1 bytes 4597 sha1 b514e44a19ee627f0aab4ac3d4f69bc052506154
+v-replacement applied count 1 (delta -12)
+reverse-substitution recovers r1 bytes OK
+frags-rebuild matches byte-replacement payload OK
+bytes 4585 CR 2 LF 2 CRLF 2 loneCR 0 loneLF 0 tab 0 nonASCII 0 ctrl 0 endsCRLF True BOM False backslash-ws 0
+distinct macro tokens: 33  UNKNOWN: ['equiv', 'ln', 'mapsto']
+r2 sha1 51010545179a3d3609826aefa0f6c1fa84182ae4 size 4585
+PAYLOAD SCAN OK

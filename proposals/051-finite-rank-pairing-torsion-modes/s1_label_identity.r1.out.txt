@@ -1,0 +1,11 @@
+A  T = FP + y FJ on all components: failures 0
+B  E2 = Mx[fJ], E1 + y_g E2^{g e} = - Mx[fP]: failures 0
+C  2 E3_b = d_c E1_b^c - eta_bg E2_c^{gc}: failures 0
+D  [V, D_a] = 0 on all components, all a: failures 0
+E  y-linear J-label modes solve E1, E2, E3 at null q with eps.q = 0: failures 0
+F  rank of lam -> q.lam at null q: 3 ; kernel 3 ; image inside q-perp: True
+   two transverse polarisations: J-label modes with q.lam != 0 (partners of chains): 6 ; J-label modes with q.lam = 0: 6 ; P-label modes: 8
+   fixed-q eigenmodes: 14 (8 simple + 6 eigenvectors of chains); with the 6 partners: 20
+   labels 1 + 4 + 6 = 11, physical polarisations 22 = 20 + 2 (the label 1 is the order-zero Maxwell field)
+G  (1/2) lam^{cd} u^e_c u^f_d (S_ef u)_a^b = - u_a^c lam_c^b at an exact Lorentz point: failures 0
+ALL ASSERTIONS PASSED

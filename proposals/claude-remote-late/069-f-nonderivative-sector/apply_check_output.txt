@@ -1,0 +1,23 @@
+PASS anchor occurs once in appH: 1
+PASS anchor preceded by the closing sentence of the L2793 paragraph
+PASS anchor after label sec:status-F and before label sec:status-G
+PASS insert ASCII, LF only, no BOM
+PASS insert ends with blank line
+PASS label exists once: ass:gap-psi
+PASS label exists once: ass:lorentzian
+PASS label exists once: ch:vierbein-emergence
+PASS label exists once: def:matrix-coords-ext
+PASS label exists once: eq:Smatrix
+PASS no new label in insert
+PASS cite key IsoKimuraTanakaWakatsuki2001: in bib=False, in new_bib_entry=True (exactly one)
+PASS one status sentence, at the end
+PASS no label words (Status:, CRITICAL PATH, DERIVED, CLOSED)
+PASS balanced braces and math delimiters
+PASS no process language
+PASS no bare r variable left (r_c only)
+labels: ['ass:gap-psi', 'ass:lorentzian', 'ch:vierbein-emergence', 'def:matrix-coords-ext', 'eq:Smatrix']
+cite keys: ['IsoKimuraTanakaWakatsuki2001']
+insert bytes (LF) 11086, sha256 5b4340bf6356a5fa3591ef7792c0b5d658a44f26487855ed6ce519ea1ce406ec
+appH bytes 624232 -> 635358 (in memory only)
+paragraph blocks: 7
+ALL PASS

@@ -1,0 +1,25 @@
+D  mode       Hamiltonian-gauge=Diff_G | rank(Im) | dim(Im+Diff)-4 | rank E on Im   (max 6)
+ 4 flat      True | 4 | 3 | 3
+ 5 flat      True | 4 | 3 | 3
+ 6 flat      True | 4 | 3 | 3
+ 7 flat      True | 4 | 3 | 3
+ 8 flat      True | 4 | 3 | 3
+ 9 flat      True | 4 | 3 | 3
+10 flat      True | 4 | 3 | 3
+11 flat      True | 4 | 3 | 3
+ 4 generic   True | 4 | 3 | 3
+ 5 generic   True | 5 | 4 | 4
+ 6 generic   True | 6 | 5 | 5
+ 7 generic   True | 7 | 6 | 6
+ 8 generic   True | 8 | 6 | 6
+ 9 generic   True | 9 | 6 | 6
+10 generic   True | 10 | 6 | 6
+11 generic   True | 10 | 6 | 6
+ 4 traceless True | 4 | 3 | 3
+ 5 traceless True | 5 | 4 | 4
+ 6 traceless True | 6 | 5 | 5
+ 7 traceless True | 7 | 6 | 6
+ 8 traceless True | 8 | 6 | 6
+ 9 traceless True | 9 | 6 | 6
+10 traceless True | 10 | 6 | 6
+11 traceless True | 10 | 6 | 6

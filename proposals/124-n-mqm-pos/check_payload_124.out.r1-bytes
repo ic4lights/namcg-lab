@@ -1,0 +1,18 @@
+PRE appH pin                           OK sha1 ba72024aba4d26aff3fd5ad5a1219cdd5a1bd1e1 size 869275
+payload pin                            OK sha1 8988a8baf171cc510ed109618c25fa729f2fb5d2 size 5797
+payload ASCII                          OK 
+payload CRLF-only (no bare LF)         OK 
+payload CRLF-only (no bare CR)         OK 
+payload tail CRLFCRLF                  OK 
+payload one text line                  OK 
+braces balanced                        OK delta 0
+no \label in payload                   OK 
+no \cite in payload                    OK 
+all ref/eqref targets exist            OK ['ass:EFT-a2', 'ass:dictionary', 'ass:lorentzian', 'eq:Smatrix', 'eq:Smicro', 'eq:V', 'sec:status-D', 'sec:status-E'] missing []
+anchor count == 1 in PRE               OK count 1
+POST size = PRE + PAY                  OK 875072 = 869275 + 5797
+POST pin                               OK sha1 1d192b89bd2d20c50a4c70dfd108656a529baa4d size 875072
+POST anchor count 1                    OK 
+POST payload-header count 1            OK 
+payload immediately precedes anchor in POST OK 
+ALL CHECKS PASS

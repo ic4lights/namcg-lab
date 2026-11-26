@@ -1,0 +1,10 @@
+P5: ranks (H, centre) over sample: {(4, 2)}
+P5: h = c^T eta c eigenvalues (first 3 samples):
+    [ 0.319818  5.596994  5.596994 10.87417 ]
+    [ 0.75052   8.229948  8.229948 15.709376]
+    [  0.595638 201.177945 201.177945 401.760253]
+P5: min over sample of smallest eigenvalue of h: 0.16198911625556042 (>0 means Euclidean horizontal contraction)
+P5: max residual of  S = c F c^T and of y_A D^A = 0: 1.4210854715202004e-13
+P5: max over points,zeta of (1 - f2/f1): 8.315570454442422e-14
+P4: ranks (H,centre): {(4, 2)}
+P4 (eta->delta): f2/f1 range over sample: 0.00017751722432894298 0.8074782056985877

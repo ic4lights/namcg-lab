@@ -1,0 +1,11 @@
+anchor count (section Problem G: HBEV):
+1
+eq:Smatrix: 1
+ch:vierbein-emergence: 1
+ass:EE: 1
+sec:status-F: 1
+bib KumarSteinacker2023: 1
+bib Steinacker2026: 1
+bib SperlingSteinacker2019: 1
+bib Steinacker2023: 1
+new labels introduced: none; new bib entries: none

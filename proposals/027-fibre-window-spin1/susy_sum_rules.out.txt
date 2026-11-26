@@ -1,0 +1,10 @@
+vector with sign 1 satisfies the structure constants: True
+vector with sign -1 satisfies the structure constants: False
+Dirac with sign 1 : True
+Dirac with sign -1 : False
+tr(Sigma_D Sigma_D)/tr(Sigma_V Sigma_V) over all index choices: {1/2}
+eigenvalues Z_V: [-2*B, -2*I*A, 2*B, 2*I*A]  Z_D: [-I*(A + I*B), -I*(A - I*B), I*(A + I*B), I*(A - I*B)]
+str(s) - 4 (cos sB - cosh sA)^2 = 0
+series of str(s): s**4*(A**4 + 2*A**2*B**2 + B**4)  vs  s^4 (A^2+B^2)^2 : s**4*(A**2 + B**2)**2
+s^2 coefficients:  vector 4*A**2 - 4*B**2   Dirac 2*A**2 - 2*B**2  -> 1*vec -2*Dirac -> 0
+q_F = A^2-B^2 ; vector s^2 coefficient / q_F = 4

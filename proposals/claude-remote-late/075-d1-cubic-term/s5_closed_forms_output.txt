@@ -1,0 +1,12 @@
+(1) det(M - q q^T) - (q^2)^2[(q^2)^2 - c^2((q.w)^2 - q^2 w^2)] = 0
+    M q^gauge (A_d = q_d) = Matrix([[0, 0, 0, 0]])
+(2) unit spacelike w: X^2 + c^2 X - c^2 (q.w)^2 = 0 -> [c*(-c - sqrt(c**2 + 4*k_w**2))/2, c*(-c + sqrt(c**2 + 4*k_w**2))/2]
+    gapped branch q0^2 - (k^2 + c^2) = -c**2/2 + sqrt(c**2 + 4*k_w**2)*Abs(c)/2  (>= 0)
+    gapped branch at k = 0: q0^2 = c**2
+    gapless branch q0^2, series in k_w: -2*k_w**6/C**4 + k_w**4/C**2 + k_perp**2 + O(k_w**7)
+    gapless branch q0^2 - k_perp^2 >= 0: k_w**4 (numerator after rationalising, = k_w^4)
+    momenta with q.w = 0: q^2 in [0, -c**2]
+    unit timelike w (w^2 = -1, q.w = q0): bracket - (q0^2 - k^2 - c k)(q0^2 - k^2 + c k) = 0
+    timelike: q0^2 = k^2 - |c| k < 0 for 0 < k < |c|; max of |c| k - k^2 at k = |c|/2: c**2/4 -> max |Im q0| = |c|/2
+    null w: q^2 + c q.w - (q + c w_flat/2)^2 = 0  (w null)
+(3) l(l+1) for l = 1/2, 1, 3/2, 2, 5/2: [3/4, 2, 15/4, 6, 35/4]  sqrt: [0.866, 1.4142, 1.9365, 2.4495, 2.958]

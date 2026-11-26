@@ -1,0 +1,14 @@
+sample 0: R=17.241335  trE_s=4.60461652  E_s(formula)=4.60461652  diff=1.8e-15  |V-dlnrho|=4.4e-16
+sample 1: R=-1.578758  trE_s=-0.27304761  E_s(formula)=-0.27304761  diff=1.1e-16  |V-dlnrho|=7.8e-16
+sample 2: R=151.353228  trE_s=50.38067541  E_s(formula)=50.38067541  diff=7.1e-15  |V-dlnrho|=1.8e-15
+sample 3: R=31.995054  trE_s=20.75244157  E_s(formula)=20.75244157  diff=4.6e-14  |V-dlnrho|=4.4e-15
+sample 4: R=-1910.031250  trE_s=137.23437500  E_s(formula)=137.23437500  diff=1.2e-12  |V-dlnrho|=1.1e-14
+sample 5: R=0.434789  trE_s=1.52603200  E_s(formula)=1.52603200  diff=6.7e-16  |V-dlnrho|=4.4e-16
+sample 6: R=4.904459  trE_s=1.48962519  E_s(formula)=1.48962519  diff=1.8e-15  |V-dlnrho|=7.2e-16
+(a) scalar E_s reproduces -1/2 box ln rho + 1/4 |d ln rho|^2: True
+(b) fit  trE_f/4 - R/4 = a T^2 + b T T' + c V^2 + d box ln rho: (a,b,c,d) = [-0.0625  0.125  -0.     -0.    ] rank 4 max residual 3.410605131648481e-13
+    scalar analogue E_s - R/4 = a T^2 + b T T' + c V^2: [0.0625 0.125  0.    ] residual 3.296918293926865e-12
+(c) tr(R_G/6 - E_f) = -5.61282512   (4/6) R[g_rho]/rho + X/2 = -5.61282512   diff = 3.6e-15
+(c) tr(R_G/6 - E_f) = 0.93903667   (4/6) R[g_rho]/rho + X/2 = 0.93903667   diff = 8.9e-16
+(c) tr(R_G/6 - E_f) = -34.02044695   (4/6) R[g_rho]/rho + X/2 = -34.02044695   diff = 8.5e-14
+(c) tr(R_G/6 - E_f) = 2.82141168   (4/6) R[g_rho]/rho + X/2 = 2.82141168   diff = 2.2e-13

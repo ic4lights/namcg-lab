@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\100-g-mi-tau-conditioning-d2\mi_tau_100p.py", line 36, in <module>
+    assert abs(h(1e-3)+(1e-3)**2/24) < 1e-12 and abs(h(2e-4)+3.3333333e-9) < 1e-14 and abs(h(3.)+2.5521930) < 5e-7
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

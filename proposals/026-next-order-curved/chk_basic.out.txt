@@ -1,0 +1,6 @@
+w.Theta - 1 residual: True
+Jacobi (to degree 2): True
+J(0) = [QQ_I(145137/32000, 0), QQ_I(375693/40000, 0), QQ_I(57511/160000, 0), QQ_I(-2912339/160000, 0)]
+Box x - G dln rho = [QQ_I(145137/32000, 0), QQ_I(375693/40000, 0), QQ_I(57511/160000, 0), QQ_I(-2912339/160000, 0)]
+equal: True
+(G d d f + A d f) - D_m D_m f at 0 (should be 0): 0

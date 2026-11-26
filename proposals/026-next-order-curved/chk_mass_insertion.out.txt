@@ -1,0 +1,4 @@
+scalar : a2(m) = a2(0) - m^2 a1 + n m^4/2 : True
+vector : a2(m) = a2(0) - m^2 a1 + n m^4/2 : True
+dirac : a2(m) = a2(0) - m^2 a1 + n m^4/2 : True
+all ok: True

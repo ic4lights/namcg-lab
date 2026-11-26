@@ -1,0 +1,4 @@
+t=2  (1) s^2 scaling rel.err 0.0e+00   (2) |grad_b S . x^a| 7.2e-16   (3) P_ab vs 4h12 x^a h D x^b /4: 1.1e-11, oddness 2.2e-10   (4) both signs: True [min -1.26e+02 max 1.29e+02]   (5) max|g| 2.3e-09
+t=5  (1) s^2 scaling rel.err 0.0e+00   (2) |grad_b S . x^a| 7.2e-16   (3) P_ab vs 4h12 x^a h D x^b /4: 8.6e-12, oddness 2.8e-11   (4) both signs: True [min -2.38e+02 max 6.49e+01]   (5) max|g| 7.5e-10
+t=8  (1) s^2 scaling rel.err 0.0e+00   (2) |grad_b S . x^a| 5.3e-15   (3) P_ab vs 4h12 x^a h D x^b /4: 3.6e-11, oddness 3.8e-11   (4) both signs: True [min -1.22e+02 max 1.11e+02]   (5) max|g| 8.1e-10
+ALL PASS

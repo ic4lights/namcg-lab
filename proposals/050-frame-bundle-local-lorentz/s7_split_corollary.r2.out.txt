@@ -1,0 +1,54 @@
+# A. block-triangular form, symbolic in q, h, wt
+E2 independent of h: True
+E2_b^{de} = q^2 wt_b^{de} - q_b q^a wt_a^{de} (Maxwell with extra indices): True
+h part of E1 = q^2 h_b^e - q_b q^a h_a^e: True
+wt part of E1 = q^a wt_{ab}^e - 2 q^a wt_{ba}^e + q_b wt_a^{ae}: True
+  equals 2 (1/2 q^a S_ab^e - q^a S_ba^e + 1/2 q_b S_a^{ae}), the ratios 1/2 : -1 : 1/2 of the published j: True
+# A2. the same linear source from the published definitions of T and R (d=4, sign and scale)
+from those definitions the linear term is exactly 2 x the printed -j, with the same three-term ratios: True
+# B. the map S -> q_c S^{c mu} at null q
+q0 = (1, 1, 0, 0) q0^2 = 0 transverse i = 2, 3 have q_i = q^i = 0
+rank per transverse i: 3 kernel: 3 image orthogonal to q: True ; q-perp has dimension 3
+two transverse i: rank 6 ; physical components h_i^mu 8 , S_i^{cd} 12 , total 20 = 2 + 6 + 2 * 6
+# C. coupling induced from ker(E2 block) to coker(h block) at null q
+E2 block has zero h column block: True
+rank h block 4 rank wt block 6 ker wt block 18 coker h block 12
+rank of the induced map ker(wt block) -> coker(h block): 6
+# D. local Smith invariants at q^2 = 0
+line (1+e, 1, 0, 0): q^2 = -eps**2 - 2*eps
+   h block alone: unit: 4, eps^1: 8, zero to O(eps^14): 4
+   wt block alone: unit: 6, eps^1: 12, zero to O(eps^14): 6
+   full, no E3: unit: 16, eps^1: 8, eps^2: 6, zero to O(eps^14): 10
+   full, with E3: unit: 16, eps^1: 8, eps^2: 6, zero to O(eps^14): 10
+   rank at eps = 3/7: 30 of 40
+line (1+e, 1, e, 0): q^2 = -2*eps
+   h block alone: unit: 4, eps^1: 8, zero to O(eps^14): 4
+   wt block alone: unit: 6, eps^1: 12, zero to O(eps^14): 6
+   full, no E3: unit: 16, eps^1: 8, eps^2: 6, zero to O(eps^14): 10
+   full, with E3: unit: 16, eps^1: 8, eps^2: 6, zero to O(eps^14): 10
+   rank at eps = 3/7: 30 of 40
+line (1+2e, 1-e, e, 3e): q^2 = 7*eps**2 - 6*eps
+   h block alone: unit: 4, eps^1: 8, zero to O(eps^14): 4
+   wt block alone: unit: 6, eps^1: 12, zero to O(eps^14): 6
+   full, no E3: unit: 16, eps^1: 8, eps^2: 6, zero to O(eps^14): 10
+   full, with E3: unit: 16, eps^1: 8, eps^2: 6, zero to O(eps^14): 10
+   rank at eps = 3/7: 30 of 40
+line (1, 1+e, -2e, e): q^2 = 6*eps**2 + 2*eps
+   h block alone: unit: 4, eps^1: 8, zero to O(eps^14): 4
+   wt block alone: unit: 6, eps^1: 12, zero to O(eps^14): 6
+   full, no E3: unit: 16, eps^1: 8, eps^2: 6, zero to O(eps^14): 10
+   full, with E3: unit: 16, eps^1: 8, eps^2: 6, zero to O(eps^14): 10
+   rank at eps = 3/7: 30 of 40
+# D2. the reduced 20 x 20 system on h_i^mu, S_i^{cd}, i = 2, 3, on the line (1+e, 1, 0, 0)
+off-diagonal rank at eps = 0: 6 ; lower-left block zero: True
+diagonal blocks are q^2 times the identity: True True
+Smith invariants: unit: 6, eps^1: 8, eps^2: 6
+zeros with multiplicity: simple 8 + 2 * double 6 = 20
+# D3. a line tangent to the cone: invariants become powers of q^2
+line (1, 1, e, 0): q^2 = eps**2
+   full, with E3: unit: 16, eps^2: 8, eps^4: 6, zero to O(eps^14): 10
+# E. heads of chains: x0 in ker M0 with M1 x0 in im M0, on the line (1+e, 1, 0, 0)
+null kernel 24 ; heads including gauge, rank 16
+rank of the heads projected on wt: 6 (the six rotation gauge directions q_a lam^{cd})
+heads with wt = 0: 10 (four diffeomorphism gauge directions + six frame-type tails)
+wt projection of the heads equals the span of q_a lam^{cd}: True

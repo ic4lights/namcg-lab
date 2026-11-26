@@ -1,0 +1,6 @@
+point 0: theta/M^{mu nu} ratio (nanmedian) = 1.000000 | T fit residual 4.70e-15 | coefficients c0..c3 = [ 1.10274  1.      -1.       0.     ] | y.y=-3.208 t.t=3.208 y.t=-0.000
+point 1: theta/M^{mu nu} ratio (nanmedian) = 1.000000 | T fit residual 5.91e-16 | coefficients c0..c3 = [ 0.83129  1.      -1.       0.     ] | y.y=-14.339 t.t=14.339 y.t=0.000
+point 2: theta/M^{mu nu} ratio (nanmedian) = 1.000000 | T fit residual 8.47e-16 | coefficients c0..c3 = [ 1.01604  1.      -1.      -0.     ] | y.y=-1.040 t.t=1.040 y.t=-0.000
+point 3: theta/M^{mu nu} ratio (nanmedian) = 1.000000 | T fit residual 1.15e-15 | coefficients c0..c3 = [ 2.13567  1.      -1.       0.     ] | y.y=-2.969 t.t=2.969 y.t=0.000
+point 4: theta/M^{mu nu} ratio (nanmedian) = 1.000000 | T fit residual 1.34e-15 | coefficients c0..c3 = [ 1.14466  1.      -1.      -0.     ] | y.y=-1.378 t.t=1.378 y.t=0.000
+point 5: theta/M^{mu nu} ratio (nanmedian) = 1.000000 | T fit residual 1.06e-15 | coefficients c0..c3 = [ 0.47141  1.      -1.       0.     ] | y.y=-0.471 t.t=0.471 y.t=0.000

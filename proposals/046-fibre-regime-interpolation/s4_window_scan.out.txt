@@ -1,0 +1,30 @@
+check: analytic K-weighted sums vs quadrature at M = 0.1, n = 30: W1 15.787537 / 15.787537, beta_X 0.400031 / 0.400031
+check: analytic K-weighted sums vs quadrature at M = 3, n = 30: W1 5.290595 / 5.290595, beta_X 0.935904 / 0.935904
+
+(S) on the five traceless polarisations: X = a Q2_D/m^4 + b EH  (least squares; relative residual)
+  (y0,y4)=(5,3) q=['3/7', '1/2', '-2/3', '1/5'] coth^2=2.7778: LX: a=-1.95623 b=5.79474 res=8.8e-15 ; P2: a=-6 b=20.367 res=3.9e-14 ; M1: a=0.238135 b=-0.759436 res=2.6e-01 ; SCd: a=0.238135 b=-0.759436 res=2.6e-01
+     Q2_D/m^4 relative to EH: [1.697251, 2.314605, 2.314605, 4.166667, 4.166667] (pattern: one singlet h = 0 and two doublets h = 1, 2; affine in h^2 iff d2 - d0 = 4 (d1 - d0))
+  (y0,y4)=(5,3) q=['-1/3', '2/5', '1/4', '-3/2'] coth^2=2.7778: LX: a=-1.77123 b=5.20889 res=5.3e-13 ; P2: a=-6 b=26.7321 res=1.1e-12 ; M1: a=0.209799 b=-0.663684 res=2.1e-01 ; SCd: a=0.209799 b=-0.663684 res=2.1e-01
+     Q2_D/m^4 relative to EH: [2.227679, 2.712426, 2.712426, 4.166667, 4.166667] (pattern: one singlet h = 0 and two doublets h = 1, 2; affine in h^2 iff d2 - d0 = 4 (d1 - d0))
+  (y0,y4)=(5,3) q=['2', '1/3', '-1/2', '1/4'] coth^2=2.7778: LX: a=-3.30292 b=10.0593 res=1.0e-12 ; P2: a=-6 b=52.6321 res=3.3e-13 ; M1: a=0.152366 b=-0.36365 res=4.6e-03 ; SCd: a=0.152366 b=-0.36365 res=4.6e-03
+     Q2_D/m^4 relative to EH: [4.166667, 4.166667, 4.331176, 4.331176, 4.386012] (pattern: one singlet h = 0 and two doublets h = 1, 2; affine in h^2 iff d2 - d0 = 4 (d1 - d0))
+  (y0,y4)=(13,5) q=['2/3', '-1/2', '1/3', '1/7'] coth^2=6.7600: LX: a=-2.42858 b=21.7972 res=7.6e-14 ; P2: a=-6 b=449.57 res=4.6e-15 ; M1: a=0.19481 b=-1.74131 res=1.3e-02 ; SCd: a=0.19481 b=-1.74131 res=1.3e-02
+     Q2_D/m^4 relative to EH: [10.14, 10.14, 30.633153, 30.633153, 37.464204] (pattern: one singlet h = 0 and two doublets h = 1, 2; affine in h^2 iff d2 - d0 = 4 (d1 - d0))
+  (y0,y4)=(5,4) q=['1/9', '3/4', '-1/2', '2/3'] coth^2=1.5625: LX: a=-0.323872 b=0.0352031 res=1.1e-14 ; P2: a=-6 b=15.501 res=5.7e-14 ; M1: a=-1.3876 b=1.92458 res=7.5e-01 ; SCd: a=-1.3876 b=1.92458 res=7.5e-01
+     Q2_D/m^4 relative to EH: [1.291751, 1.55475, 1.55475, 2.34375, 2.34375] (pattern: one singlet h = 0 and two doublets h = 1, 2; affine in h^2 iff d2 - d0 = 4 (d1 - d0))
+  (y0,y4)=(25,7) q=['3/7', '1/2', '-2/3', '1/5'] coth^2=12.7551: LX: a=-2.32504 b=41.7592 res=1.3e-11 ; P2: a=-6 b=93.522 res=9.3e-12 ; M1: a=0.205852 b=-3.70774 res=2.1e-02 ; SCd: a=0.205852 b=-3.70774 res=2.1e-02
+     Q2_D/m^4 relative to EH: [7.793501, 10.628289, 10.628289, 19.132653, 19.132653] (pattern: one singlet h = 0 and two doublets h = 1, 2; affine in h^2 iff d2 - d0 = 4 (d1 - d0))
+  (y0,y4)=(17,15) q=['3/7', '1/2', '-2/3', '1/5'] coth^2=1.2844: LX: a=-0.716466 b=0.263926 res=4.7e-13 ; P2: a=-6 b=9.41771 res=2.4e-12 ; M1: a=1.13153 b=-1.00448 res=8.0e-01 ; SCd: a=1.13153 b=-1.00448 res=8.0e-01
+     Q2_D/m^4 relative to EH: [0.784809, 1.070273, 1.070273, 1.926667, 1.926667] (pattern: one singlet h = 0 and two doublets h = 1, 2; affine in h^2 iff d2 - d0 = 4 (d1 - d0))
+
+(N) coefficient of the non-Einstein form on the five, case (5,3), q = (3/7,1/2,-2/3,1/5); spectrum J(J+2)
+   lambda_L = -1.956233 (L_X = lambda_L Q2hat + ...), lambda_P = -6.000000 (P2hat = lambda_P Q2hat + ...)
+   n = 2   L/c = 0   : N/W1 at M = 1e-3: +998, at M = 1e3: -1.01; zero at M* = 0.668 with beta_X = 0.392, torsion weight W2/W1 = 0.774, s-expansion parameter coth^2 tau / M* = 4.16
+   n = 2   L/c = 1   : N/W1 at M = 1e-3: +2.5e+04, at M = 1e3: -1; zero at M* = 5.01 with beta_X = 0.520, torsion weight W2/W1 = 0.042, s-expansion parameter coth^2 tau / M* = 0.554
+   n = 2   L/c = 10  : N/W1 at M = 1e-3: +2.41e+05, at M = 1e3: -0.98; zero at M* = 29.9 with beta_X = 0.520, torsion weight W2/W1 = 0.004, s-expansion parameter coth^2 tau / M* = 0.093
+   n = 30  L/c = 0   : N/W1 at M = 1e-3: +994, at M = 1e3: -1.88; zero at M* = 0.282 with beta_X = 0.649, torsion weight W2/W1 = 1.360, s-expansion parameter coth^2 tau / M* = 9.86
+   n = 30  L/c = 1   : N/W1 at M = 1e-3: +2.49e+04, at M = 1e3: -1.88; zero at M* = 1.5 with beta_X = 0.895, torsion weight W2/W1 = 0.075, s-expansion parameter coth^2 tau / M* = 1.86
+   n = 30  L/c = 10  : N/W1 at M = 1e-3: +2.4e+05, at M = 1e3: -1.88; zero at M* = 5.01 with beta_X = 0.953, torsion weight W2/W1 = 0.008, s-expansion parameter coth^2 tau / M* = 0.554
+   n = 300 L/c = 0   : N/W1 at M = 1e-3: +990, at M = 1e3: -1.95; zero at M* = 0.211 with beta_X = 0.711, torsion weight W2/W1 = 1.497, s-expansion parameter coth^2 tau / M* = 13.1
+   n = 300 L/c = 1   : N/W1 at M = 1e-3: +2.47e+04, at M = 1e3: -1.95; zero at M* = 1.12 with beta_X = 0.928, torsion weight W2/W1 = 0.074, s-expansion parameter coth^2 tau / M* = 2.48
+   n = 300 L/c = 10  : N/W1 at M = 1e-3: +2.39e+05, at M = 1e3: -1.95; zero at M* = 3.55 with beta_X = 0.974, torsion weight W2/W1 = 0.008, s-expansion parameter coth^2 tau / M* = 0.783

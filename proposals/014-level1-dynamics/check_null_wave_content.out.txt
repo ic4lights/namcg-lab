@@ -1,0 +1,6 @@
+E[h] = +1/2 q q tr h on Lorenz-gauge null solutions: True
+dim image of Lorenz solutions in h: 6 ; dim of (image + diffeos): 7 ; => image mod diffeo: 3
+kernel of H on Lorenz solutions (inert + gauge-to-zero): 3
+tr h as a linear functional on the 9 Lorenz amplitudes is nonzero: True
+TT polarisation h22-h33 in image(+diffeo): True
+TT polarisation h23 in image(+diffeo): True

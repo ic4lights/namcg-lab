@@ -1,0 +1,14 @@
+hygiene payload: OK
+controls fired: [True, True, True, True, True]
+payload bytes: 3754 sha1: 84dcba179198
+anchor count: 1
+PRE bytes: 854131 POST bytes: 857887 delta: 3756 = 3756 : True
+sha1 spliced: cf3139fbedb0
+GEN121 OK
+hygiene payload: OK
+controls fired: [True, True, True, True, True]
+payload bytes: 3754 sha1: 84dcba179198
+anchor count: 1
+PRE bytes: 854131 POST bytes: 857887 delta: 3756 = 3756 : True
+sha1 spliced: cf3139fbedb0
+GEN121 OK

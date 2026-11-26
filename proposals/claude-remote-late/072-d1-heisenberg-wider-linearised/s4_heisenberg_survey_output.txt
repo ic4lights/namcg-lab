@@ -1,0 +1,15 @@
+converged 120 of 120 starts (|w|^2 constrained to 1/4, 1 or 4)
+solutions with a non-null leg (|G| / |w|^2 > 1e-8): 116
+among them: RR > 1e-8: 94, RR < -1e-8: 4, |RR| <= 1e-8: 18; |trace T| > 1e-8: 29; max |third bracket| 2.5e-14
+  |G|/|w|^2 = 1.650e-01  RR = +2.371e-04  |third bracket| = 3.4e-34  |trace T| = 0.000  |w|max = 0.213
+  |G|/|w|^2 = 1.091e-01  RR = +3.550e-02  |third bracket| = 3.4e-34  |trace T| = 0.000  |w|max = 0.406
+  |G|/|w|^2 = 1.058e-01  RR = +3.345e-01  |third bracket| = 1.7e-24  |trace T| = 0.000  |w|max = 0.351
+  |G|/|w|^2 = 9.280e-02  RR = +2.242e-03  |third bracket| = 0.0e+00  |trace T| = 0.000  |w|max = 0.452
+  |G|/|w|^2 = 8.326e-02  RR = +5.606e-02  |third bracket| = 7.4e-32  |trace T| = 0.000  |w|max = 0.362
+  |G|/|w|^2 = 8.099e-02  RR = +9.373e-02  |third bracket| = 7.4e-32  |trace T| = 0.000  |w|max = 0.440
+  |G|/|w|^2 = 7.727e-02  RR = +2.116e-02  |third bracket| = 9.9e-32  |trace T| = 0.000  |w|max = 0.350
+  |G|/|w|^2 = 7.135e-02  RR = +5.233e-03  |third bracket| = 4.9e-32  |trace T| = 0.000  |w|max = 1.021
+  |G|/|w|^2 = 5.666e-02  RR = +2.380e-01  |third bracket| = 2.4e-30  |trace T| = 0.000  |w|max = 0.788
+  |G|/|w|^2 = 5.583e-02  RR = +1.353e-02  |third bracket| = 3.9e-33  |trace T| = 0.000  |w|max = 0.191
+  |G|/|w|^2 = 5.529e-02  RR = -1.672e-01  |third bracket| = 6.8e-17  |trace T| = 1.050  |w|max = 0.794
+  |G|/|w|^2 = 5.513e-02  RR = +4.596e-02  |third bracket| = 9.9e-32  |trace T| = 0.000  |w|max = 0.729

@@ -1,0 +1,25 @@
+P0 0 2w4-2w3==W1: True buggyform==W1: False
+P0 1 2w4-2w3==W1: True buggyform==W1: True
+P0 2 2w4-2w3==W1: True buggyform==W1: False
+P0 3 2w4-2w3==W1: True buggyform==W1: False
+P0 4 2w4-2w3==W1: True buggyform==W1: False
+P1 normalized-U X-preserving: False
+P1 unnormalized-U nonzero (as verifier coded): True
+P2 corrected 2w4-2w3 identity: True
+P2 buggy-word identity: False
+P3 W1c inv scalar shift: True
+P3 W1c inv all-ones shift: False
+P3 QUAD null dim scalar-shift: 8
+['-1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0']
+['0', '-1/2', '0', '0', '1', '0', '0', '0', '0', '0', '0']
+['-1', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0']
+['0', '-1/2', '0', '0', '0', '0', '1', '0', '0', '0', '0']
+['0', '-1/2', '0', '0', '0', '0', '0', '1', '0', '0', '0']
+['0', '0', '-1', '0', '0', '0', '0', '0', '1', '0', '0']
+['0', '-1/2', '0', '0', '0', '0', '0', '0', '0', '1', '0']
+['0', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1']
+P3 QUAD null dim all-ones shift: 13
+P3 F1=|TrPhi~^2|^2 inv: True
+P3 F2=(TrPhi~dag Phi~)^2 inv: True
+P3 F1,F2 both null (dim2): False
+P3 F1 == QUAR13-QUAR14+QUAR10/4: False

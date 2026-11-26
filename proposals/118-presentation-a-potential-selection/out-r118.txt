@@ -1,0 +1,12 @@
+PASS C1_normalform_eqV_identity_symbolic_N4_and_N6
+PASS C2_gradient_eqPhi-eom_numeric_and_vacuum_stationary
+FAIL C3_sos_min_uniqueness_and_sign_table_full_range
+PASS C4_moyal_vertex_phase_exact_quadratic_cyclic_nonzero_quartic
+Traceback (most recent call last):
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\118-presentation-a-potential-selection\verify_r118.py", line 226, in <module>
+    check("C5_power-sum_conjugation_dims_and_bifundamental_teeth", c5())
+                                                                   ^^^^
+  File "C:\Users\redgi\Projects\namcg-lab@gpu\proposals\118-presentation-a-potential-selection\verify_r118.py", line 185, in c5
+    k_ = idx4.get(tuple(sorted(((i, j), (j, i)))))
+                                 ^
+NameError: name 'i' is not defined. Did you mean: 'i_'?

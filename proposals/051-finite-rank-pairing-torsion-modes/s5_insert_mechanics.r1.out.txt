@@ -1,0 +1,16 @@
+bytes 12560 ascii True CR 0 BOM False ends blank line True
+anchor+CRLF count 1 ; anchor+LF 0
+refs ['ass:EFT-a2', 'ass:frame-lock', 'ass:local-lorentz', 'ass:lorentzian', 'ass:nondeg', 'ch:vierbein-emergence', 'eq:Smatrix', 'sec:status-N'] all defined: True
+new labels in insert: []
+cites ['FurutaHanadaKawaiKimura2007', 'Hanada2006', 'Hehl2017', 'HoKawaiSteinacker2025', 'Kibble1961', 'Steinacker2019NoGhost'] in bib or new: True ; new keys ['Hehl2017', 'Kibble1961'] already present: []
+unused new keys: []
+status sentences: 1 ; paragraph headings 1
+  process word 'proposal': 0
+  process word 'researcher': 0
+  process word 'gatekeeper': 0
+  process word 'as proposed': 0
+  process word 'reviewer': 0
+  process word 'this package': 0
+  process word '\\bround\\b': 0
+newlines to convert 39 ; bytes after CRLF 12599
+ALL CHECKS DONE

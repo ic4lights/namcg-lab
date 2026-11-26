@@ -1,0 +1,8 @@
+base point: y^mu = [-0.7501 -0.     -0.     -0.    ]  y.y = -0.5627  M^{45} = -0.5592
+max |y^mu(fibre) - y^mu| = 1.1102230246251565e-15
+<t t> vs (|t|^2/3) P_perp: relative deviation = 0.059 (300 Haar points)
+th=0.00  q.q=1.000 q.y=-0.0000 | fibre-averaged Q_EH: c_cov = -4.10344e-03, remainder/|Q| = 8.752e-01, gauge test = 4.3e-17, eigenvalues(Qbar/|Qbar|) = [-0.658 -0.619 -0.429 -0.   ]
+th=0.40  q.q=1.000 q.y=-0.3081 | fibre-averaged Q_EH: c_cov = -6.69857e-03, remainder/|Q| = 7.894e-01, gauge test = 1.3e-16, eigenvalues(Qbar/|Qbar|) = [-0.704 -0.67  -0.235 -0.   ]
+th=0.80  q.q=1.000 q.y=-0.6662 | fibre-averaged Q_EH: c_cov = -8.49269e-03, remainder/|Q| = 8.672e-01, gauge test = 7.2e-17, eigenvalues(Qbar/|Qbar|) = [-0.688 -0.66  -0.     0.301]
+th=1.20  q.q=1.000 q.y=-1.1323 | fibre-averaged Q_EH: c_cov = -5.74214e-03, remainder/|Q| = 9.859e-01, gauge test = 3.3e-16, eigenvalues(Qbar/|Qbar|) = [-0.415 -0.399 -0.     0.818]
+c_cov(th)/c_cov(0) = [np.float64(1.0), np.float64(1.6324), np.float64(2.0697), np.float64(1.3993)]

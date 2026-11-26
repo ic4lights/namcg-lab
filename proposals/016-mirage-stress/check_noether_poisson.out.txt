@@ -1,0 +1,10 @@
+s=+1 (N1) {X^a,E_a} = 0 off-shell, arbitrary X, symbolic mu2: True
+s=+1 (N2) {X_a,T^{ab}} = -F^b_c E^c + 1/4 {X^b,F^2}: True ; trace-subtracted exact: True
+s=+1 (N3) mu2=-3: {T^a,L(A)_a} + (3+mu2){A^a,T_a} = 0: True ; {T^a,L(A)_a}==0: True
+s=+1 (N3) mu2=0: {T^a,L(A)_a} + (3+mu2){A^a,T_a} = 0: True ; {T^a,L(A)_a}==0: False
+s=+1 (N3) mu2=2: {T^a,L(A)_a} + (3+mu2){A^a,T_a} = 0: True ; {T^a,L(A)_a}==0: False
+s=-1 (N1) {X^a,E_a} = 0 off-shell, arbitrary X, symbolic mu2: True
+s=-1 (N2) {X_a,T^{ab}} = -F^b_c E^c + 1/4 {X^b,F^2}: True ; trace-subtracted exact: True
+s=-1 (N3) mu2=-3: {T^a,L(A)_a} + (3+mu2){A^a,T_a} = 0: True ; {T^a,L(A)_a}==0: True
+s=-1 (N3) mu2=0: {T^a,L(A)_a} + (3+mu2){A^a,T_a} = 0: True ; {T^a,L(A)_a}==0: False
+s=-1 (N3) mu2=2: {T^a,L(A)_a} + (3+mu2){A^a,T_a} = 0: True ; {T^a,L(A)_a}==0: False

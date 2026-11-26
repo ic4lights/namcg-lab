@@ -1,0 +1,12 @@
+(th=0.50 lies within 0.006 of th*=0.4939 where the leading exponential cancels and the constant/oscillating subleading term dominates the finite-rho slope; the formula applies away from th*)
+th, measured rate, |a cos-b sin| - m sin th   (m=-3 and m=+1)
+ th=0.20 m=-3 : 1.02374  vs 1.02378
+ th=0.20 m=+1 : 0.229066  vs 0.229107
+ th=0.50 m=-3 : 1.16267  vs 1.44722
+ th=0.50 m=+1 : -0.755034  vs -0.47048
+ th=0.80 m=-3 : 2.59691  vs 2.59694
+ th=0.80 m=+1 : -0.272515  vs -0.272488
+ th=1.20 m=-3 : 3.75412  vs 3.75412
+ th=1.20 m=+1 : 0.0259591  vs 0.0259613
+min over 400 rays th in (0.01,1.55) of |a cos-b sin| + 3 sin th (mu^2=-3): 0.716965
+m=+1 at th*=0.49394: rate -0.4741 (<0: convergent window, massless term)

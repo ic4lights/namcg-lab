@@ -1,0 +1,20 @@
+== T1: unitary fuzzy transport ==
+T1 unitary W: smin >= (v-d)^2 and kappa bound    OK N=2..8
+T1 sigma_min(T_U) = 1 exactly                    OK 
+T1 TOOTH c->0 kills the bound (sharp)            OK smin=4.98e-04
+T1 TOOTH singular W: smin(T_M)=0, Phi invertible OK smin=0.0e+00
+== T2: smooth-kernel compactness vs carrier stability ==
+T2 TOOTH full smin -> 0 (superexponential)       OK 3.2e-03 9.9e-11 3.1e-18 2.8e-19
+T2 carrier (|k|<=3) smin grid-stable             OK carrier=0.816686 (exact e^{-.2*9}=0.816686)
+== T3: Haar/convexity tooth ==
+T3 TOOTH Haar-mean composite ~ 0                 OK |EM|=0.032 smin=0.008
+== T4: Loewner + Markov moment bound (MC) ==
+T4 lambda_min(E[Q]) >= E[lambda_min(Q)]          OK p=0.7, 3 reps
+T4 bound positive and <= E[lambda_min]           OK best=0.271 Elam=1.585 EV=0.749
+T4 TOOTH EV > lam v^4/4 or double collapse: no bound OK EV2=2.53 best=-1.1e-18
+== T5: bounded-connection transport bound ==
+T5 sigma_min(Pexp) >= exp(-int smax(omega))      OK 30 unitary trials
+T5 anti-Hermitian integrand: sigma_min = 1       OK 
+T5 sharp: scalar gl path reaches the bound       OK 
+== S2 SUMMARY ==
+FAILURES: 0 (none)

@@ -1,0 +1,29 @@
+samples 800000, Metropolis acceptance 0.422
+Euclidean h=e^{i pi/4}I, |q|^2=2: z = 1.4142-1.4142j (arg/pi -0.250); c_h=1.000
+   V(h,q)            = 1.6571-0.0000j +- 0.0003+0.0000j   (max |w| 0.88)
+   V(axis, same z)   = 1.6568+0.0000j +- 0.0018+0.0000j   (max |w| 0.05, c_h'=0.500)
+   difference / combined error = 0.11
+diagonal, distinct phases (spread 0.25) #0: z = 1.0118-0.7832j (arg/pi -0.210); c_h=0.901
+   V(h,q)            = 1.7783-0.0271j +- 0.0002+0.0001j   (max |w| 0.67)
+   V(axis, same z)   = 1.7787-0.0272j +- 0.0003+0.0001j   (max |w| 0.37, c_h'=0.775)
+   difference / combined error = 0.77
+   control: V(axis) at averaged-phase z' = 0.9551-0.8605j: 1.7763-0.0113j +- 0.0003+0.0000j; |V(h,q) - control| / error = 30.2
+diagonal, distinct phases (spread 0.3) #1: z = 1.3395-1.0341j (arg/pi -0.209); c_h=0.869
+   V(h,q)            = 1.7103-0.0356j +- 0.0003+0.0002j   (max |w| 0.59)
+   V(axis, same z)   = 1.7101-0.0355j +- 0.0009+0.0002j   (max |w| 0.11, c_h'=0.586)
+   difference / combined error = 0.12
+   control: V(axis) at averaged-phase z' = 1.2245-1.2057j: 1.7037-0.0022j +- 0.0009+0.0000j; |V(h,q) - control| / error = 26.5
+diagonal, distinct phases (spread 0.4) #2: z = 0.9808-1.0534j (arg/pi -0.261); c_h=0.788
+   V(h,q)            = 1.7505+0.0085j +- 0.0004+0.0003j   (max |w| 0.42)
+   V(axis, same z)   = 1.7504+0.0086j +- 0.0005+0.0000j   (max |w| 0.24, c_h'=0.694)
+   difference / combined error = 0.11
+   control: V(axis) at averaged-phase z' = 1.1157-0.9808j: 1.7430-0.0159j +- 0.0005+0.0001j; |V(h,q) - control| / error = 24.5
+diagonal, distinct phases (spread 0.5) #3: z = 1.0879-1.0054j (arg/pi -0.237); c_h=0.589
+   V(h,q)            = 1.7439-0.0096j +- 0.0012+0.0009j   (max |w| 0.13)
+   V(axis, same z)   = 1.7434-0.0097j +- 0.0005+0.0000j   (max |w| 0.21, c_h'=0.675)
+   difference / combined error = 0.24
+   control: V(axis) at averaged-phase z' = 1.0978-1.0977j: 1.7314-0.0000j +- 0.0006+0.0000j; |V(h,q) - control| / error = 7.3
+O^T D O, same D as last row, q -> O^T q: z = 1.0879-1.0054j (arg/pi -0.237); c_h=0.589
+   V(h,q)            = 1.7423-0.0101j +- 0.0012+0.0010j   (max |w| 0.14)
+   V(axis, same z)   = 1.7434-0.0097j +- 0.0005+0.0000j   (max |w| 0.21, c_h'=0.675)
+   difference / combined error = 0.57

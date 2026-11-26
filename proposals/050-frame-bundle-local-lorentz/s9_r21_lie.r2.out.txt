@@ -1,0 +1,12 @@
+Lie algebra: E_AB eta^{-1} antisymmetric: True
+[E_a4, E_b4] = -E_ab: True
+[S_cd, D_a] = eta_ad D_c - eta_ac D_d with S = E_cd, D_a = E_a4: True
+[T_a,[T^a,T^b]] = -3 T^b: True
+[X^b,[X_b,X_a]] = -mu^2 X_a with X_a = i E_a4 holds at mu^2 = -3: True
+relation with R: [D_a,D_b] = (1/2) R_ab^{cd} S_cd gives R_ab^{cd} = -(delta delta - delta delta), R_ab^{ae} = -3 delta_b^e, so Ric_b^e = 3 delta_b^e = -mu^2 delta_b^e
+E_ab annihilates Y^A (the field acts by g -> g E_ab): True
+D_a Y^A = g^A_a (for E_a4, using eta_44 = 1): True
+sample element is in SO(4,1): g eta^{-1} g^T = eta^{-1}: True
+eta^{ab} g^A_a g^B_b = eta^{AB} - Y^A Y^B at the sample: True
+Y.Y = eta_AB Y^A Y^B = 1 (unit de Sitter): 1
+so(3,1) spanned by E_ab acts irreducibly on span(E_a4), the isotropy of a symmetric pair: a subalgebra strictly containing it contains some E_a4 combination, then all, hence maximal (used in R6)

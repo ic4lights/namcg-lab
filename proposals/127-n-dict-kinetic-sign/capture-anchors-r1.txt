@@ -1,0 +1,8 @@
+PASS A1 ch03 matching-condition sentence unique
+PASS A2 ch03 sign-clause sentence unique
+PASS A3 appH completion-class paragraph head unique
+PASS A4 appH kinetic-sign input sentence unique
+PASS A5 POS-CONTROL counter fires on absent string
+PASS A6 POS-CONTROL counter reports multiplicity when present (Problem~N > 1)
+PASS A7 CRLF preserved in both target files
+ALL PASS

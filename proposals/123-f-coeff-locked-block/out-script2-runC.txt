@@ -1,0 +1,16 @@
+BEREZIN_DET2     PASS
+BEREZIN_DET3     PASS
+WGHOST_M2        PASS
+A1_TRUNK         PASS                           n_K     -16*Q - Q_K*n_K - e_h + --- + 1                          6     
+N0_TRUNK         PASS   n_K + 18
+QCONFORMAL       PASS   -e_h - 5/3
+QCONFORMAL_ZERO_IFF PASS
+DELN0_GHOST      PASS
+DELRHO           PASS
+CR_WINDOWED      PASS                    /         2     2\                                16*J*(6*Q - 1) + \Lambda_UV  - mu /*(6*e_h - n_K*(1 - 6*Q_K) + 10) ------------------------------------------------------------------                                    2                                                            192*pi                               
+CTRL_BOSON       PASS
+CTRL_Y10         PASS
+CTRL_HBLOCK_A1   PASS
+CTRL_HBLOCK_A2   PASS
+A1 value at Q=QK=0, nK=0, e_h=0: 1
+SCRIPT2 VERDICT: PASS

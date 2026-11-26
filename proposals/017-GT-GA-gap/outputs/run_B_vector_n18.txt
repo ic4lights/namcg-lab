@@ -1,0 +1,9 @@
+vector kappa=0.0 n=18: lam^2: eig(rel to rho^2 p^2 M) = [7.06223077e-06 7.06223077e-06 5.11429218e-01]  gauge residual 4.21e-16
+vector kappa=0.0 n=18: lam^4: eig(rel to rho^2 p^2 M) = [0.49999651 0.83332954 0.83332954]  gauge residual 3.34e-16
+time 231
+vector kappa=0.5 n=18: lam^2: eig(rel to rho^2 p^2 M) = [-3.21793851e-06 -2.55632676e-07  8.94994940e-01]  gauge residual 1.67e-16
+vector kappa=0.5 n=18: lam^4: eig(rel to rho^2 p^2 M) = [0.79166768 0.79166883 1.12501415]  gauge residual 1.08e-15
+time 99
+vector kappa=-1.0 n=18: lam^2: eig(rel to rho^2 p^2 M) = [1.29890075e-05 2.13129027e-05 4.15558066e-01]  gauge residual 2.74e-16
+vector kappa=-1.0 n=18: lam^4: eig(rel to rho^2 p^2 M) = [0.37483171 0.85411012 0.85418545]  gauge residual 7.48e-16
+time 124

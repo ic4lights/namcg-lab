@@ -1,0 +1,23 @@
+(E) exact identities in the polynomial Lie-Poisson algebra
+   bracket sign +1: (E1) Box t = -3 t: True; (E2) Box(tt) = -6tt + 2 eta M M: True; (E3) cubic identity (4 index triples): True
+   bracket sign -1: (E1) Box t = -3 t: True; (E2) Box(tt) = -6tt + 2 eta M M: True; (E3) cubic identity (4 index triples): True
+
+(N1) eta_ab M^{a mu}M^{b nu} = c_theta eta^{mu nu} + y^mu y^nu - t^mu t^nu at 40 random orbit points: max relative residual 7.0e-16
+
+(N2)-(N3) fibre harmonics: Box(C.t^J) on the fibre over a base point
+  base point A (y^i = 0): y^A = [-5. -0. -0. -0.  3.], ell = 4.000000, y^4 = 3.000000; fibre: max|y - y_b| = 1.9e-13, max|t.y| = 1.1e-12, t.t = 25.000000 +- 4.5e-13 (y.y_4 + ... check: t.t/((y^0)^2) = 1.000000)
+     J = 1: Box(C.t^J) = -3.0000000000 x C.t^J on the fibre (relative residual 1.8e-16); -J(J+2) = -3; Steinacker -3J = -3
+     J = 2: Box(C.t^J) = -8.0000000000 x C.t^J on the fibre (relative residual 1.7e-16); -J(J+2) = -8; Steinacker -3J = -6
+     J = 3: Box(C.t^J) = -15.0000000000 x C.t^J on the fibre (relative residual 3.6e-16); -J(J+2) = -15; Steinacker -3J = -9
+  base point B (y^i != 0): y^A = [-6.267384 -3.787805 -1.897184 -0.        2.309401], ell = 4.000000, y^4 = 2.309401; fibre: max|y - y_b| = 2.6e-13, max|t.y| = 6.0e-13, t.t = 21.333333 +- 3.2e-13 (y.y_4 + ... check: t.t/((y^0)^2) = 0.543108)
+     J = 1: Box(C.t^J) = -3.0000000000 x C.t^J on the fibre (relative residual 1.2e-16); -J(J+2) = -3; Steinacker -3J = -3
+     J = 2: Box(C.t^J) = -8.0000000000 x C.t^J on the fibre (relative residual 3.3e-16); -J(J+2) = -8; Steinacker -3J = -6
+     J = 3: Box(C.t^J) = -15.0000000000 x C.t^J on the fibre (relative residual 7.8e-16); -J(J+2) = -15; Steinacker -3J = -9
+
+(N4) base-fibre cross term 2 eta_ab {T^a, exp(i lam q.y)}{T^b, Y}, order lam, at base point A
+   t^0 on the fibre: max |t^0| = 1.2e-13 ; |t| = 5.000000, y^0 = -5.000000
+   J = 1: image norm fraction in harmonic degrees 0..4: [np.float64(0.0106), np.float64(0.9999), np.float64(0.0), np.float64(0.0), np.float64(0.0)] ; J->J block (orthonormalised) singular values / (m |q|_E): [1.5997, 1.4841, 0.4897] ; tanh(tau) = y^4/y^0 = -0.600000 ; image purely imaginary: True
+   J = 2: image norm fraction in harmonic degrees 0..4: [np.float64(0.0358), np.float64(0.0273), np.float64(0.999), np.float64(0.0), np.float64(0.0)] ; J->J block (orthonormalised) singular values / (m |q|_E): [3.1491, 3.0251, 1.8123, 1.7024, 0.979] ; tanh(tau) = y^4/y^0 = -0.600000 ; image purely imaginary: True
+   closed form at y^i = 0: singular values (2m/|y^0|) sqrt((y^4 q_0 J)^2 + (ell |q_vec| m_L)^2), m_L = -J..J, / (m |q|_E): J = 1: [1.5406, 1.5406, 0.4899]
+   closed form at y^i = 0: singular values (2m/|y^0|) sqrt((y^4 q_0 J)^2 + (ell |q_vec| m_L)^2), m_L = -J..J, / (m |q|_E): J = 2: [3.0811, 3.0811, 1.7588, 1.7588, 0.9798]
+   (Monte Carlo fibre quadrature with 2000 points: fractions and singular values accurate to about 1e-2.)

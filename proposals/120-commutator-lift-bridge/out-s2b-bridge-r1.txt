@@ -1,0 +1,11 @@
+== T2: bridge identity, generic symbolic Theta, monomial sweep A x Phi x mu ==
+sweep pairs=400 nonzero=0
+PASS T2 bridge identity exact (all-orders) for deg<=2 symbols
+== T3: printed left-action mismatch (constant A, Phi) ==
+PASS T3a mismatch = -Theta^{mu nu}g_nu Phi A^nu exactly (const case)
+T3b diff(u(1) A, mu=0) = Matrix([[0, 3*th01*(I*th01 - x0*x1)], [th01*(I*th01 - x0*x1), 3*th01*(I*th01 - x0*x1)]])
+PASS T3b left-action coupling of central A unreachable by commutator
+== T3c: adjoint mismatch-vs-printed comparison printed for one case ==
+lhs = Matrix([[-2*th01 - 2*th02 - 2*th03, -15*th01 - 15*th02 - 15*th03], [3*th01 + 3*th02 + 3*th03, 2*th01 + 2*th02 + 2*th03]])
+rhs_print = Matrix([[-2*th01 - 2*th02 - 2*th03, -9*th01 - 9*th02 - 9*th03], [2*th01 + 2*th02 + 2*th03, 6*th01 + 6*th02 + 6*th03]])
+SUMMARY pass=3 fail=0

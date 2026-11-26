@@ -1,0 +1,11 @@
+baseline: bytes=16520 sha256=d6883ca33d0cebd7e78162cdc0b49e0faffac9ac07bd986119ca4a09a3872d36
+  CRLF=397 bare-LF=0 bare-CR=0 BOM=False trailing-ws-lines=0
+block1 sec:ch14-quad eq:ratio: OLD occurrences=1; NEW occurrences before=0
+  after: OLD=0 NEW=1
+block2 exercise Energy identity: OLD occurrences=1; NEW occurrences before=0
+  after: OLD=0 NEW=1
+result: bytes=17336 sha256=b1fefa684669f0315e705061a9efd84c732eca741e687b9f3a88977f2f976dd2
+  CRLF=411 bare-LF=0 bare-CR=0 BOM=False trailing-ws-lines=0
+count label{eq:ratio} in result: 1
+count label{eq:Peters} in result: 1
+count label{ass:drag} in result: 1

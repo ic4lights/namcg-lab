@@ -1,0 +1,7 @@
+C:\Users\redgi\Projects\namcg-lab\proposals\027-fibre-window-spin1\cone_window_geometry.py:18: RuntimeWarning: divide by zero encountered in power
+  Tf = Vf @ Uf @ np.diag(wf**-0.5) @ Uf.T
+C:\Users\redgi\Projects\namcg-lab\proposals\027-fibre-window-spin1\cone_window_geometry.py:23: RuntimeWarning: invalid value encountered in matmul
+  S = T.T @ F['Box4'] @ T
+C:\Users\redgi\Projects\namcg-lab\proposals\027-fibre-window-spin1\cone_window_geometry.py:29: RuntimeWarning: invalid value encountered in matmul
+  K42 = T.T @ F['C42'] @ T
+points: 59 | max |A_c^2 - formula| 2.0e-14 | max |B_c^2 - formula| 1.2e-13 | vertical-plane deviation 1.3e-10 | |max_dir A_b^2 - (1+a^2)/2| (3000 dirs) 6.2e-05 | max B on base 2.8e-13

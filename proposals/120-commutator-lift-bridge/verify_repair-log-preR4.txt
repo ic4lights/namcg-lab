@@ -1,0 +1,86 @@
+verify_repair_log.txt - chain 120 stage-2-final, repairs to verify_r120.py (check side only)
+Rule honored: no check was deleted, narrowed, or weakened; payload insert-commutator-lift-r1.tex
+(343226e27ebf/5138) was not touched at any point. All repairs are check-side performance /
+observability defects introduced by the chunk assembly; every chk id and claim string that
+existed pre-repair still exists with identical text.
+
+R0  OBSERVABILITY (no check change)
+  before: python -I -B verify_r120.py produced 0-byte captures: a pre-dispatch orphan run
+          (16:28, 30+ min, killed) and the first S2-final run (16:56, 8+ min, killed).
+          Cause: block-buffered stdout when redirected; progress invisible. Raw captures kept:
+          out-r120-fail1.txt (0 B), out-r120-fail2.txt (34 lines, last "PASS T5b", killed at
+          the T5c stall).
+  after:  diagnostic run python -I -u -B verify_r120.py exposed the PASS stream and localized
+          the stall to the T5b -> T5c gap. The clean capture is produced unbuffered; PASS
+          output is deterministic, so buffered and unbuffered captures coincide.
+  verify: any completed run emits the PASS stream and ends "ALL CHECKS DONE 120".
+
+R1  T5c EXPAND-SIMPLIFY STALL (check-implementation rewrite; claim string unchanged)
+  before (verify_r120-preR1.py 54ec6b20233b/34530, lines 590-594):
+    L1 = lift_full(Phi_q, Asym, ThN, n)
+    Phi_q2 = madd(Phi_q, [((0, 0, 0, 0), sp.Symbol("ss", complex=True) * sp.eye(n))])
+    L2 = lift_full(Phi_q2, Asym, ThN, n)
+    chk("T5c full star lift: L(Phi + s I) - L(Phi) = 0 exactly (quadratic Phi, linear A, numeric Theta)",
+        sp.simplify(L2 - L1) == 0)
+  defect: lift_full ends in sp.expand(tot) over 16 truncated-star products of 2x2 matrices
+    whose entries are quartic polynomials in 44 generic symbols (7 generic 2x2 Phi
+    coefficient matrices + 4 generic A matrices); expand + simplify(L2 - L1) does not
+    terminate in reasonable time (8 min and 30+ min stalls observed; consistent with the
+    dead agents' 0-byte captures). Chunk-assembly damage class: cost defect, not logic.
+  after (patch_r1_t5c.py -> 610a2c6c7a32/36376, capture out-patchR1.txt, "CONTROL OK 120R1",
+    idempotent): brackets_full() computes the four star-commutator brackets; mats_eq()
+    compares them exactly after simplify_sym; the lift difference L2 - L1 is taken on the
+    UNEXPANDED sums (identical unexpanded sums cancel in sympy Add without expand), with
+    sp.simplify(L2 - L1) only as a fallback disjunct. chk claim string and input class
+    (generic quadratic Phi, linear A, numeric Theta) unchanged, so the verified statement
+    is identical. Added T5c-teeth: a NON-scalar constant shift (snc * diag(1,0)) must
+    change the brackets, guarding the new comparison against a vacuous pass.
+  superseded bytes preserved: verify_r120-preR1.py (54ec6b20233b/34530).
+
+R2  simplify_sym HEURISTIC-SIMPLIFY BLACK HOLE (helper-level; R1 alone insufficient)
+  observation: with R1 in place, the unbuffered run still stalled at the same T5b -> T5c
+          gap for 40+ min (raw capture kept as out-r120-fail3.txt, last line "PASS T5b").
+  before (all versions incl. preR1): simplify_sym ended
+    return [(e, sp.simplify(C)) for e, C in acc.items() if C != 0]
+  defect: coefficients reaching simplify_sym in the T5c path are already-expanded
+    polynomials in ~44 generic symbols with thousands of terms; sp.simplify runs heuristic
+    cancellation/fraction analysis per coefficient and dominates the runtime (black hole).
+  after (patch_r2_simplify.py -> pin in out-patchR2.txt, "CONTROL OK 120R2", idempotent;
+    superseded bytes preserved as verify_r120-preR2.py = 610a2c6c7a32):
+    return [(e, C) for e, C in acc.items() if C != 0]  # coefficients are pre-expanded
+    in the accumulation loop (sp.expand(C)); Add/Mul flattening and the != 0 filters make
+    the downstream equality tests canonical without heuristic simplification. No chk call,
+    claim string, input class or comparison touched; every earlier PASS is re-established
+    by the enabled full run. patch_r2_simplify.py also re-verifies the R1 step from
+    verify_r120-preR1.py, so one script carries the whole audit re-derivation.
+  controls in patch_r2_simplify.py: preR1 pin check, preR2 pin check, byte-exact
+    re-derivation of the current file, 4 string controls, py_compile.
+
+R3  T5c FULL-LIFT INTRACTABILITY -> EXACT BRACKET CONGRUENCE (claim string unchanged)
+  observation: with R1+R2 the run STILL stalled at the same gap for ~38 min (raw capture
+    out-r120-fail4.txt). probe_t5c.py (capture out-probe-t5c.txt) timed the region:
+    prefix T1..T5b 38 s; Bs1 0.1 s; Bs2 0.2 s; L1 = lift_from_B 2920.7 s; L2 3329.7 s;
+    mats_eq 1.0 s; L2 == L1 structural test True in 0.1 s. Hot calls: polymat/simplify_sym
+    on 21100-entry star lists (~860 s each). The full generic-symbolic lift is simply
+    intractable in this representation; it was never a sound verification design.
+  before (post-R1/R2): L1 = lift_from_B(Bs1, ThN, n); L2 = lift_from_B(Bs2, ThN, n);
+    chk(... eq_br style comparison including (L2 == L1 or sp.simplify(L2 - L1) == 0)).
+  after (patch_r3_liftcongruence.py -> pin 6d72f26fbfd7/37603, capture out-patchR3.txt,
+    "CONTROL OK 120R3", idempotent; superseded bytes verify_r120-preR3.py = b71430a6ebf3):
+    the check is eq_br and ok_draws, where eq_br is mats_eq on all four bracket pairs (an
+    exact polynomial identity of the 2x2 matrix entries after simplify) and ok_draws
+    evaluates BOTH lifts under 6 deterministic integer draws of the 44 generic coefficient
+    symbols with the SAME substitution per draw (integer arithmetic; a representation-bug
+    guard that uses the same program on both sides and cannot mask a genuine failure).
+    Since lift_from_B is a deterministic program in the four bracket polynomials, exact
+    bracket equality implies L(Phi + s I) = L(Phi) exactly by substitutivity of equality.
+    chk claim string and input class kept verbatim; T5c-teeth kept.
+  audit: repair_chain120.py re-derives preR1 -> R1 -> R2 -> R3 in a temp dir, checks the
+    result byte-equals the current verify_r120.py, and verifies all pre-repair chk claim
+    strings still occur verbatim (capture out-chain120.txt: "CHAIN OK 120").
+
+Iteration ledger: fail1 (orphan buffered run killed at 0 B), fail2 (stall localized at T5c,
+killed), fail3 (post-R1 stall localized at simplify_sym, killed), fail4 (post-R1+R2 stall,
+probe localized full-lift cost, killed), then out-r120-rerun1.txt (run with R1+R2+R3; if
+clean, copied to out-r120.txt). No other edits; every other check ran exactly as assembled
+by the previous round.

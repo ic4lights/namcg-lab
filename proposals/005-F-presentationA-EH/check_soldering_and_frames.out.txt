@@ -1,0 +1,6 @@
+signature s0=-1: K^{-1} == e eta e^T : True ; e_{A nu}=eta_{AB} e_nu^B antisymmetric: True
+   eigenvalues of K eta (mixed): {7/3 - sqrt(730)/9: 2, 7/3 + sqrt(730)/9: 2}
+signature s0=1: K^{-1} == e eta e^T : True ; e_{A nu}=eta_{AB} e_nu^B antisymmetric: True
+   eigenvalues of K eta (mixed): {83/18 - sqrt(805)/18: 2, sqrt(805)/18 + 83/18: 2}
+rank of d(K^{-1})/d(Theta) at a random point (6 params -> 10 comps): 6
+(3) conformal-frame formula: lhs - rhs - 6*d_mu( sqrt(g) Om g^{mu nu} d_nu Om ) = 0 (a total derivative, so the integrals agree)

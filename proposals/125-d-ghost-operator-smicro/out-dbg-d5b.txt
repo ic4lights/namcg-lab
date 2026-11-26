@@ -1,0 +1,5 @@
+xi^t-affine-only PASS [6s]
+Traceback (most recent call last):
+  File "<stdin>", line 27, in <module>
+  File "<stdin>", line 24, in run
+NameError: name 'sys' is not defined

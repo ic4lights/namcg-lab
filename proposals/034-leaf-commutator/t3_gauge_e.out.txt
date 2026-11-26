@@ -1,0 +1,6 @@
+F->0, s=0.4: old (0.0140241+0.00836247j)  new (0.0140241+0.00836247j)  rel.diff 1.3e-08
+F->0, s=(0.9-0.3j): old (0.03114969+0.00562438j)  new (0.03114969+0.00562438j)  rel.diff 1.2e-08
+(a,b)=(0.7,1.3) s=0.4: relative change under alpha->alpha+lam kappa: 3.84e-14   T2=(0.01436631+0.01014101j)
+(a,b)=(0.7,1.3) s=(0.9-0.3j): relative change under alpha->alpha+lam kappa: 2.72e-14   T2=(0.05824402+0.00472146j)
+(a,b)=(1.9,1.0) s=0.4: relative change under alpha->alpha+lam kappa: 2.26e-14   T2=(0.01477123+0.01379448j)
+(a,b)=(1.9,1.0) s=(0.9-0.3j): relative change under alpha->alpha+lam kappa: 6.43e-14   T2=(0.10609934+0.02487485j)

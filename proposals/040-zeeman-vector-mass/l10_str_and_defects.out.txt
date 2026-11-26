@@ -1,0 +1,27 @@
+seed 12 theta0 0.8 r 0.12 mode yy a,b 1.0041049882505548 0.395672576899886 theta* 1.1954254446478736
+--- (1) massless supertrace, regulated ---
+ m2=0.4 max(a,b): gauge 4.4e-07 ; trunc(45->38) change 1.4e-06 ; Re vs A: lam=6.140e-01 rel.defect=0.873 ; |Im|/|Re|=2.86
+    quotient spectra Re: [-2.211632e+01  1.998000e-02  3.263860e+00]  Im: [ 0.72271 36.8667  52.32695]
+ m2=0.6 max(a,b): gauge 3.7e-08 ; trunc(45->38) change 2.0e-09 ; Re vs A: lam=3.226e-01 rel.defect=0.924 ; |Im|/|Re|=3.60
+    quotient spectra Re: [-13.84985   0.06222   5.73519]  Im: [ 0.57369 35.81868 40.4558 ]
+ m2=0.8 max(a,b): gauge 3.2e-09 ; trunc(45->38) change 2.4e-12 ; Re vs A: lam=1.229e-01 rel.defect=0.975 ; |Im|/|Re|=4.65
+    quotient spectra Re: [-7.57745  0.07143  6.15309]  Im: [ 0.45761 30.59888 33.56059]
+ m2=1.0 max(a,b): gauge 2.7e-10 ; trunc(45->38) change 2.7e-15 ; Re vs A: lam=4.446e-03 rel.defect=1.000 ; |Im|/|Re|=6.16
+    quotient spectra Re: [-3.23276  0.06576  5.28492]  Im: [ 0.3709  24.11395 29.56461]
+ m2=1.3 max(a,b): gauge 7.2e-12 ; trunc(45->38) change 2.4e-16 ; Re vs A: lam=-7.302e-02 rel.defect=0.926 ; |Im|/|Re|=8.67
+    quotient spectra Re: [0.04216 0.22652 3.4166 ]  Im: [ 0.28291 17.85673 23.73213]
+--- (2) vector mass-linear form (yy), relative defects and truncation ---
+ m2=0.4: trunc change 8.3e-05 ; Re vs (4A-F1): lam=3.394e-02 rel.defect=0.975 ; Re vs A: lam=-1.071e+00 rel.defect=0.786 ; |Im|/|Re|=0.93 ; quotient Re spectrum [ 0.145  0.569 30.702] Im [ 1.129  4.291 28.333]
+ m2=0.6: trunc change 1.2e-07 ; Re vs (4A-F1): lam=4.699e-02 rel.defect=0.953 ; Re vs A: lam=-1.016e+00 rel.defect=0.814 ; |Im|/|Re|=0.61 ; quotient Re spectrum [ 0.573  3.369 30.793] Im [ 0.186  1.957 18.912]
+ m2=0.8: trunc change 1.5e-10 ; Re vs (4A-F1): lam=4.782e-02 rel.defect=0.928 ; Re vs A: lam=-8.238e-01 rel.defect=0.823 ; |Im|/|Re|=0.50 ; quotient Re spectrum [ 0.689  6.249 24.96 ] Im [-3.258  1.461 12.448]
+ m2=1.0: trunc change 1.8e-13 ; Re vs (4A-F1): lam=3.976e-02 rel.defect=0.914 ; Re vs A: lam=-6.392e-01 rel.defect=0.816 ; |Im|/|Re|=0.47 ; quotient Re spectrum [ 0.78   7.672 18.05 ] Im [-4.91   1.357  7.689]
+ m2=1.3: trunc change 3.5e-16 ; Re vs (4A-F1): lam=2.377e-02 rel.defect=0.928 ; Re vs A: lam=-4.455e-01 rel.defect=0.786 ; |Im|/|Re|=0.44 ; quotient Re spectrum [ 0.882  7.252 10.497] Im [-4.485  1.127  3.191]
+--- (3) scalar form for comparison (Re vs A, sign structure) ---
+ m2=0.4: scal Re vs A lam=3.539e-02 rel.defect=0.774 ; spectra Re [-0.9332  0.0329  0.3319] Im [-0.0609  0.0557  3.4834]
+ m2=1.0: scal Re vs A lam=-5.421e-02 rel.defect=0.578 ; spectra Re [-0.0219  0.0494  1.1764] Im [-0.0764 -0.0513  0.9636]
+--- (4) definiteness of x Q_S + mu2 Q_V (mu2=-3) for the real part and the imaginary part, over x in [-60,60] ---
+ m2=0.4: definite for x (count of 481, range): Re (181, (np.float64(-1.0), np.float64(44.0))) ; Im (256, (np.float64(-60.0), np.float64(3.75)))
+ m2=0.6: definite for x (count of 481, range): Re (481, (np.float64(-60.0), np.float64(60.0))) ; Im (232, (np.float64(-57.5), np.float64(0.25)))
+ m2=0.8: definite for x (count of 481, range): Re (343, (np.float64(-60.0), np.float64(25.5))) ; Im (188, (np.float64(-54.5), np.float64(-7.75)))
+ m2=1.0: definite for x (count of 481, range): Re (327, (np.float64(-60.0), np.float64(21.5))) ; Im (0, None)
+ m2=1.3: definite for x (count of 481, range): Re (329, (np.float64(-60.0), np.float64(22.0))) ; Im (0, None)

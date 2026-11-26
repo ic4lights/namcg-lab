@@ -1,0 +1,3 @@
+ASSEMBLE OK 120: proposal-r1.md 28621 B sha1[:12] 52902a6bcfcc
+TOTAL line: TOTAL 53/53 PASS
+placeholders substituted: 12

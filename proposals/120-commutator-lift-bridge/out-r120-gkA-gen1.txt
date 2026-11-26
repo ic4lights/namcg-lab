@@ -1,0 +1,4 @@
+payload bytes: 5287  sha1[:12]: a5aa77dc90a3
+POST: 854131 (= 848842 + 5287 + 2)  full sha1: f5a761c55396faf78bb5f6d74693c5193bafbea0
+GUARDS: 12 positive controls fired, payload passed
+GEN OK 120

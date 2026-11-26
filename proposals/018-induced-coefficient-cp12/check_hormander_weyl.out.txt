@@ -1,0 +1,22 @@
+C:\Users\redgi\Projects\namcg-lab\proposals\018-induced-coefficient-cp12\check_hormander_weyl.py:38: RuntimeWarning: overflow encountered in sinh
+  f=lambda u: u**3*p1*p2/(np.sinh(u*p1)*np.sinh(u*p2)) if u*min(p1,p2)>1e-12 else 0.
+C:\Users\redgi\Projects\namcg-lab\proposals\018-induced-coefficient-cp12\check_hormander_weyl.py:38: RuntimeWarning: overflow encountered in scalar multiply
+  f=lambda u: u**3*p1*p2/(np.sinh(u*p1)*np.sinh(u*p2)) if u*min(p1,p2)>1e-12 else 0.
+self-dual check: c0*nu = 0.001817258418886725  3 zeta(3)/(64 pi^3) = 0.0018172584188867252
+y^a= [-74.71   7.99  48.28 -34.19 -44.89] rank1=4 rank2=6 nu=17.76 f1/f2 range [0.008,0.015] eta-contraction F.eta eig: [-2.346 +0.j     0.   -63.486j  0.   +63.486j  2.346 +0.j   ] c0=1.4e-08
+y^a= [-2.25  0.58 -0.22 -0.5   0.65] rank1=4 rank2=6 nu=0.2878 f1/f2 range [0.240,0.321] eta-contraction F.eta eig: [-2.826+0.j    -0.   -0.912j -0.   +0.912j  2.826+0.j   ] c0=0.001242
+y^a= [-1.44  0.34 -0.07  1.24 -0.04] rank1=4 rank2=6 nu=0.006164 f1/f2 range [0.006,0.055] eta-contraction F.eta eig: [-0.916+0.j    -0.   -0.051j -0.   +0.051j  0.916+0.j   ] c0=0.09229
+y^a= [-2.3   0.6  -1.7   0.84 -0.83] rank1=4 rank2=6 nu=0.2374 f1/f2 range [0.073,0.288] eta-contraction F.eta eig: [-1.145+0.j     0.   -1.178j  0.   +1.178j  1.145+0.j   ] c0=0.001023
+y^a= [-3.84  1.03 -2.26  2.06  1.48] rank1=4 rank2=6 nu=0.6903 f1/f2 range [0.086,0.101] eta-contraction F.eta eig: [-2.047+0.j    -0.   -2.098j -0.   +2.098j  2.047+0.j   ] c0=0.0001219
+y^a= [-1.01 -0.24 -0.49 -0.03 -0.61] rank1=4 rank2=6 nu=0.2517 f1/f2 range [0.297,0.629] eta-contraction F.eta eig: [-0.834+0.j    -0.   -0.856j -0.   +0.856j  0.834+0.j   ] c0=0.006272
+y^a= [-10.12  -2.26   8.51   4.05   2.14] rank1=4 rank2=6 nu=0.4358 f1/f2 range [0.022,0.150] eta-contraction F.eta eig: [-2.801+0.j    0.   -3.02j  0.   +3.02j  2.801+0.j  ] c0=2.617e-05
+y^a= [-5.97 -1.24 -5.11  2.13 -1.44] rank1=4 rank2=6 nu=0.2238 f1/f2 range [0.025,0.426] eta-contraction F.eta eig: [-1.658+0.j    -0.   -2.037j -0.   +2.037j  1.658+0.j   ] c0=0.000159
+y^a= [-0.5   0.2   0.09  0.37  0.06] rank1=4 rank2=6 nu=0.01859 f1/f2 range [0.032,0.073] eta-contraction F.eta eig: [-0.36+0.j    -0.  -0.078j -0.  +0.078j  0.36+0.j   ] c0=0.2612
+y^a= [-4.18 -2.12 -1.91  2.7   1.17] rank1=4 rank2=6 nu=0.424 f1/f2 range [0.030,0.060] eta-contraction F.eta eig: [-1.188+0.j    -0.   -1.657j -0.   +1.657j  1.188+0.j   ] c0=0.0001546
+y^a= [-1.44 -0.15 -0.19 -1.13 -0.07] rank1=4 rank2=6 nu=0.02228 f1/f2 range [0.019,0.052] eta-contraction F.eta eig: [-1.219+0.j     0.   -0.105j  0.   +0.105j  1.219+0.j   ] c0=0.02797
+y^a= [-0.62  0.15 -0.07  0.28 -0.4 ] rank1=4 rank2=6 nu=0.1656 f1/f2 range [0.306,0.838] eta-contraction F.eta eig: [-0.478+0.j    0.   -0.57j  0.   +0.57j  0.478+0.j  ] c0=0.02581
+--- approach to the locus y^4=0 (rank of horizontal fields) ---
+y^4=3.00 y^a=[-5. -0.  0.  0. -3.] sv(D^a)=[8.2462 7.0711 7.0711 4.2426] rank1=4 rank2=6
+y^4=1.00 y^a=[-5. -0.  0.  0. -1.] sv(D^a)=[7.2111 7.0711 7.0711 1.4142] rank1=4 rank2=6
+y^4=0.30 y^a=[-5.  -0.   0.   0.  -0.3] sv(D^a)=[7.0838 7.0711 7.0711 0.4243] rank1=4 rank2=6
+y^4=0.05 y^a=[-5.   -0.    0.    0.   -0.05] sv(D^a)=[7.0714 7.0711 7.0711 0.0707] rank1=4 rank2=6

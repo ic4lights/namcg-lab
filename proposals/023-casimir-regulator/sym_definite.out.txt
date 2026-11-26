@@ -1,0 +1,6 @@
+C42 symbol: (signature on span of base covectors dy^C, signature on the euclidean-orthogonal 2-plane): {((0, 4, 0), (2, 0, 0))}
+C42,C41                  max_c lambda_min(sum c K) over 25 points: min 0.04727, max 1.825  -> definite combination exists at all points: True
+C42,C41,C31              max_c lambda_min(sum c K) over 25 points: min 0.06099, max 80.31  -> definite combination exists at all points: True
+C42,C41,Box4(Lorentz)    max_c lambda_min(sum c K) over 25 points: min 0.0625, max 106  -> definite combination exists at all points: True
+C42,C41,Box4E            max_c lambda_min(sum c K) over 25 points: min 0.0911, max 143.7  -> definite combination exists at all points: True
+C42,C41,C31,Box4E        max_c lambda_min(sum c K) over 25 points: min 0.09336, max 143.7  -> definite combination exists at all points: True

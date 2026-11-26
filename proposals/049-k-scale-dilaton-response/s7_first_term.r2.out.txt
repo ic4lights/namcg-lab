@@ -1,0 +1,79 @@
+(A) Gaussian boost: three-vector b with variance xi per component, D eigenvalues exp(+-i|b|), V eigenvalues exp(+-2i|b|),1,1
+    <cos(c|b|)> - (1-c^2 xi) exp(-c^2 xi/2) = 0
+    w   = 189*xi**4/16 - 35*xi**3/2 + 15*xi**2
+    sig = -7*xi**3/12 + 5*xi**2/2 - 6*xi
+    w = <(2cos|b| - 2)^2> >= 0: True
+(B) Y per K-mode: 2 a I(a)
+    a=3.0 th=1.0 closed 1.05090363921528 quad 1.05090363921528
+    a=0.05 th=1.0 closed 7.10432626705333 quad 7.10432626705333
+    a=40.0 th=2.0 closed 0.364418464066769 quad 0.36441846406677
+    large a: 2 a I(a) = 5*th**2*(-7*e*th + 12)/8  (leading 15 th^2/2, next -35 th^3 /(8 a) in this expansion)
+(C) on S^2_N. First a check of the closed spectra against klib brute force at N=4
+    brute V,T,U 64.7488305050 58.1701590335 13.5696411249; closed 64.748830505 58.170159034 13.569641125; min vector -6.45e-15
+    columns: N, x=chi2/th, th | Y/(7.5 th^2 (N^2-1)) | mixed/2U2 | L'/(N^2 th^2) | law -4x^2-6x+7.5 | a1 part/(N^2 th^2)
+       64   0.1 1.0 | 0.99093932 | 0.99964482 | 6.7908518 | 6.86 | -0.00108
+       64   0.3 1.0 | 0.99655439 | 0.99992536 | 5.3140496 | 5.34 | -0.00323
+       64  0.81 1.0 | 0.99861913 | 0.99998588 | 0.010214504 | 0.0156 | -0.00873
+       64   2.5 1.0 | 0.99953103 | 0.99999826 | -32.459397 | -32.5 | -0.0269
+       64    10 1.0 | 0.99988025 | 0.99999988 | -451.87258 | -452.5 | -0.108
+       64   0.1 2.0 | 0.99093932 | 0.99964482 | 6.7908518 | 6.86 | -0.000215
+       64   0.3 2.0 | 0.99655439 | 0.99992536 | 5.3140496 | 5.34 | -0.000646
+       64  0.81 2.0 | 0.99861913 | 0.99998588 | 0.010214504 | 0.0156 | -0.00175
+       64   2.5 2.0 | 0.99953103 | 0.99999826 | -32.459397 | -32.5 | -0.00539
+       64    10 2.0 | 0.99988025 | 0.99999988 | -451.87258 | -452.5 | -0.0215
+      256   0.1 1.0 | 0.99918718 | 0.9999778 | 6.8538337 | 6.86 | -8.85e-5
+      256   0.3 1.0 | 0.99970245 | 0.99999534 | 5.3377841 | 5.34 | -0.000265
+      256  0.81 1.0 | 0.99988325 | 0.99999912 | 0.015143196 | 0.0156 | -0.000717
+      256   2.5 1.0 | 0.99996082 | 0.99999989 | -32.496726 | -32.5 | -0.00221
+      256    10 1.0 | 0.99999005 | 0.99999999 | -452.4491 | -452.5 | -0.00885
+      256   0.1 2.0 | 0.99918718 | 0.9999778 | 6.8538337 | 6.86 | -1.77e-5
+      256   0.3 2.0 | 0.99970245 | 0.99999534 | 5.3377841 | 5.34 | -5.31e-5
+      256  0.81 2.0 | 0.99988325 | 0.99999912 | 0.015143196 | 0.0156 | -0.000143
+      256   2.5 2.0 | 0.99996082 | 0.99999989 | -32.496726 | -32.5 | -0.000442
+      256    10 2.0 | 0.99999005 | 0.99999999 | -452.4491 | -452.5 | -0.00177
+     1024   0.1 1.0 | 0.99993378 | 0.99999861 | 6.8594993 | 6.86 | -6.85e-6
+     1024   0.3 1.0 | 0.99997626 | 0.99999971 | 5.3398244 | 5.34 | -2.06e-5
+     1024  0.81 1.0 | 0.9999908 | 0.99999994 | 0.015563936 | 0.0156 | -5.55e-5
+     1024   2.5 1.0 | 0.99999693 | 0.99999999 | -32.499749 | -32.5 | -0.000171
+     1024    10 1.0 | 0.99999922 | 1.0 | -452.49609 | -452.5 | -0.000685
+     1024   0.1 2.0 | 0.99993378 | 0.99999861 | 6.8594993 | 6.86 | -1.37e-6
+     1024   0.3 2.0 | 0.99997626 | 0.99999971 | 5.3398244 | 5.34 | -4.11e-6
+     1024  0.81 2.0 | 0.9999908 | 0.99999994 | 0.015563936 | 0.0156 | -1.11e-5
+     1024   2.5 2.0 | 0.99999693 | 0.99999999 | -32.499749 | -32.5 | -3.43e-5
+     1024    10 2.0 | 0.99999922 | 1.0 | -452.49609 | -452.5 | -0.000137
+     4096   0.3 1.0 | 0.9999982 | 0.99999998 | 5.3399867 | 5.34 | -1.53e-6
+     4096   2.5 1.0 | 0.99999977 | 1.0 | -32.499981 | -32.5 | -1.28e-5
+    Y/2|U2| at N=1024 th=1 x=.3 and (5/4)/x: 4.16658 4.16667
+    d Y/d ln chi over Y at th=1, x=.3: N=64: 0.00623; N=256: 0.0005526; N=1024: 4.481e-5; 
+(D) exponent with Y. Write Lp = 4 U4 + 2 U2 + Y, Lpp = 16 U4 + 4 U2 + Yp, U_chichi = Ut'' + Lpp, beta = 2 Lp/U_chichi = -2 Ut'/U_chichi
+    quartic alone (coefficient Ut): U_chichi = -4*U2 - 4*Y + Yp ; 2 Lp/U_chichi at Yp=0 = -(2*U2 + 4*U4 + Y)/(2*(U2 + Y))
+    quartic + cubic C3: U_chichi = -2*U2 + 4*U4 + 4*Ut - 3*Y + Yp ; 2 Lp/U_chichi at Yp=0 = -2*(2*U2 + 4*U4 + Y)/(2*U2 - 4*U4 - 4*Ut + 3*Y)
+    quartic + mass C2: U_chichi = 8*U4 + 8*Ut - 2*Y + Yp ; 2 Lp/U_chichi at Yp=0 = (2*U2 + 4*U4 + Y)/(4*U4 + 4*Ut - Y)
+    quartic alone: beta + 1/(1+eps-Y/4Ut) at Yp=0: 0
+    cubic at U4 = Ut - 3 U2/2, Y=Yp=0: 1
+    cubic example Ut=1,U2=-1,U4=5/2,Y=0: beta 1  C3 = -4 U_chichi 16
+    homogeneous mode, L = L(chi^2/lam): beta_hom = (1/2) Lpp/U_chichi = (8 U4 + 2 U2 + Yp/2)/U_chichi; for Ut=0 it is 1/2 at any Y
+(E) large-N law. Units a N^2 th^2, x = chi2/th: U4 = -x^2, 2U2 = -6x, Y = 15/2
+    positive root x0 = -3/4 + sqrt(39)/4 = 0.811249499600 ; (sqrt39-3)/4 = 0.811249499600
+    tree quartic only: A = 4(1/|eps|-1); discriminant 36 - 30*A => A <= 6/5, 1/|eps| <= 13/10, |eps| >= 10/13
+    U_chichi = 2x d(stat)/dx = 2x(2Ax-6): positive only on the larger root x = (3 + sqrt(9-15A/2))/A; at A=6/5 x = 5/2
+    A=6/5 |eps|=10/13 x_min=2.5000000 U_chichi=0 beta=zoo
+    A=1 |eps|=4/5 x_min=4.2247449 U_chichi=20.696938 beta=-8.6237244
+    A=1/2 |eps|=8/9 x_min=10.582576 U_chichi=96.990908 beta=-10.391883
+    A=1/10 |eps|=40/41 x_min=58.722813 U_chichi=674.67376 beta=-41.911552
+    A <= 0 (|eps| >= 1): one positive root with 2Ax-6 < 0, a maximum. So a minimum only for 10/13 <= |eps| < 1.
+    beta < -1 at the minimum <=> 1/|eps| < 2 + 3/(2x), and 1/|eps| <= 13/10 there.
+(F) counterexample at x = 3/10, exact rationals, units a N^2 th^2, chi0^2 = 3 th/10
+    L' = 5.34 267/50  L'' = -5.04 -126/25  required Ut' = -5.34  Ut'' = 15.72
+    quartic + cubic: quartic 7.935 1587/200  cubic -12.36 -309/25  |eps| = 0.011342155009451797  U_chichi = 10.68  beta = 1
+    quartic + mass : quartic 3.3 33/10  mass  -9.27 -927/100  |eps| = 0.02727272727272727  U_chichi = 10.68  beta = 1
+    independent root solve (u = ln chi - ln chi0): cubic d u/d phi, residual: ['1.0', '0.0']
+    independent root solve: mass d u/d phi, residual: ['1.0', '0.0']
+    finite N, full frozen forms at th=1, x=.3 (units N^2): tree data for beta=1 with L', L'' from exact sums
+      N=64 L'=5.31405 L''=-4.989364 quartic 7.889903 cubic -12.29122 beta 1.0
+      N=256 L'=5.337784 L''=-5.035536 quartic 7.931114 cubic -12.35408 beta 1.0
+      N=1024 L'=5.339824 L''=-5.03964 quartic 7.93469 cubic -12.35953 beta 1.0
+(G) Tbar^{ab mu} y_mu = eta^{a mu} y_mu y^b - eta^{b mu} y_mu y^a = y^a y^b - y^b y^a
+    all zero: True
+    Hence delta g_{mu nu} = - g h g with h = lapse y y leaves Tbar^{ab mu} Tbar^{cd nu} g_{mu nu} unchanged, and every moment of Z(k);
+    the loop density at fixed Tbar in this channel is sqrt|g| times a function of chi. Fibre-constant modes only.

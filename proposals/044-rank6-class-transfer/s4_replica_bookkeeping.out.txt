@@ -1,0 +1,14 @@
+Dirac (4 components, unweighted) cone index part: {'fixed-state': -1, 'periodic': 0}  (fixed-state -1, periodic 0)
+vector-normalised index cone values w_cone: {'fixed-state': -2, 'periodic': 0, 'smooth': 0}
+
+c_T (tensor modes)            = W_R/6 - 4*W_X
+R-coefficient, teleparallel   = W_R/6 - 2*W_X   (the coefficient called G_N^-1 in the cited construction is the W_X part of this)
+fixed-state : c_A = 2*N_K_Lambda2 + W_R/6 - 2*W_X ;  c_A - c_T = 2*N_K_Lambda2 + 2*W_X
+periodic    : c_A = W_R/6 ;  c_A - c_T = 4*W_X
+smooth      : c_A = -W_R/12 ;  c_A - c_T = -W_R/4 + 4*W_X
+
+Criterion: if the delta rho = 0 modes did not source the axial and vector torsion (S = V = 0 there), then
+   c_T would be W_R/6 - 2*W_X ; fixed-state finite part c_A - c_T = 0 (Lambda^2 term 2 N_K Lambda^2 remains)
+Observation: Dirac fixed-state cone index (-1) = (1/2) x r_tele, i.e. the teleparallel coefficient of the Dirac index density (1/2) rho^2 X.
+Signs: W_X < 0, so the mixed contribution -4 W_X to c_T is positive (same sign as a scalar component);
+       W_R has no fixed sign (it is the K-supertrace at fourth and higher order in the K flux).

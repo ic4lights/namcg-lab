@@ -1,0 +1,3 @@
+kappa = 0.5: total roots 40; all real: True; j -> multiplicities per crossing {-2: [2, 2], -1: [6, 6], 0: [4, 4], 1: [6, 6], 2: [2, 2]}
+kappa = 1.0: total roots 40; all real: True; j -> multiplicities per crossing {-2: [2, 2], -1: [6, 6], 0: [4, 4], 1: [6, 6], 2: [2, 2]}
+kappa = 2.0: total roots 40; all real: True; j -> multiplicities per crossing {-2: [2, 2], -1: [6, 6], 0: [4, 4], 1: [6, 6], 2: [2, 2]}

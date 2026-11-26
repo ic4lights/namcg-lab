@@ -1,0 +1,2 @@
+a_1(m) = -(3*ell**2 - 5*mm**2)/(4*mm**2)   ; appendix density times m^4 / ... : (5 m^2 - 3 ell^2)/(4 m^2) = -(3*ell**2 - 5*mm**2)/(4*mm**2)  difference: 0
+Box(f(m)) + (d_tau^2 + 3 tanh d_tau) f at ell=1, tau>0 (should vanish: Box = -(Delta_H4 - Delta_H3) on tau-functions): 0

@@ -1,0 +1,57 @@
+(A) S^2_N
+    N=  2 brute (V,T,U)=(14.909440,11.090355,2.405689) closed (14.909440,11.090355,2.405689)
+    N=  3 brute (V,T,U)=(35.989449,30.552680,6.929427) closed (35.989449,30.552680,6.929427)
+    N=  8 brute (V,T,U)=(258.585926,249.246993,60.669178) closed (258.585926,249.246993,60.669178)
+    N= 16 brute (V,T,U)=(1028.430883,1016.323057,251.751052) closed (1028.430883,1016.323057,251.751052)
+         N              V              T          V-T    (V-T)/T      T/N^2      U/N^2     V-T-4lnN
+         8       258.5859       249.2470      9.33893  3.747e-02    3.89448    0.94796      1.02117
+        16      1028.4309      1016.3231     12.10783  1.191e-02    3.97001    0.98340      1.01747
+        32      4102.2784      4087.3989     14.87945  3.640e-03    3.99160    0.99495      1.01651
+        64     16392.1265     16374.4747     17.65180  1.078e-03    3.99767    0.99851      1.01627
+       128     65545.9749     65525.5506     20.42433  3.117e-04    3.99936    0.99957      1.01621
+       256    262155.8233    262132.6263     23.19691  8.849e-05    3.99983    0.99988      1.01620
+       512   1048589.6716   1048563.7021     25.96948  2.477e-05    3.99995    0.99988      1.01618
+    tree data exact: abar = N(N^2-1)/8, nbar = N(N^2-1)/4; check N=5: (np.float64(15.0), np.float64(30.0)) (15.0, 30.0)
+(B) window for S^2_N (scale estimates), undeformed quartic, V close to T, vartheta close to 1
+    chi^2 = 3 vartheta F That/(256 pi^2 abar Ehat), Ehat = E/g^2, weak coupling eps = F Uhat/(32 pi^2 abar Ehat) << 1
+    N=  100 n= 10: eps=1 at Ehat=3.063e-02 ; chi^2 N^2 = n^2 at Ehat=4.597e+00 ; window eps<<1 and chi^2 N^2>>n^2 is 3.063e-02 << Ehat << 4.597e+00
+    N= 1000 n= 10: eps=1 at Ehat=3.069e-03 ; chi^2 N^2 = n^2 at Ehat=4.597e+01 ; window eps<<1 and chi^2 N^2>>n^2 is 3.069e-03 << Ehat << 4.597e+01
+    N= 1000 n= 30: eps=1 at Ehat=2.438e-02 ; chi^2 N^2 = n^2 at Ehat=4.057e+01 ; window eps<<1 and chi^2 N^2>>n^2 is 2.438e-02 << Ehat << 4.057e+01
+    N= 4096 n= 30: eps=1 at Ehat=2.971e-03 ; chi^2 N^2 = n^2 at Ehat=1.662e+02 ; window eps<<1 and chi^2 N^2>>n^2 is 2.971e-03 << Ehat << 1.662e+02
+(C) equal weights on S^2_N (D, B_0, B_1 of 047, levels J <= n), ratio to the equal-weight value
+         N     n    chi^2     chiN/n |       V0       T0       V1       T1       T2
+        64     4     1.00      16.00 |   0.9801   0.9806   0.6907   0.6910   0.6910
+       256     4     1.00      64.00 |   0.9981   0.9982   0.7019   0.7019   0.7019
+      1024     4     1.00     256.00 |   0.9998   0.9998   0.7029   0.7029   0.7029
+       256    10     1.00      25.60 |   0.9931   0.9932   0.8585   0.8585   0.8585
+      1024    10     1.00     102.40 |   0.9994   0.9994   0.8634   0.8634   0.8634
+      1024    10     0.01      10.24 |   0.9689   0.9689   0.8392   0.8392   0.8392
+      1024    10   100.00    1024.00 |   1.0000   1.0000   0.8639   0.8639   0.8639
+    the sum over J' of c(J,J') is 1, so V1, T1, T2 differ from V0, T0 by the truncation J' <= n, about 1 - 3/(2n):
+      n=  4  r_n=0.70303  1-3/(2n)=0.62500
+      n= 10  r_n=0.86392  1-3/(2n)=0.85000
+      n= 30  r_n=0.95163  1-3/(2n)=0.95000
+      n=100  r_n=0.98515  1-3/(2n)=0.98500
+      n=300  r_n=0.99502  1-3/(2n)=0.99500
+(D) stacks with constant relative flux; per unit density (f1 f2 f3 /(2 pi)^3 stripped where stated)
+    with lower limit s_c on the proper time, standing for the truncation of the modes
+    (f1,f2,f3)            s_c          V-T              T         Uhat  lowest HV    sign(v-tau)
+    (1.0, 0.5, 0.5)      0.10     0.000000         37.557     0.000000      0.000              0
+    (1.0, 0.5, 0.5)      0.01     0.000000       3750.057     0.000000      0.000              0
+    (1.0, 0.7, 0.3)      0.10     0.000000         39.542     0.000000      0.000              1
+    (1.0, 0.7, 0.3)      0.01     0.000000       3950.042     0.000000      0.000              1
+    (1.0, 0.6, 0.6)      0.10    -0.271085         43.151    -0.543302      0.200             -1
+    (1.0, 0.6, 0.6)      0.01    -0.397727       4300.194    -5.493302      0.200             -1
+    (1.0, 0.8, 0.8)      0.10    -0.849089         57.400    -1.911331      0.600             -1
+    (1.0, 0.8, 0.8)      0.01    -1.298093       5700.549   -19.461331      0.600             -1
+    (1.0, 1.0, 1.0)      0.10    -1.560159         75.731    -3.660603      1.000             -1
+    (1.0, 1.0, 1.0)      0.01    -2.423628       7501.018   -37.410602      1.000             -1
+    identity at s=0.7,(1,.8,.6): direct -0.0805711014, product -0.0805711014
+    for f1 >= f2, f3 and no negative mode (f1 <= f2 + f3) v - tau <= 0 for every s, with equality for all s iff f1 = f2 + f3
+(E) scan of compact K for Uhat < 0 with no negative mode
+    squashed su(3), weights random, reps (1,0)-(3,0) samples   120, without negative mode     0, min Uhat inf, min Uhat/T inf
+    S^2 x S^2, radius ratio random               samples    60, without negative mode    60, min Uhat 3.8373, min Uhat/T 0.051355
+    random Hermitian d=2, 3 non-zero matrices    samples   300, without negative mode     0, min Uhat inf, min Uhat/T inf
+    random Hermitian d=2, 6 non-zero matrices    samples   300, without negative mode     0, min Uhat inf, min Uhat/T inf
+    random Hermitian d=3, 3 non-zero matrices    samples   300, without negative mode     0, min Uhat inf, min Uhat/T inf
+    random Hermitian d=3, 6 non-zero matrices    samples   300, without negative mode     0, min Uhat inf, min Uhat/T inf

@@ -1,0 +1,3 @@
+contact entropy shift      : -A*Lambda**2*xi/(8*pi)  ; -2 pi xi <phi^2> A = -A*Lambda**2*xi/(8*pi)  equal: True
+H-N counterterm entropy    : A*Lambda**2*xi/(8*pi)  ; sum with contact: 0
+A/(4 G_eff)  : -2*pi*A*phi**2*xi + A/(4*G)  (Wald contact -2 pi xi phi^2 A, cf. Donnelly-Wall eq (4))

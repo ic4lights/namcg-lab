@@ -1,0 +1,13 @@
+# n=3 spot checks: W1 invariant (T6e) but four standard quartic conjugation-invariants shift-variant
+def cand_shift(f):
+    M = cmat(3, "d")
+    s = sp.Symbol("s3br", real=True) + sp.I * sp.Symbol("s3bi", real=True)
+    return sp.simplify(f(M + s * sp.eye(3)) - f(M))
+
+
+fs = [lambda M: sp.expand((M * M).trace() * (M.adjoint() * M.adjoint()).trace()),
+      lambda M: sp.expand(((M.adjoint() * M).trace()) ** 2),
+      lambda M: sp.expand((M * M * M.adjoint() * M.adjoint()).trace()),
+      lambda M: sp.expand((M.trace() * M.adjoint().trace()) ** 2)]
+ok3 = all(sp.simplify(cand_shift(f)) != 0 for f in fs)
+chk("T6i n=3 teeth: four standard quartic conjugation-invariants all shift-variant (only W1 survives)", ok3)

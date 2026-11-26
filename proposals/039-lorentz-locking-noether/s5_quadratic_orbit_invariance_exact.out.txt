@@ -1,0 +1,4 @@
+d=3 eta=(1, 1, 1): solution of the orbit-invariance equations: [{a1: -a3/4, a2: -a3/2}]
+d=3 eta=(-1, 1, 1): solution of the orbit-invariance equations: [{a1: -a3/4, a2: -a3/2}]
+d=4 eta=(1, 1, 1, 1): solution of the orbit-invariance equations: [{a1: -a3/4, a2: -a3/2}]
+d=4 eta=(-1, 1, 1, 1): solution of the orbit-invariance equations: [{a1: -a3/4, a2: -a3/2}]

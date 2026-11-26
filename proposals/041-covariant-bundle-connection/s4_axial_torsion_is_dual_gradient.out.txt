@@ -1,0 +1,14 @@
+eta (1, 1, 1, 1)
+  seed 1: |S|=3.3141  best k=+0.24851  residual |S - k *d theta~|/|S| = 6.62e-01   theta~=-0.9128 rho=1.9661
+  seed 2: |S|=0.5169  best k=-0.00917  residual |S - k *d theta~|/|S| = 1.00e+00   theta~=-0.5100 rho=2.2937
+  seed 3: |S|=1.2946  best k=-0.16493  residual |S - k *d theta~|/|S| = 3.07e-01   theta~=-2.1709 rho=0.4245
+  seed 4: |S|=1.2028  best k=-0.11724  residual |S - k *d theta~|/|S| = 7.95e-01   theta~=-0.9874 rho=0.4538
+  seed 5: |S|=1.5853  best k=+1.77659  residual |S - k *d theta~|/|S| = 6.30e-01   theta~=-0.5394 rho=1.6983
+  seed 6: |S|=0.3735  best k=-0.21000  residual |S - k *d theta~|/|S| = 9.76e-01   theta~=+0.5272 rho=0.9042
+eta (-1, 1, 1, 1)
+  seed 1: |S|=3.0790  best k=-0.41144  residual |S - k *d theta~|/|S| = 9.01e-01   theta~=-0.0590 rho=1.9661
+  seed 2: |S|=1.9096  best k=+0.22140  residual |S - k *d theta~|/|S| = 9.03e-01   theta~=+0.0759 rho=2.2937
+  seed 3: |S|=1.5135  best k=+0.00751  residual |S - k *d theta~|/|S| = 1.00e+00   theta~=-0.3059 rho=0.4245
+  seed 4: |S|=1.4050  best k=-0.13801  residual |S - k *d theta~|/|S| = 8.14e-01   theta~=+0.0187 rho=0.4538
+  seed 5: |S|=2.0735  best k=+0.33075  residual |S - k *d theta~|/|S| = 9.06e-01   theta~=+0.0421 rho=1.6983
+  seed 6: |S|=0.6905  best k=-0.21299  residual |S - k *d theta~|/|S| = 8.29e-01   theta~=+0.0708 rho=0.9042

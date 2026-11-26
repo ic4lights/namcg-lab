@@ -1,0 +1,18 @@
+vector kappa=-1.0 n=20: lam^2: eig(rel to rho^2 p^2 M) = [2.18276957e-05 2.22348835e-05 3.87760045e-01]  gauge residual 1.64e-16
+vector kappa=-1.0 n=20: lam^4: eig(rel to rho^2 p^2 M) = [0.37499587 0.85414931 0.85415139]  gauge residual 6.42e-16
+time 181
+vector kappa=-0.5 n=20: lam^2: eig(rel to rho^2 p^2 M) = [1.71259558e-05 1.71262378e-05 4.10961508e-01]  gauge residual 3.37e-16
+vector kappa=-0.5 n=20: lam^4: eig(rel to rho^2 p^2 M) = [0.40277027 0.84721077 0.84721078]  gauge residual 4.89e-16
+time 164
+vector kappa=0.0 n=20: lam^2: eig(rel to rho^2 p^2 M) = [9.31416463e-06 9.31416463e-06 4.77240481e-01]  gauge residual 2.73e-16
+vector kappa=0.0 n=20: lam^4: eig(rel to rho^2 p^2 M) = [0.49999507 0.83332797 0.83332797]  gauge residual 5.39e-16
+time 182
+vector kappa=0.5 n=20: lam^2: eig(rel to rho^2 p^2 M) = [-2.31503427e-06 -2.22157840e-06  8.35153309e-01]  gauge residual 2.56e-16
+vector kappa=0.5 n=20: lam^4: eig(rel to rho^2 p^2 M) = [0.79166795 0.79167094 1.12500418]  gauge residual 4.62e-16
+time 164
+vector kappa=0.6666666666666666 n=20: lam^2: eig(rel to rho^2 p^2 M) = [-6.59932746e-05 -6.14256978e-08  1.43164822e+00]  gauge residual 2.46e-16
+vector kappa=0.6666666666666666 n=20: lam^4: eig(rel to rho^2 p^2 M) = [0.74964063 0.75203309 2.25115002]  gauge residual 1.53e-15
+time 182
+vector kappa=-2.0 n=20: lam^2: eig(rel to rho^2 p^2 M) = [2.86147671e-05 1.33816255e-04 3.71198630e-01]  gauge residual 5.39e-16
+vector kappa=-2.0 n=20: lam^4: eig(rel to rho^2 p^2 M) = [0.36109132 0.86062816 0.8609892 ]  gauge residual 1.17e-15
+time 163

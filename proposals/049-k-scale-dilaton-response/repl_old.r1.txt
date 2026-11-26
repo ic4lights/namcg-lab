@@ -1,0 +1,20 @@
+A positive \(\beta_K\) can therefore come only from the response of \(\chi\).
+the terms of the action density without derivatives of the wave that depend on \(\chi\) are
+including the negative sign of the torsion term in the Lorentzian section.
+Write \(U_{\chi\chi}=\partial^2U/\partial(\ln\chi)^2\) at a stationary point.
+\beta_K=\frac{4(2U_4+U_2)}{U_{\chi\chi}},
+Hence at a local minimum, \(U_{\chi\chi}>0\), for \(U_4\le0\) and \(U_2<0\) one has \(\beta_K<0\) for every \(V_{\mathrm t}\).
+\(\beta_K=-1/(1+\varepsilon)\); adding a tree cubic term, of the form of the cubic term of Equation~\eqref{eq:Smatrix} read on \(K\) and supplied there, gives \(\beta_K=2(2U_4+U_2)/(2\tilde U+2U_4-U_2)\); adding a tree mass term gives \(\beta_K=(2U_4+U_2)/2(\tilde U+U_4)\). Where the tree stabiliser dominates, \(\beta_K\to0\) from below. The value \(\beta_K=1\) is approached in the last case as \(U_4>0\) comes to dominate \(\tilde U\) and \(U_2\), so it needs \(\hat U<0\), and a tree mass of negative sign for the minimum.
+so \(U_4<0\), \(U_2<0\) and \(\beta_K\le-1\) at the minimum for \(V_{\mathrm t}=\bar a\chi^4\), with \(\beta_K\to-1\) at weak coupling \(|\varepsilon|\ll1\).
+so for \(f_1<f_2+f_3\), the range without a negative mode, \(\hat U<0\) and \(\hat V<\hat T\), and for \(f_1=f_2+f_3\), \(v\equiv\tau\). So the sign of \(\hat U\) depends on \(K\).
+For \(V_{\mathrm t}=\bar a\chi^4\), \(m^2m_\chi^2=8(1+\varepsilon)\bar a\chi^2/\bar n\), which is \(4(1+\varepsilon)\chi^2\) on \(S^2_N\). So (S1) is not the coupling computed in this class, and (S2) holds above \(m_\chi\) and approximately where a tree stabiliser dominates.
+in addition to \(g\) of the preceding paragraph,
+that is \(\tfrac12(A/4\pi^2)\sqrt{|g|}g^{\mu\nu}\partial_\mu\phi\partial_\nu\phi\) in this static channel, with the positive sign in \(S_E\), so that \(t\) is a physical scalar here and the matter charge is \(1-\tfrac12\beta_K\).
+\(V_0=-F\hat U\chi^4/32\pi^2\).
+and for \(\hat U<0\) it is a Yukawa pole.
+so (S1) and \(V=T\) are incompatible at a local minimum for \(\hat U\ge0\): the sign of the torsion term that supplies the minimum is the one that makes \(\beta_K\) negative.
+ For \(V_{\mathrm t}=\bar a\chi^4\) and \(\vartheta\) near \(1\) this condition and \(|\varepsilon|\ll1\) leave the window \(F/4\pi^2N\ll\rho_M/g^2\sqrt{|g|}\ll3NF/8\pi^2n^2\), as a scale estimate.
+and the computed exponent is negative for \(\hat U\ge0\).
+The route to \(\beta_K=1\) that remains here is \(\hat U<0\), a tree mass and a loop quartic above the tree quartic, for which \(q_b^2<0\) and the vacuum term must then be cancelled at the minimum without cancelling its derivative in \(\chi\).
+the fibre-constant background for \(U_2\);
+The sign statement and the exponents are exact for these forms, the values on explicit \(K\) are exact spectra with numerical fits, and the window is a scale estimate.

@@ -1,0 +1,7 @@
+   not in the family at the loose tolerance: null-line defect 4.7e-09, legs 1.0e-06, |T_ac^c| 2.8e-09, n = [ 1.      0.4344 -0.1182  0.8929], RR +5.32e-08
+   not in the family at the loose tolerance: null-line defect 3.6e-09, legs 2.0e-05, |T_ac^c| 1.6e-01, n = [ 1.  0.  1. -0.], RR -1.03e-01
+converged 120 of 120; residual below 1e-13 after polishing 107
+with a common real null eigenvector n: 84 ; B_n and J_n legs along k (family form): 80 ; L^2 = 0: 106
+n outside the plane of E_0, E_2: 106, of which with T_ac^c = 0: 83 ; R_abcd R^abcd > 1e-8: 85
+family form (null line, B_n and J_n legs along k, T_ac^c = 0 unless n is in the plane of E_0, E_2): 80 at tolerances 1e-10, 1e-9, 1e-9; 25 more at 1e-8, 1e-6, 1e-6; 2 not ; largest |R_abcd R^abcd| among the latter group of 25: 3.3e-01
+largest defects: null line 4.7e-09, family form 2.0e-05, |L^2| 1.5e-11, |T_ac^c| on tilted 1.6e-01

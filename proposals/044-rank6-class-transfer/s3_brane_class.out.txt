@@ -1,0 +1,32 @@
+=== (i) algebraic identities for ghat = (sqrt|g|/rho) G ===
+Euclidean trial 0: rho K = sqrt|ghat| ghat^-1: True;  1/rho = lam/sqrt|ghat|: True;  |det ghat| = |det g|: True
+Euclidean trial 1: rho K = sqrt|ghat| ghat^-1: True;  1/rho = lam/sqrt|ghat|: True;  |det ghat| = |det g|: True
+Euclidean trial 2: rho K = sqrt|ghat| ghat^-1: True;  1/rho = lam/sqrt|ghat|: True;  |det ghat| = |det g|: True
+Lorentzian trial 0: rho K = sqrt|ghat| ghat^-1: True;  1/rho = lam/sqrt|ghat|: True;  |det ghat| = |det g|: True
+Lorentzian trial 1: rho K = sqrt|ghat| ghat^-1: True;  1/rho = lam/sqrt|ghat|: True;  |det ghat| = |det g|: True
+Lorentzian trial 2: rho K = sqrt|ghat| ghat^-1: True;  1/rho = lam/sqrt|ghat|: True;  |det ghat| = |det g|: True
+
+=== (ii) scalar a_1 density of O = -lam Lap_ghat on G = ghat/lam (jets to second order at y = 0) ===
+sqrt|G|(R_G/6 + E_V) at y=0  = 34427/11520
+(1/6)(sqrt|ghat|/lam) R[ghat] = 34427/11520
+difference = 0
+
+=== (iii) rank of the linearised Einstein operator of ghat on the first-order image (Lorentzian, frozen II) ===
+D | Hamiltonian gauge = diffeo of ghat | rank(Im) | rank E[ghat] on Im (max 6)
+ 4 | True | 4 | 3
+ 5 | True | 5 | 4
+ 6 | True | 6 | 5
+ 7 | True | 7 | 6
+ 8 | True | 8 | 6
+ 9 | True | 9 | 6
+10 | True | 10 | 6
+11 | True | 10 | 6
+
+=== (iv) bending term of X_D on transverse plane waves (D = 7, Euclidean target) ===
+eps^2 coefficient (alpha-averaged) as a polynomial in L: degree 4
+   L^0: 0
+   L^1: 0
+   L^2: -769438919/1296
+   L^3: 0
+   L^4: 3055705/3
+(p.p)(p.K.p)|phi|^2 = 3055705/3   -> L^4 coefficient matches: True

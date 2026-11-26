@@ -1,0 +1,15 @@
+== A. Q on the Heisenberg ground mode, symbolic kappa, chi, zeta, x
+  Q_b[A] - lambda A_b, lambda = q0^2 - p^2 + kappa p + i chi (q0 - p): [0, 0, 0, 0]
+  F_32[A] / phi = p
+== B. literal bundle operators: O(eps) order-zero part of sum_a eta^aa [D_a,[D_a,D_b]] vs -i eps Q_b[A]
+  (kappa, chi, zeta, x) = (1, 1/2, 1, -1/3): background order-zero part 0.0e+00 ; |O(eps) part + i Q_b[A]| = 0.0e+00
+  (kappa, chi, zeta, x) = (2, -3/2, 1/2, 1): background order-zero part 0.0e+00 ; |O(eps) part + i Q_b[A]| = 0.0e+00
+== C. roots and the largest |Im q0| of the ground mode
+  constraint f(p, S) = 0 and df/dp = 0 at p = S = kappa/4 + sqrt(kappa^2/16 + gamma^2): 0 0
+  kappa = 1.00 chi = +0.50: grid max |Im q0| = 0.853553 at p = 0.6035 ; closed form 0.853553 at p = 0.6036
+  kappa = 1.00 chi = -0.50: grid max |Im q0| = 0.853553 at p = 0.6035 ; closed form 0.853553 at p = 0.6036
+  kappa = 1.30 chi = +0.80: grid max |Im q0| = 1.240388 at p = 0.8404 ; closed form 1.240388 at p = 0.8404
+  kappa = 1.00 chi = +0.00: grid max |Im q0| = 0.500000 at p = 0.5000 ; closed form 0.500000 at p = 0.5000
+== D. Q for arbitrary A_b(y): Q_b - Q_b|_{w=0} + chi k^a F_ab
+   [0, 0, 0, 0]
+   F_ab[A] contains no w: True

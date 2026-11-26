@@ -1,0 +1,4 @@
+Lh O(eps^0) avg: 0  O(eps^1) avg: 0
+Lx O(eps^0) avg: 0  O(eps^1) avg: 0
+Lh gauge check  M*q = [[0, 0, 0, 0]]
+Lx gauge check  M*q = [[0, 0, 0, 0]]

@@ -1,0 +1,20 @@
+point 0: |Q_EH kappa|/(|Q_EH||kappa|) = 6.25e-16 ; dphi(V')=0.0e+00
+   f=1      |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 7.986e-01   gauge test of Im Q1: 2.630e-03   (lam1 = 1.2210e-04, dphi.V' = 4.1e-16)
+   f=0.1    |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 7.986e-02   gauge test of Im Q1: 2.011e-04   (lam1 = 1.2210e-04, dphi.V' = 4.1e-16)
+   f=0.01   |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 7.986e-03   gauge test of Im Q1: 1.913e-05   (lam1 = 1.2210e-04, dphi.V' = 4.1e-16)
+   f=0.001  |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 7.989e-04   gauge test of Im Q1: 1.904e-06   (lam1 = 1.2210e-04, dphi.V' = 4.1e-16)
+point 1: |Q_EH kappa|/(|Q_EH||kappa|) = 2.26e-16 ; dphi(V')=0.0e+00
+   f=1      |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 1.381e+00   gauge test of Im Q1: 1.954e-01   (lam1 = 8.4598e-04, dphi.V' = 4.0e-17)
+   f=0.1    |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 1.381e-01   gauge test of Im Q1: 1.842e-02   (lam1 = 8.4598e-04, dphi.V' = 4.0e-17)
+   f=0.01   |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 1.381e-02   gauge test of Im Q1: 1.665e-03   (lam1 = 8.4598e-04, dphi.V' = 4.0e-17)
+   f=0.001  |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 1.384e-03   gauge test of Im Q1: 1.649e-04   (lam1 = 8.4598e-04, dphi.V' = 4.0e-17)
+point 2: |Q_EH kappa|/(|Q_EH||kappa|) = 2.64e-16 ; dphi(V')=0.0e+00
+   f=1      |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 7.019e-01   gauge test of Im Q1: 3.269e-01   (lam1 = 2.0113e-07, dphi.V' = 8.7e-17)
+   f=0.1    |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 7.015e-02   gauge test of Im Q1: 2.855e-02   (lam1 = 2.0113e-07, dphi.V' = 8.7e-17)
+   f=0.01   |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 6.976e-03   gauge test of Im Q1: 2.758e-03   (lam1 = 2.0113e-07, dphi.V' = 8.7e-17)
+   f=0.001  |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 6.604e-04   gauge test of Im Q1: 2.749e-04   (lam1 = 2.0113e-07, dphi.V' = 8.7e-17)
+point 3: |Q_EH kappa|/(|Q_EH||kappa|) = 5.99e-16 ; dphi(V')=0.0e+00
+   f=1      |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 8.194e-02   gauge test of Im Q1: 6.389e-03   (lam1 = 9.1746e-05, dphi.V' = 1.1e-16)
+   f=0.1    |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 8.194e-03   gauge test of Im Q1: 5.936e-04   (lam1 = 9.1746e-05, dphi.V' = 1.1e-16)
+   f=0.01   |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 8.195e-04   gauge test of Im Q1: 5.894e-05   (lam1 = 9.1746e-05, dphi.V' = 1.1e-16)
+   f=0.001  |Im Q1 - lam1 Q_EH|/|lam1 Q_EH| = 8.215e-05   gauge test of Im Q1: 5.890e-06   (lam1 = 9.1746e-05, dphi.V' = 1.1e-16)

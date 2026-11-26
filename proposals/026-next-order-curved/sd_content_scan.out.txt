@@ -1,0 +1,1 @@
+solutions of all 8 equations (a = N_s-2): [{a: 4, nD: 2}]

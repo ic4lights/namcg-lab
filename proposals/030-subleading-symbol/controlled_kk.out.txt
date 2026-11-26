@@ -1,0 +1,8 @@
+trial 0 t=0.00: Q0 ~ Gm residual 5.1e-17 | Im Q1 = lam1 QEH + lam2 Gm: residual 1.61e-02 (lam1=7.6694e-05, lam2=3.7664e-07)
+trial 0 t=0.05: Q0 ~ Gm residual 5.1e-17 | Im Q1 = lam1 QEH + lam2 Gm: residual 1.69e-02 (lam1=7.6728e-05, lam2=3.5155e-07)
+trial 0 t=0.20: Q0 ~ Gm residual 5.1e-17 | Im Q1 = lam1 QEH + lam2 Gm: residual 2.14e-02 (lam1=7.6831e-05, lam2=2.7622e-07)
+trial 0 t=0.50: Q0 ~ Gm residual 5.1e-17 | Im Q1 = lam1 QEH + lam2 Gm: residual 3.43e-02 (lam1=7.7058e-05, lam2=1.2535e-07)
+trial 1 t=0.00: Q0 ~ Gm residual 1.3e-16 | Im Q1 = lam1 QEH + lam2 Gm: residual 6.46e-01 (lam1=1.5608e-04, lam2=-5.0969e-06)
+trial 1 t=0.05: Q0 ~ Gm residual 1.3e-16 | Im Q1 = lam1 QEH + lam2 Gm: residual 6.48e-01 (lam1=1.5403e-04, lam2=-5.1455e-06)
+trial 1 t=0.20: Q0 ~ Gm residual 1.3e-16 | Im Q1 = lam1 QEH + lam2 Gm: residual 6.51e-01 (lam1=1.4757e-04, lam2=-5.3527e-06)
+trial 1 t=0.50: Q0 ~ Gm residual 1.3e-16 | Im Q1 = lam1 QEH + lam2 Gm: residual 6.48e-01 (lam1=1.3339e-04, lam2=-6.0437e-06)

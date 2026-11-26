@@ -1,0 +1,12 @@
+== SD
+ scalar  (W,Rsig): Matrix([[1/10, -1/30]])  [calibration (1/10, -1/30)]
+ Maxwell with Omega_delta only (no E contact): Matrix([[-9/5, 14/15]])
+ Maxwell with E_delta and Omega_delta        : Matrix([[6/5, -31/15]])  [12 c_s = 6/5 in W; a-type -31/15 = 62 x (-1/30)]
+ T-side 12 kappa_C of the Hodge-Maxwell operator = 6/5  ; W gap = 0
+ W carried by E-contact term: 3 (Rsig: -3 )
+== ASD
+ scalar  (W,Rsig): Matrix([[1/10, -1/30]])  [calibration (1/10, -1/30)]
+ Maxwell with Omega_delta only (no E contact): Matrix([[-9/5, 14/15]])
+ Maxwell with E_delta and Omega_delta        : Matrix([[6/5, -31/15]])  [12 c_s = 6/5 in W; a-type -31/15 = 62 x (-1/30)]
+ T-side 12 kappa_C of the Hodge-Maxwell operator = 6/5  ; W gap = 0
+ W carried by E-contact term: 3 (Rsig: -3 )

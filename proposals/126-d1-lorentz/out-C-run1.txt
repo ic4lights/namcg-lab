@@ -1,0 +1,23 @@
+PASS C0a Clifford {gamma_a,gamma_b} = 2 eta_ab I exactly (16 checks)
+PASS C0b * structure: gamma_0 anti-Hermitian, gamma_i Hermitian
+PASS C0c * structure: Sigma_0i Hermitian, Sigma_ij anti-Hermitian (mixed, forced by Part A)
+PASS C1 exists s with [S_cd,D_a] = eta_ad D_c - eta_ac D_d exactly, 48 checks (viol +:0 -:24 -> s=+1)
+PASS C2 [D_a,D_b] = 1/2 R_ab^{cd} S_cd exactly, R = 4s(delta-delta), T = F = 0 (12 checks)
+PASS C2b [gamma_a,gamma_b] != 0 for some pair (curved: R cannot be set to zero)
+PASS C3a [D^a,[D_a,D_b]] = 12 D_b exactly (direct Clifford, all b)
+PASS C3b matrix equation [D^a,[D_a,D_b]] = R_ab^{ae} D_e (R = 4s(delta-delta)): forces s=+1
+   C3: R_ab{}^{ae} = 12 s delta_b^e; direct = 12 D_b; F = 0 consistency forces s = +1
+CONTROL-FIRED contracted R-coefficient 36 (instead of 12) fails the matrix-equation test
+CONTROL-FIRED flat Part B D gives [D^a,[D_a,D_b]] = 0 != 12 D_b (C3 is curvature, not identity)
+PASS C4a gamma5 anticommutes with all gamma_a; gamma5^2 = -1 I
+PASS C4b 16 Dirac-bilinear basis {1, gamma_a, S_cd, gamma_a gamma5, gamma5} rank 16
+PASS C4c all [S,.], [D,.] structure constants on the 16-basis are rational (Cl_3,1 = M_4(C))
+PASS C5a L(1) = 0 (only harmonic sector: constants)
+PASS C5c L(gamma_e) = 3 s gamma_e exactly (nonzero: curved model propagates)
+PASS C5d L(S_cd) = 2 s S_cd exactly for all 6 (S-sector eigenvalue nonzero)
+PASS C5e L(gamma5) = mu5 gamma5 exactly, mu5 = 4 (computed, nonzero)
+PASS C5f L(gamma_a gamma5) = muA (gamma_a gamma5) exactly for all 4, muA = 1
+PASS C5g all non-scalar sector eigenvalues nonzero and mutually distinct (3s, 2s, mu5, muA) = (3, 2, 4, 1)
+CONTROL-FIRED kinetic: L(1) = 0 but L(gamma_1) != 0 and gamma-sector != S-sector (discriminating)
+CONTROL-FIRED Euclidean delta fails 6/48 (r1) checks on the spinor model (eta load-bearing)
+SUMMARY_C: ALL-PASS

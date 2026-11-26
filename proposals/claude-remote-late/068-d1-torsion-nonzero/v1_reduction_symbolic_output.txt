@@ -1,0 +1,19 @@
+== flat : nonzero c_ab^d (a<b) {}
+   constant c: True ; [rho_I, E_a] = 0: True ; background equation (eta): True ; c_ad^d: [0, 0, 0, 0]
+   (R1) delta B2[h,w] = Mz[w^{de}] for arbitrary h, w: True
+   (R2) delta B1[h,0] = Mz[-h A]^I Ainv_I^e for arbitrary h: True
+== Heisenberg : nonzero c_ab^d (a<b) {(1, 3, 2): -kappa}
+   constant c: True ; [rho_I, E_a] = 0: True ; background equation (eta): True ; c_ad^d: [0, 0, 0, 0]
+   (R1) delta B2[h,w] = Mz[w^{de}] for arbitrary h, w: True
+   (R2) delta B1[h,0] = Mz[-h A]^I Ainv_I^e for arbitrary h: True
+   controls (expected False, False): A replaced by 1 -> False ; frame bracket free of w -> False
+== null rotation : nonzero c_ab^d (a<b) {(0, 1, 2): 1/2, (0, 2, 1): -1/2, (1, 3, 2): -1/2, (2, 3, 1): 1/2}
+   constant c: True ; [rho_I, E_a] = 0: True ; background equation (eta): True ; c_ad^d: [0, 0, 0, 0]
+   (R1) delta B2[h,w] = Mz[w^{de}] for arbitrary h, w: True
+   (R2) delta B1[h,0] = Mz[-h A]^I Ainv_I^e for arbitrary h: True
+   controls (expected False, False): A replaced by 1 -> False ; frame bracket free of w -> False
+== second algebra : nonzero c_ab^d (a<b) {(0, 2, 2): 1, (0, 3, 3): 1, (1, 2, 2): 1, (1, 3, 3): -1}
+   constant c: True ; [rho_I, E_a] = 0: True ; background equation (eta): True ; c_ad^d: [2, 0, 0, 0]
+   (R1) delta B2[h,w] = Mz[w^{de}] for arbitrary h, w: True
+   (R2) delta B1[h,0] = Mz[-h A]^I Ainv_I^e for arbitrary h: True
+ALL REDUCTION IDENTITIES EXACT: True

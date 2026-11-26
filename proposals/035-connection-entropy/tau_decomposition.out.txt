@@ -1,0 +1,24 @@
+rank M 5 rank [M|y] 6
+tau = a W + b Rsig + c R + d Xp + f e : EmptySet
+all 20 pts rank 5 6 EmptySet
+tg only 17 pts rank 5 5 {(-2, 1, 2/3, 1/2, -4)}
+0 SD example (029)       tau-Rsig+2W+R/3 = 3098250000/3373402561  X'/2 = 4647375000/3373402561  e-R/6 = 0  tau - X'/2 - Rsig = 0
+1 SD example (029)       tau-Rsig+2W+R/3 = 4852224/2825761  X'/2 = 7278336/2825761  e-R/6 = 0  tau - X'/2 - Rsig = 0
+2 SD example (029)       tau-Rsig+2W+R/3 = 17582054805/19442342432  X'/2 = 52746164415/38884684864  e-R/6 = 0  tau - X'/2 - Rsig = 0
+3 SD rot-invariant       tau-Rsig+2W+R/3 = 271297008198144/14077346043125  X'/2 = 406945512297216/14077346043125  e-R/6 = 0  tau - X'/2 - Rsig = 0
+4 SD rot-invariant       tau-Rsig+2W+R/3 = 446362078869/403022420000  X'/2 = 1339086236607/806044840000  e-R/6 = 0  tau - X'/2 - Rsig = 0
+5 SD rot-invariant       tau-Rsig+2W+R/3 = 597705791579136/10474291432801  X'/2 = 896558687368704/10474291432801  e-R/6 = 0  tau - X'/2 - Rsig = 0
+6 SD rot-invariant       tau-Rsig+2W+R/3 = 419870957031250/339898005760329  X'/2 = 209935478515625/113299335253443  e-R/6 = 0  tau - X'/2 - Rsig = 0
+7 SD rot-invariant       tau-Rsig+2W+R/3 = 1288744876376064/63928976332923601  X'/2 = 1933117314564096/63928976332923601  e-R/6 = 0  tau - X'/2 - Rsig = 0
+8 SD rot-invariant       tau-Rsig+2W+R/3 = 6147956117812500000/1918516107573697921  X'/2 = 9221934176718750000/1918516107573697921  e-R/6 = 0  tau - X'/2 - Rsig = 0
+9 SD rot-invariant       tau-Rsig+2W+R/3 = 374874624/705911761  X'/2 = 562311936/705911761  e-R/6 = 0  tau - X'/2 - Rsig = 0
+10 SD rot-invariant       tau-Rsig+2W+R/3 = 375376107595669211971584/147750967333776151468561  X'/2 = 563064161393503817957376/147750967333776151468561  e-R/6 = 0  tau - X'/2 - Rsig = 0
+11 non-SD J=0 (h=1+ sqrt( tau-Rsig+2W+R/3 = 1/72  X'/2 = 59/144  e-R/6 = 0  tau - X'/2 - Rsig = 25/9
+12 non-SD J=0 (h=1+ sqrt( tau-Rsig+2W+R/3 = 1/72  X'/2 = 59/144  e-R/6 = 0  tau - X'/2 - Rsig = 25/9
+13 non-SD J=0 (h=1- sqrt( tau-Rsig+2W+R/3 = 512/9  X'/2 = 944/9  e-R/6 = 0  tau - X'/2 - Rsig = 400/9
+14 non-SD J=0 (h=1- sqrt( tau-Rsig+2W+R/3 = 512/9  X'/2 = 944/9  e-R/6 = 0  tau - X'/2 - Rsig = 400/9
+15 non-SD J!=0 h=1+r^2    tau-Rsig+2W+R/3 = 1/288  X'/2 = 181/1296  e-R/6 = -259/15552  tau - X'/2 - Rsig = 23/48
+16 non-SD J!=0 h=1/(1+r^2 tau-Rsig+2W+R/3 = 1/2  X'/2 = 21  e-R/6 = 101/12  tau - X'/2 - Rsig = -43
+17 generic closed omega ( tau-Rsig+2W+R/3 = -71572371961/644230124663  X'/2 = 13227410/43917129  e-R/6 = 11058659/263502774  tau - X'/2 - Rsig = -3989433261703/11596142243934
+18 generic closed omega ( tau-Rsig+2W+R/3 = 118170423/1202240000  X'/2 = 6771841/288000  e-R/6 = 25319513/4320000  tau - X'/2 - Rsig = -1226363645927/43280640000
+19 generic closed omega ( tau-Rsig+2W+R/3 = -3954135721925/6701599618722  X'/2 = 33718751/57395628  e-R/6 = 94121989/2066242608  tau - X'/2 - Rsig = -20882164791401/26806398474888

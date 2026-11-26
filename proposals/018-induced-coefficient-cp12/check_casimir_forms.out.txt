@@ -1,0 +1,10 @@
+s=+1 (1) Box = C41' - C31: True
+s=+1 (2) [Box,J^ab]=0 (a,b<=3): True ; [Box,D^0]!=0: True
+s=+1 (3) H_V = -Box - 2 s J.A + mu^2 (gauge-fixed, background Feynman): True
+s=+1     delta(D.A) = -Box Lam (ghost operator -Box): True
+s=+1 (4) {T,y^mu},{T,y^4}: True True  D^a g(y)= s(y^4 d^a - y^a d_4)g: True
+s=-1 (1) Box = C41' - C31: True
+s=-1 (2) [Box,J^ab]=0 (a,b<=3): True ; [Box,D^0]!=0: True
+s=-1 (3) H_V = -Box - 2 s J.A + mu^2 (gauge-fixed, background Feynman): True
+s=-1     delta(D.A) = -Box Lam (ghost operator -Box): True
+s=-1 (4) {T,y^mu},{T,y^4}: True True  D^a g(y)= s(y^4 d^a - y^a d_4)g: True

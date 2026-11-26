@@ -1,0 +1,2 @@
+rotation in plane (1, 2) : max |Theta(Rx) - R Theta(x) R^T| = 8.6134e-53
+rotation in plane (3, 4) : max |Theta(Rx) - R Theta(x) R^T| = 5.7945e-52

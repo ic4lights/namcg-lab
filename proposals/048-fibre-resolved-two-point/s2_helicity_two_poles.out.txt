@@ -1,0 +1,30 @@
+(A) helicity +-2 eigenvalues relative to EH(hbar) (merged closed forms) and induced coefficient
+   c(x) - (c_TT + kappa/x) = 0
+   kappa >= (V1 + 2 T1)/20 when T2 >= T1: kappa - (V1+2T1)/20 = -3*T1/20 + 3*T2/20  = 3 (T2-T1)/20 : True
+
+(B) total form in the amplitude: EH = -q^2 hbar.hbar/(8m^6), hbar.hbar = (4m^2/9) a (c.c) on helicity +-2
+   induced S_E / (q^2 c.c) - (c_TT a + kappa b)/(576 pi^2 m^4) = 0
+   (c_TT a + kappa b) - (c_TT+kappa) m^2 (q0^2 - v^2 k^2) = 0
+   1 - v^2 - c_TT theta/(c_TT+kappa) = 0
+   index-only, degenerate weights V_i=T_i=T: v^2 = (-4*l**2 + m**2)/(5*m**2)  (tends to 1/5 as l/m -> 0)
+   mu^2 = tree/Z = 2880*pi**2*m**4*rho_M/(g2*(5*T0 - 17*T1 + 30*T2 + 10*V0 + 17*V1))  = 48 pi^2 rho_M m^4/(g^2 (c_TT+kappa))
+
+(C) residues in q0^2 at fixed k. S_L = (c.c) Z (q0^2-k^2)(q0^2-w^2), w^2 = v^2 k^2 - mu^2
+   -S_E/(c.c) - Z (q0^2-k^2)(q0^2-w^2) = 0
+   healthy oscillator: S_L = Z_res (q0^2 - w_0^2) with Z_res > 0.  Coefficient at each root:
+     at q0^2 = k^2 : (k**2 - w2)*(5*T0 - 17*T1 + 30*T2 + 10*V0 + 17*V1)/(34560*pi**2*m**2)  ; at q0^2 = w^2 : -(k**2 - w2)*(5*T0 - 17*T1 + 30*T2 + 10*V0 + 17*V1)/(34560*pi**2*m**2)
+   k^2 - w^2 = k^2 (1-v^2) + mu^2 > 0 for c_TT>0, c_TT+kappa>0, so the massless root is healthy and the extra root has the opposite sign, in the variable c.
+   in hbar: propagator gets the factor (4m^2/9) a(q0^2); a at the massless root = m^2 theta k^2 > 0; a at the extra root = m^2 (w^2 + k^2/s^2)
+     a(extra) - m^2 (k^2 kappa theta/(c_TT+kappa) - mu^2) = 0
+   large-k limit of the massless residue in hbar: (4m^2/9) a / (Z (k^2 - w^2)) -> 15360*pi**2*m**6/(5*T0 - 14*T1 + 21*T2 + 10*V0 + 14*V1)  = 256 pi^2 m^6/c_TT (independent of kappa)
+
+(D) exact-rational check at sampled base points, D traceless on the block orthogonal to qhat, using cp12_forms
+   (y0,y4)=(5,3) q0=1/3 k=1/2: IX2 - q^2 (4a+b) c.c/(15 m^4) = 0 ; SC2 + q^2 (8a+b) c.c/(360 m^4) = 0 ; EH + q^2 a c.c/(18 m^4) = 0
+   (y0,y4)=(13,5) q0=2/3 k=1/5: IX2 - q^2 (4a+b) c.c/(15 m^4) = 0 ; SC2 + q^2 (8a+b) c.c/(360 m^4) = 0 ; EH + q^2 a c.c/(18 m^4) = 0
+   (y0,y4)=(5,4) q0=1/7 k=9/4: IX2 - q^2 (4a+b) c.c/(15 m^4) = 0 ; SC2 + q^2 (8a+b) c.c/(360 m^4) = 0 ; EH + q^2 a c.c/(18 m^4) = 0
+   (y0,y4)=(5,3) q0=0 k=1: IX2 - q^2 (4a+b) c.c/(15 m^4) = 0 ; SC2 + q^2 (8a+b) c.c/(360 m^4) = 0 ; EH + q^2 a c.c/(18 m^4) = 0
+
+(E) quartic lemma with the signs of (4.46): (X-k^2)(X-w^2) - V01 X - V00, in units of Z
+   discriminant - [(k^2-w^2)^2 + 2 V01 (k^2+w^2) + V01^2 + 4 V00] = 0
+   for distinct real roots X1 > X2: P'(X1) = X1 - X2 > 0, P'(X2) = -(X1 - X2) < 0, so the two coefficients have opposite signs.
+   first-order shift of the larger root, at kk=1, ww=1/5: 5*V00/4 + 5*V01/4  ; predicted (V00+V01 kk)/(kk-ww): 5*V00/4 + 5*V01/4

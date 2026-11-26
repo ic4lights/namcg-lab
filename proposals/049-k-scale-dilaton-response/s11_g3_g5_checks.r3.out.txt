@@ -1,0 +1,96 @@
+(A1) su(2) relations only: Z = -2 A.sigma on the chiral block
+    C_tot - C_orb - C_S minus (-2 A.sigma) vanishes in U(su2): True
+    (Z-1)^2 - (4 A^2 + 1) vanishes in U(su2): True
+    trace of Z over the block is zero in U(su2): True
+    block trace of Z^k against (-1)^k k! [s^k] P(Xi), with Xi^2 = 4A^2+1, exact in U(su2):
+      k=0  coefficient 2  residual zero: True
+      k=1  coefficient 0  residual zero: True
+      k=2  coefficient 2*X2 - 2  residual zero: True
+      k=3  coefficient 4*X2 - 4  residual zero: True
+      k=4  coefficient 2*X2**2 + 4*X2 - 6  residual zero: True
+      k=5  coefficient 8*X2**2 - 8  residual zero: True
+      k=6  coefficient 2*X2**3 + 18*X2**2 - 10*X2 - 10  residual zero: True
+      k=7  coefficient 12*X2**3 + 28*X2**2 - 28*X2 - 12  residual zero: True
+      k=8  coefficient 2*X2**4 + 40*X2**3 + 28*X2**2 - 56*X2 - 14  residual zero: True
+(A2) so(3,1) relations only: L_i = gens 0-2, N_i = gens 3-5; A = (L+iN)/2, B = (L-iN)/2
+    A and B close as two commuting su(2): True
+    N^2 - L^2 + 2(A^2+B^2) vanishes: True
+(A3) vector block over su(2)+su(2): Z_V = Z_A + Z_B on (1/2,1/2), relations only
+    [Z_A, Z_B] = 0: True
+    tr_V Z_V^k against (-1)^k k! [s^k] P_+ P_-, exact in U(su2+su2):
+      k=0  residual zero: True
+      k=1  residual zero: True
+      k=2  residual zero: True
+      k=3  residual zero: True
+      k=4  residual zero: True
+      k=5  residual zero: True
+      k=6  residual zero: True
+    tr_V - 2 tr_D + 4 - (P_+ - 2)(P_- - 2) as series: 0
+    P - 2 through s^3: X2 - 1 * s^2 , -2*(X2 - 1)/3 * s^3
+(B) Verma modules at complex j, truncated; interior entries only
+    Xi=0.7j        comm res 1.4e-15  (Z-1)^2-Xi^2 res 2.3e-13  partial tr Z 0.0e+00  partial tr e^{-sZ} / P(Xi) - 1 = 7.1e-18
+    Xi=0.7j        comm res 1.4e-15  (Z-1)^2-Xi^2 res 2.3e-13  partial tr Z 0.0e+00  partial tr e^{-sZ} / P(Xi) - 1 = 7.1e-18
+    Xi=(1+1.3j)    comm res 2.1e-15  (Z-1)^2-Xi^2 res 2.3e-13  partial tr Z 0.0e+00  partial tr e^{-sZ} / P(Xi) - 1 = 1.1e-16
+    Xi=(-1+1.3j)   comm res 2.1e-15  (Z-1)^2-Xi^2 res 4.5e-13  partial tr Z 0.0e+00  partial tr e^{-sZ} / P(Xi) - 1 = 3.6e-17
+    Xi=(2+1.3j)    comm res 2.1e-15  (Z-1)^2-Xi^2 res 4.5e-13  partial tr Z 0.0e+00  partial tr e^{-sZ} / P(Xi) - 1 = 2.2e-16
+    Xi=(-2+1.3j)   comm res 2.1e-15  (Z-1)^2-Xi^2 res 4.5e-13  partial tr Z 0.0e+00  partial tr e^{-sZ} / P(Xi) - 1 = 2.3e-16
+    Xi=(5+0.4j)    comm res 7.2e-16  (Z-1)^2-Xi^2 res 1.1e-13  partial tr Z 0.0e+00  partial tr e^{-sZ} / P(Xi) - 1 = 2.2e-16
+    Xi=(-5+0.4j)   comm res 7.2e-16  (Z-1)^2-Xi^2 res 2.3e-13  partial tr Z 0.0e+00  partial tr e^{-sZ} / P(Xi) - 1 = 2.2e-16
+    Xi=(3+2.5j)    comm res 0.0e+00  (Z-1)^2-Xi^2 res 0.0e+00  partial tr Z 0.0e+00  partial tr e^{-sZ} / P(Xi) - 1 = 5.1e-17
+    Xi=(-3+2.5j)   comm res 0.0e+00  (Z-1)^2-Xi^2 res 0.0e+00  partial tr Z 0.0e+00  partial tr e^{-sZ} / P(Xi) - 1 = 1.0e-16
+    conjugate factors on the principal series: min (P_+-2)(P_--2) and max |imag| over a grid, s in (0,6]
+      min 1.559e-09, max relative |imag| 0.0e+00
+(C) sign of Z: Hessian of S = -(1/4) Sum Tr[X_a,X_b]^2 by second differences; D=4 random Hermitian, size 5
+    <A,HA> with H = Box + 2[[X_b,X_a],.]: 4708.29539526 ; second difference of S plus gauge term: 4708.29676180
+    max |H X_b - 3 Box X_b| = 0.0e+00 (mass-free form)
+    real generators, C = (1/2) J_ab J^ab: so(3,1) on the vector [np.float64(-3.0)]; so(4,1) on the adjoint [np.float64(-6.0)]
+    T_a = M^{a4}: C_31 = -3, C_41 = -6, so H_0 = C_31 - C_41 = 3 and Box = C_41 - C_31 = -3 as in the merged text
+    singlet: C_tot = 0, C_Sigma = -3, so Z = 0 + 3 + 3 = 6 and C_tot - C_41 - C_Sigma = 9 = 3 H_0, without mass term
+(D) G4: bracket (15/4)th^2/D - th c/D^2 + 2c^2/D^3 = q(D)/D^3
+    discriminant of q in D: -29*c**2*vartheta**2
+    at c = 0 (J = 0) the discriminant is 0 and q = (15/4) th^2 D^2 > 0 for D > 0; the bracket is 15 th^2/(4D) > 0
+(E) G5: normalisation; limits of S(mu) = -Sum_i c_i b_i/(b_i+mu) on S^2_N
+    sigma through s^2: s**2*(Xm**2 + Xp**2 - 2)  = -2 s^2 C with C = -(Xi_+^2+Xi_-^2-2)/2 = N^2 - c_J, so sigma gains +2 s^2 c_J
+    -(1/2) int ds/s s^-2 (-(1/4) 2 s^2 c_J tau^K) under d/dln chi, in units 1/16 pi^2: -b*c_J*co/(2*b + 2*mu)  so -c_J c_i b_i/(b_i+mu) in units 1/32 pi^2
+    Sum c_i/b_i summand times chi^2 minus 8(1/l^2 - 1/(l+1)^2): 0  so S -> 8(1-1/N^2) mu/chi^2 for chi^2 >> mu
+    sum of c_i over the three towers at each l: 0
+    sum of c_i b_i/chi^2 at each l: 0
+      N       mu/chi^2         S          S/(8 mu/chi^2)      S/4
+      2048       0.0001  0.0007998874935  0.99985937  0.0001999718734
+      2048        0.001  0.007988778526  0.99859732  0.001997194631
+      2048         0.01  0.07888990333  0.98612379  0.01972247583
+      2048          0.1  0.6997072697  0.87463409  0.1749268174
+      2048          0.5  2.264371707  0.56609293  0.5660929267
+      2048            1  3.046768023  0.380846  0.7616920058
+      2048            2  3.567507726  0.22296923  0.8918769316
+      2048            5  3.85325378  0.096331345  0.963313445
+      2048           10  3.930378718  0.049129734  0.9825946794
+      2048           30  3.977415684  0.016572565  0.9943539209
+      2048          100  3.993115716  0.0049913946  0.998278929
+      2048         1000  3.9974264  0.0004996783  0.9993565999
+      2048        10000  3.98092784  4.9761598e-5  0.9952319601
+      2048       100000  3.815869122  4.7698364e-6  0.9539672805
+      8192       0.0001  0.0007998876723  0.99985959  0.0001999719181
+      8192        0.001  0.007988780314  0.99859754  0.001997195078
+      8192         0.01  0.07888992121  0.98612402  0.0197224803
+      8192          0.1  0.6997074485  0.87463431  0.1749268621
+      8192          0.5  2.264372601  0.56609315  0.5660931502
+      8192            1  3.046769811  0.38084623  0.7616924528
+      8192            2  3.567511303  0.22296946  0.8918778257
+      8192            5  3.853262721  0.096331568  0.9633156802
+      8192           10  3.930396599  0.049129957  0.9825991497
+      8192           30  3.977469327  0.016572789  0.9943673318
+      8192          100  3.993294523  0.0049916182  0.9983236308
+      8192         1000  3.99921386  0.00049990173  0.999803465
+      8192        10000  3.998741504  4.9984269e-5  0.999685376
+      8192       100000  3.988098997  4.9851237e-6  0.9970247492
+      8192      1000000  3.883402608  4.8542533e-7  0.9708506521
+    largest S on these grids: 3.99921385982  below 4: True
+    beyond the cutoff (mu >~ N^2 chi^2), where equal weights fail: S is smaller again
+      2048          1e7  0.34926214
+      2048          1e8  0.0064817421
+      2048         1e10  7.0309735e-7
+    relative size at equal weights: Sum_J (2J+1) c_J 4 / (F (15/2) th^2 N^2) = (4/15) n(n+2)/(th^2 N^2)
+      N=1024 n=10: <c_J> = 60, n(n+2)/2 = 60; ratio at th=1 3.052e-05; (n/N)^2 9.537e-05
+      N=256 n=10: <c_J> = 60, n(n+2)/2 = 60; ratio at th=1 4.883e-04; (n/N)^2 1.526e-03
+      N=64 n=5: <c_J> = 35/2, n(n+2)/2 = 35/2; ratio at th=1 2.279e-03; (n/N)^2 6.104e-03

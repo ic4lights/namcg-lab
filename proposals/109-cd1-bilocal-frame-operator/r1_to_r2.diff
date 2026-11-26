@@ -1,0 +1,33 @@
+--- proposal-r1.md	2026-11-21 21:07:05.604970500 -0500
++++ proposal-r2.md	2026-11-21 22:24:16.889687700 -0500
+@@ -372,7 +372,7 @@
+ with the internal indices of the two insertions contracted after the locked identification of
+ Equation~\eqref{eq:VEV}; by the transformation law~\eqref{eq:Phi-transform} the object is
+ invariant under independent internal and local frame transformations at $x$ and $y$. Its
+-expansion in $\ell=y-x$, valid for separations large compared with $\LUV^{-1}$, begins
++expansion in $\ell=y-x$, valid for separations large compared with $\LUV^{-1}$ and small compared with the scale on which $w_{\rho}$ varies, begins
+ \begin{equation}
+   \label{eq:bilocal-frame-expansion}
+   \mathcal U(x,x+\ell)
+@@ -396,15 +396,15 @@
+ between $x$ and $y$ first appears at $\mathcal O(\ell^{2})$ with a curvature-type coefficient
+ (antisymmetric derivative of $w$ plus commutator, sign fixed by the transport convention). The representation content is admissible where the linear Repair~I
+ prescription is obstructed (Section~\ref{sec:status-C}): the linear intertwiner spaces vanish,
+-$\operatorname{Hom}_{G}(\mathrm{d}\Omega,V\otimes V)=\operatorname{Hom}_{G}(\mathrm{d}\Omega,\operatorname{Sym}^{2}V)=0$,
++$\operatorname{Hom}_{\mathrm{SO}(3,1)}(\mathrm{d}\Omega,V\otimes V)=\operatorname{Hom}_{\mathrm{SO}(3,1)}(\mathrm{d}\Omega,\operatorname{Sym}^{2}V)=0$,
+ while the bilinear ones do not,
+-$\dim\operatorname{Hom}_{G}(W\otimes W,\operatorname{Sym}^{2}V)=22$ and
+-$\dim\operatorname{Hom}_{G}(W\otimes W,V\otimes V)=42$ with $V\otimes\mathfrak{so}(3,1)$ the
++$\dim\operatorname{Hom}_{\mathrm{SO}(3,1)}(W\otimes W,\operatorname{Sym}^{2}V)=22$ and
++$\dim\operatorname{Hom}_{\mathrm{SO}(3,1)}(W\otimes W,V\otimes V)=42$ with $V\otimes\mathfrak{so}(3,1)$ the
+ source of $\mathrm{d}\Omega$, and the locked vacuum soldering is forced to a multiple of $\eta$;
+ these multiplicities were checked with exact $\mathfrak{so}(3,1)$ characters and independently
+-by Clebsch--Gordan enumeration. Non-degeneracy of $\mathcal G^{+}_{\mu\nu}$ is equivalent to
+-invertibility of the frame matrix, since the composite determinant is the squared frame
+-determinant, and the composite determines the frame only modulo the right action of the
++by Clebsch--Gordan enumeration. Non-degeneracy of $g^{+}_{\mu\nu}$ is equivalent to
++invertibility of the frame matrix, since the composite determinant differs from the squared frame
++determinant only by the constant factor $\det\eta$, and the composite determines the frame only modulo the right action of the
+ orthogonal group of $g^{+}$, so on this reading Assumption~\ref{ass:nondeg} becomes a
+ non-degeneracy statement about the two-point composite. The construction is the bilocal mechanism anticipated in
+ Section~\ref{sec:status-D}; it presupposes the connection content that the closure of

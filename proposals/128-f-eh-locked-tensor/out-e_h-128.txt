@@ -1,0 +1,19 @@
+R0 = -6*c0_0 - 6*c1_1 - 6*c2_2 - 6*c3_3
+RIC0_OK = True
+SD2 = h0*h1/2 + h0*h2/2 + h0*h3/2 - h01**2/4 - h02**2/4 - h03**2/4 + h1*h2/2 + h1*h3/2 - h12**2/4 - h13**2/4 + h2*h3/2 - h23**2/4 - (h0 + h1 + h2 + h3)**2/8
+F0CHECK = True
+GF_SHIFT = 0
+E_SYMM = True
+EH_LICH = 29/6
+EH_SCALAR_OK = 0
+E_TTQF_over_R = 9/2
+STRUCT_TR = {'riem': -1/2, 'ric1': 5/2, 'ric2': 5/2, 'gric': 1, 'ricg': 1, 'ggr': 4}
+E_DECOMP = [{(3/2, 5/2 - a2, a2, -3/4, -3/4, 5/24)}, {(3/2, 5/2 - a2, a2, -3/4, -3/4, 5/24)}]
+EH_COMBO_CHECK = 0
+EH_COMBO_CHECK = 0
+TT_PAIRING_INVARIANT = True True
+FIBRE_TRACE_FROM_BASIS = -29*c0_0 - 29*c1_1 - 29*c2_2 - 29*c3_3  EH_LICH = 29/6  DELTA = 0
+GHOST_A1_COEFF = 5/3
+Q16_TRUNK = -13/6
+SCRIPT2_DONE
+rc=0

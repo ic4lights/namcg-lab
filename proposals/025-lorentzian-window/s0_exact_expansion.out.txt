@@ -1,0 +1,9 @@
+b1(r) general solution (C1->0): -(18*r**2 - 3*r*tanh(r/2) - 3*r/tanh(r/2) + 6)/(8*r**2)
+b1(0) = value of Delta^{-1/2} L Delta^{1/2} at r=0 (regular solution b1(0)=rhs(0)) = -2  (R/6 = -2 for H^4)
+D1(z0,w0) = -(-5*w0**2*z0*(cosh(4*tau) - 1) + 16*w0*z0*(w0*cosh(tau)**2 + z0)*(3*cosh(tau)**2 - 2) + (32*w0 + 64*z0)*(w0*cosh(tau)**2 + z0)**2)/(32*(w0*cosh(tau)**2 + z0)**2)
+check linearity: D1 - (cz*z0+cw*w0) = 0
+c_z = -(-5*w0**3*sinh(tau)**6 - 14*w0**3*sinh(tau)**4 - 13*w0**3*sinh(tau)**2 + 14*w0**3*cosh(tau)**6 - 4*w0**3 + 35*w0**2*z0*sinh(tau)**4 + 61*w0**2*z0*sinh(tau)**2 + 26*w0**2*z0 + 24*w0*z0**2*sinh(tau)**2 + 24*w0*z0**2 + 8*z0**3)/(4*(w0*cosh(tau)**2 + z0)**3) 
+c_w = -(16*w0**3*cosh(tau)**6 + 48*w0**2*z0*cosh(tau)**4 + 24*w0*z0**2*cosh(tau)**4 + 32*w0*z0**2*cosh(tau)**2 - 5*w0*z0**2*cosh(4*tau) + 5*w0*z0**2 + 24*z0**3*cosh(tau)**2)/(16*(w0*cosh(tau)**2 + z0)**3)
+pure Box limit: D1 = i s * c_s,  c_s(tau) = 5/4 - 3/(4*sinh(tau)**2)
+c_s in a = sinh(tau): 5/4 - 3/(4*a**2)
+compare formal appendix density (5 a^2 - 3)/(4 a^2): 0  ratio: 1

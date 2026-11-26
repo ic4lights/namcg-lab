@@ -1,0 +1,6 @@
+anomaly-implied (x,y,z) = [{x: -1/2, y: 1, z: 1/2}]
+029 Z_n values (x,y,z) = (-1/2, 1, 1/2): True
+S^4/S^2 physical Dirac: -11/90 (expect -11/90)
+24pi sigma (6,2) from weights = 2*R - T + 3*Xp/2 - 12*e
+minus 029 formula = 0
+all-periodic 24pi sigma = 0 ; antiperiodic minus periodic = 2*R - T + 3*Xp/2 - 12*e

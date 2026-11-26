@@ -1,0 +1,6 @@
+patch_r1_t5c.py -> rc=0 | CONTROL OK 120R1
+patch_r2_simplify.py -> rc=0 | CONTROL OK 120R2
+patch_r3_liftcongruence.py -> rc=0 | CONTROL OK 120R3
+re-derived 6d72f26fbfd7/37603 B; current 6d72f26fbfd7/37603 B
+pre-repair chk names: 53; missing (expected 0): 0; T5c claim string kept: True
+CHAIN OK 120

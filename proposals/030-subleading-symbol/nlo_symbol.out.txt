@@ -1,0 +1,4 @@
+r1: number of terms 20  r2: number of terms 302
+powers of Ui in r2: [3, 4, 5]
+powers of Ui in r1: [2, 3]
+saved nlo_symbol_eta4.pkl

@@ -1,0 +1,5 @@
+pass 0 0
+pass 1 0
+undefined/multiply: 0
+[]
+True ['Output written on namcg-book7.pdf (262 pages, 1952873 bytes).']

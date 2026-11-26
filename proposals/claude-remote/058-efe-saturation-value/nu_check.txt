@@ -1,0 +1,39 @@
+== 1. nu_sqrt at the manuscript arguments ==
+g=2.20e-10  g/gs=1.8333  nu_sqrt=1.3481  sqrt(nu)-1=0.1611  L_e=-0.2357
+g=1.50e-10  g/gs=1.2500  nu_sqrt=1.4857  sqrt(nu)-1=0.2189  L_e=-0.2715
+g=1.00e-11  g/gs=0.0833  nu_sqrt=3.9881  sqrt(nu)-1=0.9970  L_e=-0.4313
+ch13/ch16/appE claim: nu_sqrt(g_gal) ~ 1.1  -> FALSE
+
+== 2. Is there a reading under which 1.1 is right? ==
+nu_sqrt=1.1 requires g_N/g_s=5.750, g_N=6.900e-10 m/s^2
+sqrt(nu_sqrt(2.2e-10)) (velocity factor) = 1.1611
+simple-MOND nu at 2.2e-10   = 1.3919
+standard-MOND nu at 2.2e-10 = 1.1135  (the only listed reading near 1.1)
+if 2.2e-10 = v^2/R0 is the observed field, eq:appE-RAR gives baryonic g_N=1.4736e-10, nu_sqrt(g_N)=1.4929
+
+== 3. literature comparison ==
+Chae 2023 gamma=1.43 -> velocity factor sqrt = 1.1958
+Banik et al. 2024 ~20% velocity -> acceleration factor 1.2^2 = 1.44
+appI range: nu_sqrt in [1.348, 1.486], velocity excess in [0.161, 0.219]
+isolated map at 1e-11: acceleration 3.988, velocity 1.997
+
+== 4. 3D QUMOND EFE-dominated anisotropy (Famaey-McGaugh 2012 eqs. 63-64) ==
+g_e=2.20e-10: along field nu_e=1.3481; in plane nu_e(1+L/2)=1.1892; factor 0.8822
+g_e=1.50e-10: along field nu_e=1.4857; in plane nu_e(1+L/2)=1.2840; factor 0.8642
+
+== 5. symbolic: 1D QUMOND uniform-field form and sign of the bracket ==
+internal - correct   = 0
+internal - manuscript= 2*g_e*(-nu(g_e) + nu(g_N + g_e))
+d/dgN at gN=0, correct   : g_e*Derivative(nu(g_e), g_e) + nu(g_e)
+d/dgN at gN=0, manuscript: -g_e*Derivative(nu(g_e), g_e) + nu(g_e)
+numeric along-field slope at g_e=2.2e-10: correct 1.0304 = nu_e(1+L) ; manuscript 1.6658 = nu_e(1-L)
+
+== 6. symbolic: 3D linearised QUMOND point mass, check of FM12 eq. 63-64 ==
+Lap(psi)-phiN = 0
+phi - FM12 form = 0
+Lap(phi) - nu_e(Lap phiN + L dzz phiN) = 0
+
+== 7. vector form of corrected eq:nu-efe, linearised in g_N (g_ext along z) ==
+d g/d eps at 0 (corrected): [a*nu(g_E), b*nu(g_E), c*(g_E*Derivative(nu(g_E), g_E) + nu(g_E))]
+d g/d eps at 0 (manuscript): [a*nu(g_E), b*nu(g_E), c*(-g_E*Derivative(nu(g_E), g_E) + nu(g_E))]
+=> corrected: transverse nu_e, along nu_e + g_E nu'_e = nu_e(1+L_e); manuscript: along nu_e(1-L_e)
