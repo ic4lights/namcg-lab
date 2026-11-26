@@ -130,7 +130,8 @@ changed files show full content. Typical digest size: ~10KB (vs ~52KB full). A f
    other chapters; look for stale statements the insertion would create.
 7. Check LaTeX syntax, labels, references, notation, terminology, no process language ("as proposed", "the
    researcher"), repeated closing status lines on consecutive paragraphs, and that the wording is the smallest
-   accurate record of the result.
+   accurate record of the result. Check right-margin compliance (author directive 2026-11-26): compile the candidate in a
+   scratch output directory and confirm it introduces no Overfull \hbox above 2pt versus the recorded baseline.
 8. Literature: verify cited works exist and support the attributed claim (fetch arXiv/DOI). Do not invent
    citations or claim unchecked literature was checked; mark inaccessible evidence "not independently verified" and
    do not approve on that basis.

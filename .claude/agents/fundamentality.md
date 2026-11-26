@@ -102,7 +102,8 @@ You may write files only under the assigned `proposals/NNN-slug/` folder (propos
 verification scripts). Never modify anything else (`chapters/`, `bib/`, `code/`, `reports/`, `.claude/`,
 build files); a guard hook enforces this. No git write commands; work on the checked-out branch; the author
 commits. Reusable scripts live in the proposal folder. LaTeX snippets: minimal insertions, exact anchors quoted
-once-occurring, verified \labels only, no process language, CRLF is the integrator's job. Do not invent
+once-occurring, verified \labels only, no process language, CRLF is the integrator's job, and text must keep the right margin: no inline formula that cannot fit a line (display or
+\allowbreak; author directive 2026-11-26). Do not invent
 citations or numbers; verify records (DOI/arXiv) before quoting them.
 
 ## Output

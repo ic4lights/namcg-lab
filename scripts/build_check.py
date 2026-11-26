@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Three pdflatex passes with bibtex after the first, reference check, PDF restore, whitespace check.
+"""Three pdflatex passes with bibtex after the first, reference check, overfull-hbox (right margin) check, PDF restore, whitespace check.
 
 Exit code 0 only if everything is clean. Run from anywhere; operates on the repository root.
 
@@ -75,6 +75,41 @@ for i in (1, 2, 3):
             break
 
 log = (root / "namcg-book7.log").read_text(errors="replace") if (root / "namcg-book7.log").exists() else ""
+
+# --- right-margin check: Overfull \hbox scan (author directive 2026-11-26) ---
+# Fails the build only on boxes wider than OVERFULL_FAIL_PT. Tightened to 2.0 on 2026-11-26
+# after item 130 integrated (ordinal 56): accepted baseline is now 1 box, 1.215pt at appH L3437
+# (unbreakable inline math; below threshold). Do not loosen this without explicit author approval.
+OVERFULL_FAIL_PT = 2.0
+for i, a in enumerate(sys.argv):
+    if a == "--overfull-max" and i + 1 < len(sys.argv):
+        OVERFULL_FAIL_PT = float(sys.argv[i + 1])
+B = chr(92)  # backslash; avoided in literals to keep regex-free parsing simple
+overfull = []  # (pt, file, lines)
+_logl = log.splitlines()
+for i, l in enumerate(_logl):
+    if "Overfull " + B + "hbox (" in l and "pt too wide)" in l:
+        pt = float(l.split("Overfull " + B + "hbox (")[1].split("pt too wide)")[0])
+        ln = l.split("in paragraph at lines ")[1].split(" ")[0] if "in paragraph at lines " in l else "?"
+        f = "?"
+        for j in range(i, max(0, i - 400), -1):
+            k = _logl[j]
+            if "(" in k and ".tex" in k:
+                f = k[k.rfind("(") + 1:].split(".tex")[0].replace(B, "/") + ".tex"
+                break
+        overfull.append((pt, f, ln))
+overfull.sort(key=lambda t: -t[0])
+w2 = [o for o in overfull if o[0] >= 2.0]
+worst = overfull[0][0] if overfull else 0.0
+print("overfull hbox: total %d, >=2pt %d, max %.2fpt (fail threshold %.2fpt)"
+      % (len(overfull), len(w2), worst, OVERFULL_FAIL_PT))
+for pt, f, ln in overfull[:8]:
+    if pt >= 2.0:
+        print("  OVERFULL %.2fpt  %s L%s" % (pt, f, ln))
+if overfull and overfull[0][0] > OVERFULL_FAIL_PT:
+    print("OVERFULL MARGIN BREACH: %.2fpt exceeds threshold %.2fpt" % (overfull[0][0], OVERFULL_FAIL_PT))
+    ok = False
+
 bad = [l for l in log.splitlines()
        if re.search(r"undefined references|Citation `.*' on page .* undefined"
                     r"|Reference `.*' on page .* undefined|multiply[- ]defined|There were undefined", l)]

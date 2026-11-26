@@ -72,6 +72,9 @@ party who can approve a merge.
   current Chapter 17 criterion and Appendix H.
 - `.tex` files use CRLF line endings. Preserve them. Write UTF-8 without BOM.
 - A change must be the smallest text that accurately records the result.
+- **Right-margin discipline (author directive 2026-11-26).** Never set a formula inline that cannot fit a line: use a display, split
+  it across text, or add an explicit `\allowbreak`; keep unbreakable math and `--` compounds short. The preamble carries
+  `\emergencystretch` (item 130) to absorb bad fits; new text must not add an Overfull \hbox above 2pt to the build_check scan.
 - Importing text from another workspace or branch: normalize EOL (this repo is CRLF; foreign branches may be LF) and
   match the current manuscript spellings (e.g. `PROGRAMME CONDITIONAL`) BEFORE judging duplication — unnormalized byte
   comparisons read reflow/spelling drift as new work. Never file-checkout a shared file from a parallel branch (it can
@@ -81,7 +84,9 @@ party who can approve a merge.
 ## Build and verification
 
 - Use `python scripts/build_check.py`. It runs two `pdflatex -interaction=nonstopmode -halt-on-error namcg-book7.tex`
-  passes, scans the log for undefined or multiply-defined references, restores the tracked PDF with
+  passes, scans the log for undefined or multiply-defined references and for Overfull \hbox right-margin breaches (any box wider
+  than the script's fail threshold fails the build; 2pt since item 130 - do not loosen without author approval),
+  restores the tracked PDF with
   `git restore -- namcg-book7.pdf`, and runs `git diff --check`. `latexmk` is known to fail here.
 - Keep sympy/Python verification scripts under `scratch/` (git-ignored) or inside the proposal folder so the
   gatekeeper can re-run them. Symbolic output is a check, not a proof.

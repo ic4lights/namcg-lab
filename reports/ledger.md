@@ -2278,3 +2278,29 @@ Integrator dispatched for ordinal 51 on exact payload e0b8d6b31cad/5442: context
   E.thimble author pause; C.operator HOLD; N.specR blocked-by F.coeff; kill-order on 123 verify_ghost_op_123.py
   stands. Bib item for author: IsoKimuraTanakaWakatsuki2001 (hep-th/0101102, NPB B604 (2001) 121-147) verified to
   exist, currently NOT in bib/namcg.bib, uncited by payload. Nothing committed; author merges.
+## 2026-11-26 ORCH - item 130 RIGHT-MARGIN FIX: INTEGRATED ORDINAL 56 (typographic; build guard now live)
+- Author directive: generated PDF math breached the right margin. Orchestrator audit: 14 overfull hboxes, max 17.02pt
+  (appH 9; four >=10pt), root cause = no \emergencystretch in preamble (microtype alone cannot stretch fits). Pilot:
+  one preamble line \setlength{\emergencystretch}{2em} clears 12/14 incl. all four >=10pt.
+- Researcher r1 (130-margin-tightening): payloadA preamble line 36 B f4aa60aa4099; payloadB ch03 scales-table wrapper
+  ins1 30 B 717a15da8b92 + ins2 3 B e22faa535bd2 (local \tabcolsep 3pt; wrapper-only, cell bytes untouched). Residual
+  1.215pt appH L3437 accepted (unbreakable inline-math atom; below 2pt guard). cert_130.py: CERT130 PASS BASE14 CAND1
+  CH03SITE0 MAX1.215 with fired positive controls (parser 1@9.99, region 1-in/1-out).
+- Gatekeeper r1 ACCEPT 0/0: own baseline+candidate mirror compiles (BASE 14 boxes, sizes+positions match audit; CAND
+  exactly 1 box, 0 new overfulls, 448pp), strip-restore byte-identity of patched ch03, width arithmetic checked
+  (6pt shrink vs 5.05pt overflow). Honest cost accepted: 2 new Underfull \hbox loose-line notices (appH L3514, L4033).
+  Provenance resolved: ledger 450pp figure predates author geometry commit 0e39eb6 (bindingoffset 0.05->0.0in,
+  450->448); neither integrator nor researcher erred. proposals/130-margin-tightening/review-r1.md.
+- Integrator ordinal 56 (solo): namcg-book7.tex 4257->4293 B 43031b9414e0 (anchor \setstretch{1.12} L22);
+  ch03 37978->38011 B 0e10b8509c9e (anchors L802/L812, counts 1/1/1 re-verified live); backups
+  scratch/integrator-backup/56-130-margin-tightening/. BUILD_CHECK PASS pages=448, overfull line "total 1, >=2pt 0,
+  max 1.22pt", 0 undefined refs/citations, bibtex 0 warnings, PDF restored, diff --check clean.
+- Guards (process, orchestrator): scripts/build_check.py now scans Overfull \hbox per build (string-parse; regex on
+  backslash-h crashes) and FAILS above OVERFULL_FAIL_PT, set to 2.0 (comment: do not loosen without author approval);
+  --overfull-max override. Guidance updated in CLAUDE.md (right-margin discipline + build line) and
+  researcher/fundamentality/gatekeeper/integrator agent definitions; memory right-margin-discipline.md.
+- Notes: NO status/priority/completion label touched; no Appendix H problem involved; bib untouched; appH untouched.
+  Uncommitted in working tree: namcg-book7.tex +1 line, ch03 +2 lines (this item), scripts/build_check.py guard,
+  CLAUDE.md + 4 agent-definition edits, this ledger line; author merges. Next mandatory protocol-3(a) scan:
+  ordinal 58. Item 128 chain PAUSED (author); E.thimble author pause; C.operator HOLD; N.specR blocked-by F.coeff;
+  kill-order on 123 verify_ghost_op_123.py stands.

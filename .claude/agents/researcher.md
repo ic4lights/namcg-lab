@@ -186,6 +186,9 @@ and mark the rest "not independently verified".
 7. Bibliography entries: give full BibTeX in the proposal, and verify the record (DOI/arXiv). Do not edit `bib/`
      yourself; the integrator adds gatekeeper-accepted entries to `bib/namcg.bib`.
 8. Tex style: do not comment code unless needed; `.tex` uses CRLF (the integrator normalizes).
+9. Right-margin discipline (author directive 2026-11-26): never inline a formula that cannot fit a line - prefer a display for
+     long formulas, split long expressions across text, use `\allowbreak` inside unbreakable math. Before submitting, compile the
+     candidate in a scratch output directory and confirm it adds no Overfull \hbox above 2pt; list the scan result in the proposal.
 
 ## 5. Revision rounds and Resuming Unmerged Proposals
 

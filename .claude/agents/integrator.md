@@ -50,8 +50,10 @@ pending review material and must be preserved byte for byte.
    do not self-authorize.
 5. **Build.** If the package adds or uses citations, run `pdflatex -interaction=nonstopmode namcg-book7.tex` and then
    `bibtex namcg-book7` first. Then run `python scripts/build_check.py`. It must report: two passes OK, 0
-   undefined/multiply-defined references, PDF restored, `git diff --check` clean. Report the page count. Make sure
-   the tracked PDF ends up unchanged.
+   undefined/multiply-defined references, PDF restored, `git diff --check` clean. Report the page count, and the overfull-hbox
+   line: it must add no Overfull \hbox above 2pt versus the pre-integration baseline recorded in the review (author directive
+   2026-11-26) - otherwise treat as build failure: report, do not silently re-fix text. Make sure the tracked PDF ends up
+   unchanged.
 6. **If the build fails.** Restore only the files you touched, from the backup in step 0. Do **not** use
    `git restore -- chapters` or `git checkout`, because that would erase the author's earlier uncommitted
    integrations. Remove the guard flag, report the failure, and do not "fix" the text.
