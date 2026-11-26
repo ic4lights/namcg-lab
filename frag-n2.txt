@@ -1,1 +1,0 @@
-and, when the largest slot variance is unique, has its minimum only at that vertex, while tied largest variances leave the whole face they span minimal:
