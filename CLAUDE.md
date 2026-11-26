@@ -72,6 +72,11 @@ party who can approve a merge.
   current Chapter 17 criterion and Appendix H.
 - `.tex` files use CRLF line endings. Preserve them. Write UTF-8 without BOM.
 - A change must be the smallest text that accurately records the result.
+- Importing text from another workspace or branch: normalize EOL (this repo is CRLF; foreign branches may be LF) and
+  match the current manuscript spellings (e.g. `PROGRAMME-CONDITIONAL`) BEFORE judging duplication — unnormalized byte
+  comparisons read reflow/spelling drift as new work. Never file-checkout a shared file from a parallel branch (it can
+  predate later integrations); import per-block after a duplication review, route branch-original mathematics through
+  the normal pipeline instead of importing it.
 
 ## Build and verification
 
